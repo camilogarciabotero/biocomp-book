@@ -18,7 +18,7 @@ book:
     - intro.qmd
     - welcome-to-command-line.qmd
     - sequence-analysis.qmd
-    - summary.qmd
+    - sanger-analysis.qmd
     - demos.qmd
     - references.qmd
 
