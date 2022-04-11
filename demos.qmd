@@ -97,10 +97,10 @@ all_features_grouped %>%
   head()
 ```
 
-create a new dataset that will group by features per accsession
-get read of the weird name of the column
-Select these two columns
-Group by these two columns to perform
-count the numbers of rows based on the applied group
-generate a wide dataset sending row names as columns
-Arrange descending by the number of CDSs
+create a new dataset that will group by features per accession.
+get read of the weird name of the column.
+Select these two columns.
+Group by these two columns to perform.
+count the numbers of rows based on the applied group.
+generate a wide dataset sending row names as columns.
+Arrange descending by the number of CDSs.
