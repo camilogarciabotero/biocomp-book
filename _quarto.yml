@@ -5,7 +5,7 @@ project:
 book:
   title: "Fundamentals of computational biology"
   author: "Camilo García-Botero"
-  date: "today"
+  date: "2022-04-11"
   search: true
   repo-url: https://camilogarciabotero.github.io/biocomp-book/
   downloads: [pdf, epub]
@@ -17,6 +17,7 @@ book:
     - index.qmd
     - intro.qmd
     - welcome-to-command-line.qmd
+    - sequence-analysis.qmd
     - summary.qmd
     - references.qmd
 

@@ -1,0 +1,99 @@
+# sequence-analysis
+
+In this chapter we will use several tools to download a genome from the command line. We will identify some features 
+
+## Downloading a genome
+
+```bash
+ncbi-genome-download 
+```
+
+
+## Downloading from NCBI
+
+The first step in this journey is to download a bunch of sequences programatically. To do so, we will use the program [ncbi-genome-download](https://github.com/kblin/ncbi-genome-download).
+
+You could inspect all the options it provides, now we will set our command as the following:
+
+```{zsh}
+#| echo: true
+#| code-line-numbers: "1-7|8"
+#| eval: true
+ngd --genera "Bacillus subtilis"\
+    -s refseq\
+    -l complete\
+    -o Data\
+    --flat-output\
+    --format features\
+    -n bacteria\
+    | head -n 1
+```
+
+
+## Listing files
+
+```zsh
+ls Data | head -n 10
+```
+
+## Decompressing using `gzip`
+
+```zsh
+gzip -d *
+```
+
+. . .
+
+### Some files in our data dir
+
+```zsh
+ls Data | head
+```
+
+## Importing the files into R
+
+```{r}
+#| label: file-reading
+#| echo: true
+#| eval: false
+#| message: false
+#| warclass-warning: false
+#| warattr-warning: false
+library(tidyverse)
+library(fs)
+
+all_features <- dir_ls("Data/") %>% 
+  map_df(read_tsv)
+
+all_features %>% 
+  head()
+```
+
+. . .
+
+```{r}
+#| label: file-reading-exe
+#| ref.label: file-reading
+#| eval: true
+#| cache: true
+#| out.width : 50%
+```
+
+## Data processing
+
+```{r}
+#| label: data-processing
+#| echo: true
+#| eval: false
+#| message: false
+all_features_grouped <- all_features %>% #create a new dataset that will group by features per accsession
+  rename(feature = `# feature`) %>% # get read of the weird name of the column
+  select(assembly, feature) %>% # Select these two columns
+  group_by(assembly, feature) %>% # Group by these two columns to perform operations
+  count() %>% # count the numbers of rows based on the applied group
+  pivot_wider(names_from = feature, values_from = n) %>% # generate a wide dataset sending row names as columns
+  arrange(desc(CDS)) # Arrange descending by the number of CDSs
+    
+all_features_grouped %>% 
+  head()
+```
