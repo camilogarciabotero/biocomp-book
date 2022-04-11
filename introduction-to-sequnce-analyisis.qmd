@@ -1,0 +1,15 @@
+# Introduction to sequence analysis
+
+## Endless debate: bioinformatics vs. computational biology
+
+## Getting started with the command line
+
+## The duality of DNA
+
+## The central ~dogma~ theory of molecular biology extended
+
+## Sequencing strategies
+
+## Sequencing over time
+
+## Some insights from sequencing genomes
