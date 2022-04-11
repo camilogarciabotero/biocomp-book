@@ -7,7 +7,7 @@ book:
   author: "Camilo García-Botero"
   date: "today"
   chapters:
-    - index.qmd
+    - preface.qmd
     - intro.qmd
     - summary.qmd
     - references.qmd
