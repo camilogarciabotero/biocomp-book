@@ -21,60 +21,11 @@
     "text": "In this chapter we will explore the fundamentals of the command line. That is the concepts of Unix based systems the command line (CLI) and how we can use it to access information programmatically."
   },
   {
-    "objectID": "sequence-analysis.html",
-    "href": "sequence-analysis.html",
-    "title": "\n3  sequence-analysis\n",
-    "section": "",
-    "text": "In this chapter we will use several tools to download a genome from the command line. We will identify some features"
-  },
-  {
-    "objectID": "sequence-analysis.html#downloading-a-genome",
-    "href": "sequence-analysis.html#downloading-a-genome",
-    "title": "\n3  sequence-analysis\n",
-    "section": "\n3.1 Downloading a genome",
-    "text": "3.1 Downloading a genome\nncbi-genome-download"
-  },
-  {
-    "objectID": "sequence-analysis.html#downloading-from-ncbi",
-    "href": "sequence-analysis.html#downloading-from-ncbi",
-    "title": "\n3  sequence-analysis\n",
-    "section": "\n3.2 Downloading from NCBI",
-    "text": "3.2 Downloading from NCBI\nThe first step in this journey is to download a bunch of sequences programatically. To do so, we will use the program ncbi-genome-download.\nYou could inspect all the options it provides, now we will set our command as the following:\n\nngd --genera \"Bacillus subtilis\"\\\n    -s refseq\\\n    -l complete\\\n    -o Data\\\n    --flat-output\\\n    --format features\\\n    -n bacteria\\\n    | head -n 1\n\nConsidering the following 193 assemblies for download:"
-  },
-  {
-    "objectID": "sequence-analysis.html#listing-files",
-    "href": "sequence-analysis.html#listing-files",
-    "title": "\n3  sequence-analysis\n",
-    "section": "\n3.3 Listing files",
-    "text": "3.3 Listing files\nls Data | head -n 10"
-  },
-  {
-    "objectID": "sequence-analysis.html#decompressing-using-gzip",
-    "href": "sequence-analysis.html#decompressing-using-gzip",
-    "title": "\n3  sequence-analysis\n",
-    "section": "\n3.4 Decompressing using gzip\n",
-    "text": "3.4 Decompressing using gzip\n\ngzip -d *\n\n\n3.4.1 Some files in our data dir\nls Data | head"
-  },
-  {
-    "objectID": "sequence-analysis.html#importing-the-files-into-r",
-    "href": "sequence-analysis.html#importing-the-files-into-r",
-    "title": "\n3  sequence-analysis\n",
-    "section": "\n3.5 Importing the files into R",
-    "text": "3.5 Importing the files into R\n\nlibrary(tidyverse)\nlibrary(fs)\n\nall_features <- dir_ls(\"Data/\") %>% \n  map_df(read_tsv)\n\nall_features %>% \n  head()\n\n\n\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.5     ✔ purrr   0.3.4\n✔ tibble  3.1.6     ✔ dplyr   1.0.8\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.2     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nlibrary(fs)\n\nall_features <- dir_ls(\"Data/\") %>% \n  map_df(read_tsv)\n\nall_features %>% \n  head()\n\n# A tibble: 0 × 0"
-  },
-  {
-    "objectID": "sequence-analysis.html#data-processing",
-    "href": "sequence-analysis.html#data-processing",
-    "title": "\n3  sequence-analysis\n",
-    "section": "\n3.6 Data processing",
-    "text": "3.6 Data processing\n\nall_features_grouped <- all_features %>% #create a new dataset that will group by features per accsession\n  rename(feature = `# feature`) %>% # get read of the weird name of the column\n  select(assembly, feature) %>% # Select these two columns\n  group_by(assembly, feature) %>% # Group by these two columns to perform operations\n  count() %>% # count the numbers of rows based on the applied group\n  pivot_wider(names_from = feature, values_from = n) %>% # generate a wide dataset sending row names as columns\n  arrange(desc(CDS)) # Arrange descending by the number of CDSs\n    \nall_features_grouped %>% \n  head()"
-  },
-  {
     "objectID": "demos.html",
     "href": "demos.html",
     "title": "\n5  Challenges demos\n",
     "section": "",
-    "text": "In this chapter we will use several tools to download a genome from the command line. We will identify some features\n\nncbi-genome-download \n\nThe first step in this journey is to download a bunch of sequences programatically. To do so, we will use the program ncbi-genome-download.\nYou could inspect all the options it provides, now we will set our command as the following:\n\nngd --genera \"Bacillus subtilis\"\\\n    -s refseq\\\n    -l complete\\\n    -o Data\\\n    --flat-output\\\n    --format features\\\n    -n bacteria\\\n    | head -n 10\n\nConsidering the following 193 assemblies for download:\nGCF_000772125.1 Bacillus subtilis   ATCC 13952\nGCF_000772165.1 Bacillus subtilis   ATCC 19217\nGCF_000772205.1 Bacillus subtilis   Bs-916\nGCF_000782835.1 Bacillus subtilis   SG6\nGCF_000789295.1 Bacillus subtilis   PS832\nGCF_000952895.1 Bacillus subtilis   BS34A\nGCF_000953615.1 Bacillus subtilis   BS49\nGCF_001015095.1 Bacillus subtilis   UD1022\nGCF_001037985.1 Bacillus subtilis   TO-A JPC\n\n\n\nls Data | head -n 10\n\ngzip -d *\n\n\nls Data | head\n\n\n\n\nlibrary(tidyverse)\nlibrary(fs)\n\nall_features <- dir_ls(\"Data/\") %>% \n  map_df(read_tsv)\n\nall_features %>% \n  head()\n\n\n\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.5     ✔ purrr   0.3.4\n✔ tibble  3.1.6     ✔ dplyr   1.0.8\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.2     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nlibrary(fs)\n\nall_features <- dir_ls(\"Data/\") %>% \n  map_df(read_tsv)\n\nall_features %>% \n  head()\n\n# A tibble: 0 × 0\n\n\n\n\n\nall_features_grouped <- all_features %>% #create a new dataset that will group by features per accsession\n  rename(feature = `# feature`) %>% # get read of the weird name of the column\n  select(assembly, feature) %>% # Select these two columns\n  group_by(assembly, feature) %>% # Group by these two columns to perform operations\n  count() %>% # count the numbers of rows based on the applied group\n  pivot_wider(names_from = feature, values_from = n) %>% # generate a wide dataset sending row names as columns\n  arrange(desc(CDS)) # Arrange descending by the number of CDSs\n    \nall_features_grouped %>% \n  head()"
+    "text": "In this chapter we will use several tools to download a genome from the command line. We will identify some features\n\nncbi-genome-download\n\nThe first step in this journey is to download a bunch of sequences programatically. To do so, we will use the program ncbi-genome-download.\nYou could inspect all the options it provides, now we will set our command as the following:\n\nngd --genera \"Bacillus subtilis\"\\\n    -s refseq\\\n    -l complete\\\n    -o Data\\\n    --flat-output\\\n    --format features\\\n    -n bacteria\\\n    | head -n 10\n\nConsidering the following 193 assemblies for download:\nGCF_000772125.1 Bacillus subtilis   ATCC 13952\nGCF_000772165.1 Bacillus subtilis   ATCC 19217\nGCF_000772205.1 Bacillus subtilis   Bs-916\nGCF_000782835.1 Bacillus subtilis   SG6\nGCF_000789295.1 Bacillus subtilis   PS832\nGCF_000952895.1 Bacillus subtilis   BS34A\nGCF_000953615.1 Bacillus subtilis   BS49\nGCF_001015095.1 Bacillus subtilis   UD1022\nGCF_001037985.1 Bacillus subtilis   TO-A JPC\n\n\n\nls Data | head -n 10\n\ngzip -d *\n\n\nls Data | head\n\n\n\n\nlibrary(tidyverse)\nlibrary(fs)\n\nall_features <- dir_ls(\"Data/\") %>% \n  map_df(read_tsv)\n\nall_features %>% \n  head()\n\n\n\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.5     ✔ purrr   0.3.4\n✔ tibble  3.1.6     ✔ dplyr   1.0.8\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.2     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nlibrary(fs)\n\nall_features <- dir_ls(\"Data/\") %>% \n  map_df(read_tsv)\n\nall_features %>% \n  head()\n\n# A tibble: 0 × 0\n\n\n\n\n\nall_features_grouped <- all_features %>% \n  rename(feature = `# feature`) %>% \n  select(assembly, feature) %>% \n  group_by(assembly, feature) %>%  operations\n  count() %>% \n  pivot_wider(names_from = feature, values_from = n) %>% \n  arrange(desc(CDS))\n    \nall_features_grouped %>% \n  head()\n\ncreate a new dataset that will group by features per accsession get read of the weird name of the column Select these two columns Group by these two columns to perform count the numbers of rows based on the applied group generate a wide dataset sending row names as columns Arrange descending by the number of CDSs"
   },
   {
     "objectID": "references.html",
