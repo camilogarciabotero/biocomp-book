@@ -21,6 +21,7 @@ book:
         - welcome-to-command-line.qmd
     - part: sequence-analysis.qmd
       chapters:
+        - introduction-to-sequence-analyisis.qmd
         - sanger-analysis.qmd
     - part: demos.qmd
       chapters:
