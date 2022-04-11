@@ -1,4 +1,4 @@
-# Demostrations of chapter challenges
+# Challenges demos
 
 ## Genome searching (Ch. 01)
 
@@ -6,7 +6,7 @@ In this chapter we will use several tools to download a genome from the command 
 
 ### Downloading a genome
 
-``` bash
+```bash
 ncbi-genome-download 
 ```
 

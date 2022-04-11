@@ -12,7 +12,7 @@ book:
   sharing: [twitter]
   sidebar:
     style: docked
-    background: light
+    background: primary
   chapters:
     - index.qmd
     - intro.qmd
