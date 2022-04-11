@@ -32,3 +32,4 @@ format:
     code-copy: true
   pdf:
     documentclass: scrreprt
+    code-block-border-left: false
