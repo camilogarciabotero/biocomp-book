@@ -12,7 +12,6 @@ book:
   sharing: [twitter]
   sidebar:
     style: floating
-    background: light
   chapters:
     - index.qmd
     - intro.qmd
