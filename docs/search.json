@@ -9,14 +9,14 @@
   {
     "objectID": "intro.html",
     "href": "intro.html",
-    "title": "1  Introduction",
+    "title": "Introduction",
     "section": "",
     "text": "Here we present a course centered book of the Fundamentals of Computational Biology. We will cover several topics, from using the unix tools, the importance of package manager systems (such as homebrew and conda), sequencing technologies, sequence alignments, molecular phylogenetics, genome assembly and annotation, and variant calling analysis."
   },
   {
     "objectID": "welcome-to-command-line.html",
     "href": "welcome-to-command-line.html",
-    "title": "2  Welcome to the command line",
+    "title": "1  Welcome to the command line",
     "section": "",
     "text": "In this chapter we will explore the fundamentals of the command line. That is the concepts of Unix based systems the command line (CLI) and how we can use it to access information programmatically."
   },

@@ -1,2 +1,2 @@
-# Introduction to sequence analysis
+#  Sequence analysis
 
