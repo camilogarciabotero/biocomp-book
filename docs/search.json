@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fundamentals of computational biology",
+    "section": "",
+    "text": "We started this book with the aim of compiling the lectures of the course Fundamentals of Computational Biology offered at Universidad EAFIT for undergrad students in Biology. The course has been taught from different perspectives from its creation, yet the last iteration was divided into three modules. i) introduction to Unix (4 lectures) ii) introduction to sequence analysis and genomics (7 lectures) and iii) principles of structural biology (4 lectures).\nLectures are focused on a theoretical-practical approach were basic concepts from biology, bioinformatics and computer science and interleave with the practice to solve challenges."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "Here we present a course centered book of the Fundamentals of Computational Biology. We will cover several topics, from using the unix tools, the importance of package manager systems (such as homebrew and conda), sequencing technologies, sequence alignments, molecular phylogenetics, genome assembly and annotation, and variant calling analysis."
+  },
+  {
+    "objectID": "welcome-to-command-line.html",
+    "href": "welcome-to-command-line.html",
+    "title": "2  Welcome to the command line",
+    "section": "",
+    "text": "In this chapter we will explore the fundamentals of the command line. That is the concepts of Unix based systems the command line (CLI) and how we can use it to access information programmatically."
+  },
+  {
+    "objectID": "demos.html",
+    "href": "demos.html",
+    "title": "\n5  Challenges demos\n",
+    "section": "",
+    "text": "In this chapter we will use several tools to download a genome from the command line. We will identify some features\n\nncbi-genome-download\n\nThe first step in this journey is to download a bunch of sequences programatically. To do so, we will use the program ncbi-genome-download.\nYou could inspect all the options it provides, now we will set our command as the following:\n\nngd --genera \"Bacillus subtilis\"\\\n    -s refseq\\\n    -l complete\\\n    -o Data\\\n    --flat-output\\\n    --format features\\\n    -n bacteria\\\n    | head -n 10\n\nConsidering the following 193 assemblies for download:\nGCF_000772125.1 Bacillus subtilis   ATCC 13952\nGCF_000772165.1 Bacillus subtilis   ATCC 19217\nGCF_000772205.1 Bacillus subtilis   Bs-916\nGCF_000782835.1 Bacillus subtilis   SG6\nGCF_000789295.1 Bacillus subtilis   PS832\nGCF_000952895.1 Bacillus subtilis   BS34A\nGCF_000953615.1 Bacillus subtilis   BS49\nGCF_001015095.1 Bacillus subtilis   UD1022\nGCF_001037985.1 Bacillus subtilis   TO-A JPC\n\n\n\nls Data | head -n 10\n\ngzip -d *\n\n\nls Data | head\n\n\n\n\nlibrary(tidyverse)\nlibrary(fs)\n\nall_features <- dir_ls(\"Data/\") %>% \n  map_df(read_tsv)\n\nall_features %>% \n  head()\n\n\n\nlibrary(tidyverse)\nlibrary(fs)\n\nall_features <- dir_ls(\"Data/\") %>% \n  map_df(read_tsv)\n\nall_features %>% \n  head()\n\n# A tibble: 0 × 0\n\n\n\n\n\nall_features_grouped <- all_features %>% \n  rename(feature = `# feature`) %>% \n  select(assembly, feature) %>% \n  group_by(assembly, feature) %>%  operations\n  count() %>% \n  pivot_wider(names_from = feature, values_from = n) %>% \n  arrange(desc(CDS))\n    \nall_features_grouped %>% \n  head()\n\ncreate a new dataset that will group by features per accession. get read of the weird name of the column. Select these two columns. Group by these two columns to perform. count the numbers of rows based on the applied group. generate a wide dataset sending row names as columns. Arrange descending by the number of CDSs."
+  }
+]
