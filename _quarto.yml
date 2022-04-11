@@ -11,7 +11,7 @@ book:
   downloads: [pdf, epub]
   sharing: [twitter]
   sidebar:
-    style: docked
+    style: floating
     background: light
   chapters:
     - index.qmd
