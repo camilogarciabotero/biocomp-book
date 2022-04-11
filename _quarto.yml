@@ -4,8 +4,8 @@ project:
 
 book:
   title: "Fundamentals of computational biology"
-  author: "Jane Doe"
-  date: "4/11/2022"
+  author: "Camilo García-Botero"
+  date: "today"
   chapters:
     - index.qmd
     - intro.qmd
