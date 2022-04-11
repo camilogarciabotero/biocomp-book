@@ -28,6 +28,3 @@ format:
     code-copy: true
   pdf:
     documentclass: scrreprt
-
-
-
