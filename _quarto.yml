@@ -4,9 +4,7 @@ project:
 
 book:
   title: "Fundamentals of computational biology"
-  author: 
-    - name: "Camilo García-Botero"
-    - affiliation: Universidad EAFIT
+  author: "Camilo García-Botero"
   date: "2022-04-11"
   search: true
   repo-url: https://camilogarciabotero.github.io/biocomp-book/
