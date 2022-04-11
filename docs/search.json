@@ -21,46 +21,60 @@
     "text": "In this chapter we will explore the fundamentals of the command line. That is the concepts of Unix based systems the command line (CLI) and how we can use it to access information programmatically."
   },
   {
-    "objectID": "introduction-to-sequence-analyisis.html#getting-started-with-the-command-line",
-    "href": "introduction-to-sequence-analyisis.html#getting-started-with-the-command-line",
-    "title": "2  Introduction to sequence analysis",
-    "section": "2.2 Getting started with the command line",
-    "text": "2.2 Getting started with the command line"
+    "objectID": "introduction-to-sequence-analysis.html",
+    "href": "introduction-to-sequence-analysis.html",
+    "title": "Introduction to sequence analysis",
+    "section": "",
+    "text": "In this chapter we will discuss several about several points of view about bioinformatics and computational biology and how to get started with the command line being a biologist, we will further consider several biological concepts that appear central to understand the manipulation of biological data."
   },
   {
-    "objectID": "introduction-to-sequence-analyisis.html#the-duality-of-dna",
-    "href": "introduction-to-sequence-analyisis.html#the-duality-of-dna",
-    "title": "2  Introduction to sequence analysis",
-    "section": "2.3 The duality of DNA",
-    "text": "2.3 The duality of DNA"
+    "objectID": "introduction-to-sequence-analysis.html#endless-debate-bioinformatics-vs.-computational-biology",
+    "href": "introduction-to-sequence-analysis.html#endless-debate-bioinformatics-vs.-computational-biology",
+    "title": "Introduction to sequence analysis",
+    "section": "Endless debate: bioinformatics vs. computational biology",
+    "text": "Endless debate: bioinformatics vs. computational biology"
   },
   {
-    "objectID": "introduction-to-sequence-analyisis.html#the-central-dogma-theory-of-molecular-biology-extended",
-    "href": "introduction-to-sequence-analyisis.html#the-central-dogma-theory-of-molecular-biology-extended",
-    "title": "2  Introduction to sequence analysis",
-    "section": "2.4 The central dogma theory of molecular biology extended",
-    "text": "2.4 The central dogma theory of molecular biology extended"
+    "objectID": "introduction-to-sequence-analysis.html#getting-started-with-the-command-line",
+    "href": "introduction-to-sequence-analysis.html#getting-started-with-the-command-line",
+    "title": "Introduction to sequence analysis",
+    "section": "Getting started with the command line",
+    "text": "Getting started with the command line"
   },
   {
-    "objectID": "introduction-to-sequence-analyisis.html#sequencing-strategies",
-    "href": "introduction-to-sequence-analyisis.html#sequencing-strategies",
-    "title": "2  Introduction to sequence analysis",
-    "section": "2.5 Sequencing strategies",
-    "text": "2.5 Sequencing strategies"
+    "objectID": "introduction-to-sequence-analysis.html#the-duality-of-dna",
+    "href": "introduction-to-sequence-analysis.html#the-duality-of-dna",
+    "title": "Introduction to sequence analysis",
+    "section": "The duality of DNA",
+    "text": "The duality of DNA"
   },
   {
-    "objectID": "introduction-to-sequence-analyisis.html#sequencing-over-time",
-    "href": "introduction-to-sequence-analyisis.html#sequencing-over-time",
-    "title": "2  Introduction to sequence analysis",
-    "section": "2.6 Sequencing over time",
-    "text": "2.6 Sequencing over time"
+    "objectID": "introduction-to-sequence-analysis.html#the-central-dogma-theory-of-molecular-biology-extended",
+    "href": "introduction-to-sequence-analysis.html#the-central-dogma-theory-of-molecular-biology-extended",
+    "title": "Introduction to sequence analysis",
+    "section": "The central dogma theory of molecular biology extended",
+    "text": "The central dogma theory of molecular biology extended"
   },
   {
-    "objectID": "introduction-to-sequence-analyisis.html#some-insights-from-sequencing-genomes",
-    "href": "introduction-to-sequence-analyisis.html#some-insights-from-sequencing-genomes",
-    "title": "2  Introduction to sequence analysis",
-    "section": "2.7 Some insights from sequencing genomes",
-    "text": "2.7 Some insights from sequencing genomes"
+    "objectID": "introduction-to-sequence-analysis.html#sequencing-strategies",
+    "href": "introduction-to-sequence-analysis.html#sequencing-strategies",
+    "title": "Introduction to sequence analysis",
+    "section": "Sequencing strategies",
+    "text": "Sequencing strategies"
+  },
+  {
+    "objectID": "introduction-to-sequence-analysis.html#sequencing-over-time",
+    "href": "introduction-to-sequence-analysis.html#sequencing-over-time",
+    "title": "Introduction to sequence analysis",
+    "section": "Sequencing over time",
+    "text": "Sequencing over time"
+  },
+  {
+    "objectID": "introduction-to-sequence-analysis.html#some-insights-from-sequencing-genomes",
+    "href": "introduction-to-sequence-analysis.html#some-insights-from-sequencing-genomes",
+    "title": "Introduction to sequence analysis",
+    "section": "Some insights from sequencing genomes",
+    "text": "Some insights from sequencing genomes"
   },
   {
     "objectID": "demos.html",
