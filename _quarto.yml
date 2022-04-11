@@ -10,7 +10,7 @@ book:
   date: "2022-04-11"
   search: true
   repo-url: https://camilogarciabotero.github.io/biocomp-book/
-  downloads: [pdf, epub]
+  downloads: [pdf]
   sharing: [twitter]
   sidebar:
     style: floating
