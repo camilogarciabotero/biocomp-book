@@ -1,13 +1,13 @@
 # Challenges demos
 
-## Genome searching (Ch. 01)
+## Genome searching
 
 In this chapter we will use several tools to download a genome from the command line. We will identify some features
 
 ### Downloading a genome {.unnumbered}
 
 ```bash
-ncbi-genome-download 
+ncbi-genome-download
 ```
 
 ### Downloading from NCBI {.unnumbered}
@@ -85,14 +85,22 @@ all_features %>%
 #| echo: true
 #| eval: false
 #| message: false
-all_features_grouped <- all_features %>% #create a new dataset that will group by features per accsession
-  rename(feature = `# feature`) %>% # get read of the weird name of the column
-  select(assembly, feature) %>% # Select these two columns
-  group_by(assembly, feature) %>% # Group by these two columns to perform operations
-  count() %>% # count the numbers of rows based on the applied group
-  pivot_wider(names_from = feature, values_from = n) %>% # generate a wide dataset sending row names as columns
-  arrange(desc(CDS)) # Arrange descending by the number of CDSs
+all_features_grouped <- all_features %>% 
+  rename(feature = `# feature`) %>% 
+  select(assembly, feature) %>% 
+  group_by(assembly, feature) %>%  operations
+  count() %>% 
+  pivot_wider(names_from = feature, values_from = n) %>% 
+  arrange(desc(CDS))
     
 all_features_grouped %>% 
   head()
 ```
+
+create a new dataset that will group by features per accsession
+get read of the weird name of the column
+Select these two columns
+Group by these two columns to perform
+count the numbers of rows based on the applied group
+generate a wide dataset sending row names as columns
+Arrange descending by the number of CDSs
