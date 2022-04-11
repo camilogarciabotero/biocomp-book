@@ -19,6 +19,7 @@ book:
     - welcome-to-command-line.qmd
     - sequence-analysis.qmd
     - summary.qmd
+    - demos.qmd
     - references.qmd
 
 bibliography: references.bib

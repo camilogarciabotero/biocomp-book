@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-0.9.228">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Fundamentals of computational biology - 3&nbsp; sequence-analysis</title>
+<title>Fundamentals of computational biology - 5&nbsp; Demostrations of chapter challenges</title>
 <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -77,8 +77,8 @@
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
 <script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><script src="site_libs/clipboard/clipboard.min.js"></script><meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./summary.html" rel="next">
-<link href="./welcome-to-command-line.html" rel="prev">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./references.html" rel="next">
+<link href="./summary.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
@@ -109,7 +109,7 @@
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title">
-<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">sequence-analysis</span>
+<span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Demostrations of chapter challenges</span>
 </h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
@@ -165,7 +165,7 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sequence-analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">sequence-analysis</span></a>
+  <a href="./sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">sequence-analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -175,7 +175,7 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Demostrations of chapter challenges</span></a>
+  <a href="./demos.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Demostrations of chapter challenges</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -188,59 +188,70 @@
 </nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a href="#downloading-a-genome" id="toc-downloading-a-genome" class="nav-link active" data-scroll-target="#downloading-a-genome"> <span class="header-section-number">3.1</span> Downloading a genome</a></li>
-<li><a href="#downloading-from-ncbi" id="toc-downloading-from-ncbi" class="nav-link" data-scroll-target="#downloading-from-ncbi"> <span class="header-section-number">3.2</span> Downloading from NCBI</a></li>
-<li><a href="#listing-files" id="toc-listing-files" class="nav-link" data-scroll-target="#listing-files"> <span class="header-section-number">3.3</span> Listing files</a></li>
 <li>
-<a href="#decompressing-using-gzip" id="toc-decompressing-using-gzip" class="nav-link" data-scroll-target="#decompressing-using-gzip"> <span class="header-section-number">3.4</span> Decompressing using <code>gzip</code></a>
+<a href="#genome-searching-ch.-01" id="toc-genome-searching-ch.-01" class="nav-link active" data-scroll-target="#genome-searching-ch.-01"> <span class="header-section-number">5.1</span> Genome searching (Ch. 01)</a>
 <ul class="collapse">
-<li><a href="#some-files-in-our-data-dir" id="toc-some-files-in-our-data-dir" class="nav-link" data-scroll-target="#some-files-in-our-data-dir"> <span class="header-section-number">3.4.1</span> Some files in our data dir</a></li>
+<li><a href="#downloading-a-genome" id="toc-downloading-a-genome" class="nav-link" data-scroll-target="#downloading-a-genome"> <span class="header-section-number">5.1.1</span> Downloading a genome</a></li>
+<li><a href="#downloading-from-ncbi" id="toc-downloading-from-ncbi" class="nav-link" data-scroll-target="#downloading-from-ncbi"> <span class="header-section-number">5.1.2</span> Downloading from NCBI</a></li>
+<li><a href="#listing-files" id="toc-listing-files" class="nav-link" data-scroll-target="#listing-files"> <span class="header-section-number">5.1.3</span> Listing files</a></li>
+<li><a href="#decompressing-using-gzip" id="toc-decompressing-using-gzip" class="nav-link" data-scroll-target="#decompressing-using-gzip"> <span class="header-section-number">5.1.4</span> Decompressing using <code>gzip</code></a></li>
+<li><a href="#importing-the-files-into-r" id="toc-importing-the-files-into-r" class="nav-link" data-scroll-target="#importing-the-files-into-r"> <span class="header-section-number">5.1.5</span> Importing the files into R</a></li>
+<li><a href="#data-processing" id="toc-data-processing" class="nav-link" data-scroll-target="#data-processing"> <span class="header-section-number">5.1.6</span> Data processing</a></li>
 </ul>
 </li>
-<li><a href="#importing-the-files-into-r" id="toc-importing-the-files-into-r" class="nav-link" data-scroll-target="#importing-the-files-into-r"> <span class="header-section-number">3.5</span> Importing the files into R</a></li>
-<li><a href="#data-processing" id="toc-data-processing" class="nav-link" data-scroll-target="#data-processing"> <span class="header-section-number">3.6</span> Data processing</a></li>
 </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title"><h1 class="title d-none d-lg-block display-7">
-<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">sequence-analysis</span>
-</h1></div></header><p>In this chapter we will use several tools to download a genome from the command line. We will identify some features</p>
-<section id="downloading-a-genome" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="downloading-a-genome">
-<span class="header-section-number">3.1</span> Downloading a genome</h2>
+<span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Demostrations of chapter challenges</span>
+</h1></div></header><section id="genome-searching-ch.-01" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="genome-searching-ch.-01">
+<span class="header-section-number">5.1</span> Genome searching (Ch. 01)</h2>
+<p>In this chapter we will use several tools to download a genome from the command line. We will identify some features</p>
+<section id="downloading-a-genome" class="level3" data-number="5.1.1"><h3 data-number="5.1.1" class="anchored" data-anchor-id="downloading-a-genome">
+<span class="header-section-number">5.1.1</span> Downloading a genome</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncbi-genome-download</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="downloading-from-ncbi" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="downloading-from-ncbi">
-<span class="header-section-number">3.2</span> Downloading from NCBI</h2>
+</section><section id="downloading-from-ncbi" class="level3" data-number="5.1.2"><h3 data-number="5.1.2" class="anchored" data-anchor-id="downloading-from-ncbi">
+<span class="header-section-number">5.1.2</span> Downloading from NCBI</h3>
 <p>The first step in this journey is to download a bunch of sequences programatically. To do so, we will use the program <a href="https://github.com/kblin/ncbi-genome-download">ncbi-genome-download</a>.</p>
 <p>You could inspect all the options it provides, now we will set our command as the following:</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource zsh cell-code number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">ngd</span> <span class="at">--genera</span> <span class="st">"Bacillus subtilis"</span><span class="dt">\</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>    <span class="at">-s</span> refseq<span class="dt">\</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>    <span class="at">-l</span> complete<span class="dt">\</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>    <span class="at">-o</span> Data<span class="dt">\</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>    <span class="at">--flat-output</span><span class="dt">\</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>    <span class="at">--format</span> features<span class="dt">\</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>    <span class="at">-n</span> bacteria<span class="dt">\</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>    <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode zsh cell-code code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ngd</span> <span class="at">--genera</span> <span class="st">"Bacillus subtilis"</span><span class="dt">\</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">-s</span> refseq<span class="dt">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">-l</span> complete<span class="dt">\</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">-o</span> Data<span class="dt">\</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">--flat-output</span><span class="dt">\</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">--format</span> features<span class="dt">\</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">-n</span> bacteria<span class="dt">\</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>Considering the following 193 assemblies for download:</code></pre>
+<pre><code>Considering the following 193 assemblies for download:
+GCF_000772125.1 Bacillus subtilis   ATCC 13952
+GCF_000772165.1 Bacillus subtilis   ATCC 19217
+GCF_000772205.1 Bacillus subtilis   Bs-916
+GCF_000782835.1 Bacillus subtilis   SG6
+GCF_000789295.1 Bacillus subtilis   PS832
+GCF_000952895.1 Bacillus subtilis   BS34A
+GCF_000953615.1 Bacillus subtilis   BS49
+GCF_001015095.1 Bacillus subtilis   UD1022
+GCF_001037985.1 Bacillus subtilis   TO-A JPC</code></pre>
 </div>
 </div>
-</section><section id="listing-files" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="listing-files">
-<span class="header-section-number">3.3</span> Listing files</h2>
+</section><section id="listing-files" class="level3" data-number="5.1.3"><h3 data-number="5.1.3" class="anchored" data-anchor-id="listing-files">
+<span class="header-section-number">5.1.3</span> Listing files</h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> Data <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="decompressing-using-gzip" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="decompressing-using-gzip">
-<span class="header-section-number">3.4</span> Decompressing using <code>gzip</code>
-</h2>
+</section><section id="decompressing-using-gzip" class="level3" data-number="5.1.4"><h3 data-number="5.1.4" class="anchored" data-anchor-id="decompressing-using-gzip">
+<span class="header-section-number">5.1.4</span> Decompressing using <code>gzip</code>
+</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> <span class="at">-d</span> <span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="incremental">
-<section id="some-files-in-our-data-dir" class="level3" data-number="3.4.1"><h3 data-number="3.4.1" class="anchored" data-anchor-id="some-files-in-our-data-dir">
-<span class="header-section-number">3.4.1</span> Some files in our data dir</h3>
+<section id="some-files-in-our-data-dir" class="level4" data-number="5.1.4.1"><h4 data-number="5.1.4.1" class="anchored" data-anchor-id="some-files-in-our-data-dir">
+<span class="header-section-number">5.1.4.1</span> Some files in our data dir</h4>
 <div class="sourceCode" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> Data <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </div>
-</section><section id="importing-the-files-into-r" class="level2" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="importing-the-files-into-r">
-<span class="header-section-number">3.5</span> Importing the files into R</h2>
+</section><section id="importing-the-files-into-r" class="level3" data-number="5.1.5"><h3 data-number="5.1.5" class="anchored" data-anchor-id="importing-the-files-into-r">
+<span class="header-section-number">5.1.5</span> Importing the files into R</h3>
 <div class="cell" data-warclass-warning="false" data-warattr-warning="false">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://fs.r-lib.org">fs</a></span><span class="op">)</span>
@@ -252,7 +263,7 @@
   <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="incremental">
-<div class="cell" data-hash="sequence-analysis_cache/html/file-reading-exe_aac6a6d974974fff0bc79a90b671219d">
+<div class="cell" data-hash="demos_cache/html/file-reading-exe_f8add747a95734607c278679337a429e">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stderr">
 <pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
@@ -280,8 +291,8 @@
 </div>
 </div>
 </div>
-</section><section id="data-processing" class="level2" data-number="3.6"><h2 data-number="3.6" class="anchored" data-anchor-id="data-processing">
-<span class="header-section-number">3.6</span> Data processing</h2>
+</section><section id="data-processing" class="level3" data-number="5.1.6"><h3 data-number="5.1.6" class="anchored" data-anchor-id="data-processing">
+<span class="header-section-number">5.1.6</span> Data processing</h3>
 <div class="cell">
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">all_features_grouped</span> <span class="op">&lt;-</span> <span class="va">all_features</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="co">#create a new dataset that will group by features per accsession</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>feature <span class="op">=</span> <span class="va">`# feature`</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="co"># get read of the weird name of the column</span>
@@ -297,7 +308,7 @@
 
 
 
-</section></main><!-- /main --><script type="application/javascript">
+</section></section></main><!-- /main --><script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";
   const anchorJS = new window.AnchorJS();
@@ -373,13 +384,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./welcome-to-command-line.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Welcome the the command line</span></span>
+      <a href="./summary.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
