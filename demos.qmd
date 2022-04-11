@@ -4,13 +4,13 @@
 
 In this chapter we will use several tools to download a genome from the command line. We will identify some features
 
-### Downloading a genome
+### Downloading a genome {.unnumbered}
 
 ```bash
 ncbi-genome-download 
 ```
 
-### Downloading from NCBI
+### Downloading from NCBI {.unnumbered}
 
 The first step in this journey is to download a bunch of sequences programatically. To do so, we will use the program [ncbi-genome-download](https://github.com/kblin/ncbi-genome-download).
 
@@ -29,13 +29,13 @@ ngd --genera "Bacillus subtilis"\
     | head -n 10
 ```
 
-### Listing files
+### Listing files {.unnumbered}
 
 ``` zsh
 ls Data | head -n 10
 ```
 
-### Decompressing using `gzip`
+### Decompressing using `gzip` {.unnumbered}
 
 ``` zsh
 gzip -d *
@@ -43,13 +43,13 @@ gzip -d *
 
 . . .
 
-#### Some files in our data dir
+#### Some files in our data dir {.unnumbered}
 
 ``` zsh
 ls Data | head
 ```
 
-### Importing the files into R
+### Importing the files into R {.unnumbered}
 
 ```{r}
 #| label: file-reading
@@ -78,7 +78,7 @@ all_features %>%
 #| out.width : 50%
 ```
 
-### Data processing
+### Data processing {.unnumbered}
 
 ```{r}
 #| label: data-processing
