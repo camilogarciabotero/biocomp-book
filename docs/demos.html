@@ -199,22 +199,6 @@
 <li><a href="#data-processing" id="toc-data-processing" class="nav-link" data-scroll-target="#data-processing">Data processing</a></li>
 </ul>
 </li>
-<li>
-<a href="#challenges-demos" id="toc-challenges-demos" class="nav-link" data-scroll-target="#challenges-demos"> <span class="header-section-number">6</span> Challenges demos</a>
-<ul class="collapse">
-<li>
-<a href="#genome-searching-1" id="toc-genome-searching-1" class="nav-link" data-scroll-target="#genome-searching-1"> <span class="header-section-number">6.1</span> Genome searching</a>
-<ul class="collapse">
-<li><a href="#downloading-a-genome-1" id="toc-downloading-a-genome-1" class="nav-link" data-scroll-target="#downloading-a-genome-1">Downloading a genome</a></li>
-<li><a href="#downloading-from-ncbi-1" id="toc-downloading-from-ncbi-1" class="nav-link" data-scroll-target="#downloading-from-ncbi-1">Downloading from NCBI</a></li>
-<li><a href="#listing-files-1" id="toc-listing-files-1" class="nav-link" data-scroll-target="#listing-files-1">Listing files</a></li>
-<li><a href="#decompressing-using-gzip-1" id="toc-decompressing-using-gzip-1" class="nav-link" data-scroll-target="#decompressing-using-gzip-1">Decompressing using <code>gzip</code></a></li>
-<li><a href="#importing-the-files-into-r-1" id="toc-importing-the-files-into-r-1" class="nav-link" data-scroll-target="#importing-the-files-into-r-1">Importing the files into R</a></li>
-<li><a href="#data-processing-1" id="toc-data-processing-1" class="nav-link" data-scroll-target="#data-processing-1">Data processing</a></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul></nav>
     </div>
 <!-- main -->
@@ -304,78 +288,7 @@ GCF_001037985.1 Bacillus subtilis   TO-A JPC</code></pre>
 
 
 
-</section></section><section id="challenges-demos" class="level1" data-number="6"><h1 data-number="6">
-<span class="header-section-number">6</span> Challenges demos</h1>
-<section id="genome-searching-1" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="genome-searching-1">
-<span class="header-section-number">6.1</span> Genome searching</h2>
-<p>In this chapter we will use several tools to download a genome from the command line. We will identify some features</p>
-<section id="downloading-a-genome-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="downloading-a-genome-1">Downloading a genome</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncbi-genome-download</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="downloading-from-ncbi-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="downloading-from-ncbi-1">Downloading from NCBI</h3>
-<p>The first step in this journey is to download a bunch of sequences programatically. To do so, we will use the program <a href="https://github.com/kblin/ncbi-genome-download">ncbi-genome-download</a>.</p>
-<p>You could inspect all the options it provides, now we will set our command as the following:</p>
-<pre class="{zsh}"><code>#| echo: true
-#| eval: true
-ngd --genera "Bacillus subtilis"\
-    -s refseq\
-    -l complete\
-    -o Data\
-    --flat-output\
-    --format features\
-    -n bacteria\
-    | head -n 10</code></pre>
-</section><section id="listing-files-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="listing-files-1">Listing files</h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> Data <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="decompressing-using-gzip-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="decompressing-using-gzip-1">Decompressing using <code>gzip</code>
-</h3>
-<div class="sourceCode" id="cb14"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> <span class="at">-d</span> <span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="incremental">
-<section id="some-files-in-our-data-dir-1" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="some-files-in-our-data-dir-1">Some files in our data dir</h4>
-<div class="sourceCode" id="cb15"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> Data <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</div>
-</section><section id="importing-the-files-into-r-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="importing-the-files-into-r-1">Importing the files into R</h3>
-<pre class="{r}"><code><a href="https://tidyverse.tidyverse.org">#| label: file-reading
-#| echo: true
-#| eval: false
-#| message: false
-#| warclass-warning: false
-#| warattr-warning: false
-library(tidyverse)
-library(fs)
-
-all_features &lt;- dir_ls("Data/") %&gt;% 
-  map_df(read_tsv)
-
-all_features %&gt;% 
-  head()</a></code></pre>
-<div class="incremental">
-<pre class="{r}"><code>#| label: file-reading-exe
-#| ref.label: file-reading
-#| eval: true
-#| cache: true
-#| warclass-warning: false
-#| message: false
-#| warattr-warning: false
-#| out.width : 50%</code></pre>
-</div>
-</section><section id="data-processing-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="data-processing-1">Data processing</h3>
-<pre class="{r}"><code>#| label: data-processing
-#| echo: true
-#| eval: false
-#| message: false
-all_features_grouped &lt;- all_features %&gt;% 
-  rename(feature = `# feature`) %&gt;% 
-  select(assembly, feature) %&gt;% 
-  group_by(assembly, feature) %&gt;%  operations
-  count() %&gt;% 
-  pivot_wider(names_from = feature, values_from = n) %&gt;% 
-  arrange(desc(CDS))
-    
-all_features_grouped %&gt;% 
-  head()</code></pre>
-<p>create a new dataset that will group by features per accession. get read of the weird name of the column. Select these two columns. Group by these two columns to perform. count the numbers of rows based on the applied group. generate a wide dataset sending row names as columns. Arrange descending by the number of CDSs.</p>
-</section></section></section></main><!-- /main --><script type="application/javascript">
+</section></section></main><!-- /main --><script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";
   const anchorJS = new window.AnchorJS();
