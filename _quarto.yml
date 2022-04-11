@@ -15,10 +15,15 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - welcome-to-command-line.qmd
-    - sequence-analysis.qmd
-    - sanger-analysis.qmd
-    - demos.qmd
+    - part: unix.qmd
+      chapters:
+        - welcome-to-command-line.qmd
+    - part: sequence-analysis.qmd
+      chapters:
+        - sanger-analysis.qmd
+    - part: demos.qmd
+      chapters:
+        - genome-searching.qmd
     - references.qmd
 
 bibliography: references.bib
