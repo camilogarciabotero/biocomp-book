@@ -37,3 +37,4 @@ format:
   pdf:
     documentclass: scrreprt
     code-block-border-left: false
+    toc-depth: 2
