@@ -14,6 +14,13 @@
     "text": "See Knuth (1984) for additional discussion of literate programming.\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
   },
   {
+    "objectID": "welcome-to-command-line.html",
+    "href": "welcome-to-command-line.html",
+    "title": "2  Welcome the the command line",
+    "section": "",
+    "text": "In this chapter we will explore the fundamentals of the command line. That is the concepts of Unix based systems the command line (CLI) and how we can use it to acess information programaticaly."
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",

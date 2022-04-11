@@ -16,6 +16,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - welcome-to-command-line.qmd
     - summary.qmd
     - references.qmd
 
