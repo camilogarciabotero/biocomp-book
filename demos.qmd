@@ -75,6 +75,9 @@ all_features %>%
 #| ref.label: file-reading
 #| eval: true
 #| cache: true
+#| warclass-warning: false
+#| message: false
+#| warattr-warning: false
 #| out.width : 50%
 ```
 
