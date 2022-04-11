@@ -21,13 +21,6 @@
     "text": "In this chapter we will explore the fundamentals of the command line. That is the concepts of Unix based systems the command line (CLI) and how we can use it to acess information programaticaly."
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
-  },
-  {
     "objectID": "sequence-analysis.html",
     "href": "sequence-analysis.html",
     "title": "\n3  sequence-analysis\n",
@@ -75,5 +68,12 @@
     "title": "\n3  sequence-analysis\n",
     "section": "\n3.6 Data processing",
     "text": "3.6 Data processing\n\nall_features_grouped <- all_features %>% #create a new dataset that will group by features per accsession\n  rename(feature = `# feature`) %>% # get read of the weird name of the column\n  select(assembly, feature) %>% # Select these two columns\n  group_by(assembly, feature) %>% # Group by these two columns to perform operations\n  count() %>% # count the numbers of rows based on the applied group\n  pivot_wider(names_from = feature, values_from = n) %>% # generate a wide dataset sending row names as columns\n  arrange(desc(CDS)) # Arrange descending by the number of CDSs\n    \nall_features_grouped %>% \n  head()"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
   }
 ]
