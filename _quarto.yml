@@ -24,6 +24,8 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    code-link: true
+    code-copy: true
   pdf:
     documentclass: scrreprt
 
