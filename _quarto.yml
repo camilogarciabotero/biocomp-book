@@ -1,8 +1,9 @@
 project:
   type: book
+  output-dir: docs
 
 book:
-  title: "biocomp-book"
+  title: "Fundamentals of computational biology"
   author: "Jane Doe"
   date: "4/11/2022"
   chapters:
