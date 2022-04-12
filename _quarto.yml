@@ -1,7 +1,7 @@
 project:
   type: book
   output-dir: docs
-  callout-appearance: simple
+  callout-appearance: minimal
 
 book:
   title: "Fundamentals of computational biology"
