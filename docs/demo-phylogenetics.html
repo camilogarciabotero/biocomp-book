@@ -219,18 +219,18 @@
 </nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a href="#sequence-alignment-cytb" id="toc-sequence-alignment-cytb" class="nav-link active" data-scroll-target="#sequence-alignment-cytb"> <span class="header-section-number">7.1</span> Sequence alignment <em>cytb</em></a></li>
-<li><a href="#evolutionary-substitution-model" id="toc-evolutionary-substitution-model" class="nav-link" data-scroll-target="#evolutionary-substitution-model"> <span class="header-section-number">7.2</span> Evolutionary substitution model</a></li>
+<li><a href="#sequence-alignment-cytb" id="toc-sequence-alignment-cytb" class="nav-link active" data-scroll-target="#sequence-alignment-cytb">Sequence alignment <em>cytb</em></a></li>
+<li><a href="#evolutionary-substitution-model" id="toc-evolutionary-substitution-model" class="nav-link" data-scroll-target="#evolutionary-substitution-model">Evolutionary substitution model</a></li>
 <li>
-<a href="#maximum-likelihood-reconstruction" id="toc-maximum-likelihood-reconstruction" class="nav-link" data-scroll-target="#maximum-likelihood-reconstruction"> <span class="header-section-number">7.3</span> Maximum likelihood reconstruction</a>
+<a href="#maximum-likelihood-reconstruction" id="toc-maximum-likelihood-reconstruction" class="nav-link" data-scroll-target="#maximum-likelihood-reconstruction">Maximum likelihood reconstruction</a>
 <ul class="collapse">
-<li><a href="#tree-building" id="toc-tree-building" class="nav-link" data-scroll-target="#tree-building"> <span class="header-section-number">7.3.1</span> Tree building</a></li>
+<li><a href="#tree-building" id="toc-tree-building" class="nav-link" data-scroll-target="#tree-building">Tree building</a></li>
 </ul>
 </li>
 <li>
-<a href="#bayes-inference-reconstruction" id="toc-bayes-inference-reconstruction" class="nav-link" data-scroll-target="#bayes-inference-reconstruction"> <span class="header-section-number">7.4</span> Bayes inference reconstruction</a>
+<a href="#bayes-inference-reconstruction" id="toc-bayes-inference-reconstruction" class="nav-link" data-scroll-target="#bayes-inference-reconstruction">Bayes inference reconstruction</a>
 <ul class="collapse">
-<li><a href="#tree-building-1" id="toc-tree-building-1" class="nav-link" data-scroll-target="#tree-building-1"> <span class="header-section-number">7.4.1</span> Tree building</a></li>
+<li><a href="#tree-building-1" id="toc-tree-building-1" class="nav-link" data-scroll-target="#tree-building-1">Tree building</a></li>
 </ul>
 </li>
 </ul></nav>
@@ -239,19 +239,15 @@
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title"><h1 class="title d-none d-lg-block display-7">
 <span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Phylogenetics reconstruction</span>
-</h1></div></header><section id="sequence-alignment-cytb" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="sequence-alignment-cytb">
-<span class="header-section-number">7.1</span> Sequence alignment <em>cytb</em>
+</h1></div></header><section id="sequence-alignment-cytb" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sequence-alignment-cytb">Sequence alignment <em>cytb</em>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">linsi</span> <span class="at">--preservecase</span> <span class="at">--reorder</span> cytB.fasta <span class="op">&gt;</span> cytB-aligned.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="evolutionary-substitution-model" class="level2" data-number="7.2"><h2 data-number="7.2" class="anchored" data-anchor-id="evolutionary-substitution-model">
-<span class="header-section-number">7.2</span> Evolutionary substitution model</h2>
+</section><section id="evolutionary-substitution-model" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="evolutionary-substitution-model">Evolutionary substitution model</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">modeltest-ng</span> <span class="at">-i</span> cytB-aligned.fasta <span class="at">-d</span> nt <span class="at">-o</span> model-cytB.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre class="zhs"><code>04-demo-phylogenetics/model-cytB.txt.log</code></pre>
-</section><section id="maximum-likelihood-reconstruction" class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="maximum-likelihood-reconstruction">
-<span class="header-section-number">7.3</span> Maximum likelihood reconstruction</h2>
+</section><section id="maximum-likelihood-reconstruction" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="maximum-likelihood-reconstruction">Maximum likelihood reconstruction</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">raxml-ng</span> <span class="at">--msa</span> cytB-aligned.fasta <span class="at">--model</span> GTR+I+G4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="tree-building" class="level3" data-number="7.3.1"><h3 data-number="7.3.1" class="anchored" data-anchor-id="tree-building">
-<span class="header-section-number">7.3.1</span> Tree building</h3>
+<section id="tree-building" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="tree-building">Tree building</h3>
 <div class="cell">
 
 </div>
@@ -268,10 +264,8 @@
     <span class="fu">theme_tree</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.8</span>, <span class="fl">0.7</span><span class="op">)</span><span class="op">)</span> 
 <span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section></section><section id="bayes-inference-reconstruction" class="level2" data-number="7.4"><h2 data-number="7.4" class="anchored" data-anchor-id="bayes-inference-reconstruction">
-<span class="header-section-number">7.4</span> Bayes inference reconstruction</h2>
-<section id="tree-building-1" class="level3" data-number="7.4.1"><h3 data-number="7.4.1" class="anchored" data-anchor-id="tree-building-1">
-<span class="header-section-number">7.4.1</span> Tree building</h3>
+</section></section><section id="bayes-inference-reconstruction" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="bayes-inference-reconstruction">Bayes inference reconstruction</h2>
+<section id="tree-building-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="tree-building-1">Tree building</h3>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span> <span class="at">-n</span> 18 ../Data/cytB-mb.nex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mb</span> <span class="at">-i</span> ../../Data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sumtrees.py</span> <span class="at">-s</span> mcct <span class="at">-o</span><span class="op">=</span>cytB-mb-mcct.tre cytB-aligned.fasta-out.nex.run1.t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

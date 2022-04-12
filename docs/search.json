@@ -206,21 +206,21 @@
     "objectID": "demo-phylogenetics.html#evolutionary-substitution-model",
     "href": "demo-phylogenetics.html#evolutionary-substitution-model",
     "title": "\n7  Phylogenetics reconstruction\n",
-    "section": "\n7.2 Evolutionary substitution model",
-    "text": "7.2 Evolutionary substitution model\nmodeltest-ng -i cytB-aligned.fasta -d nt -o model-cytB.txt\n04-demo-phylogenetics/model-cytB.txt.log"
+    "section": "Evolutionary substitution model",
+    "text": "Evolutionary substitution model\nmodeltest-ng -i cytB-aligned.fasta -d nt -o model-cytB.txt\n04-demo-phylogenetics/model-cytB.txt.log"
   },
   {
     "objectID": "demo-phylogenetics.html#maximum-likelihood-reconstruction",
     "href": "demo-phylogenetics.html#maximum-likelihood-reconstruction",
     "title": "\n7  Phylogenetics reconstruction\n",
-    "section": "\n7.3 Maximum likelihood reconstruction",
-    "text": "7.3 Maximum likelihood reconstruction\nraxml-ng --msa cytB-aligned.fasta --model GTR+I+G4\n\n7.3.1 Tree building\n\n\n\n\nraxml_data <- read.tree(\"cytB-aligned.fasta.raxml.support\")\n\nraxml_data$tip.label <- str_replace_all(raxml_data$tip.label, \"_\", \" \")\n\n(\n  raxml_tree <- ggtree(raxml_data) +\n    geom_tiplab() +\n    # geom_point2(aes(subset = !isTip, fill = as.integer(label)), shape = 24, size = 3) +\n    geom_text(aes(label = as.integer(label))) +\n    theme_tree(legend.position = c(0.8, 0.7)) \n)"
+    "section": "Maximum likelihood reconstruction",
+    "text": "Maximum likelihood reconstruction\nraxml-ng --msa cytB-aligned.fasta --model GTR+I+G4\nTree building\n\n\n\n\nraxml_data <- read.tree(\"cytB-aligned.fasta.raxml.support\")\n\nraxml_data$tip.label <- str_replace_all(raxml_data$tip.label, \"_\", \" \")\n\n(\n  raxml_tree <- ggtree(raxml_data) +\n    geom_tiplab() +\n    # geom_point2(aes(subset = !isTip, fill = as.integer(label)), shape = 24, size = 3) +\n    geom_text(aes(label = as.integer(label))) +\n    theme_tree(legend.position = c(0.8, 0.7)) \n)"
   },
   {
     "objectID": "demo-phylogenetics.html#bayes-inference-reconstruction",
     "href": "demo-phylogenetics.html#bayes-inference-reconstruction",
     "title": "\n7  Phylogenetics reconstruction\n",
-    "section": "\n7.4 Bayes inference reconstruction",
-    "text": "7.4 Bayes inference reconstruction\n\n7.4.1 Tree building\ntail -n 18 ../Data/cytB-mb.nex\nmb -i ../../Data\nsumtrees.py -s mcct -o=cytB-mb-mcct.tre cytB-aligned.fasta-out.nex.run1.t"
+    "section": "Bayes inference reconstruction",
+    "text": "Bayes inference reconstruction\nTree building\ntail -n 18 ../Data/cytB-mb.nex\nmb -i ../../Data\nsumtrees.py -s mcct -o=cytB-mb-mcct.tre cytB-aligned.fasta-out.nex.run1.t"
   }
 ]

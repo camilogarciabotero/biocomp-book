@@ -1,12 +1,12 @@
 # Phylogenetics reconstruction
 
-## Sequence alignment *cytb*
+## Sequence alignment *cytb* {.unnumbered}
 
 ```zsh
 linsi --preservecase --reorder cytB.fasta > cytB-aligned.fasta
 ```
 
-## Evolutionary substitution model
+## Evolutionary substitution model {.unnumbered}
 
 ```zsh
 modeltest-ng -i cytB-aligned.fasta -d nt -o model-cytB.txt
@@ -16,13 +16,13 @@ modeltest-ng -i cytB-aligned.fasta -d nt -o model-cytB.txt
 04-demo-phylogenetics/model-cytB.txt.log
 ```
 
-## Maximum likelihood reconstruction
+## Maximum likelihood reconstruction {.unnumbered}
 
 ```bash
 raxml-ng --msa cytB-aligned.fasta --model GTR+I+G4
 ```
 
-### Tree building
+### Tree building {.unnumbered}
 
 ```{r}
 #| echo: false
@@ -51,9 +51,9 @@ raxml_data$tip.label <- str_replace_all(raxml_data$tip.label, "_", " ")
 )
 ```
 
-## Bayes inference reconstruction
+## Bayes inference reconstruction {.unnumbered}
 
-### Tree building
+### Tree building {.unnumbered}
 
 ```bash
 tail -n 18 ../Data/cytB-mb.nex
