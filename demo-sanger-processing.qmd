@@ -1,6 +1,6 @@
 # Sanger processing
 
-## Procesing a single `.ab1` pair 
+## Procesing a single `.ab1` pair {.unnumbered}
 
 ```{r}
 #| label: single-sanger-processing
@@ -26,7 +26,7 @@ generateReport(groEL)
 qualityBasePlot(groEL)
 ```
 
-## Processing a bulk of `.ab1` files
+## Processing a bulk of `.ab1` files {.unnumbered}
 
 ```{r}
 #| label: bulk-sanger-processing

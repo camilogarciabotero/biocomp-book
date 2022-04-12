@@ -38,7 +38,7 @@ After finding the genes we could exclude some lines using `sed` avoid the "--" c
 
 ## Renaming fasta headers {.unnumbered}
 
-A simple but powerful script to do this is `bit-dedup-fasta-heades` it was developed by [AstrobioMike (Mike Lee)](https://github.com/AstrobioMike)and it simply parses the headers and substitutes by a simple encoder found en each of them:
+A simple but powerful script to do this is `bit-dedup-fasta-heades` it was developed by [AstrobioMike (Mike Lee)](https://github.com/AstrobioMike) and it simply parses the headers and substitutes by a simple encoder found en each of them:
 
 ```bash
 python bit-dedupe-fasta-headers.py -i all_gyrA.fasta -o all_gyrA_renamed.fasta
@@ -102,7 +102,7 @@ makeblastdb -in all_genomes.fasta -parse_seqids -blastdb_version 5 -title "demo"
 blastn -db all_genomes.fasta -query gyrA.fasta -outfmt "6 sseqid sseq" -word_size 5 -evalue 1e-50 -num_threads 8 | sed -E "s/gb|emb/>/g" | sed -E "s/\t/\n/" > all_gyrA.fasta
 ```
 
-## The alternative using the GCF
+## The alternative using the GCF {.unnumbered}
 
 
 ```bash

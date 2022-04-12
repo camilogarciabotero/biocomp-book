@@ -240,7 +240,7 @@
 <li><a href="#sequence-alignment" id="toc-sequence-alignment" class="nav-link" data-scroll-target="#sequence-alignment">Sequence alignment</a></li>
 <li><a href="#assesment-of-the-alignment" id="toc-assesment-of-the-alignment" class="nav-link" data-scroll-target="#assesment-of-the-alignment">Assesment of the alignment</a></li>
 <li><a href="#an-alternative-approach-using-blast" id="toc-an-alternative-approach-using-blast" class="nav-link" data-scroll-target="#an-alternative-approach-using-blast">An alternative approach using BLAST</a></li>
-<li><a href="#the-alternative-using-the-gcf" id="toc-the-alternative-using-the-gcf" class="nav-link" data-scroll-target="#the-alternative-using-the-gcf"> <span class="header-section-number">6.1</span> The alternative using the GCF</a></li>
+<li><a href="#the-alternative-using-the-gcf" id="toc-the-alternative-using-the-gcf" class="nav-link" data-scroll-target="#the-alternative-using-the-gcf">The alternative using the GCF</a></li>
 </ul>
 </nav>
     </div>
@@ -277,7 +277,7 @@
 </section>
 <section id="renaming-fasta-headers" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="renaming-fasta-headers">Renaming fasta headers</h2>
-<p>A simple but powerful script to do this is <code>bit-dedup-fasta-heades</code> it was developed by <a href="https://github.com/AstrobioMike">AstrobioMike (Mike Lee)</a>and it simply parses the headers and substitutes by a simple encoder found en each of them:</p>
+<p>A simple but powerful script to do this is <code>bit-dedup-fasta-heades</code> it was developed by <a href="https://github.com/AstrobioMike">AstrobioMike (Mike Lee)</a> and it simply parses the headers and substitutes by a simple encoder found en each of them:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> bit-dedupe-fasta-headers.py <span class="at">-i</span> all_gyrA.fasta <span class="at">-o</span> all_gyrA_renamed.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now the the files has files names that are simply to work with. Which will enable to asses better out sequence alignment matrix.</p>
 </section>
@@ -324,8 +324,8 @@
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="ex">blastn</span> <span class="at">-db</span> all_genomes.fasta <span class="at">-query</span> gyrA.fasta <span class="at">-outfmt</span> <span class="st">"6 sseqid sseq"</span> <span class="at">-word_size</span> 5 <span class="at">-evalue</span> 1e-50 <span class="at">-num_threads</span> 8 <span class="kw">|</span> <span class="fu">sed</span> <span class="at">-E</span> <span class="st">"s/gb|emb/&gt;/g"</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="at">-E</span> <span class="st">"s/\t/\n/"</span> <span class="op">&gt;</span> all_gyrA.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="the-alternative-using-the-gcf" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="the-alternative-using-the-gcf"><span class="header-section-number">6.1</span> The alternative using the GCF</h2>
+<section id="the-alternative-using-the-gcf" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="the-alternative-using-the-gcf">The alternative using the GCF</h2>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="pp">*</span>fna<span class="kw">;</span> <span class="cf">do</span><span class="kw">;</span> <span class="ex">goalign</span> subset <span class="at">-e</span> <span class="st">"gyrA"</span> <span class="at">-i</span> <span class="va">${i}</span> <span class="at">--unaligned</span><span class="kw">;</span><span class="cf">done</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">"&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 

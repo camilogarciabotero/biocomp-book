@@ -136,8 +136,8 @@
     "objectID": "demo-sanger-processing.html#processing-a-bulk-of-.ab1-files",
     "href": "demo-sanger-processing.html#processing-a-bulk-of-.ab1-files",
     "title": "\n5  Sanger processing\n",
-    "section": "\n5.2 Processing a bulk of .ab1 files",
-    "text": "5.2 Processing a bulk of .ab1 files\n\nlibrary(fs)\nlibrary(purrr)\n\ndirs <- fs::dir_ls(\"~/Projects/Bacillus/Data/Sanger/Inter\")\n\nsanger_bulk <- function(dir) {\n  SangerAlignment(\n    ABIF_Directory = dir,\n    REGEX_SuffixForward = \"_1_F.ab1\",\n    REGEX_SuffixReverse = \"_2_R.ab1\"\n  )\n}\n\ngenes <- dirs %>% \n  map(sanger_bulk)\n\nlaunchApp(genes$`/Users/camilogarcia/Projects/Bacillus/Data/Sanger/Inter/gyrA`)\n\nwriteFasta(\n  outputDir = \"~/Documents/Teaching/BiologyCourses/BI0487/Demos/02-demo-sangeranalysis\",\n  selection = \"contigs_unalignment\"\n)"
+    "section": "Processing a bulk of .ab1 files",
+    "text": "Processing a bulk of .ab1 files\n\nlibrary(fs)\nlibrary(purrr)\n\ndirs <- fs::dir_ls(\"~/Projects/Bacillus/Data/Sanger/Inter\")\n\nsanger_bulk <- function(dir) {\n  SangerAlignment(\n    ABIF_Directory = dir,\n    REGEX_SuffixForward = \"_1_F.ab1\",\n    REGEX_SuffixReverse = \"_2_R.ab1\"\n  )\n}\n\ngenes <- dirs %>% \n  map(sanger_bulk)\n\nlaunchApp(genes$`/Users/camilogarcia/Projects/Bacillus/Data/Sanger/Inter/gyrA`)\n\nwriteFasta(\n  outputDir = \"~/Documents/Teaching/BiologyCourses/BI0487/Demos/02-demo-sangeranalysis\",\n  selection = \"contigs_unalignment\"\n)"
   },
   {
     "objectID": "demo-sequence-alignment.html",
@@ -165,7 +165,7 @@
     "href": "demo-sequence-alignment.html#renaming-fasta-headers",
     "title": "6  Sequence alignment demo",
     "section": "Renaming fasta headers",
-    "text": "Renaming fasta headers\nA simple but powerful script to do this is bit-dedup-fasta-heades it was developed by AstrobioMike (Mike Lee)and it simply parses the headers and substitutes by a simple encoder found en each of them:\npython bit-dedupe-fasta-headers.py -i all_gyrA.fasta -o all_gyrA_renamed.fasta\nNow the the files has files names that are simply to work with. Which will enable to asses better out sequence alignment matrix."
+    "text": "Renaming fasta headers\nA simple but powerful script to do this is bit-dedup-fasta-heades it was developed by AstrobioMike (Mike Lee) and it simply parses the headers and substitutes by a simple encoder found en each of them:\npython bit-dedupe-fasta-headers.py -i all_gyrA.fasta -o all_gyrA_renamed.fasta\nNow the the files has files names that are simply to work with. Which will enable to asses better out sequence alignment matrix."
   },
   {
     "objectID": "demo-sequence-alignment.html#sequence-alignment",
@@ -192,7 +192,7 @@
     "objectID": "demo-sequence-alignment.html#the-alternative-using-the-gcf",
     "href": "demo-sequence-alignment.html#the-alternative-using-the-gcf",
     "title": "6  Sequence alignment demo",
-    "section": "6.1 The alternative using the GCF",
-    "text": "6.1 The alternative using the GCF\nfor i in *fna; do; goalign subset -e \"gyrA\" -i ${i} --unaligned;done | grep \">\""
+    "section": "The alternative using the GCF",
+    "text": "The alternative using the GCF\nfor i in *fna; do; goalign subset -e \"gyrA\" -i ${i} --unaligned;done | grep \">\""
   }
 ]
