@@ -25,8 +25,9 @@ book:
         - 03-sanger-analysis.qmd
     - part: "Challenges demostrations"
       chapters:
-        - genome-searching.qmd
-        - sanger-processing.qmd
+        - demo-genome-searching.qmd
+        - demo-sanger-processing.qmd
+        - demo-sequence-alignment.qmd
     - references.qmd
 
 bibliography: references.bib
