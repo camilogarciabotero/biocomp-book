@@ -6,10 +6,6 @@ book:
   title: "Fundamentals of computational biology"
   subtitle: "Lecture notes"
   author: "Camilo García-Botero"
-  description: | 
-    This book is a compilation of the lectures offered to the course of Fundamentals of Computational
-    Biology during the first half of 2022. It is intended to accompany the presentations of the course
-    and to display some demostration of several challenges presented.
   date: "2022-04-11"
   search: true
   repo-url: https://github.com/camilogarciabotero/biocomp-book
