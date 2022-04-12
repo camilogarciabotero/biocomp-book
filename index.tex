@@ -138,22 +138,6 @@
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \KOMAoption{captions}{tableheading}
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
-\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
-\definecolor{quarto-callout-color}{HTML}{909090}
-\definecolor{quarto-callout-note-color}{HTML}{0758E5}
-\definecolor{quarto-callout-important-color}{HTML}{CC1914}
-\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
-\definecolor{quarto-callout-tip-color}{HTML}{00A047}
-\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
-\definecolor{quarto-callout-color-frame}{HTML}{acacac}
-\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
-\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
-\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
-\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
-\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
-\makeatother
-\makeatletter
 \makeatother
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
@@ -344,15 +328,18 @@ sequencing}
 \hypertarget{genome-searching}{%
 \chapter{Genome searching}\label{genome-searching}}
 
-\begin{tcolorbox}[standard jigsaw,opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, bottomtitle=1mm, bottomrule=.15mm, colback=white, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenge}, opacitybacktitle=0.6, toprule=.15mm, coltitle=black, rightrule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, colframe=quarto-callout-warning-color-frame]
+\begin{quote}
+\hypertarget{challenge}{%
+\section*{Challenge}\label{challenge}}
+\addcontentsline{toc}{section}{Challenge}
+
 Your profesor is interested on knowing how many complete genomes of
 Bacillus subtilis are there in the NCBI databases. He ask you later to
 count the number of features (genes, CDS, ncRNA, rRNA, etc.) in the
 genome of Bacillus subtilis NCIB 3610 (GCF\_002055965.1). And tell you
 to document each of the steps and how did you end up with the answer.
-Saving the file with your initials (e.g.,
-CG-activity01.\{md,txt,docx\})z
-\end{tcolorbox}
+Saving the file with your initials (e.g., CG-activity01.\{md,txt,docx\})
+\end{quote}
 
 \hypertarget{downloading-a-genome}{%
 \subsection*{Downloading a genome}\label{downloading-a-genome}}
@@ -522,7 +509,11 @@ Arrange descending by the number of CDSs.
 \hypertarget{sanger-processing}{%
 \chapter{Sanger processing}\label{sanger-processing}}
 
-\begin{tcolorbox}[standard jigsaw,opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, bottomtitle=1mm, bottomrule=.15mm, colback=white, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenge}, opacitybacktitle=0.6, toprule=.15mm, coltitle=black, rightrule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, colframe=quarto-callout-warning-color-frame]
+\begin{quote}
+\hypertarget{challenge-1}{%
+\section*{Challenge}\label{challenge-1}}
+\addcontentsline{toc}{section}{Challenge}
+
 Your professor gives you a couple of .ab1 files of a 16S rRNA gene from
 an old project a student conducted. She tells you to process and analyse
 them using the sanger sequence pipeline analyis. And as she doesn't know
@@ -530,7 +521,7 @@ from which species they belong, she ask you to identify the organism to
 whom it belongs by using the resulting consensus sequence. She finally
 reminds you to document each step of the process including the
 identification step.
-\end{tcolorbox}
+\end{quote}
 
 \hypertarget{procesing-a-single-.ab1-pair}{%
 \section*{\texorpdfstring{Procesing a single \texttt{.ab1}
@@ -596,7 +587,11 @@ files}{Processing a bulk of .ab1 files}}\label{processing-a-bulk-of-.ab1-files}}
 \hypertarget{sequence-alignment-demo}{%
 \chapter{Sequence alignment demo}\label{sequence-alignment-demo}}
 
-\begin{tcolorbox}[standard jigsaw,opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, bottomtitle=1mm, bottomrule=.15mm, colback=white, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenge}, opacitybacktitle=0.6, toprule=.15mm, coltitle=black, rightrule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, colframe=quarto-callout-warning-color-frame]
+\begin{quote}
+\hypertarget{challenge-2}{%
+\section*{Challenge}\label{challenge-2}}
+\addcontentsline{toc}{section}{Challenge}
+
 Your professor is working with species from genus Bacillus and want to
 align an orthologous gene from 10 genomes of different isolates. He
 gives you the GenBank accession number of these isolates and ask you to
@@ -606,11 +601,13 @@ those genes as you better consider. He finally ask you to document each
 step and send him the sequence alignment file in FASTA format along with
 the sequence alignment general stats in a TXT file (length, number of
 each nucletides and other stats you consider important).
+\end{quote}
 
+\begin{quote}
 Accessions: GCA\_012225885.1, GCA\_000196735.1, GCA\_000742895.1,
 GCA\_001584335.1, GCA\_000007825.1, GCA\_000832905.1, GCA\_000008425.1,
 GCA\_000507105.1, GCA\_000832605.1, GCA\_900186955.1
-\end{tcolorbox}
+\end{quote}
 
 \hypertarget{download-sequences}{%
 \section*{Download sequences}\label{download-sequences}}
@@ -807,7 +804,11 @@ GCF}\label{the-alternative-using-the-gcf}}
 \chapter{Phylogenetic
 reconstruction}\label{phylogenetic-reconstruction}}
 
-\begin{tcolorbox}[standard jigsaw,opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, bottomtitle=1mm, bottomrule=.15mm, colback=white, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenge}, opacitybacktitle=0.6, toprule=.15mm, coltitle=black, rightrule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, colframe=quarto-callout-warning-color-frame]
+\begin{quote}
+\hypertarget{challenge-3}{%
+\section*{Challenge}\label{challenge-3}}
+\addcontentsline{toc}{section}{Challenge}
+
 Your professor has been working with some mammal species and want to
 know the relationships of some sampled individuals. To do so he
 extracted the DNA and amplified the mitochondrial CYTB gene of those
@@ -815,7 +816,7 @@ individuals. He gives a folder with multiple sequences and ask you to
 align them and to reconstruct two trees one using maximum likelihood
 (ML) and other using a Bayesian inference (BI). Then ask you to explain
 if both trees are congruent with each other.
-\end{tcolorbox}
+\end{quote}
 
 \hypertarget{sequence-alignment-cytb}{%
 \section*{\texorpdfstring{Sequence alignment
@@ -906,7 +907,11 @@ reconstruction}\label{bayes-inference-reconstruction}}
 \hypertarget{sequence-reads-assesment}{%
 \chapter{Sequence reads assesment}\label{sequence-reads-assesment}}
 
-\begin{tcolorbox}[standard jigsaw,opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, bottomtitle=1mm, bottomrule=.15mm, colback=white, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenge}, opacitybacktitle=0.6, toprule=.15mm, coltitle=black, rightrule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, colframe=quarto-callout-warning-color-frame]
+\begin{quote}
+\hypertarget{challenge-4}{%
+\section*{Challenge}\label{challenge-4}}
+\addcontentsline{toc}{section}{Challenge}
+
 Your professor challenges you to assembly a bacterial genome. He wants
 to know if an assembly using Illumina reads or Nanopore reads is better.
 The raw sequences for Illumina could be downloaded with the code
@@ -915,7 +920,7 @@ https://sra-explorer.info. Choose at least on set and follow the
 instruction from the lecture to assemble the genome. Document each step
 and send to the professor the \texttt{assembly-\{your-initials\}.fasta}.
 You could form groups of max. 4 students.
-\end{tcolorbox}
+\end{quote}
 
 \hypertarget{general-stats-from-fastq-files}{%
 \section*{General stats from fastq
@@ -949,7 +954,10 @@ reads
 \hypertarget{genome-assembly}{%
 \chapter{Genome assembly}\label{genome-assembly}}
 
-\begin{tcolorbox}[standard jigsaw,opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, bottomtitle=1mm, bottomrule=.15mm, colback=white, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenge}, opacitybacktitle=0.6, toprule=.15mm, coltitle=black, rightrule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, colframe=quarto-callout-warning-color-frame]
+\begin{quote}
+\hypertarget{challenge-5}{%
+\section{Challenge}\label{challenge-5}}
+
 Your professor has sequenced a bacterial isolate using PacBio and
 Nanopore sequencing methods and has got the FASTQ files from both
 technologies. Now he needs to know the quality and quantity of these
@@ -958,10 +966,10 @@ needs to know how many sequences there are, how many base pairs (in GB)
 are there and the N50. He is also interested in see a visualization of
 the i) number of bases vs.~sequence lengths (log transformed) and ii)
 the read length vs.~read quality vs.~read number.
+\end{quote}
 
 He ask you to document every step and to conclude what data should be
 used.
-\end{tcolorbox}
 
 \hypertarget{download-the-reads}{%
 \section*{Download the reads}\label{download-the-reads}}
