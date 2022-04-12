@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.228">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Fundamentals of computational biology - 2&nbsp; Sanger analysis</title>
+  <title>Fundamentals of computational biology - 3&nbsp; Sanger analysis</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -59,7 +59,7 @@
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sanger analysis</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sanger analysis</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -122,12 +122,12 @@
     <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link">Introduction to sequence analysis</a>
+  <a href="./02-introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-sanger-analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sanger analysis</span></a>
+  <a href="./03-sanger-analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sanger analysis</span></a>
   </div>
 </li>
     </ul>
@@ -142,7 +142,7 @@
     <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./genome-searching.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Genome searching</span></a>
+  <a href="./genome-searching.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Genome searching</span></a>
   </div>
 </li>
     </ul>
@@ -157,17 +157,56 @@
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#databases-exploration" id="toc-databases-exploration" class="nav-link active" data-scroll-target="#databases-exploration">Databases exploration</a></li>
+<li><a href="#sanger-sequencing-methods" id="toc-sanger-sequencing-methods" class="nav-link" data-scroll-target="#sanger-sequencing-methods">Sanger sequencing methods</a>
+<ul class="collapse">
+<li><a href="#the-chain-termination-method" id="toc-the-chain-termination-method" class="nav-link" data-scroll-target="#the-chain-termination-method">The chain termination method</a></li>
+<li><a href="#sanger-with-capillary-electrophoresis" id="toc-sanger-with-capillary-electrophoresis" class="nav-link" data-scroll-target="#sanger-with-capillary-electrophoresis">Sanger with capillary electrophoresis</a></li>
+<li><a href="#strengths-and-limitations-of-sanger-methods" id="toc-strengths-and-limitations-of-sanger-methods" class="nav-link" data-scroll-target="#strengths-and-limitations-of-sanger-methods">Strengths and limitations of Sanger methods</a></li>
+</ul></li>
+<li><a href="#files-from-sanger" id="toc-files-from-sanger" class="nav-link" data-scroll-target="#files-from-sanger">Files from Sanger</a></li>
+<li><a href="#sanger-processing-workflow" id="toc-sanger-processing-workflow" class="nav-link" data-scroll-target="#sanger-processing-workflow">Sanger processing workflow</a></li>
+<li><a href="#the-16s-rrna-and-its-relevance-for-sequencing" id="toc-the-16s-rrna-and-its-relevance-for-sequencing" class="nav-link" data-scroll-target="#the-16s-rrna-and-its-relevance-for-sequencing">The 16S rRNA and its relevance for sequencing</a></li>
+</ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <header id="title-block-header" class="quarto-title-block default">
 
-<div class="quarto-title"><h1 class="title d-none d-lg-block display-7"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sanger analysis</span></h1></div></header>
+<div class="quarto-title"><h1 class="title d-none d-lg-block display-7"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sanger analysis</span></h1></div></header>
+
 <p>This is a section about the first gen sequencing tech</p>
+<section id="databases-exploration" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="databases-exploration">Databases exploration</h2>
+</section>
+<section id="sanger-sequencing-methods" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sanger-sequencing-methods">Sanger sequencing methods</h2>
+<section id="the-chain-termination-method" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-chain-termination-method">The chain termination method</h3>
+</section>
+<section id="sanger-with-capillary-electrophoresis" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sanger-with-capillary-electrophoresis">Sanger with capillary electrophoresis</h3>
+</section>
+<section id="strengths-and-limitations-of-sanger-methods" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="strengths-and-limitations-of-sanger-methods">Strengths and limitations of Sanger methods</h3>
+</section>
+</section>
+<section id="files-from-sanger" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="files-from-sanger">Files from Sanger</h2>
+</section>
+<section id="sanger-processing-workflow" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sanger-processing-workflow">Sanger processing workflow</h2>
+</section>
+<section id="the-16s-rrna-and-its-relevance-for-sequencing" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="the-16s-rrna-and-its-relevance-for-sequencing">The 16S rRNA and its relevance for sequencing</h2>
 
 
 
+</section>
 </main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -248,7 +287,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./02-introduction-to-sequence-analysis.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction to sequence analysis</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
