@@ -1,0 +1,69 @@
+# Phylogenetics reconstruction
+
+## Sequence alignment *cytb*
+
+```zsh
+linsi --preservecase --reorder cytB.fasta > cytB-aligned.fasta
+```
+
+## Evolutionary substitution model
+
+```zsh
+modeltest-ng -i cytB-aligned.fasta -d nt -o model-cytB.txt
+```
+
+```zhs
+04-demo-phylogenetics/model-cytB.txt.log
+```
+
+## Maximum likelihood reconstruction
+
+```bash
+raxml-ng --msa cytB-aligned.fasta --model GTR+I+G4
+```
+
+### Tree building
+
+```{r}
+#| echo: false
+#| message: false
+library(ggplot2)
+library(dplyr)
+library(stringr)
+library(ape)
+library(ggtree)
+```
+
+```{r}
+#| fig-height: 5
+#| fig-align: center
+#| eval: false
+raxml_data <- read.tree("cytB-aligned.fasta.raxml.support")
+
+raxml_data$tip.label <- str_replace_all(raxml_data$tip.label, "_", " ")
+
+(
+  raxml_tree <- ggtree(raxml_data) +
+    geom_tiplab() +
+    # geom_point2(aes(subset = !isTip, fill = as.integer(label)), shape = 24, size = 3) +
+    geom_text(aes(label = as.integer(label))) +
+    theme_tree(legend.position = c(0.8, 0.7)) 
+)
+```
+
+## Bayes inference reconstruction
+
+### Tree building
+
+```bash
+tail -n 18 ../Data/cytB-mb.nex
+```
+
+```bash
+mb -i ../../Data
+```
+
+```bash
+sumtrees.py -s mcct -o=cytB-mb-mcct.tre cytB-aligned.fasta-out.nex.run1.t
+```
+
