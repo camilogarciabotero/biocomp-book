@@ -1,4 +1,4 @@
-# Phylogenetics reconstruction
+# Phylogenetic reconstruction
 
 ::: {.callout-warning}
 ## Challenge
