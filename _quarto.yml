@@ -16,14 +16,14 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - part: unix.qmd
+    - part: "Unix"
       chapters:
         - 01-welcome-to-command-line.qmd
-    - part: sequence-analysis.qmd
+    - part: "Sequence analysis"
       chapters:
         - 02-introduction-to-sequence-analysis.qmd
         - 03-sanger-analysis.qmd
-    - part: demos.qmd
+    - part: "Challenges demostrations"
       chapters:
         - genome-searching.qmd
         - sanger-processing.qmd
