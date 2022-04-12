@@ -1,0 +1,17 @@
+# Sequence reads assesment
+
+## General stats from fastq files {.unnumbered}
+
+A simple but fast cli to display the general stats from fastq is `seqfu`
+```zsh
+seqfu stats –n *.gz
+```
+
+## A graphical assessment of reads {.unnumbered}
+
+Often its important to assess reads graphically and `nanoplot` offers a complete graphical summary (and general stats as well) of the reads
+
+```zsh
+nanoplot –-fastq reads.fastq.gz –-output reads-report
+```
+
