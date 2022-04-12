@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.228">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Fundamentals of computational biology - 1&nbsp; Welcome to the command line</title>
+  <title>Fundamentals of computational biology - 6&nbsp; NGS and TGS: principles</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -20,8 +20,8 @@
   <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
-  <link href="./02-introduction-to-sequence-analysis.html" rel="next">
-  <link href="./intro.html" rel="prev">
+  <link href="./07-genome-assembly-annotation.html" rel="next">
+  <link href="./05-phylogenetic-reconstructions.html" rel="prev">
   <script src="site_libs/quarto-html/quarto.js"></script>
   <script src="site_libs/quarto-html/popper.min.js"></script>
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -59,7 +59,7 @@
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the command line</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -107,7 +107,7 @@
     <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-welcome-to-command-line.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the command line</span></a>
+  <a href="./01-welcome-to-command-line.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the command line</span></a>
   </div>
 </li>
     </ul>
@@ -142,7 +142,7 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-NGS-TGS-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
+  <a href="./06-NGS-TGS-principles.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -207,17 +207,71 @@
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#platforms-yields" id="toc-platforms-yields" class="nav-link active" data-scroll-target="#platforms-yields">Platforms yields</a></li>
+<li><a href="#reads-main-differences" id="toc-reads-main-differences" class="nav-link" data-scroll-target="#reads-main-differences">Reads main differences</a></li>
+<li><a href="#illumina-principle-sequencing-by-synthesis" id="toc-illumina-principle-sequencing-by-synthesis" class="nav-link" data-scroll-target="#illumina-principle-sequencing-by-synthesis">Illumina principle (sequencing by synthesis)</a>
+<ul class="collapse">
+<li><a href="#the-fastq-format" id="toc-the-fastq-format" class="nav-link" data-scroll-target="#the-fastq-format">The fastq format</a></li>
+<li><a href="#quality-assesment-of-illumina" id="toc-quality-assesment-of-illumina" class="nav-link" data-scroll-target="#quality-assesment-of-illumina">Quality assesment of Illumina</a></li>
+</ul></li>
+<li><a href="#pacbio-principle-sequencing-by-incorporation" id="toc-pacbio-principle-sequencing-by-incorporation" class="nav-link" data-scroll-target="#pacbio-principle-sequencing-by-incorporation">PacBio principle (sequencing by incorporation)</a>
+<ul class="collapse">
+<li><a href="#throughput-evolution" id="toc-throughput-evolution" class="nav-link" data-scroll-target="#throughput-evolution">Throughput evolution</a></li>
+<li><a href="#quality-assesment-of-pacbio" id="toc-quality-assesment-of-pacbio" class="nav-link" data-scroll-target="#quality-assesment-of-pacbio">Quality assesment of PacBio</a></li>
+</ul></li>
+<li><a href="#oxford-nanopore-technology-ont-principle" id="toc-oxford-nanopore-technology-ont-principle" class="nav-link" data-scroll-target="#oxford-nanopore-technology-ont-principle">Oxford Nanopore Technology (ONT) principle</a>
+<ul class="collapse">
+<li><a href="#platforms" id="toc-platforms" class="nav-link" data-scroll-target="#platforms">Platforms</a></li>
+<li><a href="#the-fast5-file-format" id="toc-the-fast5-file-format" class="nav-link" data-scroll-target="#the-fast5-file-format">The fast5 file format</a></li>
+</ul></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/06-NGS-TGS-principles.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <header id="title-block-header" class="quarto-title-block default">
 
-<div class="quarto-title"><h1 class="title d-none d-lg-block display-7"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the command line</span></h1></div></header>
-<p>In this chapter we will explore the fundamentals of the command line. That is the concepts of Unix based systems the command line (CLI) and how we can use it to access information programmatically.</p>
+<div class="quarto-title"><h1 class="title d-none d-lg-block display-7"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></h1></div></header>
+
+<section id="platforms-yields" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="platforms-yields">Platforms yields</h2>
+</section>
+<section id="reads-main-differences" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="reads-main-differences">Reads main differences</h2>
+</section>
+<section id="illumina-principle-sequencing-by-synthesis" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="illumina-principle-sequencing-by-synthesis">Illumina principle (sequencing by synthesis)</h2>
+<section id="the-fastq-format" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-fastq-format">The fastq format</h3>
+</section>
+<section id="quality-assesment-of-illumina" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="quality-assesment-of-illumina">Quality assesment of Illumina</h3>
+</section>
+</section>
+<section id="pacbio-principle-sequencing-by-incorporation" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="pacbio-principle-sequencing-by-incorporation">PacBio principle (sequencing by incorporation)</h2>
+<section id="throughput-evolution" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="throughput-evolution">Throughput evolution</h3>
+</section>
+<section id="quality-assesment-of-pacbio" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="quality-assesment-of-pacbio">Quality assesment of PacBio</h3>
+</section>
+</section>
+<section id="oxford-nanopore-technology-ont-principle" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="oxford-nanopore-technology-ont-principle">Oxford Nanopore Technology (ONT) principle</h2>
+<section id="platforms" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="platforms">Platforms</h3>
+</section>
+<section id="the-fast5-file-format" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-fast5-file-format">The fast5 file format</h3>
 
 
 
+</section>
+</section>
 </main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -297,13 +351,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="./05-phylogenetic-reconstructions.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">phylogenetic reconstructions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-introduction-to-sequence-analysis.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./07-genome-assembly-annotation.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Genome assembly</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

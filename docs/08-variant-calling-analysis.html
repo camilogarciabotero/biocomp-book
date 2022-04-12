@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.228">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Fundamentals of computational biology - 1&nbsp; Welcome to the command line</title>
+  <title>Fundamentals of computational biology - 8&nbsp; Variant calling analysis</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -20,8 +20,8 @@
   <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
-  <link href="./02-introduction-to-sequence-analysis.html" rel="next">
-  <link href="./intro.html" rel="prev">
+  <link href="./demo-genome-searching.html" rel="next">
+  <link href="./07-genome-assembly-annotation.html" rel="prev">
   <script src="site_libs/quarto-html/quarto.js"></script>
   <script src="site_libs/quarto-html/popper.min.js"></script>
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -59,7 +59,7 @@
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the command line</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -107,7 +107,7 @@
     <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-welcome-to-command-line.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the command line</span></a>
+  <a href="./01-welcome-to-command-line.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the command line</span></a>
   </div>
 </li>
     </ul>
@@ -152,7 +152,7 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
+  <a href="./08-variant-calling-analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
   </div>
 </li>
     </ul>
@@ -207,17 +207,69 @@
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#common-mutations" id="toc-common-mutations" class="nav-link active" data-scroll-target="#common-mutations">Common mutations</a></li>
+<li><a href="#structural-variants" id="toc-structural-variants" class="nav-link" data-scroll-target="#structural-variants">Structural variants</a></li>
+<li><a href="#genome-rearrengments" id="toc-genome-rearrengments" class="nav-link" data-scroll-target="#genome-rearrengments">Genome rearrengments</a></li>
+<li><a href="#read-mapping-algorithms-and-programs" id="toc-read-mapping-algorithms-and-programs" class="nav-link" data-scroll-target="#read-mapping-algorithms-and-programs">Read mapping algorithms and programs</a>
+<ul class="collapse">
+<li><a href="#burrow-wheeler-alignment" id="toc-burrow-wheeler-alignment" class="nav-link" data-scroll-target="#burrow-wheeler-alignment">Burrow-Wheeler-Alignment</a></li>
+<li><a href="#bwa-mem2" id="toc-bwa-mem2" class="nav-link" data-scroll-target="#bwa-mem2">BWA-MEM2</a></li>
+<li><a href="#minimap2" id="toc-minimap2" class="nav-link" data-scroll-target="#minimap2">Minimap2</a></li>
+<li><a href="#sam-bam-and-cram-formats" id="toc-sam-bam-and-cram-formats" class="nav-link" data-scroll-target="#sam-bam-and-cram-formats">SAM, BAM and CRAM formats</a></li>
+</ul></li>
+<li><a href="#identifying-mutations" id="toc-identifying-mutations" class="nav-link" data-scroll-target="#identifying-mutations">Identifying mutations</a>
+<ul class="collapse">
+<li><a href="#freebayes-and-snippy" id="toc-freebayes-and-snippy" class="nav-link" data-scroll-target="#freebayes-and-snippy">Freebayes and Snippy</a></li>
+<li><a href="#the-vcf-file" id="toc-the-vcf-file" class="nav-link" data-scroll-target="#the-vcf-file">The VCF file</a></li>
+</ul></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/08-variant-calling-analysis.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <header id="title-block-header" class="quarto-title-block default">
 
-<div class="quarto-title"><h1 class="title d-none d-lg-block display-7"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the command line</span></h1></div></header>
-<p>In this chapter we will explore the fundamentals of the command line. That is the concepts of Unix based systems the command line (CLI) and how we can use it to access information programmatically.</p>
+<div class="quarto-title"><h1 class="title d-none d-lg-block display-7"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></h1></div></header>
+
+<section id="common-mutations" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="common-mutations">Common mutations</h2>
+</section>
+<section id="structural-variants" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="structural-variants">Structural variants</h2>
+</section>
+<section id="genome-rearrengments" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="genome-rearrengments">Genome rearrengments</h2>
+</section>
+<section id="read-mapping-algorithms-and-programs" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="read-mapping-algorithms-and-programs">Read mapping algorithms and programs</h2>
+<section id="burrow-wheeler-alignment" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="burrow-wheeler-alignment">Burrow-Wheeler-Alignment</h3>
+</section>
+<section id="bwa-mem2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="bwa-mem2">BWA-MEM2</h3>
+</section>
+<section id="minimap2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="minimap2">Minimap2</h3>
+</section>
+<section id="sam-bam-and-cram-formats" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sam-bam-and-cram-formats">SAM, BAM and CRAM formats</h3>
+</section>
+</section>
+<section id="identifying-mutations" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="identifying-mutations">Identifying mutations</h2>
+<section id="freebayes-and-snippy" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="freebayes-and-snippy">Freebayes and Snippy</h3>
+</section>
+<section id="the-vcf-file" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-vcf-file">The VCF file</h3>
 
 
 
+</section>
+</section>
 </main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -297,13 +349,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="./07-genome-assembly-annotation.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Genome assembly</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-introduction-to-sequence-analysis.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./demo-genome-searching.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Genome searching</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.228">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Fundamentals of computational biology - 1&nbsp; Welcome to the command line</title>
+  <title>Fundamentals of computational biology - 4&nbsp; Sequence alignments</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -20,8 +20,8 @@
   <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
-  <link href="./02-introduction-to-sequence-analysis.html" rel="next">
-  <link href="./intro.html" rel="prev">
+  <link href="./05-phylogenetic-reconstructions.html" rel="next">
+  <link href="./03-sanger-analysis.html" rel="prev">
   <script src="site_libs/quarto-html/quarto.js"></script>
   <script src="site_libs/quarto-html/popper.min.js"></script>
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -59,7 +59,7 @@
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the command line</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequence alignments</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -107,7 +107,7 @@
     <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-welcome-to-command-line.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the command line</span></a>
+  <a href="./01-welcome-to-command-line.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the command line</span></a>
   </div>
 </li>
     </ul>
@@ -132,7 +132,7 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-sequence-alignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequence alignments</span></a>
+  <a href="./04-sequence-alignments.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequence alignments</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -207,17 +207,67 @@
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#why-do-we-align-sequences" id="toc-why-do-we-align-sequences" class="nav-link active" data-scroll-target="#why-do-we-align-sequences">Why do we align sequences?</a></li>
+<li><a href="#what-is-homology" id="toc-what-is-homology" class="nav-link" data-scroll-target="#what-is-homology">What is homology</a></li>
+<li><a href="#pairwise-alignments-algorihtms" id="toc-pairwise-alignments-algorihtms" class="nav-link" data-scroll-target="#pairwise-alignments-algorihtms">Pairwise alignments algorihtms</a>
+<ul class="collapse">
+<li><a href="#hamming-distance" id="toc-hamming-distance" class="nav-link" data-scroll-target="#hamming-distance">Hamming distance</a></li>
+<li><a href="#edit-distance" id="toc-edit-distance" class="nav-link" data-scroll-target="#edit-distance">Edit distance</a></li>
+<li><a href="#needleman-wunsch-global-alignment" id="toc-needleman-wunsch-global-alignment" class="nav-link" data-scroll-target="#needleman-wunsch-global-alignment">Needleman-Wunsch (global alignment)</a></li>
+<li><a href="#smith-waterman-local-alignment" id="toc-smith-waterman-local-alignment" class="nav-link" data-scroll-target="#smith-waterman-local-alignment">Smith-Waterman (local alignment)</a></li>
+</ul></li>
+<li><a href="#the-genetic-code-and-scoring-matrices" id="toc-the-genetic-code-and-scoring-matrices" class="nav-link" data-scroll-target="#the-genetic-code-and-scoring-matrices">The genetic code and Scoring matrices</a></li>
+<li><a href="#blast-and-its-families" id="toc-blast-and-its-families" class="nav-link" data-scroll-target="#blast-and-its-families">BLAST and its families</a></li>
+<li><a href="#multiple-sequence-alignments" id="toc-multiple-sequence-alignments" class="nav-link" data-scroll-target="#multiple-sequence-alignments">Multiple sequence alignments</a></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/04-sequence-alignments.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <header id="title-block-header" class="quarto-title-block default">
 
-<div class="quarto-title"><h1 class="title d-none d-lg-block display-7"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to the command line</span></h1></div></header>
-<p>In this chapter we will explore the fundamentals of the command line. That is the concepts of Unix based systems the command line (CLI) and how we can use it to access information programmatically.</p>
+<div class="quarto-title"><h1 class="title d-none d-lg-block display-7"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequence alignments</span></h1></div></header>
+
+<section id="why-do-we-align-sequences" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="why-do-we-align-sequences">Why do we align sequences?</h2>
+<p>In search of homology and identy</p>
+</section>
+<section id="what-is-homology" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="what-is-homology">What is homology</h2>
+</section>
+<section id="pairwise-alignments-algorihtms" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="pairwise-alignments-algorihtms">Pairwise alignments algorihtms</h2>
+<section id="hamming-distance" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="hamming-distance">Hamming distance</h3>
+</section>
+<section id="edit-distance" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="edit-distance">Edit distance</h3>
+<section id="dynamic-programming" class="level4" data-number="4.0.0.1">
+<h4 data-number="4.0.0.1" class="anchored" data-anchor-id="dynamic-programming"><span class="header-section-number">4.0.0.1</span> Dynamic programming</h4>
+</section>
+</section>
+<section id="needleman-wunsch-global-alignment" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="needleman-wunsch-global-alignment">Needleman-Wunsch (global alignment)</h3>
+</section>
+<section id="smith-waterman-local-alignment" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="smith-waterman-local-alignment">Smith-Waterman (local alignment)</h3>
+</section>
+</section>
+<section id="the-genetic-code-and-scoring-matrices" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="the-genetic-code-and-scoring-matrices">The genetic code and Scoring matrices</h2>
+</section>
+<section id="blast-and-its-families" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="blast-and-its-families">BLAST and its families</h2>
+</section>
+<section id="multiple-sequence-alignments" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="multiple-sequence-alignments">Multiple sequence alignments</h2>
 
 
 
+</section>
 </main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -297,13 +347,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="./03-sanger-analysis.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sanger analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-introduction-to-sequence-analysis.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05-phylogenetic-reconstructions.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">phylogenetic reconstructions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

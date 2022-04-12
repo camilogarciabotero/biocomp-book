@@ -25,6 +25,11 @@ book:
       chapters:
         - 02-introduction-to-sequence-analysis.qmd
         - 03-sanger-analysis.qmd
+        - 04-sequence-alignments.qmd
+        - 05-phylogenetic-reconstructions.qmd
+        - 06-NGS-TGS-principles.qmd
+        - 07-genome-assembly-annotation.qmd
+        - 08-variant-calling-analysis.qmd
     - part: "Challenges demostrations"
       chapters:
         - demo-genome-searching.qmd
