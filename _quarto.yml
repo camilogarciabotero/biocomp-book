@@ -39,4 +39,3 @@ format:
     documentclass: scrreprt
     code-block-border-left: false
     toc-depth: 2
-    highlight-style: github
