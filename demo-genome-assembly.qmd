@@ -1,0 +1,53 @@
+# Genome assembly
+
+## Download the reads {.unnumbered}
+
+``` {#downloading-seqs .zsh .important}
+wget
+```
+
+## Assess read qualities {.unnumbered}
+
+When using illumina `fastqc` is a very fast alternative. For nanopore `nanplot` will do the job.
+
+``` zsh
+fastqc
+```
+
+## Exploring assemblers {.unnumbered}
+
+One of the most popular genome assemblers for NGS is `spades` whereas for TGS `flye` has been widely used
+
+### Shovill: spades under the hood {.unnumbered}
+
+[`shovill`](https://github.com/tseemann/shovill) is a pipeline that enables pre and post processing of genomic data. It can be tunned to several tools for the processing steps and also to select different standalone assemblers
+
+``` zsh
+shovill --outdir MxanthusIllumina\
+        --R1 R1.fq.gz\
+        --R2 R2.fq.gz\
+        --trim\
+        --cpus 32
+```
+
+### Dragonflye: flye under the hood {.unnumbered}
+
+Similar to `shovill` (and inspired by it) [`dragonflye`]() is a pipeline that enables several processing steps of genomic data be
+
+``` zsh
+dragonflye --outdir MxanthusNanopore\
+           --gsize 9Mb\
+           --trim\
+           --reads ont-readsfastq.gz\
+           --racon 5
+```
+
+``` zsh
+wget
+```
+
+Since we are trying to assemble a bacterial genome, computer memory appears to be a limiting features of a local machine. Then, a computer cluster with high performance turns out to be an important need.
+
+First we need environment installations, therefore its important to have conda environments with the assemblers and other programs (`conda create -c bioconda dragonflye dragonflye` and `conda create -c bioconda shovill shovill`). That way both assemblers pipelines will lie in separate environment avoiding possible dependenies problems
+
+We will use [Apolo]() computer cluster which uses [Slurm]() as the computer system workload manager (i.e a program that manages the time and resources of the computer).
