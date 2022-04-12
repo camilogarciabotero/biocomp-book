@@ -10,6 +10,7 @@ book:
   search: true
   repo-url: https://github.com/camilogarciabotero/biocomp-book
   site-url: https://camilogarciabotero.github.io/biocomp-book/
+  repo-actions: [edit, issue]
   downloads: [pdf]
   sharing: [twitter]
   sidebar:
