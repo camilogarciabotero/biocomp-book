@@ -48,6 +48,6 @@ format:
     code-link: true
     code-copy: hover
   pdf:
-    documentclass: scrbook
+    documentclass: scrreprt
     code-block-border-left: false
     toc-depth: 2
