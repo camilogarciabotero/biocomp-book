@@ -1,6 +1,7 @@
 # Sequence reads assesment
 
 ::: {.callout-warning}
+## Challenge
 Your professor challenges you to assembly a bacterial genome.
 He wants to know if  an assembly using Illumina reads or Nanopore reads is better. The raw sequences for Illumina could be downloaded with the code SRR15634574. And the Nanopore raw reads with SRR15634573 here: https://sra-explorer.info. Choose at least on set and follow the instruction from the lecture to assemble the genome. Document each step and send to the professor the `assembly-{your-initials}.fasta`. You could form groups of max. 4 students.
 :::
