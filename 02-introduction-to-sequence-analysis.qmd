@@ -2,16 +2,16 @@
 
 In this chapter we will discuss several about several points of view about bioinformatics and computational biology and how to get started with the command line being a biologist, we will further consider several biological concepts that appear central to understand the manipulation of biological data.
 
-## Endless debate: bioinformatics vs. computational biology
+## Endless debate: bioinformatics vs. computational biology {.unnumbered}
 
-## Getting started with the command line
+## Getting started with the command line {.unnumbered}
 
-## The duality of DNA
+## The duality of DNA {.unnumbered}
 
-## The central ~dogma~ theory of molecular biology extended
+## The central ~~dogma~~ theory of molecular biology extended {.unnumbered}
 
-## Sequencing strategies
+## Sequencing strategies {.unnumbered}
 
-## Sequencing over time
+## Sequencing over time {.unnumbered}
 
-## Some insights from sequencing genomes
+## Some insights from sequencing genomes {.unnumbered}
