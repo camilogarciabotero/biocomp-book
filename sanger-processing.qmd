@@ -1,0 +1,57 @@
+# Sanger processing
+
+## Procesing a single `.ab1` pair 
+
+```{r}
+#| label: single-sanger-processing
+#| eval: false
+library(sangeranalyseR)
+
+groEL <- SangerAlignment(
+  ABIF_Directory = "~/Projects/Bacillus/Data/Sanger/Inter/groEL/",
+  REGEX_SuffixForward = "_1_F.ab1",
+  REGEX_SuffixReverse = "_2_R.ab1",
+  TrimmingMethod = "M2",
+  M2CutoffQualityScore = 33,
+  M2SlidingWindowSize = 10
+)
+
+writeFasta(groEL, 
+           outputDir = "~/Documents/Teaching/BiologyCourses/BI0487/Demos/02-demo-sangeranalysis",
+           selection = "contigs_unalignment",
+           )
+
+launchApp(groEL)
+generateReport(groEL)
+qualityBasePlot(groEL)
+```
+
+## Processing a bulk of `.ab1` files
+
+```{r}
+#| label: bulk-sanger-processing
+#| eval: false
+library(fs)
+library(purrr)
+
+dirs <- fs::dir_ls("~/Projects/Bacillus/Data/Sanger/Inter")
+
+sanger_bulk <- function(dir) {
+  SangerAlignment(
+    ABIF_Directory = dir,
+    REGEX_SuffixForward = "_1_F.ab1",
+    REGEX_SuffixReverse = "_2_R.ab1"
+  )
+}
+
+genes <- dirs %>% 
+  map(sanger_bulk)
+
+launchApp(genes$`/Users/camilogarcia/Projects/Bacillus/Data/Sanger/Inter/gyrA`)
+
+writeFasta(
+  outputDir = "~/Documents/Teaching/BiologyCourses/BI0487/Demos/02-demo-sangeranalysis",
+  selection = "contigs_unalignment"
+)
+
+```

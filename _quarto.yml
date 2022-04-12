@@ -26,6 +26,7 @@ book:
     - part: demos.qmd
       chapters:
         - genome-searching.qmd
+        - sanger-processing.qmd
     - references.qmd
 
 bibliography: references.bib
