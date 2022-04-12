@@ -51,4 +51,3 @@ format:
     documentclass: scrbook
     code-block-border-left: false
     toc-depth: 2
-    mainfont: Cambria
