@@ -30,6 +30,8 @@ book:
         - demo-sanger-processing.qmd
         - demo-sequence-alignment.qmd
         - demo-phylogenetics.qmd
+        - demo-reads-assessment.qmd
+        - demo-genome-assembly.qmd
     - references.qmd
 
 bibliography: references.bib

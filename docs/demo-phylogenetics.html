@@ -77,7 +77,7 @@
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
 <script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><script src="site_libs/clipboard/clipboard.min.js"></script><meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./references.html" rel="next">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./demo-reads-assessment.html" rel="next">
 <link href="./demo-sequence-alignment.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
@@ -207,6 +207,16 @@
   <a href="./demo-phylogenetics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Phylogenetics reconstruction</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./demo-reads-assessment.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sequence reads assesment</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./demo-genome-assembly.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  </div>
+</li>
     </ul>
 </li>
         <li class="sidebar-item">
@@ -239,7 +249,20 @@
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title"><h1 class="title d-none d-lg-block display-7">
 <span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Phylogenetics reconstruction</span>
-</h1></div></header><section id="sequence-alignment-cytb" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sequence-alignment-cytb">Sequence alignment <em>cytb</em>
+</h1></div></header><div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your professor has been working with some mammal species and want to know the relationships of some sampled individuals. To do so he extracted the DNA and amplified the mitochondrial CYTB gene of those individuals. He gives a folder with multiple sequences and ask you to align them and to reconstruct two trees one using maximum likelihood (ML) and other using a Bayesian inference (BI). Then ask you to explain if both trees are congruent with each other.</p>
+</div>
+</div>
+<section id="sequence-alignment-cytb" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sequence-alignment-cytb">Sequence alignment <em>cytb</em>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">linsi</span> <span class="at">--preservecase</span> <span class="at">--reorder</span> cytB.fasta <span class="op">&gt;</span> cytB-aligned.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="evolutionary-substitution-model" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="evolutionary-substitution-model">Evolutionary substitution model</h2>
@@ -353,8 +376,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./demo-reads-assessment.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sequence reads assesment</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

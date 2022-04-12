@@ -1,5 +1,11 @@
 # Genome assembly
 
+::: {.callout-warning}
+Your professor has sequenced a bacterial isolate using PacBio and Nanopore sequencing methods and has got the FASTQ files from both technologies. Now he needs to know the quality and quantity of these data before start any other analysis and ask you to assess the data. He needs to know how many sequences there are, how many base pairs (in GB) are there and the N50. He is also interested in see a visualization of the i) number of bases vs. sequence lengths (log transformed) and ii) the read length vs. read quality vs. read number.
+
+He ask you to document every step and to conclude what data should be used.
+:::
+
 ## Download the reads {.unnumbered}
 
 ``` {#downloading-seqs .zsh .important}

@@ -1,5 +1,9 @@
 # Phylogenetics reconstruction
 
+::: {.callout-warning}
+Your professor has been working with some mammal species and want to know the relationships of some sampled individuals. To do so he extracted the DNA and amplified the mitochondrial CYTB gene of those individuals. He gives a folder with multiple sequences and ask you to align them and to reconstruct two trees one using maximum likelihood (ML) and other using a Bayesian inference (BI). Then ask you to explain if both trees are congruent with each other.
+:::
+
 ## Sequence alignment *cytb* {.unnumbered}
 
 ```zsh

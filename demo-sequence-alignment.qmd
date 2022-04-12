@@ -1,5 +1,11 @@
 # Sequence alignment demo
 
+::: {.callout-warning}
+Your professor is working with species from genus  Bacillus and want to align an orthologous gene from 10 genomes of different isolates. He gives you the GenBank accession number of these isolates and ask you to select one orthologus gene (Nucleotide seq) that you consider might be useful to differentiate the bacterial isolates and ask you to align those genes as you better consider. He finally ask you to document each step and send him the sequence alignment file in FASTA format along with the sequence alignment general stats in a TXT file (length, number of each nucletides and other stats you consider important).
+
+Accessions: GCA_012225885.1, GCA_000196735.1, GCA_000742895.1, GCA_001584335.1, GCA_000007825.1, GCA_000832905.1, GCA_000008425.1, GCA_000507105.1, GCA_000832605.1, GCA_900186955.1
+:::
+
 ## Download sequences {.unnumbered}
 
 Make sure to use the `--flat-output`  avoiding download of multiple metadata
