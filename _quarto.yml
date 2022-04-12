@@ -41,9 +41,9 @@ format:
   html:
     theme: flatly
     code-link: true
-    code-copy: true
+    code-copy: hover
   pdf:
-    documentclass: scrreprt
+    documentclass: scrbook
     code-block-border-left: false
     toc-depth: 2
     mainfont: Cambria
