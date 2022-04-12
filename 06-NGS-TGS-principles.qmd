@@ -1,0 +1,28 @@
+# NGS and TGS: principles 
+
+## Platforms yields {.unnumbered}
+
+## Reads main differences {.unnumbered}
+
+## Illumina principle (sequencing by synthesis) {.unnumbered}
+
+### The fastq format {.unnumbered}
+
+### Quality assesment of Illumina {.unnumbered}
+
+## PacBio principle (sequencing by incorporation) {.unnumbered}
+
+### Throughput evolution {.unnumbered}
+
+### Quality assesment of PacBio {.unnumbered}
+
+## Oxford Nanopore Technology (ONT) principle {.unnumbered}
+
+### Platforms {.unnumbered}
+
+### The fast5 file format {.unnumbered}
+
+
+
+
+
