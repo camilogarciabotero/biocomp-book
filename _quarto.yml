@@ -18,11 +18,11 @@ book:
     - intro.qmd
     - part: unix.qmd
       chapters:
-        - welcome-to-command-line.qmd
+        - 01-welcome-to-command-line.qmd
     - part: sequence-analysis.qmd
       chapters:
-        - introduction-to-sequence-analysis.qmd
-        - sanger-analysis.qmd
+        - 02-introduction-to-sequence-analysis.qmd
+        - 03-sanger-analysis.qmd
     - part: demos.qmd
       chapters:
         - genome-searching.qmd

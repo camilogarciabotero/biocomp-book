@@ -2,46 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/index.html</loc>
-    <lastmod>2022-04-11T23:19:37.677Z</lastmod>
+    <lastmod>2022-04-11T23:55:31.577Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/intro.html</loc>
-    <lastmod>2022-04-11T23:19:37.678Z</lastmod>
+    <lastmod>2022-04-11T23:55:31.577Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/unix.html</loc>
-    <lastmod>2022-04-11T23:19:37.678Z</lastmod>
+    <lastmod>2022-04-11T23:55:31.578Z</lastmod>
   </url>
   <url>
-    <loc>https://camilogarciabotero.github.io/biocomp-book/welcome-to-command-line.html</loc>
-    <lastmod>2022-04-11T23:19:37.679Z</lastmod>
+    <loc>https://camilogarciabotero.github.io/biocomp-book/01-welcome-to-command-line.html</loc>
+    <lastmod>2022-04-11T23:55:31.578Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/sequence-analysis.html</loc>
-    <lastmod>2022-04-11T23:19:37.679Z</lastmod>
+    <lastmod>2022-04-11T23:55:31.579Z</lastmod>
   </url>
   <url>
-    <loc>https://camilogarciabotero.github.io/biocomp-book/introduction-to-sequence-analysis.html</loc>
-    <lastmod>2022-04-11T23:19:37.681Z</lastmod>
+    <loc>https://camilogarciabotero.github.io/biocomp-book/02-introduction-to-sequence-analysis.html</loc>
+    <lastmod>2022-04-11T23:55:31.580Z</lastmod>
   </url>
   <url>
-    <loc>https://camilogarciabotero.github.io/biocomp-book/sanger-analysis.html</loc>
-    <lastmod>2022-04-11T23:19:37.681Z</lastmod>
+    <loc>https://camilogarciabotero.github.io/biocomp-book/03-sanger-analysis.html</loc>
+    <lastmod>2022-04-11T23:55:31.581Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/demos.html</loc>
-    <lastmod>2022-04-11T23:19:37.682Z</lastmod>
+    <lastmod>2022-04-11T23:55:31.581Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/genome-searching.html</loc>
-    <lastmod>2022-04-11T23:19:37.684Z</lastmod>
+    <lastmod>2022-04-11T23:55:31.582Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/references.html</loc>
-    <lastmod>2022-04-11T23:19:37.684Z</lastmod>
+    <lastmod>2022-04-11T23:55:31.583Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/Fundamentals-of-computational-biology.pdf</loc>
-    <lastmod>2022-04-11T23:19:37.526Z</lastmod>
+    <lastmod>2022-04-11T23:55:31.450Z</lastmod>
   </url>
 </urlset>

@@ -1,4 +1,4 @@
-# Genome searching {.unnumbered}
+# Genome searching
 
 In this chapter we will use several tools to download a genome from the command line. We will identify some features
 
