@@ -11,6 +11,7 @@ book:
   repo-url: https://github.com/camilogarciabotero/biocomp-book
   site-url: https://camilogarciabotero.github.io/biocomp-book/
   repo-actions: [edit, issue]
+  repo-branch: main
   downloads: [pdf]
   sharing: [twitter]
   sidebar:
