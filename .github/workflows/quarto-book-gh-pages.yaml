@@ -23,12 +23,7 @@ jobs:
           # version: 0.9.105
 
       # Install any computing dependency you may need, usually either python and Jupyter or R
-      # More specific examples will be shared on quarto-dev/quarto-actions project
-      
-#      - uses: r-lib/actions/setup-r@v1
-#        with:
-#          use-public-rspm: true
-          
+      # More specific examples will be shared on quarto-dev/quarto-actions project        
           
 #      - name: Query dependencies
 #        run: |
@@ -40,7 +35,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install ncbi-genome-download
-
+          
+      - uses: r-lib/actions/setup-r@v1
+        with:
+          use-public-rspm: true
+          
       - name: Install R libraries
         run: |
           install.packages("rmarkdown")
