@@ -28,6 +28,11 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
         with:
           use-public-rspm: true
+          
+      - name: Install R libraries
+        run: |
+          install.packages('rmarkdown')
+          install.packages('tidyverse')          
 
       - name: Render book to all format
         # Add any command line argument needed
