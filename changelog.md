@@ -2,4 +2,4 @@
 
 - This preeliminary edition contains the basic ouline of the book
 
-- Contains the first draft solutions to challenges demos	
+- Contains the first draft solutions to challenges demos
