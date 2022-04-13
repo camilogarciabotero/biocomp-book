@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.238">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Fundamentals of computational biology - 5&nbsp; phylogenetic reconstructions</title>
+  <title>Fundamentals of computational biology - 9&nbsp; Introduction to structural bioinformatics</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -20,8 +20,8 @@
   <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
-  <link href="./06-NGS-TGS-principles.html" rel="next">
-  <link href="./04-sequence-alignments.html" rel="prev">
+  <link href="./demo-genome-searching.html" rel="next">
+  <link href="./08-variant-calling-analysis.html" rel="prev">
   <script src="site_libs/quarto-html/quarto.js"></script>
   <script src="site_libs/quarto-html/popper.min.js"></script>
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -59,7 +59,7 @@
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">phylogenetic reconstructions</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -137,7 +137,7 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">phylogenetic reconstructions</span></a>
+  <a href="./05-phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">phylogenetic reconstructions</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -167,7 +167,7 @@
     <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></a>
+  <a href="./09-intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></a>
   </div>
 </li>
     </ul>
@@ -222,46 +222,16 @@
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
-<ul>
-<li><a href="#what-is-a-phylogenetic-tree" id="toc-what-is-a-phylogenetic-tree" class="nav-link active" data-scroll-target="#what-is-a-phylogenetic-tree">What is a phylogenetic tree</a></li>
-<li><a href="#mehtods-for-phylogenetic-reconstruction" id="toc-mehtods-for-phylogenetic-reconstruction" class="nav-link" data-scroll-target="#mehtods-for-phylogenetic-reconstruction">Mehtods for phylogenetic reconstruction</a></li>
-<li><a href="#building-a-phylogenetic-reconstruction" id="toc-building-a-phylogenetic-reconstruction" class="nav-link" data-scroll-target="#building-a-phylogenetic-reconstruction">Building a phylogenetic reconstruction</a>
-<ul class="collapse">
-<li><a href="#evolutionary-substitution-model" id="toc-evolutionary-substitution-model" class="nav-link" data-scroll-target="#evolutionary-substitution-model">Evolutionary substitution model</a></li>
-<li><a href="#maximum-likelihood" id="toc-maximum-likelihood" class="nav-link" data-scroll-target="#maximum-likelihood">Maximum likelihood</a></li>
-<li><a href="#bayesian-inference" id="toc-bayesian-inference" class="nav-link" data-scroll-target="#bayesian-inference">Bayesian inference</a></li>
-</ul></li>
-</ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/05-phylogenetic-reconstructions.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <header id="title-block-header" class="quarto-title-block default">
 
-<div class="quarto-title"><h1 class="title d-none d-lg-block display-7"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">phylogenetic reconstructions</span></h1></div></header>
-
-<section id="what-is-a-phylogenetic-tree" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="what-is-a-phylogenetic-tree">What is a phylogenetic tree</h2>
-</section>
-<section id="mehtods-for-phylogenetic-reconstruction" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="mehtods-for-phylogenetic-reconstruction">Mehtods for phylogenetic reconstruction</h2>
-</section>
-<section id="building-a-phylogenetic-reconstruction" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="building-a-phylogenetic-reconstruction">Building a phylogenetic reconstruction</h2>
-<section id="evolutionary-substitution-model" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="evolutionary-substitution-model">Evolutionary substitution model</h3>
-</section>
-<section id="maximum-likelihood" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="maximum-likelihood">Maximum likelihood</h3>
-</section>
-<section id="bayesian-inference" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="bayesian-inference">Bayesian inference</h3>
+<div class="quarto-title"><h1 class="title d-none d-lg-block display-7"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></h1></div></header>
 
 
 
-</section>
-</section>
 </main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -341,13 +311,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04-sequence-alignments.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequence alignments</span></span>
+      <a href="./08-variant-calling-analysis.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06-NGS-TGS-principles.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./demo-genome-searching.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome searching</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
