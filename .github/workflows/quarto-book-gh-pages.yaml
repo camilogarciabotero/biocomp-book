@@ -44,6 +44,9 @@ jobs:
         run: |
           install.packages("rmarkdown")
           install.packages("tidyverse")
+          install.packages("fs")
+          install.packages("ape")
+          install.packages("ggtree")          
         shell: Rscript {0}
 
       - name: Render book to all format
