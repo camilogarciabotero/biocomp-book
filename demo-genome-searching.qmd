@@ -16,7 +16,7 @@ The first step in this journey is to download a bunch of sequences programatical
 
 You could inspect all the options it provides, now we will set our command as the following:
 
-```{zsh}
+```zsh
 #| echo: true
 #| eval: true
 ngd --genera "Bacillus subtilis"\
