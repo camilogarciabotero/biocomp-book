@@ -31,7 +31,7 @@ jobs:
           
       - name: Install R libraries
         run: |
-          install.packages('rmarkdown')
+          install.packages('Rmarkdown')
           install.packages('tidyverse')          
 
       - name: Render book to all format
