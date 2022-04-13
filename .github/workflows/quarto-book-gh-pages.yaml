@@ -30,10 +30,17 @@ jobs:
 #          use-public-rspm: true
           
           
-      - name: Query dependencies
+#      - name: Query dependencies
+#        run: |
+#          sudo apt-get install -y ncbi-genome-download
+      
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Install dependencies
         run: |
-          sudo apt-get install -y ncbi-genome-download
-          
+          python -m pip install ncbi-genome-download
+
       - name: Install R libraries
         run: |
           install.packages("rmarkdown")
