@@ -42,11 +42,12 @@ jobs:
           
       - name: Install R libraries
         run: |
+          install.packages("remotes")
           install.packages("rmarkdown")
           install.packages("tidyverse")
           install.packages("fs")
           install.packages("ape")
-          install.packages("ggtree")          
+          remotes::install_github("YuLab-SMU/ggtree")
         shell: Rscript {0}
 
       - name: Render book to all format
