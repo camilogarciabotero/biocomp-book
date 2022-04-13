@@ -22,7 +22,7 @@ book:
     - part: "Unix"
       chapters:
         - 01-welcome-to-command-line.qmd
-    - part: "Sequence analysis"
+    - part: "Sequence analysis and genomics"
       chapters:
         - 02-introduction-to-sequence-analysis.qmd
         - 03-sanger-analysis.qmd
@@ -31,7 +31,10 @@ book:
         - 06-NGS-TGS-principles.qmd
         - 07-genome-assembly-annotation.qmd
         - 08-variant-calling-analysis.qmd
-    - part: "Challenges demostrations"
+    - part: "Structural bioinformatics"
+      chapters:
+        - 09-intro-structural-bioinfo.qmd
+    - part: "Challenges"
       chapters:
         - demo-genome-searching.qmd
         - demo-sanger-processing.qmd

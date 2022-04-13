@@ -4,7 +4,6 @@ In this chapter we will discuss several about several points of view about bioin
 
 ## Endless debate: bioinformatics vs. computational biology {.unnumbered}
 
-## Getting started with the command line {.unnumbered}
 
 ## The duality of DNA {.unnumbered}
 
