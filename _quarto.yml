@@ -6,7 +6,7 @@ book:
   title: "Fundamentals of computational biology"
   subtitle: "Lecture notes"
   author: "Camilo García-Botero"
-  date: "2022-04-11"
+  #date: "2022-04-11"
   search: true
   repo-url: https://github.com/camilogarciabotero/biocomp-book
   site-url: https://camilogarciabotero.github.io/biocomp-book/
@@ -46,9 +46,14 @@ book:
 
 bibliography: references.bib
 
+date: today
+date-format: "YYYY-MM-DD"
+
 format:
   html:
-    theme: flatly
+    theme: 
+      light: flatly
+      dark: darkly
     code-link: true
     code-copy: hover
   pdf:
