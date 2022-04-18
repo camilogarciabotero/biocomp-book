@@ -1,5 +1,7 @@
-# Edition 0.0.1
+# Edition 0.0.2
 
-- This preeliminary edition contains the basic ouline of the book
+- This edition includes more information of the book and author
 
-- Contains the first draft solutions to challenges demos
+- Adds DOI and zenodo
+
+- Includes Social commenting
