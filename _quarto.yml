@@ -56,6 +56,9 @@ date-format: "YYYY-MM-DD"
 comments:
   hypothesis: true
 
+execute:
+  cache: true
+
 format:
   html:
     theme: 
