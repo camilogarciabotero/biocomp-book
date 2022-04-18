@@ -209,7 +209,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">phylogenetic reconstructions</span></a>
+  <a href="./05-phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">phylogenetics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -264,12 +264,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-sequence-alignment.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Sequence alignment demo</span></a>
+  <a href="./demo-sequence-alignment.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Multiple seq. analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-phylogenetics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Phylogenetic reconstruction</span></a>
+  <a href="./demo-phylogenetics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Phylogenetic analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -298,8 +298,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#challenge" id="toc-challenge" class="nav-link active" data-scroll-target="#challenge">Challenge</a></li>
-  <li><a href="#processing-a-single-.ab1-pair" id="toc-processing-a-single-.ab1-pair" class="nav-link" data-scroll-target="#processing-a-single-.ab1-pair">Processing a single <code>.ab1</code> pair</a></li>
+  <li><a href="#processing-a-single-.ab1-pair" id="toc-processing-a-single-.ab1-pair" class="nav-link active" data-scroll-target="#processing-a-single-.ab1-pair">Processing a single <code>.ab1</code> pair</a></li>
   <li><a href="#processing-a-bulk-of-.ab1-files" id="toc-processing-a-bulk-of-.ab1-files" class="nav-link" data-scroll-target="#processing-a-bulk-of-.ab1-files">Processing a bulk of <code>.ab1</code> files</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/demo-sanger-processing.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -331,13 +330,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="challenge" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="challenge">Challenge</h2>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Challenge
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Your professor gives you a couple of .ab1 files of a 16S rRNA gene from an old project a student conducted. She tells you to process and analyse them using the Sanger sequence pipeline analysis. And as she doesn’t know from which species they belong, she ask you to identify the organism to whom it belongs by using the resulting consensus sequence. She finally reminds you to document each step of the process including the identification step.</p>
-</section>
+</div>
+</div>
 <section id="processing-a-single-.ab1-pair" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="processing-a-single-.ab1-pair">Processing a single <code>.ab1</code> pair</h2>
-<div class="cell">
+<div class="cell" data-hash="demo-sanger-processing_cache/html/single-sanger-processing_4aefe2a4ccd3f4bddecbc4d6bd0b9cec">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sangeranalyseR)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>groEL <span class="ot">&lt;-</span> <span class="fu">SangerAlignment</span>(</span>
@@ -361,7 +369,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="processing-a-bulk-of-.ab1-files" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="processing-a-bulk-of-.ab1-files">Processing a bulk of <code>.ab1</code> files</h2>
-<div class="cell">
+<div class="cell" data-hash="demo-sanger-processing_cache/html/bulk-sanger-processing_c4b72b6614b7ed2b884ef9f5f29a4e2d">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -571,7 +579,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./demo-sequence-alignment.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Sequence alignment demo</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Multiple seq. analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

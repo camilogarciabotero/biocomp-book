@@ -209,7 +209,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">phylogenetic reconstructions</span></a>
+  <a href="./05-phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">phylogenetics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -264,12 +264,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-sequence-alignment.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Sequence alignment demo</span></a>
+  <a href="./demo-sequence-alignment.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Multiple seq. analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-phylogenetics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Phylogenetic reconstruction</span></a>
+  <a href="./demo-phylogenetics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Phylogenetic analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -298,15 +298,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#challenge" id="toc-challenge" class="nav-link active" data-scroll-target="#challenge">Challenge</a>
-  <ul class="collapse">
-  <li><a href="#downloading-a-genome" id="toc-downloading-a-genome" class="nav-link" data-scroll-target="#downloading-a-genome">Downloading a genome</a></li>
+  <li><a href="#downloading-a-genome" id="toc-downloading-a-genome" class="nav-link active" data-scroll-target="#downloading-a-genome">Downloading a genome</a></li>
   <li><a href="#downloading-from-ncbi" id="toc-downloading-from-ncbi" class="nav-link" data-scroll-target="#downloading-from-ncbi">Downloading from NCBI</a></li>
   <li><a href="#listing-files" id="toc-listing-files" class="nav-link" data-scroll-target="#listing-files">Listing files</a></li>
   <li><a href="#decompressing-using-gzip" id="toc-decompressing-using-gzip" class="nav-link" data-scroll-target="#decompressing-using-gzip">Decompressing using <code>gzip</code></a></li>
   <li><a href="#importing-the-files-into-r" id="toc-importing-the-files-into-r" class="nav-link" data-scroll-target="#importing-the-files-into-r">Importing the files into R</a></li>
   <li><a href="#data-processing" id="toc-data-processing" class="nav-link" data-scroll-target="#data-processing">Data processing</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/demo-genome-searching.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -337,9 +334,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="challenge" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="challenge">Challenge</h2>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Challenge
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Your profesor is interested on knowing how many complete genomes of Bacillus subtilis are there in the NCBI databases. He ask you later to count the number of features (genes, CDS, ncRNA, rRNA, etc.) in the genome of Bacillus subtilis NCIB 3610 (GCF_002055965.1). And tell you to document each of the steps and how did you end up with the answer. Saving the file with your initials (e.g., CG-activity01.{md,txt,docx})</p>
+</div>
+</div>
 <section id="downloading-a-genome" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="downloading-a-genome">Downloading a genome</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncbi-genome-download</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -375,7 +382,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="importing-the-files-into-r" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="importing-the-files-into-r">Importing the files into R</h3>
-<div class="cell" data-warclass-warning="false" data-warattr-warning="false">
+<div class="cell" data-warclass-warning="false" data-warattr-warning="false" data-hash="demo-genome-searching_cache/html/file-reading_99207958b71348f644a376668f84e5aa">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -417,7 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="data-processing" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="data-processing">Data processing</h3>
-<div class="cell">
+<div class="cell" data-hash="demo-genome-searching_cache/html/data-processing_91bdbc4dd42bab566973aec10221dbcd">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>all_features_grouped <span class="ot">&lt;-</span> all_features <span class="sc">%&gt;%</span> </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">feature =</span> <span class="st">`</span><span class="at"># feature</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(assembly, feature) <span class="sc">%&gt;%</span> </span>
@@ -432,7 +439,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>create a new dataset that will group by features per accession. get read of the weird name of the column. Select these two columns. Group by these two columns to perform. count the numbers of rows based on the applied group. generate a wide dataset sending row names as columns. Arrange descending by the number of CDSs.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
