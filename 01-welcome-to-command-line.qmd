@@ -4,10 +4,10 @@ In this chapter we will explore the fundamentals of the command line. That is th
 
 ## Getting started with the command line {.unnumbered}
 
-## Basic UNIX commands
+## Basic UNIX commands {.unnumbered}
 
-## Advance UNIX commands 
+## Advance UNIX commands {.unnumbered}
 
-## Conda environments and other package managers
+## Conda environments and other package managers {.unnumbered}
 
-## Notions of High Performance Computing (HPC)
+## Notions of High Performance Computing (HPC) {.unnumbered}
