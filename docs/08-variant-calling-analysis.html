@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-  <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.243">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Fundamentals of computational biology - 8&nbsp; Variant calling analysis</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
 
-  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-  <script src="site_libs/quarto-nav/headroom.min.js"></script>
-  <script src="site_libs/clipboard/clipboard.min.js"></script>
-  <meta name="quarto:offset" content="./">
-  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-  <script src="site_libs/quarto-search/fuse.min.js"></script>
-  <script src="site_libs/quarto-search/quarto-search.js"></script>
-  <link href="./09-intro-structural-bioinfo.html" rel="next">
-  <link href="./07-genome-assembly-annotation.html" rel="prev">
-  <script src="site_libs/quarto-html/quarto.js"></script>
-  <script src="site_libs/quarto-html/popper.min.js"></script>
-  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-  <script src="site_libs/quarto-html/anchor.min.js"></script>
-  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-  <link class="quarto-color-scheme" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-  <link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css">
-  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
-  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-  <link class="quarto-color-scheme" href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-  <link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="site_libs/bootstrap/bootstrap-dark.min.css">
-  <script id="quarto-search-options" type="application/json">{
-    "location": "sidebar",
-    "copy-button": false,
-    "collapse-after": 3,
-    "panel-placement": "start",
-    "type": "textbox",
-    "limit": 20,
-    "language": {
-      "search-no-results-text": "No results",
-      "search-matching-documents-text": "matching documents",
-      "search-copy-link-title": "Copy link to search",
-      "search-hide-matches-text": "Hide additional matches",
-      "search-more-match-text": "more match in this document",
-      "search-more-matches-text": "more matches in this document",
-      "search-clear-button-title": "Clear",
-      "search-detached-cancel-button-title": "Cancel",
-      "search-submit-button-title": "Submit"
-    }
-  }</script>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.246">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2022-04-17">
+
+<title>Fundamentals of computational biology - 8&nbsp; Variant calling analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<link href="./09-intro-structural-bioinfo.html" rel="next">
+<link href="./07-genome-assembly-annotation.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link class="quarto-color-scheme" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link class="quarto-color-scheme" href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="site_libs/bootstrap/bootstrap-dark.min.css">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+
+
 </head>
+
 <body class="floating">
+
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -77,7 +84,6 @@
       <a href="./">Fundamentals of computational biology</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/camilogarciabotero/biocomp-book" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-    <a href="./Fundamentals-of-computational-biology.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
     <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
   <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -226,32 +232,51 @@
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Table of contents</h2>
-<ul>
-<li><a href="#common-mutations" id="toc-common-mutations" class="nav-link active" data-scroll-target="#common-mutations">Common mutations</a></li>
-<li><a href="#structural-variants" id="toc-structural-variants" class="nav-link" data-scroll-target="#structural-variants">Structural variants</a></li>
-<li><a href="#genome-rearrengments" id="toc-genome-rearrengments" class="nav-link" data-scroll-target="#genome-rearrengments">Genome rearrengments</a></li>
-<li><a href="#read-mapping-algorithms-and-programs" id="toc-read-mapping-algorithms-and-programs" class="nav-link" data-scroll-target="#read-mapping-algorithms-and-programs">Read mapping algorithms and programs</a>
-<ul class="collapse">
-<li><a href="#burrow-wheeler-alignment" id="toc-burrow-wheeler-alignment" class="nav-link" data-scroll-target="#burrow-wheeler-alignment">Burrow-Wheeler-Alignment</a></li>
-<li><a href="#bwa-mem2" id="toc-bwa-mem2" class="nav-link" data-scroll-target="#bwa-mem2">BWA-MEM2</a></li>
-<li><a href="#minimap2" id="toc-minimap2" class="nav-link" data-scroll-target="#minimap2">Minimap2</a></li>
-<li><a href="#sam-bam-and-cram-formats" id="toc-sam-bam-and-cram-formats" class="nav-link" data-scroll-target="#sam-bam-and-cram-formats">SAM, BAM and CRAM formats</a></li>
-</ul></li>
-<li><a href="#identifying-mutations" id="toc-identifying-mutations" class="nav-link" data-scroll-target="#identifying-mutations">Identifying mutations</a>
-<ul class="collapse">
-<li><a href="#freebayes-and-snippy" id="toc-freebayes-and-snippy" class="nav-link" data-scroll-target="#freebayes-and-snippy">Freebayes and Snippy</a></li>
-<li><a href="#the-vcf-file" id="toc-the-vcf-file" class="nav-link" data-scroll-target="#the-vcf-file">The VCF file</a></li>
-</ul></li>
-</ul>
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#common-mutations" id="toc-common-mutations" class="nav-link active" data-scroll-target="#common-mutations">Common mutations</a></li>
+  <li><a href="#structural-variants" id="toc-structural-variants" class="nav-link" data-scroll-target="#structural-variants">Structural variants</a></li>
+  <li><a href="#genome-rearrengments" id="toc-genome-rearrengments" class="nav-link" data-scroll-target="#genome-rearrengments">Genome rearrengments</a></li>
+  <li><a href="#read-mapping-algorithms-and-programs" id="toc-read-mapping-algorithms-and-programs" class="nav-link" data-scroll-target="#read-mapping-algorithms-and-programs">Read mapping algorithms and programs</a>
+  <ul class="collapse">
+  <li><a href="#burrow-wheeler-alignment" id="toc-burrow-wheeler-alignment" class="nav-link" data-scroll-target="#burrow-wheeler-alignment">Burrow-Wheeler-Alignment</a></li>
+  <li><a href="#bwa-mem2" id="toc-bwa-mem2" class="nav-link" data-scroll-target="#bwa-mem2">BWA-MEM2</a></li>
+  <li><a href="#minimap2" id="toc-minimap2" class="nav-link" data-scroll-target="#minimap2">Minimap2</a></li>
+  <li><a href="#sam-bam-and-cram-formats" id="toc-sam-bam-and-cram-formats" class="nav-link" data-scroll-target="#sam-bam-and-cram-formats">SAM, BAM and CRAM formats</a></li>
+  </ul></li>
+  <li><a href="#identifying-mutations" id="toc-identifying-mutations" class="nav-link" data-scroll-target="#identifying-mutations">Identifying mutations</a>
+  <ul class="collapse">
+  <li><a href="#freebayes-and-snippy" id="toc-freebayes-and-snippy" class="nav-link" data-scroll-target="#freebayes-and-snippy">Freebayes and Snippy</a></li>
+  <li><a href="#the-vcf-file" id="toc-the-vcf-file" class="nav-link" data-scroll-target="#the-vcf-file">The VCF file</a></li>
+  </ul></li>
+  </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/08-variant-calling-analysis.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+
 <header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></h1>
+</div>
 
 
-<div class="quarto-title"><h1 class="title d-none d-lg-block display-7"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></h1></div><div class="quarto-title-meta"><div><div class="quarto-title-meta-heading">Published</div><div class="quarto-title-meta-contents"><p class="date">2022-04-14</p></div></div></div></header>
+<div class="quarto-title-meta">
+
+    
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2022-04-17</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
 
 <section id="common-mutations" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="common-mutations">Common mutations</h2>
@@ -286,9 +311,9 @@
 <h3 class="unnumbered anchored" data-anchor-id="the-vcf-file">The VCF file</h3>
 
 
+</section>
+</section>
 
-</section>
-</section>
 </main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -476,6 +501,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 </body></html>

@@ -2,78 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/index.html</loc>
-    <lastmod>2022-04-18T01:20:45.163Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.517Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/intro.html</loc>
-    <lastmod>2022-04-14T15:14:52.146Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.518Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/01-welcome-to-command-line.html</loc>
-    <lastmod>2022-04-18T01:20:54.891Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.518Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/02-introduction-to-sequence-analysis.html</loc>
-    <lastmod>2022-04-14T15:14:52.147Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.519Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/03-sanger-analysis.html</loc>
-    <lastmod>2022-04-14T15:14:52.148Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.520Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/04-sequence-alignments.html</loc>
-    <lastmod>2022-04-14T15:14:52.149Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.520Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/05-phylogenetic-reconstructions.html</loc>
-    <lastmod>2022-04-14T15:14:52.149Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.521Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/06-NGS-TGS-principles.html</loc>
-    <lastmod>2022-04-14T15:14:52.150Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.522Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/07-genome-assembly-annotation.html</loc>
-    <lastmod>2022-04-14T15:14:52.151Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.523Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/08-variant-calling-analysis.html</loc>
-    <lastmod>2022-04-14T15:14:52.152Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.524Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/09-intro-structural-bioinfo.html</loc>
-    <lastmod>2022-04-14T15:14:52.152Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.524Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/demo-genome-searching.html</loc>
-    <lastmod>2022-04-14T15:14:52.154Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.525Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/demo-sanger-processing.html</loc>
-    <lastmod>2022-04-14T15:14:52.154Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.527Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/demo-sequence-alignment.html</loc>
-    <lastmod>2022-04-14T15:14:52.156Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.528Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/demo-phylogenetics.html</loc>
-    <lastmod>2022-04-14T15:14:52.157Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.529Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/demo-reads-assessment.html</loc>
-    <lastmod>2022-04-14T15:14:52.158Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.530Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/demo-genome-assembly.html</loc>
-    <lastmod>2022-04-14T15:14:52.159Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.531Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/references.html</loc>
-    <lastmod>2022-04-14T15:14:52.159Z</lastmod>
-  </url>
-  <url>
-    <loc>https://camilogarciabotero.github.io/biocomp-book/Fundamentals-of-computational-biology.pdf</loc>
-    <lastmod>2022-04-14T15:14:51.887Z</lastmod>
+    <lastmod>2022-04-18T01:29:05.531Z</lastmod>
   </url>
 </urlset>
