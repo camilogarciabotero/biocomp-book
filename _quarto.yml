@@ -53,7 +53,7 @@ bibliography: references.bib
 citation:
   type: book
     # container-title: "Journal of Data Science Software"
-  doi: "10.5281/zenodo.6468280"
+  doi: 10.5281/zenodo.6468280
   url: https://camilogarciabotero.github.io/biocomp-book/
 
 date: today
