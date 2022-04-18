@@ -49,6 +49,9 @@ bibliography: references.bib
 date: today
 date-format: "YYYY-MM-DD"
 
+comments:
+  hypothesis: true
+
 format:
   html:
     theme: 
@@ -56,7 +59,7 @@ format:
       dark: darkly
     code-link: true
     code-copy: hover
-  pdf:
-    documentclass: scrreprt
-    code-block-border-left: false
-    toc-depth: 2
+  # pdf:
+  #   documentclass: scrreprt
+  #   code-block-border-left: false
+  #   toc-depth: 2
