@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you find useful this repo, please cite it as below."
+authors:
+- family-names: "García-Botero"
+  given-names: "Camilo"
+  orcid: "https://orcid.org/0000-0002-0426-7007"
+title: "Fundamentals of Computationa Biologgy: lecture notes"
+version: 0.0.3
+type: book
+date-released: 2022-04-18
+url: "https://github.com/camilogarciabotero/biocomp-book"
+doi: 10.5281/zenodo.6468280
