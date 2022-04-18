@@ -272,17 +272,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li>
-<a href="#challenge" id="toc-challenge" class="nav-link active" data-scroll-target="#challenge">Challenge</a>
-  <ul class="collapse">
-<li><a href="#downloading-a-genome" id="toc-downloading-a-genome" class="nav-link" data-scroll-target="#downloading-a-genome">Downloading a genome</a></li>
+<li><a href="#downloading-a-genome" id="toc-downloading-a-genome" class="nav-link active" data-scroll-target="#downloading-a-genome">Downloading a genome</a></li>
   <li><a href="#downloading-from-ncbi" id="toc-downloading-from-ncbi" class="nav-link" data-scroll-target="#downloading-from-ncbi">Downloading from NCBI</a></li>
   <li><a href="#listing-files" id="toc-listing-files" class="nav-link" data-scroll-target="#listing-files">Listing files</a></li>
   <li><a href="#decompressing-using-gzip" id="toc-decompressing-using-gzip" class="nav-link" data-scroll-target="#decompressing-using-gzip">Decompressing using <code>gzip</code></a></li>
   <li><a href="#importing-the-files-into-r" id="toc-importing-the-files-into-r" class="nav-link" data-scroll-target="#importing-the-files-into-r">Importing the files into R</a></li>
   <li><a href="#data-processing" id="toc-data-processing" class="nav-link" data-scroll-target="#data-processing">Data processing</a></li>
-  </ul>
-</li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/demo-genome-searching.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
@@ -307,8 +302,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
   
 
-</header><section id="challenge" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="challenge">Challenge</h2>
+</header><div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Challenge
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Your profesor is interested on knowing how many complete genomes of Bacillus subtilis are there in the NCBI databases. He ask you later to count the number of features (genes, CDS, ncRNA, rRNA, etc.) in the genome of Bacillus subtilis NCIB 3610 (GCF_002055965.1). And tell you to document each of the steps and how did you end up with the answer. Saving the file with your initials (e.g., CG-activity01.{md,txt,docx})</p>
+</div>
+</div>
 <section id="downloading-a-genome" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="downloading-a-genome">Downloading a genome</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncbi-genome-download</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="downloading-from-ncbi" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="downloading-from-ncbi">Downloading from NCBI</h3>
@@ -335,7 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 </div>
 </section><section id="importing-the-files-into-r" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="importing-the-files-into-r">Importing the files into R</h3>
-<div class="cell" data-warclass-warning="false" data-warattr-warning="false">
+<div class="cell" data-warclass-warning="false" data-warattr-warning="false" data-hash="demo-genome-searching_cache/html/file-reading_99207958b71348f644a376668f84e5aa">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://fs.r-lib.org">fs</a></span><span class="op">)</span>
 
@@ -375,7 +381,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section><section id="data-processing" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="data-processing">Data processing</h3>
-<div class="cell">
+<div class="cell" data-hash="demo-genome-searching_cache/html/data-processing_91bdbc4dd42bab566973aec10221dbcd">
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">all_features_grouped</span> <span class="op">&lt;-</span> <span class="va">all_features</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>feature <span class="op">=</span> <span class="va">`# feature`</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">assembly</span>, <span class="va">feature</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
@@ -390,7 +396,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>create a new dataset that will group by features per accession. get read of the weird name of the column. Select these two columns. Group by these two columns to perform. count the numbers of rows based on the applied group. generate a wide dataset sending row names as columns. Arrange descending by the number of CDSs.</p>
 
 
-</section></section></main><!-- /main --><script type="application/javascript">
+</section></main><!-- /main --><script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const disableStylesheet = (stylesheets) => {
     for (let i=0; i < stylesheets.length; i++) {
