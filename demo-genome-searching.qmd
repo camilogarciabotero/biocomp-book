@@ -1,8 +1,10 @@
 # Genome searching
 
-
+::: {.callout-warning}
 ## Challenge {.unnumbered}
 Your profesor is interested on knowing how many  complete genomes of Bacillus subtilis are there in the NCBI databases. He ask you later to count the number of features (genes, CDS, ncRNA, rRNA, etc.) in the genome of Bacillus subtilis NCIB 3610 (GCF_002055965.1). And tell you to document each of the steps and how did you end up with the answer. Saving the file with your initials (e.g., CG-activity01.{md,txt,docx})
+:::
+
 
 ### Downloading a genome {.unnumbered}
 

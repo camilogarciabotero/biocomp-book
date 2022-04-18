@@ -1,8 +1,10 @@
 # Sanger processing
 
+::: {.callout-warning}
 ## Challenge {.unnumbered}
-
 Your professor gives you a couple of .ab1 files of a 16S rRNA gene from an old project a student conducted. She tells you to process and analyse them using the Sanger sequence pipeline analysis. And as she doesn't know from which species they belong, she ask you to identify the organism to whom it belongs by using the resulting consensus sequence. She finally reminds you to document each step of the process including the identification step.
+
+:::
 
 ## Processing a single `.ab1` pair {.unnumbered}
 
