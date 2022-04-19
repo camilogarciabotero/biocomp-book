@@ -16,44 +16,44 @@
   {
     "objectID": "01-welcome-to-command-line.html",
     "href": "01-welcome-to-command-line.html",
-    "title": "1  The command line",
+    "title": "\n1  The command line\n",
     "section": "",
-    "text": "In this chapter we will explore the fundamentals of the command line. That is the concepts of Unix based systems the command line (CLI) and how we can use it to access information programmatically."
+    "text": "Caution\n\n\n\nThis book is a work in progress\nIn this chapter we will explore the fundamentals of the command line interface (aka CLI). A CLI is actually several things and sometimes simply confused with a terminal window such as the following image:\nBefore landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It Simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a libre access is the very known OS Linux.\nThe most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically."
   },
   {
     "objectID": "01-welcome-to-command-line.html#getting-started-with-the-command-line",
     "href": "01-welcome-to-command-line.html#getting-started-with-the-command-line",
-    "title": "1  The command line",
+    "title": "\n1  The command line\n",
     "section": "Getting started with the command line",
-    "text": "Getting started with the command line"
+    "text": "Getting started with the command line\nAlmost every computer has a way to be"
   },
   {
     "objectID": "01-welcome-to-command-line.html#basic-unix-commands",
     "href": "01-welcome-to-command-line.html#basic-unix-commands",
-    "title": "1  The command line",
-    "section": "Basic UNIX commands",
-    "text": "Basic UNIX commands"
+    "title": "\n1  The command line\n",
+    "section": "Basic Unix commands",
+    "text": "Basic Unix commands"
   },
   {
     "objectID": "01-welcome-to-command-line.html#advance-unix-commands",
     "href": "01-welcome-to-command-line.html#advance-unix-commands",
-    "title": "1  The command line",
+    "title": "\n1  The command line\n",
     "section": "Advance UNIX commands",
     "text": "Advance UNIX commands"
   },
   {
     "objectID": "01-welcome-to-command-line.html#conda-environments-and-other-package-managers",
     "href": "01-welcome-to-command-line.html#conda-environments-and-other-package-managers",
-    "title": "1  The command line",
+    "title": "\n1  The command line\n",
     "section": "Conda environments and other package managers",
     "text": "Conda environments and other package managers"
   },
   {
     "objectID": "01-welcome-to-command-line.html#notions-of-high-performance-computing-hpc",
     "href": "01-welcome-to-command-line.html#notions-of-high-performance-computing-hpc",
-    "title": "1  The command line",
+    "title": "\n1  The command line\n",
     "section": "Notions of High Performance Computing (HPC)",
-    "text": "Notions of High Performance Computing (HPC)"
+    "text": "Notions of High Performance Computing (HPC)\n\na <- 1"
   },
   {
     "objectID": "02-introduction-to-sequence-analysis.html",
