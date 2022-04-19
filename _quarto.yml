@@ -49,6 +49,7 @@ book:
     - references.qmd
 
 bibliography: references.bib
+reference-location: margin
 
 citation:
   type: book

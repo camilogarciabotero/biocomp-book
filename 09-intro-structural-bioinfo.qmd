@@ -1,72 +1,63 @@
 # Introduction to structural bioinformatics
 
-Structural bioinformatics is a multidisciplinary area enriched by chemistry, physics, informatics and many others. Although, it could be focused on different biological macromolecules, here the emphasis will be focused on proteins.
+Structural bioinformatics is a multidisciplinary area enriched by chemistry, physics, computer science and many others. Although, it could be focused on different biological macro-molecules, here the emphasis will be focused on proteins.
 
 One of the first protein structure elucidated was myoglobin and it triggered the study of the role of the structure of proteins and its biological functions
-
 
 Identify a protein related to your study that could be further analyzed.
 
 ## Protein structures
 
-Difference between the levels of protein structure
-primary structure is the basic linear representation of aminoacids. Natural aminoacids and modified or rare aminoacids display physicochemical rich information and could be represented by letter informatically. Therefore in the genetic code we could find the one-letter code.
+Difference between the levels of protein structure primary structure is the basic linear representation of aminoacids. Natural aminoacids and modified or rare aminoacids display physico-chemical rich information and could be represented by letters. Therefore in the genetic code we could find the one-letter code.
 
-Secondary structures result from the spatial arrangement of aminoacids that interact with each closer neighbors. There are some remarkable secondary structures such as $\beta$-sheets, $\alpha$-helix, coils (felxible) and others.
+Secondary structures result from the spatial arrangement of aminoacids that interact with each closer neighbors. There are some remarkable secondary structures such as $\beta$-sheets, $\alpha$-helix, coils (flexible) and others.
 
-Terciary structure informs about the structural disposition of the secondary structures that fold between each other due to hidrophobic interactions, disulphure bonds, and other chemical interactions forming a globular and **dyanamic** structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the Levingthan paradox).
+Tertiary structure informs about the structural disposition of the secondary structures that fold between each other due to hydrophobic interactions, disulfure bonds, and other chemical interactions forming a globular and dynamic structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the [Levinthal's paradox](https://en.wikipedia.org/wiki/Levinthal%27s_paradox)).
 
-Cuaternary structures result from interaction of multiple terciary structures. *The structure, therefore dictates the protein function*. This basic concept have triggered more recently a boom on the analysis of the structure of proteins.
+Quaternary structures result from interaction of multiple tertiary structures. *The structure, therefore dictates the protein function*. This basic concept have triggered more recently a boom on the analysis of the structure of proteins.
 
 ## Identifying or predicting protein structures
 
-Xray crystallography, 
-nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time
-Electron micrography (EM) and cryo-EM. These experiment rely on highly specilized
+Xray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks [^intro-structural-bioinfo-1]
 
-::: {.callout-note}
-To date helium is scarse and many laboratories 
-:::
+[^intro-structural-bioinfo-1]: To date, helium is scarce around the world, so labs all around are having trouble to get this element.
 
-Modelling the structure whether *ab initio* ot by *homology* also allow structure prediction. However these strategies 
+Modelling the structure whether *ab initio* or by *homology* also allow structure prediction. However these strategies
 
 Recently AlphaFold
 
-The protein database (PDB) 
+The protein database (PDB)
 
-Protein topologies resulting from the folding: horshoe, beta-barrel and other could be identified 
+Protein topologies resulting from the folding: horshoe, beta-barrel and other could be identified
 
-Structural classification of proteins (SCOP) when analysing a new protein
-classification by class, architecture, topology (fold-family), homologous superfamily and sequence family
+Structural classification of proteins (SCOP) when analyzing a new protein classification by class, architecture, topology (fold-family), homologous superfamily and sequence family
 
 Importance of Gene Ontology
 
-### Secunddary structure prediction
+### Secondary structure prediction
 
-Secundary structures could also be represented in one letter (e.g.)
+Secondary structures could also be represented in one letter (e.g.)
 
-Functional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.
+Functional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.[^intro-structural-bioinfo-2]
 
-::: {.callout-warning}
-There are a group of protein called intrinsically-disordered proteins that change in its terciary structures quite frequently, therefore it prediction could be troublesome.
-:::
+[^intro-structural-bioinfo-2]: There is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.
 
-::: {.callout-warning}
+::: callout-warning
 ## Exercise 01
-Submit 5lWM (JAK3) from the PDB on FASTA format on the [JPRED](http://www.compbio.dundee.ac.uk/jpred/) and [PSIPRED](http://bioinf.cs.ucl.ac.uk/psipred/) and compared with the [experimentally predicted](https://www.rcsb.org/sequence/5LWM) version of the protein.
-Analyse the predicitons and tell are there differences between predictions? Which one is more accurate?
+
+Submit 5lWM (JAK3) from the PDB on FASTA format on the [JPRED](http://www.compbio.dundee.ac.uk/jpred/) and [PSIPRED](http://bioinf.cs.ucl.ac.uk/psipred/) and compared with the [experimentally predicted](https://www.rcsb.org/sequence/5LWM) version of the protein. Analyse the predictions and tell are there differences between predictions? Which one is more accurate?
 :::
 
 ## PDB database introduction
 
-The PDB database is one of the most important and ancient open biological database where all new protein structures are submitted. It is an international consortium where several regions work together to curate infromation.
+The PDB database is one of the most important and ancient open biological database where all new protein structures are submitted. It is an international consortium where several regions work together to curate information.
 
-The PDB in europe [PDBe](pdbe.org) is not only for proteins but form many other *experimentally predicted* macromolecules (protein-protein interactions, peptides, RNA and so on). 
+The PDB in Europe ([PDBe](pdbe.org)) is not only for proteins but form many other *experimentally predicted* macro-molecules (protein-protein interactions, peptides, RNA and so on).
 
 Protein structures are registered using a unique code of four characters.
 
-X-rax crystallography: is a chemical state of the macromolecule where it is imobilized, therefore information correspond to one state of the structure, then cristal protein is submitted to an x-ray beam to generate a difraction pattern. 
+X-ray crystallography: is a chemical state of the macro-molecule where it is immobilized, therefore information correspond to one state of the structure, then crystal protein is submitted to an x-ray beam to generate a diffraction pattern.
 
 NMR spectroscopy: captures dynamic information of the protein, but generally resolves small proteins. The principle?
 
-Electro microscopy adapted to cryopreservation allow proteins visualization.
+Electron microscopy adapted to cryo-preservation allow proteins visualization.
