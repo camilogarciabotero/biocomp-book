@@ -17,7 +17,7 @@ book:
   repo-actions: [edit, issue]
   repo-branch: main
   # downloads: [pdf]
-  sharing: [twitter]
+  # sharing: [twitter]
   sidebar:
     style: floating
   chapters:
