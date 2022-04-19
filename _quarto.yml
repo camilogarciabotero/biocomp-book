@@ -73,8 +73,8 @@ format:
       dark: darkly
     code-link: true
     code-copy: hover
-    monofont: juliamono
-    mainfont: sora
+    # monofont: juliamono
+    # mainfont: sora
   # pdf:
   #   documentclass: scrreprt
   #   code-block-border-left: false
