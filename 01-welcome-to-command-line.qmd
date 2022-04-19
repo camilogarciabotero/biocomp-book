@@ -23,9 +23,3 @@ Almost every computer has a way to be
 ## Conda environments and other package managers {.unnumbered}
 
 ## Notions of High Performance Computing (HPC) {.unnumbered}
-
-```{r}
-a <- 1
-```
-
-\_
