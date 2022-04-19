@@ -22,4 +22,6 @@ In search of homology and identy
 
 ## BLAST and its families {.unnumbered}
 
+psi-blast? true homologs, recurrent blast to polish scoring matrix during several generations to generate true homologs
+
 ## Multiple sequence alignments {.unnumbered}
