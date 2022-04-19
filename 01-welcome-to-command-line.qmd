@@ -18,7 +18,7 @@ Almost every computer has a way to be
 
 ## Basic Unix commands {.unnumbered}
 
-## Advance UNIX commands {.unnumbered}
+## Advance Unix commands {.unnumbered}
 
 ## Conda environments and other package managers {.unnumbered}
 
@@ -27,3 +27,5 @@ Almost every computer has a way to be
 ```{r}
 a <- 1
 ```
+
+\_
