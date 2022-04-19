@@ -16,44 +16,44 @@
   {
     "objectID": "01-welcome-to-command-line.html",
     "href": "01-welcome-to-command-line.html",
-    "title": "\n1  The command line\n",
+    "title": "1  The command line",
     "section": "",
-    "text": "Caution\n\n\n\nThis book is a work in progress\nIn this chapter we will explore the fundamentals of the command line interface (aka CLI). A CLI is actually several things and sometimes simply confused with a terminal window such as the following image:\nBefore landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It Simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a libre access is the very known OS Linux.\nThe most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically."
+    "text": "Danger\n\n\n\nThis book is a work in progress\nIn this chapter we will explore the fundamentals of the command line interface (aka CLI). A CLI is actually several things and sometimes simply confused with a terminal window such as the following image:\nBefore landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It Simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a libre access is the very known OS Linux.\nThe most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically."
   },
   {
     "objectID": "01-welcome-to-command-line.html#getting-started-with-the-command-line",
     "href": "01-welcome-to-command-line.html#getting-started-with-the-command-line",
-    "title": "\n1  The command line\n",
+    "title": "1  The command line",
     "section": "Getting started with the command line",
     "text": "Getting started with the command line\nAlmost every computer has a way to be"
   },
   {
     "objectID": "01-welcome-to-command-line.html#basic-unix-commands",
     "href": "01-welcome-to-command-line.html#basic-unix-commands",
-    "title": "\n1  The command line\n",
+    "title": "1  The command line",
     "section": "Basic Unix commands",
     "text": "Basic Unix commands"
   },
   {
     "objectID": "01-welcome-to-command-line.html#advance-unix-commands",
     "href": "01-welcome-to-command-line.html#advance-unix-commands",
-    "title": "\n1  The command line\n",
-    "section": "Advance UNIX commands",
-    "text": "Advance UNIX commands"
+    "title": "1  The command line",
+    "section": "Advance Unix commands",
+    "text": "Advance Unix commands"
   },
   {
     "objectID": "01-welcome-to-command-line.html#conda-environments-and-other-package-managers",
     "href": "01-welcome-to-command-line.html#conda-environments-and-other-package-managers",
-    "title": "\n1  The command line\n",
+    "title": "1  The command line",
     "section": "Conda environments and other package managers",
     "text": "Conda environments and other package managers"
   },
   {
     "objectID": "01-welcome-to-command-line.html#notions-of-high-performance-computing-hpc",
     "href": "01-welcome-to-command-line.html#notions-of-high-performance-computing-hpc",
-    "title": "\n1  The command line\n",
+    "title": "1  The command line",
     "section": "Notions of High Performance Computing (HPC)",
-    "text": "Notions of High Performance Computing (HPC)\n\na <- 1"
+    "text": "Notions of High Performance Computing (HPC)"
   },
   {
     "objectID": "02-introduction-to-sequence-analysis.html",
@@ -179,7 +179,7 @@
     "href": "04-sequence-alignments.html#blast-and-its-families",
     "title": "4  Sequence alignments",
     "section": "BLAST and its families",
-    "text": "BLAST and its families"
+    "text": "BLAST and its families\npsi-blast? true homologs, recurrent blast to polish scoring matrix during several generations to generate true homologs"
   },
   {
     "objectID": "04-sequence-alignments.html#multiple-sequence-alignments",
@@ -320,6 +320,34 @@
     "title": "8  Variant calling analysis",
     "section": "Identifying mutations",
     "text": "Identifying mutations\n\nFreebayes and Snippy\n\n\nThe VCF file"
+  },
+  {
+    "objectID": "09-intro-structural-bioinfo.html",
+    "href": "09-intro-structural-bioinfo.html",
+    "title": "9  Introduction to structural bioinformatics",
+    "section": "",
+    "text": "Structural bioinformatics is a multidisciplinary area enriched by chemistry, physics, informatics and many others. Although, it could be focused on different biological macromolecules, here the emphasis will be focused on proteins.\nOne of the first protein structure elucidated was myoglobin and it triggered the study of the role of the structure of proteins and its biological functions\nIdentify a protein related to your study that could be further analyzed."
+  },
+  {
+    "objectID": "09-intro-structural-bioinfo.html#protein-structures",
+    "href": "09-intro-structural-bioinfo.html#protein-structures",
+    "title": "9  Introduction to structural bioinformatics",
+    "section": "9.1 Protein structures",
+    "text": "9.1 Protein structures\nDifference between the levels of protein structure primary structure is the basic linear representation of aminoacids. Natural aminoacids and modified or rare aminoacids display physicochemical rich information and could be represented by letter informatically. Therefore in the genetic code we could find the one-letter code.\nSecondary structures result from the spatial arrangement of aminoacids that interact with each closer neighbors. There are some remarkable secondary structures such as \\(\\beta\\)-sheets, \\(\\alpha\\)-helix, coils (felxible) and others.\nTerciary structure informs about the structural disposition of the secondary structures that fold between each other due to hidrophobic interactions, disulphure bonds, and other chemical interactions forming a globular and dyanamic structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the Levingthan paradox).\nCuaternary structures result from interaction of multiple terciary structures. The structure, therefore dictates the protein function. This basic concept have triggered more recently a boom on the analysis of the structure of proteins."
+  },
+  {
+    "objectID": "09-intro-structural-bioinfo.html#identifying-or-predicting-protein-structures",
+    "href": "09-intro-structural-bioinfo.html#identifying-or-predicting-protein-structures",
+    "title": "9  Introduction to structural bioinformatics",
+    "section": "9.2 Identifying or predicting protein structures",
+    "text": "9.2 Identifying or predicting protein structures\nXray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and cryo-EM. These experiment rely on highly specilized\n\n\n\n\n\n\nNote\n\n\n\nTo date helium is scarse and many laboratories\n\n\nModelling the structure whether ab initio ot by homology also allow structure prediction. However these strategies\nRecently AlphaFold\nThe protein database (PDB)\nProtein topologies resulting from the folding: horshoe, beta-barrel and other could be identified\nStructural classification of proteins (SCOP) when analysing a new protein classification by class, architecture, topology (fold-family), homologous superfamily and sequence family\nImportance of Gene Ontology\n\n9.2.1 Secunddary structure prediction\nSecundary structures could also be represented in one letter (e.g.)\nFunctional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.\n\n\n\n\n\n\nWarning\n\n\n\nThere are a group of protein called intrinsically-disordered proteins that change in its terciary structures quite frequently, therefore it prediction could be troublesome.\n\n\n\n\n\n\n\n\nExercise 01\n\n\n\nSubmit 5lWM (JAK3) from the PDB on FASTA format on the JPRED and PSIPRED and compared with the experimentally predicted version of the protein. Analyse the predicitons and tell are there differences between predictions? Which one is more accurate?"
+  },
+  {
+    "objectID": "09-intro-structural-bioinfo.html#pdb-database-introduction",
+    "href": "09-intro-structural-bioinfo.html#pdb-database-introduction",
+    "title": "9  Introduction to structural bioinformatics",
+    "section": "9.3 PDB database introduction",
+    "text": "9.3 PDB database introduction\nThe PDB database is one of the most important and ancient open biological database where all new protein structures are submitted. It is an international consortium where several regions work together to curate infromation.\nThe PDB in europe PDBe is not only for proteins but form many other experimentally predicted macromolecules (protein-protein interactions, peptides, RNA and so on).\nProtein structures are registered using a unique code of four characters.\nX-rax crystallography: is a chemical state of the macromolecule where it is imobilized, therefore information correspond to one state of the structure, then cristal protein is submitted to an x-ray beam to generate a difraction pattern.\nNMR spectroscopy: captures dynamic information of the protein, but generally resolves small proteins. The principle?\nElectro microscopy adapted to cryopreservation allow proteins visualization."
   },
   {
     "objectID": "demo-genome-searching.html",
