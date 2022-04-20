@@ -18,9 +18,9 @@ Quaternary structures result from interaction of multiple tertiary structures. *
 
 ## Identifying or predicting protein structures
 
-Xray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks [^intro-structural-bioinfo-1]
+Xray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks 
 
-[^intro-structural-bioinfo-1]: To date, helium is scarce around the world, so labs all around are having trouble to get this element.
+[To date, helium is scarce around the world, so labs all around are having trouble to get this element.]{.aside}
 
 Modelling the structure whether *ab initio* or by *homology* also allow structure prediction. However these strategies
 
@@ -38,9 +38,9 @@ Importance of Gene Ontology
 
 Secondary structures could also be represented in one letter (e.g.)
 
-Functional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.[^intro-structural-bioinfo-2]
+Functional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.
 
-[^intro-structural-bioinfo-2]: There is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.
+[There is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.]{.aside}
 
 ::: callout-warning
 ## Exercise 01

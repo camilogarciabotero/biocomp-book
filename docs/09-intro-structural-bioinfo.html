@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.275">
+<meta name="generator" content="quarto-0.9.284">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-04-19">
+<meta name="dcterms.date" content="2022-04-20">
 
 <title>Fundamentals of computational biology - 9&nbsp; Introduction to structural bioinformatics</title>
 <style>
@@ -58,6 +58,11 @@ ul.task-list{list-style: none;}
   }
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<style>
+.quarto-title-banner {
+  
+}
+</style>
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
@@ -262,7 +267,7 @@ ul.task-list{list-style: none;}
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-04-19</p>
+      <p class="date">2022-04-20</p>
     </div>
   </div>
     
@@ -283,7 +288,8 @@ ul.task-list{list-style: none;}
 </section>
 <section id="identifying-or-predicting-protein-structures" class="level2 page-columns page-full" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="identifying-or-predicting-protein-structures"><span class="header-section-number">9.2</span> Identifying or predicting protein structures</h2>
-<div class="page-columns page-full"><p>Xray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1" role="doc-endnote"><p><sup>1</sup>&nbsp;To date, helium is scarce around the world, so labs all around are having trouble to get this element.</p></li></div></div>
+<p>Xray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">To date, helium is scarce around the world, so labs all around are having trouble to get this element.</span></div></div>
 <p>Modelling the structure whether <em>ab initio</em> or by <em>homology</em> also allow structure prediction. However these strategies</p>
 <p>Recently AlphaFold</p>
 <p>The protein database (PDB)</p>
@@ -293,7 +299,8 @@ ul.task-list{list-style: none;}
 <section id="secondary-structure-prediction" class="level3 page-columns page-full" data-number="9.2.1">
 <h3 data-number="9.2.1" class="anchored" data-anchor-id="secondary-structure-prediction"><span class="header-section-number">9.2.1</span> Secondary structure prediction</h3>
 <p>Secondary structures could also be represented in one letter (e.g.)</p>
-<div class="page-columns page-full"><p>Functional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn2" role="doc-endnote"><p><sup>2</sup>&nbsp;There is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.</p></li></div></div>
+<p>Functional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">There is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.</span></div></div>
 <div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -320,7 +327,6 @@ Exercise 01
 
 
 </section>
-
 
 </main> <!-- /main -->
 <script type="application/javascript">
@@ -441,7 +447,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.blur();
     // flash "checked"
     button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
     setTimeout(function() {
+      button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
     // clear code selection
