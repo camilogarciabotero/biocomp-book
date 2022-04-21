@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.275">
+<meta name="generator" content="quarto-0.9.284">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-04-19">
+<meta name="dcterms.date" content="2022-04-20">
 
 <title>Fundamentals of computational biology - 4&nbsp; Sequence alignments</title>
 <style>
@@ -58,6 +58,11 @@ ul.task-list{list-style: none;}
   }
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<style>
+.quarto-title-banner {
+  
+}
+</style>
 
 
 </head>
@@ -267,7 +272,7 @@ ul.task-list{list-style: none;}
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-04-19</p>
+      <p class="date">2022-04-20</p>
     </div>
   </div>
     
@@ -433,7 +438,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.blur();
     // flash "checked"
     button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
     setTimeout(function() {
+      button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
     // clear code selection

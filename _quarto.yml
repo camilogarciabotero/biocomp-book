@@ -10,6 +10,7 @@ book:
       orcid: 0000-0002-0426-7007
       url: https://camilogarciabotero.github.io
       affiliation: Universidad EAFIT
+  citation: true
   #date: "2022-04-11"
   search: true
   repo-url: https://github.com/camilogarciabotero/biocomp-book
