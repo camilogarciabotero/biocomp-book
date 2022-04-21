@@ -67,6 +67,8 @@ comments:
 execute:
   cache: true
 
+google-scholar: true
+
 format:
   html:
     theme: 
