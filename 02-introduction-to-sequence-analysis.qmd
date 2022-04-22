@@ -1,4 +1,4 @@
-# Introduction to sequence analysis
+# Introduction to sequence analysis {#sec-intro-sequencing}
 
 In this chapter we will discuss several about several points of view about bioinformatics and computational biology, we will further consider several biological concepts that appear central to understand the manipulation of biological data.
 

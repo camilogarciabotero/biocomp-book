@@ -1,4 +1,4 @@
-# The command line
+# The command line {#sec-cli}
 
 ::: callout-caution
 This book is a work in progress

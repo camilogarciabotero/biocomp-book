@@ -1,4 +1,4 @@
-# Sanger analysis
+# Sanger analysis {#sec-sanger}
 
 This is a section about the first gen sequencing tech
 

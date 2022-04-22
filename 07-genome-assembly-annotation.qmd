@@ -1,4 +1,4 @@
-# Genome assembly
+# Genome assembly {#sec-genomics}
 
 ## The problem of assembling genomes {.unnumbered}
 

@@ -1,4 +1,4 @@
-# Variant calling analysis
+# Variant calling analysis {#sec-variant-calling}
 
 ## Common mutations {.unnumbered}
 

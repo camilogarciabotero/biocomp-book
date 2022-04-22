@@ -1,4 +1,4 @@
-# Introduction to structural bioinformatics
+# Introduction to structural bioinformatics {#sec-biostructural}
 
 Structural bioinformatics is a multidisciplinary area enriched by chemistry, physics, computer science and many others. Although, it could be focused on different biological macro-molecules, here the emphasis will be focused on proteins.
 

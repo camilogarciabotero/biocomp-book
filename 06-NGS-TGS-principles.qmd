@@ -1,4 +1,4 @@
-# NGS and TGS: principles 
+# NGS and TGS: principles {#sec-ngs-tgs}
 
 ## Platforms yields {.unnumbered}
 

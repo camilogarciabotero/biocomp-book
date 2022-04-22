@@ -1,4 +1,4 @@
-# Sequence alignments 
+# Sequence alignments {#sec-aliignments}
 
 ## Why do we align sequences? {.unnumbered}
 

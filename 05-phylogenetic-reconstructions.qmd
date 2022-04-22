@@ -1,4 +1,4 @@
-# phylogenetics
+# phylogenetics {#sec-phylogenetics}
 
 ## What is a phylogenetic tree {.unnumbered}
 
