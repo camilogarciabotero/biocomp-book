@@ -45,17 +45,11 @@ jobs:
       - name: Install R libraries
         run: |
           install.packages("pak")
-#          install.packages("remotes")
-#          install.packages("rmarkdown")
-#          install.packages("tidyverse")
-#          install.packages("fs")
-#          install.packages("ape")
-#          remotes::install_github("YuLab-SMU/ggtree")
-           pak::pak("rmarkdown")
-           pak::pak("tidyverse")
-           pak::pak("fs")
-           pak::pak("ape")
-           pak::pak("YuLab-SMU/ggtree")
+          pak::pak("rmarkdown")
+          pak::pak("tidyverse")
+          pak::pak("fs")
+          pak::pak("ape")
+          pak::pak("YuLab-SMU/ggtree")
         shell: Rscript {0}
 
       - name: Render book to all format
