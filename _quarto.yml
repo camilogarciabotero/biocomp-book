@@ -72,7 +72,9 @@ google-scholar: true
 format:
   html:
     theme: 
-      light: flatly
+      light: 
+      - flatly
+      - style/fonts.scss
       dark: darkly
     code-link: true
     code-copy: hover
