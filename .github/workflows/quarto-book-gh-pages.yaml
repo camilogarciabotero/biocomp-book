@@ -44,7 +44,8 @@ jobs:
           
       - name: Install R libraries
         run: |
-          install.packages("pak")
+          install.packages("remotes")
+          remotes::install_github("r-lib/pak")
           pak::pak("rmarkdown")
           pak::pak("tidyverse")
           pak::pak("fs")
