@@ -75,7 +75,9 @@ format:
       light: 
       - flatly
       - style/fonts.scss
-      dark: darkly
+      dark: 
+      - darkly
+      - style/fonts.scss
     code-link: true
     code-copy: hover
     # monofont: juliamono
