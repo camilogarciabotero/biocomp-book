@@ -6,7 +6,7 @@
 $headings-font-family: 'Atkinson Hyperlegible';
 //$font-family-monospace: 'Courier Prime';
 $font-family-base: 'Atkinson Hyperlegible';
-
+$font-family-monospace: 'Fira Code';
 
 /*-- scss:rules --*/
 
@@ -89,4 +89,15 @@ $font-family-base: 'Atkinson Hyperlegible';
   src: local(""),
        url("style/fonts/courier-prime-v2-latin-700italic.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url("style/fonts/courier-prime-v2-latin-700italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* FiraCode - latin */
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 700;
+  src: local(""),
+       url("style/fonts/FiraCode-regular.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url("style/fonts/FiraCode-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
