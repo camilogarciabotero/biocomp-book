@@ -1,4 +1,4 @@
-# Edition 0.0.4
+# Edition 0.0.5
 
 - Minor typos and outline for the structural biology section
 
