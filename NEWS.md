@@ -1,6 +1,4 @@
-# Edition 0.0.3
-
-- Citation and reference of the book is now almost complete
+# Edition 0.0.4
 
 - Minor typos and outline for the structural biology section
 
