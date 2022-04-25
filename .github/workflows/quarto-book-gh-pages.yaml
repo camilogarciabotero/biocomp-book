@@ -6,7 +6,7 @@ on:
   # to be able to trigger a manual build
   workflow_dispatch:
 
-name: render and deploy
+name: quarto-render
 
 jobs:
   build-deploy:
