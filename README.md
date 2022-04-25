@@ -1,6 +1,7 @@
 <p align="center">
     <br>
-    <h2> Fundamentals of Computational Biology: lecture notes</h2>
+    <b size = "100"> Fundamentals of Computational Biology: lecture notes</b>
+      <br>
       <br>
     <a href="https://github.com/camilogarciabotero/biocomp-book/releases">
         <img src="https://img.shields.io/github/v/release/camilogarciabotero/biocomp-book?style=flat&labelColor=000000&color=25691f&logo=GitHub&logoColor=white">
