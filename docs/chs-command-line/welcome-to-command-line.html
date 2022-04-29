@@ -25,7 +25,7 @@ ul.task-list{list-style: none;}
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
-<link href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" rel="next">
+<link href="../chs-command-line/package-managers.html" rel="next">
 <link href="../intro.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -113,7 +113,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item sidebar-item-section">
     <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Unix</a>
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">The command line</a>
       <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
         <i class="bi bi-chevron-right ms-2"></i>
       </a>
@@ -122,6 +122,16 @@ ul.task-list{list-style: none;}
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chs-command-line/welcome-to-command-line.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The command line</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-command-line/package-managers.html" class="sidebar-item-text sidebar-link">Package managers</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-command-line/hpc-notions.html" class="sidebar-item-text sidebar-link">Notions of HPC</a>
   </div>
 </li>
     </ul>
@@ -221,7 +231,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-challenges-demos/demo-genome-assembly.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  <a href="../chs-challenges-demos/demo-genome-assembly.html" class="sidebar-item-text sidebar-link">Genome assembly</a>
   </div>
 </li>
     </ul>
@@ -240,11 +250,9 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#getting-started-with-the-command-line" id="toc-getting-started-with-the-command-line" class="nav-link active" data-scroll-target="#getting-started-with-the-command-line">Getting started with the command line</a></li>
-  <li><a href="#basic-unix-commands" id="toc-basic-unix-commands" class="nav-link" data-scroll-target="#basic-unix-commands">Basic Unix commands</a></li>
-  <li><a href="#advance-unix-commands" id="toc-advance-unix-commands" class="nav-link" data-scroll-target="#advance-unix-commands">Advance Unix commands</a></li>
-  <li><a href="#conda-environments-and-other-package-managers" id="toc-conda-environments-and-other-package-managers" class="nav-link" data-scroll-target="#conda-environments-and-other-package-managers">Conda environments and other package managers</a></li>
-  <li><a href="#notions-of-high-performance-computing-hpc" id="toc-notions-of-high-performance-computing-hpc" class="nav-link" data-scroll-target="#notions-of-high-performance-computing-hpc">Notions of High Performance Computing (HPC)</a></li>
+  <li><a href="#getting-started-with-the-command-line" id="toc-getting-started-with-the-command-line" class="nav-link active" data-scroll-target="#getting-started-with-the-command-line"> <span class="header-section-number">1.1</span> Getting started with the command line</a></li>
+  <li><a href="#basic-unix-commands" id="toc-basic-unix-commands" class="nav-link" data-scroll-target="#basic-unix-commands"> <span class="header-section-number">1.2</span> Basic Unix commands</a></li>
+  <li><a href="#advance-unix-commands" id="toc-advance-unix-commands" class="nav-link" data-scroll-target="#advance-unix-commands"> <span class="header-section-number">1.3</span> Advance Unix commands</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-command-line/welcome-to-command-line.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -298,21 +306,15 @@ Danger
 <p>Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It Simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a <em>libre</em> access is the very known OS Linux.</p>
 <p>The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically.</p>
 <p>There are several programs that run in the terminal <a href="#fig-terminal">Fig.&nbsp;<span>1.1</span></a></p>
-<section id="getting-started-with-the-command-line" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="getting-started-with-the-command-line">Getting started with the command line</h2>
+<section id="getting-started-with-the-command-line" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="getting-started-with-the-command-line"><span class="header-section-number">1.1</span> Getting started with the command line</h2>
 <p>Almost every computer has a way to be</p>
 </section>
-<section id="basic-unix-commands" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="basic-unix-commands">Basic Unix commands</h2>
+<section id="basic-unix-commands" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="basic-unix-commands"><span class="header-section-number">1.2</span> Basic Unix commands</h2>
 </section>
-<section id="advance-unix-commands" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="advance-unix-commands">Advance Unix commands</h2>
-</section>
-<section id="conda-environments-and-other-package-managers" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="conda-environments-and-other-package-managers">Conda environments and other package managers</h2>
-</section>
-<section id="notions-of-high-performance-computing-hpc" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="notions-of-high-performance-computing-hpc">Notions of High Performance Computing (HPC)</h2>
+<section id="advance-unix-commands" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="advance-unix-commands"><span class="header-section-number">1.3</span> Advance Unix commands</h2>
 
 
 </section>
@@ -501,8 +503,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chs-command-line/package-managers.html" class="pagination-link">
+        <span class="nav-page-text">Package managers</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,9 @@
+# Notions of HPC {.unnumbered}
+
+## What is HPC
+
+## Some important concepts of the hardware
+
+See [Jakob's blog](https://biojulia.net/post/hardware/)
+
+## Using the Apolo cluster wirh Slurm

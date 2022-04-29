@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/index.html</loc>
-    <lastmod>2022-04-29T23:21:06.681Z</lastmod>
+    <lastmod>2022-04-29T23:43:10.563Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/intro.html</loc>
-    <lastmod>2022-04-29T23:21:06.682Z</lastmod>
+    <lastmod>2022-04-29T23:45:26.466Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-command-line/welcome-to-command-line.html</loc>
-    <lastmod>2022-04-29T23:21:06.682Z</lastmod>
+    <lastmod>2022-04-29T23:46:40.163Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-sequence-analysis/introduction-to-sequence-analysis.html</loc>
-    <lastmod>2022-04-29T23:21:06.683Z</lastmod>
+    <lastmod>2022-04-29T23:45:39.304Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-sequence-analysis/sanger-analysis.html</loc>
@@ -46,7 +46,7 @@
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-challenges-demos/demo-genome-searching.html</loc>
-    <lastmod>2022-04-29T23:21:06.689Z</lastmod>
+    <lastmod>2022-04-29T23:45:51.787Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-challenges-demos/demo-sanger-processing.html</loc>
@@ -62,14 +62,22 @@
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-challenges-demos/demo-reads-assessment.html</loc>
-    <lastmod>2022-04-29T23:21:06.694Z</lastmod>
+    <lastmod>2022-04-29T23:46:12.719Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-challenges-demos/demo-genome-assembly.html</loc>
-    <lastmod>2022-04-29T23:21:06.694Z</lastmod>
+    <lastmod>2022-04-29T23:41:27.357Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/references.html</loc>
     <lastmod>2022-04-29T23:21:06.695Z</lastmod>
+  </url>
+  <url>
+    <loc>https://camilogarciabotero.github.io/biocomp-book/chs-command-line/package-managers.html</loc>
+    <lastmod>2022-04-29T23:45:33.622Z</lastmod>
+  </url>
+  <url>
+    <loc>https://camilogarciabotero.github.io/biocomp-book/chs-command-line/hpc-notions.html</loc>
+    <lastmod>2022-04-29T23:45:35.115Z</lastmod>
   </url>
 </urlset>

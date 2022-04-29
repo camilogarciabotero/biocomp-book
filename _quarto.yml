@@ -24,9 +24,11 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - part: "Unix"
+    - part: "The command line"
       chapters:
         - chs-command-line/welcome-to-command-line.qmd
+        - chs-command-line/package-managers.qmd
+        - chs-command-line/hpc-notions.qmd
     - part: "Sequence analysis and genomics"
       chapters:
         - chs-sequence-analysis/introduction-to-sequence-analysis.qmd

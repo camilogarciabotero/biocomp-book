@@ -6,7 +6,7 @@ This book is a work in progress
 
 In this chapter we will explore the fundamentals of the command line interface (aka CLI). A CLI is actually several things and sometimes simply confused with a terminal window such as the following image:
 
-![A **terminal** app displaying common features of the command line interface](imgs/terminal.png){#fig-terminal fig-align="center"}
+![A **terminal** app displaying common features of the command line interface](imgs-cli/terminal.png){#fig-terminal fig-align="center"}
 
 Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It Simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a *libre* access is the very known OS Linux.
 
@@ -14,14 +14,10 @@ The most important idea behind Unix based systems is the idea that we can use it
 
 There are several programs that run in the terminal [Fig. @fig-terminal] 
 
-## Getting started with the command line {.unnumbered}
+## Getting started with the command line
 
 Almost every computer has a way to be
 
-## Basic Unix commands {.unnumbered}
+## Basic Unix commands
 
-## Advance Unix commands {.unnumbered}
-
-## Conda environments and other package managers {.unnumbered}
-
-## Notions of High Performance Computing (HPC) {.unnumbered}
+## Advance Unix commands

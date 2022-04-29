@@ -1,7 +1,7 @@
-# Genome assembly
+# Genome assembly {.unnumbered}
 
 ::: {.callout-warning}
-## Challenge {.unnumbered}
+## Challenge
 Your professor has sequenced a bacterial isolate using PacBio and Nanopore sequencing methods and has got the FASTQ files from both technologies. Now he needs to know the quality and quantity of these data before start any other analysis and ask you to assess the data. He needs to know how many sequences there are, how many base pairs (in GB) are there and the N50. He is also interested in see a visualization of the i) number of bases vs. sequence lengths (log transformed) and ii) the read length vs. read quality vs. read number.
 
 He ask you to document every step and to conclude what data should be used.
@@ -9,13 +9,13 @@ He ask you to document every step and to conclude what data should be used.
 
 
 
-## Download the reads {.unnumbered}
+## Download the reads
 
 ``` {#downloading-seqs .zsh .important}
 wget
 ```
 
-## Assess read qualities {.unnumbered}
+## Assess read qualities
 
 When using illumina `fastqc` is a very fast alternative. For nanopore `nanplot` will do the job.
 
@@ -23,11 +23,11 @@ When using illumina `fastqc` is a very fast alternative. For nanopore `nanplot` 
 fastqc
 ```
 
-## Exploring assemblers {.unnumbered}
+## Exploring assemblers
 
 One of the most popular genome assemblers for NGS is `spades` whereas for TGS `flye` has been widely used
 
-### Shovill: spades under the hood {.unnumbered}
+### Shovill: spades under the hood
 
 [`shovill`](https://github.com/tseemann/shovill) is a pipeline that enables pre and post processing of genomic data. It can be tunned to several tools for the processing steps and also to select different standalone assemblers
 
@@ -39,7 +39,7 @@ shovill --outdir MxanthusIllumina\
         --cpus 32
 ```
 
-### Dragonflye: flye under the hood {.unnumbered}
+### Dragonflye: flye under the hood
 
 Similar to `shovill` (and inspired by it) [`dragonflye`]() is a pipeline that enables several processing steps of genomic data be
 

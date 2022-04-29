@@ -24,22 +24,22 @@
     "objectID": "chs-command-line/welcome-to-command-line.html#getting-started-with-the-command-line",
     "href": "chs-command-line/welcome-to-command-line.html#getting-started-with-the-command-line",
     "title": "1  The command line",
-    "section": "Getting started with the command line",
-    "text": "Getting started with the command line\nAlmost every computer has a way to be"
+    "section": "1.1 Getting started with the command line",
+    "text": "1.1 Getting started with the command line\nAlmost every computer has a way to be"
   },
   {
     "objectID": "chs-command-line/welcome-to-command-line.html#basic-unix-commands",
     "href": "chs-command-line/welcome-to-command-line.html#basic-unix-commands",
     "title": "1  The command line",
-    "section": "Basic Unix commands",
-    "text": "Basic Unix commands"
+    "section": "1.2 Basic Unix commands",
+    "text": "1.2 Basic Unix commands"
   },
   {
     "objectID": "chs-command-line/welcome-to-command-line.html#advance-unix-commands",
     "href": "chs-command-line/welcome-to-command-line.html#advance-unix-commands",
     "title": "1  The command line",
-    "section": "Advance Unix commands",
-    "text": "Advance Unix commands"
+    "section": "1.3 Advance Unix commands",
+    "text": "1.3 Advance Unix commands"
   },
   {
     "objectID": "chs-command-line/welcome-to-command-line.html#conda-environments-and-other-package-managers",
@@ -499,29 +499,57 @@
   {
     "objectID": "chs-challenges-demos/demo-genome-assembly.html",
     "href": "chs-challenges-demos/demo-genome-assembly.html",
-    "title": "15  Genome assembly",
+    "title": "Genome assembly",
     "section": "",
     "text": "Challenge\n\n\n\nYour professor has sequenced a bacterial isolate using PacBio and Nanopore sequencing methods and has got the FASTQ files from both technologies. Now he needs to know the quality and quantity of these data before start any other analysis and ask you to assess the data. He needs to know how many sequences there are, how many base pairs (in GB) are there and the N50. He is also interested in see a visualization of the i) number of bases vs. sequence lengths (log transformed) and ii) the read length vs. read quality vs. read number.\nHe ask you to document every step and to conclude what data should be used."
   },
   {
     "objectID": "chs-challenges-demos/demo-genome-assembly.html#download-the-reads",
     "href": "chs-challenges-demos/demo-genome-assembly.html#download-the-reads",
-    "title": "15  Genome assembly",
+    "title": "Genome assembly",
     "section": "Download the reads",
     "text": "Download the reads\nwget"
   },
   {
     "objectID": "chs-challenges-demos/demo-genome-assembly.html#assess-read-qualities",
     "href": "chs-challenges-demos/demo-genome-assembly.html#assess-read-qualities",
-    "title": "15  Genome assembly",
+    "title": "Genome assembly",
     "section": "Assess read qualities",
     "text": "Assess read qualities\nWhen using illumina fastqc is a very fast alternative. For nanopore nanplot will do the job.\nfastqc"
   },
   {
     "objectID": "chs-challenges-demos/demo-genome-assembly.html#exploring-assemblers",
     "href": "chs-challenges-demos/demo-genome-assembly.html#exploring-assemblers",
-    "title": "15  Genome assembly",
+    "title": "Genome assembly",
     "section": "Exploring assemblers",
     "text": "Exploring assemblers\nOne of the most popular genome assemblers for NGS is spades whereas for TGS flye has been widely used\n\nShovill: spades under the hood\nshovill is a pipeline that enables pre and post processing of genomic data. It can be tunned to several tools for the processing steps and also to select different standalone assemblers\nshovill --outdir MxanthusIllumina\\\n        --R1 R1.fq.gz\\\n        --R2 R2.fq.gz\\\n        --trim\\\n        --cpus 32\n\n\nDragonflye: flye under the hood\nSimilar to shovill (and inspired by it) dragonflye is a pipeline that enables several processing steps of genomic data be\ndragonflye --outdir MxanthusNanopore\\\n           --gsize 9Mb\\\n           --trim\\\n           --reads ont-readsfastq.gz\\\n           --racon 5\nwget\nSince we are trying to assemble a bacterial genome, computer memory appears to be a limiting features of a local machine. Then, a computer cluster with high performance turns out to be an important need.\nFirst we need environment installations, therefore its important to have conda environments with the assemblers and other programs (conda create -c bioconda dragonflye dragonflye and conda create -c bioconda shovill shovill). That way both assemblers pipelines will lie in separate environment avoiding possible dependenies problems\nWe will use Apolo computer cluster which uses Slurm as the computer system workload manager (i.e a program that manages the time and resources of the computer)."
+  },
+  {
+    "objectID": "chs-command-line/package-managers.html#conda-environments-and-other-package-managers",
+    "href": "chs-command-line/package-managers.html#conda-environments-and-other-package-managers",
+    "title": "Package managers",
+    "section": "Conda environments and other package managers",
+    "text": "Conda environments and other package managers"
+  },
+  {
+    "objectID": "chs-command-line/package-managers.html#creating-enviroments-with-conda",
+    "href": "chs-command-line/package-managers.html#creating-enviroments-with-conda",
+    "title": "Package managers",
+    "section": "Creating enviroments with Conda",
+    "text": "Creating enviroments with Conda"
+  },
+  {
+    "objectID": "chs-command-line/hpc-notions.html#some-important-concepts-of-the-hardware",
+    "href": "chs-command-line/hpc-notions.html#some-important-concepts-of-the-hardware",
+    "title": "Notions of HPC",
+    "section": "Some important concepts of the hardware",
+    "text": "Some important concepts of the hardware\nSee Jakob’s blog"
+  },
+  {
+    "objectID": "chs-command-line/hpc-notions.html#using-the-apolo-cluster-wirh-slurm",
+    "href": "chs-command-line/hpc-notions.html#using-the-apolo-cluster-wirh-slurm",
+    "title": "Notions of HPC",
+    "section": "Using the Apolo cluster wirh Slurm",
+    "text": "Using the Apolo cluster wirh Slurm"
   }
 ]

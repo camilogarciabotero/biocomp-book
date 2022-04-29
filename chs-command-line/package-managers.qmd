@@ -1,0 +1,7 @@
+# Package managers {.unnumbered}
+
+## What is the importance of package managers
+
+## Conda environments and other package managers
+
+## Creating enviroments with Conda
