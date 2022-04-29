@@ -14,512 +14,512 @@
     "text": "Here we present a course centered book of the Fundamentals of Computational Biology. We will cover several topics, from using the unix tools, the importance of package manager systems (such as homebrew and conda), sequencing technologies, sequence alignments, molecular phylogenetics, genome assembly and annotation, and variant calling analysis."
   },
   {
-    "objectID": "01-welcome-to-command-line.html",
-    "href": "01-welcome-to-command-line.html",
+    "objectID": "chs-command-line/welcome-to-command-line.html",
+    "href": "chs-command-line/welcome-to-command-line.html",
     "title": "1  The command line",
     "section": "",
     "text": "Danger\n\n\n\nThis book is a work in progress\nIn this chapter we will explore the fundamentals of the command line interface (aka CLI). A CLI is actually several things and sometimes simply confused with a terminal window such as the following image:\nBefore landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It Simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a libre access is the very known OS Linux.\nThe most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically.\nThere are several programs that run in the terminal Fig. 1.1"
   },
   {
-    "objectID": "01-welcome-to-command-line.html#getting-started-with-the-command-line",
-    "href": "01-welcome-to-command-line.html#getting-started-with-the-command-line",
+    "objectID": "chs-command-line/welcome-to-command-line.html#getting-started-with-the-command-line",
+    "href": "chs-command-line/welcome-to-command-line.html#getting-started-with-the-command-line",
     "title": "1  The command line",
     "section": "Getting started with the command line",
     "text": "Getting started with the command line\nAlmost every computer has a way to be"
   },
   {
-    "objectID": "01-welcome-to-command-line.html#basic-unix-commands",
-    "href": "01-welcome-to-command-line.html#basic-unix-commands",
+    "objectID": "chs-command-line/welcome-to-command-line.html#basic-unix-commands",
+    "href": "chs-command-line/welcome-to-command-line.html#basic-unix-commands",
     "title": "1  The command line",
     "section": "Basic Unix commands",
     "text": "Basic Unix commands"
   },
   {
-    "objectID": "01-welcome-to-command-line.html#advance-unix-commands",
-    "href": "01-welcome-to-command-line.html#advance-unix-commands",
+    "objectID": "chs-command-line/welcome-to-command-line.html#advance-unix-commands",
+    "href": "chs-command-line/welcome-to-command-line.html#advance-unix-commands",
     "title": "1  The command line",
     "section": "Advance Unix commands",
     "text": "Advance Unix commands"
   },
   {
-    "objectID": "01-welcome-to-command-line.html#conda-environments-and-other-package-managers",
-    "href": "01-welcome-to-command-line.html#conda-environments-and-other-package-managers",
+    "objectID": "chs-command-line/welcome-to-command-line.html#conda-environments-and-other-package-managers",
+    "href": "chs-command-line/welcome-to-command-line.html#conda-environments-and-other-package-managers",
     "title": "1  The command line",
     "section": "Conda environments and other package managers",
     "text": "Conda environments and other package managers"
   },
   {
-    "objectID": "01-welcome-to-command-line.html#notions-of-high-performance-computing-hpc",
-    "href": "01-welcome-to-command-line.html#notions-of-high-performance-computing-hpc",
+    "objectID": "chs-command-line/welcome-to-command-line.html#notions-of-high-performance-computing-hpc",
+    "href": "chs-command-line/welcome-to-command-line.html#notions-of-high-performance-computing-hpc",
     "title": "1  The command line",
     "section": "Notions of High Performance Computing (HPC)",
     "text": "Notions of High Performance Computing (HPC)"
   },
   {
-    "objectID": "02-introduction-to-sequence-analysis.html",
-    "href": "02-introduction-to-sequence-analysis.html",
+    "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html",
+    "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html",
     "title": "2  Introduction to sequence analysis",
     "section": "",
     "text": "In this chapter we will discuss several about several points of view about bioinformatics and computational biology, we will further consider several biological concepts that appear central to understand the manipulation of biological data."
   },
   {
-    "objectID": "02-introduction-to-sequence-analysis.html#endless-debate-bioinformatics-vs.-computational-biology",
-    "href": "02-introduction-to-sequence-analysis.html#endless-debate-bioinformatics-vs.-computational-biology",
+    "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#endless-debate-bioinformatics-vs.-computational-biology",
+    "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#endless-debate-bioinformatics-vs.-computational-biology",
     "title": "2  Introduction to sequence analysis",
     "section": "Endless debate: bioinformatics vs. computational biology",
     "text": "Endless debate: bioinformatics vs. computational biology"
   },
   {
-    "objectID": "02-introduction-to-sequence-analysis.html#the-duality-of-dna",
-    "href": "02-introduction-to-sequence-analysis.html#the-duality-of-dna",
+    "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-duality-of-dna",
+    "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-duality-of-dna",
     "title": "2  Introduction to sequence analysis",
     "section": "The duality of DNA",
     "text": "The duality of DNA"
   },
   {
-    "objectID": "02-introduction-to-sequence-analysis.html#the-central-dogma-theory-of-molecular-biology-extended",
-    "href": "02-introduction-to-sequence-analysis.html#the-central-dogma-theory-of-molecular-biology-extended",
+    "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-central-dogma-theory-of-molecular-biology-extended",
+    "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-central-dogma-theory-of-molecular-biology-extended",
     "title": "2  Introduction to sequence analysis",
     "section": "The central dogma theory of molecular biology extended",
     "text": "The central dogma theory of molecular biology extended"
   },
   {
-    "objectID": "02-introduction-to-sequence-analysis.html#sequencing-strategies",
-    "href": "02-introduction-to-sequence-analysis.html#sequencing-strategies",
+    "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-strategies",
+    "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-strategies",
     "title": "2  Introduction to sequence analysis",
     "section": "Sequencing strategies",
     "text": "Sequencing strategies"
   },
   {
-    "objectID": "02-introduction-to-sequence-analysis.html#sequencing-over-time",
-    "href": "02-introduction-to-sequence-analysis.html#sequencing-over-time",
+    "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-over-time",
+    "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-over-time",
     "title": "2  Introduction to sequence analysis",
     "section": "Sequencing over time",
     "text": "Sequencing over time"
   },
   {
-    "objectID": "02-introduction-to-sequence-analysis.html#some-insights-from-sequencing-genomes",
-    "href": "02-introduction-to-sequence-analysis.html#some-insights-from-sequencing-genomes",
+    "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#some-insights-from-sequencing-genomes",
+    "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#some-insights-from-sequencing-genomes",
     "title": "2  Introduction to sequence analysis",
     "section": "Some insights from sequencing genomes",
     "text": "Some insights from sequencing genomes"
   },
   {
-    "objectID": "03-sanger-analysis.html",
-    "href": "03-sanger-analysis.html",
+    "objectID": "chs-sequence-analysis/sanger-analysis.html",
+    "href": "chs-sequence-analysis/sanger-analysis.html",
     "title": "3  Sanger analysis",
     "section": "",
     "text": "This is a section about the first gen sequencing tech"
   },
   {
-    "objectID": "03-sanger-analysis.html#databases-exploration",
-    "href": "03-sanger-analysis.html#databases-exploration",
+    "objectID": "chs-sequence-analysis/sanger-analysis.html#databases-exploration",
+    "href": "chs-sequence-analysis/sanger-analysis.html#databases-exploration",
     "title": "3  Sanger analysis",
     "section": "Databases exploration",
     "text": "Databases exploration"
   },
   {
-    "objectID": "03-sanger-analysis.html#sanger-sequencing-methods",
-    "href": "03-sanger-analysis.html#sanger-sequencing-methods",
+    "objectID": "chs-sequence-analysis/sanger-analysis.html#sanger-sequencing-methods",
+    "href": "chs-sequence-analysis/sanger-analysis.html#sanger-sequencing-methods",
     "title": "3  Sanger analysis",
     "section": "Sanger sequencing methods",
     "text": "Sanger sequencing methods\n\nThe chain termination method\n\n\nSanger with capillary electrophoresis\n\n\nStrengths and limitations of Sanger methods"
   },
   {
-    "objectID": "03-sanger-analysis.html#files-from-sanger",
-    "href": "03-sanger-analysis.html#files-from-sanger",
+    "objectID": "chs-sequence-analysis/sanger-analysis.html#files-from-sanger",
+    "href": "chs-sequence-analysis/sanger-analysis.html#files-from-sanger",
     "title": "3  Sanger analysis",
     "section": "Files from Sanger",
     "text": "Files from Sanger"
   },
   {
-    "objectID": "03-sanger-analysis.html#sanger-processing-workflow",
-    "href": "03-sanger-analysis.html#sanger-processing-workflow",
+    "objectID": "chs-sequence-analysis/sanger-analysis.html#sanger-processing-workflow",
+    "href": "chs-sequence-analysis/sanger-analysis.html#sanger-processing-workflow",
     "title": "3  Sanger analysis",
     "section": "Sanger processing workflow",
     "text": "Sanger processing workflow"
   },
   {
-    "objectID": "03-sanger-analysis.html#the-16s-rrna-and-its-relevance-for-sequencing",
-    "href": "03-sanger-analysis.html#the-16s-rrna-and-its-relevance-for-sequencing",
+    "objectID": "chs-sequence-analysis/sanger-analysis.html#the-16s-rrna-and-its-relevance-for-sequencing",
+    "href": "chs-sequence-analysis/sanger-analysis.html#the-16s-rrna-and-its-relevance-for-sequencing",
     "title": "3  Sanger analysis",
     "section": "The 16S rRNA and its relevance for sequencing",
     "text": "The 16S rRNA and its relevance for sequencing"
   },
   {
-    "objectID": "04-sequence-alignments.html",
-    "href": "04-sequence-alignments.html",
+    "objectID": "chs-sequence-analysis/sequence-alignments.html",
+    "href": "chs-sequence-analysis/sequence-alignments.html",
     "title": "4  Sequence alignments",
     "section": "",
     "text": "In search of homology and identy"
   },
   {
-    "objectID": "04-sequence-alignments.html#what-is-homology",
-    "href": "04-sequence-alignments.html#what-is-homology",
+    "objectID": "chs-sequence-analysis/sequence-alignments.html#what-is-homology",
+    "href": "chs-sequence-analysis/sequence-alignments.html#what-is-homology",
     "title": "4  Sequence alignments",
     "section": "What is homology",
     "text": "What is homology"
   },
   {
-    "objectID": "04-sequence-alignments.html#pairwise-alignments-algorihtms",
-    "href": "04-sequence-alignments.html#pairwise-alignments-algorihtms",
+    "objectID": "chs-sequence-analysis/sequence-alignments.html#pairwise-alignments-algorihtms",
+    "href": "chs-sequence-analysis/sequence-alignments.html#pairwise-alignments-algorihtms",
     "title": "4  Sequence alignments",
     "section": "Pairwise alignments algorihtms",
     "text": "Pairwise alignments algorihtms\n\nHamming distance\n\n\nEdit distance\n\n4.0.0.1 Dynamic programming\n\n\n\nNeedleman-Wunsch (global alignment)\n\n\nSmith-Waterman (local alignment)"
   },
   {
-    "objectID": "04-sequence-alignments.html#the-genetic-code-and-scoring-matrices",
-    "href": "04-sequence-alignments.html#the-genetic-code-and-scoring-matrices",
+    "objectID": "chs-sequence-analysis/sequence-alignments.html#the-genetic-code-and-scoring-matrices",
+    "href": "chs-sequence-analysis/sequence-alignments.html#the-genetic-code-and-scoring-matrices",
     "title": "4  Sequence alignments",
     "section": "The genetic code and Scoring matrices",
     "text": "The genetic code and Scoring matrices"
   },
   {
-    "objectID": "04-sequence-alignments.html#blast-and-its-families",
-    "href": "04-sequence-alignments.html#blast-and-its-families",
+    "objectID": "chs-sequence-analysis/sequence-alignments.html#blast-and-its-families",
+    "href": "chs-sequence-analysis/sequence-alignments.html#blast-and-its-families",
     "title": "4  Sequence alignments",
     "section": "BLAST and its families",
     "text": "BLAST and its families\npsi-blast? true homologs, recurrent blast to polish scoring matrix during several generations to generate true homologs"
   },
   {
-    "objectID": "04-sequence-alignments.html#multiple-sequence-alignments",
-    "href": "04-sequence-alignments.html#multiple-sequence-alignments",
+    "objectID": "chs-sequence-analysis/sequence-alignments.html#multiple-sequence-alignments",
+    "href": "chs-sequence-analysis/sequence-alignments.html#multiple-sequence-alignments",
     "title": "4  Sequence alignments",
     "section": "Multiple sequence alignments",
     "text": "Multiple sequence alignments"
   },
   {
-    "objectID": "05-phylogenetic-reconstructions.html#mehtods-for-phylogenetic-reconstruction",
-    "href": "05-phylogenetic-reconstructions.html#mehtods-for-phylogenetic-reconstruction",
+    "objectID": "chs-sequence-analysis/phylogenetic-reconstructions.html#mehtods-for-phylogenetic-reconstruction",
+    "href": "chs-sequence-analysis/phylogenetic-reconstructions.html#mehtods-for-phylogenetic-reconstruction",
     "title": "5  phylogenetics",
     "section": "Mehtods for phylogenetic reconstruction",
     "text": "Mehtods for phylogenetic reconstruction"
   },
   {
-    "objectID": "05-phylogenetic-reconstructions.html#building-a-phylogenetic-reconstruction",
-    "href": "05-phylogenetic-reconstructions.html#building-a-phylogenetic-reconstruction",
+    "objectID": "chs-sequence-analysis/phylogenetic-reconstructions.html#building-a-phylogenetic-reconstruction",
+    "href": "chs-sequence-analysis/phylogenetic-reconstructions.html#building-a-phylogenetic-reconstruction",
     "title": "5  phylogenetics",
     "section": "Building a phylogenetic reconstruction",
     "text": "Building a phylogenetic reconstruction\n\nEvolutionary substitution model\n\n\nMaximum likelihood\n\n\nBayesian inference"
   },
   {
-    "objectID": "06-NGS-TGS-principles.html#reads-main-differences",
-    "href": "06-NGS-TGS-principles.html#reads-main-differences",
+    "objectID": "chs-sequence-analysis/NGS-TGS-principles.html#reads-main-differences",
+    "href": "chs-sequence-analysis/NGS-TGS-principles.html#reads-main-differences",
     "title": "6  NGS and TGS: principles",
     "section": "Reads main differences",
     "text": "Reads main differences"
   },
   {
-    "objectID": "06-NGS-TGS-principles.html#illumina-principle-sequencing-by-synthesis",
-    "href": "06-NGS-TGS-principles.html#illumina-principle-sequencing-by-synthesis",
+    "objectID": "chs-sequence-analysis/NGS-TGS-principles.html#illumina-principle-sequencing-by-synthesis",
+    "href": "chs-sequence-analysis/NGS-TGS-principles.html#illumina-principle-sequencing-by-synthesis",
     "title": "6  NGS and TGS: principles",
     "section": "Illumina principle (sequencing by synthesis)",
     "text": "Illumina principle (sequencing by synthesis)\n\nThe fastq format\n\n\nQuality assesment of Illumina"
   },
   {
-    "objectID": "06-NGS-TGS-principles.html#pacbio-principle-sequencing-by-incorporation",
-    "href": "06-NGS-TGS-principles.html#pacbio-principle-sequencing-by-incorporation",
+    "objectID": "chs-sequence-analysis/NGS-TGS-principles.html#pacbio-principle-sequencing-by-incorporation",
+    "href": "chs-sequence-analysis/NGS-TGS-principles.html#pacbio-principle-sequencing-by-incorporation",
     "title": "6  NGS and TGS: principles",
     "section": "PacBio principle (sequencing by incorporation)",
     "text": "PacBio principle (sequencing by incorporation)\n\nThroughput evolution\n\n\nQuality assesment of PacBio"
   },
   {
-    "objectID": "06-NGS-TGS-principles.html#oxford-nanopore-technology-ont-principle",
-    "href": "06-NGS-TGS-principles.html#oxford-nanopore-technology-ont-principle",
+    "objectID": "chs-sequence-analysis/NGS-TGS-principles.html#oxford-nanopore-technology-ont-principle",
+    "href": "chs-sequence-analysis/NGS-TGS-principles.html#oxford-nanopore-technology-ont-principle",
     "title": "6  NGS and TGS: principles",
     "section": "Oxford Nanopore Technology (ONT) principle",
     "text": "Oxford Nanopore Technology (ONT) principle\n\nPlatforms\n\n\nThe fast5 file format"
   },
   {
-    "objectID": "07-genome-assembly-annotation.html#main-algorithms-for-genome-asssembly",
-    "href": "07-genome-assembly-annotation.html#main-algorithms-for-genome-asssembly",
+    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#main-algorithms-for-genome-asssembly",
+    "href": "chs-sequence-analysis/genome-assembly-annotation.html#main-algorithms-for-genome-asssembly",
     "title": "7  Genome assembly",
     "section": "Main algorithms for genome asssembly",
     "text": "Main algorithms for genome asssembly\n\nOverlay, Layout, Consensus (OLS)\n\n\nDe Bruijn graphs"
   },
   {
-    "objectID": "07-genome-assembly-annotation.html#main-concepts-of-an-assembly",
-    "href": "07-genome-assembly-annotation.html#main-concepts-of-an-assembly",
+    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#main-concepts-of-an-assembly",
+    "href": "chs-sequence-analysis/genome-assembly-annotation.html#main-concepts-of-an-assembly",
     "title": "7  Genome assembly",
     "section": "Main concepts of an assembly",
     "text": "Main concepts of an assembly\n\nContigs, Unitigs, Scaffolds"
   },
   {
-    "objectID": "07-genome-assembly-annotation.html#a-complete-workflow-for-assembling-genomes",
-    "href": "07-genome-assembly-annotation.html#a-complete-workflow-for-assembling-genomes",
+    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#a-complete-workflow-for-assembling-genomes",
+    "href": "chs-sequence-analysis/genome-assembly-annotation.html#a-complete-workflow-for-assembling-genomes",
     "title": "7  Genome assembly",
     "section": "A complete workflow for assembling genomes",
     "text": "A complete workflow for assembling genomes"
   },
   {
-    "objectID": "07-genome-assembly-annotation.html#assessing-genomes",
-    "href": "07-genome-assembly-annotation.html#assessing-genomes",
+    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#assessing-genomes",
+    "href": "chs-sequence-analysis/genome-assembly-annotation.html#assessing-genomes",
     "title": "7  Genome assembly",
     "section": "Assessing genomes",
     "text": "Assessing genomes\n\nInspecting genome graphs\n\n\nGenome completeness"
   },
   {
-    "objectID": "07-genome-assembly-annotation.html#understanding-genome-difficulties",
-    "href": "07-genome-assembly-annotation.html#understanding-genome-difficulties",
+    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#understanding-genome-difficulties",
+    "href": "chs-sequence-analysis/genome-assembly-annotation.html#understanding-genome-difficulties",
     "title": "7  Genome assembly",
     "section": "Understanding genome difficulties",
     "text": "Understanding genome difficulties\n\nEnd of chromosomes\nErros\nLack of coverage\nHeterozigozity\nrepeats"
   },
   {
-    "objectID": "07-genome-assembly-annotation.html#ab-initio-annotation",
-    "href": "07-genome-assembly-annotation.html#ab-initio-annotation",
+    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#ab-initio-annotation",
+    "href": "chs-sequence-analysis/genome-assembly-annotation.html#ab-initio-annotation",
     "title": "7  Genome assembly",
     "section": "8.1 ab initio annotation",
     "text": "8.1 ab initio annotation"
   },
   {
-    "objectID": "07-genome-assembly-annotation.html#homolgy-annotation",
-    "href": "07-genome-assembly-annotation.html#homolgy-annotation",
+    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#homolgy-annotation",
+    "href": "chs-sequence-analysis/genome-assembly-annotation.html#homolgy-annotation",
     "title": "7  Genome assembly",
     "section": "8.2 Homolgy annotation",
     "text": "8.2 Homolgy annotation"
   },
   {
-    "objectID": "07-genome-assembly-annotation.html#annotation-files",
-    "href": "07-genome-assembly-annotation.html#annotation-files",
+    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#annotation-files",
+    "href": "chs-sequence-analysis/genome-assembly-annotation.html#annotation-files",
     "title": "7  Genome assembly",
     "section": "8.3 Annotation files",
     "text": "8.3 Annotation files\n\n8.3.1 the GBK and GBFF\n\n\n8.3.2 The GFF specificaitons"
   },
   {
-    "objectID": "07-genome-assembly-annotation.html#visualizing-genomes-and-annotations",
-    "href": "07-genome-assembly-annotation.html#visualizing-genomes-and-annotations",
+    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#visualizing-genomes-and-annotations",
+    "href": "chs-sequence-analysis/genome-assembly-annotation.html#visualizing-genomes-and-annotations",
     "title": "7  Genome assembly",
     "section": "8.4 Visualizing genomes and annotations",
     "text": "8.4 Visualizing genomes and annotations"
   },
   {
-    "objectID": "08-variant-calling-analysis.html#structural-variants",
-    "href": "08-variant-calling-analysis.html#structural-variants",
+    "objectID": "chs-sequence-analysis/variant-calling-analysis.html#structural-variants",
+    "href": "chs-sequence-analysis/variant-calling-analysis.html#structural-variants",
     "title": "8  Variant calling analysis",
     "section": "Structural variants",
     "text": "Structural variants"
   },
   {
-    "objectID": "08-variant-calling-analysis.html#genome-rearrengments",
-    "href": "08-variant-calling-analysis.html#genome-rearrengments",
+    "objectID": "chs-sequence-analysis/variant-calling-analysis.html#genome-rearrengments",
+    "href": "chs-sequence-analysis/variant-calling-analysis.html#genome-rearrengments",
     "title": "8  Variant calling analysis",
     "section": "Genome rearrengments",
     "text": "Genome rearrengments"
   },
   {
-    "objectID": "08-variant-calling-analysis.html#read-mapping-algorithms-and-programs",
-    "href": "08-variant-calling-analysis.html#read-mapping-algorithms-and-programs",
+    "objectID": "chs-sequence-analysis/variant-calling-analysis.html#read-mapping-algorithms-and-programs",
+    "href": "chs-sequence-analysis/variant-calling-analysis.html#read-mapping-algorithms-and-programs",
     "title": "8  Variant calling analysis",
     "section": "Read mapping algorithms and programs",
     "text": "Read mapping algorithms and programs\n\nBurrow-Wheeler-Alignment\n\n\nBWA-MEM2\n\n\nMinimap2\n\n\nSAM, BAM and CRAM formats"
   },
   {
-    "objectID": "08-variant-calling-analysis.html#identifying-mutations",
-    "href": "08-variant-calling-analysis.html#identifying-mutations",
+    "objectID": "chs-sequence-analysis/variant-calling-analysis.html#identifying-mutations",
+    "href": "chs-sequence-analysis/variant-calling-analysis.html#identifying-mutations",
     "title": "8  Variant calling analysis",
     "section": "Identifying mutations",
     "text": "Identifying mutations\n\nFreebayes and Snippy\n\n\nThe VCF file"
   },
   {
-    "objectID": "09-intro-structural-bioinfo.html",
-    "href": "09-intro-structural-bioinfo.html",
+    "objectID": "chs-bio-structural/intro-structural-bioinfo.html",
+    "href": "chs-bio-structural/intro-structural-bioinfo.html",
     "title": "9  Introduction to structural bioinformatics",
     "section": "",
     "text": "Structural bioinformatics is a multidisciplinary area enriched by chemistry, physics, computer science and many others. Although, it could be focused on different biological macro-molecules, here the emphasis will be focused on proteins.\nOne of the first protein structure elucidated was myoglobin and it triggered the study of the role of the structure of proteins and its biological functions\nIdentify a protein related to your study that could be further analyzed."
   },
   {
-    "objectID": "09-intro-structural-bioinfo.html#protein-structures",
-    "href": "09-intro-structural-bioinfo.html#protein-structures",
+    "objectID": "chs-bio-structural/intro-structural-bioinfo.html#protein-structures",
+    "href": "chs-bio-structural/intro-structural-bioinfo.html#protein-structures",
     "title": "9  Introduction to structural bioinformatics",
     "section": "9.1 Protein structures",
     "text": "9.1 Protein structures\nDifference between the levels of protein structure primary structure is the basic linear representation of aminoacids. Natural aminoacids and modified or rare aminoacids display physico-chemical rich information and could be represented by letters. Therefore in the genetic code we could find the one-letter code.\nSecondary structures result from the spatial arrangement of aminoacids that interact with each closer neighbors. There are some remarkable secondary structures such as \\(\\beta\\)-sheets, \\(\\alpha\\)-helix, coils (flexible) and others.\nTertiary structure informs about the structural disposition of the secondary structures that fold between each other due to hydrophobic interactions, disulfure bonds, and other chemical interactions forming a globular and dynamic structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the Levinthal’s paradox).\nQuaternary structures result from interaction of multiple tertiary structures. The structure, therefore dictates the protein function. This basic concept have triggered more recently a boom on the analysis of the structure of proteins."
   },
   {
-    "objectID": "09-intro-structural-bioinfo.html#identifying-or-predicting-protein-structures",
-    "href": "09-intro-structural-bioinfo.html#identifying-or-predicting-protein-structures",
+    "objectID": "chs-bio-structural/intro-structural-bioinfo.html#identifying-or-predicting-protein-structures",
+    "href": "chs-bio-structural/intro-structural-bioinfo.html#identifying-or-predicting-protein-structures",
     "title": "9  Introduction to structural bioinformatics",
     "section": "9.2 Identifying or predicting protein structures",
     "text": "9.2 Identifying or predicting protein structures\nXray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks\nTo date, helium is scarce around the world, so labs all around are having trouble to get this element.\nModelling the structure whether ab initio or by homology also allow structure prediction. However these strategies\nRecently AlphaFold\nThe protein database (PDB)\nProtein topologies resulting from the folding: horshoe, beta-barrel and other could be identified\nStructural classification of proteins (SCOP) when analyzing a new protein classification by class, architecture, topology (fold-family), homologous superfamily and sequence family\nImportance of Gene Ontology\n\n9.2.1 Secondary structure prediction\nSecondary structures could also be represented in one letter (e.g.)\nFunctional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.\nThere is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.\n\n\n\n\n\n\nExercise 01\n\n\n\nSubmit 5lWM (JAK3) from the PDB on FASTA format on the JPRED and PSIPRED and compared with the experimentally predicted version of the protein. Analyse the predictions and tell are there differences between predictions? Which one is more accurate?"
   },
   {
-    "objectID": "09-intro-structural-bioinfo.html#pdb-database-introduction",
-    "href": "09-intro-structural-bioinfo.html#pdb-database-introduction",
+    "objectID": "chs-bio-structural/intro-structural-bioinfo.html#pdb-database-introduction",
+    "href": "chs-bio-structural/intro-structural-bioinfo.html#pdb-database-introduction",
     "title": "9  Introduction to structural bioinformatics",
     "section": "9.3 PDB database introduction",
     "text": "9.3 PDB database introduction\nThe PDB database is one of the most important and ancient open biological database where all new protein structures are submitted. It is an international consortium where several regions work together to curate information.\nThe PDB in Europe (PDBe) is not only for proteins but form many other experimentally predicted macro-molecules (protein-protein interactions, peptides, RNA and so on).\nProtein structures are registered using a unique code of four characters.\nX-ray crystallography: is a chemical state of the macro-molecule where it is immobilized, therefore information correspond to one state of the structure, then crystal protein is submitted to an x-ray beam to generate a diffraction pattern.\nNMR spectroscopy: captures dynamic information of the protein, but generally resolves small proteins. The principle?\nElectron microscopy adapted to cryo-preservation allow proteins visualization."
   },
   {
-    "objectID": "demo-genome-searching.html",
-    "href": "demo-genome-searching.html",
+    "objectID": "chs-challenges-demos/demo-genome-searching.html",
+    "href": "chs-challenges-demos/demo-genome-searching.html",
     "title": "\n10  Genome searching\n",
     "section": "",
-    "text": "Downloading a genome\nncbi-genome-download\nDownloading from NCBI\nThe first step in this journey is to download a bunch of sequences programatically. To do so, we will use the program ncbi-genome-download.\nYou could inspect all the options it provides, now we will set our command as the following:\n#| echo: true\n#| eval: true\nngd --genera \"Bacillus subtilis\"\\\n    -s refseq\\\n    -l complete\\\n    -o Data\\\n    --flat-output\\\n    --format features\\\n    -n bacteria\\\n    | head -n 10\nListing files\nls Data | head -n 10\nDecompressing using gzip\n\ngzip -d *\n\nSome files in our data dir\nls Data | head\n\n\nImporting the files into R\n\nlibrary(tidyverse)\nlibrary(fs)\n\nall_features <- dir_ls(\"Data/\") %>% \n  map_df(read_tsv)\n\nall_features %>% \n  head()\n\n\n\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.5     ✔ purrr   0.3.4\n✔ tibble  3.1.6     ✔ dplyr   1.0.8\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.2     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nlibrary(fs)\n\nall_features <- dir_ls(\"Data/\") %>% \n  map_df(read_tsv)\n\nall_features %>% \n  head()\n\n# A tibble: 0 × 0\n\n\n\nData processing\n\nall_features_grouped <- all_features %>% \n  rename(feature = `# feature`) %>% \n  select(assembly, feature) %>% \n  group_by(assembly, feature) %>%  operations\n  count() %>% \n  pivot_wider(names_from = feature, values_from = n) %>% \n  arrange(desc(CDS))\n    \nall_features_grouped %>% \n  head()\n\ncreate a new dataset that will group by features per accession. get read of the weird name of the column. Select these two columns. Group by these two columns to perform. count the numbers of rows based on the applied group. generate a wide dataset sending row names as columns. Arrange descending by the number of CDSs."
+    "text": "Downloading a genome\nncbi-genome-download\nDownloading from NCBI\nThe first step in this journey is to download a bunch of sequences programatically. To do so, we will use the program ncbi-genome-download.\nYou could inspect all the options it provides, now we will set our command as the following:\n#| echo: true\n#| eval: true\nngd --genera \"Bacillus subtilis\"\\\n    -s refseq\\\n    -l complete\\\n    -o Data\\\n    --flat-output\\\n    --format features\\\n    -n bacteria\\\n    | head -n 10\nListing files\nls Data | head -n 10\nDecompressing using gzip\n\ngzip -d *\n\nSome files in our data dir\nls Data | head\n\n\nImporting the files into R\n\nlibrary(tidyverse)\nlibrary(fs)\n\nall_features <- dir_ls(\"Data/\") %>% \n  map_df(read_tsv)\n\nall_features %>% \n  head()\n\n\n\nlibrary(tidyverse)\nlibrary(fs)\n\nall_features <- dir_ls(\"Data/\") %>% \n  map_df(read_tsv)\n\nall_features %>% \n  head()\n\n\nData processing\n\nall_features_grouped <- all_features %>% \n  rename(feature = `# feature`) %>% \n  select(assembly, feature) %>% \n  group_by(assembly, feature) %>%  operations\n  count() %>% \n  pivot_wider(names_from = feature, values_from = n) %>% \n  arrange(desc(CDS))\n    \nall_features_grouped %>% \n  head()\n\ncreate a new dataset that will group by features per accession. get read of the weird name of the column. Select these two columns. Group by these two columns to perform. count the numbers of rows based on the applied group. generate a wide dataset sending row names as columns. Arrange descending by the number of CDSs."
   },
   {
-    "objectID": "demo-sanger-processing.html",
-    "href": "demo-sanger-processing.html",
+    "objectID": "chs-challenges-demos/demo-sanger-processing.html",
+    "href": "chs-challenges-demos/demo-sanger-processing.html",
     "title": "\n11  Sanger processing\n",
     "section": "",
     "text": "Challenge\n\n\n\nYour professor gives you a couple of .ab1 files of a 16S rRNA gene from an old project a student conducted. She tells you to process and analyse them using the Sanger sequence pipeline analysis. And as she doesn’t know from which species they belong, she ask you to identify the organism to whom it belongs by using the resulting consensus sequence. She finally reminds you to document each step of the process including the identification step."
   },
   {
-    "objectID": "demo-sanger-processing.html#processing-a-single-.ab1-pair",
-    "href": "demo-sanger-processing.html#processing-a-single-.ab1-pair",
+    "objectID": "chs-challenges-demos/demo-sanger-processing.html#processing-a-single-.ab1-pair",
+    "href": "chs-challenges-demos/demo-sanger-processing.html#processing-a-single-.ab1-pair",
     "title": "\n11  Sanger processing\n",
     "section": "Processing a single .ab1 pair",
     "text": "Processing a single .ab1 pair\n\nlibrary(sangeranalyseR)\n\ngroEL <- SangerAlignment(\n  ABIF_Directory = \"~/Projects/Bacillus/Data/Sanger/Inter/groEL/\",\n  REGEX_SuffixForward = \"_1_F.ab1\",\n  REGEX_SuffixReverse = \"_2_R.ab1\",\n  TrimmingMethod = \"M2\",\n  M2CutoffQualityScore = 33,\n  M2SlidingWindowSize = 10\n)\n\nwriteFasta(groEL,\n  outputDir = \"~/Documents/Teaching/BiologyCourses/BI0487/Demos/02-demo-sangeranalysis\",\n  selection = \"contigs_unalignment\",\n)\n\nlaunchApp(groEL)\ngenerateReport(groEL)\nqualityBasePlot(groEL)"
   },
   {
-    "objectID": "demo-sanger-processing.html#processing-a-bulk-of-.ab1-files",
-    "href": "demo-sanger-processing.html#processing-a-bulk-of-.ab1-files",
+    "objectID": "chs-challenges-demos/demo-sanger-processing.html#processing-a-bulk-of-.ab1-files",
+    "href": "chs-challenges-demos/demo-sanger-processing.html#processing-a-bulk-of-.ab1-files",
     "title": "\n11  Sanger processing\n",
     "section": "Processing a bulk of .ab1 files",
     "text": "Processing a bulk of .ab1 files\n\nlibrary(fs)\nlibrary(purrr)\n\ndirs <- fs::dir_ls(\"~/Projects/Bacillus/Data/Sanger/Inter\")\n\nsanger_bulk <- function(dir) {\n  SangerAlignment(\n    ABIF_Directory = dir,\n    REGEX_SuffixForward = \"_1_F.ab1\",\n    REGEX_SuffixReverse = \"_2_R.ab1\"\n  )\n}\n\ngenes <- dirs %>% \n  map(sanger_bulk)\n\nlaunchApp(genes$`/Users/camilogarcia/Projects/Bacillus/Data/Sanger/Inter/gyrA`)\n\nwriteFasta(\n  outputDir = \"~/Documents/Teaching/BiologyCourses/BI0487/Demos/02-demo-sangeranalysis\",\n  selection = \"contigs_unalignment\"\n)"
   },
   {
-    "objectID": "demo-sequence-alignment.html",
-    "href": "demo-sequence-alignment.html",
+    "objectID": "chs-challenges-demos/demo-sequence-alignment.html",
+    "href": "chs-challenges-demos/demo-sequence-alignment.html",
     "title": "12  Multiple seq. analysis",
     "section": "",
     "text": "Challenge\n\n\n\nYour professor is working with species from genus Bacillus and want to align an orthologous gene from 10 genomegit s of different isolates. He gives you the GenBank accession number of these isolates and ask you to select one orthologus gene (Nucleotide seq) that you consider might be useful to differentiate the bacterial isolates and ask you to align those genes as you better consider. He finally ask you to document each step and send him the sequence alignment file in FASTA format along with the sequence alignment general stats in a TXT file (length, number of each nucletides and other stats you consider important).\nAccessions: GCA_012225885.1, GCA_000196735.1, GCA_000742895.1, GCA_001584335.1, GCA_000007825.1, GCA_000832905.1, GCA_000008425.1, GCA_000507105.1, GCA_000832605.1, GCA_900186955.1"
   },
   {
-    "objectID": "demo-sequence-alignment.html#download-sequences",
-    "href": "demo-sequence-alignment.html#download-sequences",
+    "objectID": "chs-challenges-demos/demo-sequence-alignment.html#download-sequences",
+    "href": "chs-challenges-demos/demo-sequence-alignment.html#download-sequences",
     "title": "12  Multiple seq. analysis",
     "section": "Download sequences",
     "text": "Download sequences\nMake sure to use the --flat-output avoiding download of multiple metadata\nngd --flat-output -p 4 -s genbank -A genome-accessions.txt -F cds-fasta bacteria\nIn this case cds-fasta parameter will download the nucleotide sequences of the gene. Other alternatives could be useful such as blast search on a genome database or searching through the GENBANK annotation files (both files also could be downloaded using ngd)."
   },
   {
-    "objectID": "demo-sequence-alignment.html#unwrapping-fasta-records",
-    "href": "demo-sequence-alignment.html#unwrapping-fasta-records",
+    "objectID": "chs-challenges-demos/demo-sequence-alignment.html#unwrapping-fasta-records",
+    "href": "chs-challenges-demos/demo-sequence-alignment.html#unwrapping-fasta-records",
     "title": "12  Multiple seq. analysis",
     "section": "Unwrapping FASTA records",
     "text": "Unwrapping FASTA records\nNCBI registries came with an undesirable wrapping around the lines of sequencing which basically is inserting a return character after some established number of characters. Then a way to get rid of them is to use a command line utility from AstrobioMike (Mike Lee) which will give a line per sequence after the FASTA header. We can later assume the the first line after the header will be the entire sequence\nfor i in GCA_*; do \n    N=$(basename $i .fna); \n    bash bit-remove-wraps.sh ${i} > ${N}_unwrapped.fasta; \ndone"
   },
   {
-    "objectID": "demo-sequence-alignment.html#gene-search",
-    "href": "demo-sequence-alignment.html#gene-search",
+    "objectID": "chs-challenges-demos/demo-sequence-alignment.html#gene-search",
+    "href": "chs-challenges-demos/demo-sequence-alignment.html#gene-search",
     "title": "12  Multiple seq. analysis",
     "section": "Gene search",
     "text": "Gene search\nA possible way to search throughout the file registries is by using the grep command, that recursively will search each file. Fine tuned it allow to search for the first match, but also for the “after-context” in terms of lines desired to be printed:\ngrep -h\\\n     -m 1\\\n     -A 1\\\n     -E \"DNA gyrase, A| gyrase subunit A | gyrase alpha| gyrase \\(subunit A\\)| gyrA\"  *.fasta |\\\n     sed \"s/--//g\" |\\\n     sed \"/^$/d\"\nAfter finding the genes we could exclude some lines using sed avoid the “–” characters and the empty blank line using the appropriate regular expression (^$/d) . We are now with an almost clean multi sequence file, because header names are still and will be problematic. How do we programatically change the FASTA headers? We will see in the next step."
   },
   {
-    "objectID": "demo-sequence-alignment.html#renaming-fasta-headers",
-    "href": "demo-sequence-alignment.html#renaming-fasta-headers",
+    "objectID": "chs-challenges-demos/demo-sequence-alignment.html#renaming-fasta-headers",
+    "href": "chs-challenges-demos/demo-sequence-alignment.html#renaming-fasta-headers",
     "title": "12  Multiple seq. analysis",
     "section": "Renaming fasta headers",
     "text": "Renaming fasta headers\nA simple but powerful script to do this is bit-dedup-fasta-heades it was developed by AstrobioMike (Mike Lee) and it simply parses the headers and substitutes by a simple encoder found en each of them:\npython bit-dedupe-fasta-headers.py -i all_gyrA.fasta -o all_gyrA_renamed.fasta\nNow the the files has files names that are simply to work with. Which will enable to asses better out sequence alignment matrix."
   },
   {
-    "objectID": "demo-sequence-alignment.html#sequence-alignment",
-    "href": "demo-sequence-alignment.html#sequence-alignment",
+    "objectID": "chs-challenges-demos/demo-sequence-alignment.html#sequence-alignment",
+    "href": "chs-challenges-demos/demo-sequence-alignment.html#sequence-alignment",
     "title": "12  Multiple seq. analysis",
     "section": "Sequence alignment",
     "text": "Sequence alignment\nThere are many programs that are suited for performed multiple sequence alignments. Perhaps the two most used are MAFFT and MUSCLE both specialized in multiple sequence alignment (that is: when having two or more than two sequences). The second tends to be more accurate when having large data-sets, but the first on is more versatile, fast and accurate on different kind of data-sets.\n    Both programas take as input a single file containing all the sequences concatenated horizontally (that is a multi-fasta file) careless of the extension but (MFA, FA, FASTA, FNA, etc). And generate a simple output (whether with the -o in MUSCLE or to the std output in MAFFT)     \n\nginsi --preservecase --reorder all_gyrA_renamed.fasta > all_gyrA_renamed_ginsi.fasta # globally optimized\neinsi --preservecase --reorder all_gyrA_renamed.fasta > all_gyrA_renamed_einsi.fasta # gene-focused optimized\nlinsi --preservecase --reorder all_gyrA_renamed.fasta > all_gyrA_renamed_linsi.fasta # locally optimized\n\nmuscle -i all_gyrA_renamed.fasta -o all_gyrA_renamed_muscle.fasta\n\nfamsa -t 8 all_gyrA_renamed.fasta > all_gyrA_renamed_famsa.fasta\n\nkalign -i all_gyrA_renamed.fasta -o all_gyrA_renamed_kalign.fasta"
   },
   {
-    "objectID": "demo-sequence-alignment.html#assesment-of-the-alignment",
-    "href": "demo-sequence-alignment.html#assesment-of-the-alignment",
+    "objectID": "chs-challenges-demos/demo-sequence-alignment.html#assesment-of-the-alignment",
+    "href": "chs-challenges-demos/demo-sequence-alignment.html#assesment-of-the-alignment",
     "title": "12  Multiple seq. analysis",
     "section": "Assesment of the alignment",
     "text": "Assesment of the alignment\nInspection of the alignment is there very first step for assesing its quality. A CDS tends to genereate a codon-like alignment starting with the methione codon (ATG,GTG) and finishing with a stop (TAA, TAG, etc.). Therefore finding this structure when aligning a complete genes is expected. If a middle fraction of the gene is being aligned ORF might not display any stop codon. Verifying a codon-like alignment shows a biological order on the sequences other that mere artifact of the alignment, that is an evolutionary behavior of the sequence. We can do it usin seqfu from the CLI or interactively with AliView.\nA second step is to find the variability of the alignment. A simple way to find that is to calculate simpl stats from the alignment (sites, variable sites, As, Ts, etc.). A powerful cli program to do so is goalign\ngoalign stats -i all_gyrA_renamed_linsi.fasta\nlength  2508\nnseqs   8\navgalleles  1.7400\nvariable sites  1202\nchar    nb  freq\n-   273 0.013606\nA   6418    0.319876\nC   3633    0.181071\nG   4755    0.236992\nT   4985    0.248455\nalphabet    nucleotide"
   },
   {
-    "objectID": "demo-sequence-alignment.html#an-alternative-approach-using-blast",
-    "href": "demo-sequence-alignment.html#an-alternative-approach-using-blast",
+    "objectID": "chs-challenges-demos/demo-sequence-alignment.html#an-alternative-approach-using-blast",
+    "href": "chs-challenges-demos/demo-sequence-alignment.html#an-alternative-approach-using-blast",
     "title": "12  Multiple seq. analysis",
     "section": "An alternative approach using BLAST",
     "text": "An alternative approach using BLAST\nngd --flat-output -p 4 -s genbank -A genome-accessions.txt -F fasta --parallel 8 bacteria\n\nfor i in GCA_*; do cat ${i} >> all_genomes.fasta; done\n\nmakeblastdb -in all_genomes.fasta -parse_seqids -blastdb_version 5 -title \"demo\" -dbtype nucl\n\nblastn -db all_genomes.fasta -query gyrA.fasta -outfmt \"6 sseqid sseq\" -word_size 5 -evalue 1e-50 -num_threads 8 | sed -E \"s/gb|emb/>/g\" | sed -E \"s/\\t/\\n/\" > all_gyrA.fasta"
   },
   {
-    "objectID": "demo-sequence-alignment.html#the-alternative-using-the-gcf",
-    "href": "demo-sequence-alignment.html#the-alternative-using-the-gcf",
+    "objectID": "chs-challenges-demos/demo-sequence-alignment.html#the-alternative-using-the-gcf",
+    "href": "chs-challenges-demos/demo-sequence-alignment.html#the-alternative-using-the-gcf",
     "title": "12  Multiple seq. analysis",
     "section": "The alternative using the GCF",
     "text": "The alternative using the GCF\nfor i in *fna; do; goalign subset -e \"gyrA\" -i ${i} --unaligned;done | grep \">\""
   },
   {
-    "objectID": "demo-phylogenetics.html",
-    "href": "demo-phylogenetics.html",
+    "objectID": "chs-challenges-demos/demo-phylogenetics.html",
+    "href": "chs-challenges-demos/demo-phylogenetics.html",
     "title": "\n13  Phylogenetic analysis\n",
     "section": "",
     "text": "Challenge\n\n\n\nYour professor has been working with some mammal species and want to know the relationships of some sampled individuals. To do so he extracted the DNA and amplified the mitochondrial CYTB gene of those individuals. He gives a folder with multiple sequences and ask you to align them and to reconstruct two trees one using maximum likelihood (ML) and other using a Bayesian inference (BI). Then ask you to explain if both trees are congruent with each other."
   },
   {
-    "objectID": "demo-phylogenetics.html#sequence-alignment-cytb",
-    "href": "demo-phylogenetics.html#sequence-alignment-cytb",
+    "objectID": "chs-challenges-demos/demo-phylogenetics.html#sequence-alignment-cytb",
+    "href": "chs-challenges-demos/demo-phylogenetics.html#sequence-alignment-cytb",
     "title": "\n13  Phylogenetic analysis\n",
     "section": "Sequence alignment cytb\n",
     "text": "Sequence alignment cytb\n\nlinsi --preservecase --reorder cytB.fasta > cytB-aligned.fasta"
   },
   {
-    "objectID": "demo-phylogenetics.html#evolutionary-substitution-model",
-    "href": "demo-phylogenetics.html#evolutionary-substitution-model",
+    "objectID": "chs-challenges-demos/demo-phylogenetics.html#evolutionary-substitution-model",
+    "href": "chs-challenges-demos/demo-phylogenetics.html#evolutionary-substitution-model",
     "title": "\n13  Phylogenetic analysis\n",
     "section": "Evolutionary substitution model",
     "text": "Evolutionary substitution model\nmodeltest-ng -i cytB-aligned.fasta -d nt -o model-cytB.txt\n04-demo-phylogenetics/model-cytB.txt.log"
   },
   {
-    "objectID": "demo-phylogenetics.html#maximum-likelihood-reconstruction",
-    "href": "demo-phylogenetics.html#maximum-likelihood-reconstruction",
+    "objectID": "chs-challenges-demos/demo-phylogenetics.html#maximum-likelihood-reconstruction",
+    "href": "chs-challenges-demos/demo-phylogenetics.html#maximum-likelihood-reconstruction",
     "title": "\n13  Phylogenetic analysis\n",
     "section": "Maximum likelihood reconstruction",
     "text": "Maximum likelihood reconstruction\nraxml-ng --msa cytB-aligned.fasta --model GTR+I+G4\nTree building\n\n\n\n\nraxml_data <- read.tree(\"cytB-aligned.fasta.raxml.support\")\n\nraxml_data$tip.label <- str_replace_all(raxml_data$tip.label, \"_\", \" \")\n\n(\n  raxml_tree <- ggtree(raxml_data) +\n    geom_tiplab() +\n    # geom_point2(aes(subset = !isTip, fill = as.integer(label)), shape = 24, size = 3) +\n    geom_text(aes(label = as.integer(label))) +\n    theme_tree(legend.position = c(0.8, 0.7)) \n)"
   },
   {
-    "objectID": "demo-phylogenetics.html#bayes-inference-reconstruction",
-    "href": "demo-phylogenetics.html#bayes-inference-reconstruction",
+    "objectID": "chs-challenges-demos/demo-phylogenetics.html#bayes-inference-reconstruction",
+    "href": "chs-challenges-demos/demo-phylogenetics.html#bayes-inference-reconstruction",
     "title": "\n13  Phylogenetic analysis\n",
     "section": "Bayes inference reconstruction",
     "text": "Bayes inference reconstruction\nTree building\ntail -n 18 ../Data/cytB-mb.nex\nmb -i ../../Data\nsumtrees.py -s mcct -o=cytB-mb-mcct.tre cytB-aligned.fasta-out.nex.run1.t"
   },
   {
-    "objectID": "demo-reads-assessment.html",
-    "href": "demo-reads-assessment.html",
+    "objectID": "chs-challenges-demos/demo-reads-assessment.html",
+    "href": "chs-challenges-demos/demo-reads-assessment.html",
     "title": "14  Sequence reads assesment",
     "section": "",
     "text": "Challenge\n\n\n\nYour professor challenges you to assembly a bacterial genome. He wants to know if an assembly using Illumina reads or Nanopore reads is better. The raw sequences for Illumina could be downloaded with the code SRR15634574. And the Nanopore raw reads with SRR15634573 here: https://sra-explorer.info. Choose at least on set and follow the instruction from the lecture to assemble the genome. Document each step and send to the professor the assembly-{your-initials}.fasta. You could form groups of max. 4 students."
   },
   {
-    "objectID": "demo-reads-assessment.html#general-stats-from-fastq-files",
-    "href": "demo-reads-assessment.html#general-stats-from-fastq-files",
+    "objectID": "chs-challenges-demos/demo-reads-assessment.html#general-stats-from-fastq-files",
+    "href": "chs-challenges-demos/demo-reads-assessment.html#general-stats-from-fastq-files",
     "title": "14  Sequence reads assesment",
     "section": "General stats from fastq files",
     "text": "General stats from fastq files\nA simple but fast cli to display the general stats from fastq is seqfu\nseqfu stats –n *.gz"
   },
   {
-    "objectID": "demo-reads-assessment.html#a-graphical-assessment-of-reads",
-    "href": "demo-reads-assessment.html#a-graphical-assessment-of-reads",
+    "objectID": "chs-challenges-demos/demo-reads-assessment.html#a-graphical-assessment-of-reads",
+    "href": "chs-challenges-demos/demo-reads-assessment.html#a-graphical-assessment-of-reads",
     "title": "14  Sequence reads assesment",
     "section": "A graphical assessment of reads",
     "text": "A graphical assessment of reads\nOften its important to assess reads graphically and nanoplot offers a complete graphical summary (and general stats as well) of the reads\nnanoplot –-fastq reads.fastq.gz –-output reads-report"
   },
   {
-    "objectID": "demo-genome-assembly.html",
-    "href": "demo-genome-assembly.html",
+    "objectID": "chs-challenges-demos/demo-genome-assembly.html",
+    "href": "chs-challenges-demos/demo-genome-assembly.html",
     "title": "15  Genome assembly",
     "section": "",
     "text": "Challenge\n\n\n\nYour professor has sequenced a bacterial isolate using PacBio and Nanopore sequencing methods and has got the FASTQ files from both technologies. Now he needs to know the quality and quantity of these data before start any other analysis and ask you to assess the data. He needs to know how many sequences there are, how many base pairs (in GB) are there and the N50. He is also interested in see a visualization of the i) number of bases vs. sequence lengths (log transformed) and ii) the read length vs. read quality vs. read number.\nHe ask you to document every step and to conclude what data should be used."
   },
   {
-    "objectID": "demo-genome-assembly.html#download-the-reads",
-    "href": "demo-genome-assembly.html#download-the-reads",
+    "objectID": "chs-challenges-demos/demo-genome-assembly.html#download-the-reads",
+    "href": "chs-challenges-demos/demo-genome-assembly.html#download-the-reads",
     "title": "15  Genome assembly",
     "section": "Download the reads",
     "text": "Download the reads\nwget"
   },
   {
-    "objectID": "demo-genome-assembly.html#assess-read-qualities",
-    "href": "demo-genome-assembly.html#assess-read-qualities",
+    "objectID": "chs-challenges-demos/demo-genome-assembly.html#assess-read-qualities",
+    "href": "chs-challenges-demos/demo-genome-assembly.html#assess-read-qualities",
     "title": "15  Genome assembly",
     "section": "Assess read qualities",
     "text": "Assess read qualities\nWhen using illumina fastqc is a very fast alternative. For nanopore nanplot will do the job.\nfastqc"
   },
   {
-    "objectID": "demo-genome-assembly.html#exploring-assemblers",
-    "href": "demo-genome-assembly.html#exploring-assemblers",
+    "objectID": "chs-challenges-demos/demo-genome-assembly.html#exploring-assemblers",
+    "href": "chs-challenges-demos/demo-genome-assembly.html#exploring-assemblers",
     "title": "15  Genome assembly",
     "section": "Exploring assemblers",
     "text": "Exploring assemblers\nOne of the most popular genome assemblers for NGS is spades whereas for TGS flye has been widely used\n\nShovill: spades under the hood\nshovill is a pipeline that enables pre and post processing of genomic data. It can be tunned to several tools for the processing steps and also to select different standalone assemblers\nshovill --outdir MxanthusIllumina\\\n        --R1 R1.fq.gz\\\n        --R2 R2.fq.gz\\\n        --trim\\\n        --cpus 32\n\n\nDragonflye: flye under the hood\nSimilar to shovill (and inspired by it) dragonflye is a pipeline that enables several processing steps of genomic data be\ndragonflye --outdir MxanthusNanopore\\\n           --gsize 9Mb\\\n           --trim\\\n           --reads ont-readsfastq.gz\\\n           --racon 5\nwget\nSince we are trying to assemble a bacterial genome, computer memory appears to be a limiting features of a local machine. Then, a computer cluster with high performance turns out to be an important need.\nFirst we need environment installations, therefore its important to have conda environments with the assemblers and other programs (conda create -c bioconda dragonflye dragonflye and conda create -c bioconda shovill shovill). That way both assemblers pipelines will lie in separate environment avoiding possible dependenies problems\nWe will use Apolo computer cluster which uses Slurm as the computer system workload manager (i.e a program that manages the time and resources of the computer)."

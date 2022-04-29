@@ -26,27 +26,27 @@ book:
     - intro.qmd
     - part: "Unix"
       chapters:
-        - 01-welcome-to-command-line.qmd
+        - chs-command-line/welcome-to-command-line.qmd
     - part: "Sequence analysis and genomics"
       chapters:
-        - 02-introduction-to-sequence-analysis.qmd
-        - 03-sanger-analysis.qmd
-        - 04-sequence-alignments.qmd
-        - 05-phylogenetic-reconstructions.qmd
-        - 06-NGS-TGS-principles.qmd
-        - 07-genome-assembly-annotation.qmd
-        - 08-variant-calling-analysis.qmd
+        - chs-sequence-analysis/introduction-to-sequence-analysis.qmd
+        - chs-sequence-analysis/sanger-analysis.qmd
+        - chs-sequence-analysis/sequence-alignments.qmd
+        - chs-sequence-analysis/phylogenetic-reconstructions.qmd
+        - chs-sequence-analysis/NGS-TGS-principles.qmd
+        - chs-sequence-analysis/genome-assembly-annotation.qmd
+        - chs-sequence-analysis/variant-calling-analysis.qmd
     - part: "Structural bioinformatics"
       chapters:
-        - 09-intro-structural-bioinfo.qmd
+        - chs-bio-structural/intro-structural-bioinfo.qmd
     - part: "Challenges"
       chapters:
-        - demo-genome-searching.qmd
-        - demo-sanger-processing.qmd
-        - demo-sequence-alignment.qmd
-        - demo-phylogenetics.qmd
-        - demo-reads-assessment.qmd
-        - demo-genome-assembly.qmd
+        - chs-challenges-demos/demo-genome-searching.qmd
+        - chs-challenges-demos/demo-sanger-processing.qmd
+        - chs-challenges-demos/demo-sequence-alignment.qmd
+        - chs-challenges-demos/demo-phylogenetics.qmd
+        - chs-challenges-demos/demo-reads-assessment.qmd
+        - chs-challenges-demos/demo-genome-assembly.qmd
     - references.qmd
 
 bibliography: references.bib
