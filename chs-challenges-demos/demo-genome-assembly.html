@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2022-04-29">
 
-<title>Fundamentals of computational biology - 11&nbsp; Sanger processing</title>
+<title>Fundamentals of computational biology - 15&nbsp; Genome assembly</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,26 +81,26 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<link href="./demo-sequence-alignment.html" rel="next">
-<link href="./demo-genome-searching.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link class="quarto-color-scheme" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link class="quarto-color-scheme" href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="site_libs/bootstrap/bootstrap-dark.min.css">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<link href="../references.html" rel="next">
+<link href="../chs-challenges-demos/demo-reads-assessment.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link class="quarto-color-scheme" id="quarto-text-highlighting-styles" href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" id="quarto-text-highlighting-styles" href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link class="quarto-color-scheme" href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="../site_libs/bootstrap/bootstrap-dark.min.css">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -123,7 +123,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script async="" src="https://hypothes.is/embed.js"></script>
 
 
-<meta name="citation_title" content="[11]{.chapter-number}&nbsp; [Sanger processing]{.chapter-title}">
+<meta name="citation_title" content="[15]{.chapter-number}&nbsp; [Genome assembly]{.chapter-title}">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
 <meta name="citation_publication_date" content="NaN-NaN-NaN">
@@ -137,7 +137,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sanger processing</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Genome assembly</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -150,7 +150,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Fundamentals of computational biology</a> 
+      <a href="../">Fundamentals of computational biology</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/camilogarciabotero/biocomp-book" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -166,12 +166,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  <a href="../intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -184,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-welcome-to-command-line.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The command line</span></a>
+  <a href="../chs-command-line/welcome-to-command-line.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The command line</span></a>
   </div>
 </li>
     </ul>
@@ -199,37 +199,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></a>
+  <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-sanger-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sanger analysis</span></a>
+  <a href="../chs-sequence-analysis/sanger-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sanger analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-sequence-alignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequence alignments</span></a>
+  <a href="../chs-sequence-analysis/sequence-alignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequence alignments</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">phylogenetics</span></a>
+  <a href="../chs-sequence-analysis/phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">phylogenetics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-NGS-TGS-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
+  <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-genome-assembly-annotation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  <a href="../chs-sequence-analysis/genome-assembly-annotation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
+  <a href="../chs-sequence-analysis/variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
   </div>
 </li>
     </ul>
@@ -244,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></a>
+  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></a>
   </div>
 </li>
     </ul>
@@ -259,39 +259,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-genome-searching.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome searching</span></a>
+  <a href="../chs-challenges-demos/demo-genome-searching.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome searching</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-sanger-processing.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sanger processing</span></a>
+  <a href="../chs-challenges-demos/demo-sanger-processing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sanger processing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-sequence-alignment.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Multiple seq. analysis</span></a>
+  <a href="../chs-challenges-demos/demo-sequence-alignment.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Multiple seq. analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-phylogenetics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Phylogenetic analysis</span></a>
+  <a href="../chs-challenges-demos/demo-phylogenetics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Phylogenetic analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-reads-assessment.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Sequence reads assesment</span></a>
+  <a href="../chs-challenges-demos/demo-reads-assessment.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Sequence reads assesment</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-genome-assembly.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  <a href="../chs-challenges-demos/demo-genome-assembly.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
   </div>
 </li>
     </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
     </ul>
@@ -303,17 +303,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#processing-a-single-.ab1-pair" id="toc-processing-a-single-.ab1-pair" class="nav-link active" data-scroll-target="#processing-a-single-.ab1-pair">Processing a single <code>.ab1</code> pair</a></li>
-  <li><a href="#processing-a-bulk-of-.ab1-files" id="toc-processing-a-bulk-of-.ab1-files" class="nav-link" data-scroll-target="#processing-a-bulk-of-.ab1-files">Processing a bulk of <code>.ab1</code> files</a></li>
+  <li><a href="#download-the-reads" id="toc-download-the-reads" class="nav-link active" data-scroll-target="#download-the-reads">Download the reads</a></li>
+  <li><a href="#assess-read-qualities" id="toc-assess-read-qualities" class="nav-link" data-scroll-target="#assess-read-qualities">Assess read qualities</a></li>
+  <li><a href="#exploring-assemblers" id="toc-exploring-assemblers" class="nav-link" data-scroll-target="#exploring-assemblers">Exploring assemblers</a>
+  <ul class="collapse">
+  <li><a href="#shovill-spades-under-the-hood" id="toc-shovill-spades-under-the-hood" class="nav-link" data-scroll-target="#shovill-spades-under-the-hood">Shovill: spades under the hood</a></li>
+  <li><a href="#dragonflye-flye-under-the-hood" id="toc-dragonflye-flye-under-the-hood" class="nav-link" data-scroll-target="#dragonflye-flye-under-the-hood">Dragonflye: flye under the hood</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/demo-sanger-processing.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-challenges-demos/demo-genome-assembly.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sanger processing</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Genome assembly</span></h1>
 </div>
 
 
@@ -345,61 +350,46 @@ Challenge
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Your professor gives you a couple of .ab1 files of a 16S rRNA gene from an old project a student conducted. She tells you to process and analyse them using the Sanger sequence pipeline analysis. And as she doesn’t know from which species they belong, she ask you to identify the organism to whom it belongs by using the resulting consensus sequence. She finally reminds you to document each step of the process including the identification step.</p>
+<p>Your professor has sequenced a bacterial isolate using PacBio and Nanopore sequencing methods and has got the FASTQ files from both technologies. Now he needs to know the quality and quantity of these data before start any other analysis and ask you to assess the data. He needs to know how many sequences there are, how many base pairs (in GB) are there and the N50. He is also interested in see a visualization of the i) number of bases vs.&nbsp;sequence lengths (log transformed) and ii) the read length vs.&nbsp;read quality vs.&nbsp;read number.</p>
+<p>He ask you to document every step and to conclude what data should be used.</p>
 </div>
 </div>
-<section id="processing-a-single-.ab1-pair" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="processing-a-single-.ab1-pair">Processing a single <code>.ab1</code> pair</h2>
-<div class="cell" data-hash="demo-sanger-processing_cache/html/single-sanger-processing_4aefe2a4ccd3f4bddecbc4d6bd0b9cec">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sangeranalyseR)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>groEL <span class="ot">&lt;-</span> <span class="fu">SangerAlignment</span>(</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">ABIF_Directory =</span> <span class="st">"~/Projects/Bacillus/Data/Sanger/Inter/groEL/"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">REGEX_SuffixForward =</span> <span class="st">"_1_F.ab1"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">REGEX_SuffixReverse =</span> <span class="st">"_2_R.ab1"</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">TrimmingMethod =</span> <span class="st">"M2"</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">M2CutoffQualityScore =</span> <span class="dv">33</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">M2SlidingWindowSize =</span> <span class="dv">10</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">writeFasta</span>(groEL,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">outputDir =</span> <span class="st">"~/Documents/Teaching/BiologyCourses/BI0487/Demos/02-demo-sangeranalysis"</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">selection =</span> <span class="st">"contigs_unalignment"</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">launchApp</span>(groEL)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">generateReport</span>(groEL)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">qualityBasePlot</span>(groEL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="download-the-reads" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="download-the-reads">Download the reads</h2>
+<div class="sourceCode" id="downloading-seqs"><pre class="sourceCode zsh important code-with-copy"><code class="sourceCode zsh"><span id="downloading-seqs-1"><a href="#downloading-seqs-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="processing-a-bulk-of-.ab1-files" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="processing-a-bulk-of-.ab1-files">Processing a bulk of <code>.ab1</code> files</h2>
-<div class="cell" data-hash="demo-sanger-processing_cache/html/bulk-sanger-processing_c4b72b6614b7ed2b884ef9f5f29a4e2d">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>dirs <span class="ot">&lt;-</span> fs<span class="sc">::</span><span class="fu">dir_ls</span>(<span class="st">"~/Projects/Bacillus/Data/Sanger/Inter"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>sanger_bulk <span class="ot">&lt;-</span> <span class="cf">function</span>(dir) {</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">SangerAlignment</span>(</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">ABIF_Directory =</span> dir,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">REGEX_SuffixForward =</span> <span class="st">"_1_F.ab1"</span>,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">REGEX_SuffixReverse =</span> <span class="st">"_2_R.ab1"</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>genes <span class="ot">&lt;-</span> dirs <span class="sc">%&gt;%</span> </span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(sanger_bulk)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">launchApp</span>(genes<span class="sc">$</span><span class="st">`</span><span class="at">/Users/camilogarcia/Projects/Bacillus/Data/Sanger/Inter/gyrA</span><span class="st">`</span>)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">writeFasta</span>(</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">outputDir =</span> <span class="st">"~/Documents/Teaching/BiologyCourses/BI0487/Demos/02-demo-sangeranalysis"</span>,</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">selection =</span> <span class="st">"contigs_unalignment"</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="assess-read-qualities" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="assess-read-qualities">Assess read qualities</h2>
+<p>When using illumina <code>fastqc</code> is a very fast alternative. For nanopore <code>nanplot</code> will do the job.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="exploring-assemblers" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exploring-assemblers">Exploring assemblers</h2>
+<p>One of the most popular genome assemblers for NGS is <code>spades</code> whereas for TGS <code>flye</code> has been widely used</p>
+<section id="shovill-spades-under-the-hood" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="shovill-spades-under-the-hood">Shovill: spades under the hood</h3>
+<p><a href="https://github.com/tseemann/shovill"><code>shovill</code></a> is a pipeline that enables pre and post processing of genomic data. It can be tunned to several tools for the processing steps and also to select different standalone assemblers</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">shovill</span> <span class="at">--outdir</span> MxanthusIllumina<span class="dt">\</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">--R1</span> R1.fq.gz<span class="dt">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">--R2</span> R2.fq.gz<span class="dt">\</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">--trim</span><span class="dt">\</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">--cpus</span> 32</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="dragonflye-flye-under-the-hood" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="dragonflye-flye-under-the-hood">Dragonflye: flye under the hood</h3>
+<p>Similar to <code>shovill</code> (and inspired by it) <a href=""><code>dragonflye</code></a> is a pipeline that enables several processing steps of genomic data be</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dragonflye</span> <span class="at">--outdir</span> MxanthusNanopore<span class="dt">\</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">--gsize</span> 9Mb<span class="dt">\</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">--trim</span><span class="dt">\</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">--reads</span> ont-readsfastq.gz<span class="dt">\</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">--racon</span> 5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Since we are trying to assemble a bacterial genome, computer memory appears to be a limiting features of a local machine. Then, a computer cluster with high performance turns out to be an important need.</p>
+<p>First we need environment installations, therefore its important to have conda environments with the assemblers and other programs (<code>conda create -c bioconda dragonflye dragonflye</code> and <code>conda create -c bioconda shovill shovill</code>). That way both assemblers pipelines will lie in separate environment avoiding possible dependenies problems</p>
+<p>We will use <a href="">Apolo</a> computer cluster which uses <a href="">Slurm</a> as the computer system workload manager (i.e a program that manages the time and resources of the computer).</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -581,13 +571,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./demo-genome-searching.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome searching</span></span>
+      <a href="../chs-challenges-demos/demo-reads-assessment.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Sequence reads assesment</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./demo-sequence-alignment.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Multiple seq. analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

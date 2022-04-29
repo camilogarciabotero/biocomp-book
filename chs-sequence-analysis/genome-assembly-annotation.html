@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2022-04-29">
 
-<title>Fundamentals of computational biology - 9&nbsp; Introduction to structural bioinformatics</title>
+<title>Fundamentals of computational biology - 7&nbsp; Genome assembly</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -18,26 +18,26 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 </style>
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<link href="./demo-genome-searching.html" rel="next">
-<link href="./08-variant-calling-analysis.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link class="quarto-color-scheme" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link class="quarto-color-scheme" href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="site_libs/bootstrap/bootstrap-dark.min.css">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<link href="../chs-sequence-analysis/variant-calling-analysis.html" rel="next">
+<link href="../chs-sequence-analysis/NGS-TGS-principles.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link class="quarto-color-scheme" id="quarto-text-highlighting-styles" href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" id="quarto-text-highlighting-styles" href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link class="quarto-color-scheme" href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="../site_libs/bootstrap/bootstrap-dark.min.css">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -59,9 +59,8 @@ ul.task-list{list-style: none;}
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta name="citation_title" content="[[9]{.chapter-number}&nbsp; [Introduction to structural bioinformatics]{.chapter-title}]{#sec-biostructural .quarto-section-identifier}">
+<meta name="citation_title" content="[[7]{.chapter-number}&nbsp; [Genome assembly]{.chapter-title}]{#sec-genomics .quarto-section-identifier}">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
 <meta name="citation_publication_date" content="NaN-NaN-NaN">
@@ -69,13 +68,13 @@ ul.task-list{list-style: none;}
 <meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_publication_date=1984-05;,citation_issue=2;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;">
 </head>
 
-<body class="floating slimcontent">
+<body class="floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Genome assembly</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -88,7 +87,7 @@ ul.task-list{list-style: none;}
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Fundamentals of computational biology</a> 
+      <a href="../">Fundamentals of computational biology</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/camilogarciabotero/biocomp-book" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -104,12 +103,12 @@ ul.task-list{list-style: none;}
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  <a href="../intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -122,7 +121,7 @@ ul.task-list{list-style: none;}
     <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-welcome-to-command-line.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The command line</span></a>
+  <a href="../chs-command-line/welcome-to-command-line.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The command line</span></a>
   </div>
 </li>
     </ul>
@@ -137,37 +136,37 @@ ul.task-list{list-style: none;}
     <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></a>
+  <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-sanger-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sanger analysis</span></a>
+  <a href="../chs-sequence-analysis/sanger-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sanger analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-sequence-alignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequence alignments</span></a>
+  <a href="../chs-sequence-analysis/sequence-alignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequence alignments</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">phylogenetics</span></a>
+  <a href="../chs-sequence-analysis/phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">phylogenetics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-NGS-TGS-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
+  <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-genome-assembly-annotation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  <a href="../chs-sequence-analysis/genome-assembly-annotation.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
+  <a href="../chs-sequence-analysis/variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
   </div>
 </li>
     </ul>
@@ -182,7 +181,7 @@ ul.task-list{list-style: none;}
     <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></a>
+  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></a>
   </div>
 </li>
     </ul>
@@ -197,39 +196,39 @@ ul.task-list{list-style: none;}
     <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-genome-searching.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome searching</span></a>
+  <a href="../chs-challenges-demos/demo-genome-searching.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome searching</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-sanger-processing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sanger processing</span></a>
+  <a href="../chs-challenges-demos/demo-sanger-processing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sanger processing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-sequence-alignment.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Multiple seq. analysis</span></a>
+  <a href="../chs-challenges-demos/demo-sequence-alignment.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Multiple seq. analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-phylogenetics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Phylogenetic analysis</span></a>
+  <a href="../chs-challenges-demos/demo-phylogenetics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Phylogenetic analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-reads-assessment.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Sequence reads assesment</span></a>
+  <a href="../chs-challenges-demos/demo-reads-assessment.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Sequence reads assesment</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demo-genome-assembly.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  <a href="../chs-challenges-demos/demo-genome-assembly.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
   </div>
 </li>
     </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
     </ul>
@@ -241,21 +240,43 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#protein-structures" id="toc-protein-structures" class="nav-link active" data-scroll-target="#protein-structures"> <span class="header-section-number">9.1</span> Protein structures</a></li>
-  <li><a href="#identifying-or-predicting-protein-structures" id="toc-identifying-or-predicting-protein-structures" class="nav-link" data-scroll-target="#identifying-or-predicting-protein-structures"> <span class="header-section-number">9.2</span> Identifying or predicting protein structures</a>
+  <li><a href="#the-problem-of-assembling-genomes" id="toc-the-problem-of-assembling-genomes" class="nav-link active" data-scroll-target="#the-problem-of-assembling-genomes">The problem of assembling genomes</a></li>
+  <li><a href="#main-algorithms-for-genome-asssembly" id="toc-main-algorithms-for-genome-asssembly" class="nav-link" data-scroll-target="#main-algorithms-for-genome-asssembly">Main algorithms for genome asssembly</a>
   <ul class="collapse">
-  <li><a href="#secondary-structure-prediction" id="toc-secondary-structure-prediction" class="nav-link" data-scroll-target="#secondary-structure-prediction"> <span class="header-section-number">9.2.1</span> Secondary structure prediction</a></li>
+  <li><a href="#overlay-layout-consensus-ols" id="toc-overlay-layout-consensus-ols" class="nav-link" data-scroll-target="#overlay-layout-consensus-ols">Overlay, Layout, Consensus (OLS)</a></li>
+  <li><a href="#de-bruijn-graphs" id="toc-de-bruijn-graphs" class="nav-link" data-scroll-target="#de-bruijn-graphs">De Bruijn graphs</a></li>
   </ul></li>
-  <li><a href="#pdb-database-introduction" id="toc-pdb-database-introduction" class="nav-link" data-scroll-target="#pdb-database-introduction"> <span class="header-section-number">9.3</span> PDB database introduction</a></li>
+  <li><a href="#main-concepts-of-an-assembly" id="toc-main-concepts-of-an-assembly" class="nav-link" data-scroll-target="#main-concepts-of-an-assembly">Main concepts of an assembly</a>
+  <ul class="collapse">
+  <li><a href="#contigs-unitigs-scaffolds" id="toc-contigs-unitigs-scaffolds" class="nav-link" data-scroll-target="#contigs-unitigs-scaffolds">Contigs, Unitigs, Scaffolds</a></li>
+  </ul></li>
+  <li><a href="#a-complete-workflow-for-assembling-genomes" id="toc-a-complete-workflow-for-assembling-genomes" class="nav-link" data-scroll-target="#a-complete-workflow-for-assembling-genomes">A complete workflow for assembling genomes</a></li>
+  <li><a href="#assessing-genomes" id="toc-assessing-genomes" class="nav-link" data-scroll-target="#assessing-genomes">Assessing genomes</a>
+  <ul class="collapse">
+  <li><a href="#inspecting-genome-graphs" id="toc-inspecting-genome-graphs" class="nav-link" data-scroll-target="#inspecting-genome-graphs">Inspecting genome graphs</a></li>
+  <li><a href="#genome-completeness" id="toc-genome-completeness" class="nav-link" data-scroll-target="#genome-completeness">Genome completeness</a></li>
+  </ul></li>
+  <li><a href="#understanding-genome-difficulties" id="toc-understanding-genome-difficulties" class="nav-link" data-scroll-target="#understanding-genome-difficulties">Understanding genome difficulties</a></li>
+  <li><a href="#genome-annotation-and-visualizaiton" id="toc-genome-annotation-and-visualizaiton" class="nav-link" data-scroll-target="#genome-annotation-and-visualizaiton"> <span class="header-section-number">8</span> Genome annotation and visualizaiton</a>
+  <ul class="collapse">
+  <li><a href="#ab-initio-annotation" id="toc-ab-initio-annotation" class="nav-link" data-scroll-target="#ab-initio-annotation"> <span class="header-section-number">8.1</span> <em>ab initio</em> annotation</a></li>
+  <li><a href="#homolgy-annotation" id="toc-homolgy-annotation" class="nav-link" data-scroll-target="#homolgy-annotation"> <span class="header-section-number">8.2</span> Homolgy annotation</a></li>
+  <li><a href="#annotation-files" id="toc-annotation-files" class="nav-link" data-scroll-target="#annotation-files"> <span class="header-section-number">8.3</span> Annotation files</a>
+  <ul class="collapse">
+  <li><a href="#the-gbk-and-gbff" id="toc-the-gbk-and-gbff" class="nav-link" data-scroll-target="#the-gbk-and-gbff"> <span class="header-section-number">8.3.1</span> the GBK and GBFF</a></li>
+  <li><a href="#the-gff-specificaitons" id="toc-the-gff-specificaitons" class="nav-link" data-scroll-target="#the-gff-specificaitons"> <span class="header-section-number">8.3.2</span> The GFF specificaitons</a></li>
+  </ul></li>
+  <li><a href="#visualizing-genomes-and-annotations" id="toc-visualizing-genomes-and-annotations" class="nav-link" data-scroll-target="#visualizing-genomes-and-annotations"> <span class="header-section-number">8.4</span> Visualizing genomes and annotations</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/09-intro-structural-bioinfo.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-sequence-analysis/genome-assembly-annotation.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-biostructural" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></span></h1>
+<h1 class="title"><span id="sec-genomics" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Genome assembly</span></span></h1>
 </div>
 
 
@@ -277,56 +298,68 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>Structural bioinformatics is a multidisciplinary area enriched by chemistry, physics, computer science and many others. Although, it could be focused on different biological macro-molecules, here the emphasis will be focused on proteins.</p>
-<p>One of the first protein structure elucidated was myoglobin and it triggered the study of the role of the structure of proteins and its biological functions</p>
-<p>Identify a protein related to your study that could be further analyzed.</p>
-<section id="protein-structures" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="protein-structures"><span class="header-section-number">9.1</span> Protein structures</h2>
-<p>Difference between the levels of protein structure primary structure is the basic linear representation of aminoacids. Natural aminoacids and modified or rare aminoacids display physico-chemical rich information and could be represented by letters. Therefore in the genetic code we could find the one-letter code.</p>
-<p>Secondary structures result from the spatial arrangement of aminoacids that interact with each closer neighbors. There are some remarkable secondary structures such as <span class="math inline">\(\beta\)</span>-sheets, <span class="math inline">\(\alpha\)</span>-helix, coils (flexible) and others.</p>
-<p>Tertiary structure informs about the structural disposition of the secondary structures that fold between each other due to hydrophobic interactions, disulfure bonds, and other chemical interactions forming a globular and dynamic structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the <a href="https://en.wikipedia.org/wiki/Levinthal%27s_paradox">Levinthal’s paradox</a>).</p>
-<p>Quaternary structures result from interaction of multiple tertiary structures. <em>The structure, therefore dictates the protein function</em>. This basic concept have triggered more recently a boom on the analysis of the structure of proteins.</p>
+<section id="the-problem-of-assembling-genomes" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="the-problem-of-assembling-genomes">The problem of assembling genomes</h2>
 </section>
-<section id="identifying-or-predicting-protein-structures" class="level2 page-columns page-full" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="identifying-or-predicting-protein-structures"><span class="header-section-number">9.2</span> Identifying or predicting protein structures</h2>
-<p>Xray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks</p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">To date, helium is scarce around the world, so labs all around are having trouble to get this element.</span></div></div>
-<p>Modelling the structure whether <em>ab initio</em> or by <em>homology</em> also allow structure prediction. However these strategies</p>
-<p>Recently AlphaFold</p>
-<p>The protein database (PDB)</p>
-<p>Protein topologies resulting from the folding: horshoe, beta-barrel and other could be identified</p>
-<p>Structural classification of proteins (SCOP) when analyzing a new protein classification by class, architecture, topology (fold-family), homologous superfamily and sequence family</p>
-<p>Importance of Gene Ontology</p>
-<section id="secondary-structure-prediction" class="level3 page-columns page-full" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="secondary-structure-prediction"><span class="header-section-number">9.2.1</span> Secondary structure prediction</h3>
-<p>Secondary structures could also be represented in one letter (e.g.)</p>
-<p>Functional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.</p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">There is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.</span></div></div>
-<div class="callout-warning callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Exercise 01
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Submit 5lWM (JAK3) from the PDB on FASTA format on the <a href="http://www.compbio.dundee.ac.uk/jpred/">JPRED</a> and <a href="http://bioinf.cs.ucl.ac.uk/psipred/">PSIPRED</a> and compared with the <a href="https://www.rcsb.org/sequence/5LWM">experimentally predicted</a> version of the protein. Analyse the predictions and tell are there differences between predictions? Which one is more accurate?</p>
-</div>
-</div>
+<section id="main-algorithms-for-genome-asssembly" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="main-algorithms-for-genome-asssembly">Main algorithms for genome asssembly</h2>
+<section id="overlay-layout-consensus-ols" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="overlay-layout-consensus-ols">Overlay, Layout, Consensus (OLS)</h3>
+</section>
+<section id="de-bruijn-graphs" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="de-bruijn-graphs">De Bruijn graphs</h3>
 </section>
 </section>
-<section id="pdb-database-introduction" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="pdb-database-introduction"><span class="header-section-number">9.3</span> PDB database introduction</h2>
-<p>The PDB database is one of the most important and ancient open biological database where all new protein structures are submitted. It is an international consortium where several regions work together to curate information.</p>
-<p>The PDB in Europe (<a href="pdbe.org">PDBe</a>) is not only for proteins but form many other <em>experimentally predicted</em> macro-molecules (protein-protein interactions, peptides, RNA and so on).</p>
-<p>Protein structures are registered using a unique code of four characters.</p>
-<p>X-ray crystallography: is a chemical state of the macro-molecule where it is immobilized, therefore information correspond to one state of the structure, then crystal protein is submitted to an x-ray beam to generate a diffraction pattern.</p>
-<p>NMR spectroscopy: captures dynamic information of the protein, but generally resolves small proteins. The principle?</p>
-<p>Electron microscopy adapted to cryo-preservation allow proteins visualization.</p>
+<section id="main-concepts-of-an-assembly" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="main-concepts-of-an-assembly">Main concepts of an assembly</h2>
+<section id="contigs-unitigs-scaffolds" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="contigs-unitigs-scaffolds">Contigs, Unitigs, Scaffolds</h3>
+</section>
+</section>
+<section id="a-complete-workflow-for-assembling-genomes" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="a-complete-workflow-for-assembling-genomes">A complete workflow for assembling genomes</h2>
+</section>
+<section id="assessing-genomes" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="assessing-genomes">Assessing genomes</h2>
+<section id="inspecting-genome-graphs" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="inspecting-genome-graphs">Inspecting genome graphs</h3>
+</section>
+<section id="genome-completeness" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="genome-completeness">Genome completeness</h3>
+</section>
+</section>
+<section id="understanding-genome-difficulties" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="understanding-genome-difficulties">Understanding genome difficulties</h2>
+<ul>
+<li><p>End of chromosomes</p></li>
+<li><p>Erros</p></li>
+<li><p>Lack of coverage</p></li>
+<li><p>Heterozigozity</p></li>
+<li><p>repeats</p></li>
+</ul>
+</section>
+<section id="genome-annotation-and-visualizaiton" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Genome annotation and visualizaiton</h1>
+<section id="ab-initio-annotation" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="ab-initio-annotation"><span class="header-section-number">8.1</span> <em>ab initio</em> annotation</h2>
+</section>
+<section id="homolgy-annotation" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="homolgy-annotation"><span class="header-section-number">8.2</span> Homolgy annotation</h2>
+</section>
+<section id="annotation-files" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="annotation-files"><span class="header-section-number">8.3</span> Annotation files</h2>
+<section id="the-gbk-and-gbff" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="the-gbk-and-gbff"><span class="header-section-number">8.3.1</span> the GBK and GBFF</h3>
+</section>
+<section id="the-gff-specificaitons" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="the-gff-specificaitons"><span class="header-section-number">8.3.2</span> The GFF specificaitons</h3>
+</section>
+</section>
+<section id="visualizing-genomes-and-annotations" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="visualizing-genomes-and-annotations"><span class="header-section-number">8.4</span> Visualizing genomes and annotations</h2>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -508,13 +541,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./08-variant-calling-analysis.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></span>
+      <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./demo-genome-searching.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome searching</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chs-sequence-analysis/variant-calling-analysis.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
