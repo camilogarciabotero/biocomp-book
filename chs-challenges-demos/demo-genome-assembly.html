@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-04-29">
+<meta name="dcterms.date" content="2022-04-30">
 
-<title>Fundamentals of computational biology - 15&nbsp; Genome assembly</title>
+<title>Fundamentals of computational biology - Genome assembly</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -123,7 +123,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script async="" src="https://hypothes.is/embed.js"></script>
 
 
-<meta name="citation_title" content="[15]{.chapter-number}&nbsp; [Genome assembly]{.chapter-title}">
+<meta name="citation_title" content="Genome assembly">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
 <meta name="citation_publication_date" content="NaN-NaN-NaN">
@@ -137,7 +137,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Genome assembly</span></h1>
+      <h1 class="quarto-secondary-nav-title">Genome assembly</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -176,7 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item sidebar-item-section">
     <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Unix</a>
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">The command line</a>
       <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
         <i class="bi bi-chevron-right ms-2"></i>
       </a>
@@ -185,6 +185,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chs-command-line/welcome-to-command-line.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The command line</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-command-line/package-managers.html" class="sidebar-item-text sidebar-link">Package managers</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-command-line/hpc-notions.html" class="sidebar-item-text sidebar-link">Notions of HPC</a>
   </div>
 </li>
     </ul>
@@ -284,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-challenges-demos/demo-genome-assembly.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  <a href="../chs-challenges-demos/demo-genome-assembly.html" class="sidebar-item-text sidebar-link active">Genome assembly</a>
   </div>
 </li>
     </ul>
@@ -318,7 +328,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Genome assembly</span></h1>
+<h1 class="title d-none d-lg-block">Genome assembly</h1>
 </div>
 
 
@@ -331,7 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-04-29</p>
+      <p class="date">2022-04-30</p>
     </div>
   </div>
     
@@ -354,20 +364,20 @@ Challenge
 <p>He ask you to document every step and to conclude what data should be used.</p>
 </div>
 </div>
-<section id="download-the-reads" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="download-the-reads">Download the reads</h2>
+<section id="download-the-reads" class="level2">
+<h2 class="anchored" data-anchor-id="download-the-reads">Download the reads</h2>
 <div class="sourceCode" id="downloading-seqs"><pre class="sourceCode zsh important code-with-copy"><code class="sourceCode zsh"><span id="downloading-seqs-1"><a href="#downloading-seqs-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="assess-read-qualities" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="assess-read-qualities">Assess read qualities</h2>
+<section id="assess-read-qualities" class="level2">
+<h2 class="anchored" data-anchor-id="assess-read-qualities">Assess read qualities</h2>
 <p>When using illumina <code>fastqc</code> is a very fast alternative. For nanopore <code>nanplot</code> will do the job.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="exploring-assemblers" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="exploring-assemblers">Exploring assemblers</h2>
+<section id="exploring-assemblers" class="level2">
+<h2 class="anchored" data-anchor-id="exploring-assemblers">Exploring assemblers</h2>
 <p>One of the most popular genome assemblers for NGS is <code>spades</code> whereas for TGS <code>flye</code> has been widely used</p>
-<section id="shovill-spades-under-the-hood" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="shovill-spades-under-the-hood">Shovill: spades under the hood</h3>
+<section id="shovill-spades-under-the-hood" class="level3">
+<h3 class="anchored" data-anchor-id="shovill-spades-under-the-hood">Shovill: spades under the hood</h3>
 <p><a href="https://github.com/tseemann/shovill"><code>shovill</code></a> is a pipeline that enables pre and post processing of genomic data. It can be tunned to several tools for the processing steps and also to select different standalone assemblers</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">shovill</span> <span class="at">--outdir</span> MxanthusIllumina<span class="dt">\</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">--R1</span> R1.fq.gz<span class="dt">\</span></span>
@@ -375,8 +385,8 @@ Challenge
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">--trim</span><span class="dt">\</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">--cpus</span> 32</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="dragonflye-flye-under-the-hood" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="dragonflye-flye-under-the-hood">Dragonflye: flye under the hood</h3>
+<section id="dragonflye-flye-under-the-hood" class="level3">
+<h3 class="anchored" data-anchor-id="dragonflye-flye-under-the-hood">Dragonflye: flye under the hood</h3>
 <p>Similar to <code>shovill</code> (and inspired by it) <a href=""><code>dragonflye</code></a> is a pipeline that enables several processing steps of genomic data be</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dragonflye</span> <span class="at">--outdir</span> MxanthusNanopore<span class="dt">\</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">--gsize</span> 9Mb<span class="dt">\</span></span>
