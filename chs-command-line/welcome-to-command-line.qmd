@@ -1,23 +1,23 @@
 # The command line {#sec-cli}
 
-::: callout-caution
-This book is a work in progress
-:::
-
-In this chapter we will explore the fundamentals of the command line interface (aka CLI). A CLI is actually several things and sometimes simply confused with a terminal window such as the following image:
-
-![A **terminal** app displaying common features of the command line interface](imgs-cli/terminal.png){#fig-terminal fig-align="center"}
-
-Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It Simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a *libre* access is the very known OS Linux.
-
-The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically.
-
-There are several programs that run in the terminal [Fig. @fig-terminal] 
+> In this chapter we will explore the fundamentals of the command line interface (aka CLI). And the differences between Operating Systems (OS), Unix, CLI, Bash and Terminal.
+>
+> As you will see the CLI is composed of several programs enabling the interaction with the machine, we will discuss some of the basics to navigate your machine, and some advance one that enable complex operations and automating tasks.
 
 ## Getting started with the command line
 
-Almost every computer has a way to be
+Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It Simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a *libre* access is the very known OS Linux. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically.
+
+Almost every computer has a way to interact with or access to the inner elements of the computer. Such interface is called the terminal [Fig. @fig-terminal]
+
+![A **terminal** app displaying common features of the command line interface](imgs-cli/terminal.png){#fig-terminal fig-align="center"}
 
 ## Basic Unix commands
+
+Programs, files and directories on every machine display hierarchical paths (routes), starting out from the *root* (`/`). The *root* represents the begining of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths [Fig. @fig-paths]
+
+![A figure displaying tree-like structure of the programs in a machine with macOS](imgs-cli/){#fig-paths fig-align="center"}
+
+To know where you are you can see your current location, that is to *print your working directory* using the `pwd` command.
 
 ## Advance Unix commands

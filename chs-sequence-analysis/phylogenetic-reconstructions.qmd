@@ -1,4 +1,4 @@
-# phylogenetics {#sec-phylogenetics}
+# Phylogenetics {#sec-phylogenetics}
 
 ## What is a phylogenetic tree
 

@@ -29,7 +29,7 @@ book:
         - chs-command-line/welcome-to-command-line.qmd
         - chs-command-line/package-managers.qmd
         - chs-command-line/hpc-notions.qmd
-    - part: "Sequence analysis and genomics"
+    - part: "Seq. analysis & genomics"
       chapters:
         - chs-sequence-analysis/introduction-to-sequence-analysis.qmd
         - chs-sequence-analysis/sanger-analysis.qmd
