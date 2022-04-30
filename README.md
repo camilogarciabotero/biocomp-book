@@ -6,7 +6,7 @@
     <a href="https://github.com/camilogarciabotero/biocomp-book/releases">
         <img src="https://img.shields.io/github/v/release/camilogarciabotero/biocomp-book?style=flat&labelColor=000000&color=25691f&logo=GitHub&logoColor=white">
     </a>
-    <a href="https://github.com/camilogarciabotero/biocomp-book/releases">
+    <a href="https://zenodo.org/badge/latestdoi/480487243">
         <img src="https://zenodo.org/badge/480487243.svg?">
     </a>
         <a href="https://github.com/camilogarciabotero/biocomp-book">
