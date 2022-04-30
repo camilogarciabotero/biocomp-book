@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Fundamentals of computational biology",
     "section": "",
-    "text": "We started this book with the aim of compiling the lectures of the course Fundamentals of Computational Biology offered at Universidad EAFIT for undergrad students in Biology. The course has been taught from different perspectives from its creation, yet the last iteration was divided into three modules. i) introduction to Unix (4 lectures) ii) introduction to sequence analysis and genomics (7 lectures) and iii) principles of structural biology (4 lectures).\nLectures are focused on a theoretical-practical approach where basic concepts from biology, bioinformatics and computer science and interleave with the practice to solve challenges. Excercised or challenges are designed to improve stundents abilities that are likely to be involved in real-life problems in computational biology.\n\n\n\n\n\n\n\n\nNote\n\n\n\nSometimes other fields might add interested value to the understanding of the computational biology area. This callout remarks some of them and aim to explain these intersections.\n\n\n\n\n\n\n\n\nTip\n\n\n\nAs you move forward in the computational biology field you will find that there are several tips and tricks (mainly from the command line) as well as some random CLI programs that can leverage your daily workflow as a researcher. Using this feature we highlight some of those that appeared to linger on the field.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nTo help you consolidate your understanding we end most chapters with important messages or concepts that help you evaluate yourself as you move forward on the lessons.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nWhen experimenting with the CLI and many other computational tools it is common to face several known errors and drawbacks. Then, we present some of them and how to sort them out.\n\n\n\n\n\n\n\n\nChallenges\n\n\n\nSince focused on a competences learning approach we have highlighted several real-life (but basic) challenges a researcher faces when approaching computational biology problem (from tool selection, usage and result analysis). Therefore the book section challenges presents a selection of these problems that will later be apporached by a computational biology strategy (mainly from the CLI).\n\n\n\n\n\n\n\n\nFile format\n\n\n\nAs many analysis specialize on data analysis, many formats arise that optimize the processing steps or the data storing steps. Some of these formats are keystones of bioinformatic analyses. We present examples of some formats an describe its main elements."
+    "text": "Danger\n\n\n\nThis book is a work in progress\n\n\nWe started this book with the aim of compiling the lectures of the course Fundamentals of Computational Biology offered at Universidad EAFIT for undergrad students in Biology. The course has been taught from different perspectives from its creation, yet the last iteration was divided into three modules. i) introduction to Unix (4 lectures) ii) introduction to sequence analysis and genomics (7 lectures) and iii) principles of structural biology (4 lectures).\nLectures are focused on a theoretical-practical approach where basic concepts from biology, bioinformatics and computer science and interleave with the practice to solve challenges. Excercised or challenges are designed to improve stundents abilities that are likely to be involved in real-life problems in computational biology.\n\n\n\n\n\n\n\n\nNote\n\n\n\nSometimes other fields might add interested value to the understanding of the computational biology area. This callout remarks some of them and aim to explain these intersections.\n\n\n\n\n\n\n\n\nTip\n\n\n\nAs you move forward in the computational biology field you will find that there are several tips and tricks (mainly from the command line) as well as some random CLI programs that can leverage your daily workflow as a researcher. Using this feature we highlight some of those that appeared to linger on the field.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nTo help you consolidate your understanding we end most chapters with important messages or concepts that help you evaluate yourself as you move forward on the lessons.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nWhen experimenting with the CLI and many other computational tools it is common to face several known errors and drawbacks. Then, we present some of them and how to sort them out.\n\n\n\n\n\n\n\n\nChallenges\n\n\n\nSince focused on a competences learning approach we have highlighted several real-life (but basic) challenges a researcher faces when approaching computational biology problem (from tool selection, usage and result analysis). Therefore the book section challenges presents a selection of these problems that will later be apporached by a computational biology strategy (mainly from the CLI).\n\n\n\n\n\n\n\n\nFile format\n\n\n\nAs many analysis specialize on data analysis, many formats arise that optimize the processing steps or the data storing steps. Some of these formats are keystones of bioinformatic analyses. We present examples of some formats an describe its main elements."
   },
   {
     "objectID": "intro.html",
@@ -18,21 +18,21 @@
     "href": "chs-command-line/welcome-to-command-line.html",
     "title": "1  The command line",
     "section": "",
-    "text": "Danger\n\n\n\nThis book is a work in progress\nIn this chapter we will explore the fundamentals of the command line interface (aka CLI). A CLI is actually several things and sometimes simply confused with a terminal window such as the following image:\nBefore landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It Simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a libre access is the very known OS Linux.\nThe most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically.\nThere are several programs that run in the terminal Fig. 1.1"
+    "text": "In this chapter we will explore the fundamentals of the command line interface (aka CLI). And the differences between Operating Systems (OS), Unix, CLI, Bash and Terminal.\nAs you will see the CLI is composed of several programs enabling the interaction with the machine, we will discuss some of the basics to navigate your machine, and some advance one that enable complex operations and automating tasks."
   },
   {
     "objectID": "chs-command-line/welcome-to-command-line.html#getting-started-with-the-command-line",
     "href": "chs-command-line/welcome-to-command-line.html#getting-started-with-the-command-line",
     "title": "1  The command line",
     "section": "1.1 Getting started with the command line",
-    "text": "1.1 Getting started with the command line\nAlmost every computer has a way to be"
+    "text": "1.1 Getting started with the command line\nBefore landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It Simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a libre access is the very known OS Linux. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically.\nAlmost every computer has a way to interact with or access to the inner elements of the computer. Such interface is called the terminal Fig. 1.1\n\n\n\nFigure 1.1: A terminal app displaying common features of the command line interface"
   },
   {
     "objectID": "chs-command-line/welcome-to-command-line.html#basic-unix-commands",
     "href": "chs-command-line/welcome-to-command-line.html#basic-unix-commands",
     "title": "1  The command line",
     "section": "1.2 Basic Unix commands",
-    "text": "1.2 Basic Unix commands"
+    "text": "1.2 Basic Unix commands\nPrograms, files and directories on every machine display hierarchical paths (routes), starting out from the root (/). The root represents the begining of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths Fig. 1.2\n\n\n\nFigure 1.2: A figure displaying tree-like structure of the programs in a machine with macOS\n\n\nTo know where you are you can see your current location, that is to print your working directory using the pwd command."
   },
   {
     "objectID": "chs-command-line/welcome-to-command-line.html#advance-unix-commands",
@@ -205,14 +205,14 @@
   {
     "objectID": "chs-sequence-analysis/phylogenetic-reconstructions.html#mehtods-for-phylogenetic-reconstruction",
     "href": "chs-sequence-analysis/phylogenetic-reconstructions.html#mehtods-for-phylogenetic-reconstruction",
-    "title": "7  phylogenetics",
+    "title": "7  Phylogenetics",
     "section": "7.2 Mehtods for phylogenetic reconstruction",
     "text": "7.2 Mehtods for phylogenetic reconstruction"
   },
   {
     "objectID": "chs-sequence-analysis/phylogenetic-reconstructions.html#building-a-phylogenetic-reconstruction",
     "href": "chs-sequence-analysis/phylogenetic-reconstructions.html#building-a-phylogenetic-reconstruction",
-    "title": "7  phylogenetics",
+    "title": "7  Phylogenetics",
     "section": "7.3 Building a phylogenetic reconstruction",
     "text": "7.3 Building a phylogenetic reconstruction\n\n7.3.1 Evolutionary substitution model\n\n\n7.3.2 Maximum likelihood\n\n\n7.3.3 Bayesian inference"
   },
