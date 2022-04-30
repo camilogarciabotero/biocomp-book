@@ -1,26 +1,26 @@
 # Genome assembly {#sec-genomics}
 
-## The problem of assembling genomes {.unnumbered}
+## The problem of assembling genomes
 
-## Main algorithms for genome asssembly {.unnumbered}
+## Main algorithms for genome asssembly
 
-### Overlay, Layout, Consensus (OLS) {.unnumbered}
+### Overlay, Layout, Consensus (OLS)
 
-### De Bruijn graphs {.unnumbered}
+### De Bruijn graphs
 
-## Main concepts of an assembly {.unnumbered}
+## Main concepts of an assembly
 
-### Contigs, Unitigs, Scaffolds {.unnumbered}
+### Contigs, Unitigs, Scaffolds
 
-## A complete workflow for assembling genomes {.unnumbered}
+## A complete workflow for assembling genomes
 
-## Assessing genomes {.unnumbered}
+## Assessing genomes
 
-### Inspecting genome graphs {.unnumbered}
+### Inspecting genome graphs
 
-### Genome completeness {.unnumbered}
+### Genome completeness
 
-## Understanding genome difficulties {.unnumbered}
+## Understanding genome difficulties
 
 - End of chromosomes
 

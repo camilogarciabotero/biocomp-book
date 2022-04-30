@@ -2,19 +2,19 @@
 
 This is a section about the first gen sequencing tech
 
-## Databases exploration {.unnumbered}
+## Databases exploration
 
-## Sanger sequencing methods {.unnumbered}
+## Sanger sequencing methods
 
-### The chain termination method {.unnumbered}
+### The chain termination method
 
-### Sanger with capillary electrophoresis {.unnumbered}
+### Sanger with capillary electrophoresis
 
-### Strengths and limitations of Sanger methods {.unnumbered}
+### Strengths and limitations of Sanger methods
 
-## Files from Sanger {.unnumbered}
+## Files from Sanger
 
-## Sanger processing workflow {.unnumbered}
+## Sanger processing workflow
 
-## The 16S rRNA and its relevance for sequencing {.unnumbered}
+## The 16S rRNA and its relevance for sequencing
 

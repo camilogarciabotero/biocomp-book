@@ -1,25 +1,25 @@
 # Variant calling analysis {#sec-variant-calling}
 
-## Common mutations {.unnumbered}
+## Common mutations
 
-## Structural variants {.unnumbered}
+## Structural variants
 
-## Genome rearrengments {.unnumbered}
+## Genome rearrengments
 
-## Read mapping algorithms and programs {.unnumbered}
+## Read mapping algorithms and programs
 
-### Burrow-Wheeler-Alignment {.unnumbered}
+### Burrow-Wheeler-Alignment
 
-### BWA-MEM2 {.unnumbered}
+### BWA-MEM2
 
-### Minimap2 {.unnumbered}
+### Minimap2
 
-### SAM, BAM and CRAM formats {.unnumbered}
+### SAM, BAM and CRAM formats
 
-## Identifying mutations {.unnumbered}
+## Identifying mutations
 
-### Freebayes and Snippy {.unnumbered}
+### Freebayes and Snippy
 
-### The VCF file {.unnumbered}
+### The VCF file
 
 

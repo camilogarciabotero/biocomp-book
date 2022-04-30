@@ -1,4 +1,4 @@
-# Notions of HPC {.unnumbered}
+# Notions of HPC
 
 ## What is HPC
 

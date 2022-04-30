@@ -1,4 +1,4 @@
-# Package managers {.unnumbered}
+# Package managers
 
 ## What is the importance of package managers
 

@@ -1,13 +1,13 @@
 # phylogenetics {#sec-phylogenetics}
 
-## What is a phylogenetic tree {.unnumbered}
+## What is a phylogenetic tree
 
-## Mehtods for phylogenetic reconstruction {.unnumbered}
+## Mehtods for phylogenetic reconstruction
 
-## Building a phylogenetic reconstruction {.unnumbered}
+## Building a phylogenetic reconstruction
 
-### Evolutionary substitution model {.unnumbered}
+### Evolutionary substitution model
 
-### Maximum likelihood {.unnumbered}
+### Maximum likelihood
 
-### Bayesian inference {.unnumbered}
+### Bayesian inference

@@ -2,15 +2,15 @@
 
 In this chapter we will discuss several about several points of view about bioinformatics and computational biology, we will further consider several biological concepts that appear central to understand the manipulation of biological data.
 
-## Endless debate: bioinformatics vs. computational biology {.unnumbered}
+## Endless debate: bioinformatics vs. computational biology
 
 
-## The duality of DNA {.unnumbered}
+## The duality of DNA
 
-## The central ~~dogma~~ theory of molecular biology extended {.unnumbered}
+## The central ~~dogma~~ theory of molecular biology extended
 
-## Sequencing strategies {.unnumbered}
+## Sequencing strategies
 
-## Sequencing over time {.unnumbered}
+## Sequencing over time
 
-## Some insights from sequencing genomes {.unnumbered}
+## Some insights from sequencing genomes

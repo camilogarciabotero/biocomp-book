@@ -1,27 +1,27 @@
 # Sequence alignments {#sec-aliignments}
 
-## Why do we align sequences? {.unnumbered}
+## Why do we align sequences?
 
 In search of homology and identy
 
-## What is homology {.unnumbered}
+## What is homology
 
-## Pairwise alignments algorihtms {.unnumbered}
+## Pairwise alignments algorihtms
 
-### Hamming distance {.unnumbered}
+### Hamming distance
 
-### Edit distance {.unnumbered}
+### Edit distance
 
 #### Dynamic programming
 
-### Needleman-Wunsch (global alignment) {.unnumbered}
+### Needleman-Wunsch (global alignment)
 
-### Smith-Waterman (local alignment) {.unnumbered}
+### Smith-Waterman (local alignment)
 
-## The genetic code and Scoring matrices {.unnumbered}
+## The genetic code and Scoring matrices
 
-## BLAST and its families {.unnumbered}
+## BLAST and its families
 
 psi-blast? true homologs, recurrent blast to polish scoring matrix during several generations to generate true homologs
 
-## Multiple sequence alignments {.unnumbered}
+## Multiple sequence alignments
