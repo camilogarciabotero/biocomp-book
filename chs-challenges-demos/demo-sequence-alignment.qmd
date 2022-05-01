@@ -117,3 +117,5 @@ blastn -db all_genomes.fasta -query gyrA.fasta -outfmt "6 sseqid sseq" -word_siz
 ```bash
 for i in *fna; do; goalign subset -e "gyrA" -i ${i} --unaligned;done | grep ">"
 ```
+
+remember this [program](https://github.com/KatyBrown/CIAlign) to assess alignments.
