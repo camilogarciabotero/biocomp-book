@@ -30,10 +30,33 @@ tree -d -L 1
 
 To know where you are you can see your current location, that is to *print your working directory* using the `pwd` command.
 
-[For more explanations on the basic commands in the command line we suggest to visit the first chapters from *Computing skills for biologist* from @allesina2019]{.aside}
 
-```{bash}
+```bash
 pwd .
 ```
+
+### Making new directories
+
+```bash
+mkdir test-dir
+```
+
+### Change to other directory
+
+```bash
+cd test-dir
+```
+
+### Creating a file
+
+```bash
+touch new-file.txt
+```
+
+::: {.column-margin}
+![Different conventions for naming files or directories as a good computational practice. Illustration was made by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)](imgs-cli/naming-files.png){#fig-naming-flies fig-align="center"}
+::: 
+
+For more explanations on the basic commands in the command line we suggest to visit the first chapters of *Computing skills for biologist* from @allesina2019
 
 ## Advance Unix commands
