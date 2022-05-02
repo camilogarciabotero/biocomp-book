@@ -11,7 +11,7 @@ date-released: 2022-04-18
 url: "https://github.com/camilogarciabotero/biocomp-book"
 doi: 10.5281/zenodo.6468280
 preferred-citation:
-  type: book
+  type: pamphlet
   authors:
   - family-names: "García-Botero"
   given-names: "Camilo"
