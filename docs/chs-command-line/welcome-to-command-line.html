@@ -335,7 +335,10 @@ div.csl-indent {
    
   <ul>
   <li><a href="#getting-started-with-the-command-line" id="toc-getting-started-with-the-command-line" class="nav-link active" data-scroll-target="#getting-started-with-the-command-line"> <span class="header-section-number">1.1</span> Getting started with the command line</a></li>
-  <li><a href="#basic-unix-commands" id="toc-basic-unix-commands" class="nav-link" data-scroll-target="#basic-unix-commands"> <span class="header-section-number">1.2</span> Basic Unix commands</a></li>
+  <li><a href="#basic-unix-commands" id="toc-basic-unix-commands" class="nav-link" data-scroll-target="#basic-unix-commands"> <span class="header-section-number">1.2</span> Basic Unix commands</a>
+  <ul class="collapse">
+  <li><a href="#printing-your-working-directory" id="toc-printing-your-working-directory" class="nav-link" data-scroll-target="#printing-your-working-directory"> <span class="header-section-number">1.2.1</span> Printing your working directory</a></li>
+  </ul></li>
   <li><a href="#advance-unix-commands" id="toc-advance-unix-commands" class="nav-link" data-scroll-target="#advance-unix-commands"> <span class="header-section-number">1.3</span> Advance Unix commands</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-command-line/welcome-to-command-line.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -405,8 +408,12 @@ Tip
 <p>You can inspect in the paths in a nested tree dir using <code>tree</code> in you cli</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tree</span> <span class="at">-d</span> <span class="at">-L</span> 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div></div><p>To know where you are you can see your current location, that is to <em>print your working directory</em> using the <code>pwd</code> command.</p>
+</div></div><section id="printing-your-working-directory" class="level3 page-columns page-full" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="printing-your-working-directory"><span class="header-section-number">1.2.1</span> Printing your working directory</h3>
+<p>To know where you are you can see your current location, that is to <em>print your working directory</em> using the <code>pwd</code> command.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">For more explanations on the basic commands in the command line we suggest to visit the first chapters from <em>Computing skills for biologist</em> from <span class="citation" data-cites="allesina2019">Allesina and Wilmes (<a href="../references.html#ref-allesina2019" role="doc-biblioref">2019</a>)</span></span></div></div>
+<pre class="{bash}"><code>pwd .</code></pre>
+</section>
 </section>
 <section id="advance-unix-commands" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="advance-unix-commands"><span class="header-section-number">1.3</span> Advance Unix commands</h2>
