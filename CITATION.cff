@@ -6,7 +6,7 @@ authors:
   orcid: "https://orcid.org/0000-0002-0426-7007"
 title: "Fundamentals of Computational Biology: lecture notes"
 version: 0.0.3
-type: book
+# type: book
 date-released: 2022-04-18
 url: "https://github.com/camilogarciabotero/biocomp-book"
 doi: 10.5281/zenodo.6468280
