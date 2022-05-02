@@ -25,8 +25,15 @@ You can inspect in the paths in a nested tree dir using `tree` in you cli
 tree -d -L 1
 ```
 :::
+
+### Printing your working directory
+
 To know where you are you can see your current location, that is to *print your working directory* using the `pwd` command.
 
 [For more explanations on the basic commands in the command line we suggest to visit the first chapters from *Computing skills for biologist* from @allesina2019]{.aside}
+
+```{bash}
+pwd .
+```
 
 ## Advance Unix commands
