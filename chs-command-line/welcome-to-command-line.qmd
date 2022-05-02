@@ -14,10 +14,19 @@ Almost every computer has a way to interact with or access to the inner elements
 
 ## Basic Unix commands
 
-Programs, files and directories on every machine display hierarchical paths (routes), starting out from the *root* (`/`). The *root* represents the begining of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths [Fig. @fig-paths]
+Programs, files and directories on every machine display hierarchical paths (routes), starting out from the **root** (`/`). The **root** represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths [Fig. @fig-tree]
 
-![A figure displaying tree-like structure of the programs in a machine with macOS](imgs-cli/){#fig-paths fig-align="center"}
+![A figure displaying tree-like structure of the programs in a machine with macOS](imgs-cli/dir-tree.png){#fig-tree fig-align="center"} 
 
+::: {.callout-tip .column-margin}
+You can inspect in the paths in a nested tree dir using `tree` in you cli
+
+```bash
+tree -d -L 1
+```
+:::
 To know where you are you can see your current location, that is to *print your working directory* using the `pwd` command.
+
+[For more explanations on the basic commands in the command line we suggest to visit the first chapters from *Computing skills for biologist* from @allesina2019]{.aside}
 
 ## Advance Unix commands
