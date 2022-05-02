@@ -11,7 +11,7 @@ Lectures are focused on a theoretical-practical approach where basic concepts fr
 ## Learning features {.unnumbered}
 
 ::: callout-note
-Sometimes other fields might add interested value to the understanding of the computational biology area. This callout remarks some of them and aim to explain these intersections.
+Sometimes other fields might add interested value to the understanding of the computational biology area. This feauture remarks some of them and aim to explain these intersections.
 :::
 
 ::: callout-tip
