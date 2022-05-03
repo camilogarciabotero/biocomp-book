@@ -19,7 +19,7 @@ Programs, files and directories on every machine display hierarchical paths (rou
 ![A figure displaying tree-like structure of the programs in a machine with macOS](imgs-cli/dir-tree.png){#fig-tree fig-align="center"} 
 
 ::: {.callout-tip .column-margin}
-You can inspect in the paths in a nested tree dir using `tree` in you cli
+You can inspect the paths of a nested directory tree using `tree` command in you cli:
 
 ```bash
 tree -d -L 1
@@ -46,16 +46,41 @@ mkdir test-dir
 ```bash
 cd test-dir
 ```
+::: {.callout-tip .column-margin}
+
+Some basic arguments to navigate across your terminal: 
+```bash
+cd .. # change backwards
+cd ~  # change to the home
+cd /  # change to the root
+cd -  # change to previous dir
+```
+:::
 
 ### Creating a file
+
+A simple command to create any file inside your terminal is `touch` it just create a file, but do not allow any editing.
 
 ```bash
 touch new-file.txt
 ```
+The `new-file.txt` is empty and created on your current location unless you assign another path when creating it.
 
 ::: {.column-margin}
 ![Different conventions for naming files or directories as a good computational practice. Illustration was made by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)](imgs-cli/naming-files.png){#fig-naming-flies fig-align="center"}
 ::: 
+
+### Listing files
+
+```bash
+ls 
+```
+### Printing files to the screen
+
+```bash
+cat new-file.txt
+```
+
 
 For more explanations on the basic commands in the command line we suggest to visit the first chapters of *Computing skills for biologist* from @allesina2019
 
