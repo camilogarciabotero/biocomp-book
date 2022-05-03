@@ -64,11 +64,12 @@ A simple command to create any file inside your terminal is `touch` it just crea
 ```bash
 touch new-file.txt
 ```
-The `new-file.txt` is empty and created on your current location unless you assign another path when creating it.
+The `new-file.txt` is empty and created on your current location unless you assign another path when creating it. We suggest to take a loo at [Allison Horst](https://github.com/allisonhorst/stats-illustrations), especially on how to name files depending on the *case* see [Fig. @fig-naming-files]
 
-::: {.column-margin}
-![Different conventions for naming files or directories as a good computational practice. Illustration was made by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)](imgs-cli/naming-files.png){#fig-naming-flies fig-align="center"}
-::: 
+:::{.column-margin}
+[![Different conventions for naming files or directories as a good computational practice. Such as de the *kebab-case* or the *UpperCammelCase*. Illustration by Allison Horst](imgs-cli/naming-files.png){#fig-naming-files}](https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/other-stats-artwork/coding_cases.png)
+:::
+
 
 ### Listing files
 
