@@ -5,3 +5,7 @@
 ## Conda environments and other package managers
 
 ## Creating enviroments with Conda
+
+## Package managers for OS
+
+There are several package managers handling general purpose packages and apps. For MacOS the famous one is [Homebrew]() and for Windowos several could be used such as [Chocolatey]() and [Scoop](https://scoop.sh/).
