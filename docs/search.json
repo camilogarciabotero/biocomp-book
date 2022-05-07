@@ -56,6 +56,13 @@
     "text": "2.3 Creating enviroments with Conda"
   },
   {
+    "objectID": "chs-command-line/package-managers.html#package-managers-for-os",
+    "href": "chs-command-line/package-managers.html#package-managers-for-os",
+    "title": "2  Package managers",
+    "section": "2.4 Package managers for OS",
+    "text": "2.4 Package managers for OS\nThere are several package managers handling general purpose packages and apps. For MacOS the famous one is Homebrew and for Windowos several could be used such as Chocolatey and Scoop."
+  },
+  {
     "objectID": "chs-command-line/hpc-notions.html#some-important-concepts-of-the-hardware",
     "href": "chs-command-line/hpc-notions.html#some-important-concepts-of-the-hardware",
     "title": "3  Notions of HPC",
@@ -544,12 +551,5 @@
     "title": "References",
     "section": "",
     "text": "Allesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for\nBiologists,” January. https://doi.org/10.2307/j.ctvc77jrc."
-  },
-  {
-    "objectID": "chs-command-line/package-managers.html#package-managers-for-os",
-    "href": "chs-command-line/package-managers.html#package-managers-for-os",
-    "title": "2  Package managers",
-    "section": "2.4 Package managers for OS",
-    "text": "2.4 Package managers for OS\nThere are several package managers handling general purpose packages and apps. For MacOS the famous one is Homebrew and for Windowos several could be used such as Chocolatey and Scoop."
   }
 ]
