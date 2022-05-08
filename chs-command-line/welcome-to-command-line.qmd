@@ -86,3 +86,16 @@ cat new-file.txt
 For more explanations on the basic commands in the command line we suggest to visit the first chapters of *Computing skills for biologist* from @allesina2019
 
 ## Advance Unix commands
+
+
+```bash
+sed
+```
+
+```bash
+grep ">" 
+```
+::: {.callout-tip}
+You can navigate your executed commands by typing the ::up-arrow:: key
+
+:::
