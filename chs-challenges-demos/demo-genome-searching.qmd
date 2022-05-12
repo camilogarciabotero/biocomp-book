@@ -63,10 +63,10 @@ ls Data | head
 library(tidyverse)
 library(fs)
 
-all_features <- dir_ls("Data/") %>% 
+all_features <- dir_ls("Data/") |> 
   map_df(read_tsv)
 
-all_features %>% 
+all_features |> 
   head()
 ```
 
@@ -88,15 +88,15 @@ all_features %>%
 #| echo: true
 #| eval: false
 #| message: false
-all_features_grouped <- all_features %>% 
-  rename(feature = `# feature`) %>% 
-  select(assembly, feature) %>% 
-  group_by(assembly, feature) %>%  operations
-  count() %>% 
-  pivot_wider(names_from = feature, values_from = n) %>% 
+all_features_grouped <- all_features |> 
+  rename(feature = `# feature`) |> 
+  select(assembly, feature) |> 
+  group_by(assembly, feature) |>  operations
+  count() |> 
+  pivot_wider(names_from = feature, values_from = n) |> 
   arrange(desc(CDS))
     
-all_features_grouped %>% 
+all_features_grouped |> 
   head()
 ```
 
