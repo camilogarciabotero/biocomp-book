@@ -50,7 +50,7 @@ sanger_bulk <- function(dir) {
   )
 }
 
-genes <- dirs %>% 
+genes <- dirs |> 
   map(sanger_bulk)
 
 launchApp(genes$`/Users/camilogarcia/Projects/Bacillus/Data/Sanger/Inter/gyrA`)
