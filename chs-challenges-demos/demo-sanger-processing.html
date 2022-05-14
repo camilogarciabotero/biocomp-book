@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.385">
+<meta name="generator" content="quarto-0.9.402">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-05-10">
+<meta name="dcterms.date" content="2022-05-14">
 
 <title>Fundamentals of computational biology - 13&nbsp; Sanger processing</title>
 <style>
@@ -338,7 +338,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-05-10</p>
+      <p class="date">2022-05-14</p>
     </div>
   </div>
     
@@ -386,7 +386,7 @@ Challenge
 </section>
 <section id="processing-a-bulk-of-.ab1-files" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="processing-a-bulk-of-.ab1-files">Processing a bulk of <code>.ab1</code> files</h2>
-<div class="cell" data-hash="demo-sanger-processing_cache/html/bulk-sanger-processing_c4b72b6614b7ed2b884ef9f5f29a4e2d">
+<div class="cell" data-hash="demo-sanger-processing_cache/html/bulk-sanger-processing_cc77cc0bc0fcd3fa9f424cce14629a32">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -400,7 +400,7 @@ Challenge
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>genes <span class="ot">&lt;-</span> dirs <span class="sc">%&gt;%</span> </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>genes <span class="ot">&lt;-</span> dirs <span class="sc">|&gt;</span> </span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(sanger_bulk)</span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">launchApp</span>(genes<span class="sc">$</span><span class="st">`</span><span class="at">/Users/camilogarcia/Projects/Bacillus/Data/Sanger/Inter/gyrA</span><span class="st">`</span>)</span>
