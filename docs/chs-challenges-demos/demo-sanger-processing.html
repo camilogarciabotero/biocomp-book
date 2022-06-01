@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.446">
+<meta name="generator" content="quarto-0.9.492">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2022-05-24">
+<meta name="dcterms.date" content="2022-06-01">
 <title>Fundamentals of computational biology - 13&nbsp; Sanger processing</title>
 <style>
 code{white-space: pre-wrap;}
@@ -77,15 +77,6 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script><script src="../site_libs/quarto-nav/headroom.min.js"></script><script src="../site_libs/clipboard/clipboard.min.js"></script><meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script><script src="../site_libs/quarto-search/fuse.min.js"></script><script src="../site_libs/quarto-search/quarto-search.js"></script><link href="../chs-challenges-demos/demo-sequence-alignment.html" rel="next">
-<link href="../chs-challenges-demos/demo-genome-searching.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script><script src="../site_libs/quarto-html/popper.min.js"></script><script src="../site_libs/quarto-html/tippy.umd.min.js"></script><script src="../site_libs/quarto-html/anchor.min.js"></script><link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link class="quarto-color-scheme" id="quarto-text-highlighting-styles" href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" id="quarto-text-highlighting-styles" href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script><link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link class="quarto-color-scheme" href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="../site_libs/bootstrap/bootstrap-dark.min.css">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -105,6 +96,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script><script async="" src="https://hypothes.is/embed.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chs-challenges-demos/demo-sequence-alignment.html" rel="next">
+<link href="../chs-challenges-demos/demo-genome-searching.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate">
 <meta name="citation_title" content="[13]{.chapter-number}&nbsp; [Sanger processing]{.chapter-title}">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
@@ -308,7 +319,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-05-24</p>
+      <p class="date">2022-06-01</p>
     </div>
   </div>
     
@@ -332,7 +343,7 @@ Challenge
 <div class="cell" data-hash="demo-sanger-processing_cache/html/single-sanger-processing_4aefe2a4ccd3f4bddecbc4d6bd0b9cec">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">sangeranalyseR</span><span class="op">)</span>
 
-<span class="va">groEL</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/SangerAlignment.html">SangerAlignment</a></span><span class="op">(</span>
+<span class="va">groEL</span> <span class="op">&lt;-</span> <span class="fu">SangerAlignment</span><span class="op">(</span>
   ABIF_Directory <span class="op">=</span> <span class="st">"~/Projects/Bacillus/Data/Sanger/Inter/groEL/"</span>,
   REGEX_SuffixForward <span class="op">=</span> <span class="st">"_1_F.ab1"</span>,
   REGEX_SuffixReverse <span class="op">=</span> <span class="st">"_2_R.ab1"</span>,
@@ -341,14 +352,14 @@ Challenge
   M2SlidingWindowSize <span class="op">=</span> <span class="fl">10</span>
 <span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/writeFasta.html">writeFasta</a></span><span class="op">(</span><span class="va">groEL</span>,
+<span class="fu">writeFasta</span><span class="op">(</span><span class="va">groEL</span>,
   outputDir <span class="op">=</span> <span class="st">"~/Documents/Teaching/BiologyCourses/BI0487/Demos/02-demo-sangeranalysis"</span>,
   selection <span class="op">=</span> <span class="st">"contigs_unalignment"</span>,
 <span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/launchApp.html">launchApp</a></span><span class="op">(</span><span class="va">groEL</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/generateReport.html">generateReport</a></span><span class="op">(</span><span class="va">groEL</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/qualityBasePlot-methods.html">qualityBasePlot</a></span><span class="op">(</span><span class="va">groEL</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span class="fu">launchApp</span><span class="op">(</span><span class="va">groEL</span><span class="op">)</span>
+<span class="fu">generateReport</span><span class="op">(</span><span class="va">groEL</span><span class="op">)</span>
+<span class="fu">qualityBasePlot</span><span class="op">(</span><span class="va">groEL</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="processing-a-bulk-of-.ab1-files" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="processing-a-bulk-of-.ab1-files">Processing a bulk of <code>.ab1</code> files</h2>
 <div class="cell" data-hash="demo-sanger-processing_cache/html/bulk-sanger-processing_cc77cc0bc0fcd3fa9f424cce14629a32">
@@ -358,7 +369,7 @@ Challenge
 <span class="va">dirs</span> <span class="op">&lt;-</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/dir_ls.html">dir_ls</a></span><span class="op">(</span><span class="st">"~/Projects/Bacillus/Data/Sanger/Inter"</span><span class="op">)</span>
 
 <span class="va">sanger_bulk</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">dir</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/SangerAlignment.html">SangerAlignment</a></span><span class="op">(</span>
+  <span class="fu">SangerAlignment</span><span class="op">(</span>
     ABIF_Directory <span class="op">=</span> <span class="va">dir</span>,
     REGEX_SuffixForward <span class="op">=</span> <span class="st">"_1_F.ab1"</span>,
     REGEX_SuffixReverse <span class="op">=</span> <span class="st">"_2_R.ab1"</span>
@@ -368,9 +379,9 @@ Challenge
 <span class="va">genes</span> <span class="op">&lt;-</span> <span class="va">dirs</span> |&gt; 
   <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">sanger_bulk</span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/launchApp.html">launchApp</a></span><span class="op">(</span><span class="va">genes</span><span class="op">$</span><span class="va">`/Users/camilogarcia/Projects/Bacillus/Data/Sanger/Inter/gyrA`</span><span class="op">)</span>
+<span class="fu">launchApp</span><span class="op">(</span><span class="va">genes</span><span class="op">$</span><span class="va">`/Users/camilogarcia/Projects/Bacillus/Data/Sanger/Inter/gyrA`</span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/writeFasta.html">writeFasta</a></span><span class="op">(</span>
+<span class="fu">writeFasta</span><span class="op">(</span>
   outputDir <span class="op">=</span> <span class="st">"~/Documents/Teaching/BiologyCourses/BI0487/Demos/02-demo-sangeranalysis"</span>,
   selection <span class="op">=</span> <span class="st">"contigs_unalignment"</span>
 <span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
