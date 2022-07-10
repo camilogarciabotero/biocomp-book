@@ -58,8 +58,8 @@ jobs:
 
       - name: render book to all format
         # Add any command line argument needed
-        run: |
-          quarto render
+        uses: quarto-dev/quarto-actions/render@v2
+        
       - name: Deploy 🚀
         # only deploy when push to main
         if: github.event_name != 'pull_request'
