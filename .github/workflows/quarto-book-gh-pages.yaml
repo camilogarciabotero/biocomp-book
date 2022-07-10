@@ -9,15 +9,20 @@ on:
 name: quarto-render
 
 jobs:
-  quarto-linux:
+  build-deploy:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: set up Quarto
-      - uses: quarto-dev/quarto-actions/setup@v2
-      - run: |
-          quarto --version
+      - uses: actions/checkout@v2
+
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/install-quarto@v1
+        with:
+          # To install LaTeX to build PDF book
+          tinytex: true
+          # uncomment below and fill to pin a version
+          # version: 0.9.105
 
         # with:
           # To install LaTeX to build PDF book 
