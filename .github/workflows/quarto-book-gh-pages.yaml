@@ -16,11 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Quarto
-        uses: quarto-dev/quarto-actions/install-quarto@v1
+      - name: set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
         with:
           # To install LaTeX to build PDF book 
-          tinytex: true 
+          # tinytex: true 
           # uncomment below and fill to pin a version
           # version: 0.9.105
 
@@ -30,10 +30,10 @@ jobs:
 #      - name: Query dependencies
 #        run: |
 #          sudo apt-get install -y ncbi-genome-download
-      
-      - uses: actions/setup-python@v1
+      - name: install python
+      - uses: actions/setup-python@v4
         with:
-          python-version: 3.8
+          python-version: '3.x'
 
       - name: install general dependencies
         run: |
@@ -56,7 +56,7 @@ jobs:
           remotes::install_github("YuLab-SMU/ggtree")
         shell: Rscript {0}
 
-      - name: render book to all format
+      - name: quarto render
         # Add any command line argument needed
         uses: quarto-dev/quarto-actions/render@v2
 
