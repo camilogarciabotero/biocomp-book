@@ -42,14 +42,14 @@ book:
     - part: "Structural bioinformatics"
       chapters:
         - chs-bio-structural/intro-structural-bioinfo.qmd
-    - part: "Challenges"
-      chapters:
-        - chs-challenges-demos/demo-genome-searching.qmd
-        - chs-challenges-demos/demo-sanger-processing.qmd
-        - chs-challenges-demos/demo-sequence-alignment.qmd
-        - chs-challenges-demos/demo-phylogenetics.qmd
-        - chs-challenges-demos/demo-reads-assessment.qmd
-        - chs-challenges-demos/demo-genome-assembly.qmd
+    # - part: "Challenges"
+    #   chapters:
+    #     - chs-challenges-demos/demo-genome-searching.qmd
+    #     - chs-challenges-demos/demo-sanger-processing.qmd
+    #     - chs-challenges-demos/demo-sequence-alignment.qmd
+    #     - chs-challenges-demos/demo-phylogenetics.qmd
+    #     - chs-challenges-demos/demo-reads-assessment.qmd
+    #     - chs-challenges-demos/demo-genome-assembly.qmd
     - references.qmd
 
 bibliography: references.bib
