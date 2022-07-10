@@ -15,10 +15,10 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       # - uses: actions/checkout@v2
-      - name: set up Quarto
-      - uses: quarto-dev/quarto-actions/setup@v2
-      - run: |
-         quarto --version
+        - name: set up Quarto
+        - uses: quarto-dev/quarto-actions/setup@v2
+        - run: |
+          quarto --version
         # with:
           # To install LaTeX to build PDF book 
           # tinytex: true 
