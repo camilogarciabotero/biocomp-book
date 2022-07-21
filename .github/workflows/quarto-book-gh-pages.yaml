@@ -65,8 +65,8 @@ jobs:
       - name: Quarto render
         # Add any command line argument needed
         uses: quarto-dev/quarto-actions/render@v2
-          with:
-            to: html
+          # with:
+          #   to: html
 
       - name: Deploy 🚀
         # only deploy when push to main
