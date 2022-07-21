@@ -32,10 +32,7 @@ jobs:
 
       # Install any computing dependency you may need, usually either python and Jupyter or R
       # More specific examples will be shared on quarto-dev/quarto-actions project        
-          
-#      - name: Query dependencies
-#        run: |
-#          sudo apt-get install -y ncbi-genome-download
+
       - name: Install Python
       - uses: actions/setup-python@v4
         with:
@@ -63,19 +60,16 @@ jobs:
         shell: Rscript {0}
 
       - name: Quarto render
-        # Add any command line argument needed
         uses: quarto-dev/quarto-actions/render@v2
-        run: |
-          quarto render
           # with:
           #   to: html
 
-      - name: Deploy 🚀
-        # only deploy when push to main
-        if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          # The branch the action should deploy to.
-          branch: gh-pages
-          # The folder the action should deploy. Adapt if you changed in Quarto config
-          folder: docs
+      # - name: Deploy 🚀
+      #   # only deploy when push to main
+      #   if: github.event_name != 'pull_request'
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     # The branch the action should deploy to.
+      #     branch: gh-pages
+      #     # The folder the action should deploy. Adapt if you changed in Quarto config
+      #     folder: docs
