@@ -30,7 +30,7 @@ book:
         - chs-command-line/git-and-github.qmd
         - chs-command-line/package-managers.qmd
         - chs-command-line/hpc-notions.qmd
-    - part: "Seq. analysis & genomics"
+    - part: "Sequence analysis"
       chapters:
         - chs-sequence-analysis/introduction-to-sequence-analysis.qmd
         - chs-sequence-analysis/sanger-analysis.qmd
