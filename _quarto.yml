@@ -27,6 +27,7 @@ book:
     - part: "The command line"
       chapters:
         - chs-command-line/welcome-to-command-line.qmd
+        - chs-command-line/git-and-github.qmd
         - chs-command-line/package-managers.qmd
         - chs-command-line/hpc-notions.qmd
     - part: "Seq. analysis & genomics"
