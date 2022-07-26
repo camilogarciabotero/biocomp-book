@@ -6,11 +6,15 @@
 
 ## Getting started with the command line
 
-Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It Simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a *libre* access is the very known OS Linux. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically.
+Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a *libre* access is the very known OS Linux. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically.
 
 Almost every computer has a way to interact with or access to the inner elements of the computer. Such interface is called the terminal [Fig. @fig-terminal]
 
 ![A **terminal** app displaying common features of the command line interface](imgs-cli/terminal.png){#fig-terminal fig-align="center"}
+
+## Anatomy of a command
+
+![A simple command and a convention to call its main components](imgs-cli/command-anatomy.png){#fig-command}
 
 ## Basic Unix commands
 
