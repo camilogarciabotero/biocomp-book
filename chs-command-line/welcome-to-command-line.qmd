@@ -47,6 +47,7 @@ mkdir test-dir
 ### Change to other directory
 
 ``` bash
+
 cd test-dir
 ```
 

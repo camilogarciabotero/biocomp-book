@@ -17,7 +17,6 @@ book:
   site-url: https://camilogarciabotero.github.io/biocomp-book/
   repo-actions: [edit, issue]
   repo-branch: main
-  sharing: twitter
   # downloads: [pdf]
   # sharing: [twitter]
   sidebar:
@@ -37,8 +36,9 @@ book:
         - chs-sequence-analysis/sequence-alignments.qmd
         - chs-sequence-analysis/phylogenetic-reconstructions.qmd
         - chs-sequence-analysis/NGS-TGS-principles.qmd
-        - chs-sequence-analysis/genome-assembly-annotation.qmd
-        - chs-sequence-analysis/variant-calling-analysis.qmd
+    - part: "Genomics"
+        - chs-genomics/genome-assembly-annotation.qmd
+        - chs-genomics/variant-calling-analysis.qmd
     - part: "Structural bioinformatics"
       chapters:
         - chs-bio-structural/intro-structural-bioinfo.qmd
