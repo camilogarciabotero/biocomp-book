@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.35">
+<meta name="generator" content="quarto-1.0.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-07-20">
+<meta name="dcterms.date" content="2022-07-26">
 
 <title>Fundamentals of computational biology - 1&nbsp; The command line</title>
 <style>
@@ -296,17 +296,18 @@ div.csl-indent {
    
   <ul>
   <li><a href="#getting-started-with-the-command-line" id="toc-getting-started-with-the-command-line" class="nav-link active" data-scroll-target="#getting-started-with-the-command-line"> <span class="header-section-number">1.1</span> Getting started with the command line</a></li>
-  <li><a href="#basic-unix-commands" id="toc-basic-unix-commands" class="nav-link" data-scroll-target="#basic-unix-commands"> <span class="header-section-number">1.2</span> Basic Unix commands</a>
+  <li><a href="#anatomy-of-a-command" id="toc-anatomy-of-a-command" class="nav-link" data-scroll-target="#anatomy-of-a-command"> <span class="header-section-number">1.2</span> Anatomy of a command</a></li>
+  <li><a href="#basic-unix-commands" id="toc-basic-unix-commands" class="nav-link" data-scroll-target="#basic-unix-commands"> <span class="header-section-number">1.3</span> Basic Unix commands</a>
   <ul class="collapse">
-  <li><a href="#printing-your-working-directory" id="toc-printing-your-working-directory" class="nav-link" data-scroll-target="#printing-your-working-directory"> <span class="header-section-number">1.2.1</span> Printing your working directory</a></li>
-  <li><a href="#making-new-directories" id="toc-making-new-directories" class="nav-link" data-scroll-target="#making-new-directories"> <span class="header-section-number">1.2.2</span> Making new directories</a></li>
-  <li><a href="#change-to-other-directory" id="toc-change-to-other-directory" class="nav-link" data-scroll-target="#change-to-other-directory"> <span class="header-section-number">1.2.3</span> Change to other directory</a></li>
-  <li><a href="#creating-a-file" id="toc-creating-a-file" class="nav-link" data-scroll-target="#creating-a-file"> <span class="header-section-number">1.2.4</span> Creating a file</a></li>
-  <li><a href="#listing-files" id="toc-listing-files" class="nav-link" data-scroll-target="#listing-files"> <span class="header-section-number">1.2.5</span> Listing files</a></li>
-  <li><a href="#printing-files-to-the-screen" id="toc-printing-files-to-the-screen" class="nav-link" data-scroll-target="#printing-files-to-the-screen"> <span class="header-section-number">1.2.6</span> Printing files to the screen</a></li>
+  <li><a href="#printing-your-working-directory" id="toc-printing-your-working-directory" class="nav-link" data-scroll-target="#printing-your-working-directory"> <span class="header-section-number">1.3.1</span> Printing your working directory</a></li>
+  <li><a href="#making-new-directories" id="toc-making-new-directories" class="nav-link" data-scroll-target="#making-new-directories"> <span class="header-section-number">1.3.2</span> Making new directories</a></li>
+  <li><a href="#change-to-other-directory" id="toc-change-to-other-directory" class="nav-link" data-scroll-target="#change-to-other-directory"> <span class="header-section-number">1.3.3</span> Change to other directory</a></li>
+  <li><a href="#creating-a-file" id="toc-creating-a-file" class="nav-link" data-scroll-target="#creating-a-file"> <span class="header-section-number">1.3.4</span> Creating a file</a></li>
+  <li><a href="#listing-files" id="toc-listing-files" class="nav-link" data-scroll-target="#listing-files"> <span class="header-section-number">1.3.5</span> Listing files</a></li>
+  <li><a href="#printing-files-to-the-screen" id="toc-printing-files-to-the-screen" class="nav-link" data-scroll-target="#printing-files-to-the-screen"> <span class="header-section-number">1.3.6</span> Printing files to the screen</a></li>
   </ul></li>
-  <li><a href="#advance-unix-commands" id="toc-advance-unix-commands" class="nav-link" data-scroll-target="#advance-unix-commands"> <span class="header-section-number">1.3</span> Advance Unix commands</a></li>
-  <li><a href="#a-glimpse-to-the-window-subsystem-for-linux" id="toc-a-glimpse-to-the-window-subsystem-for-linux" class="nav-link" data-scroll-target="#a-glimpse-to-the-window-subsystem-for-linux"> <span class="header-section-number">1.4</span> A glimpse to the Window subsystem for linux</a></li>
+  <li><a href="#advance-unix-commands" id="toc-advance-unix-commands" class="nav-link" data-scroll-target="#advance-unix-commands"> <span class="header-section-number">1.4</span> Advance Unix commands</a></li>
+  <li><a href="#a-glimpse-to-the-window-subsystem-for-linux" id="toc-a-glimpse-to-the-window-subsystem-for-linux" class="nav-link" data-scroll-target="#a-glimpse-to-the-window-subsystem-for-linux"> <span class="header-section-number">1.5</span> A glimpse to the Window subsystem for linux</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-command-line/welcome-to-command-line.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -326,7 +327,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-07-20</p>
+      <p class="date">2022-07-26</p>
     </div>
   </div>
     
@@ -341,7 +342,7 @@ div.csl-indent {
 </blockquote>
 <section id="getting-started-with-the-command-line" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="getting-started-with-the-command-line"><span class="header-section-number">1.1</span> Getting started with the command line</h2>
-<p>Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It Simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a <em>libre</em> access is the very known OS Linux. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically.</p>
+<p>Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a <em>libre</em> access is the very known OS Linux. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically.</p>
 <p>Almost every computer has a way to interact with or access to the inner elements of the computer. Such interface is called the terminal <a href="#fig-terminal">Fig.&nbsp;<span>1.1</span></a></p>
 <div id="fig-terminal" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -350,13 +351,22 @@ div.csl-indent {
 </figure>
 </div>
 </section>
-<section id="basic-unix-commands" class="level2 page-columns page-full" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="basic-unix-commands"><span class="header-section-number">1.2</span> Basic Unix commands</h2>
-<p>Programs, files and directories on every machine display hierarchical paths (routes), starting out from the <strong>root</strong> (<code>/</code>). The <strong>root</strong> represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths <a href="#fig-tree">Fig.&nbsp;<span>1.2</span></a></p>
+<section id="anatomy-of-a-command" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="anatomy-of-a-command"><span class="header-section-number">1.2</span> Anatomy of a command</h2>
+<div id="fig-command" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="imgs-cli/command-anatomy.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 1.2: A simple command and a convention to call its main components</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="basic-unix-commands" class="level2 page-columns page-full" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="basic-unix-commands"><span class="header-section-number">1.3</span> Basic Unix commands</h2>
+<p>Programs, files and directories on every machine display hierarchical paths (routes), starting out from the <strong>root</strong> (<code>/</code>). The <strong>root</strong> represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths <a href="#fig-tree">Fig.&nbsp;<span>1.3</span></a></p>
 <div id="fig-tree" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="imgs-cli/dir-tree.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure 1.2: A figure displaying tree-like structure of the programs in a machine with macOS</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 1.3: A figure displaying tree-like structure of the programs in a machine with macOS</figcaption><p></p>
 </figure>
 </div>
 
@@ -373,17 +383,17 @@ Tip
 <p>You can inspect the paths of a nested directory tree using <code>tree</code> command in you cli:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tree</span> <span class="at">-d</span> <span class="at">-L</span> 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div></div><section id="printing-your-working-directory" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="printing-your-working-directory"><span class="header-section-number">1.2.1</span> Printing your working directory</h3>
+</div></div><section id="printing-your-working-directory" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="printing-your-working-directory"><span class="header-section-number">1.3.1</span> Printing your working directory</h3>
 <p>To know where you are you can see your current location, that is to <em>print your working directory</em> using the <code>pwd</code> command.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span> .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="making-new-directories" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="making-new-directories"><span class="header-section-number">1.2.2</span> Making new directories</h3>
+<section id="making-new-directories" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="making-new-directories"><span class="header-section-number">1.3.2</span> Making new directories</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> test-dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="change-to-other-directory" class="level3 page-columns page-full" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="change-to-other-directory"><span class="header-section-number">1.2.3</span> Change to other directory</h3>
+<section id="change-to-other-directory" class="level3 page-columns page-full" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="change-to-other-directory"><span class="header-section-number">1.3.3</span> Change to other directory</h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> test-dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <div class="no-row-height column-margin column-container"><div class="callout-tip callout callout-style-default callout-captioned">
@@ -403,32 +413,32 @@ Tip
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="at">-</span>  <span class="co"># change to previous dir</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div></section>
-<section id="creating-a-file" class="level3 page-columns page-full" data-number="1.2.4">
-<h3 data-number="1.2.4" class="anchored" data-anchor-id="creating-a-file"><span class="header-section-number">1.2.4</span> Creating a file</h3>
+<section id="creating-a-file" class="level3 page-columns page-full" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="creating-a-file"><span class="header-section-number">1.3.4</span> Creating a file</h3>
 <p>A simple command to create any file inside your terminal is <code>touch</code> it just create a file, but do not allow any editing.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> new-file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The <code>new-file.txt</code> is empty and created on your current location unless you assign another path when creating it. We suggest to take a look at <a href="https://github.com/allisonhorst/stats-illustrations">Allison Horst</a>, especially on how to name files depending on the <em>case</em> see <a href="#fig-naming-files">Fig.&nbsp;<span>1.3</span></a></p>
+<p>The <code>new-file.txt</code> is empty and created on your current location unless you assign another path when creating it. We suggest to take a look at <a href="https://github.com/allisonhorst/stats-illustrations">Allison Horst</a>, especially on how to name files depending on the <em>case</em> see <a href="#fig-naming-files">Fig.&nbsp;<span>1.4</span></a></p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div id="fig-naming-files" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/other-stats-artwork/coding_cases.png"><img src="imgs-cli/naming-files.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure 1.3: Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 1.4: Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst</figcaption><p></p>
 </figure>
 </div>
 </div></div></section>
-<section id="listing-files" class="level3" data-number="1.2.5">
-<h3 data-number="1.2.5" class="anchored" data-anchor-id="listing-files"><span class="header-section-number">1.2.5</span> Listing files</h3>
+<section id="listing-files" class="level3" data-number="1.3.5">
+<h3 data-number="1.3.5" class="anchored" data-anchor-id="listing-files"><span class="header-section-number">1.3.5</span> Listing files</h3>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="printing-files-to-the-screen" class="level3" data-number="1.2.6">
-<h3 data-number="1.2.6" class="anchored" data-anchor-id="printing-files-to-the-screen"><span class="header-section-number">1.2.6</span> Printing files to the screen</h3>
+<section id="printing-files-to-the-screen" class="level3" data-number="1.3.6">
+<h3 data-number="1.3.6" class="anchored" data-anchor-id="printing-files-to-the-screen"><span class="header-section-number">1.3.6</span> Printing files to the screen</h3>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> new-file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For more explanations on the basic commands in the command line we suggest to visit the first chapters of <em>Computing skills for biologist</em> from <span class="citation" data-cites="allesina2019">Allesina and Wilmes (<a href="../references.html#ref-allesina2019" role="doc-biblioref">2019</a>)</span></p>
 </section>
 </section>
-<section id="advance-unix-commands" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="advance-unix-commands"><span class="header-section-number">1.3</span> Advance Unix commands</h2>
+<section id="advance-unix-commands" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="advance-unix-commands"><span class="header-section-number">1.4</span> Advance Unix commands</h2>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">"&gt;"</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -445,8 +455,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="a-glimpse-to-the-window-subsystem-for-linux" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="a-glimpse-to-the-window-subsystem-for-linux"><span class="header-section-number">1.4</span> A glimpse to the Window subsystem for linux</h2>
+<section id="a-glimpse-to-the-window-subsystem-for-linux" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="a-glimpse-to-the-window-subsystem-for-linux"><span class="header-section-number">1.5</span> A glimpse to the Window subsystem for linux</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
