@@ -28,11 +28,18 @@
     "text": "1.1 Getting started with the command line\nBefore landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a libre access is the very known OS Linux. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically.\nAlmost every computer has a way to interact with or access to the inner elements of the computer. Such interface is called the terminal Fig. 1.1\n\n\n\nFigure 1.1: A terminal app displaying common features of the command line interface"
   },
   {
+    "objectID": "chs-command-line/welcome-to-command-line.html#anatomy-of-a-command",
+    "href": "chs-command-line/welcome-to-command-line.html#anatomy-of-a-command",
+    "title": "1  The command line",
+    "section": "1.2 Anatomy of a command",
+    "text": "1.2 Anatomy of a command\n\n\n\nFigure 1.2: A simple command and a convention to call its main components"
+  },
+  {
     "objectID": "chs-command-line/welcome-to-command-line.html#basic-unix-commands",
     "href": "chs-command-line/welcome-to-command-line.html#basic-unix-commands",
     "title": "1  The command line",
     "section": "1.3 Basic Unix commands",
-    "text": "1.3 Basic Unix commands\nPrograms, files and directories on every machine display hierarchical paths (routes), starting out from the root (/). The root represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths Fig. 1.3\n\n\n\nFigure 1.3: A figure displaying tree-like structure of the programs in a machine with macOS\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou can inspect the paths of a nested directory tree using tree command in you cli:\ntree -d -L 1\n\n\n1.3.1 Printing your working directory\nTo know where you are you can see your current location, that is to print your working directory using the pwd command.\npwd .\n\n\n1.3.2 Making new directories\nmkdir test-dir\n\n\n1.3.3 Change to other directory\ncd test-dir\n\n\n\n\n\n\n\nTip\n\n\n\nSome basic arguments to navigate across your terminal:\ncd .. # change backwards\ncd ~  # change to the home\ncd /  # change to the root\ncd -  # change to previous dir\n\n\n\n1.3.4 Creating a file\nA simple command to create any file inside your terminal is touch it just create a file, but do not allow any editing.\ntouch new-file.txt\nThe new-file.txt is empty and created on your current location unless you assign another path when creating it. We suggest to take a look at Allison Horst, especially on how to name files depending on the case see Fig. 1.4\n\n\n\n\n\nFigure 1.4: Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst\n\n\n\n\n1.3.5 Listing files\nls \n\n\n1.3.6 Printing files to the screen\ncat new-file.txt\nFor more explanations on the basic commands in the command line we suggest to visit the first chapters of Computing skills for biologist from Allesina and Wilmes (2019)"
+    "text": "1.3 Basic Unix commands\nPrograms, files and directories on every machine display hierarchical paths (routes), starting out from the root (/). The root represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths Fig. 1.3\n\n\n\nFigure 1.3: A figure displaying tree-like structure of the programs in a machine with macOS\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou can inspect the paths of a nested directory tree using tree command in you cli:\ntree -d -L 1\n\n\n1.3.1 Printing your working directory\nTo know where you are you can see your current location, that is to print your working directory using the pwd command.\npwd .\n\n\n1.3.2 Making new directories\nmkdir test-dir\n\n\n1.3.3 Change to other directory\n\ncd test-dir\n\n\n\n\n\n\n\nTip\n\n\n\nSome basic arguments to navigate across your terminal:\ncd .. # change backwards\ncd ~  # change to the home\ncd /  # change to the root\ncd -  # change to previous dir\n\n\n\n1.3.4 Creating a file\nA simple command to create any file inside your terminal is touch it just create a file, but do not allow any editing.\ntouch new-file.txt\nThe new-file.txt is empty and created on your current location unless you assign another path when creating it. We suggest to take a look at Allison Horst, especially on how to name files depending on the case see Fig. 1.4\n\n\n\n\n\nFigure 1.4: Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst\n\n\n\n\n1.3.5 Listing files\nls \n\n\n1.3.6 Printing files to the screen\ncat new-file.txt\nFor more explanations on the basic commands in the command line we suggest to visit the first chapters of Computing skills for biologist from Allesina and Wilmes (2019)"
   },
   {
     "objectID": "chs-command-line/welcome-to-command-line.html#advance-unix-commands",
@@ -49,333 +56,340 @@
     "text": "1.5 A glimpse to the Window subsystem for linux\n\n\n\n\nAllesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for Biologists,” January. https://doi.org/10.2307/j.ctvc77jrc."
   },
   {
+    "objectID": "chs-command-line/git-and-github.html",
+    "href": "chs-command-line/git-and-github.html",
+    "title": "2  Introduction to the control of versions",
+    "section": "",
+    "text": "4 GitHub\n\n\n5 Control version workflow"
+  },
+  {
     "objectID": "chs-command-line/package-managers.html#conda-environments-and-other-package-managers",
     "href": "chs-command-line/package-managers.html#conda-environments-and-other-package-managers",
-    "title": "2  Package managers",
-    "section": "2.2 Conda environments and other package managers",
-    "text": "2.2 Conda environments and other package managers"
+    "title": "3  Package managers",
+    "section": "3.2 Conda environments and other package managers",
+    "text": "3.2 Conda environments and other package managers"
   },
   {
     "objectID": "chs-command-line/package-managers.html#creating-enviroments-with-conda",
     "href": "chs-command-line/package-managers.html#creating-enviroments-with-conda",
-    "title": "2  Package managers",
-    "section": "2.3 Creating enviroments with Conda",
-    "text": "2.3 Creating enviroments with Conda"
+    "title": "3  Package managers",
+    "section": "3.3 Creating enviroments with Conda",
+    "text": "3.3 Creating enviroments with Conda"
   },
   {
     "objectID": "chs-command-line/package-managers.html#package-managers-for-os",
     "href": "chs-command-line/package-managers.html#package-managers-for-os",
-    "title": "2  Package managers",
-    "section": "2.4 Package managers for OS",
-    "text": "2.4 Package managers for OS\nThere are several package managers handling general purpose packages and apps. For MacOS the famous one is Homebrew and for Windowos several could be used such as Chocolatey and Scoop."
+    "title": "3  Package managers",
+    "section": "3.4 Package managers for OS",
+    "text": "3.4 Package managers for OS\nThere are several package managers handling general purpose packages and apps. For MacOS the famous one is Homebrew and for Windowos several could be used such as Chocolatey and Scoop."
   },
   {
     "objectID": "chs-command-line/hpc-notions.html#some-important-concepts-of-the-hardware",
     "href": "chs-command-line/hpc-notions.html#some-important-concepts-of-the-hardware",
-    "title": "3  Notions of HPC",
-    "section": "3.2 Some important concepts of the hardware",
-    "text": "3.2 Some important concepts of the hardware\nSee Jakob’s blog"
+    "title": "4  Notions of HPC",
+    "section": "4.2 Some important concepts of the hardware",
+    "text": "4.2 Some important concepts of the hardware\nSee Jakob’s blog"
   },
   {
     "objectID": "chs-command-line/hpc-notions.html#using-the-apolo-cluster-wirh-slurm",
     "href": "chs-command-line/hpc-notions.html#using-the-apolo-cluster-wirh-slurm",
-    "title": "3  Notions of HPC",
-    "section": "3.3 Using the Apolo cluster wirh Slurm",
-    "text": "3.3 Using the Apolo cluster wirh Slurm"
+    "title": "4  Notions of HPC",
+    "section": "4.3 Using the Apolo cluster wirh Slurm",
+    "text": "4.3 Using the Apolo cluster wirh Slurm"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html",
-    "title": "4  Introduction to sequence analysis",
+    "title": "5  Introduction to sequence analysis",
     "section": "",
     "text": "In this chapter we will discuss several about several points of view about bioinformatics and computational biology, we will further consider several biological concepts that appear central to understand the manipulation of biological data."
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#endless-debate-bioinformatics-vs.-computational-biology",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#endless-debate-bioinformatics-vs.-computational-biology",
-    "title": "4  Introduction to sequence analysis",
-    "section": "4.1 Endless debate: bioinformatics vs. computational biology",
-    "text": "4.1 Endless debate: bioinformatics vs. computational biology"
+    "title": "5  Introduction to sequence analysis",
+    "section": "5.1 Endless debate: bioinformatics vs. computational biology",
+    "text": "5.1 Endless debate: bioinformatics vs. computational biology"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-duality-of-dna",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-duality-of-dna",
-    "title": "4  Introduction to sequence analysis",
-    "section": "4.2 The duality of DNA",
-    "text": "4.2 The duality of DNA"
+    "title": "5  Introduction to sequence analysis",
+    "section": "5.2 The duality of DNA",
+    "text": "5.2 The duality of DNA"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-central-dogma-theory-of-molecular-biology-extended",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-central-dogma-theory-of-molecular-biology-extended",
-    "title": "4  Introduction to sequence analysis",
-    "section": "4.3 The central dogma theory of molecular biology extended",
-    "text": "4.3 The central dogma theory of molecular biology extended"
+    "title": "5  Introduction to sequence analysis",
+    "section": "5.3 The central dogma theory of molecular biology extended",
+    "text": "5.3 The central dogma theory of molecular biology extended"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-strategies",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-strategies",
-    "title": "4  Introduction to sequence analysis",
-    "section": "4.4 Sequencing strategies",
-    "text": "4.4 Sequencing strategies"
+    "title": "5  Introduction to sequence analysis",
+    "section": "5.4 Sequencing strategies",
+    "text": "5.4 Sequencing strategies"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-over-time",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-over-time",
-    "title": "4  Introduction to sequence analysis",
-    "section": "4.5 Sequencing over time",
-    "text": "4.5 Sequencing over time"
+    "title": "5  Introduction to sequence analysis",
+    "section": "5.5 Sequencing over time",
+    "text": "5.5 Sequencing over time"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#some-insights-from-sequencing-genomes",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#some-insights-from-sequencing-genomes",
-    "title": "4  Introduction to sequence analysis",
-    "section": "4.6 Some insights from sequencing genomes",
-    "text": "4.6 Some insights from sequencing genomes"
+    "title": "5  Introduction to sequence analysis",
+    "section": "5.6 Some insights from sequencing genomes",
+    "text": "5.6 Some insights from sequencing genomes"
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html",
     "href": "chs-sequence-analysis/sanger-analysis.html",
-    "title": "5  Sanger analysis",
+    "title": "6  Sanger analysis",
     "section": "",
     "text": "This is a section about the first gen sequencing tech"
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html#databases-exploration",
     "href": "chs-sequence-analysis/sanger-analysis.html#databases-exploration",
-    "title": "5  Sanger analysis",
-    "section": "5.1 Databases exploration",
-    "text": "5.1 Databases exploration"
+    "title": "6  Sanger analysis",
+    "section": "6.1 Databases exploration",
+    "text": "6.1 Databases exploration"
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html#sanger-sequencing-methods",
     "href": "chs-sequence-analysis/sanger-analysis.html#sanger-sequencing-methods",
-    "title": "5  Sanger analysis",
-    "section": "5.2 Sanger sequencing methods",
-    "text": "5.2 Sanger sequencing methods\n\n5.2.1 The chain termination method\n\n\n5.2.2 Sanger with capillary electrophoresis\n\n\n5.2.3 Strengths and limitations of Sanger methods"
+    "title": "6  Sanger analysis",
+    "section": "6.2 Sanger sequencing methods",
+    "text": "6.2 Sanger sequencing methods\n\n6.2.1 The chain termination method\n\n\n6.2.2 Sanger with capillary electrophoresis\n\n\n6.2.3 Strengths and limitations of Sanger methods"
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html#files-from-sanger",
     "href": "chs-sequence-analysis/sanger-analysis.html#files-from-sanger",
-    "title": "5  Sanger analysis",
-    "section": "5.3 Files from Sanger",
-    "text": "5.3 Files from Sanger"
+    "title": "6  Sanger analysis",
+    "section": "6.3 Files from Sanger",
+    "text": "6.3 Files from Sanger"
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html#sanger-processing-workflow",
     "href": "chs-sequence-analysis/sanger-analysis.html#sanger-processing-workflow",
-    "title": "5  Sanger analysis",
-    "section": "5.4 Sanger processing workflow",
-    "text": "5.4 Sanger processing workflow"
+    "title": "6  Sanger analysis",
+    "section": "6.4 Sanger processing workflow",
+    "text": "6.4 Sanger processing workflow"
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html#the-16s-rrna-and-its-relevance-for-sequencing",
     "href": "chs-sequence-analysis/sanger-analysis.html#the-16s-rrna-and-its-relevance-for-sequencing",
-    "title": "5  Sanger analysis",
-    "section": "5.5 The 16S rRNA and its relevance for sequencing",
-    "text": "5.5 The 16S rRNA and its relevance for sequencing"
+    "title": "6  Sanger analysis",
+    "section": "6.5 The 16S rRNA and its relevance for sequencing",
+    "text": "6.5 The 16S rRNA and its relevance for sequencing"
   },
   {
     "objectID": "chs-sequence-analysis/sequence-alignments.html",
     "href": "chs-sequence-analysis/sequence-alignments.html",
-    "title": "6  Sequence alignments",
+    "title": "7  Sequence alignments",
     "section": "",
     "text": "In search of homology and identy"
   },
   {
     "objectID": "chs-sequence-analysis/sequence-alignments.html#what-is-homology",
     "href": "chs-sequence-analysis/sequence-alignments.html#what-is-homology",
-    "title": "6  Sequence alignments",
-    "section": "6.2 What is homology",
-    "text": "6.2 What is homology"
+    "title": "7  Sequence alignments",
+    "section": "7.2 What is homology",
+    "text": "7.2 What is homology"
   },
   {
     "objectID": "chs-sequence-analysis/sequence-alignments.html#pairwise-alignments-algorihtms",
     "href": "chs-sequence-analysis/sequence-alignments.html#pairwise-alignments-algorihtms",
-    "title": "6  Sequence alignments",
-    "section": "6.3 Pairwise alignments algorihtms",
-    "text": "6.3 Pairwise alignments algorihtms\n\n6.3.1 Hamming distance\n\n\n6.3.2 Edit distance\n\n6.3.2.1 Dynamic programming\n\n\n\n6.3.3 Needleman-Wunsch (global alignment)\n\n\n6.3.4 Smith-Waterman (local alignment)"
+    "title": "7  Sequence alignments",
+    "section": "7.3 Pairwise alignments algorihtms",
+    "text": "7.3 Pairwise alignments algorihtms\n\n7.3.1 Hamming distance\n\n\n7.3.2 Edit distance\n\n7.3.2.1 Dynamic programming\n\n\n\n7.3.3 Needleman-Wunsch (global alignment)\n\n\n7.3.4 Smith-Waterman (local alignment)"
   },
   {
     "objectID": "chs-sequence-analysis/sequence-alignments.html#the-genetic-code-and-scoring-matrices",
     "href": "chs-sequence-analysis/sequence-alignments.html#the-genetic-code-and-scoring-matrices",
-    "title": "6  Sequence alignments",
-    "section": "6.4 The genetic code and Scoring matrices",
-    "text": "6.4 The genetic code and Scoring matrices"
+    "title": "7  Sequence alignments",
+    "section": "7.4 The genetic code and Scoring matrices",
+    "text": "7.4 The genetic code and Scoring matrices"
   },
   {
     "objectID": "chs-sequence-analysis/sequence-alignments.html#blast-and-its-families",
     "href": "chs-sequence-analysis/sequence-alignments.html#blast-and-its-families",
-    "title": "6  Sequence alignments",
-    "section": "6.5 BLAST and its families",
-    "text": "6.5 BLAST and its families\npsi-blast? true homologs, recurrent blast to polish scoring matrix during several generations to generate true homologs"
+    "title": "7  Sequence alignments",
+    "section": "7.5 BLAST and its families",
+    "text": "7.5 BLAST and its families\npsi-blast? true homologs, recurrent blast to polish scoring matrix during several generations to generate true homologs"
   },
   {
     "objectID": "chs-sequence-analysis/sequence-alignments.html#multiple-sequence-alignments",
     "href": "chs-sequence-analysis/sequence-alignments.html#multiple-sequence-alignments",
-    "title": "6  Sequence alignments",
-    "section": "6.6 Multiple sequence alignments",
-    "text": "6.6 Multiple sequence alignments"
+    "title": "7  Sequence alignments",
+    "section": "7.6 Multiple sequence alignments",
+    "text": "7.6 Multiple sequence alignments"
   },
   {
     "objectID": "chs-sequence-analysis/phylogenetic-reconstructions.html#mehtods-for-phylogenetic-reconstruction",
     "href": "chs-sequence-analysis/phylogenetic-reconstructions.html#mehtods-for-phylogenetic-reconstruction",
-    "title": "7  Phylogenetics",
-    "section": "7.2 Mehtods for phylogenetic reconstruction",
-    "text": "7.2 Mehtods for phylogenetic reconstruction"
+    "title": "8  Phylogenetics",
+    "section": "8.2 Mehtods for phylogenetic reconstruction",
+    "text": "8.2 Mehtods for phylogenetic reconstruction"
   },
   {
     "objectID": "chs-sequence-analysis/phylogenetic-reconstructions.html#building-a-phylogenetic-reconstruction",
     "href": "chs-sequence-analysis/phylogenetic-reconstructions.html#building-a-phylogenetic-reconstruction",
-    "title": "7  Phylogenetics",
-    "section": "7.3 Building a phylogenetic reconstruction",
-    "text": "7.3 Building a phylogenetic reconstruction\n\n7.3.1 Evolutionary substitution model\n\n\n7.3.2 Maximum likelihood\n\n\n7.3.3 Bayesian inference"
+    "title": "8  Phylogenetics",
+    "section": "8.3 Building a phylogenetic reconstruction",
+    "text": "8.3 Building a phylogenetic reconstruction\n\n8.3.1 Evolutionary substitution model\n\n\n8.3.2 Maximum likelihood\n\n\n8.3.3 Bayesian inference"
   },
   {
     "objectID": "chs-sequence-analysis/NGS-TGS-principles.html#reads-main-differences",
     "href": "chs-sequence-analysis/NGS-TGS-principles.html#reads-main-differences",
-    "title": "8  NGS and TGS: principles",
-    "section": "8.2 Reads main differences",
-    "text": "8.2 Reads main differences"
+    "title": "9  NGS and TGS: principles",
+    "section": "9.2 Reads main differences",
+    "text": "9.2 Reads main differences"
   },
   {
     "objectID": "chs-sequence-analysis/NGS-TGS-principles.html#illumina-principle-sequencing-by-synthesis",
     "href": "chs-sequence-analysis/NGS-TGS-principles.html#illumina-principle-sequencing-by-synthesis",
-    "title": "8  NGS and TGS: principles",
-    "section": "8.3 Illumina principle (sequencing by synthesis)",
-    "text": "8.3 Illumina principle (sequencing by synthesis)\n\n8.3.1 The fastq format\n\n\n8.3.2 Quality assesment of Illumina"
+    "title": "9  NGS and TGS: principles",
+    "section": "9.3 Illumina principle (sequencing by synthesis)",
+    "text": "9.3 Illumina principle (sequencing by synthesis)\n\n9.3.1 The fastq format\n\n\n9.3.2 Quality assesment of Illumina"
   },
   {
     "objectID": "chs-sequence-analysis/NGS-TGS-principles.html#pacbio-principle-sequencing-by-incorporation",
     "href": "chs-sequence-analysis/NGS-TGS-principles.html#pacbio-principle-sequencing-by-incorporation",
-    "title": "8  NGS and TGS: principles",
-    "section": "8.4 PacBio principle (sequencing by incorporation)",
-    "text": "8.4 PacBio principle (sequencing by incorporation)\n\n8.4.1 Throughput evolution\n\n\n8.4.2 Quality assesment of PacBio"
+    "title": "9  NGS and TGS: principles",
+    "section": "9.4 PacBio principle (sequencing by incorporation)",
+    "text": "9.4 PacBio principle (sequencing by incorporation)\n\n9.4.1 Throughput evolution\n\n\n9.4.2 Quality assesment of PacBio"
   },
   {
     "objectID": "chs-sequence-analysis/NGS-TGS-principles.html#oxford-nanopore-technology-ont-principle",
     "href": "chs-sequence-analysis/NGS-TGS-principles.html#oxford-nanopore-technology-ont-principle",
-    "title": "8  NGS and TGS: principles",
-    "section": "8.5 Oxford Nanopore Technology (ONT) principle",
-    "text": "8.5 Oxford Nanopore Technology (ONT) principle\n\n8.5.1 Platforms\n\n\n8.5.2 The fast5 file format"
+    "title": "9  NGS and TGS: principles",
+    "section": "9.5 Oxford Nanopore Technology (ONT) principle",
+    "text": "9.5 Oxford Nanopore Technology (ONT) principle\n\n9.5.1 Platforms\n\n\n9.5.2 The fast5 file format"
   },
   {
-    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#main-algorithms-for-genome-asssembly",
-    "href": "chs-sequence-analysis/genome-assembly-annotation.html#main-algorithms-for-genome-asssembly",
-    "title": "9  Genome assembly",
-    "section": "9.2 Main algorithms for genome asssembly",
-    "text": "9.2 Main algorithms for genome asssembly\n\n9.2.1 Overlay, Layout, Consensus (OLS)\n\n\n9.2.2 De Bruijn graphs"
+    "objectID": "chs-genomics/genome-assembly-annotation.html#main-algorithms-for-genome-asssembly",
+    "href": "chs-genomics/genome-assembly-annotation.html#main-algorithms-for-genome-asssembly",
+    "title": "10  Genome assembly",
+    "section": "10.2 Main algorithms for genome asssembly",
+    "text": "10.2 Main algorithms for genome asssembly\n\n10.2.1 Overlay, Layout, Consensus (OLS)\n\n\n10.2.2 De Bruijn graphs"
   },
   {
-    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#main-concepts-of-an-assembly",
-    "href": "chs-sequence-analysis/genome-assembly-annotation.html#main-concepts-of-an-assembly",
-    "title": "9  Genome assembly",
-    "section": "9.3 Main concepts of an assembly",
-    "text": "9.3 Main concepts of an assembly\n\n9.3.1 Contigs, Unitigs, Scaffolds"
+    "objectID": "chs-genomics/genome-assembly-annotation.html#main-concepts-of-an-assembly",
+    "href": "chs-genomics/genome-assembly-annotation.html#main-concepts-of-an-assembly",
+    "title": "10  Genome assembly",
+    "section": "10.3 Main concepts of an assembly",
+    "text": "10.3 Main concepts of an assembly\n\n10.3.1 Contigs, Unitigs, Scaffolds"
   },
   {
-    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#a-complete-workflow-for-assembling-genomes",
-    "href": "chs-sequence-analysis/genome-assembly-annotation.html#a-complete-workflow-for-assembling-genomes",
-    "title": "9  Genome assembly",
-    "section": "9.4 A complete workflow for assembling genomes",
-    "text": "9.4 A complete workflow for assembling genomes"
+    "objectID": "chs-genomics/genome-assembly-annotation.html#a-complete-workflow-for-assembling-genomes",
+    "href": "chs-genomics/genome-assembly-annotation.html#a-complete-workflow-for-assembling-genomes",
+    "title": "10  Genome assembly",
+    "section": "10.4 A complete workflow for assembling genomes",
+    "text": "10.4 A complete workflow for assembling genomes"
   },
   {
-    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#assessing-genomes",
-    "href": "chs-sequence-analysis/genome-assembly-annotation.html#assessing-genomes",
-    "title": "9  Genome assembly",
-    "section": "9.5 Assessing genomes",
-    "text": "9.5 Assessing genomes\n\n9.5.1 Inspecting genome graphs\n\n\n9.5.2 Genome completeness"
+    "objectID": "chs-genomics/genome-assembly-annotation.html#assessing-genomes",
+    "href": "chs-genomics/genome-assembly-annotation.html#assessing-genomes",
+    "title": "10  Genome assembly",
+    "section": "10.5 Assessing genomes",
+    "text": "10.5 Assessing genomes\n\n10.5.1 Inspecting genome graphs\n\n\n10.5.2 Genome completeness"
   },
   {
-    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#understanding-genome-difficulties",
-    "href": "chs-sequence-analysis/genome-assembly-annotation.html#understanding-genome-difficulties",
-    "title": "9  Genome assembly",
-    "section": "9.6 Understanding genome difficulties",
-    "text": "9.6 Understanding genome difficulties\n\nEnd of chromosomes\nErros\nLack of coverage\nHeterozigozity\nrepeats"
+    "objectID": "chs-genomics/genome-assembly-annotation.html#understanding-genome-difficulties",
+    "href": "chs-genomics/genome-assembly-annotation.html#understanding-genome-difficulties",
+    "title": "10  Genome assembly",
+    "section": "10.6 Understanding genome difficulties",
+    "text": "10.6 Understanding genome difficulties\n\nEnd of chromosomes\nErros\nLack of coverage\nHeterozigozity\nrepeats"
   },
   {
-    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#ab-initio-annotation",
-    "href": "chs-sequence-analysis/genome-assembly-annotation.html#ab-initio-annotation",
-    "title": "9  Genome assembly",
-    "section": "10.1 ab initio annotation",
-    "text": "10.1 ab initio annotation"
+    "objectID": "chs-genomics/genome-assembly-annotation.html#ab-initio-annotation",
+    "href": "chs-genomics/genome-assembly-annotation.html#ab-initio-annotation",
+    "title": "10  Genome assembly",
+    "section": "11.1 ab initio annotation",
+    "text": "11.1 ab initio annotation"
   },
   {
-    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#homolgy-annotation",
-    "href": "chs-sequence-analysis/genome-assembly-annotation.html#homolgy-annotation",
-    "title": "9  Genome assembly",
-    "section": "10.2 Homolgy annotation",
-    "text": "10.2 Homolgy annotation"
+    "objectID": "chs-genomics/genome-assembly-annotation.html#homolgy-annotation",
+    "href": "chs-genomics/genome-assembly-annotation.html#homolgy-annotation",
+    "title": "10  Genome assembly",
+    "section": "11.2 Homolgy annotation",
+    "text": "11.2 Homolgy annotation"
   },
   {
-    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#annotation-files",
-    "href": "chs-sequence-analysis/genome-assembly-annotation.html#annotation-files",
-    "title": "9  Genome assembly",
-    "section": "10.3 Annotation files",
-    "text": "10.3 Annotation files\n\n10.3.1 the GBK and GBFF\n\n\n10.3.2 The GFF specificaitons"
+    "objectID": "chs-genomics/genome-assembly-annotation.html#annotation-files",
+    "href": "chs-genomics/genome-assembly-annotation.html#annotation-files",
+    "title": "10  Genome assembly",
+    "section": "11.3 Annotation files",
+    "text": "11.3 Annotation files\n\n11.3.1 the GBK and GBFF\n\n\n11.3.2 The GFF specificaitons"
   },
   {
-    "objectID": "chs-sequence-analysis/genome-assembly-annotation.html#visualizing-genomes-and-annotations",
-    "href": "chs-sequence-analysis/genome-assembly-annotation.html#visualizing-genomes-and-annotations",
-    "title": "9  Genome assembly",
-    "section": "10.4 Visualizing genomes and annotations",
-    "text": "10.4 Visualizing genomes and annotations"
+    "objectID": "chs-genomics/genome-assembly-annotation.html#visualizing-genomes-and-annotations",
+    "href": "chs-genomics/genome-assembly-annotation.html#visualizing-genomes-and-annotations",
+    "title": "10  Genome assembly",
+    "section": "11.4 Visualizing genomes and annotations",
+    "text": "11.4 Visualizing genomes and annotations"
   },
   {
-    "objectID": "chs-sequence-analysis/variant-calling-analysis.html#structural-variants",
-    "href": "chs-sequence-analysis/variant-calling-analysis.html#structural-variants",
-    "title": "10  Variant calling analysis",
-    "section": "10.2 Structural variants",
-    "text": "10.2 Structural variants"
+    "objectID": "chs-genomics/variant-calling-analysis.html#structural-variants",
+    "href": "chs-genomics/variant-calling-analysis.html#structural-variants",
+    "title": "11  Variant calling analysis",
+    "section": "11.2 Structural variants",
+    "text": "11.2 Structural variants"
   },
   {
-    "objectID": "chs-sequence-analysis/variant-calling-analysis.html#genome-rearrengments",
-    "href": "chs-sequence-analysis/variant-calling-analysis.html#genome-rearrengments",
-    "title": "10  Variant calling analysis",
-    "section": "10.3 Genome rearrengments",
-    "text": "10.3 Genome rearrengments"
+    "objectID": "chs-genomics/variant-calling-analysis.html#genome-rearrengments",
+    "href": "chs-genomics/variant-calling-analysis.html#genome-rearrengments",
+    "title": "11  Variant calling analysis",
+    "section": "11.3 Genome rearrengments",
+    "text": "11.3 Genome rearrengments"
   },
   {
-    "objectID": "chs-sequence-analysis/variant-calling-analysis.html#read-mapping-algorithms-and-programs",
-    "href": "chs-sequence-analysis/variant-calling-analysis.html#read-mapping-algorithms-and-programs",
-    "title": "10  Variant calling analysis",
-    "section": "10.4 Read mapping algorithms and programs",
-    "text": "10.4 Read mapping algorithms and programs\n\n10.4.1 Burrow-Wheeler-Alignment\n\n\n10.4.2 BWA-MEM2\n\n\n10.4.3 Minimap2\n\n\n10.4.4 SAM, BAM and CRAM formats"
+    "objectID": "chs-genomics/variant-calling-analysis.html#read-mapping-algorithms-and-programs",
+    "href": "chs-genomics/variant-calling-analysis.html#read-mapping-algorithms-and-programs",
+    "title": "11  Variant calling analysis",
+    "section": "11.4 Read mapping algorithms and programs",
+    "text": "11.4 Read mapping algorithms and programs\n\n11.4.1 Burrow-Wheeler-Alignment\n\n\n11.4.2 BWA-MEM2\n\n\n11.4.3 Minimap2\n\n\n11.4.4 SAM, BAM and CRAM formats"
   },
   {
-    "objectID": "chs-sequence-analysis/variant-calling-analysis.html#identifying-mutations",
-    "href": "chs-sequence-analysis/variant-calling-analysis.html#identifying-mutations",
-    "title": "10  Variant calling analysis",
-    "section": "10.5 Identifying mutations",
-    "text": "10.5 Identifying mutations\n\n10.5.1 Freebayes and Snippy\n\n\n10.5.2 The VCF file"
+    "objectID": "chs-genomics/variant-calling-analysis.html#identifying-mutations",
+    "href": "chs-genomics/variant-calling-analysis.html#identifying-mutations",
+    "title": "11  Variant calling analysis",
+    "section": "11.5 Identifying mutations",
+    "text": "11.5 Identifying mutations\n\n11.5.1 Freebayes and Snippy\n\n\n11.5.2 The VCF file"
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html",
     "href": "chs-bio-structural/intro-structural-bioinfo.html",
-    "title": "11  Introduction to structural bioinformatics",
+    "title": "12  Introduction to structural bioinformatics",
     "section": "",
     "text": "Structural bioinformatics is a multidisciplinary area enriched by chemistry, physics, computer science and many others. Although, it could be focused on different biological macro-molecules, here the emphasis will be focused on proteins.\nOne of the first protein structure elucidated was myoglobin and it triggered the study of the role of the structure of proteins and its biological functions\nIdentify a protein related to your study that could be further analyzed."
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html#protein-structures",
     "href": "chs-bio-structural/intro-structural-bioinfo.html#protein-structures",
-    "title": "11  Introduction to structural bioinformatics",
-    "section": "11.1 Protein structures",
-    "text": "11.1 Protein structures\nDifference between the levels of protein structure primary structure is the basic linear representation of aminoacids. Natural aminoacids and modified or rare aminoacids display physico-chemical rich information and could be represented by letters. Therefore in the genetic code we could find the one-letter code.\nSecondary structures result from the spatial arrangement of aminoacids that interact with each closer neighbors. There are some remarkable secondary structures such as \\(\\beta\\)-sheets, \\(\\alpha\\)-helix, coils (flexible) and others.\nTertiary structure informs about the structural disposition of the secondary structures that fold between each other due to hydrophobic interactions, disulfure bonds, and other chemical interactions forming a globular and dynamic structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the Levinthal’s paradox).\nQuaternary structures result from interaction of multiple tertiary structures. The structure, therefore dictates the protein function. This basic concept have triggered more recently a boom on the analysis of the structure of proteins."
+    "title": "12  Introduction to structural bioinformatics",
+    "section": "12.1 Protein structures",
+    "text": "12.1 Protein structures\nDifference between the levels of protein structure primary structure is the basic linear representation of aminoacids. Natural aminoacids and modified or rare aminoacids display physico-chemical rich information and could be represented by letters. Therefore in the genetic code we could find the one-letter code.\nSecondary structures result from the spatial arrangement of aminoacids that interact with each closer neighbors. There are some remarkable secondary structures such as \\(\\beta\\)-sheets, \\(\\alpha\\)-helix, coils (flexible) and others.\nTertiary structure informs about the structural disposition of the secondary structures that fold between each other due to hydrophobic interactions, disulfure bonds, and other chemical interactions forming a globular and dynamic structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the Levinthal’s paradox).\nQuaternary structures result from interaction of multiple tertiary structures. The structure, therefore dictates the protein function. This basic concept have triggered more recently a boom on the analysis of the structure of proteins."
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html#identifying-or-predicting-protein-structures",
     "href": "chs-bio-structural/intro-structural-bioinfo.html#identifying-or-predicting-protein-structures",
-    "title": "11  Introduction to structural bioinformatics",
-    "section": "11.2 Identifying or predicting protein structures",
-    "text": "11.2 Identifying or predicting protein structures\nXray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks\nTo date, helium is scarce around the world, so labs all around are having trouble to get this element.\nModelling the structure whether ab initio or by homology also allow structure prediction. However these strategies\nRecently AlphaFold\nThe protein database (PDB)\nProtein topologies resulting from the folding: horshoe, beta-barrel and other could be identified\nStructural classification of proteins (SCOP) when analyzing a new protein classification by class, architecture, topology (fold-family), homologous superfamily and sequence family\nImportance of Gene Ontology\n\n11.2.1 Secondary structure prediction\nSecondary structures could also be represented in one letter (e.g.)\nFunctional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.\nThere is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.\n\n\n\n\n\n\nExercise 01\n\n\n\nSubmit 5lWM (JAK3) from the PDB on FASTA format on the JPRED and PSIPRED and compared with the experimentally predicted version of the protein. Analyse the predictions and tell are there differences between predictions? Which one is more accurate?"
+    "title": "12  Introduction to structural bioinformatics",
+    "section": "12.2 Identifying or predicting protein structures",
+    "text": "12.2 Identifying or predicting protein structures\nXray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks\nTo date, helium is scarce around the world, so labs all around are having trouble to get this element.\nModelling the structure whether ab initio or by homology also allow structure prediction. However these strategies\nRecently AlphaFold\nThe protein database (PDB)\nProtein topologies resulting from the folding: horshoe, beta-barrel and other could be identified\nStructural classification of proteins (SCOP) when analyzing a new protein classification by class, architecture, topology (fold-family), homologous superfamily and sequence family\nImportance of Gene Ontology\n\n12.2.1 Secondary structure prediction\nSecondary structures could also be represented in one letter (e.g.)\nFunctional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.\nThere is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.\n\n\n\n\n\n\nExercise 01\n\n\n\nSubmit 5lWM (JAK3) from the PDB on FASTA format on the JPRED and PSIPRED and compared with the experimentally predicted version of the protein. Analyse the predictions and tell are there differences between predictions? Which one is more accurate?"
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html#pdb-database-introduction",
     "href": "chs-bio-structural/intro-structural-bioinfo.html#pdb-database-introduction",
-    "title": "11  Introduction to structural bioinformatics",
-    "section": "11.3 PDB database introduction",
-    "text": "11.3 PDB database introduction\nThe PDB database is one of the most important and ancient open biological database where all new protein structures are submitted. It is an international consortium where several regions work together to curate information.\nThe PDB in Europe (PDBe) is not only for proteins but form many other experimentally predicted macro-molecules (protein-protein interactions, peptides, RNA and so on).\nProtein structures are registered using a unique code of four characters.\nX-ray crystallography: is a chemical state of the macro-molecule where it is immobilized, therefore information correspond to one state of the structure, then crystal protein is submitted to an x-ray beam to generate a diffraction pattern.\nNMR spectroscopy: captures dynamic information of the protein, but generally resolves small proteins. The principle?\nElectron microscopy adapted to cryo-preservation allow proteins visualization."
+    "title": "12  Introduction to structural bioinformatics",
+    "section": "12.3 PDB database introduction",
+    "text": "12.3 PDB database introduction\nThe PDB database is one of the most important and ancient open biological database where all new protein structures are submitted. It is an international consortium where several regions work together to curate information.\nThe PDB in Europe (PDBe) is not only for proteins but form many other experimentally predicted macro-molecules (protein-protein interactions, peptides, RNA and so on).\nProtein structures are registered using a unique code of four characters.\nX-ray crystallography: is a chemical state of the macro-molecule where it is immobilized, therefore information correspond to one state of the structure, then crystal protein is submitted to an x-ray beam to generate a diffraction pattern.\nNMR spectroscopy: captures dynamic information of the protein, but generally resolves small proteins. The principle?\nElectron microscopy adapted to cryo-preservation allow proteins visualization."
   },
   {
     "objectID": "references.html",
@@ -383,12 +397,5 @@
     "title": "References",
     "section": "",
     "text": "Allesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for\nBiologists,” January. https://doi.org/10.2307/j.ctvc77jrc."
-  },
-  {
-    "objectID": "chs-command-line/welcome-to-command-line.html#anatomy-of-a-command",
-    "href": "chs-command-line/welcome-to-command-line.html#anatomy-of-a-command",
-    "title": "1  The command line",
-    "section": "1.2 Anatomy of a command",
-    "text": "1.2 Anatomy of a command\n\n\n\nFigure 1.2: A simple command and a convention to call its main components"
   }
 ]

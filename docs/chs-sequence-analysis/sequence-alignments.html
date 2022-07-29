@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.35">
+<meta name="generator" content="quarto-1.0.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-07-20">
+<meta name="dcterms.date" content="2022-07-28">
 
-<title>Fundamentals of computational biology - 6&nbsp; Sequence alignments</title>
+<title>Fundamentals of computational biology - 7&nbsp; Sequence alignments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,7 +61,7 @@ ul.task-list{list-style: none;}
 <script async="" src="https://hypothes.is/embed.js"></script>
 
 
-<meta name="citation_title" content="[[6]{.chapter-number}&nbsp; [Sequence alignments]{.chapter-title}]{#sec-aliignments .quarto-section-identifier}">
+<meta name="citation_title" content="[[7]{.chapter-number}&nbsp; [Sequence alignments]{.chapter-title}]{#sec-aliignments .quarto-section-identifier}">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
 <meta name="citation_publication_date" content="NaN-NaN-NaN">
@@ -76,7 +76,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequence alignments</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sequence alignments</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -90,9 +90,8 @@ ul.task-list{list-style: none;}
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Fundamentals of computational biology</a> 
-        <div class="sidebar-tools-main tools-wide">
+        <div class="sidebar-tools-main">
     <a href="https://github.com/camilogarciabotero/biocomp-book" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
   <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -129,19 +128,24 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-command-line/package-managers.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Package managers</span></a>
+  <a href="../chs-command-line/git-and-github.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to the control of versions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-command-line/hpc-notions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notions of HPC</span></a>
+  <a href="../chs-command-line/package-managers.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Package managers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-command-line/hpc-notions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notions of HPC</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Seq. analysis &amp; genomics</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Sequence analysis</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -149,44 +153,34 @@ ul.task-list{list-style: none;}
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></a>
+  <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/sanger-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sanger analysis</span></a>
+  <a href="../chs-sequence-analysis/sanger-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sanger analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/sequence-alignments.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequence alignments</span></a>
+  <a href="../chs-sequence-analysis/sequence-alignments.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sequence alignments</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Phylogenetics</span></a>
+  <a href="../chs-sequence-analysis/phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Phylogenetics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/genome-assembly-annotation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
+  <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Structural bioinformatics</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Genomics</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -194,7 +188,27 @@ ul.task-list{list-style: none;}
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></a>
+  <a href="../chs-genomics/genome-assembly-annotation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-genomics/variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Structural bioinformatics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></a>
   </div>
 </li>
       </ul>
@@ -213,18 +227,18 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-do-we-align-sequences" id="toc-why-do-we-align-sequences" class="nav-link active" data-scroll-target="#why-do-we-align-sequences"> <span class="header-section-number">6.1</span> Why do we align sequences?</a></li>
-  <li><a href="#what-is-homology" id="toc-what-is-homology" class="nav-link" data-scroll-target="#what-is-homology"> <span class="header-section-number">6.2</span> What is homology</a></li>
-  <li><a href="#pairwise-alignments-algorihtms" id="toc-pairwise-alignments-algorihtms" class="nav-link" data-scroll-target="#pairwise-alignments-algorihtms"> <span class="header-section-number">6.3</span> Pairwise alignments algorihtms</a>
+  <li><a href="#why-do-we-align-sequences" id="toc-why-do-we-align-sequences" class="nav-link active" data-scroll-target="#why-do-we-align-sequences"> <span class="header-section-number">7.1</span> Why do we align sequences?</a></li>
+  <li><a href="#what-is-homology" id="toc-what-is-homology" class="nav-link" data-scroll-target="#what-is-homology"> <span class="header-section-number">7.2</span> What is homology</a></li>
+  <li><a href="#pairwise-alignments-algorihtms" id="toc-pairwise-alignments-algorihtms" class="nav-link" data-scroll-target="#pairwise-alignments-algorihtms"> <span class="header-section-number">7.3</span> Pairwise alignments algorihtms</a>
   <ul class="collapse">
-  <li><a href="#hamming-distance" id="toc-hamming-distance" class="nav-link" data-scroll-target="#hamming-distance"> <span class="header-section-number">6.3.1</span> Hamming distance</a></li>
-  <li><a href="#edit-distance" id="toc-edit-distance" class="nav-link" data-scroll-target="#edit-distance"> <span class="header-section-number">6.3.2</span> Edit distance</a></li>
-  <li><a href="#needleman-wunsch-global-alignment" id="toc-needleman-wunsch-global-alignment" class="nav-link" data-scroll-target="#needleman-wunsch-global-alignment"> <span class="header-section-number">6.3.3</span> Needleman-Wunsch (global alignment)</a></li>
-  <li><a href="#smith-waterman-local-alignment" id="toc-smith-waterman-local-alignment" class="nav-link" data-scroll-target="#smith-waterman-local-alignment"> <span class="header-section-number">6.3.4</span> Smith-Waterman (local alignment)</a></li>
+  <li><a href="#hamming-distance" id="toc-hamming-distance" class="nav-link" data-scroll-target="#hamming-distance"> <span class="header-section-number">7.3.1</span> Hamming distance</a></li>
+  <li><a href="#edit-distance" id="toc-edit-distance" class="nav-link" data-scroll-target="#edit-distance"> <span class="header-section-number">7.3.2</span> Edit distance</a></li>
+  <li><a href="#needleman-wunsch-global-alignment" id="toc-needleman-wunsch-global-alignment" class="nav-link" data-scroll-target="#needleman-wunsch-global-alignment"> <span class="header-section-number">7.3.3</span> Needleman-Wunsch (global alignment)</a></li>
+  <li><a href="#smith-waterman-local-alignment" id="toc-smith-waterman-local-alignment" class="nav-link" data-scroll-target="#smith-waterman-local-alignment"> <span class="header-section-number">7.3.4</span> Smith-Waterman (local alignment)</a></li>
   </ul></li>
-  <li><a href="#the-genetic-code-and-scoring-matrices" id="toc-the-genetic-code-and-scoring-matrices" class="nav-link" data-scroll-target="#the-genetic-code-and-scoring-matrices"> <span class="header-section-number">6.4</span> The genetic code and Scoring matrices</a></li>
-  <li><a href="#blast-and-its-families" id="toc-blast-and-its-families" class="nav-link" data-scroll-target="#blast-and-its-families"> <span class="header-section-number">6.5</span> BLAST and its families</a></li>
-  <li><a href="#multiple-sequence-alignments" id="toc-multiple-sequence-alignments" class="nav-link" data-scroll-target="#multiple-sequence-alignments"> <span class="header-section-number">6.6</span> Multiple sequence alignments</a></li>
+  <li><a href="#the-genetic-code-and-scoring-matrices" id="toc-the-genetic-code-and-scoring-matrices" class="nav-link" data-scroll-target="#the-genetic-code-and-scoring-matrices"> <span class="header-section-number">7.4</span> The genetic code and Scoring matrices</a></li>
+  <li><a href="#blast-and-its-families" id="toc-blast-and-its-families" class="nav-link" data-scroll-target="#blast-and-its-families"> <span class="header-section-number">7.5</span> BLAST and its families</a></li>
+  <li><a href="#multiple-sequence-alignments" id="toc-multiple-sequence-alignments" class="nav-link" data-scroll-target="#multiple-sequence-alignments"> <span class="header-section-number">7.6</span> Multiple sequence alignments</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-sequence-analysis/sequence-alignments.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -233,7 +247,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-aliignments" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequence alignments</span></span></h1>
+<h1 class="title"><span id="sec-aliignments" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sequence alignments</span></span></h1>
 </div>
 
 
@@ -244,7 +258,7 @@ ul.task-list{list-style: none;}
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-07-20</p>
+      <p class="date">2022-07-28</p>
     </div>
   </div>
     
@@ -253,40 +267,40 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="why-do-we-align-sequences" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="why-do-we-align-sequences"><span class="header-section-number">6.1</span> Why do we align sequences?</h2>
+<section id="why-do-we-align-sequences" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="why-do-we-align-sequences"><span class="header-section-number">7.1</span> Why do we align sequences?</h2>
 <p>In search of homology and identy</p>
 </section>
-<section id="what-is-homology" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="what-is-homology"><span class="header-section-number">6.2</span> What is homology</h2>
+<section id="what-is-homology" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="what-is-homology"><span class="header-section-number">7.2</span> What is homology</h2>
 </section>
-<section id="pairwise-alignments-algorihtms" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="pairwise-alignments-algorihtms"><span class="header-section-number">6.3</span> Pairwise alignments algorihtms</h2>
-<section id="hamming-distance" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="hamming-distance"><span class="header-section-number">6.3.1</span> Hamming distance</h3>
+<section id="pairwise-alignments-algorihtms" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="pairwise-alignments-algorihtms"><span class="header-section-number">7.3</span> Pairwise alignments algorihtms</h2>
+<section id="hamming-distance" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="hamming-distance"><span class="header-section-number">7.3.1</span> Hamming distance</h3>
 </section>
-<section id="edit-distance" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="edit-distance"><span class="header-section-number">6.3.2</span> Edit distance</h3>
-<section id="dynamic-programming" class="level4" data-number="6.3.2.1">
-<h4 data-number="6.3.2.1" class="anchored" data-anchor-id="dynamic-programming"><span class="header-section-number">6.3.2.1</span> Dynamic programming</h4>
-</section>
-</section>
-<section id="needleman-wunsch-global-alignment" class="level3" data-number="6.3.3">
-<h3 data-number="6.3.3" class="anchored" data-anchor-id="needleman-wunsch-global-alignment"><span class="header-section-number">6.3.3</span> Needleman-Wunsch (global alignment)</h3>
-</section>
-<section id="smith-waterman-local-alignment" class="level3" data-number="6.3.4">
-<h3 data-number="6.3.4" class="anchored" data-anchor-id="smith-waterman-local-alignment"><span class="header-section-number">6.3.4</span> Smith-Waterman (local alignment)</h3>
+<section id="edit-distance" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="edit-distance"><span class="header-section-number">7.3.2</span> Edit distance</h3>
+<section id="dynamic-programming" class="level4" data-number="7.3.2.1">
+<h4 data-number="7.3.2.1" class="anchored" data-anchor-id="dynamic-programming"><span class="header-section-number">7.3.2.1</span> Dynamic programming</h4>
 </section>
 </section>
-<section id="the-genetic-code-and-scoring-matrices" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="the-genetic-code-and-scoring-matrices"><span class="header-section-number">6.4</span> The genetic code and Scoring matrices</h2>
+<section id="needleman-wunsch-global-alignment" class="level3" data-number="7.3.3">
+<h3 data-number="7.3.3" class="anchored" data-anchor-id="needleman-wunsch-global-alignment"><span class="header-section-number">7.3.3</span> Needleman-Wunsch (global alignment)</h3>
 </section>
-<section id="blast-and-its-families" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="blast-and-its-families"><span class="header-section-number">6.5</span> BLAST and its families</h2>
+<section id="smith-waterman-local-alignment" class="level3" data-number="7.3.4">
+<h3 data-number="7.3.4" class="anchored" data-anchor-id="smith-waterman-local-alignment"><span class="header-section-number">7.3.4</span> Smith-Waterman (local alignment)</h3>
+</section>
+</section>
+<section id="the-genetic-code-and-scoring-matrices" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="the-genetic-code-and-scoring-matrices"><span class="header-section-number">7.4</span> The genetic code and Scoring matrices</h2>
+</section>
+<section id="blast-and-its-families" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="blast-and-its-families"><span class="header-section-number">7.5</span> BLAST and its families</h2>
 <p>psi-blast? true homologs, recurrent blast to polish scoring matrix during several generations to generate true homologs</p>
 </section>
-<section id="multiple-sequence-alignments" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="multiple-sequence-alignments"><span class="header-section-number">6.6</span> Multiple sequence alignments</h2>
+<section id="multiple-sequence-alignments" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="multiple-sequence-alignments"><span class="header-section-number">7.6</span> Multiple sequence alignments</h2>
 
 
 </section>
@@ -495,12 +509,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chs-sequence-analysis/sanger-analysis.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sanger analysis</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sanger analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chs-sequence-analysis/phylogenetic-reconstructions.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Phylogenetics</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Phylogenetics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2022-07-28">
 
-<title>Fundamentals of computational biology - 6&nbsp; Sanger analysis</title>
+<title>Fundamentals of computational biology - 10&nbsp; Genome assembly</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,8 +26,8 @@ ul.task-list{list-style: none;}
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chs-sequence-analysis/sequence-alignments.html" rel="next">
-<link href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" rel="prev">
+<link href="../chs-genomics/variant-calling-analysis.html" rel="next">
+<link href="../chs-sequence-analysis/NGS-TGS-principles.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -61,7 +61,7 @@ ul.task-list{list-style: none;}
 <script async="" src="https://hypothes.is/embed.js"></script>
 
 
-<meta name="citation_title" content="[[6]{.chapter-number}&nbsp; [Sanger analysis]{.chapter-title}]{#sec-sanger .quarto-section-identifier}">
+<meta name="citation_title" content="[[10]{.chapter-number}&nbsp; [Genome assembly]{.chapter-title}]{#sec-genomics .quarto-section-identifier}">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
 <meta name="citation_publication_date" content="NaN-NaN-NaN">
@@ -76,7 +76,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sanger analysis</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome assembly</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -158,7 +158,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/sanger-analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sanger analysis</span></a>
+  <a href="../chs-sequence-analysis/sanger-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sanger analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -188,7 +188,7 @@ ul.task-list{list-style: none;}
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/genome-assembly-annotation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  <a href="../chs-genomics/genome-assembly-annotation.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -227,25 +227,43 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#databases-exploration" id="toc-databases-exploration" class="nav-link active" data-scroll-target="#databases-exploration"> <span class="header-section-number">6.1</span> Databases exploration</a></li>
-  <li><a href="#sanger-sequencing-methods" id="toc-sanger-sequencing-methods" class="nav-link" data-scroll-target="#sanger-sequencing-methods"> <span class="header-section-number">6.2</span> Sanger sequencing methods</a>
+  <li><a href="#the-problem-of-assembling-genomes" id="toc-the-problem-of-assembling-genomes" class="nav-link active" data-scroll-target="#the-problem-of-assembling-genomes"> <span class="header-section-number">10.1</span> The problem of assembling genomes</a></li>
+  <li><a href="#main-algorithms-for-genome-asssembly" id="toc-main-algorithms-for-genome-asssembly" class="nav-link" data-scroll-target="#main-algorithms-for-genome-asssembly"> <span class="header-section-number">10.2</span> Main algorithms for genome asssembly</a>
   <ul class="collapse">
-  <li><a href="#the-chain-termination-method" id="toc-the-chain-termination-method" class="nav-link" data-scroll-target="#the-chain-termination-method"> <span class="header-section-number">6.2.1</span> The chain termination method</a></li>
-  <li><a href="#sanger-with-capillary-electrophoresis" id="toc-sanger-with-capillary-electrophoresis" class="nav-link" data-scroll-target="#sanger-with-capillary-electrophoresis"> <span class="header-section-number">6.2.2</span> Sanger with capillary electrophoresis</a></li>
-  <li><a href="#strengths-and-limitations-of-sanger-methods" id="toc-strengths-and-limitations-of-sanger-methods" class="nav-link" data-scroll-target="#strengths-and-limitations-of-sanger-methods"> <span class="header-section-number">6.2.3</span> Strengths and limitations of Sanger methods</a></li>
+  <li><a href="#overlay-layout-consensus-ols" id="toc-overlay-layout-consensus-ols" class="nav-link" data-scroll-target="#overlay-layout-consensus-ols"> <span class="header-section-number">10.2.1</span> Overlay, Layout, Consensus (OLS)</a></li>
+  <li><a href="#de-bruijn-graphs" id="toc-de-bruijn-graphs" class="nav-link" data-scroll-target="#de-bruijn-graphs"> <span class="header-section-number">10.2.2</span> De Bruijn graphs</a></li>
   </ul></li>
-  <li><a href="#files-from-sanger" id="toc-files-from-sanger" class="nav-link" data-scroll-target="#files-from-sanger"> <span class="header-section-number">6.3</span> Files from Sanger</a></li>
-  <li><a href="#sanger-processing-workflow" id="toc-sanger-processing-workflow" class="nav-link" data-scroll-target="#sanger-processing-workflow"> <span class="header-section-number">6.4</span> Sanger processing workflow</a></li>
-  <li><a href="#the-16s-rrna-and-its-relevance-for-sequencing" id="toc-the-16s-rrna-and-its-relevance-for-sequencing" class="nav-link" data-scroll-target="#the-16s-rrna-and-its-relevance-for-sequencing"> <span class="header-section-number">6.5</span> The 16S rRNA and its relevance for sequencing</a></li>
+  <li><a href="#main-concepts-of-an-assembly" id="toc-main-concepts-of-an-assembly" class="nav-link" data-scroll-target="#main-concepts-of-an-assembly"> <span class="header-section-number">10.3</span> Main concepts of an assembly</a>
+  <ul class="collapse">
+  <li><a href="#contigs-unitigs-scaffolds" id="toc-contigs-unitigs-scaffolds" class="nav-link" data-scroll-target="#contigs-unitigs-scaffolds"> <span class="header-section-number">10.3.1</span> Contigs, Unitigs, Scaffolds</a></li>
+  </ul></li>
+  <li><a href="#a-complete-workflow-for-assembling-genomes" id="toc-a-complete-workflow-for-assembling-genomes" class="nav-link" data-scroll-target="#a-complete-workflow-for-assembling-genomes"> <span class="header-section-number">10.4</span> A complete workflow for assembling genomes</a></li>
+  <li><a href="#assessing-genomes" id="toc-assessing-genomes" class="nav-link" data-scroll-target="#assessing-genomes"> <span class="header-section-number">10.5</span> Assessing genomes</a>
+  <ul class="collapse">
+  <li><a href="#inspecting-genome-graphs" id="toc-inspecting-genome-graphs" class="nav-link" data-scroll-target="#inspecting-genome-graphs"> <span class="header-section-number">10.5.1</span> Inspecting genome graphs</a></li>
+  <li><a href="#genome-completeness" id="toc-genome-completeness" class="nav-link" data-scroll-target="#genome-completeness"> <span class="header-section-number">10.5.2</span> Genome completeness</a></li>
+  </ul></li>
+  <li><a href="#understanding-genome-difficulties" id="toc-understanding-genome-difficulties" class="nav-link" data-scroll-target="#understanding-genome-difficulties"> <span class="header-section-number">10.6</span> Understanding genome difficulties</a></li>
+  <li><a href="#genome-annotation-and-visualizaiton" id="toc-genome-annotation-and-visualizaiton" class="nav-link" data-scroll-target="#genome-annotation-and-visualizaiton"> <span class="header-section-number">11</span> Genome annotation and visualizaiton</a>
+  <ul class="collapse">
+  <li><a href="#ab-initio-annotation" id="toc-ab-initio-annotation" class="nav-link" data-scroll-target="#ab-initio-annotation"> <span class="header-section-number">11.1</span> <em>ab initio</em> annotation</a></li>
+  <li><a href="#homolgy-annotation" id="toc-homolgy-annotation" class="nav-link" data-scroll-target="#homolgy-annotation"> <span class="header-section-number">11.2</span> Homolgy annotation</a></li>
+  <li><a href="#annotation-files" id="toc-annotation-files" class="nav-link" data-scroll-target="#annotation-files"> <span class="header-section-number">11.3</span> Annotation files</a>
+  <ul class="collapse">
+  <li><a href="#the-gbk-and-gbff" id="toc-the-gbk-and-gbff" class="nav-link" data-scroll-target="#the-gbk-and-gbff"> <span class="header-section-number">11.3.1</span> the GBK and GBFF</a></li>
+  <li><a href="#the-gff-specificaitons" id="toc-the-gff-specificaitons" class="nav-link" data-scroll-target="#the-gff-specificaitons"> <span class="header-section-number">11.3.2</span> The GFF specificaitons</a></li>
+  </ul></li>
+  <li><a href="#visualizing-genomes-and-annotations" id="toc-visualizing-genomes-and-annotations" class="nav-link" data-scroll-target="#visualizing-genomes-and-annotations"> <span class="header-section-number">11.4</span> Visualizing genomes and annotations</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-sequence-analysis/sanger-analysis.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-genomics/genome-assembly-annotation.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-sanger" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sanger analysis</span></span></h1>
+<h1 class="title"><span id="sec-genomics" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome assembly</span></span></h1>
 </div>
 
 
@@ -265,32 +283,68 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>This is a section about the first gen sequencing tech</p>
-<section id="databases-exploration" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="databases-exploration"><span class="header-section-number">6.1</span> Databases exploration</h2>
+<section id="the-problem-of-assembling-genomes" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="the-problem-of-assembling-genomes"><span class="header-section-number">10.1</span> The problem of assembling genomes</h2>
 </section>
-<section id="sanger-sequencing-methods" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="sanger-sequencing-methods"><span class="header-section-number">6.2</span> Sanger sequencing methods</h2>
-<section id="the-chain-termination-method" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="the-chain-termination-method"><span class="header-section-number">6.2.1</span> The chain termination method</h3>
+<section id="main-algorithms-for-genome-asssembly" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="main-algorithms-for-genome-asssembly"><span class="header-section-number">10.2</span> Main algorithms for genome asssembly</h2>
+<section id="overlay-layout-consensus-ols" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="overlay-layout-consensus-ols"><span class="header-section-number">10.2.1</span> Overlay, Layout, Consensus (OLS)</h3>
 </section>
-<section id="sanger-with-capillary-electrophoresis" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="sanger-with-capillary-electrophoresis"><span class="header-section-number">6.2.2</span> Sanger with capillary electrophoresis</h3>
-</section>
-<section id="strengths-and-limitations-of-sanger-methods" class="level3" data-number="6.2.3">
-<h3 data-number="6.2.3" class="anchored" data-anchor-id="strengths-and-limitations-of-sanger-methods"><span class="header-section-number">6.2.3</span> Strengths and limitations of Sanger methods</h3>
+<section id="de-bruijn-graphs" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="de-bruijn-graphs"><span class="header-section-number">10.2.2</span> De Bruijn graphs</h3>
 </section>
 </section>
-<section id="files-from-sanger" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="files-from-sanger"><span class="header-section-number">6.3</span> Files from Sanger</h2>
+<section id="main-concepts-of-an-assembly" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="main-concepts-of-an-assembly"><span class="header-section-number">10.3</span> Main concepts of an assembly</h2>
+<section id="contigs-unitigs-scaffolds" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="contigs-unitigs-scaffolds"><span class="header-section-number">10.3.1</span> Contigs, Unitigs, Scaffolds</h3>
 </section>
-<section id="sanger-processing-workflow" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="sanger-processing-workflow"><span class="header-section-number">6.4</span> Sanger processing workflow</h2>
 </section>
-<section id="the-16s-rrna-and-its-relevance-for-sequencing" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="the-16s-rrna-and-its-relevance-for-sequencing"><span class="header-section-number">6.5</span> The 16S rRNA and its relevance for sequencing</h2>
+<section id="a-complete-workflow-for-assembling-genomes" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="a-complete-workflow-for-assembling-genomes"><span class="header-section-number">10.4</span> A complete workflow for assembling genomes</h2>
+</section>
+<section id="assessing-genomes" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="assessing-genomes"><span class="header-section-number">10.5</span> Assessing genomes</h2>
+<section id="inspecting-genome-graphs" class="level3" data-number="10.5.1">
+<h3 data-number="10.5.1" class="anchored" data-anchor-id="inspecting-genome-graphs"><span class="header-section-number">10.5.1</span> Inspecting genome graphs</h3>
+</section>
+<section id="genome-completeness" class="level3" data-number="10.5.2">
+<h3 data-number="10.5.2" class="anchored" data-anchor-id="genome-completeness"><span class="header-section-number">10.5.2</span> Genome completeness</h3>
+</section>
+</section>
+<section id="understanding-genome-difficulties" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="understanding-genome-difficulties"><span class="header-section-number">10.6</span> Understanding genome difficulties</h2>
+<ul>
+<li><p>End of chromosomes</p></li>
+<li><p>Erros</p></li>
+<li><p>Lack of coverage</p></li>
+<li><p>Heterozigozity</p></li>
+<li><p>repeats</p></li>
+</ul>
+</section>
+<section id="genome-annotation-and-visualizaiton" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Genome annotation and visualizaiton</h1>
+<section id="ab-initio-annotation" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="ab-initio-annotation"><span class="header-section-number">11.1</span> <em>ab initio</em> annotation</h2>
+</section>
+<section id="homolgy-annotation" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="homolgy-annotation"><span class="header-section-number">11.2</span> Homolgy annotation</h2>
+</section>
+<section id="annotation-files" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="annotation-files"><span class="header-section-number">11.3</span> Annotation files</h2>
+<section id="the-gbk-and-gbff" class="level3" data-number="11.3.1">
+<h3 data-number="11.3.1" class="anchored" data-anchor-id="the-gbk-and-gbff"><span class="header-section-number">11.3.1</span> the GBK and GBFF</h3>
+</section>
+<section id="the-gff-specificaitons" class="level3" data-number="11.3.2">
+<h3 data-number="11.3.2" class="anchored" data-anchor-id="the-gff-specificaitons"><span class="header-section-number">11.3.2</span> The GFF specificaitons</h3>
+</section>
+</section>
+<section id="visualizing-genomes-and-annotations" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="visualizing-genomes-and-annotations"><span class="header-section-number">11.4</span> Visualizing genomes and annotations</h2>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -496,13 +550,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></span>
+      <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chs-sequence-analysis/sequence-alignments.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sequence alignments</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chs-genomics/variant-calling-analysis.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

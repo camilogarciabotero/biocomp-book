@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.35">
+<meta name="generator" content="quarto-1.0.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-07-20">
+<meta name="dcterms.date" content="2022-07-28">
 
-<title>Fundamentals of computational biology - 2&nbsp; Package managers</title>
+<title>Fundamentals of computational biology - 3&nbsp; Package managers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -27,7 +27,7 @@ ul.task-list{list-style: none;}
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../chs-command-line/hpc-notions.html" rel="next">
-<link href="../chs-command-line/welcome-to-command-line.html" rel="prev">
+<link href="../chs-command-line/git-and-github.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -61,7 +61,7 @@ ul.task-list{list-style: none;}
 <script async="" src="https://hypothes.is/embed.js"></script>
 
 
-<meta name="citation_title" content="[2]{.chapter-number}&nbsp; [Package managers]{.chapter-title}">
+<meta name="citation_title" content="[3]{.chapter-number}&nbsp; [Package managers]{.chapter-title}">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
 <meta name="citation_publication_date" content="NaN-NaN-NaN">
@@ -76,7 +76,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Package managers</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Package managers</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -90,9 +90,8 @@ ul.task-list{list-style: none;}
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Fundamentals of computational biology</a> 
-        <div class="sidebar-tools-main tools-wide">
+        <div class="sidebar-tools-main">
     <a href="https://github.com/camilogarciabotero/biocomp-book" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
   <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -129,19 +128,24 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-command-line/package-managers.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Package managers</span></a>
+  <a href="../chs-command-line/git-and-github.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to the control of versions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-command-line/hpc-notions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notions of HPC</span></a>
+  <a href="../chs-command-line/package-managers.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Package managers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-command-line/hpc-notions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notions of HPC</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Seq. analysis &amp; genomics</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Sequence analysis</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -149,44 +153,34 @@ ul.task-list{list-style: none;}
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></a>
+  <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/sanger-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sanger analysis</span></a>
+  <a href="../chs-sequence-analysis/sanger-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sanger analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/sequence-alignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequence alignments</span></a>
+  <a href="../chs-sequence-analysis/sequence-alignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sequence alignments</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Phylogenetics</span></a>
+  <a href="../chs-sequence-analysis/phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Phylogenetics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/genome-assembly-annotation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
+  <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Structural bioinformatics</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Genomics</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -194,7 +188,27 @@ ul.task-list{list-style: none;}
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></a>
+  <a href="../chs-genomics/genome-assembly-annotation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-genomics/variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Structural bioinformatics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></a>
   </div>
 </li>
       </ul>
@@ -213,10 +227,10 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-the-importance-of-package-managers" id="toc-what-is-the-importance-of-package-managers" class="nav-link active" data-scroll-target="#what-is-the-importance-of-package-managers"> <span class="header-section-number">2.1</span> What is the importance of package managers</a></li>
-  <li><a href="#conda-environments-and-other-package-managers" id="toc-conda-environments-and-other-package-managers" class="nav-link" data-scroll-target="#conda-environments-and-other-package-managers"> <span class="header-section-number">2.2</span> Conda environments and other package managers</a></li>
-  <li><a href="#creating-enviroments-with-conda" id="toc-creating-enviroments-with-conda" class="nav-link" data-scroll-target="#creating-enviroments-with-conda"> <span class="header-section-number">2.3</span> Creating enviroments with Conda</a></li>
-  <li><a href="#package-managers-for-os" id="toc-package-managers-for-os" class="nav-link" data-scroll-target="#package-managers-for-os"> <span class="header-section-number">2.4</span> Package managers for OS</a></li>
+  <li><a href="#what-is-the-importance-of-package-managers" id="toc-what-is-the-importance-of-package-managers" class="nav-link active" data-scroll-target="#what-is-the-importance-of-package-managers"> <span class="header-section-number">3.1</span> What is the importance of package managers</a></li>
+  <li><a href="#conda-environments-and-other-package-managers" id="toc-conda-environments-and-other-package-managers" class="nav-link" data-scroll-target="#conda-environments-and-other-package-managers"> <span class="header-section-number">3.2</span> Conda environments and other package managers</a></li>
+  <li><a href="#creating-enviroments-with-conda" id="toc-creating-enviroments-with-conda" class="nav-link" data-scroll-target="#creating-enviroments-with-conda"> <span class="header-section-number">3.3</span> Creating enviroments with Conda</a></li>
+  <li><a href="#package-managers-for-os" id="toc-package-managers-for-os" class="nav-link" data-scroll-target="#package-managers-for-os"> <span class="header-section-number">3.4</span> Package managers for OS</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-command-line/package-managers.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -225,7 +239,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Package managers</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Package managers</span></h1>
 </div>
 
 
@@ -236,7 +250,7 @@ ul.task-list{list-style: none;}
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-07-20</p>
+      <p class="date">2022-07-28</p>
     </div>
   </div>
     
@@ -245,17 +259,17 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="what-is-the-importance-of-package-managers" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="what-is-the-importance-of-package-managers"><span class="header-section-number">2.1</span> What is the importance of package managers</h2>
+<section id="what-is-the-importance-of-package-managers" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="what-is-the-importance-of-package-managers"><span class="header-section-number">3.1</span> What is the importance of package managers</h2>
 </section>
-<section id="conda-environments-and-other-package-managers" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="conda-environments-and-other-package-managers"><span class="header-section-number">2.2</span> Conda environments and other package managers</h2>
+<section id="conda-environments-and-other-package-managers" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="conda-environments-and-other-package-managers"><span class="header-section-number">3.2</span> Conda environments and other package managers</h2>
 </section>
-<section id="creating-enviroments-with-conda" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="creating-enviroments-with-conda"><span class="header-section-number">2.3</span> Creating enviroments with Conda</h2>
+<section id="creating-enviroments-with-conda" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="creating-enviroments-with-conda"><span class="header-section-number">3.3</span> Creating enviroments with Conda</h2>
 </section>
-<section id="package-managers-for-os" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="package-managers-for-os"><span class="header-section-number">2.4</span> Package managers for OS</h2>
+<section id="package-managers-for-os" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="package-managers-for-os"><span class="header-section-number">3.4</span> Package managers for OS</h2>
 <p>There are several package managers handling general purpose packages and apps. For MacOS the famous one is <a href="">Homebrew</a> and for Windowos several could be used such as <a href="">Chocolatey</a> and <a href="https://scoop.sh/">Scoop</a>.</p>
 
 
@@ -464,13 +478,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chs-command-line/welcome-to-command-line.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The command line</span></span>
+      <a href="../chs-command-line/git-and-github.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to the control of versions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chs-command-line/hpc-notions.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Notions of HPC</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notions of HPC</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
