@@ -17,7 +17,7 @@ book:
   site-url: https://camilogarciabotero.github.io/biocomp-book/
   repo-actions: [edit, issue]
   repo-branch: main
-  # downloads: [pdf]
+  downloads: [pdf]
   # sharing: [twitter]
   sidebar:
     style: floating
