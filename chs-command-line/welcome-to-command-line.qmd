@@ -12,12 +12,7 @@ Almost every computer has a way to interact with or access to the inner elements
 
 ![A **terminal** app displaying common features of the command line interface](imgs-cli/terminal.png){#fig-terminal fig-align="center"}
 
-## Anatomy of a command
-
-![A simple command and a convention to call its main components](imgs-cli/command-anatomy.png){#fig-command}
-
-## Basic Unix commands
-
+## File paths
 Programs, files and directories on every machine display hierarchical paths (routes), starting out from the **root** (`/`). The **root** represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths [Fig. @fig-tree]
 
 ![A figure displaying tree-like structure of the programs in a machine with macOS](imgs-cli/dir-tree.png){#fig-tree fig-align="center"}
@@ -30,27 +25,24 @@ tree -d -L 1
 ```
 :::
 
+There are basically **two** ways to 
+
+## Basic Unix commands
+
+Given that the vast majority of file systems are orginzed in file paths, the first question when starting with the CLI is "where am I?". So Unix tool system is equiped with a bunch of commands but its basic ones are pretty much oriented to answer that question and navigating this text-based interface of files. The following three commands (`pwd`, `cd`, `ls`) will help you conquer the CLI.
+
 ### Printing your working directory
 
 To know where you are you can see your current location, that is to *print your working directory* using the `pwd` command.
 
-``` bash
-pwd .
+```bash
+pwd
 ```
-
-### Making new directories
-
-``` bash
-mkdir test-dir
-```
-
 ### Change to other directory
 
-``` bash
-
+```bash
 cd test-dir
 ```
-
 ::: {.callout-tip .column-margin}
 Some basic arguments to navigate across your terminal:
 
@@ -61,6 +53,23 @@ cd /  # change to the root
 cd -  # change to previous dir
 ```
 :::
+
+### Listing files
+
+```bash
+ls 
+```
+
+::: {.callout-tip .column-margin}
+You can navigate your executed commands by typing {{< fa arrow-up >}} or {{< fa arrow-down >}}.
+:::
+
+
+### Making new directories
+
+``` bash
+mkdir test-dir
+```
 
 ### Creating a file
 
@@ -76,11 +85,6 @@ The `new-file.txt` is empty and created on your current location unless you assi
 [![Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst](imgs-cli/naming-files.png){#fig-naming-files}](https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/other-stats-artwork/coding_cases.png)
 :::
 
-### Listing files
-
-``` bash
-ls 
-```
 
 ### Printing files to the screen
 
@@ -88,20 +92,49 @@ ls
 cat new-file.txt
 ```
 
-For more explanations on the basic commands in the command line we suggest to visit the first chapters of *Computing skills for biologist* from @allesina2019
-
-## Advance Unix commands
-
-``` bash
-sed
-```
-
-``` bash
-grep ">" 
-```
-
-::: callout-tip
-You can navigate your executed commands by typing the ::up-arrow:: key
+::: {.callout-tip .column-margin}
+When using the CLI at first its common to feal quite slow. Then, a very useful tip to boost the productivity from the command line is the autocompletion of commands by hitting `<tab>` after the initial command.
 :::
 
-## A glimpse to the Window subsystem for linux
+### Removing files or directories
+
+```bash
+rm
+```
+
+```bash
+rmdir
+```
+
+## Anatomy of a command
+
+There is still many conventions by wich the parts of a command line might be called, yet a very standard convention is presented in @fig-command
+
+![A simple command and a convention to call its main components](imgs-cli/command-anatomy.png){#fig-command}
+
+Some other for instance also tend to call the `option` as `flag`. This conventions are powerful becasue almost any command line interface display this structure (complex one add some other features and simple one tend to lack subcomands).
+
+
+::: {.callout-warning}
+# Challenge
+Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the resctriction-modification system (RM-System), which works by targeting a specific site called *motif*, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a *motif logo* which is a probabilistic representation of the nucleotides in a given position. Find the number of times the motif from @fig-motif appears on *B. tequilensis* EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.
+
+![A RM-system motif logo](imgs-cli/motif.png){#fig-motif}
+:::
+
+
+## Some greate operators
+
+
+
+## intermediate Unix commands
+
+``` bash
+sed 
+```
+
+``` bash
+grep 
+```
+
+For more explanations on the basic commands in the command line we suggest to visit the first chapters of *Computing skills for biologist* from @allesina2019

@@ -31,22 +31,22 @@
     "objectID": "chs-command-line/welcome-to-command-line.html#anatomy-of-a-command",
     "href": "chs-command-line/welcome-to-command-line.html#anatomy-of-a-command",
     "title": "1  The command line",
-    "section": "1.2 Anatomy of a command",
-    "text": "1.2 Anatomy of a command\n\n\n\nFigure 1.2: A simple command and a convention to call its main components"
+    "section": "1.4 Anatomy of a command",
+    "text": "1.4 Anatomy of a command\nThere is still many conventions by wich the parts of a command line might be called, yet a very standard convention is presented in Figure 1.4\n\n\n\nFigure 1.4: A simple command and a convention to call its main components\n\n\nSome other for instance also tend to call the option as flag. This conventions are powerful becasue almost any command line interface display this structure (complex one add some other features and simple one tend to lack subcomands).\n\n\n\n\n\n\nChallenge\n\n\n\nBacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the resctriction-modification system (RM-System), which works by targeting a specific site called motif, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a motif logo which is a probabilistic representation of the nucleotides in a given position. Find the number of times the motif from Figure 1.5 appears on B. tequilensis EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.\n\n\n\nFigure 1.5: A RM-system motif logo"
   },
   {
     "objectID": "chs-command-line/welcome-to-command-line.html#basic-unix-commands",
     "href": "chs-command-line/welcome-to-command-line.html#basic-unix-commands",
     "title": "1  The command line",
     "section": "1.3 Basic Unix commands",
-    "text": "1.3 Basic Unix commands\nPrograms, files and directories on every machine display hierarchical paths (routes), starting out from the root (/). The root represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths Fig. 1.3\n\n\n\nFigure 1.3: A figure displaying tree-like structure of the programs in a machine with macOS\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou can inspect the paths of a nested directory tree using tree command in you cli:\ntree -d -L 1\n\n\n1.3.1 Printing your working directory\nTo know where you are you can see your current location, that is to print your working directory using the pwd command.\npwd .\n\n\n1.3.2 Making new directories\nmkdir test-dir\n\n\n1.3.3 Change to other directory\n\ncd test-dir\n\n\n\n\n\n\n\nTip\n\n\n\nSome basic arguments to navigate across your terminal:\ncd .. # change backwards\ncd ~  # change to the home\ncd /  # change to the root\ncd -  # change to previous dir\n\n\n\n1.3.4 Creating a file\nA simple command to create any file inside your terminal is touch it just create a file, but do not allow any editing.\ntouch new-file.txt\nThe new-file.txt is empty and created on your current location unless you assign another path when creating it. We suggest to take a look at Allison Horst, especially on how to name files depending on the case see Fig. 1.4\n\n\n\n\n\nFigure 1.4: Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst\n\n\n\n\n1.3.5 Listing files\nls \n\n\n1.3.6 Printing files to the screen\ncat new-file.txt\nFor more explanations on the basic commands in the command line we suggest to visit the first chapters of Computing skills for biologist from Allesina and Wilmes (2019)"
+    "text": "1.3 Basic Unix commands\nGiven that the vast majority of file systems are orginzed in file paths, the first question when starting with the CLI is “where am I?”. So Unix tool system is equiped with a bunch of commands but its basic ones are pretty much oriented to answer that question and navigating this text-based interface of files. The following three commands (pwd, cd, ls) will help you conquer the CLI.\n\n1.3.1 Printing your working directory\nTo know where you are you can see your current location, that is to print your working directory using the pwd command.\npwd\n\n\n1.3.2 Change to other directory\ncd test-dir\n\n\n\n\n\n\n\nTip\n\n\n\nSome basic arguments to navigate across your terminal:\ncd .. # change backwards\ncd ~  # change to the home\ncd /  # change to the root\ncd -  # change to previous dir\n\n\n\n1.3.3 Listing files\nls \n\n\n\n\n\n\n\nTip\n\n\n\nYou can navigate your executed commands by typing  or .\n\n\n\n1.3.4 Making new directories\nmkdir test-dir\n\n\n1.3.5 Creating a file\nA simple command to create any file inside your terminal is touch it just create a file, but do not allow any editing.\ntouch new-file.txt\nThe new-file.txt is empty and created on your current location unless you assign another path when creating it. We suggest to take a look at Allison Horst, especially on how to name files depending on the case see Fig. 1.3\n\n\n\n\n\nFigure 1.3: Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst\n\n\n\n\n1.3.6 Printing files to the screen\ncat new-file.txt\n\n\n\n\n\n\n\nTip\n\n\n\nWhen using the CLI at first its common to feal quite slow. Then, a very useful tip to boost the productivity from the command line is the autocompletion of commands by hitting <tab> after the initial command.\n\n\n\n1.3.7 Removing files or directories\nrm\nrmdir"
   },
   {
     "objectID": "chs-command-line/welcome-to-command-line.html#advance-unix-commands",
     "href": "chs-command-line/welcome-to-command-line.html#advance-unix-commands",
     "title": "1  The command line",
     "section": "1.4 Advance Unix commands",
-    "text": "1.4 Advance Unix commands\nsed\ngrep \">\" \n\n\n\n\n\n\nTip\n\n\n\nYou can navigate your executed commands by typing the ::up-arrow:: key"
+    "text": "1.4 Advance Unix commands\nsed\ngrep \">\" \n\n\n\n\n\n\nTip\n\n\n\nYou can navigate your executed commands by typing the  or \n\n\n\n\n\n\nAllesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for Biologists,” January. https://doi.org/10.2307/j.ctvc77jrc."
   },
   {
     "objectID": "chs-command-line/welcome-to-command-line.html#a-glimpse-to-the-window-subsystem-for-linux",
@@ -397,5 +397,96 @@
     "title": "References",
     "section": "",
     "text": "Allesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for\nBiologists,” January. https://doi.org/10.2307/j.ctvc77jrc."
+  },
+  {
+    "objectID": "chs-command-line/welcome-to-command-line.html#intermediate-unix-commands",
+    "href": "chs-command-line/welcome-to-command-line.html#intermediate-unix-commands",
+    "title": "1  The command line",
+    "section": "1.6 intermediate Unix commands",
+    "text": "1.6 intermediate Unix commands\nsed \ngrep \nFor more explanations on the basic commands in the command line we suggest to visit the first chapters of Computing skills for biologist from Allesina and Wilmes (2019)\n\n\n\n\nAllesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for Biologists,” January. https://doi.org/10.2307/j.ctvc77jrc."
+  },
+  {
+    "objectID": "chs-command-line/welcome-to-command-line.html#file-paths",
+    "href": "chs-command-line/welcome-to-command-line.html#file-paths",
+    "title": "1  The command line",
+    "section": "1.2 File paths",
+    "text": "1.2 File paths\nPrograms, files and directories on every machine display hierarchical paths (routes), starting out from the root (/). The root represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths Fig. 1.2\n\n\n\nFigure 1.2: A figure displaying tree-like structure of the programs in a machine with macOS\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou can inspect the paths of a nested directory tree using tree command in you cli:\ntree -d -L 1\n\nThere are basically two ways to"
+  },
+  {
+    "objectID": "chs-command-line/welcome-to-command-line.html#some-greate-operators",
+    "href": "chs-command-line/welcome-to-command-line.html#some-greate-operators",
+    "title": "1  The command line",
+    "section": "1.5 Some greate operators",
+    "text": "1.5 Some greate operators"
+  },
+  {
+    "objectID": "chs-command-line/welcome-to-command-line.html#basic-commands",
+    "href": "chs-command-line/welcome-to-command-line.html#basic-commands",
+    "title": "1  The command line",
+    "section": "1.5 Basic commands",
+    "text": "1.5 Basic commands"
+  },
+  {
+    "objectID": "chs-genomics/genome-assembly.html#main-algorithms-for-genome-asssembly",
+    "href": "chs-genomics/genome-assembly.html#main-algorithms-for-genome-asssembly",
+    "title": "10  Genome assembly",
+    "section": "10.2 Main algorithms for genome asssembly",
+    "text": "10.2 Main algorithms for genome asssembly\n\n10.2.1 Overlay, Layout, Consensus (OLS)\n\n\n10.2.2 De Bruijn graphs"
+  },
+  {
+    "objectID": "chs-genomics/genome-assembly.html#main-concepts-of-an-assembly",
+    "href": "chs-genomics/genome-assembly.html#main-concepts-of-an-assembly",
+    "title": "10  Genome assembly",
+    "section": "10.3 Main concepts of an assembly",
+    "text": "10.3 Main concepts of an assembly\n\n10.3.1 Contigs, Unitigs, Scaffolds"
+  },
+  {
+    "objectID": "chs-genomics/genome-assembly.html#a-complete-workflow-for-assembling-genomes",
+    "href": "chs-genomics/genome-assembly.html#a-complete-workflow-for-assembling-genomes",
+    "title": "10  Genome assembly",
+    "section": "10.4 A complete workflow for assembling genomes",
+    "text": "10.4 A complete workflow for assembling genomes"
+  },
+  {
+    "objectID": "chs-genomics/genome-assembly.html#assessing-genomes",
+    "href": "chs-genomics/genome-assembly.html#assessing-genomes",
+    "title": "10  Genome assembly",
+    "section": "10.5 Assessing genomes",
+    "text": "10.5 Assessing genomes\n\n10.5.1 Inspecting genome graphs\n\n\n10.5.2 Genome completeness"
+  },
+  {
+    "objectID": "chs-genomics/genome-assembly.html#understanding-genome-difficulties",
+    "href": "chs-genomics/genome-assembly.html#understanding-genome-difficulties",
+    "title": "10  Genome assembly",
+    "section": "10.6 Understanding genome difficulties",
+    "text": "10.6 Understanding genome difficulties\n\nEnd of chromosomes\nErros\nLack of coverage\nHeterozigozity\nrepeats"
+  },
+  {
+    "objectID": "chs-genomics/genome-assembly.html#ab-initio-annotation",
+    "href": "chs-genomics/genome-assembly.html#ab-initio-annotation",
+    "title": "10  Genome assembly",
+    "section": "11.1 ab initio annotation",
+    "text": "11.1 ab initio annotation"
+  },
+  {
+    "objectID": "chs-genomics/genome-assembly.html#homolgy-annotation",
+    "href": "chs-genomics/genome-assembly.html#homolgy-annotation",
+    "title": "10  Genome assembly",
+    "section": "11.2 Homolgy annotation",
+    "text": "11.2 Homolgy annotation"
+  },
+  {
+    "objectID": "chs-genomics/genome-assembly.html#annotation-files",
+    "href": "chs-genomics/genome-assembly.html#annotation-files",
+    "title": "10  Genome assembly",
+    "section": "11.3 Annotation files",
+    "text": "11.3 Annotation files\n\n11.3.1 the GBK and GBFF\n\n\n11.3.2 The GFF specificaitons"
+  },
+  {
+    "objectID": "chs-genomics/genome-assembly.html#visualizing-genomes-and-annotations",
+    "href": "chs-genomics/genome-assembly.html#visualizing-genomes-and-annotations",
+    "title": "10  Genome assembly",
+    "section": "11.4 Visualizing genomes and annotations",
+    "text": "11.4 Visualizing genomes and annotations"
   }
 ]
