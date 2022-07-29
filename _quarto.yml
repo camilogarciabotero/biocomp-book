@@ -39,7 +39,8 @@ book:
         - chs-sequence-analysis/NGS-TGS-principles.qmd
     - part: "Genomics"
       chapters:
-        - chs-genomics/genome-assembly-annotation.qmd
+        - chs-genomics/genome-assembly.qmd
+        - chs-genomics/genome-annotation.qmd
         - chs-genomics/variant-calling-analysis.qmd
     - part: "Structural bioinformatics"
       chapters:
