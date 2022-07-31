@@ -1,1 +1,0 @@
-Sitemap: https://camilogarciabotero.github.io/biocomp-book/sitemap.xml
