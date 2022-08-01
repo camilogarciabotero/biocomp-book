@@ -1,19 +1,20 @@
 # The command line {#sec-cli}
 
-> In this chapter we will explore the fundamentals of the command line interface (aka CLI). And the differences between Operating Systems (OS), Unix, CLI, Bash and Terminal.
+> In this chapter we will explore the fundamentals of the command line interface (aka CLI). We will distinguish the differences between Unix, CLI, Bash and Terminal and other concepts from the computer sciences. 
 >
 > As you will see the CLI is composed of several programs enabling the interaction with the machine, we will discuss some of the basics to navigate your machine, and some advance one that enable complex operations and automating tasks.
 
 ## Getting started with the command line
 
-Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a *libre* access is the very known OS Linux. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically.
-
-Almost every computer has a way to interact with or access to the inner elements of the computer. Such interface is called the terminal [Fig. @fig-terminal]
+Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It simply is an operating system (OS). In other words, it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant (or clone) of Unix is the very well known OS Linux, which was created by Linus Torvalds from scratch. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically. Other main feature from Unix-like OS systems is the fact that data is usually stored as text files and the interface by which users communicate with the machine is also text-based (TUI: text user interface as opposed to GUI, graphic user interface).
 
 ![A **terminal** app displaying common features of the command line interface](imgs-cli/terminal.png){#fig-terminal fig-align="center"}
 
+Almost every computer has a way to interact with or access to the inner elements of the computer. Such interface is called the the command-line-interface [Fig. @fig-terminal]. 
+
+
 ## File paths
-Programs, files and directories on every machine display hierarchical paths (routes), starting out from the **root** (`/`). The **root** represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths [Fig. @fig-tree]
+Programs, files and directories on every machine (with Unix-like OS) display hierarchical paths (routes), starting out from the **root** (represented by the back-slash character `/`). The **root** represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths [Fig. @fig-tree]
 
 ![A figure displaying tree-like structure of the programs in a machine with macOS](imgs-cli/dir-tree.png){#fig-tree fig-align="center"}
 
@@ -25,11 +26,11 @@ tree -d -L 1
 ```
 :::
 
-There are basically **two** ways to 
+There are basically **two** ways to explore or navigate your file system. If you always reprent it from the root, then you are presenting an **absolute path**. For instance the absoulte path to my desktop is (`/Users/camilogarcia/Desktop`). 
 
 ## Basic Unix commands
 
-Given that the vast majority of file systems are orginzed in file paths, the first question when starting with the CLI is "where am I?". So Unix tool system is equiped with a bunch of commands but its basic ones are pretty much oriented to answer that question and navigating this text-based interface of files. The following three commands (`pwd`, `cd`, `ls`) will help you conquer the CLI.
+Given that the vast majority of file systems are orginzed in file paths, the first question when starting with the CLI is "Where am I?". So Unix tool system is equiped with a bunch of commands but its basic ones are pretty much oriented to answer that question and navigating this text-based interface of files. The following three commands (`pwd`, `cd`, `ls`) will help you conquer the CLI.
 
 ### Printing your working directory
 
@@ -103,6 +104,12 @@ When using the CLI at first its common to feal quite slow. Then, a very useful t
 rm
 ```
 
+::: {.callout-tip}
+When having a long command, it becomes practically to go to the begining or to the end of it. To do so you can use the key combination `Ctrl + A` and `Ctrl + E` respectively.
+
+![Go to the beggining of a command](imgs-cli/ctrl-a.png)
+:::
+
 ```bash
 rmdir
 ```
@@ -124,7 +131,7 @@ Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One
 :::
 
 
-## Some greate operators
+## Some great operators/ Metacharacteres in Bash
 
 
 

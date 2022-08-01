@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-07-31">
+<meta name="dcterms.date" content="2022-08-01">
 
 <title>Fundamentals of computational biology - 1&nbsp; The command line</title>
 <style>
@@ -329,7 +329,7 @@ div.csl-indent {
   <li><a href="#removing-files-or-directories" id="toc-removing-files-or-directories" class="nav-link" data-scroll-target="#removing-files-or-directories"> <span class="header-section-number">1.3.7</span> Removing files or directories</a></li>
   </ul></li>
   <li><a href="#anatomy-of-a-command" id="toc-anatomy-of-a-command" class="nav-link" data-scroll-target="#anatomy-of-a-command"> <span class="header-section-number">1.4</span> Anatomy of a command</a></li>
-  <li><a href="#some-greate-operators" id="toc-some-greate-operators" class="nav-link" data-scroll-target="#some-greate-operators"> <span class="header-section-number">1.5</span> Some greate operators</a></li>
+  <li><a href="#some-great-operators-metacharacteres-in-bash" id="toc-some-great-operators-metacharacteres-in-bash" class="nav-link" data-scroll-target="#some-great-operators-metacharacteres-in-bash"> <span class="header-section-number">1.5</span> Some great operators/ Metacharacteres in Bash</a></li>
   <li><a href="#intermediate-unix-commands" id="toc-intermediate-unix-commands" class="nav-link" data-scroll-target="#intermediate-unix-commands"> <span class="header-section-number">1.6</span> intermediate Unix commands</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-command-line/welcome-to-command-line.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -350,7 +350,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-07-31</p>
+      <p class="date">2022-08-01</p>
     </div>
   </div>
     
@@ -360,23 +360,23 @@ div.csl-indent {
 </header>
 
 <blockquote class="blockquote">
-<p>In this chapter we will explore the fundamentals of the command line interface (aka CLI). And the differences between Operating Systems (OS), Unix, CLI, Bash and Terminal.</p>
+<p>In this chapter we will explore the fundamentals of the command line interface (aka CLI). We will distinguish the differences between Unix, CLI, Bash and Terminal and other concepts from the computer sciences.</p>
 <p>As you will see the CLI is composed of several programs enabling the interaction with the machine, we will discuss some of the basics to navigate your machine, and some advance one that enable complex operations and automating tasks.</p>
 </blockquote>
 <section id="getting-started-with-the-command-line" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="getting-started-with-the-command-line"><span class="header-section-number">1.1</span> Getting started with the command line</h2>
-<p>Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It simply is an operating system (OS). On another terms it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant of Unix with a <em>libre</em> access is the very known OS Linux. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically.</p>
-<p>Almost every computer has a way to interact with or access to the inner elements of the computer. Such interface is called the terminal <a href="#fig-terminal">Fig.&nbsp;<span>1.1</span></a></p>
+<p>Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It simply is an operating system (OS). In other words, it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant (or clone) of Unix is the very well known OS Linux, which was created by Linus Torvalds from scratch. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically. Other main feature from Unix-like OS systems is the fact that data is usually stored as text files and the interface by which users communicate with the machine is also text-based (TUI: text user interface as opposed to GUI, graphic user interface).</p>
 <div id="fig-terminal" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="imgs-cli/terminal.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure 1.1: A <strong>terminal</strong> app displaying common features of the command line interface</figcaption><p></p>
 </figure>
 </div>
+<p>Almost every computer has a way to interact with or access to the inner elements of the computer. Such interface is called the the command-line-interface <a href="#fig-terminal">Fig.&nbsp;<span>1.1</span></a>.</p>
 </section>
 <section id="file-paths" class="level2 page-columns page-full" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="file-paths"><span class="header-section-number">1.2</span> File paths</h2>
-<p>Programs, files and directories on every machine display hierarchical paths (routes), starting out from the <strong>root</strong> (<code>/</code>). The <strong>root</strong> represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths <a href="#fig-tree">Fig.&nbsp;<span>1.2</span></a></p>
+<p>Programs, files and directories on every machine (with Unix-like OS) display hierarchical paths (routes), starting out from the <strong>root</strong> (represented by the back-slash character <code>/</code>). The <strong>root</strong> represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths <a href="#fig-tree">Fig.&nbsp;<span>1.2</span></a></p>
 <div id="fig-tree" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="imgs-cli/dir-tree.png" class="img-fluid figure-img"></p>
@@ -397,11 +397,11 @@ Tip
 <p>You can inspect the paths of a nested directory tree using <code>tree</code> command in you cli:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tree</span> <span class="at">-d</span> <span class="at">-L</span> 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div></div><p>There are basically <strong>two</strong> ways to</p>
+</div></div><p>There are basically <strong>two</strong> ways to explore or navigate your file system. If you always reprent it from the root, then you are presenting an <strong>absolute path</strong>. For instance the absoulte path to my desktop is (<code>/Users/camilogarcia/Desktop</code>).</p>
 </section>
 <section id="basic-unix-commands" class="level2 page-columns page-full" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="basic-unix-commands"><span class="header-section-number">1.3</span> Basic Unix commands</h2>
-<p>Given that the vast majority of file systems are orginzed in file paths, the first question when starting with the CLI is “where am I?”. So Unix tool system is equiped with a bunch of commands but its basic ones are pretty much oriented to answer that question and navigating this text-based interface of files. The following three commands (<code>pwd</code>, <code>cd</code>, <code>ls</code>) will help you conquer the CLI.</p>
+<p>Given that the vast majority of file systems are orginzed in file paths, the first question when starting with the CLI is “Where am I?”. So Unix tool system is equiped with a bunch of commands but its basic ones are pretty much oriented to answer that question and navigating this text-based interface of files. The following three commands (<code>pwd</code>, <code>cd</code>, <code>ls</code>) will help you conquer the CLI.</p>
 <section id="printing-your-working-directory" class="level3" data-number="1.3.1">
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="printing-your-working-directory"><span class="header-section-number">1.3.1</span> Printing your working directory</h3>
 <p>To know where you are you can see your current location, that is to <em>print your working directory</em> using the <code>pwd</code> command.</p>
@@ -485,6 +485,25 @@ Tip
 <section id="removing-files-or-directories" class="level3" data-number="1.3.7">
 <h3 data-number="1.3.7" class="anchored" data-anchor-id="removing-files-or-directories"><span class="header-section-number">1.3.7</span> Removing files or directories</h3>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When having a long command, it becomes practically to go to the begining or to the end of it. To do so you can use the key combination <code>Ctrl + A</code> and <code>Ctrl + E</code> respectively.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imgs-cli/ctrl-a.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Go to the beggining of a command</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rmdir</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
@@ -518,8 +537,8 @@ Challenge
 </div>
 </div>
 </section>
-<section id="some-greate-operators" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="some-greate-operators"><span class="header-section-number">1.5</span> Some greate operators</h2>
+<section id="some-great-operators-metacharacteres-in-bash" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="some-great-operators-metacharacteres-in-bash"><span class="header-section-number">1.5</span> Some great operators/ Metacharacteres in Bash</h2>
 </section>
 <section id="intermediate-unix-commands" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="intermediate-unix-commands"><span class="header-section-number">1.6</span> intermediate Unix commands</h2>
