@@ -1,7 +1,19 @@
 # Introduction to the control of versions
 
-# Git basics
+## Git basics
 
-# GitHub
+### Git installation and configuration
 
-# Control version workflow
+### The basics
+
+### The local workflow
+
+### Ignoring files
+
+## GitHub
+
+### Exploring GitHub
+
+### From local to remote
+
+### Branching and merging
