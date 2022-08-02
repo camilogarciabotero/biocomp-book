@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.0.37">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="dcterms.date" content="2022-08-02">
-
-<title>Fundamentals of computational biology - 9&nbsp; NGS and TGS: principles</title>
+<title>Fundamentals of computational biology - Motif search</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -16,8 +13,70 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
-
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
@@ -26,8 +85,8 @@ ul.task-list{list-style: none;}
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chs-genomics/genome-assembly.html" rel="next">
-<link href="../chs-sequence-analysis/phylogenetic-reconstructions.html" rel="prev">
+<link href="../references.html" rel="next">
+<link href="../chs-bio-structural/intro-structural-bioinfo.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -38,8 +97,7 @@ ul.task-list{list-style: none;}
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -57,11 +115,8 @@ ul.task-list{list-style: none;}
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-<script async="" src="https://hypothes.is/embed.js"></script>
-
-
-<meta name="citation_title" content="[[9]{.chapter-number}&nbsp; [NGS and TGS: principles]{.chapter-title}]{#sec-ngs-tgs .quarto-section-identifier}">
+}</script><script async="" src="https://hypothes.is/embed.js"></script>
+<meta name="citation_title" content="Motif search">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
 <meta name="citation_publication_date" content="NaN-NaN-NaN">
@@ -69,25 +124,18 @@ ul.task-list{list-style: none;}
 <meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_publication_date=1984-05;,citation_issue=2;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;">
 <meta name="citation_reference" content="citation_title=Computing skills for biologists;,citation_author=Stefano Allesina;,citation_author=Madlen Wilmes;,citation_fulltext_html_url=http://dx.doi.org/10.2307/j.ctvc77jrc;,citation_publication_date=2019-01-15;,citation_journal_title=undefined;">
 </head>
-
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></h1>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Motif search</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Fundamentals of computational biology</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -104,7 +152,7 @@ ul.task-list{list-style: none;}
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
@@ -121,8 +169,8 @@ ul.task-list{list-style: none;}
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chs-command-line/welcome-to-command-line.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The command line</span></a>
   </div>
@@ -143,7 +191,7 @@ ul.task-list{list-style: none;}
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Sequence analysis</a>
@@ -151,8 +199,8 @@ ul.task-list{list-style: none;}
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></a>
   </div>
@@ -174,11 +222,11 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
+  <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Genomics</a>
@@ -186,8 +234,8 @@ ul.task-list{list-style: none;}
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chs-genomics/genome-assembly.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
   </div>
@@ -203,7 +251,7 @@ ul.task-list{list-style: none;}
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Structural bioinformatics</a>
@@ -211,14 +259,14 @@ ul.task-list{list-style: none;}
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Challenges</a>
@@ -226,54 +274,27 @@ ul.task-list{list-style: none;}
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-challenges-demos/demo-motif-search.html" class="sidebar-item-text sidebar-link">Motif search</a>
+  <a href="../chs-challenges-demos/demo-motif-search.html" class="sidebar-item-text sidebar-link active">Motif search</a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#platforms-yields" id="toc-platforms-yields" class="nav-link active" data-scroll-target="#platforms-yields"> <span class="header-section-number">9.1</span> Platforms yields</a></li>
-  <li><a href="#reads-main-differences" id="toc-reads-main-differences" class="nav-link" data-scroll-target="#reads-main-differences"> <span class="header-section-number">9.2</span> Reads main differences</a></li>
-  <li><a href="#illumina-principle-sequencing-by-synthesis" id="toc-illumina-principle-sequencing-by-synthesis" class="nav-link" data-scroll-target="#illumina-principle-sequencing-by-synthesis"> <span class="header-section-number">9.3</span> Illumina principle (sequencing by synthesis)</a>
-  <ul class="collapse">
-  <li><a href="#the-fastq-format" id="toc-the-fastq-format" class="nav-link" data-scroll-target="#the-fastq-format"> <span class="header-section-number">9.3.1</span> The fastq format</a></li>
-  <li><a href="#quality-assesment-of-illumina" id="toc-quality-assesment-of-illumina" class="nav-link" data-scroll-target="#quality-assesment-of-illumina"> <span class="header-section-number">9.3.2</span> Quality assesment of Illumina</a></li>
-  </ul></li>
-  <li><a href="#pacbio-principle-sequencing-by-incorporation" id="toc-pacbio-principle-sequencing-by-incorporation" class="nav-link" data-scroll-target="#pacbio-principle-sequencing-by-incorporation"> <span class="header-section-number">9.4</span> PacBio principle (sequencing by incorporation)</a>
-  <ul class="collapse">
-  <li><a href="#throughput-evolution" id="toc-throughput-evolution" class="nav-link" data-scroll-target="#throughput-evolution"> <span class="header-section-number">9.4.1</span> Throughput evolution</a></li>
-  <li><a href="#quality-assesment-of-pacbio" id="toc-quality-assesment-of-pacbio" class="nav-link" data-scroll-target="#quality-assesment-of-pacbio"> <span class="header-section-number">9.4.2</span> Quality assesment of PacBio</a></li>
-  </ul></li>
-  <li><a href="#oxford-nanopore-technology-ont-principle" id="toc-oxford-nanopore-technology-ont-principle" class="nav-link" data-scroll-target="#oxford-nanopore-technology-ont-principle"> <span class="header-section-number">9.5</span> Oxford Nanopore Technology (ONT) principle</a>
-  <ul class="collapse">
-  <li><a href="#platforms" id="toc-platforms" class="nav-link" data-scroll-target="#platforms"> <span class="header-section-number">9.5.1</span> Platforms</a></li>
-  <li><a href="#the-fast5-file-format" id="toc-the-fast5-file-format" class="nav-link" data-scroll-target="#the-fast5-file-format"> <span class="header-section-number">9.5.2</span> The fast5 file format</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-sequence-analysis/NGS-TGS-principles.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+</div>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title"><span id="sec-ngs-tgs" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title d-none d-lg-block">Motif search</h1>
 </div>
 
 
@@ -291,46 +312,27 @@ ul.task-list{list-style: none;}
   </div>
   
 
-</header>
-
-<section id="platforms-yields" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="platforms-yields"><span class="header-section-number">9.1</span> Platforms yields</h2>
-</section>
-<section id="reads-main-differences" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="reads-main-differences"><span class="header-section-number">9.2</span> Reads main differences</h2>
-</section>
-<section id="illumina-principle-sequencing-by-synthesis" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="illumina-principle-sequencing-by-synthesis"><span class="header-section-number">9.3</span> Illumina principle (sequencing by synthesis)</h2>
-<section id="the-fastq-format" class="level3" data-number="9.3.1">
-<h3 data-number="9.3.1" class="anchored" data-anchor-id="the-fastq-format"><span class="header-section-number">9.3.1</span> The fastq format</h3>
-</section>
-<section id="quality-assesment-of-illumina" class="level3" data-number="9.3.2">
-<h3 data-number="9.3.2" class="anchored" data-anchor-id="quality-assesment-of-illumina"><span class="header-section-number">9.3.2</span> Quality assesment of Illumina</h3>
-</section>
-</section>
-<section id="pacbio-principle-sequencing-by-incorporation" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="pacbio-principle-sequencing-by-incorporation"><span class="header-section-number">9.4</span> PacBio principle (sequencing by incorporation)</h2>
-<section id="throughput-evolution" class="level3" data-number="9.4.1">
-<h3 data-number="9.4.1" class="anchored" data-anchor-id="throughput-evolution"><span class="header-section-number">9.4.1</span> Throughput evolution</h3>
-</section>
-<section id="quality-assesment-of-pacbio" class="level3" data-number="9.4.2">
-<h3 data-number="9.4.2" class="anchored" data-anchor-id="quality-assesment-of-pacbio"><span class="header-section-number">9.4.2</span> Quality assesment of PacBio</h3>
-</section>
-</section>
-<section id="oxford-nanopore-technology-ont-principle" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="oxford-nanopore-technology-ont-principle"><span class="header-section-number">9.5</span> Oxford Nanopore Technology (ONT) principle</h2>
-<section id="platforms" class="level3" data-number="9.5.1">
-<h3 data-number="9.5.1" class="anchored" data-anchor-id="platforms"><span class="header-section-number">9.5.1</span> Platforms</h3>
-</section>
-<section id="the-fast5-file-format" class="level3" data-number="9.5.2">
-<h3 data-number="9.5.2" class="anchored" data-anchor-id="the-fast5-file-format"><span class="header-section-number">9.5.2</span> The fast5 file format</h3>
+</header><p>The first thing we must do is download the sequence of interest. In <a href="../chs-command-line/welcome-to-command-line.html#anatomy-of-a-command">Ch 1</a> the genome of <em>Bacillus tequilinsis</em> EA-CB0015 is propossed. There are several ways to do so. A simple way is to search in the NCBI databases for the entire genome and download as <code>FASTA</code> file (we cover the properties of this file format in <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html">Ch 5</a>).</p>
+<p>When inspecting the file we see the following lines at the top</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>NZ_CP048852.1 <span class="ex">Bacillus</span> tequilensis strain EA-CB0015 chromosome, complete genome</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ATGGAAAATATATTAGACCTGTGGAATCAAGCCCTTGCTCAAATCGAAAAAAAGTTGAGCAAACCGAGTTTTGAGACTTG</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">GATGAAATCCACCAAAGCCCACTCACTGCAGGGAGATACACTGACGATCACGGCTCCCAATGAATTTGCCAGAGACTGGC</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">TGGAGTCCAGATACTTGCATCTGATTGCAGATACTATATATGAATTAACCGGGGAAGAATTGAGCATTAAGTTTGTCATT</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">CCTCAAAATCAAGATGTTGAGGACTTTATGCCAAAGCCGCAAGTCAAAAAAGCGGTTAAAGAAGATACATCTGATTTTCC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The file is about 4 Mb and it is heavy to be opened in any editor. Therefore when looking for a pattern it becomes more useful the CLI.</p>
+<p>A first attempt to do is simply by using <code>grep</code> for the pattern presented on <a href="../chs-command-line/welcome-to-command-line.html#fig-motif">Fig.&nbsp;<span>1.5</span></a>. So a first problem you will find is to represen multiple characters in one posiont of the pattern. There is a fantastic tool to so and its called <em>regular expressions</em> (regex). a regex is a way to encode groups of characters using single characters. For instance the character <code>*</code> (wildcards) represents any character, so it groups all characters and it is used broadly on the CLI. There are many regex dialects however and for <code>grep</code> the dot <code>.</code> represents any character and when the pipe <code>|</code> represents an special operator in the CLI, for grep regex it represents and <code>OR</code> operator.</p>
+<p>So the second step is to create our regular expression. Note the there are six characteres in the expression that can adopt different characters. So our first regex is <code>TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT</code>. In the expression the parenthesis allow groups of characters.</p>
+<p>Now lets see if we can search for that pattern using <code>grep</code> and the appropiate option for using regex, which in this case is <code>-E</code>. Another simply way to use the <code>grep -E</code> combination is to use simple <code>egrep</code> command plus the <code>-c</code> option to count the number of <em>lines</em> where the pattern appears.</p>
+<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-1_37b963adc0b7d2acf92b04f2c77663eb">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">egrep</span> <span class="at">-c</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT"</span> data/GCF_012225885.1_ASM1222588v1_genomic.fna</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>43</code></pre>
+</div>
+</div>
 
 
-</section>
-</section>
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -529,16 +531,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../chs-sequence-analysis/phylogenetic-reconstructions.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Phylogenetics</span></span>
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Introduction to structural bioinformatics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chs-genomics/genome-assembly.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome assembly</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

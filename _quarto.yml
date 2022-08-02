@@ -45,8 +45,9 @@ book:
     - part: "Structural bioinformatics"
       chapters:
         - chs-bio-structural/intro-structural-bioinfo.qmd
-    # - part: "Challenges"
-    #   chapters:
+    - part: "Challenges"
+      chapters:
+        - chs-challenges-demos/demo-motif-search.qmd
     #     - chs-challenges-demos/demo-genome-searching.qmd
     #     - chs-challenges-demos/demo-sanger-processing.qmd
     #     - chs-challenges-demos/demo-sequence-alignment.qmd

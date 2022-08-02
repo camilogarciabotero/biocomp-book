@@ -1,3 +1,8 @@
+---
+execute: 
+  engine: knitr
+---
+
 # Motif search {.unnumbered}
 
 The first thing we must do is download the sequence of interest. In [Ch 1](../chs-command-line/welcome-to-command-line.qmd#anatomy-of-a-command) the genome of *Bacillus tequilinsis* EA-CB0015 is propossed. There are several ways to do so. A simple way is to search in the NCBI databases for the entire genome and download as `FASTA` file (we cover the properties of this file format in [Ch 5](../chs-sequence-analysis/introduction-to-sequence-analysis.qmd)).
@@ -14,6 +19,13 @@ CCTCAAAATCAAGATGTTGAGGACTTTATGCCAAAGCCGCAAGTCAAAAAAGCGGTTAAAGAAGATACATCTGATTTTCC
 
 The file is about 4 Mb and it is heavy to be opened in any editor. Therefore when looking for a pattern it becomes more useful the CLI.
 
-A first attempt to do is simply by using `grep` for the pattern presented on [Fig. @fig-motif]
+A first attempt to do is simply by using `grep` for the pattern presented on [Fig. @fig-motif]. So a first problem you will find is to represen multiple characters in one posiont of the pattern. There is a fantastic tool to so and its called *regular expressions* (regex). a regex is a way to encode groups of characters using single characters. For instance the character `*` (wildcards) represents any character, so it groups all characters and it is used broadly on the CLI. There are many regex dialects however and for `grep` the dot `.` represents any character and when the pipe `|` represents an special operator in the CLI, for grep regex it represents and `OR` operator.
 
-![](../chs-command-line/imgs-cli/motif.png)
+So the second step is to create our regular expression. Note the there are six characteres in the expression that can adopt different characters. So our first regex is `TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT`. In the expression the parenthesis allow groups of characters.
+
+Now lets see if we can search for that pattern using `grep` and the appropiate option for using regex, which in this case is `-E`. Another simply way to use the `grep -E` combination is to use simple `egrep` command plus the `-c` option to count the number of *lines* where the pattern appears.
+
+```{bash}
+#| eval: true
+egrep -c "TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT" data/GCF_012225885.1_ASM1222588v1_genomic.fna
+```

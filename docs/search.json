@@ -49,18 +49,18 @@
     "text": "1.4 Anatomy of a command\nThere is still many conventions by wich the parts of a command line might be called, yet a very standard convention is presented in Fig. 1.4\n\n\n\nFigure 1.4: A simple command and a convention to call its main components\n\n\nSome other for instance also tend to call the option as flag. This conventions are powerful becasue almost any command line interface display this structure (complex one add some other features and simple one tend to lack subcomands).\n\n\n\n\n\n\nChallenge\n\n\n\nBacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the resctriction-modification system (RM-System), which works by targeting a specific site called motif, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a motif logo which is a probabilistic representation of the nucleotides in a given position. Find the number of times the motif from Fig. 1.5 appears on B. tequilensis EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.\n\n\n\nFigure 1.5: A RM-system motif logo"
   },
   {
-    "objectID": "chs-command-line/welcome-to-command-line.html#some-great-operators-metacharacteres-in-bash",
-    "href": "chs-command-line/welcome-to-command-line.html#some-great-operators-metacharacteres-in-bash",
-    "title": "1  The command line",
-    "section": "1.6 Some great operators/ Metacharacteres in Bash",
-    "text": "1.6 Some great operators/ Metacharacteres in Bash\nFor more explanations on the basic commands in the command line we suggest to visit the first chapters of Computing skills for biologist from Allesina and Wilmes (2019)\n\n\n\n\nAllesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for Biologists,” January. https://doi.org/10.2307/j.ctvc77jrc."
-  },
-  {
     "objectID": "chs-command-line/welcome-to-command-line.html#intermediate-unix-commands",
     "href": "chs-command-line/welcome-to-command-line.html#intermediate-unix-commands",
     "title": "1  The command line",
     "section": "1.5 intermediate Unix commands",
     "text": "1.5 intermediate Unix commands\ngrep \nsed \ntr"
+  },
+  {
+    "objectID": "chs-command-line/welcome-to-command-line.html#some-great-operators-metacharacteres-in-bash",
+    "href": "chs-command-line/welcome-to-command-line.html#some-great-operators-metacharacteres-in-bash",
+    "title": "1  The command line",
+    "section": "1.6 Some great operators/ Metacharacteres in Bash",
+    "text": "1.6 Some great operators/ Metacharacteres in Bash\nFor more explanations on the basic commands in the command line we suggest to visit the first chapters of Computing skills for biologist from Allesina and Wilmes (2019)\n\n\n\n\nAllesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for Biologists,” January. https://doi.org/10.2307/j.ctvc77jrc."
   },
   {
     "objectID": "chs-command-line/git-and-github.html#github",
@@ -397,6 +397,13 @@
     "title": "13  Introduction to structural bioinformatics",
     "section": "13.3 PDB database introduction",
     "text": "13.3 PDB database introduction\nThe PDB database is one of the most important and ancient open biological database where all new protein structures are submitted. It is an international consortium where several regions work together to curate information.\nThe PDB in Europe (PDBe) is not only for proteins but form many other experimentally predicted macro-molecules (protein-protein interactions, peptides, RNA and so on).\nProtein structures are registered using a unique code of four characters.\nX-ray crystallography: is a chemical state of the macro-molecule where it is immobilized, therefore information correspond to one state of the structure, then crystal protein is submitted to an x-ray beam to generate a diffraction pattern.\nNMR spectroscopy: captures dynamic information of the protein, but generally resolves small proteins. The principle?\nElectron microscopy adapted to cryo-preservation allow proteins visualization."
+  },
+  {
+    "objectID": "chs-challenges-demos/demo-motif-search.html",
+    "href": "chs-challenges-demos/demo-motif-search.html",
+    "title": "Motif search",
+    "section": "",
+    "text": "When inspecting the file we see the following lines at the top\n>NZ_CP048852.1 Bacillus tequilensis strain EA-CB0015 chromosome, complete genome\nATGGAAAATATATTAGACCTGTGGAATCAAGCCCTTGCTCAAATCGAAAAAAAGTTGAGCAAACCGAGTTTTGAGACTTG\nGATGAAATCCACCAAAGCCCACTCACTGCAGGGAGATACACTGACGATCACGGCTCCCAATGAATTTGCCAGAGACTGGC\nTGGAGTCCAGATACTTGCATCTGATTGCAGATACTATATATGAATTAACCGGGGAAGAATTGAGCATTAAGTTTGTCATT\nCCTCAAAATCAAGATGTTGAGGACTTTATGCCAAAGCCGCAAGTCAAAAAAGCGGTTAAAGAAGATACATCTGATTTTCC\nThe file is about 4 Mb and it is heavy to be opened in any editor. Therefore when looking for a pattern it becomes more useful the CLI.\nA first attempt to do is simply by using grep for the pattern presented on Fig. 1.5. So a first problem you will find is to represen multiple characters in one posiont of the pattern. There is a fantastic tool to so and its called regular expressions (regex). a regex is a way to encode groups of characters using single characters. For instance the character * (wildcards) represents any character, so it groups all characters and it is used broadly on the CLI. There are many regex dialects however and for grep the dot . represents any character and when the pipe | represents an special operator in the CLI, for grep regex it represents and OR operator.\nSo the second step is to create our regular expression. Note the there are six characteres in the expression that can adopt different characters. So our first regex is TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT. In the expression the parenthesis allow groups of characters.\nNow lets see if we can search for that pattern using grep and the appropiate option for using regex, which in this case is -E. Another simply way to use the grep -E combination is to use simple egrep command plus the -c option to count the number of lines where the pattern appears.\n\negrep -c \"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT\" data/GCF_012225885.1_ASM1222588v1_genomic.fna\n\n43"
   },
   {
     "objectID": "references.html",
