@@ -88,10 +88,10 @@ format:
     code-copy: hover
     # monofont: juliamono
     # mainfont: sora
-  # pdf:
-  #   documentclass: scrreprt
-  #   code-block-border-left: false
-  #   toc-depth: 2
+  pdf:
+    documentclass: book
+    code-block-border-left: false
+    toc-depth: 2
   # pdf:
   #   documentclass: scrreprt
       
