@@ -137,11 +137,15 @@ Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One
 ## intermediate Unix commands
 
 ``` bash
-sed 
+grep 
 ```
 
 ``` bash
-grep 
+sed 
+```
+
+```bash
+tr
 ```
 
 For more explanations on the basic commands in the command line we suggest to visit the first chapters of *Computing skills for biologist* from @allesina2019
