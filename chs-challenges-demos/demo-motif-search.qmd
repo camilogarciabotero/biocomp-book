@@ -1,0 +1,19 @@
+# Motif search {.unnumbered}
+
+The first thing we must do is download the sequence of interest. In [Ch 1](../chs-command-line/welcome-to-command-line.qmd#anatomy-of-a-command) the genome of *Bacillus tequilinsis* EA-CB0015 is propossed. There are several ways to do so. A simple way is to search in the NCBI databases for the entire genome and download as `FASTA` file (we cover the properties of this file format in [Ch 5](../chs-sequence-analysis/introduction-to-sequence-analysis.qmd)).
+
+When inspecting the file we see the following lines at the top
+
+```bash
+>NZ_CP048852.1 Bacillus tequilensis strain EA-CB0015 chromosome, complete genome
+ATGGAAAATATATTAGACCTGTGGAATCAAGCCCTTGCTCAAATCGAAAAAAAGTTGAGCAAACCGAGTTTTGAGACTTG
+GATGAAATCCACCAAAGCCCACTCACTGCAGGGAGATACACTGACGATCACGGCTCCCAATGAATTTGCCAGAGACTGGC
+TGGAGTCCAGATACTTGCATCTGATTGCAGATACTATATATGAATTAACCGGGGAAGAATTGAGCATTAAGTTTGTCATT
+CCTCAAAATCAAGATGTTGAGGACTTTATGCCAAAGCCGCAAGTCAAAAAAGCGGTTAAAGAAGATACATCTGATTTTCC
+```
+
+The file is about 4 Mb and it is heavy to be opened in any editor. Therefore when looking for a pattern it becomes more useful the CLI.
+
+A first attempt to do is simply by using `grep` for the pattern presented on [Fig. @fig-motif]
+
+![](../chs-command-line/imgs-cli/motif.png)

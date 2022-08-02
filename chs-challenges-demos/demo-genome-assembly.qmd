@@ -1,0 +1,62 @@
+# Genome assembly {.unnumbered}
+
+::: {.callout-warning}
+## Challenge
+Your professor has sequenced a bacterial isolate using PacBio and Nanopore sequencing methods and has got the FASTQ files from both technologies. Now he needs to know the quality and quantity of these data before start any other analysis and ask you to assess the data. He needs to know how many sequences there are, how many base pairs (in GB) are there and the N50. He is also interested in see a visualization of the i) number of bases vs. sequence lengths (log transformed) and ii) the read length vs. read quality vs. read number.
+
+He ask you to document every step and to conclude what data should be used.
+:::
+
+
+
+## Download the reads
+
+``` {#downloading-seqs .zsh .important}
+wget
+```
+
+## Assess read qualities
+
+When using illumina `fastqc` is a very fast alternative. For nanopore `nanplot` will do the job.
+
+``` zsh
+fastqc
+```
+
+## Exploring assemblers
+
+One of the most popular genome assemblers for NGS is `spades` whereas for TGS `flye` has been widely used
+
+### Shovill: spades under the hood
+
+[`shovill`](https://github.com/tseemann/shovill) is a pipeline that enables pre and post processing of genomic data. It can be tunned to several tools for the processing steps and also to select different standalone assemblers
+
+``` zsh
+shovill --outdir MxanthusIllumina\
+        --R1 R1.fq.gz\
+        --R2 R2.fq.gz\
+        --trim\
+        --cpus 32
+```
+
+### Dragonflye: flye under the hood
+
+Similar to `shovill` (and inspired by it) [`dragonflye`]() is a pipeline that enables several processing steps of genomic data be
+
+``` zsh
+dragonflye --outdir MxanthusNanopore\
+           --gsize 9Mb\
+           --trim\
+           --reads ont-readsfastq.gz\
+           --racon 5
+```
+
+``` zsh
+wget
+```
+
+Since we are trying to assemble a bacterial genome, computer memory appears to be a limiting features of a local machine. Then, a computer cluster with high performance turns out to be an important need.
+
+First we need environment installations, therefore its important to have conda environments with the assemblers and other programs (`conda create -c bioconda dragonflye dragonflye` and `conda create -c bioconda shovill shovill`). That way both assemblers pipelines will lie in separate environment avoiding possible dependenies problems
+
+We will use [Apolo]() computer cluster which uses [Slurm]() as the computer system workload manager (i.e a program that manages the time and resources of the computer).
