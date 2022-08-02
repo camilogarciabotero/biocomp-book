@@ -107,7 +107,6 @@ rm
 ::: {.callout-tip}
 When having a long command, it becomes practically to go to the begining or to the end of it. To do so you can use the key combination `Ctrl + A` and `Ctrl + E` respectively.
 
-![Go to the beggining of a command](imgs-cli/ctrl-a.png)
 :::
 
 ```bash
@@ -116,7 +115,7 @@ rmdir
 
 ## Anatomy of a command
 
-There is still many conventions by wich the parts of a command line might be called, yet a very standard convention is presented in @fig-command
+There is still many conventions by wich the parts of a command line might be called, yet a very standard convention is presented in [Fig. @fig-command]
 
 ![A simple command and a convention to call its main components](imgs-cli/command-anatomy.png){#fig-command}
 
@@ -125,7 +124,7 @@ Some other for instance also tend to call the `option` as `flag`. This conventio
 
 ::: {.callout-warning}
 # Challenge
-Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the resctriction-modification system (RM-System), which works by targeting a specific site called *motif*, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a *motif logo* which is a probabilistic representation of the nucleotides in a given position. Find the number of times the motif from @fig-motif appears on *B. tequilensis* EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.
+Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the resctriction-modification system (RM-System), which works by targeting a specific site called *motif*, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a *motif logo* which is a probabilistic representation of the nucleotides in a given position. Find the number of times the motif from [Fig. @fig-motif] appears on *B. tequilensis* EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.
 
 ![A RM-system motif logo](imgs-cli/motif.png){#fig-motif}
 :::

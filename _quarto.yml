@@ -92,6 +92,8 @@ format:
     documentclass: book
     code-block-border-left: false
     toc-depth: 2
+    lof: true
+    lot: true
   # pdf:
   #   documentclass: scrreprt
       
