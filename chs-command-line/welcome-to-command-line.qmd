@@ -106,7 +106,6 @@ rm
 
 ::: {.callout-tip}
 When having a long command, it becomes practically to go to the begining or to the end of it. To do so you can use the key combination `Ctrl + A` and `Ctrl + E` respectively.
-
 :::
 
 ```bash
@@ -130,10 +129,6 @@ Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One
 :::
 
 
-## Some great operators/ Metacharacteres in Bash
-
-
-
 ## intermediate Unix commands
 
 ``` bash
@@ -147,5 +142,11 @@ sed
 ```bash
 tr
 ```
+
+
+## Some great operators/ Metacharacteres in Bash
+
+
+
 
 For more explanations on the basic commands in the command line we suggest to visit the first chapters of *Computing skills for biologist* from @allesina2019

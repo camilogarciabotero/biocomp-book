@@ -52,15 +52,15 @@
     "objectID": "chs-command-line/welcome-to-command-line.html#some-great-operators-metacharacteres-in-bash",
     "href": "chs-command-line/welcome-to-command-line.html#some-great-operators-metacharacteres-in-bash",
     "title": "1  The command line",
-    "section": "1.5 Some great operators/ Metacharacteres in Bash",
-    "text": "1.5 Some great operators/ Metacharacteres in Bash"
+    "section": "1.6 Some great operators/ Metacharacteres in Bash",
+    "text": "1.6 Some great operators/ Metacharacteres in Bash\nFor more explanations on the basic commands in the command line we suggest to visit the first chapters of Computing skills for biologist from Allesina and Wilmes (2019)\n\n\n\n\nAllesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for Biologists,” January. https://doi.org/10.2307/j.ctvc77jrc."
   },
   {
     "objectID": "chs-command-line/welcome-to-command-line.html#intermediate-unix-commands",
     "href": "chs-command-line/welcome-to-command-line.html#intermediate-unix-commands",
     "title": "1  The command line",
-    "section": "1.6 intermediate Unix commands",
-    "text": "1.6 intermediate Unix commands\nsed \ngrep \nFor more explanations on the basic commands in the command line we suggest to visit the first chapters of Computing skills for biologist from Allesina and Wilmes (2019)\n\n\n\n\nAllesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for Biologists,” January. https://doi.org/10.2307/j.ctvc77jrc."
+    "section": "1.5 intermediate Unix commands",
+    "text": "1.5 intermediate Unix commands\ngrep \nsed \ntr"
   },
   {
     "objectID": "chs-command-line/git-and-github.html#github",
