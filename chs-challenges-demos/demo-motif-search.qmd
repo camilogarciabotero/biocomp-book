@@ -50,7 +50,6 @@ tr -d '\n' < data/Bteq-genome.fasta
 The genome now lies in an entire and unique line along with its titel. A way to chain the commands without creating intermediate files is by using the pipe `|` character. At the end we will use `wc -l` to count the ocurrence (although `grep` has its own count option `\c` it is inconvinient because it will count the lines and now the lines of the exact matchs provided by the `-o` option and as we hace just one line, then only will count to 1).
 
 ```{bash}
-
 tr -d '\n' < data/Bteq-genome.fasta |
     egrep -o "TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT" |
     wc -l
@@ -59,7 +58,6 @@ tr -d '\n' < data/Bteq-genome.fasta |
 Are there yet? Well it turns out that the genome file contains only the 5'-3' strand of the genome. What about the other strands patterns? To search them we need to generate the reverse-complement (RC) of the motif so we are sure that they will appear when looking the 5'-3' strand. The RC regex will be `ACC(T|G)(.)(T|C)(T|A)(.)(T|A)TTTA"` and adding this regex to the search will be:
 
 ```{bash}
-
 tr -d '\n' < data/Bteq-genome.fasta |
     egrep -o "TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT|ACC(T|G)(.)(T|C)(T|A)(.)(T|A)TTTA" |
     wc -l

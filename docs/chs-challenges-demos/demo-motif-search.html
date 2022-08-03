@@ -342,21 +342,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>NZ_CP048852.1 <span class="ex">Bacillus</span> tequilensis strain EA-CB0015 chromosome, complete genomeATGGAAAATATATTAGACCTGTGGAATCAAGCCCTTGCTCAAATCGAAAAAAAGTTGAGCAAACCGAGTTTTGAGACTTGGATGAAATCCACCAAAGCCCACTCACTGCAGGGAGATACACTGACGATCACGGCTCCCAATGAATTTGCCAGAGACTGGCTGGAGTCCAGATACTTGCATCTGATTGCAGATACTATATATGAATTAACCGGGGAAGAATTGAGCATTAAGTTTGTCATTCCTCAAAATCAAGATGTTGAGGACTTTATGCCAAAGCCGCAAGTCAAAAAAGCGGTTAAAGAAGATACATCTGATTTTCC...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The genome now lies in an entire and unique line along with its titel. A way to chain the commands without creating intermediate files is by using the pipe <code>|</code> character. At the end we will use <code>wc -l</code> to count the ocurrence (although <code>grep</code> has its own count option <code>\c</code> it is inconvinient because it will count the lines and now the lines of the exact matchs provided by the <code>-o</code> option and as we hace just one line, then only will count to 1).</p>
-<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-4_07809ff853f52faaaed14eae6c5639e0">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="at">-d</span> <span class="st">'\n'</span> <span class="op">&lt;</span> data/Bteq-genome.fasta <span class="kw">|</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">egrep</span> <span class="at">-o</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT"</span> <span class="kw">|</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-4_4c4f3e438bf10f454bdb88b48e97a104">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="at">-d</span> <span class="st">'\n'</span> <span class="op">&lt;</span> data/Bteq-genome.fasta <span class="kw">|</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">egrep</span> <span class="at">-o</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT"</span> <span class="kw">|</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      50</code></pre>
 </div>
 </div>
 <p>Are there yet? Well it turns out that the genome file contains only the 5’-3’ strand of the genome. What about the other strands patterns? To search them we need to generate the reverse-complement (RC) of the motif so we are sure that they will appear when looking the 5’-3’ strand. The RC regex will be <code>ACC(T|G)(.)(T|C)(T|A)(.)(T|A)TTTA"</code> and adding this regex to the search will be:</p>
-<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-5_3d7b1fa04c2eda03268671aeebb1cef3">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="at">-d</span> <span class="st">'\n'</span> <span class="op">&lt;</span> data/Bteq-genome.fasta <span class="kw">|</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">egrep</span> <span class="at">-o</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT|ACC(T|G)(.)(T|C)(T|A)(.)(T|A)TTTA"</span> <span class="kw">|</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-5_5019f682a6b1833c24afbd1cc5723be0">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="at">-d</span> <span class="st">'\n'</span> <span class="op">&lt;</span> data/Bteq-genome.fasta <span class="kw">|</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">egrep</span> <span class="at">-o</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT|ACC(T|G)(.)(T|C)(T|A)(.)(T|A)TTTA"</span> <span class="kw">|</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      94</code></pre>
 </div>
