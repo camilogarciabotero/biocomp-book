@@ -321,12 +321,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">CCTCAAAATCAAGATGTTGAGGACTTTATGCCAAAGCCGCAAGTCAAAAAAGCGGTTAAAGAAGATACATCTGATTTTCC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The file is about 4 Mb and it is heavy to be opened in any editor. Therefore when looking for a pattern it becomes more useful the CLI.</p>
 <p>A first attempt to do is simply by using <code>grep</code> for the pattern presented on <a href="../chs-command-line/welcome-to-command-line.html#fig-motif">Fig.&nbsp;<span>1.5</span></a>. So a first problem you will find is to represen multiple characters in one posiont of the pattern. There is a fantastic tool to so and its called <em>regular expressions</em> (regex). a regex is a way to encode groups of characters using single characters. For instance the character <code>*</code> (wildcards) represents any character, so it groups all characters and it is used broadly on the CLI. There are many regex dialects however and for <code>grep</code> the dot <code>.</code> represents any character and when the pipe <code>|</code> represents an special operator in the CLI, for grep regex it represents and <code>OR</code> operator.</p>
-<p>So the second step is to create our regular expression. Note the there are six characteres in the expression that can adopt different characters. So our first regex is <code>TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT</code>. In the expression the parenthesis allow groups of characters.</p>
+<p>So, the second step is to create our regular expression. Note the there are six characteres in the expression that can adopt different characters. So our first regex is <code>TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT</code>. In the expression the parenthesis allow groups of characters.</p>
 <p>Now lets see if we can search for that pattern using <code>grep</code> and the appropiate option for using regex, which in this case is <code>-E</code>. Another simply way to use the <code>grep -E</code> combination is to use simple <code>egrep</code> command plus the <code>-c</code> option to count the number of <em>lines</em> where the pattern appears.</p>
 <div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-1_37b963adc0b7d2acf92b04f2c77663eb">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">egrep</span> <span class="at">-c</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT"</span> data/GCF_012225885.1_ASM1222588v1_genomic.fna</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>43</code></pre>
+</div>
+</div>
+<p>Is this the solution? One might think it is solved. However, there is several issues to be aware. First <code>egrep -c</code> is counting the lines, what if in one line there are multiple matches? Then, the approach will showing a value under the actual number of motifs. So a way to solve that is to capture and extract the matches and print them out. A way to do that is to use the option <code>-o</code> which actually prints only the matching part of the lines, and then count them.</p>
+<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-2_0eb344b0d0ced8a9d6e0f22e73ce967d">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">egrep</span> <span class="at">-oc</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT"</span> data/GCF_012225885.1_ASM1222588v1_genomic.fna</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>43</code></pre>
+</div>
+</div>
+<p>The solution then:</p>
+<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-3_157db9001485b41a46ae6abb522752a7">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="at">-d</span> <span class="st">'\n'</span> <span class="op">&lt;</span> data/GCF_012225885.1_ASM1222588v1_genomic.fna <span class="kw">|</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">egrep</span> <span class="at">-o</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT|ACC(T|G)(.)(T|C)(T|A)(.)(T|A)TTTA"</span> <span class="kw">|</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      94</code></pre>
 </div>
 </div>
 
