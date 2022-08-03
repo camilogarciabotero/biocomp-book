@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.0.37">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2022-08-02">
+<meta name="dcterms.date" content="2022-08-03">
 <title>Fundamentals of computational biology - Motif search</title>
 <style>
 code{white-space: pre-wrap;}
@@ -305,7 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-08-02</p>
+      <p class="date">2022-08-03</p>
     </div>
   </div>
     
@@ -323,24 +323,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A first attempt to do is simply by using <code>grep</code> for the pattern presented on <a href="../chs-command-line/welcome-to-command-line.html#fig-motif">Fig.&nbsp;<span>1.5</span></a>. So a first problem you will find is to represen multiple characters in one posiont of the pattern. There is a fantastic tool to so and its called <em>regular expressions</em> (regex). a regex is a way to encode groups of characters using single characters. For instance the character <code>*</code> (wildcards) represents any character, so it groups all characters and it is used broadly on the CLI. There are many regex dialects however and for <code>grep</code> the dot <code>.</code> represents any character and when the pipe <code>|</code> represents an special operator in the CLI, for grep regex it represents and <code>OR</code> operator.</p>
 <p>So, the second step is to create our regular expression. Note the there are six characteres in the expression that can adopt different characters. So our first regex is <code>TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT</code>. In the expression the parenthesis allow groups of characters.</p>
 <p>Now lets see if we can search for that pattern using <code>grep</code> and the appropiate option for using regex, which in this case is <code>-E</code>. Another simply way to use the <code>grep -E</code> combination is to use simple <code>egrep</code> command plus the <code>-c</code> option to count the number of <em>lines</em> where the pattern appears.</p>
-<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-1_37b963adc0b7d2acf92b04f2c77663eb">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">egrep</span> <span class="at">-c</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT"</span> data/GCF_012225885.1_ASM1222588v1_genomic.fna</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-1_3301430eaaccfc873b42f696d6d47035">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">egrep</span> <span class="at">-c</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT"</span> data/Bteq-genome.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>43</code></pre>
 </div>
 </div>
-<p>Is this the solution? One might think it is solved. However, there is several issues to be aware. First <code>egrep -c</code> is counting the lines, what if in one line there are multiple matches? Then, the approach will showing a value under the actual number of motifs. So a way to solve that is to capture and extract the matches and print them out. A way to do that is to use the option <code>-o</code> which actually prints only the matching part of the lines, and then count them.</p>
-<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-2_0eb344b0d0ced8a9d6e0f22e73ce967d">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">egrep</span> <span class="at">-oc</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT"</span> data/GCF_012225885.1_ASM1222588v1_genomic.fna</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Is this the solution? One might think it is solved. However, there are several issues to be aware. First <code>egrep -c</code> is counting the lines, what if in one line there are multiple matches? Then, the approach will showing a value under the actual number of motifs. So a way to solve that is to capture and extract the matches and print them out. A way to do that is to use the option <code>-o</code> which actually prints only the matching part of the lines, and then count them.</p>
+<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-2_28f538c0d69bc50b553ede9a70e34a0e">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">egrep</span> <span class="at">-oc</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT"</span> data/Bteq-genome.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>43</code></pre>
 </div>
 </div>
-<p>The solution then:</p>
-<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-3_157db9001485b41a46ae6abb522752a7">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="at">-d</span> <span class="st">'\n'</span> <span class="op">&lt;</span> data/GCF_012225885.1_ASM1222588v1_genomic.fna <span class="kw">|</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">egrep</span> <span class="at">-o</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT|ACC(T|G)(.)(T|C)(T|A)(.)(T|A)TTTA"</span> <span class="kw">|</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The outcome is the same tough. So is it solved? Every NCBI genome that is downloaded display a distinct character besides de nucleotide sequence. Every several number of nucleotides there is a new line <code>\n</code> that enables the wrapping file into multiple lines. Therefore some motifs could be shoped by the <code>\n</code> character so they will never appear with the regex used. A way to circunvent this issue is deleting the <code>\n</code> in the entire file. We can easily do that with the translate <code>tr</code> command:</p>
+<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-3_f3932454561c1534ab5516f65b4c36f0">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="at">-d</span> <span class="st">'\n'</span> <span class="op">&lt;</span> data/Bteq-genome.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>NZ_CP048852.1 <span class="ex">Bacillus</span> tequilensis strain EA-CB0015 chromosome, complete genomeATGGAAAATATATTAGACCTGTGGAATCAAGCCCTTGCTCAAATCGAAAAAAAGTTGAGCAAACCGAGTTTTGAGACTTGGATGAAATCCACCAAAGCCCACTCACTGCAGGGAGATACACTGACGATCACGGCTCCCAATGAATTTGCCAGAGACTGGCTGGAGTCCAGATACTTGCATCTGATTGCAGATACTATATATGAATTAACCGGGGAAGAATTGAGCATTAAGTTTGTCATTCCTCAAAATCAAGATGTTGAGGACTTTATGCCAAAGCCGCAAGTCAAAAAAGCGGTTAAAGAAGATACATCTGATTTTCC...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The genome now lies in an entire and unique line along with its titel. A way to chain the commands without creating intermediate files is by using the pipe <code>|</code> character. At the end we will use <code>wc -l</code> to count the ocurrence (although <code>grep</code> has its own count option <code>\c</code> it is inconvinient because it will count the lines and now the lines of the exact matchs provided by the <code>-o</code> option and as we hace just one line, then only will count to 1).</p>
+<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-4_07809ff853f52faaaed14eae6c5639e0">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="at">-d</span> <span class="st">'\n'</span> <span class="op">&lt;</span> data/Bteq-genome.fasta <span class="kw">|</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">egrep</span> <span class="at">-o</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT"</span> <span class="kw">|</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      50</code></pre>
+</div>
+</div>
+<p>Are there yet? Well it turns out that the genome file contains only the 5’-3’ strand of the genome. What about the other strands patterns? To search them we need to generate the reverse-complement (RC) of the motif so we are sure that they will appear when looking the 5’-3’ strand. The RC regex will be <code>ACC(T|G)(.)(T|C)(T|A)(.)(T|A)TTTA"</code> and adding this regex to the search will be:</p>
+<div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-5_3d7b1fa04c2eda03268671aeebb1cef3">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="at">-d</span> <span class="st">'\n'</span> <span class="op">&lt;</span> data/Bteq-genome.fasta <span class="kw">|</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">egrep</span> <span class="at">-o</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT|ACC(T|G)(.)(T|C)(T|A)(.)(T|A)TTTA"</span> <span class="kw">|</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      94</code></pre>
 </div>
