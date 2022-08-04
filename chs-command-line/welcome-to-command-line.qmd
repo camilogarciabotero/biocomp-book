@@ -1,6 +1,6 @@
 # The command line {#sec-cli}
 
-> In this chapter we will explore the fundamentals of the command line interface (aka CLI). We will distinguish the differences between Unix, CLI, Bash and Terminal and other concepts from the computer sciences. 
+> In this chapter we will explore the fundamentals of the command line interface (aka CLI). We will distinguish the differences between Unix, CLI, Bash and Terminal and other concepts from the computer sciences.
 >
 > As you will see the CLI is composed of several programs enabling the interaction with the machine, we will discuss some of the basics to navigate your machine, and some advance one that enable complex operations and automating tasks.
 
@@ -10,10 +10,10 @@ Before landing into the CLI let us consider the Unix concept. The first question
 
 ![A **terminal** app displaying common features of the command line interface](imgs-cli/terminal.png){#fig-terminal fig-align="center"}
 
-Almost every computer has a way to interact with or access to the inner elements of the computer. Such interface is called the the command-line-interface [Fig. @fig-terminal]. 
-
+Almost every computer has a way to interact with or access to the inner elements of the computer. Such interface is called the the command-line-interface [Fig. @fig-terminal].
 
 ## File paths
+
 Programs, files and directories on every machine (with Unix-like OS) display hierarchical paths (routes), starting out from the **root** (represented by the back-slash character `/`). The **root** represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths [Fig. @fig-tree]
 
 ![A figure displaying tree-like structure of the programs in a machine with macOS](imgs-cli/dir-tree.png){#fig-tree fig-align="center"}
@@ -26,7 +26,7 @@ tree -d -L 1
 ```
 :::
 
-There are basically **two** ways to explore or navigate your file system. If you always reprent it from the root, then you are presenting an **absolute path**. For instance the absoulte path to my desktop is (`/Users/camilogarcia/Desktop`). 
+There are basically **two** ways to explore or navigate your file system. If you always reprent it from the root, then you are presenting an **absolute path**. For instance the absoulte path to my desktop is (`/Users/camilogarcia/Desktop`).
 
 ## Basic Unix commands
 
@@ -36,14 +36,16 @@ Given that the vast majority of file systems are orginzed in file paths, the fir
 
 To know where you are you can see your current location, that is to *print your working directory* using the `pwd` command.
 
-```bash
+``` bash
 pwd
 ```
+
 ### Change to other directory
 
-```bash
+``` bash
 cd test-dir
 ```
+
 ::: {.callout-tip .column-margin}
 Some basic arguments to navigate across your terminal:
 
@@ -57,14 +59,13 @@ cd -  # change to previous dir
 
 ### Listing files
 
-```bash
+``` bash
 ls 
 ```
 
 ::: {.callout-tip .column-margin}
 You can navigate your executed commands by typing {{< fa arrow-up >}} or {{< fa arrow-down >}}.
 :::
-
 
 ### Making new directories
 
@@ -100,15 +101,15 @@ When using the CLI at first its common to feal quite slow. Then, a very useful t
 
 ### Removing files or directories
 
-```bash
+``` bash
 rm
 ```
 
-::: {.callout-tip}
+::: callout-tip
 When having a long command, it becomes practically to go to the begining or to the end of it. To do so you can use the key combination `Ctrl + A` and `Ctrl + E` respectively.
 :::
 
-```bash
+``` bash
 rmdir
 ```
 
@@ -120,14 +121,13 @@ There is still many conventions by wich the parts of a command line might be cal
 
 Some other for instance also tend to call the `option` as `flag`. This conventions are powerful becasue almost any command line interface display this structure (complex one add some other features and simple one tend to lack subcomands).
 
-
-::: {.callout-warning}
+::: callout-warning
 # Challenge
+
 Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the resctriction-modification system (RM-System), which works by targeting a specific site called *motif*, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a *motif logo* which is a probabilistic representation of the nucleotides in a given position. Find the number of times the motif from [Fig. @fig-motif] appears on *B. tequilensis* EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.
 
 ![A RM-system motif logo](imgs-cli/motif.png){#fig-motif}
 :::
-
 
 ## intermediate Unix commands
 
@@ -139,14 +139,10 @@ grep
 sed 
 ```
 
-```bash
+``` bash
 tr
 ```
 
-
 ## Some great operators/ Metacharacteres in Bash
-
-
-
 
 For more explanations on the basic commands in the command line we suggest to visit the first chapters of *Computing skills for biologist* from @allesina2019
