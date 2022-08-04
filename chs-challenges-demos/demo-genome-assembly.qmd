@@ -1,3 +1,8 @@
+---
+execute:
+  freeze: true
+---
+
 # Genome assembly {.unnumbered}
 
 ::: {.callout-warning}

@@ -1,3 +1,7 @@
+---
+execute:
+  freeze: true
+---
 # Phylogenetic analysis
 
 ::: {.callout-warning}

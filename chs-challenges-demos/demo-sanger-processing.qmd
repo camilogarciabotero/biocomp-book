@@ -1,3 +1,8 @@
+---
+execute:
+  freeze: true
+---
+
 # Sanger processing
 
 ::: {.callout-warning}

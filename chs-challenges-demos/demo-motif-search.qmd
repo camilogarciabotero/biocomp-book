@@ -1,6 +1,7 @@
 ---
 execute: 
   engine: knitr
+  freeze: auto
 ---
 
 # Motif search
@@ -64,7 +65,7 @@ tr -d '\n' < data/Bteq-genome.fasta |
     wc -l
 ```
 
-Are there yet? Well it turns out that the genome file contains only the 5'-3' strand of the genome. What about the other strands patterns? To search them we need to generate the reverse-complement (RC) of the motif so we are sure that they will appear when looking the 5'-3' strand. The RC regex will be `ACC(T|G)(.)(T|C)(T|A)(.)(T|A)TTTA"` and adding this regex to the search will be:
+Are there yet? Well it turns out that the genome file contains only the 5'-3' strand of the genome. What about the other strands patterns? To search them we need to generate the reverse-complement (RC) of the motif so we are sure that they will appear when looking the 5'-3' strand. The RC regex will be `ACC(T|G)(.)(T|C)(T|A)(.)(T|A)TTTA"` and adding this regex to the search willl be:
 
 ```{bash}
 tr -d '\n' < data/Bteq-genome.fasta |

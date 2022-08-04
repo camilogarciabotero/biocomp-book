@@ -372,7 +372,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>      50</code></pre>
 </div>
 </div>
-<p>Are there yet? Well it turns out that the genome file contains only the 5’-3’ strand of the genome. What about the other strands patterns? To search them we need to generate the reverse-complement (RC) of the motif so we are sure that they will appear when looking the 5’-3’ strand. The RC regex will be <code>ACC(T|G)(.)(T|C)(T|A)(.)(T|A)TTTA"</code> and adding this regex to the search will be:</p>
+<p>Are there yet? Well it turns out that the genome file contains only the 5’-3’ strand of the genome. What about the other strands patterns? To search them we need to generate the reverse-complement (RC) of the motif so we are sure that they will appear when looking the 5’-3’ strand. The RC regex will be <code>ACC(T|G)(.)(T|C)(T|A)(.)(T|A)TTTA"</code> and adding this regex to the search willl be:</p>
 <div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-5_5019f682a6b1833c24afbd1cc5723be0">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="at">-d</span> <span class="st">'\n'</span> <span class="op">&lt;</span> data/Bteq-genome.fasta <span class="kw">|</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">egrep</span> <span class="at">-o</span> <span class="st">"TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT|ACC(T|G)(.)(T|C)(T|A)(.)(T|A)TTTA"</span> <span class="kw">|</span></span>

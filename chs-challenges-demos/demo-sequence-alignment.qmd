@@ -1,3 +1,7 @@
+---
+execute:
+  freeze: true
+---
 # Multiple seq. analysis
 
 ::: {.callout-warning}

@@ -1,3 +1,8 @@
+---
+execute:
+  freeze: true
+---
+
 # Sequence reads assesment
 
 ::: {.callout-warning}
