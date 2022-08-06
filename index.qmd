@@ -3,15 +3,15 @@
 ::: callout-caution
 This book is a work in progress
 :::
+We started this book with the aim of compiling the lectures of the course Fundamentals of Computational Biology offered at Universidad EAFIT for undergrad students in Biology. The course has been taught from different perspectives from its creation, yet the last iteration was divided into five introductory modules to i) Unix, ii) sequence analysis, iii) genomics, iii) metagenomics iv) structural biology.
 
-We started this book with the aim of compiling the lectures of the course Fundamentals of Computational Biology offered at Universidad EAFIT for undergrad students in Biology. The course has been taught from different perspectives from its creation, yet the last iteration was divided into three modules. i) introduction to Unix (4 lectures) ii) introduction to sequence analysis and genomics (7 lectures) and iii) principles of structural biology (4 lectures).
 
-Lectures are focused on a theoretical-practical approach where basic concepts from biology, bioinformatics and computer science and interleave with the practice to solve challenges. Excercised or challenges are designed to improve stundents abilities that are likely to be involved in real-life problems in computational biology.
+Lectures are focused on a theoretical-practical approach where basic concepts from biology, bioinformatics and computer science and interleave with the practice to solve challenges. Exercised or challenges are designed to improve students' abilities that are likely to be involved in real-life problems in computational biology.
 
 ## Learning features {.unnumbered}
 
 ::: callout-note
-Sometimes other fields might add interested value to the understanding of the computational biology area. This feauture remarks some of them and aim to explain these intersections.
+Sometimes other fields might add interested value to the understanding of the computational biology area. This feature remarks some of them and aim to explain these intersections.
 :::
 
 ::: callout-tip
@@ -31,7 +31,7 @@ When experimenting with the CLI and many other computational tools it is common 
 ::: callout-warning
 # Challenges
 
-Since focused on a competences learning approach we have highlighted several real-life (but basic) *challenges* a researcher faces when approaching computational biology problem (from tool selection, usage and result analysis). Therefore the book section *challenges* presents a selection of these problems that will later be apporached by a computational biology strategy (mainly from the CLI).
+Since focused on a competences learning approach we have highlighted several real-life (but basic) *challenges* a researcher faces when approaching computational biology problem (from tool selection, usage and result analysis). Therefore the book section *challenges* presents a selection of these problems that will later be approached by a computational biology strategy (mainly from the CLI).
 :::
 
 ::: callout

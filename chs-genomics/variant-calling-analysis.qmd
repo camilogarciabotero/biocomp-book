@@ -4,7 +4,7 @@
 
 ## Structural variants
 
-## Genome rearrengments
+## Genome rearrangements
 
 ## Read mapping algorithms and programs
 
