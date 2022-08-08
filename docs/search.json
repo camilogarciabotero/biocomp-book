@@ -343,6 +343,27 @@
     "text": "11.4 Visualizing genomes and annotations"
   },
   {
+    "objectID": "chs-genomics/genome-annotation.html#homolgy-annotation",
+    "href": "chs-genomics/genome-annotation.html#homolgy-annotation",
+    "title": "11  Genome annotation",
+    "section": "11.2 Homolgy annotation",
+    "text": "11.2 Homolgy annotation"
+  },
+  {
+    "objectID": "chs-genomics/genome-annotation.html#annotation-files",
+    "href": "chs-genomics/genome-annotation.html#annotation-files",
+    "title": "11  Genome annotation",
+    "section": "11.3 Annotation files",
+    "text": "11.3 Annotation files\n\n11.3.1 the GBK and GBFF\n\n\n11.3.2 The GFF specificaitons"
+  },
+  {
+    "objectID": "chs-genomics/genome-annotation.html#visualizing-genomes-and-annotations",
+    "href": "chs-genomics/genome-annotation.html#visualizing-genomes-and-annotations",
+    "title": "11  Genome annotation",
+    "section": "11.4 Visualizing genomes and annotations",
+    "text": "11.4 Visualizing genomes and annotations"
+  },
+  {
     "objectID": "chs-genomics/variant-calling-analysis.html#structural-variants",
     "href": "chs-genomics/variant-calling-analysis.html#structural-variants",
     "title": "12  Variant calling analysis",

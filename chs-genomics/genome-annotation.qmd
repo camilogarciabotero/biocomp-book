@@ -1,1 +1,14 @@
 # Genome annotation {#sec-genome-annotation}
+
+
+## _ab initio_ annotation
+
+## Homolgy annotation
+
+## Annotation files
+
+### the GBK and GBFF
+
+### The GFF specificaitons
+
+## Visualizing genomes and annotations
