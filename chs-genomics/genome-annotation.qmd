@@ -3,12 +3,12 @@
 
 ## _ab initio_ annotation
 
-## Homolgy annotation
+## Homology annotation
 
 ## Annotation files
 
 ### the GBK and GBFF
 
-### The GFF specificaitons
+### The GFF specifications
 
 ## Visualizing genomes and annotations

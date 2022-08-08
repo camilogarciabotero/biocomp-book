@@ -1,19 +1,47 @@
-# Introduction to the control of versions
+---
+execute: 
+  engine: knitr
+---
 
-## Git basics
+# Version control
 
-### Git installation and configuration
+As its name suggests, a version control system (VCS) allow you to keep record of the changes happening while working files and directories. Several VCSs have been created but the most popular is [git](https://git-scm.com). It is characterized by being a **distributed** VCS, which means that changes history are recorded locally (whether in a user laptop or user account) in contrast to other **centralized** VCSs that changes are saved on a shared machine or server.
+
+So, why bother to learn a VCS in bioinformatics? Well there are many reasons, but to highlight some of them: i) Since VCSs allow you to record changes, you can always trace back the steps made in ana analysis, which is nice for the **reproducibility** of your work. ii) a system like git could be coupled with a shared-centralized server as it is (GitHub)[https://github.com] (we'll talk about it [later](../chs-command-line/git-and-github.qmd#github)) and then one could **share and collaborate**, expanding the extent of your research and iii) following the structures and command from git its at first overwhelming and demands consistency and order, then when scaling a project it will payoff this stepping curve of learning by keeping the **efficiency** of your work.
+
+## Git installation and configuration
+
+Installation could proceed from the official page of [git](https://git-scm.com). If working from WSL it has the binaries preinstalled, so you can jump directly to the configuration. The second step is to configure your user name and an email. with the following lines:
+
+```{bash}
+#| eval: false
+git config --global user.name "Your Name"
+git config --global user.email user@eafit.edu.co
+```
+
+You could always user the preferred e-mail. More configurations are available, for instance the preferred editor to work with and so on, you can explore by asking for help `git config --help` or `git config --list`.
 
 ### The basics
 
+There are at least **six** basic commands. Three of them allow recording local changes and the other three help you to inspect the state of the changes. So, to start recording changes in a folder you must **initialize** this directory/repository using `git init`. This is a one-time command to start.
+
 ### The local workflow
+
+![](imgs-cli/gitlocal.png){#local-workflow}
 
 ### Ignoring files
 
-## GitHub
+## Exploring GitHub
 
-### Exploring GitHub
+## From local to remote
 
-### From local to remote
+### Cloning workflow
+
+
+![](imgs-cli/gitcloning.png){#cloning-workflow}
+
+### Forking and collaborate
+
+![](imgs-cli/gitforking.png){#forking-workflow}
 
 ### Branching and merging
