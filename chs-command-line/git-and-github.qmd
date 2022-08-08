@@ -7,7 +7,7 @@ execute:
 
 As its name suggests, a version control system (VCS) allow you to keep record of the changes happening while working files and directories. Several VCSs have been created but the most popular is [git](https://git-scm.com). It is characterized by being a **distributed** VCS, which means that changes history are recorded locally (whether in a user laptop or user account) in contrast to other **centralized** VCSs that changes are saved on a shared machine or server.
 
-So, why bother to learn a VCS in bioinformatics? Well there are many reasons, but to highlight some of them: i) Since VCSs allow you to record changes, you can always trace back the steps made in ana analysis, which is nice for the **reproducibility** of your work. ii) a system like git could be coupled with a shared-centralized server as it is (GitHub)[https://github.com] (we'll talk about it [later](../chs-command-line/git-and-github.qmd#github)) and then one could **share and collaborate**, expanding the extent of your research and iii) following the structures and command from git its at first overwhelming and demands consistency and order, then when scaling a project it will payoff this stepping curve of learning by keeping the **efficiency** of your work.
+So, why bother to learn a VCS in bioinformatics? Well there are many reasons, but to highlight some of them: i) Since VCSs allow you to record changes, you can always trace back the steps made in ana analysis, which is nice for the **reproducibility** of your work. ii) a system like git could be coupled with a shared-centralized server as it is [GitHub](https://github.com) (we'll talk about it [later](../chs-command-line/git-and-github.qmd#exploring-github) and then one could **share and collaborate**, expanding the extent of your research and iii) following the structures and command from git its at first overwhelming and demands consistency and order, then when scaling a project it will payoff this stepping curve of learning by keeping the **efficiency** of your work.
 
 ## Git installation and configuration
 
@@ -23,15 +23,19 @@ You could always user the preferred e-mail. More configurations are available, f
 
 ### The basics
 
-There are at least **six** basic commands. Three of them allow recording local changes and the other three help you to inspect the state of the changes. So, to start recording changes in a folder you must **initialize** this directory/repository using `git init`. This is a one-time command to start.
+There are at least **six** basic commands. Three of them allow recording local changes (`git init`, `git add` and `git commit`) and the other three help you to inspect the state of the changes (`git status`, `git diff` and `git log`), we will dive into the detail in the following lines. So, to start recording changes in a directory you must **initialize** the directory (which will now be called repository) using `git init`. This is a one-time command to get started.
 
 ### The local workflow
 
-![](imgs-cli/gitlocal.png){#local-workflow}
+![Local workflow of a git project adding and committing changes](imgs-cli/gitlocal.png){#local-workflow}
 
 ### Ignoring files
 
+the `.gitignore` file.
+
 ## Exploring GitHub
+
+[GitHub home](https://github.com/home)
 
 ## From local to remote
 

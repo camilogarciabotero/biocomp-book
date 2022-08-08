@@ -204,7 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to sequence analysis</span></a>
+  <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequence analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -337,7 +337,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
 
 </header><p>As its name suggests, a version control system (VCS) allow you to keep record of the changes happening while working files and directories. Several VCSs have been created but the most popular is <a href="https://git-scm.com">git</a>. It is characterized by being a <strong>distributed</strong> VCS, which means that changes history are recorded locally (whether in a user laptop or user account) in contrast to other <strong>centralized</strong> VCSs that changes are saved on a shared machine or server.</p>
-<p>So, why bother to learn a VCS in bioinformatics? Well there are many reasons, but to highlight some of them: i) Since VCSs allow you to record changes, you can always trace back the steps made in ana analysis, which is nice for the <strong>reproducibility</strong> of your work. ii) a system like git could be coupled with a shared-centralized server as it is (GitHub)[https://github.com] (we’ll talk about it <a href="../chs-command-line/git-and-github.html#github">later</a>) and then one could <strong>share and collaborate</strong>, expanding the extent of your research and iii) following the structures and command from git its at first overwhelming and demands consistency and order, then when scaling a project it will payoff this stepping curve of learning by keeping the <strong>efficiency</strong> of your work.</p>
+<p>So, why bother to learn a VCS in bioinformatics? Well there are many reasons, but to highlight some of them: i) Since VCSs allow you to record changes, you can always trace back the steps made in ana analysis, which is nice for the <strong>reproducibility</strong> of your work. ii) a system like git could be coupled with a shared-centralized server as it is <a href="https://github.com">GitHub</a> (we’ll talk about it <a href="../chs-command-line/git-and-github.html#exploring-github">later</a> and then one could <strong>share and collaborate</strong>, expanding the extent of your research and iii) following the structures and command from git its at first overwhelming and demands consistency and order, then when scaling a project it will payoff this stepping curve of learning by keeping the <strong>efficiency</strong> of your work.</p>
 <section id="git-installation-and-configuration" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="git-installation-and-configuration">
 <span class="header-section-number">2.1</span> Git installation and configuration</h2>
 <p>Installation could proceed from the official page of <a href="https://git-scm.com">git</a>. If working from WSL it has the binaries preinstalled, so you can jump directly to the configuration. The second step is to configure your user name and an email. with the following lines:</p>
@@ -348,14 +348,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You could always user the preferred e-mail. More configurations are available, for instance the preferred editor to work with and so on, you can explore by asking for help <code>git config --help</code> or <code>git config --list</code>.</p>
 <section id="the-basics" class="level3" data-number="2.1.1"><h3 data-number="2.1.1" class="anchored" data-anchor-id="the-basics">
 <span class="header-section-number">2.1.1</span> The basics</h3>
-<p>There are at least <strong>six</strong> basic commands. Three of them allow recording local changes and the other three help you to inspect the state of the changes. So, to start recording changes in a folder you must <strong>initialize</strong> this directory/repository using <code>git init</code>. This is a one-time command to start.</p>
+<p>There are at least <strong>six</strong> basic commands. Three of them allow recording local changes (<code>git init</code>, <code>git add</code> and <code>git commit</code>) and the other three help you to inspect the state of the changes (<code>git status</code>, <code>git diff</code> and <code>git log</code>), we will dive into the detail in the following lines. So, to start recording changes in a directory you must <strong>initialize</strong> the directory (which will now be called repository) using <code>git init</code>. This is a one-time command to get started.</p>
 </section><section id="the-local-workflow" class="level3" data-number="2.1.2"><h3 data-number="2.1.2" class="anchored" data-anchor-id="the-local-workflow">
 <span class="header-section-number">2.1.2</span> The local workflow</h3>
-<p><img src="imgs-cli/gitlocal.png" id="local-workflow" class="img-fluid"></p>
+<div id="local-workflow" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="imgs-cli/gitlocal.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Local workflow of a git project adding and committing changes</figcaption><p></p>
+</figure>
+</div>
 </section><section id="ignoring-files" class="level3" data-number="2.1.3"><h3 data-number="2.1.3" class="anchored" data-anchor-id="ignoring-files">
 <span class="header-section-number">2.1.3</span> Ignoring files</h3>
+<p>the <code>.gitignore</code> file.</p>
 </section></section><section id="exploring-github" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="exploring-github">
 <span class="header-section-number">2.2</span> Exploring GitHub</h2>
+<p><a href="https://github.com/home">GitHub home</a></p>
 </section><section id="from-local-to-remote" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="from-local-to-remote">
 <span class="header-section-number">2.3</span> From local to remote</h2>
 <section id="cloning-workflow" class="level3" data-number="2.3.1"><h3 data-number="2.3.1" class="anchored" data-anchor-id="cloning-workflow">

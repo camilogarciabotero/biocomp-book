@@ -45,7 +45,7 @@ Functional domains could be predicted by sequence alignment and allow structural
 ::: callout-warning
 ## Exercise 01
 
-Submit 5lWM (JAK3) from the PDB on FASTA format on the [JPRED](http://www.compbio.dundee.ac.uk/jpred/) and [PSIPRED](http://bioinf.cs.ucl.ac.uk/psipred/) and compared with the [experimentally predicted](https://www.rcsb.org/sequence/5LWM) version of the protein. Analyse the predictions and tell are there differences between predictions? Which one is more accurate?
+Submit 5lWM (JAK3) from the PDB on FASTA format on the [JPRED](http://www.compbio.dundee.ac.uk/jpred/) and [PSIPRED](http://bioinf.cs.ucl.ac.uk/psipred/) and compared with the [experimentally predicted](https://www.rcsb.org/sequence/5LWM) version of the protein. Analyze the predictions and tell are there differences between predictions? Which one is more accurate?
 :::
 
 ## PDB database introduction
