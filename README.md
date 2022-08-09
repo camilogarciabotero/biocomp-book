@@ -1,6 +1,6 @@
 <p align="center">
     <br>
-        <img src="figs/cover.png" alt="cover image"/>
+        <img src="figs/cover.png" alt="cover image" height="300" weight="300"/>
       <br>
       <br>
     <a href="https://github.com/camilogarciabotero/biocomp-book/releases">
