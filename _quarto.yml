@@ -89,12 +89,12 @@ format:
     code-copy: hover
     # monofont: juliamono
     # mainfont: sora
-  pdf:
-    documentclass: book
-    code-block-border-left: false
-    toc-depth: 2
-    lof: true
-    lot: true
+  # pdf:
+  #   documentclass: book
+  #   code-block-border-left: false
+  #   toc-depth: 2
+  #   lof: true
+  #   lot: true
   # pdf:
   #   documentclass: scrreprt
       

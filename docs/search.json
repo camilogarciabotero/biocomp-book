@@ -11,7 +11,21 @@
     "href": "intro.html",
     "title": "Introduction",
     "section": "",
-    "text": "Inlcude a section, maybe an appendix about how to handle errors Include s section about the windows subsistem for linux WSL and the ease of use for windows users"
+    "text": "Here we present a course centered book of the Fundamentals of Computational Biology. We will cover several topics, from using the unix tools, the importance of package manager systems (such as homebrew and conda), sequencing technologies, sequence alignments, molecular phylogenetics, genome assembly and annotation, and variant calling analysis.\nInclude a section, maybe an appendix about how to handle errors Include s section about the windows subsystem for linux (WSL) and the ease of use for windows users"
+  },
+  {
+    "objectID": "intro.html#endless-debate-bioinformatics-vs.-computational-biology",
+    "href": "intro.html#endless-debate-bioinformatics-vs.-computational-biology",
+    "title": "Introduction",
+    "section": "Endless debate: bioinformatics vs. computational biology",
+    "text": "Endless debate: bioinformatics vs. computational biology"
+  },
+  {
+    "objectID": "intro.html#the-extent-of-computational-biology",
+    "href": "intro.html#the-extent-of-computational-biology",
+    "title": "Introduction",
+    "section": "The extent of computational biology",
+    "text": "The extent of computational biology"
   },
   {
     "objectID": "chs-command-line/welcome-to-command-line.html",
@@ -133,46 +147,39 @@
     "text": "In this chapter we will discuss several about several points of view about bioinformatics and computational biology, we will further consider several biological concepts that appear central to understand the manipulation of biological data."
   },
   {
-    "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#endless-debate-bioinformatics-vs.-computational-biology",
-    "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#endless-debate-bioinformatics-vs.-computational-biology",
-    "title": "5  Sequence analysis",
-    "section": "5.1 Endless debate: bioinformatics vs. computational biology",
-    "text": "5.1 Endless debate: bioinformatics vs. computational biology"
-  },
-  {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-duality-of-dna",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-duality-of-dna",
     "title": "5  Sequence analysis",
-    "section": "5.2 The duality of DNA",
-    "text": "5.2 The duality of DNA"
+    "section": "5.1 The duality of DNA",
+    "text": "5.1 The duality of DNA"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-central-dogma-theory-of-molecular-biology-extended",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-central-dogma-theory-of-molecular-biology-extended",
     "title": "5  Sequence analysis",
-    "section": "5.3 The central dogma theory of molecular biology extended",
-    "text": "5.3 The central dogma theory of molecular biology extended"
+    "section": "5.2 The central dogma theory of molecular biology extended",
+    "text": "5.2 The central dogma theory of molecular biology extended"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-strategies",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-strategies",
     "title": "5  Sequence analysis",
-    "section": "5.4 Sequencing strategies",
-    "text": "5.4 Sequencing strategies"
+    "section": "5.3 Sequencing strategies",
+    "text": "5.3 Sequencing strategies"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-over-time",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-over-time",
     "title": "5  Sequence analysis",
-    "section": "5.5 Sequencing over time",
-    "text": "5.5 Sequencing over time"
+    "section": "5.4 Sequencing over time",
+    "text": "5.4 Sequencing over time"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#some-insights-from-sequencing-genomes",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#some-insights-from-sequencing-genomes",
     "title": "5  Sequence analysis",
-    "section": "5.6 Some insights from sequencing genomes",
-    "text": "5.6 Some insights from sequencing genomes"
+    "section": "5.5 Some insights from sequencing genomes",
+    "text": "5.5 Some insights from sequencing genomes"
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html",
