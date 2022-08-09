@@ -1,6 +1,6 @@
 <p align="center">
     <br>
-    <b size = "100"> Fundamentals of Computational Biology: lecture notes</b>
+        <img src="figs/cover.png" alt="cover image"/>
       <br>
       <br>
     <a href="https://github.com/camilogarciabotero/biocomp-book/releases">
@@ -24,5 +24,3 @@
     </a>
     </p>
 </p>
-
-This project aims to bring together the lectures of the Fundamentals of Computational Biology offered at Universidad EAFIT
