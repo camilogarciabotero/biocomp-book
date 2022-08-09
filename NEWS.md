@@ -1,11 +1,13 @@
-# Edition 0.0.5
+# Edition 0.0.6
 
-- Update CLI chapter.
+- More updates to CLI chapter.
 
-- Decoupled Seq analysis and Genomics into separate chapters.
+- Update the Version Control chapter.
+  
+- Decoupled genome annotation section into separate chapter.
 
-- Chapters were reorganized in its own dirs to make easier nagivigation. They also were renamed for later easier addition of other chapters.
+- Add a motif search challenge
 
-- New learning features using Quarto callouts. This will hopefully improve learning and enjoy the book.
+- Add cover image
 
-- Chapters sections will have numbering.
+- Many typos corrected.
