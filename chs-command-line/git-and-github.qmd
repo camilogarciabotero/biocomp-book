@@ -3,7 +3,14 @@ execute:
   engine: knitr
 ---
 
-# Version control
+# Version control {#sec-vcs}
+
+> Here we will first address what is version control, its importance and basics on the local workflow.
+>
+> Later we will introduce GitHub and explore more advanced commands for the collaboration workflow
+
+
+## Version control systems 
 
 As its name suggests, a version control system (VCS) allow you to keep record of the changes happening while working files and directories. Several VCSs have been created but the most popular is [git](https://git-scm.com). It is characterized by being a **distributed** VCS, which means that changes history are recorded locally (whether in a user laptop or user account) in contrast to other **centralized** VCSs that changes are saved on a shared machine or server.
 
@@ -40,7 +47,6 @@ the `.gitignore` file.
 ## From local to remote
 
 ### Cloning workflow
-
 
 ![](imgs-cli/gitcloning.png){#cloning-workflow}
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.0.38">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2022-08-08">
+<meta name="dcterms.date" content="2022-08-09">
 <title>Fundamentals of computational biology - 2&nbsp; Version control</title>
 <style>
 code{white-space: pre-wrap;}
@@ -116,7 +116,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script><script async="" src="https://hypothes.is/embed.js"></script>
-<meta name="citation_title" content="[2]{.chapter-number}&nbsp; [Version control]{.chapter-title}">
+<meta name="citation_title" content="[[2]{.chapter-number}&nbsp; [Version control]{.chapter-title}]{#sec-vcs .quarto-section-identifier}">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
 <meta name="citation_publication_date" content="NaN-NaN-NaN">
@@ -128,9 +128,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">
-<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Version control</span>
-</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Version control</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -295,30 +293,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li>
-<a href="#git-installation-and-configuration" id="toc-git-installation-and-configuration" class="nav-link active" data-scroll-target="#git-installation-and-configuration"> <span class="header-section-number">2.1</span> Git installation and configuration</a>
+<li><a href="#version-control-systems" id="toc-version-control-systems" class="nav-link active" data-scroll-target="#version-control-systems"> <span class="header-section-number">2.1</span> Version control systems</a></li>
+  <li>
+<a href="#git-installation-and-configuration" id="toc-git-installation-and-configuration" class="nav-link" data-scroll-target="#git-installation-and-configuration"> <span class="header-section-number">2.2</span> Git installation and configuration</a>
   <ul class="collapse">
-<li><a href="#the-basics" id="toc-the-basics" class="nav-link" data-scroll-target="#the-basics"> <span class="header-section-number">2.1.1</span> The basics</a></li>
-  <li><a href="#the-local-workflow" id="toc-the-local-workflow" class="nav-link" data-scroll-target="#the-local-workflow"> <span class="header-section-number">2.1.2</span> The local workflow</a></li>
-  <li><a href="#ignoring-files" id="toc-ignoring-files" class="nav-link" data-scroll-target="#ignoring-files"> <span class="header-section-number">2.1.3</span> Ignoring files</a></li>
+<li><a href="#the-basics" id="toc-the-basics" class="nav-link" data-scroll-target="#the-basics"> <span class="header-section-number">2.2.1</span> The basics</a></li>
+  <li><a href="#the-local-workflow" id="toc-the-local-workflow" class="nav-link" data-scroll-target="#the-local-workflow"> <span class="header-section-number">2.2.2</span> The local workflow</a></li>
+  <li><a href="#ignoring-files" id="toc-ignoring-files" class="nav-link" data-scroll-target="#ignoring-files"> <span class="header-section-number">2.2.3</span> Ignoring files</a></li>
   </ul>
 </li>
-  <li><a href="#exploring-github" id="toc-exploring-github" class="nav-link" data-scroll-target="#exploring-github"> <span class="header-section-number">2.2</span> Exploring GitHub</a></li>
+  <li><a href="#exploring-github" id="toc-exploring-github" class="nav-link" data-scroll-target="#exploring-github"> <span class="header-section-number">2.3</span> Exploring GitHub</a></li>
   <li>
-<a href="#from-local-to-remote" id="toc-from-local-to-remote" class="nav-link" data-scroll-target="#from-local-to-remote"> <span class="header-section-number">2.3</span> From local to remote</a>
+<a href="#from-local-to-remote" id="toc-from-local-to-remote" class="nav-link" data-scroll-target="#from-local-to-remote"> <span class="header-section-number">2.4</span> From local to remote</a>
   <ul class="collapse">
-<li><a href="#cloning-workflow" id="toc-cloning-workflow" class="nav-link" data-scroll-target="#cloning-workflow"> <span class="header-section-number">2.3.1</span> Cloning workflow</a></li>
-  <li><a href="#forking-and-collaborate" id="toc-forking-and-collaborate" class="nav-link" data-scroll-target="#forking-and-collaborate"> <span class="header-section-number">2.3.2</span> Forking and collaborate</a></li>
-  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging"> <span class="header-section-number">2.3.3</span> Branching and merging</a></li>
+<li><a href="#cloning-workflow" id="toc-cloning-workflow" class="nav-link" data-scroll-target="#cloning-workflow"> <span class="header-section-number">2.4.1</span> Cloning workflow</a></li>
+  <li><a href="#forking-and-collaborate" id="toc-forking-and-collaborate" class="nav-link" data-scroll-target="#forking-and-collaborate"> <span class="header-section-number">2.4.2</span> Forking and collaborate</a></li>
+  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging"> <span class="header-section-number">2.4.3</span> Branching and merging</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-command-line/git-and-github.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">
-<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Version control</span>
-</h1>
+<h1 class="title"><span id="sec-vcs" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Version control</span></span></h1>
 </div>
 
 
@@ -329,49 +326,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-08-08</p>
+      <p class="date">2022-08-09</p>
     </div>
   </div>
     
   </div>
   
 
-</header><p>As its name suggests, a version control system (VCS) allow you to keep record of the changes happening while working files and directories. Several VCSs have been created but the most popular is <a href="https://git-scm.com">git</a>. It is characterized by being a <strong>distributed</strong> VCS, which means that changes history are recorded locally (whether in a user laptop or user account) in contrast to other <strong>centralized</strong> VCSs that changes are saved on a shared machine or server.</p>
+</header><blockquote class="blockquote">
+<p>Here we will first address what is version control, its importance and basics on the local workflow.</p>
+<p>Later we will introduce GitHub and explore more advanced commands for the collaboration workflow</p>
+</blockquote>
+<section id="version-control-systems" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="version-control-systems">
+<span class="header-section-number">2.1</span> Version control systems</h2>
+<p>As its name suggests, a version control system (VCS) allow you to keep record of the changes happening while working files and directories. Several VCSs have been created but the most popular is <a href="https://git-scm.com">git</a>. It is characterized by being a <strong>distributed</strong> VCS, which means that changes history are recorded locally (whether in a user laptop or user account) in contrast to other <strong>centralized</strong> VCSs that changes are saved on a shared machine or server.</p>
 <p>So, why bother to learn a VCS in bioinformatics? Well there are many reasons, but to highlight some of them: i) Since VCSs allow you to record changes, you can always trace back the steps made in ana analysis, which is nice for the <strong>reproducibility</strong> of your work. ii) a system like git could be coupled with a shared-centralized server as it is <a href="https://github.com">GitHub</a> (we’ll talk about it <a href="../chs-command-line/git-and-github.html#exploring-github">later</a> and then one could <strong>share and collaborate</strong>, expanding the extent of your research and iii) following the structures and command from git its at first overwhelming and demands consistency and order, then when scaling a project it will payoff this stepping curve of learning by keeping the <strong>efficiency</strong> of your work.</p>
-<section id="git-installation-and-configuration" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="git-installation-and-configuration">
-<span class="header-section-number">2.1</span> Git installation and configuration</h2>
+</section><section id="git-installation-and-configuration" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="git-installation-and-configuration">
+<span class="header-section-number">2.2</span> Git installation and configuration</h2>
 <p>Installation could proceed from the official page of <a href="https://git-scm.com">git</a>. If working from WSL it has the binaries preinstalled, so you can jump directly to the configuration. The second step is to configure your user name and an email. with the following lines:</p>
 <div class="cell" data-hash="git-and-github_cache/html/unnamed-chunk-1_7172d27396f9ea6dca70525f6f7e6f11">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email user@eafit.edu.co</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You could always user the preferred e-mail. More configurations are available, for instance the preferred editor to work with and so on, you can explore by asking for help <code>git config --help</code> or <code>git config --list</code>.</p>
-<section id="the-basics" class="level3" data-number="2.1.1"><h3 data-number="2.1.1" class="anchored" data-anchor-id="the-basics">
-<span class="header-section-number">2.1.1</span> The basics</h3>
+<section id="the-basics" class="level3" data-number="2.2.1"><h3 data-number="2.2.1" class="anchored" data-anchor-id="the-basics">
+<span class="header-section-number">2.2.1</span> The basics</h3>
 <p>There are at least <strong>six</strong> basic commands. Three of them allow recording local changes (<code>git init</code>, <code>git add</code> and <code>git commit</code>) and the other three help you to inspect the state of the changes (<code>git status</code>, <code>git diff</code> and <code>git log</code>), we will dive into the detail in the following lines. So, to start recording changes in a directory you must <strong>initialize</strong> the directory (which will now be called repository) using <code>git init</code>. This is a one-time command to get started.</p>
-</section><section id="the-local-workflow" class="level3" data-number="2.1.2"><h3 data-number="2.1.2" class="anchored" data-anchor-id="the-local-workflow">
-<span class="header-section-number">2.1.2</span> The local workflow</h3>
+</section><section id="the-local-workflow" class="level3" data-number="2.2.2"><h3 data-number="2.2.2" class="anchored" data-anchor-id="the-local-workflow">
+<span class="header-section-number">2.2.2</span> The local workflow</h3>
 <div id="local-workflow" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="imgs-cli/gitlocal.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Local workflow of a git project adding and committing changes</figcaption><p></p>
 </figure>
 </div>
-</section><section id="ignoring-files" class="level3" data-number="2.1.3"><h3 data-number="2.1.3" class="anchored" data-anchor-id="ignoring-files">
-<span class="header-section-number">2.1.3</span> Ignoring files</h3>
+</section><section id="ignoring-files" class="level3" data-number="2.2.3"><h3 data-number="2.2.3" class="anchored" data-anchor-id="ignoring-files">
+<span class="header-section-number">2.2.3</span> Ignoring files</h3>
 <p>the <code>.gitignore</code> file.</p>
-</section></section><section id="exploring-github" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="exploring-github">
-<span class="header-section-number">2.2</span> Exploring GitHub</h2>
+</section></section><section id="exploring-github" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="exploring-github">
+<span class="header-section-number">2.3</span> Exploring GitHub</h2>
 <p><a href="https://github.com/home">GitHub home</a></p>
-</section><section id="from-local-to-remote" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="from-local-to-remote">
-<span class="header-section-number">2.3</span> From local to remote</h2>
-<section id="cloning-workflow" class="level3" data-number="2.3.1"><h3 data-number="2.3.1" class="anchored" data-anchor-id="cloning-workflow">
-<span class="header-section-number">2.3.1</span> Cloning workflow</h3>
+</section><section id="from-local-to-remote" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="from-local-to-remote">
+<span class="header-section-number">2.4</span> From local to remote</h2>
+<section id="cloning-workflow" class="level3" data-number="2.4.1"><h3 data-number="2.4.1" class="anchored" data-anchor-id="cloning-workflow">
+<span class="header-section-number">2.4.1</span> Cloning workflow</h3>
 <p><img src="imgs-cli/gitcloning.png" id="cloning-workflow" class="img-fluid"></p>
-</section><section id="forking-and-collaborate" class="level3" data-number="2.3.2"><h3 data-number="2.3.2" class="anchored" data-anchor-id="forking-and-collaborate">
-<span class="header-section-number">2.3.2</span> Forking and collaborate</h3>
+</section><section id="forking-and-collaborate" class="level3" data-number="2.4.2"><h3 data-number="2.4.2" class="anchored" data-anchor-id="forking-and-collaborate">
+<span class="header-section-number">2.4.2</span> Forking and collaborate</h3>
 <p><img src="imgs-cli/gitforking.png" id="forking-workflow" class="img-fluid"></p>
-</section><section id="branching-and-merging" class="level3" data-number="2.3.3"><h3 data-number="2.3.3" class="anchored" data-anchor-id="branching-and-merging">
-<span class="header-section-number">2.3.3</span> Branching and merging</h3>
+</section><section id="branching-and-merging" class="level3" data-number="2.4.3"><h3 data-number="2.4.3" class="anchored" data-anchor-id="branching-and-merging">
+<span class="header-section-number">2.4.3</span> Branching and merging</h3>
 
 
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">

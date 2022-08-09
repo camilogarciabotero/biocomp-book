@@ -1,12 +1,12 @@
 # Preface {.unnumbered}
 
-::: callout-caution
-This book is a work in progress
-:::
 We started this book with the aim of compiling the lectures of the course Fundamentals of Computational Biology offered at Universidad EAFIT for undergrad students in Biology. The course has been taught from different perspectives from its creation, yet the last iteration was divided into five introductory modules to i) Unix, ii) sequence analysis, iii) genomics, iii) metagenomics iv) structural biology.
 
-
 Lectures are focused on a theoretical-practical approach where basic concepts from biology, bioinformatics and computer science and interleave with the practice to solve challenges. Exercised or challenges are designed to improve students' abilities that are likely to be involved in real-life problems in computational biology.
+
+::: { .callout-caution}
+This book is a work in progress. If you find issues, typos or relevant information to share with, anything is welcome.
+:::
 
 ## Learning features {.unnumbered}
 

@@ -12,7 +12,7 @@ Before landing into the CLI let us consider the Unix concept. The first question
 
 Almost every computer has a way to interact with or access to the inner elements of the computer. Such interface is called the the command-line-interface [Fig. @fig-terminal].
 
-## File paths
+### File paths
 
 Programs, files and directories on every machine (with Unix-like OS) display hierarchical paths (routes), starting out from the **root** (represented by the back-slash character `/`). The **root** represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths [Fig. @fig-tree]
 
@@ -28,11 +28,11 @@ tree -d -L 1
 
 There are basically **two** ways to explore or navigate your file system. If you always represent it from the root, then you are presenting an **absolute path**. For instance the absolute path to my desktop is (`/Users/camilogarcia/Desktop`).
 
-## Basic Unix commands
+### Basic Unix commands
 
 Given that the vast majority of file systems are organized in file paths, the first question when starting with the CLI is "Where am I?". So Unix tool system is equipped with a bunch of commands but its basic ones are pretty much oriented to answer that question and navigating this text-based interface of files. The following three commands (`pwd`, `cd`, `ls`) will help you conquer the CLI.
 
-### Printing your working directory
+#### Printing your working directory
 
 To know where you are you can see your current location, that is to *print your working directory* using the `pwd` command.
 
@@ -40,7 +40,8 @@ To know where you are you can see your current location, that is to *print your 
 pwd
 ```
 
-### Change to other directory
+
+#### Change to other directory
 
 ``` bash
 cd test-dir
@@ -57,7 +58,7 @@ cd -  # change to previous dir
 ```
 :::
 
-### Listing files
+#### Listing files
 
 ``` bash
 ls 
@@ -67,13 +68,13 @@ ls
 You can navigate your executed commands by typing {{< fa arrow-up >}} or {{< fa arrow-down >}}.
 :::
 
-### Making new directories
+#### Making new directories
 
 ``` bash
 mkdir test-dir
 ```
 
-### Creating a file
+#### Creating a file
 
 A simple command to create any file inside your terminal is `touch` it just create a file, but do not allow any editing.
 
@@ -89,23 +90,25 @@ The `new-file.txt` is empty and created on your current location unless you assi
 :::
 :::
 
-### Printing files to the screen
+#### Printing files to the screen
 
 ``` bash
 cat new-file.txt
 ```
+```bash
+some
+lines
+that
+were
+written
+```
 
-::: {.callout-tip .column-margin}
-When using the CLI at first its common to feal quite slow. Then, a very useful tip to boost the productivity from the command line is the autocompletion of commands by hitting `<tab>` after the initial command.
-:::
-
-### Removing files or directories
+#### Removing files or directories
 
 ``` bash
 rm
 ```
-
-::: callout-tip
+::: { .column-margin .callout-tip}
 When having a long command, it becomes practically to go to the beginning or to the end of it. To do so you can use the key combination `Ctrl + A` and `Ctrl + E` respectively.
 :::
 
@@ -113,7 +116,7 @@ When having a long command, it becomes practically to go to the beginning or to 
 rmdir
 ```
 
-## Anatomy of a command
+### Anatomy of a command
 
 There is still many conventions by which the parts of a command line might be called, yet a very standard convention is presented in [Fig. @fig-command]
 
@@ -129,7 +132,28 @@ Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One
 ![A RM-system motif logo](imgs-cli/motif.png){#fig-motif}
 :::
 
-## intermediate Unix commands
+
+## Most important skills
+
+Handling errors.
+Getting help
+Patience
+
+
+##
+
+## Some great operators/ Metacharacteres in Bash
+
+
+## Intermediate Unix commands
+
+
+```bash
+wc
+```
+``` bash
+tr
+```
 
 ``` bash
 grep 
@@ -139,10 +163,25 @@ grep
 sed 
 ```
 
-``` bash
-tr
-```
+## Unix flows
 
-## Some great operators/ Metacharacteres in Bash
+::: {.callout-tip .column-margin}
+When using the CLI at first its common to feal quite slow. Then, a very useful tip to boost the productivity from the command line is the autocompletion of commands by hitting `<tab>` after the initial command.
+:::
+
+### Redirection
+
+![Redirecting](imgs-cli/redirection.png)
+
+### Pipe
+
+![](imgs-cli/pipeflow.png)
+
+::: column-margin
+::: callout-tip
+When having a long command, it is also useful to jump by lines instead of character by character. To do so you can use the key combination `Alt + <-` and `Alt + ->` respectively.
+:::
+:::
+
 
 For more explanations on the basic commands in the command line we suggest to visit the first chapters of *Computing skills for biologist* from @allesina2019
