@@ -42,7 +42,13 @@ the `.gitignore` file.
 
 ## Exploring GitHub
 
-[GitHub home](https://github.com/home)
+As mention before, one of the great advantages that git can later achieve is to collaborate. However, to get into that a sharable server must allow users to have a common ground, and this is what [GitHub](https://github.com/home) allow. GitHub is a web platform where the local repositories become public and any user can access to the controlled versions of an image of your repo. 
+
+To enable the communication with a remote repo, git has encoded many specific commands, once the repos are **cloned** a simple workflow from the own local and remote repos is made possible thanks to three simple commands `git push` and `git pull`. 
+
+::: {.column-margin}
+![The octocat from GitHub](imgs-cli/octocat.jpeg)
+:::
 
 ## From local to remote
 
