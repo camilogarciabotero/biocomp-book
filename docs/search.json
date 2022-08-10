@@ -102,7 +102,7 @@
     "href": "chs-command-line/git-and-github.html#exploring-github",
     "title": "2  Version control",
     "section": "\n2.3 Exploring GitHub",
-    "text": "2.3 Exploring GitHub\nGitHub home"
+    "text": "2.3 Exploring GitHub\nAs mention before, one of the great advantages that git can later achieve is to collaborate. However, to get into that a sharable server must allow users to have a common ground, and this is what GitHub allow. GitHub is a web platform where the local repositories become public and any user can access to the controlled versions of an image of your repo.\nTo enable the communication with a remote repo, git has encoded many specific commands, once the repos are cloned a simple workflow from the own local and remote repos is made possible thanks to three simple commands git push and git pull.\n\n\n\n\nThe octocat from GitHub"
   },
   {
     "objectID": "chs-command-line/git-and-github.html#from-local-to-remote",
