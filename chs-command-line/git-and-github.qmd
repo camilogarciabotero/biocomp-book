@@ -1,6 +1,9 @@
 ---
 execute: 
   engine: knitr
+filters: 
+  - lightbox
+lightbox: auto
 ---
 
 # Version control {#sec-vcs}
