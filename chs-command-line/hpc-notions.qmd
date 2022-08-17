@@ -1,9 +1,19 @@
-# Notions of HPC
+# Notions of HPC {#sec-hpc}
 
-## What is HPC
 
-## Some important concepts of the hardware
 
-See [Jakob's blog](https://biojulia.net/post/hardware/)
+## Serial computing
 
-## Using the Apolo cluster wirh Slurm
+![serial computing](imgs-cli/serial-computing.png)
+
+## Parallel computing
+![](imgs-cli/parallel-computing.png)
+
+## Computer architectures
+
+![Laptop processor architecture](imgs-cli/laptop-arch.png)
+
+![HPC architecture](imgs-cli/partition-arch.png)
+
+## Using Apolo cluster with Slurm
+

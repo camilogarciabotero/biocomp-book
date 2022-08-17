@@ -144,10 +144,9 @@ Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One
 
 ## Most important skills
 
-Handling errors.
+When facing the CLI several issues or problems will arise. As for any other unintuitive challenge, a complete text interface   Handling errors.
 Getting help
 Patience
-
 
 ##
 
@@ -185,11 +184,9 @@ When using the CLI at first its common to feal quite slow. Then, a very useful t
 ### Pipe
 
 ![](imgs-cli/pipeflow.png)
-
-::: column-margin
-::: callout-tip
+ 
+::: { .callout-tip .column-margin}
 When having a long command, it is also useful to jump by lines instead of character by character. To do so you can use the key combination `Alt + <-` and `Alt + ->` respectively.
-:::
 :::
 
 

@@ -88,7 +88,8 @@ format:
       - style/fonts.scss
     code-link: true
     code-copy: hover
-    # monofont: juliamono
+    mainfont: Atkinson Hyperlegible
+    monofont: Fira Code
     # mainfont: sora
   # pdf:
   #   documentclass: book
@@ -96,6 +97,7 @@ format:
   #   toc-depth: 2
   #   lof: true
   #   lot: true
+  #   title-bg-image: figs/cover.png
   # pdf:
   #   documentclass: scrreprt
       

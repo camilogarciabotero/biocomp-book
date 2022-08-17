@@ -46,7 +46,7 @@
     "href": "chs-command-line/welcome-to-command-line.html#most-important-skills",
     "title": "1  The command line",
     "section": "\n1.2 Most important skills",
-    "text": "1.2 Most important skills\nHandling errors. Getting help Patience"
+    "text": "1.2 Most important skills\nWhen facing the CLI several issues or problems will arise. As for any other unintuitive challenge, a complete text interface Handling errors. Getting help Patience"
   },
   {
     "objectID": "chs-command-line/welcome-to-command-line.html#section",
@@ -74,7 +74,7 @@
     "href": "chs-command-line/welcome-to-command-line.html#unix-flows",
     "title": "1  The command line",
     "section": "\n1.6 Unix flows",
-    "text": "1.6 Unix flows\n\n\n\n\n\n\n\nTip\n\n\n\nWhen using the CLI at first its common to feal quite slow. Then, a very useful tip to boost the productivity from the command line is the autocompletion of commands by hitting <tab> after the initial command.\n\n\n1.6.1 Redirection\n\n\nRedirecting\n\n\n\n1.6.2 Pipe\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nWhen having a long command, it is also useful to jump by lines instead of character by character. To do so you can use the key combination Alt + <- and Alt + -> respectively.\n\n\nFor more explanations on the basic commands in the command line we suggest to visit the first chapters of Computing skills for biologist from Allesina and Wilmes (2019)\n\n\n\n\nAllesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for Biologists,” January. https://doi.org/10.2307/j.ctvc77jrc."
+    "text": "1.6 Unix flows\n\n\n\n\n\n\n\nTip\n\n\n\nWhen using the CLI at first its common to feal quite slow. Then, a very useful tip to boost the productivity from the command line is the autocompletion of commands by hitting <tab> after the initial command.\n\n\n1.6.1 Redirection\n\n\nRedirecting\n\n\n\n1.6.2 Pipe\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nWhen having a long command, it is also useful to jump by lines instead of character by character. To do so you can use the key combination Alt + <- and Alt + -> respectively.\n\nFor more explanations on the basic commands in the command line we suggest to visit the first chapters of Computing skills for biologist from Allesina and Wilmes (2019)\n\n\n\n\nAllesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for Biologists,” January. https://doi.org/10.2307/j.ctvc77jrc."
   },
   {
     "objectID": "chs-command-line/git-and-github.html",
@@ -119,32 +119,46 @@
     "text": "3.2 Conda environments and other package managers"
   },
   {
-    "objectID": "chs-command-line/package-managers.html#creating-enviroments-with-conda",
-    "href": "chs-command-line/package-managers.html#creating-enviroments-with-conda",
+    "objectID": "chs-command-line/package-managers.html#creating-environments-with-conda",
+    "href": "chs-command-line/package-managers.html#creating-environments-with-conda",
     "title": "3  Package managers",
-    "section": "3.3 Creating enviroments with Conda",
-    "text": "3.3 Creating enviroments with Conda"
+    "section": "3.3 Creating environments with Conda",
+    "text": "3.3 Creating environments with Conda"
   },
   {
     "objectID": "chs-command-line/package-managers.html#package-managers-for-os",
     "href": "chs-command-line/package-managers.html#package-managers-for-os",
     "title": "3  Package managers",
     "section": "3.4 Package managers for OS",
-    "text": "3.4 Package managers for OS\nThere are several package managers handling general purpose packages and apps. For MacOS the famous one is Homebrew and for Windowos several could be used such as Chocolatey and Scoop."
+    "text": "3.4 Package managers for OS\nThere are several package managers handling general purpose packages and apps. For MacOS the famous one is Homebrew and for Windows several could be used such as Chocolatey and Scoop."
   },
   {
-    "objectID": "chs-command-line/hpc-notions.html#some-important-concepts-of-the-hardware",
-    "href": "chs-command-line/hpc-notions.html#some-important-concepts-of-the-hardware",
+    "objectID": "chs-command-line/hpc-notions.html",
+    "href": "chs-command-line/hpc-notions.html",
     "title": "4  Notions of HPC",
-    "section": "4.2 Some important concepts of the hardware",
-    "text": "4.2 Some important concepts of the hardware\nSee Jakob’s blog"
+    "section": "",
+    "text": "serial computing"
   },
   {
-    "objectID": "chs-command-line/hpc-notions.html#using-the-apolo-cluster-wirh-slurm",
-    "href": "chs-command-line/hpc-notions.html#using-the-apolo-cluster-wirh-slurm",
+    "objectID": "chs-command-line/hpc-notions.html#parallel-computing",
+    "href": "chs-command-line/hpc-notions.html#parallel-computing",
     "title": "4  Notions of HPC",
-    "section": "4.3 Using the Apolo cluster wirh Slurm",
-    "text": "4.3 Using the Apolo cluster wirh Slurm"
+    "section": "4.2 Parallel computing",
+    "text": "4.2 Parallel computing"
+  },
+  {
+    "objectID": "chs-command-line/hpc-notions.html#computer-architectures",
+    "href": "chs-command-line/hpc-notions.html#computer-architectures",
+    "title": "4  Notions of HPC",
+    "section": "4.3 Computer architectures",
+    "text": "4.3 Computer architectures\n\n\n\nLaptop processor architecture\n\n\n\n\n\nHPC architecture"
+  },
+  {
+    "objectID": "chs-command-line/hpc-notions.html#using-apolo-cluster-with-slurm",
+    "href": "chs-command-line/hpc-notions.html#using-apolo-cluster-with-slurm",
+    "title": "4  Notions of HPC",
+    "section": "4.4 Using Apolo cluster with Slurm",
+    "text": "4.4 Using Apolo cluster with Slurm"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html",

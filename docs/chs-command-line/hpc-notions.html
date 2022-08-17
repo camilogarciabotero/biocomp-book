@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-08-16">
+<meta name="dcterms.date" content="2022-08-17">
 
 <title>Fundamentals of computational biology - 4&nbsp; Notions of HPC</title>
 <style>
@@ -61,7 +61,7 @@ ul.task-list{list-style: none;}
 <script async="" src="https://hypothes.is/embed.js"></script>
 
 
-<meta name="citation_title" content="[4]{.chapter-number}&nbsp; [Notions of HPC]{.chapter-title}">
+<meta name="citation_title" content="[[4]{.chapter-number}&nbsp; [Notions of HPC]{.chapter-title}]{#sec-hpc .quarto-section-identifier}">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
 <meta name="citation_publication_date" content="NaN-NaN-NaN">
@@ -248,9 +248,10 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-hpc" id="toc-what-is-hpc" class="nav-link active" data-scroll-target="#what-is-hpc"> <span class="header-section-number">4.1</span> What is HPC</a></li>
-  <li><a href="#some-important-concepts-of-the-hardware" id="toc-some-important-concepts-of-the-hardware" class="nav-link" data-scroll-target="#some-important-concepts-of-the-hardware"> <span class="header-section-number">4.2</span> Some important concepts of the hardware</a></li>
-  <li><a href="#using-the-apolo-cluster-wirh-slurm" id="toc-using-the-apolo-cluster-wirh-slurm" class="nav-link" data-scroll-target="#using-the-apolo-cluster-wirh-slurm"> <span class="header-section-number">4.3</span> Using the Apolo cluster wirh Slurm</a></li>
+  <li><a href="#serial-computing" id="toc-serial-computing" class="nav-link active" data-scroll-target="#serial-computing"> <span class="header-section-number">4.1</span> Serial computing</a></li>
+  <li><a href="#parallel-computing" id="toc-parallel-computing" class="nav-link" data-scroll-target="#parallel-computing"> <span class="header-section-number">4.2</span> Parallel computing</a></li>
+  <li><a href="#computer-architectures" id="toc-computer-architectures" class="nav-link" data-scroll-target="#computer-architectures"> <span class="header-section-number">4.3</span> Computer architectures</a></li>
+  <li><a href="#using-apolo-cluster-with-slurm" id="toc-using-apolo-cluster-with-slurm" class="nav-link" data-scroll-target="#using-apolo-cluster-with-slurm"> <span class="header-section-number">4.4</span> Using Apolo cluster with Slurm</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-command-line/hpc-notions.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -259,7 +260,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notions of HPC</span></h1>
+<h1 class="title"><span id="sec-hpc" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notions of HPC</span></span></h1>
 </div>
 
 
@@ -270,7 +271,7 @@ ul.task-list{list-style: none;}
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-08-16</p>
+      <p class="date">2022-08-17</p>
     </div>
   </div>
     
@@ -279,15 +280,36 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="what-is-hpc" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="what-is-hpc"><span class="header-section-number">4.1</span> What is HPC</h2>
+<section id="serial-computing" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="serial-computing"><span class="header-section-number">4.1</span> Serial computing</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imgs-cli/serial-computing.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">serial computing</figcaption><p></p>
+</figure>
+</div>
 </section>
-<section id="some-important-concepts-of-the-hardware" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="some-important-concepts-of-the-hardware"><span class="header-section-number">4.2</span> Some important concepts of the hardware</h2>
-<p>See <a href="https://biojulia.net/post/hardware/">Jakob’s blog</a></p>
+<section id="parallel-computing" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="parallel-computing"><span class="header-section-number">4.2</span> Parallel computing</h2>
+<p><img src="imgs-cli/parallel-computing.png" class="img-fluid"></p>
 </section>
-<section id="using-the-apolo-cluster-wirh-slurm" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="using-the-apolo-cluster-wirh-slurm"><span class="header-section-number">4.3</span> Using the Apolo cluster wirh Slurm</h2>
+<section id="computer-architectures" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="computer-architectures"><span class="header-section-number">4.3</span> Computer architectures</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imgs-cli/laptop-arch.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Laptop processor architecture</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imgs-cli/partition-arch.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">HPC architecture</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="using-apolo-cluster-with-slurm" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="using-apolo-cluster-with-slurm"><span class="header-section-number">4.4</span> Using Apolo cluster with Slurm</h2>
 
 
 </section>
