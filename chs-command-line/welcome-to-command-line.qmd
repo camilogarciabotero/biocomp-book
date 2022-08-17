@@ -5,6 +5,7 @@ filters:
   - lightbox
 lightbox: auto
 ---
+
 # The command line {#sec-cli}
 
 > In this chapter we will explore the fundamentals of the command line interface (aka CLI). We will distinguish the differences between Unix, CLI, Bash and Terminal and other concepts from the computer sciences.
@@ -46,7 +47,6 @@ To know where you are you can see your current location, that is to *print your 
 ``` bash
 pwd
 ```
-
 
 #### Change to other directory
 
@@ -104,7 +104,8 @@ The `new-file.txt` is empty and created on your current location unless you assi
 ``` bash
 cat new-file.txt
 ```
-```bash
+
+``` bash
 some
 lines
 that
@@ -117,7 +118,8 @@ written
 ``` bash
 rm
 ```
-::: { .column-margin .callout-tip}
+
+::: {.column-margin .callout-tip}
 When having a long command, it becomes practically to go to the beginning or to the end of it. To do so you can use the key combination `Ctrl + A` and `Ctrl + E` respectively.
 :::
 
@@ -141,24 +143,20 @@ Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One
 ![A RM-system motif logo](imgs-cli/motif.png){#fig-motif}
 :::
 
-
 ## Most important skills
 
-When facing the CLI several issues or problems will arise. As for any other unintuitive challenge, a complete text interface   Handling errors.
-Getting help
-Patience
+When facing the CLI several issues or problems will arise. As for any other unintuitive challenge, a complete text interface Handling errors. Getting help Patience
 
-##
+## 
 
 ## Some great operators/ Metacharacteres in Bash
 
-
 ## Intermediate Unix commands
 
-
-```bash
+``` bash
 wc
 ```
+
 ``` bash
 tr
 ```
@@ -184,10 +182,9 @@ When using the CLI at first its common to feal quite slow. Then, a very useful t
 ### Pipe
 
 ![](imgs-cli/pipeflow.png)
- 
-::: { .callout-tip .column-margin}
+
+::: {.callout-tip .column-margin}
 When having a long command, it is also useful to jump by lines instead of character by character. To do so you can use the key combination `Alt + <-` and `Alt + ->` respectively.
 :::
-
 
 For more explanations on the basic commands in the command line we suggest to visit the first chapters of *Computing skills for biologist* from @allesina2019
