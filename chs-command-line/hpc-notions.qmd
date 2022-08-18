@@ -11,9 +11,14 @@
 
 ## Computer architectures
 
-![Laptop processor architecture](imgs-cli/laptop-arch.png)
+![Laptop processor architecture](imgs-cli/laptop-arch.png){.column-margin width="70%"}
 
-![HPC architecture](imgs-cli/partition-arch.png)
+
+![HPC architecture](imgs-cli/partition-arch.png){width="60%"}
 
 ## Using Apolo cluster with Slurm
 
+
+![](imgs-cli/cluster-process.png)
+
+Slurm is a job manager scheduler. It brings order to the jobs sent by users of the clusters and facilitate the process of check the state of the job in the cluster and the actual state of the cluster itself. To do so it has basically three main commands. The first one is `sinfo`  

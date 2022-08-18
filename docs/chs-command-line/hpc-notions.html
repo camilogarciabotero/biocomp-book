@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-08-17">
+<meta name="dcterms.date" content="2022-08-18">
 
 <title>Fundamentals of computational biology - 4&nbsp; Notions of HPC</title>
 <style>
@@ -70,7 +70,7 @@ ul.task-list{list-style: none;}
 <meta name="citation_reference" content="citation_title=Computing skills for biologists;,citation_author=Stefano Allesina;,citation_author=Madlen Wilmes;,citation_fulltext_html_url=http://dx.doi.org/10.2307/j.ctvc77jrc;,citation_publication_date=2019-01-15;,citation_journal_title=undefined;">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -256,7 +256,7 @@ ul.task-list{list-style: none;}
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-command-line/hpc-notions.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -271,7 +271,7 @@ ul.task-list{list-style: none;}
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-08-17</p>
+      <p class="date">2022-08-18</p>
     </div>
   </div>
     
@@ -293,23 +293,25 @@ ul.task-list{list-style: none;}
 <h2 data-number="4.2" class="anchored" data-anchor-id="parallel-computing"><span class="header-section-number">4.2</span> Parallel computing</h2>
 <p><img src="imgs-cli/parallel-computing.png" class="img-fluid"></p>
 </section>
-<section id="computer-architectures" class="level2" data-number="4.3">
+<section id="computer-architectures" class="level2 page-columns page-full" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="computer-architectures"><span class="header-section-number">4.3</span> Computer architectures</h2>
-<div class="quarto-figure quarto-figure-center">
+
+<div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="imgs-cli/laptop-arch.png" class="img-fluid figure-img"></p>
+<p><img src="imgs-cli/laptop-arch.png" class="img-fluid figure-img" style="width:70.0%"></p>
 <p></p><figcaption class="figure-caption">Laptop processor architecture</figcaption><p></p>
 </figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
+</div></div><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="imgs-cli/partition-arch.png" class="img-fluid figure-img"></p>
+<p><img src="imgs-cli/partition-arch.png" class="img-fluid figure-img" style="width:60.0%"></p>
 <p></p><figcaption class="figure-caption">HPC architecture</figcaption><p></p>
 </figure>
 </div>
 </section>
 <section id="using-apolo-cluster-with-slurm" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="using-apolo-cluster-with-slurm"><span class="header-section-number">4.4</span> Using Apolo cluster with Slurm</h2>
+<p><img src="imgs-cli/cluster-process.png" class="img-fluid"></p>
+<p>Slurm is a job manager scheduler. It brings order to the jobs sent by users of the clusters and facilitate the process of check the state of the job in the cluster and the actual state of the cluster itself. To do so it has basically three main commands. The first one is <code>sinfo</code></p>
 
 
 </section>

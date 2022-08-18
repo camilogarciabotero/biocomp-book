@@ -11,7 +11,7 @@
     "href": "intro.html",
     "title": "Introduction",
     "section": "",
-    "text": "Here we present a course centered book of the Fundamentals of Computational Biology. We will cover several topics, from using the unix tools, the importance of package manager systems (such as homebrew and conda), sequencing technologies, sequence alignments, molecular phylogenetics, genome assembly and annotation, and variant calling analysis.\nInclude a section, maybe an appendix about how to handle errors Include s section about the windows subsystem for linux (WSL) and the ease of use for windows users"
+    "text": "The present book gathers the lecture notes of the undergrad course in Fundamentals of Computational Biology that takes place in EAFIT University. The first part will focus on how to use the the command line interface (aka CLI). It includes a long-format chapter about the Unix tools and concepts that is taught during the first four class lessons. The second chapter of covers the basics of git and the principal workflows to work daily on a collaborative manner this is actually the second lesson of the course. the importance of package manager systems (such as homebrew and conda\nThe second part We will cover several topics sequencing technologies, sequence alignments, molecular phylogenetics, genome assembly and annotation, and variant calling analysis.\nInclude a section, maybe an appendix about how to handle errors Include s section about the windows subsystem for linux (WSL) and the ease of use for windows users"
   },
   {
     "objectID": "intro.html#endless-debate-bioinformatics-vs.-computational-biology",
@@ -74,7 +74,7 @@
     "href": "chs-command-line/welcome-to-command-line.html#unix-flows",
     "title": "1  The command line",
     "section": "\n1.6 Unix flows",
-    "text": "1.6 Unix flows\n\n\n\n\n\n\n\nTip\n\n\n\nWhen using the CLI at first its common to feal quite slow. Then, a very useful tip to boost the productivity from the command line is the autocompletion of commands by hitting <tab> after the initial command.\n\n\n1.6.1 Redirection\n\n\nRedirecting\n\n\n\n1.6.2 Pipe\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nWhen having a long command, it is also useful to jump by lines instead of character by character. To do so you can use the key combination Alt + <- and Alt + -> respectively.\n\nFor more explanations on the basic commands in the command line we suggest to visit the first chapters of Computing skills for biologist from Allesina and Wilmes (2019)\n\n\n\n\nAllesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for Biologists,” January. https://doi.org/10.2307/j.ctvc77jrc."
+    "text": "1.6 Unix flows\n\n\n\n\n\n\n\nTip\n\n\n\nWhen using the CLI at first its common to feal quite slow. Then, a very useful tip to boost the productivity from the command line is the autocompletion of commands by hitting <tab> after the initial command.\n\n\n1.6.1 Redirection\n\n\nRedirecting\n\n\n\n1.6.2 Pipe\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nWhen having a long command, it is also useful to jump by lines instead of character by character. To do so you can use the key combination Alt + <- and Alt + -> respectively.\n\n\n\n\n\n\n\nChallenge\n\n\n\nRestriction endonucleases (RE) cleave the DNA by digesting the phosphodiester bond between two nucleotides. Many RE are directed to specific DNA motifs normally palindromic. There are mainly three types according to it digestive mechanism. RE have been widely used in molecular biotechnology because its specificity and versatility to carry out different experiments.\nOne of the main uses of RE is to generate a pattern of restricted fragments from different organisms so that samples of organisms, sequences or genes could be distinguished, as long as they display differences in the number of recognition motifs. This is normally done in the lab, where an RE is mixed with a DNA sample and later an electrophoresis gel is run to see a separation pattern according to the fragments size.\nProfessor Javier has sequenced the genome of a sampled SARS-CoV2 and want to see the band pattern that the genome would display if it were digested with the RE EcoRV. He has asked you to help him with this problem. The expected output is a text file with the sizes of the fragments, where the size is the number of nucleotides of each fragment.\n\n\nFor more explanations on the basic commands in the command line we suggest to visit the first chapters of Computing skills for biologist from Allesina and Wilmes (2019)\n\n\n\n\nAllesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for Biologists,” January. https://doi.org/10.2307/j.ctvc77jrc."
   },
   {
     "objectID": "chs-command-line/git-and-github.html",
@@ -95,21 +95,14 @@
     "href": "chs-command-line/git-and-github.html#git-installation-and-configuration",
     "title": "2  Version control",
     "section": "\n2.2 Git installation and configuration",
-    "text": "2.2 Git installation and configuration\nInstallation could proceed from the official page of git. If working from WSL it has the binaries preinstalled, so you can jump directly to the configuration. The second step is to configure your user name and an email. with the following lines:\n\ngit config --global user.name \"Your Name\"\ngit config --global user.email user@eafit.edu.co\n\nYou could always user the preferred e-mail. More configurations are available, for instance the preferred editor to work with and so on, you can explore by asking for help git config --help or git config --list.\n\n2.2.1 The basics\nThere are at least six basic commands. Three of them allow recording local changes (git init, git add and git commit) and the other three help you to inspect the state of the changes (git status, git diff and git log), we will dive into the detail in the following lines. So, to start recording changes in a directory you must initialize the directory (which will now be called repository) using git init. This is a one-time command to get started.\n\n2.2.2 The local workflow\n\n\nLocal workflow of a git project adding and committing changes\n\n\n2.2.3 Ignoring files\nthe .gitignore file."
+    "text": "2.2 Git installation and configuration\nInstallation could proceed from the official page of git. If working from WSL it has the binaries preinstalled, so you can jump directly to the configuration. The second step is to configure your user name and an email. with the following lines:\n\ngit config --global user.name \"Your Name\"\ngit config --global user.email user@eafit.edu.co\n\nYou could always user the preferred e-mail. More configurations are available, for instance the preferred editor to work with and so on, you can explore by asking for help git config --help or git config --list.\n\n2.2.1 The basics\nThere are at least six basic commands. Three of them allow recording local changes (git init, git add and git commit) and the other three help you to inspect the state of the changes (git status, git diff and git log), we will dive into the detail in the following lines. So, to start recording changes in a directory you must initialize the directory (which will now be called repository) using git init. This is a one-time command to get started.\n\n2.2.2 The local workflow\n\n\nLocal workflow of a git project adding and committing changes\n\n\n#local-workflow\n\n2.2.3 Ignoring files\nthe .gitignore file."
   },
   {
     "objectID": "chs-command-line/git-and-github.html#exploring-github",
     "href": "chs-command-line/git-and-github.html#exploring-github",
     "title": "2  Version control",
     "section": "\n2.3 Exploring GitHub",
-    "text": "2.3 Exploring GitHub\nAs mention before, one of the great advantages that git can later achieve is to collaborate. However, to get into that a sharable server must allow users to have a common ground, and this is what GitHub allow. GitHub is a web platform where the local repositories become public and any user can access to the controlled versions of an image of your repo.\nTo enable the communication with a remote repo, git has encoded many specific commands, once the repos are cloned a simple workflow from the own local and remote repos is made possible thanks to three simple commands git push and git pull.\n\n\n\n\nThe octocat from GitHub"
-  },
-  {
-    "objectID": "chs-command-line/git-and-github.html#from-local-to-remote",
-    "href": "chs-command-line/git-and-github.html#from-local-to-remote",
-    "title": "2  Version control",
-    "section": "\n2.4 From local to remote",
-    "text": "2.4 From local to remote\n\n2.4.1 Cloning workflow\n\n\n\n\n2.4.2 Forking and collaborate\n\n\n\n\n2.4.3 Branching and merging"
+    "text": "2.3 Exploring GitHub\nAs mention before, one of the great advantages that git can later achieve is to collaborate. However, to get into that a sharable server must allow users to have a common ground, and this is what GitHub allow. GitHub is a web platform where the local repositories become public and any user can access to the controlled versions of an image of your repo.\nTo enable the communication with a remote repo, git has encoded many specific commands, once the repos are cloned a simple workflow from the own local and remote repos is made possible thanks to two simple commands git push and git pull.\nThere a several ways to starting out a remote project, whether it starts from a local folder or whether it starts from a remote repo. The second strategy is sometimes easier as you just need to later git clone the remote into a local folder. To do so every repo has its own code-icon  to later copy the repo link and later hit git clone <https...> on the desired folder. Now you got a linked copy of the remote on your machine.\nBut before working on a remote and pushing your firsts committed changes it is common to find an error regarding the remote branch (also called origin). There are several ways to avoid this caveat, but a very anticipated way is to configure git with the following line:\n\ngit config --global push.autoSetupRemote true\n\nThis will save you from every time typing git push --set-upstream origin <main> when working on a new remote repo.\n\n\n\nThe octocat from GitHub\n\n\n2.3.1 Cloning workflow\n\n\n\n\n2.3.2 Forking and collaborate\n\n\n\n\n2.3.3 Branching and merging"
   },
   {
     "objectID": "chs-command-line/package-managers.html#conda-environments-and-other-package-managers",
@@ -151,14 +144,14 @@
     "href": "chs-command-line/hpc-notions.html#computer-architectures",
     "title": "4  Notions of HPC",
     "section": "4.3 Computer architectures",
-    "text": "4.3 Computer architectures\n\n\n\nLaptop processor architecture\n\n\n\n\n\nHPC architecture"
+    "text": "4.3 Computer architectures\n\n\n\n\nLaptop processor architecture\n\n\n\n\nHPC architecture"
   },
   {
     "objectID": "chs-command-line/hpc-notions.html#using-apolo-cluster-with-slurm",
     "href": "chs-command-line/hpc-notions.html#using-apolo-cluster-with-slurm",
     "title": "4  Notions of HPC",
     "section": "4.4 Using Apolo cluster with Slurm",
-    "text": "4.4 Using Apolo cluster with Slurm"
+    "text": "4.4 Using Apolo cluster with Slurm\n\nSlurm is a job manager scheduler. It brings order to the jobs sent by users of the clusters and facilitate the process of check the state of the job in the cluster and the actual state of the cluster itself. To do so it has basically three main commands. The first one is sinfo"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html",

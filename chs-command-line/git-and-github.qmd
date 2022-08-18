@@ -29,6 +29,7 @@ git config --global user.name "Your Name"
 git config --global user.email user@eafit.edu.co
 ```
 
+
 You could always user the preferred e-mail. More configurations are available, for instance the preferred editor to work with and so on, you can explore by asking for help `git config --help` or `git config --list`.
 
 ### The basics
@@ -37,7 +38,9 @@ There are at least **six** basic commands. Three of them allow recording local c
 
 ### The local workflow
 
-![Local workflow of a git project adding and committing changes](imgs-cli/gitlocal.png){#local-workflow}
+![Local workflow of a git project adding and committing changes](imgs-cli/gitlocal.png){width="60%" fig-align="center"}
+
+#local-workflow
 
 ### Ignoring files
 
@@ -47,13 +50,22 @@ the `.gitignore` file.
 
 As mention before, one of the great advantages that git can later achieve is to collaborate. However, to get into that a sharable server must allow users to have a common ground, and this is what [GitHub](https://github.com/home) allow. GitHub is a web platform where the local repositories become public and any user can access to the controlled versions of an image of your repo. 
 
-To enable the communication with a remote repo, git has encoded many specific commands, once the repos are **cloned** a simple workflow from the own local and remote repos is made possible thanks to three simple commands `git push` and `git pull`. 
+To enable the communication with a remote repo, git has encoded many specific commands, once the repos are **cloned** a simple workflow from the own local and remote repos is made possible thanks to two simple commands `git push` and `git pull`. 
 
-::: {.column-margin}
-![The octocat from GitHub](imgs-cli/octocat.jpeg)
-:::
+There a several ways to starting out a remote project, whether it starts from a local folder or whether it starts from a remote repo. The second strategy is sometimes easier as you just need to later `git clone` the remote into a local folder. To do so every repo has its own code-icon {{< fa code size=scriptsize >}} to later copy the repo link and later hit `git clone <https...>` on the desired folder. Now you got a linked copy of the remote on your machine.
 
-## From local to remote
+But before working on a remote and pushing your firsts committed changes it is common to find an error regarding the remote branch (also called *origin*). There are several ways to avoid this caveat, but a very anticipated way is to configure git with the following line:
+
+```{bash}
+#| eval: false
+git config --global push.autoSetupRemote true
+```
+
+This will save you from every time typing `git push --set-upstream origin <main>` when working on a new remote repo.
+
+
+![The octocat from GitHub](imgs-cli/octocat.png){.column-margin}
+
 
 ### Cloning workflow
 

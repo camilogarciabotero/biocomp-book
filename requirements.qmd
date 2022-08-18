@@ -1,0 +1,20 @@
+# Software requirement and installations {.unnumbered}
+
+WSL
+Brew
+Conda
+
+
+Apolo
+Global protect
+Inscription sheet
+
+git
+git conf
+git autentication
+github account 
+
+
+Rstudio?
+Python?
+Julia?

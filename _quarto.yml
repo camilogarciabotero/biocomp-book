@@ -89,8 +89,9 @@ format:
     code-link: true
     code-copy: hover
     mainfont: Atkinson Hyperlegible
-    monofont: Fira Code
-    # mainfont: sora
+    monofont: JetBrains
+    highlight-style: ayu
+    # mainfont: sora Fira Code nord github oblivion arrow
   # pdf:
   #   documentclass: book
   #   code-block-border-left: false

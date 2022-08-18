@@ -1,6 +1,9 @@
 # Introduction {.unnumbered}
 
-Here we present a course centered book of the Fundamentals of Computational Biology. We will cover several topics, from using the unix tools, the importance of package manager systems (such as homebrew and conda), sequencing technologies, sequence alignments, molecular phylogenetics, genome assembly and annotation, and variant calling analysis.
+The present book gathers the lecture notes of the undergrad course in Fundamentals of Computational Biology that takes place in EAFIT University. The first part will focus on how to use the the command line interface (aka CLI). It includes a long-format chapter about the Unix tools and concepts that is taught during the first four class lessons. The second chapter of covers the basics of git and the principal workflows to work daily on a collaborative manner this is actually the second lesson of the course. the importance of package manager systems (such as homebrew and conda
+
+
+The second part We will cover several topics sequencing technologies, sequence alignments, molecular phylogenetics, genome assembly and annotation, and variant calling analysis.
 
 Include a section, maybe an appendix about how to handle errors
 Include s section about the windows subsystem for linux (WSL) and the ease of use for windows users
