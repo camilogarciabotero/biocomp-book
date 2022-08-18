@@ -3,6 +3,8 @@ execute:
   engine: knitr
 filters: 
   - lightbox
+  - nutshell
+  - code-filename
 lightbox: auto
 ---
 
@@ -14,7 +16,7 @@ lightbox: auto
 
 ## Getting started with the command line
 
-Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It simply is an operating system (OS). In other words, it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant (or clone) of Unix is the very well known OS Linux, which was created by Linus Torvalds from scratch. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically. Other main feature from Unix-like OS systems is the fact that data is usually stored as text files and the interface by which users communicate with the machine is also text-based (TUI: text user interface as opposed to GUI, graphic user interface).
+Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It simply is an [:operating system (OS)](https://en.wikipedia.org/wiki/Operating_system). In other words, it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant (or clone) of Unix is the very well known OS [:Linux](https://en.wikipedia.org/wiki/Linux), which was created by [:Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) from scratch. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically. Other main feature from Unix-like OS systems is the fact that data is usually stored as text files and the interface by which users communicate with the machine is also text-based (TUI: text user interface as opposed to GUI, graphic user interface).
 
 ![A **terminal** app displaying common features of the command line interface](imgs-cli/terminal.png){#fig-terminal fig-align="center"}
 
@@ -24,12 +26,12 @@ Almost every computer has a way to interact with or access to the inner elements
 
 Programs, files and directories on every machine (with Unix-like OS) display hierarchical paths (routes), starting out from the **root** (represented by the back-slash character `/`). The **root** represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths [Fig. @fig-tree]
 
-![A figure displaying tree-like structure of the programs in a machine with macOS](imgs-cli/dir-tree.png){#fig-tree fig-align="center"}
+![A terminal displaying tree-like structure of the programs in a machine with macOS](imgs-cli/dir-tree.png){#fig-tree fig-align="center"}
 
 ::: {.callout-tip .column-margin}
 You can inspect the paths of a nested directory tree using `tree` command in you cli:
 
-``` bash
+```bash
 tree -d -L 1
 ```
 :::
@@ -57,7 +59,7 @@ cd test-dir
 ::: {.callout-tip .column-margin}
 Some basic arguments to navigate across your terminal:
 
-``` bash
+```bash
 cd .. # change backwards
 cd ~  # change to the home
 cd /  # change to the root
@@ -89,7 +91,7 @@ A simple command to create any file inside your terminal is `touch` it just crea
 touch new-file.txt
 ```
 
-The `new-file.txt` is empty and created on your current location unless you assign another path when creating it. We suggest to take a look at [Allison Horst](https://github.com/allisonhorst/stats-illustrations), especially on how to name files depending on the *case* see [Fig. @fig-naming-files]
+The `new-file.txt` is empty and created on your current location unless you assign another path when creating it. We suggest to take a look at [Allison Horst](https://github.com/allisonhorst/) illustrations, especially on how to name files depending on the *case* see [Fig. @fig-naming-files]
 
 ::: {.content-visible when-format="html"}
 ::: column-margin
@@ -97,7 +99,6 @@ The `new-file.txt` is empty and created on your current location unless you assi
 :::
 :::
 
-<!-- [![Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst](imgs-cli/naming-files.png){#fig-naming-files}](https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/other-stats-artwork/coding_cases.png) -->
 
 #### Printing files to the screen
 
@@ -138,7 +139,7 @@ Some other for instance also tend to call the `option` as `flag`. This conventio
 ::: callout-warning
 # Challenge
 
-Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the restriction-modification system (RM-System), which works by targeting a specific site called *motif*, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a *motif logo* which is a probabilistic representation of the nucleotides in a given position. Find the number of times the motif from [Fig. @fig-motif] appears on *B. tequilensis* EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.
+Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the [:restriction-modification system (RM-System)](https://en.wikipedia.org/wiki/Restriction_modification_system), which works by targeting a specific sites called *motifs*, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a [:sequence logo](https://en.wikipedia.org/wiki/Sequence_logo) which is a probabilistic representation of the nucleotides at each position. The challenge consists of finding the number of times the motif from [Fig. @fig-motif] appears on *B. tequilensis* EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.
 
 ![A RM-system motif logo](imgs-cli/motif.png){#fig-motif}
 :::
@@ -175,24 +176,35 @@ sed
 When using the CLI at first its common to feal quite slow. Then, a very useful tip to boost the productivity from the command line is the autocompletion of commands by hitting `<tab>` after the initial command.
 :::
 
+
 ### Redirection
 
-![Redirecting](imgs-cli/redirection.png)
+![Redirecting flow](imgs-cli/redirection.png){width="70%"}
 
 ### Pipe
 
-![](imgs-cli/pipeflow.png)
+![Pipe flow](imgs-cli/pipeflow.png){width="70%"}
 
 ::: {.callout-tip .column-margin}
 When having a long command, it is also useful to jump by lines instead of character by character. To do so you can use the key combination `Alt + <-` and `Alt + ->` respectively.
 :::
 
 
+::: {.callout-warning}
+# [Challenge](../chs-command-line/welcome-to-command-line.qmd#anatomy-of-a-command)
+
+A second part of this challenges consists of create a script out from r the motif-search one-line command that recursively search the motifs in all genomes from a zip file that contains 10 bacterial genomes. The script should include the shebang, loops, conditionals and environmental variables.
+
+See the [:answer](../chs-challenges-demos/demo-motif-search.qmd#motif-search-in-multiple-files)
+:::
+
+
+
 
 ::: {.callout-warning}
 # Challenge
 
-Restriction endonucleases (RE) cleave the DNA by digesting the phosphodiester bond between two nucleotides. Many RE are directed to specific DNA motifs normally palindromic. There are mainly three types according to it digestive mechanism. RE have been widely used in molecular biotechnology because its specificity and versatility to carry out different experiments.
+[:Restriction endonucleases](https://en.wikipedia.org/wiki/Restriction_enzyme) (RE) cleave the DNA by digesting the [:phosphodiester bond](https://en.wikipedia.org/wiki/Phosphodiester_bond) between two nucleotides. Many RE are directed to specific DNA motifs normally palindromic. There are mainly three types according to it digestive mechanism. RE have been widely used in molecular biotechnology because its specificity and versatility to carry out different experiments.
 
 One of the main uses of RE is to generate a pattern of restricted fragments from different organisms so that samples of organisms, sequences or genes could be distinguished, as long as they display differences in the number of recognition motifs. This is normally done in the lab, where an RE is mixed with a DNA sample and later an electrophoresis gel is run to see a separation pattern according to the fragments size.
 

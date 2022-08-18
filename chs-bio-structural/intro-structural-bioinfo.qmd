@@ -1,3 +1,10 @@
+---
+filters: 
+    - nutshell
+    - lightbox
+lightbox: true
+---
+
 # Structural bioinformatics {#sec-biostructural}
 
 Structural bioinformatics is a multidisciplinary area enriched by chemistry, physics, computer science and many others. Although, it could be focused on different biological macro-molecules, here the emphasis will be focused on proteins.
@@ -12,13 +19,13 @@ Difference between the levels of protein structure primary structure is the basi
 
 Secondary structures result from the spatial arrangement of aminoacids that interact with each closer neighbors. There are some remarkable secondary structures such as $\beta$-sheets, $\alpha$-helix, coils (flexible) and others.
 
-Tertiary structure informs about the structural disposition of the secondary structures that fold between each other due to hydrophobic interactions, disulfure bonds, and other chemical interactions forming a globular and dynamic structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the [Levinthal's paradox](https://en.wikipedia.org/wiki/Levinthal%27s_paradox)).
+Tertiary structure informs about the structural disposition of the secondary structures that fold between each other due to hydrophobic interactions, disulfure bonds, and other chemical interactions forming a globular and dynamic structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the [:Levinthal's paradox](https://en.wikipedia.org/wiki/Levinthal%27s_paradox)).
 
 Quaternary structures result from interaction of multiple tertiary structures. *The structure, therefore dictates the protein function*. This basic concept have triggered more recently a boom on the analysis of the structure of proteins.
 
 ## Identifying or predicting protein structures
 
-Xray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks 
+Xray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks.
 
 [To date, helium is scarce around the world, so labs all around are having trouble to get this element.]{.aside}
 

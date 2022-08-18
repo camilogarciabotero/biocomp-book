@@ -4,6 +4,7 @@ execute:
   freeze: auto
 filters:
   - code-filename
+  - nutshell
 ---
 
 # Motif search
