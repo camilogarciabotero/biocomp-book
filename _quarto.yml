@@ -72,6 +72,8 @@ date-format: "YYYY-MM-DD"
 
 comments:
   hypothesis: true
+  utterances: 
+      repo: camilogarciabotero/biocomp-book
 
 execute:
   cache: true
