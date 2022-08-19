@@ -74,6 +74,7 @@ comments:
   hypothesis: true
   giscus: 
       repo: camilogarciabotero/biocomp-book
+      
 
 execute:
   cache: true
