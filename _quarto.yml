@@ -19,7 +19,7 @@ book:
   repo-actions: [edit, issue]
   repo-branch: main
   # downloads: [pdf]
-  google-analytics: "G-6V8GZB3LCW"
+  google-analytics: "G-QFWWJGZHLD"
   # sharing: [twitter]
   sidebar:
     style: floating
