@@ -7,7 +7,7 @@ filters:
   - nutshell
 ---
 
-# Motif search
+# Motif search {.unnumbered}
 
 ::: callout-warning
 # [Challenge](../chs-command-line/welcome-to-command-line.qmd#anatomy-of-a-command)
@@ -76,7 +76,7 @@ tr -d '\n' < data/Bteq-genome.fasta |
     wc -l
 ```
 
-# Motif search in multiple files
+# Motif search in multiple files {.unnumbered}
 
 ::: {.callout-warning}
 # [Challenge](../chs-command-line/welcome-to-command-line.qmd#anatomy-of-a-command)

@@ -281,7 +281,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-challenges-demos/demo-motif-search.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Motif search</span></a>
+  <a href="../chs-challenges-demos/demo-motif-search.html" class="sidebar-item-text sidebar-link">Motif search</a>
   </div>
 </li>
       </ul>
@@ -303,15 +303,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
 <li><a href="#the-basics" id="toc-the-basics" class="nav-link" data-scroll-target="#the-basics"> <span class="header-section-number">2.2.1</span> The basics</a></li>
   <li><a href="#the-local-workflow" id="toc-the-local-workflow" class="nav-link" data-scroll-target="#the-local-workflow"> <span class="header-section-number">2.2.2</span> The local workflow</a></li>
-  <li><a href="#ignoring-files" id="toc-ignoring-files" class="nav-link" data-scroll-target="#ignoring-files"> <span class="header-section-number">2.2.3</span> Ignoring files</a></li>
   </ul>
 </li>
   <li>
 <a href="#exploring-github" id="toc-exploring-github" class="nav-link" data-scroll-target="#exploring-github"> <span class="header-section-number">2.3</span> Exploring GitHub</a>
   <ul class="collapse">
-<li><a href="#cloning-workflow" id="toc-cloning-workflow" class="nav-link" data-scroll-target="#cloning-workflow"> <span class="header-section-number">2.3.1</span> Cloning workflow</a></li>
-  <li><a href="#forking-and-collaborate" id="toc-forking-and-collaborate" class="nav-link" data-scroll-target="#forking-and-collaborate"> <span class="header-section-number">2.3.2</span> Forking and collaborate</a></li>
-  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging"> <span class="header-section-number">2.3.3</span> Branching and merging</a></li>
+<li><a href="#forking-and-collaborate" id="toc-forking-and-collaborate" class="nav-link" data-scroll-target="#forking-and-collaborate"> <span class="header-section-number">2.3.1</span> Forking and collaborate</a></li>
+  <li><a href="#branching-and-merging" id="toc-branching-and-merging" class="nav-link" data-scroll-target="#branching-and-merging"> <span class="header-section-number">2.3.2</span> Branching and merging</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-command-line/git-and-github.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -363,36 +361,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </figure>
 </div>
 <p>#local-workflow</p>
-</section><section id="ignoring-files" class="level3" data-number="2.2.3"><h3 data-number="2.2.3" class="anchored" data-anchor-id="ignoring-files">
-<span class="header-section-number">2.2.3</span> Ignoring files</h3>
-<p>the <code>.gitignore</code> file.</p>
 </section></section><section id="exploring-github" class="level2 page-columns page-full" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="exploring-github">
 <span class="header-section-number">2.3</span> Exploring GitHub</h2>
-<p>As mention before, one of the great advantages that git can later achieve is to collaborate. However, to get into that a sharable server must allow users to have a common ground, and this is what <a href="https://github.com/home">GitHub</a> allow. GitHub is a web platform where the local repositories become public and any user can access to the controlled versions of an image of your repo.</p>
-<p>To enable the communication with a remote repo, git has encoded many specific commands, once the repos are <strong>cloned</strong> a simple workflow from the own local and remote repos is made possible thanks to two simple commands <code>git push</code> and <code>git pull</code>.</p>
+<p>As mention before, one of the great advantages that git can later achieve is to collaborate. However, to get into that a sharable server must allow users to have a common ground, and this is what <a href="https://github.com/home">GitHub</a> allow. GitHub is a web platform where the local repositories become public and any user can access to the controlled versions of an image of your repo. The famous pet is the octocat <a href="#fig-octocat">Fig.&nbsp;<span>2.1</span></a></p>
+
+<div class="no-row-height column-margin column-container"><div id="fig-octocat" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="imgs-cli/octocat.png" class="lightbox" title="The octocat from GitHub" data-gallery="quarto-lightbox-gallery-2"><img src="imgs-cli/octocat.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure 2.1: The octocat from GitHub</figcaption><p></p>
+</figure>
+</div></div><p>To enable the communication with a remote repo, git has encoded many specific commands, once the repos are <strong>cloned</strong> a simple workflow from the own local and remote repos is made possible thanks to two simple commands <code>git push</code> and <code>git pull</code>.</p>
 <p>There a several ways to starting out a remote project, whether it starts from a local folder or whether it starts from a remote repo. The second strategy is sometimes easier as you just need to later <code>git clone</code> the remote into a local folder. To do so every repo has its own code-icon <i class="fa-solid fa-code"></i> to later copy the repo link and later hit <code>git clone &lt;https...&gt;</code> on the desired folder. Now you got a linked copy of the remote on your machine.</p>
-<p>But before working on a remote and pushing your firsts committed changes it is common to find an error regarding the remote branch (also called <em>origin</em>). There are several ways to avoid this caveat, but a very anticipated way is to configure git with the following line:</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>But before working on a remote and pushing your first commits, it is common to find an error regarding the remote branch (also called <em>origin</em>). There are several ways to avoid this caveat, but a very anticipated way is to configure git</p>
 <div class="cell" data-hash="git-and-github_cache/html/unnamed-chunk-2_77e373859d7b92b53deb2930dbfc592c">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> push.autoSetupRemote true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This will save you from every time typing <code>git push --set-upstream origin &lt;main&gt;</code> when working on a new remote repo.</p>
-
-<div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="imgs-cli/octocat.png" class="lightbox" title="The octocat from GitHub" data-gallery="quarto-lightbox-gallery-2"><img src="imgs-cli/octocat.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">The octocat from GitHub</figcaption><p></p>
+</div>
+</div>
+<div id="fig-cloning" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="imgs-cli/gitcloning.png" class="lightbox" title="The cloning workflow in brief" data-gallery="quarto-lightbox-gallery-3"><img src="imgs-cli/gitcloning.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure 2.2: The cloning workflow in brief</figcaption><p></p>
 </figure>
-</div></div><section id="cloning-workflow" class="level3" data-number="2.3.1"><h3 data-number="2.3.1" class="anchored" data-anchor-id="cloning-workflow">
-<span class="header-section-number">2.3.1</span> Cloning workflow</h3>
-<div id="cloning-workflow">
-<p><a href="imgs-cli/gitcloning.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="imgs-cli/gitcloning.png" class="img-fluid"></a></p>
 </div>
-</section><section id="forking-and-collaborate" class="level3" data-number="2.3.2"><h3 data-number="2.3.2" class="anchored" data-anchor-id="forking-and-collaborate">
-<span class="header-section-number">2.3.2</span> Forking and collaborate</h3>
-<div id="forking-workflow">
-<p><a href="imgs-cli/gitforking.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="imgs-cli/gitforking.png" class="img-fluid"></a></p>
+<p>Cloning is therefore the process of creating a local copy of remote repository, that is a machine version of the remote repo, later all the common local workflow is carried out normally <a href="#fig-cloning">Fig.&nbsp;<span>2.2</span></a></p>
+
+<div class="no-row-height column-margin column-container"><div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</section><section id="branching-and-merging" class="level3" data-number="2.3.3"><h3 data-number="2.3.3" class="anchored" data-anchor-id="branching-and-merging">
-<span class="header-section-number">2.3.3</span> Branching and merging</h3>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you want to keep a file out of synchronization git provides a simple way to do so by creating a <code>.gitignore</code> file having the the paths to the files to keep in your local machine</p>
+</div>
+</div></div><section id="forking-and-collaborate" class="level3" data-number="2.3.1"><h3 data-number="2.3.1" class="anchored" data-anchor-id="forking-and-collaborate">
+<span class="header-section-number">2.3.1</span> Forking and collaborate</h3>
+<p>Basic collaboration on an open repository is a three-step process. First you need to <code>fork</code> the repo, this will create a mirror copy of the repo in your GitHub profile. In a second step, a simple <code>clone</code> of the repo will generate a copy of the forked repo on your local machine, so you can freely work and make your mistakes and push them to your forked repo that belongs to your account. In a third step, once they are on the remote repo you will have to create a <code>pull request</code> (PR), as its name suggest: you are <strong>asking</strong> the owners of the original to consider your changes <a href="#fig-forking">Fig.&nbsp;<span>2.3</span></a>.</p>
+<div id="fig-forking" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="imgs-cli/gitforking.png" class="lightbox" title="A common collaborative workflow from GitHub, using fork, clone and pull requests" data-gallery="quarto-lightbox-gallery-4"><img src="imgs-cli/gitforking.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure 2.3: A common collaborative workflow from GitHub, using fork, clone and pull requests</figcaption><p></p>
+</figure>
+</div>
+</section><section id="branching-and-merging" class="level3" data-number="2.3.2"><h3 data-number="2.3.2" class="anchored" data-anchor-id="branching-and-merging">
+<span class="header-section-number">2.3.2</span> Branching and merging</h3>
 
 
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -606,7 +630,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":true,"openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"loop":true,"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});</script>
 
 
 </body></html>

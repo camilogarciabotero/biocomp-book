@@ -209,7 +209,6 @@ See the [:answer](../chs-challenges-demos/demo-motif-search.qmd#motif-search-in-
 One of the main uses of RE is to generate a pattern of restricted fragments from different organisms so that samples of organisms, sequences or genes could be distinguished, as long as they display differences in the number of recognition motifs. This is normally done in the lab, where an RE is mixed with a DNA sample and later an electrophoresis gel is run to see a separation pattern according to the fragments size.
 
 Professor Javier has sequenced the genome of a sampled SARS-CoV2 and want to see the band pattern that the genome would display if it were digested with the RE EcoRV. He has asked you to help him with this problem. The expected output is a text file with the sizes of the fragments, where the size is the number of nucleotides of each fragment.
-
 :::
 
 For more explanations on the basic commands in the command line we suggest to visit the first chapters of *Computing skills for biologist* from @allesina2019

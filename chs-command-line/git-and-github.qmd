@@ -42,19 +42,20 @@ There are at least **six** basic commands. Three of them allow recording local c
 
 #local-workflow
 
-### Ignoring files
-
-the `.gitignore` file.
 
 ## Exploring GitHub
 
-As mention before, one of the great advantages that git can later achieve is to collaborate. However, to get into that a sharable server must allow users to have a common ground, and this is what [GitHub](https://github.com/home) allow. GitHub is a web platform where the local repositories become public and any user can access to the controlled versions of an image of your repo. 
+As mention before, one of the great advantages that git can later achieve is to collaborate. However, to get into that a sharable server must allow users to have a common ground, and this is what [GitHub](https://github.com/home) allow. GitHub is a web platform where the local repositories become public and any user can access to the controlled versions of an image of your repo. The famous pet is the octocat [Fig. @fig-octocat]
+
+![The octocat from GitHub](imgs-cli/octocat.png){.column-margin #fig-octocat}
 
 To enable the communication with a remote repo, git has encoded many specific commands, once the repos are **cloned** a simple workflow from the own local and remote repos is made possible thanks to two simple commands `git push` and `git pull`. 
 
 There a several ways to starting out a remote project, whether it starts from a local folder or whether it starts from a remote repo. The second strategy is sometimes easier as you just need to later `git clone` the remote into a local folder. To do so every repo has its own code-icon {{< fa code size=scriptsize >}} to later copy the repo link and later hit `git clone <https...>` on the desired folder. Now you got a linked copy of the remote on your machine.
 
-But before working on a remote and pushing your firsts committed changes it is common to find an error regarding the remote branch (also called *origin*). There are several ways to avoid this caveat, but a very anticipated way is to configure git with the following line:
+
+::: {.callout-important}
+But before working on a remote and pushing your first commits, it is common to find an error regarding the remote branch (also called *origin*). There are several ways to avoid this caveat, but a very anticipated way is to configure git
 
 ```{bash}
 #| eval: false
@@ -62,17 +63,20 @@ git config --global push.autoSetupRemote true
 ```
 
 This will save you from every time typing `git push --set-upstream origin <main>` when working on a new remote repo.
+:::
 
+![The cloning workflow in brief](imgs-cli/gitcloning.png){#fig-cloning}
 
-![The octocat from GitHub](imgs-cli/octocat.png){.column-margin}
+Cloning is therefore the process of creating a local copy of remote repository, that is a machine version of the remote repo, later all the common local workflow is carried out normally [Fig. @fig-cloning]
 
-
-### Cloning workflow
-
-![](imgs-cli/gitcloning.png){#cloning-workflow}
+::: {.callout-tip .column-margin}
+If you want to keep a file out of synchronization git provides a simple way to do so by creating a `.gitignore` file having the the paths to the files to keep in your local machine
+:::
 
 ### Forking and collaborate
 
-![](imgs-cli/gitforking.png){#forking-workflow}
+Basic collaboration on an open repository is a three-step process. First you need to `fork` the repo, this will create a mirror copy of the repo in your GitHub profile. In a second step, a simple `clone` of the repo will generate a copy of the forked repo on your local machine, so you can freely work and make your mistakes and push them to your forked repo that belongs to your account. In a third step, once they are on the remote repo you will have to create a `pull request` (PR), as its name suggest: you are **asking** the owners of the original to consider your changes [Fig. @fig-forking].
+
+![A common collaborative workflow from GitHub, using fork, clone and pull requests](imgs-cli/gitforking.png){#fig-forking}
 
 ### Branching and merging

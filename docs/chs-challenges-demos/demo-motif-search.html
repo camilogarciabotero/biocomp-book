@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.0.38">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="dcterms.date" content="2022-08-18">
-<title>Fundamentals of computational biology - 14&nbsp; Motif search</title>
+<title>Fundamentals of computational biology - Motif search</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script><script async="" src="https://hypothes.is/embed.js"></script>
-<meta name="citation_title" content="[14]{.chapter-number}&nbsp; [Motif search]{.chapter-title}">
+<meta name="citation_title" content="Motif search">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
 <meta name="citation_publication_date" content="NaN-NaN-NaN">
@@ -130,9 +130,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">
-<span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Motif search</span>
-</h1>
+      <h1 class="quarto-secondary-nav-title">Motif search</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -281,7 +279,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-challenges-demos/demo-motif-search.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Motif search</span></a>
+  <a href="../chs-challenges-demos/demo-motif-search.html" class="sidebar-item-text sidebar-link active">Motif search</a>
   </div>
 </li>
       </ul>
@@ -297,14 +295,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#motif-search-in-multiple-files" id="toc-motif-search-in-multiple-files" class="nav-link active" data-scroll-target="#motif-search-in-multiple-files"> <span class="header-section-number">15</span> Motif search in multiple files</a></li>
+<li><a href="#motif-search-in-multiple-files" id="toc-motif-search-in-multiple-files" class="nav-link active" data-scroll-target="#motif-search-in-multiple-files">Motif search in multiple files</a></li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-challenges-demos/demo-motif-search.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">
-<span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Motif search</span>
-</h1>
+<h1 class="title d-none d-lg-block">Motif search</h1>
 </div>
 
 
@@ -332,10 +328,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the restriction-modification system (RM-System), which works by targeting a specific site called <em>motif</em>, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a <em>motif logo</em> which is a probabilistic representation of the nucleotides in a given position. Find the number of times the motif from <a href="#fig-motif">Fig.&nbsp;<span>14.1</span></a> appears on <em>B. tequilensis</em> EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.</p>
+<p>Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the restriction-modification system (RM-System), which works by targeting a specific site called <em>motif</em>, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a <em>motif logo</em> which is a probabilistic representation of the nucleotides in a given position. Find the number of times the motif from <a href="#fig-motif">Fig.&nbsp;<span>1</span></a> appears on <em>B. tequilensis</em> EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.</p>
 <div id="fig-motif" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="../chs-command-line/imgs-cli/motif.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure 14.1: A RM-system motif logo</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 1: A RM-system motif logo</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -348,7 +344,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">TGGAGTCCAGATACTTGCATCTGATTGCAGATACTATATATGAATTAACCGGGGAAGAATTGAGCATTAAGTTTGTCATT</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">CCTCAAAATCAAGATGTTGAGGACTTTATGCCAAAGCCGCAAGTCAAAAAAGCGGTTAAAGAAGATACATCTGATTTTCC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The file is about 4 Mb and it is heavy to be opened in any editor. Therefore when looking for a pattern it becomes more useful the CLI.</p>
-<p>A first attempt to do is simply by using <code>grep</code> for the pattern presented on <a href="#fig-motif">Fig.&nbsp;<span>14.1</span></a>. So a first problem you will find is to represent multiple characters in one position of the pattern. There is a fantastic tool to so and its called <em>regular expressions</em> (regex). a regex is a way to encode groups of characters using single characters. For instance the character <code>*</code> (wildcards) represents any character, so it groups all characters and it is used broadly on the CLI. There are many regex dialects however and for <code>grep</code> the dot <code>.</code> represents any character and when the pipe <code>|</code> represents an special operator in the CLI, for grep regex it represents and <code>OR</code> operator.</p>
+<p>A first attempt to do is simply by using <code>grep</code> for the pattern presented on <a href="#fig-motif">Fig.&nbsp;<span>1</span></a>. So a first problem you will find is to represent multiple characters in one position of the pattern. There is a fantastic tool to so and its called <em>regular expressions</em> (regex). a regex is a way to encode groups of characters using single characters. For instance the character <code>*</code> (wildcards) represents any character, so it groups all characters and it is used broadly on the CLI. There are many regex dialects however and for <code>grep</code> the dot <code>.</code> represents any character and when the pipe <code>|</code> represents an special operator in the CLI, for grep regex it represents and <code>OR</code> operator.</p>
 <p>So, the second step is to create our regular expression. Note the there are six characters in the expression that can adopt different characters. So our first regex is <code>TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT</code>. In the expression the parenthesis allow groups of characters.</p>
 <p>Now lets see if we can search for that pattern using <code>grep</code> and the appropriate option for using regex, which in this case is <code>-E</code>. Another simply way to use the <code>grep -E</code> combination is to use simple <code>egrep</code> command plus the <code>-c</code> option to count the number of <em>lines</em> where the pattern appears.</p>
 <div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-1_3301430eaaccfc873b42f696d6d47035">
@@ -387,8 +383,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>      94</code></pre>
 </div>
 </div>
-<section id="motif-search-in-multiple-files" class="level1" data-number="15"><h1 data-number="15">
-<span class="header-section-number">15</span> Motif search in multiple files</h1>
+<section id="motif-search-in-multiple-files" class="level1 unnumbered"><h1 class="unnumbered">Motif search in multiple files</h1>
 <div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
