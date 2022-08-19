@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.0.38">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2022-08-18">
-<title>Fundamentals of computational biology - Motif search</title>
+<meta name="dcterms.date" content="2022-08-19">
+<title>Fundamentals of computational biology - Unix challenges</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,19 +118,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script><script async="" src="https://hypothes.is/embed.js"></script>
-<meta name="citation_title" content="Motif search">
+<meta name="citation_title" content="Unix challenges">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
 <meta name="citation_publication_date" content="NaN-NaN-NaN">
 <meta name="citation_journal_title" content="undefined">
 <meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_publication_date=1984-05;,citation_issue=2;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;">
 <meta name="citation_reference" content="citation_title=Computing skills for biologists;,citation_author=Stefano Allesina;,citation_author=Madlen Wilmes;,citation_fulltext_html_url=http://dx.doi.org/10.2307/j.ctvc77jrc;,citation_publication_date=2019-01-15;,citation_journal_title=undefined;">
+<meta name="citation_reference" content="citation_title=Genetics: Genes, genomes, and evolution;,citation_author=Philip Mark Meneely;,citation_author=Rachel Dawes Hoang;,citation_author=Iruka N Okeke;,citation_author=Katherine Heston;,citation_publication_date=2017;,citation_journal_title=undefined;">
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Motif search</h1>
+      <h1 class="quarto-secondary-nav-title">Unix challenges</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -279,7 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-challenges-demos/demo-motif-search.html" class="sidebar-item-text sidebar-link active">Motif search</a>
+  <a href="../chs-challenges-demos/demo-motif-search.html" class="sidebar-item-text sidebar-link active">Unix challenges</a>
   </div>
 </li>
       </ul>
@@ -295,12 +296,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#motif-search-in-multiple-files" id="toc-motif-search-in-multiple-files" class="nav-link active" data-scroll-target="#motif-search-in-multiple-files">Motif search in multiple files</a></li>
+<li><a href="#motif-search" id="toc-motif-search" class="nav-link active" data-scroll-target="#motif-search">Motif search</a></li>
+  <li><a href="#motif-search-in-multiple-files" id="toc-motif-search-in-multiple-files" class="nav-link" data-scroll-target="#motif-search-in-multiple-files">Motif search in multiple files</a></li>
+  <li><a href="#fragments-digestion" id="toc-fragments-digestion" class="nav-link" data-scroll-target="#fragments-digestion">Fragments digestion</a></li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-challenges-demos/demo-motif-search.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">Motif search</h1>
+<h1 class="title d-none d-lg-block">Unix challenges</h1>
 </div>
 
 
@@ -311,32 +314,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-08-18</p>
+      <p class="date">2022-08-19</p>
     </div>
   </div>
     
   </div>
   
 
-</header><div class="callout-warning callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-<a href="../chs-command-line/welcome-to-command-line.html#anatomy-of-a-command">Challenge</a>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the restriction-modification system (RM-System), which works by targeting a specific site called <em>motif</em>, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a <em>motif logo</em> which is a probabilistic representation of the nucleotides in a given position. Find the number of times the motif from <a href="#fig-motif">Fig.&nbsp;<span>1</span></a> appears on <em>B. tequilensis</em> EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.</p>
-<div id="fig-motif" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="../chs-command-line/imgs-cli/motif.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure 1: A RM-system motif logo</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The first thing we must do is download the sequence of interest. In <a href="../chs-command-line/welcome-to-command-line.html#anatomy-of-a-command">Ch 1</a> the genome of <em>Bacillus tequilensis</em> EA-CB0015 is proposed. There are several ways to do so. A simple way is to search in the NCBI databases for the entire genome and download as <code>FASTA</code> file (we cover the properties of this file format in <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html">Ch 5</a>).</p>
+</header><section id="motif-search" class="level2"><h2 class="anchored" data-anchor-id="motif-search">Motif search</h2>
+<p>The first thing we must do to solve the <a href="../chs-command-line/welcome-to-command-line.html#anatomy-of-a-command">Challenge</a> is download the sequence of interest. In <a href="../chs-command-line/welcome-to-command-line.html#anatomy-of-a-command">Ch 1</a> the genome of <em>Bacillus tequilensis</em> EA-CB0015 is proposed. There are several ways to do so. A simple way is to search in the NCBI databases for the entire genome and download as <code>FASTA</code> file (we cover the properties of this file format in <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html">Ch 5</a>).</p>
 <p>When inspecting the file we see the following lines at the top</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>NZ_CP048852.1 <span class="ex">Bacillus</span> tequilensis strain EA-CB0015 chromosome, complete genome</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ATGGAAAATATATTAGACCTGTGGAATCAAGCCCTTGCTCAAATCGAAAAAAAGTTGAGCAAACCGAGTTTTGAGACTTG</span></span>
@@ -344,7 +330,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">TGGAGTCCAGATACTTGCATCTGATTGCAGATACTATATATGAATTAACCGGGGAAGAATTGAGCATTAAGTTTGTCATT</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">CCTCAAAATCAAGATGTTGAGGACTTTATGCCAAAGCCGCAAGTCAAAAAAGCGGTTAAAGAAGATACATCTGATTTTCC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The file is about 4 Mb and it is heavy to be opened in any editor. Therefore when looking for a pattern it becomes more useful the CLI.</p>
-<p>A first attempt to do is simply by using <code>grep</code> for the pattern presented on <a href="#fig-motif">Fig.&nbsp;<span>1</span></a>. So a first problem you will find is to represent multiple characters in one position of the pattern. There is a fantastic tool to so and its called <em>regular expressions</em> (regex). a regex is a way to encode groups of characters using single characters. For instance the character <code>*</code> (wildcards) represents any character, so it groups all characters and it is used broadly on the CLI. There are many regex dialects however and for <code>grep</code> the dot <code>.</code> represents any character and when the pipe <code>|</code> represents an special operator in the CLI, for grep regex it represents and <code>OR</code> operator.</p>
+<p>A first attempt to do is simply by using <code>grep</code> for the pattern presented on <a href="../chs-command-line/welcome-to-command-line.html#fig-motif">Fig.&nbsp;<span>1.5</span></a>. So a first problem you will find is to represent multiple characters in one position of the pattern. There is a fantastic tool to so and its called <em>regular expressions</em> (regex). a regex is a way to encode groups of characters using single characters. For instance the character <code>*</code> (wildcards) represents any character, so it groups all characters and it is used broadly on the CLI. There are many regex dialects however and for <code>grep</code> the dot <code>.</code> represents any character and when the pipe <code>|</code> represents an special operator in the CLI, for grep regex it represents and <code>OR</code> operator.</p>
 <p>So, the second step is to create our regular expression. Note the there are six characters in the expression that can adopt different characters. So our first regex is <code>TAAA(T|A)(.)(T|A)(G|A)(.)(C|A)GGT</code>. In the expression the parenthesis allow groups of characters.</p>
 <p>Now lets see if we can search for that pattern using <code>grep</code> and the appropriate option for using regex, which in this case is <code>-E</code>. Another simply way to use the <code>grep -E</code> combination is to use simple <code>egrep</code> command plus the <code>-c</code> option to count the number of <em>lines</em> where the pattern appears.</p>
 <div class="cell" data-hash="demo-motif-search_cache/html/unnamed-chunk-1_3301430eaaccfc873b42f696d6d47035">
@@ -383,21 +369,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>      94</code></pre>
 </div>
 </div>
-<section id="motif-search-in-multiple-files" class="level1 unnumbered"><h1 class="unnumbered">Motif search in multiple files</h1>
-<div class="callout-warning callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-<a href="../chs-command-line/welcome-to-command-line.html#anatomy-of-a-command">Challenge</a>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A second part of this challenges consists of create a script out from r the motif-search one-line command that recursively search the motifs in all genomes from a zip file that contains 10 bacterial genomes. The script should include the shebang, loops, conditionals and environmental variables.</p>
-</div>
-</div>
-<p>Here is a the solution script:</p>
+</section><section id="motif-search-in-multiple-files" class="level2"><h2 class="anchored" data-anchor-id="motif-search-in-multiple-files">Motif search in multiple files</h2>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>motif-search.sh</strong></pre>
@@ -416,7 +388,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">fi</span></span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>to execute de command make sure to pass a folder with the decompressed genomes as the first argument.</p>
+<p>To execute the command make sure to pass a folder with the decompressed genomes as the first argument.</p>
+</section><section id="fragments-digestion" class="level2"><h2 class="anchored" data-anchor-id="fragments-digestion">Fragments digestion</h2>
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">

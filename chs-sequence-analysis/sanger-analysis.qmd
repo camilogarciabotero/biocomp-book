@@ -1,8 +1,8 @@
 # Sanger analysis {#sec-sanger}
 
-This is a section about the first gen sequencing tech
-
-## Databases exploration
+> This is a section about one of the first gen sequencing tech, that is Sanger sequencing and its principles and evolution, strengths and limitations
+>
+> Also will be covering the bioinformatics side of the method: what kind of files we get out Sanger, how we process them and an important paradigm that came out from this sequence method.
 
 ## Sanger sequencing methods
 
@@ -12,7 +12,7 @@ This is a section about the first gen sequencing tech
 
 ### Strengths and limitations of Sanger methods
 
-## Files from Sanger
+## Files from Sanger sequencing
 
 ## Sanger processing workflow
 

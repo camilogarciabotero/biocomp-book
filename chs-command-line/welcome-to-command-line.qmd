@@ -142,15 +142,15 @@ Some other for instance also tend to call the `option` as `flag`. This conventio
 Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the [:restriction-modification system (RM-System)](https://en.wikipedia.org/wiki/Restriction_modification_system), which works by targeting a specific sites called *motifs*, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a [:sequence logo](https://en.wikipedia.org/wiki/Sequence_logo) which is a probabilistic representation of the nucleotides at each position. The challenge consists of finding the number of times the motif from [Fig. @fig-motif] appears on *B. tequilensis* EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.
 
 ![A RM-system motif logo](imgs-cli/motif.png){#fig-motif}
+
+Before diving into an [:answer](../chs-challenges-demos/demo-motif-search.qmd#motif-search) take your time to think and solve it by your own.
+
 :::
 
 ## Most important skills
 
 When facing the CLI several issues or problems will arise. As for any other unintuitive challenge, a complete text interface Handling errors. Getting help Patience
 
-## 
-
-## Some great operators/ Metacharacteres in Bash
 
 ## Intermediate Unix commands
 
@@ -170,12 +170,15 @@ grep
 sed 
 ```
 
+## Special operators or metacharacters
+
+Some operator or metacharacters have special functions in bash. For instance the `*` or *wildcard* is a regular expression character (sometimes called as a placeholder) that will turn in *any character, many times*, similarly the `?` represents *any character, once*. Whereas the `$` (dollar sign or operator) is intended for an special task: call *environmental variables* which means that once a variable is defined (e.g., `var=1`) this variable can be called via the `$` operator anytime `echo $var` will get us `1` as the standard output
+
 ## Unix flows
 
 ::: {.callout-tip .column-margin}
 When using the CLI at first its common to feal quite slow. Then, a very useful tip to boost the productivity from the command line is the autocompletion of commands by hitting `<tab>` after the initial command.
 :::
-
 
 ### Redirection
 
@@ -190,23 +193,22 @@ When having a long command, it is also useful to jump by lines instead of charac
 :::
 
 
+## loops, conditionals and script variables
+
 ::: {.callout-warning}
-# [Challenge](../chs-command-line/welcome-to-command-line.qmd#anatomy-of-a-command)
+# Challenge
 
 A second part of this challenges consists of create a script out from r the motif-search one-line command that recursively search the motifs in all genomes from a zip file that contains 10 bacterial genomes. The script should include the shebang, loops, conditionals and environmental variables.
 
-See the [:answer](../chs-challenges-demos/demo-motif-search.qmd#motif-search-in-multiple-files)
+See a possible script that solve the challenge [:here](../chs-challenges-demos/demo-motif-search.qmd#motif-search-in-multiple-files)
 :::
-
-
-
 
 ::: {.callout-warning}
 # Challenge
 
 [:Restriction endonucleases](https://en.wikipedia.org/wiki/Restriction_enzyme) (RE) cleave the DNA by digesting the [:phosphodiester bond](https://en.wikipedia.org/wiki/Phosphodiester_bond) between two nucleotides. Many RE are directed to specific DNA motifs normally palindromic. There are mainly three types according to it digestive mechanism. RE have been widely used in molecular biotechnology because its specificity and versatility to carry out different experiments.
 
-One of the main uses of RE is to generate a pattern of restricted fragments from different organisms so that samples of organisms, sequences or genes could be distinguished, as long as they display differences in the number of recognition motifs. This is normally done in the lab, where an RE is mixed with a DNA sample and later an electrophoresis gel is run to see a separation pattern according to the fragments size.
+One of the main uses of RE is to generate a pattern of restricted fragments from different organisms so that samples of organisms, sequences or genes could be distinguished, as long as they display differences in the number of recognition motifs. This is normally done in the lab, where an RE is mixed with a DNA sample and later an [:electrophoresis](https://en.wikipedia.org/wiki/Electrophoresis) gel is run to see a separation pattern according to the fragments size.
 
 Professor Javier has sequenced the genome of a sampled SARS-CoV2 and want to see the band pattern that the genome would display if it were digested with the RE EcoRV. He has asked you to help him with this problem. The expected output is a text file with the sizes of the fragments, where the size is the number of nucleotides of each fragment.
 :::

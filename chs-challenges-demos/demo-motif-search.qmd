@@ -5,19 +5,13 @@ execute:
 filters:
   - code-filename
   - nutshell
+  - lightbox
 ---
+# Unix challenges {.unnumbered}
 
-# Motif search {.unnumbered}
+## Motif search
 
-::: callout-warning
-# [Challenge](../chs-command-line/welcome-to-command-line.qmd#anatomy-of-a-command)
-
-Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the restriction-modification system (RM-System), which works by targeting a specific site called *motif*, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a *motif logo* which is a probabilistic representation of the nucleotides in a given position. Find the number of times the motif from [Fig. @fig-motif] appears on *B. tequilensis* EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.
-
-![A RM-system motif logo](../chs-command-line/imgs-cli/motif.png){#fig-motif}
-:::
-
-The first thing we must do is download the sequence of interest. In [Ch 1](../chs-command-line/welcome-to-command-line.qmd#anatomy-of-a-command) the genome of *Bacillus tequilensis* EA-CB0015 is proposed. There are several ways to do so. A simple way is to search in the NCBI databases for the entire genome and download as `FASTA` file (we cover the properties of this file format in [Ch 5](../chs-sequence-analysis/introduction-to-sequence-analysis.qmd)).
+The first thing we must do to solve the [Challenge](../chs-command-line/welcome-to-command-line.qmd#anatomy-of-a-command) is download the sequence of interest. In [Ch 1](../chs-command-line/welcome-to-command-line.qmd#anatomy-of-a-command) the genome of *Bacillus tequilensis* EA-CB0015 is proposed. There are several ways to do so. A simple way is to search in the NCBI databases for the entire genome and download as `FASTA` file (we cover the properties of this file format in [Ch 5](../chs-sequence-analysis/introduction-to-sequence-analysis.qmd)).
 
 When inspecting the file we see the following lines at the top
 
@@ -76,16 +70,7 @@ tr -d '\n' < data/Bteq-genome.fasta |
     wc -l
 ```
 
-# Motif search in multiple files {.unnumbered}
-
-::: {.callout-warning}
-# [Challenge](../chs-command-line/welcome-to-command-line.qmd#anatomy-of-a-command)
-
-A second part of this challenges consists of create a script out from r the motif-search one-line command that recursively search the motifs in all genomes from a zip file that contains 10 bacterial genomes. The script should include the shebang, loops, conditionals and environmental variables.
-:::
-
-Here is a the solution script:
-
+## Motif search in multiple files
 
 ```{.bash filename="motif-search.sh"}
 #! /usr/bin/env bash
@@ -102,5 +87,7 @@ for f in $(ls $1); do
   fi
 done
 ```
+To execute the command make sure to pass a folder with the decompressed genomes as the first argument.
 
-to execute de command make sure to pass a folder with the decompressed genomes as the first argument.
+## Fragments digestion
+

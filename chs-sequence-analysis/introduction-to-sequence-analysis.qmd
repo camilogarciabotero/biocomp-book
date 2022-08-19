@@ -1,13 +1,39 @@
-#  Sequence analysis {#sec-intro-sequencing}
+#  Sequence analysis {#sec-seq-analysis}
 
-In this chapter we will discuss several about several points of view about bioinformatics and computational biology, we will further consider several biological concepts that appear central to understand the manipulation of biological data.
+>In this chapter we we will consider several biological concepts that appear central to understand the manipulation of biological data.
+>
+> We are also covering the transition of a biological (organic) information to digital bits.
+>
+> We will explore some databases in which biological information is stored.
+
+
+## Biological information
+
+![The different scales of information packed in a biological fashion. Figure adapted from @meneely2017 book showing how *DNA in a eukaryote is packaged with chromosomal proteins to form the much more compact chromatin. Chromatin is then folded into higher-order structures and eventually into the chromosome*](imgs-seqan/chromosome-genes.png){#fig-chromosome}
 
 ## The duality of DNA
 
+DNA is an organic molecule build upon several more organic bricks named nucleotides arranged in a very receptive helix structure and too much can be understood from its molecular nature. It is of course governed by the physicochemical properties of the atoms, therefore it is a physicochemical entity. But those common bricks have also a very beautiful emergent property that comes out from the order (mainly), that is keep the instructions that build the organism from whom it belongs. These instructions are nothing else than information, which also follow some informational rules. Then DNA is also an informatics entity.
+
 ## The central ~~dogma~~ theory of molecular biology extended
+
 
 ## Sequencing strategies
 
 ## Sequencing over time
 
 ## Some insights from sequencing genomes
+
+::: {.callout-warning}
+# Challenge
+
+
+How many  complete genomes of Bacillus subtilis are there in the NCBI databases?
+
+Count the number of features (genes, CDS, ncRNA, rRNA, etc.) in the genome of Bacillus subtilis NCIB 3610 (GCF_002055965.1)
+
+Document each of the steps and how did you end up with the answer. Saving the file with your initials (e.g., CG-activity01.{md,txt,docx})z 
+
+:::
+
+## Biological information databases

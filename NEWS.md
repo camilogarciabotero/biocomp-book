@@ -1,13 +1,15 @@
-# Edition 0.0.6
+## Edition 0.0.7
 
-- More updates to CLI chapter.
-
-- Update the Version Control chapter.
+- Changes in git chapter
   
-- Decoupled genome annotation section into separate chapter.
+- More images in different chapters
 
-- Add a motif search challenge
+- Start using new filters : lightbox for images and nutshell for expandable explanations
 
-- Add cover image
+- Some images in HPC chapter
 
-- Many typos corrected.
+- Some outlines in Package manager chapter
+
+- Some paragraphs on the sequence analysis chapter
+
+- Additional challenges

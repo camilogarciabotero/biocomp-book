@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-08-18">
+<meta name="dcterms.date" content="2022-08-19">
 
 <title>Fundamentals of computational biology - 5&nbsp; Sequence analysis</title>
 <style>
@@ -16,6 +16,25 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -61,13 +80,14 @@ ul.task-list{list-style: none;}
 <script async="" src="https://hypothes.is/embed.js"></script>
 
 
-<meta name="citation_title" content="[[5]{.chapter-number}&nbsp; [ Sequence analysis]{.chapter-title}]{#sec-intro-sequencing .quarto-section-identifier}">
+<meta name="citation_title" content="[[5]{.chapter-number}&nbsp; [ Sequence analysis]{.chapter-title}]{#sec-seq-analysis .quarto-section-identifier}">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
 <meta name="citation_publication_date" content="NaN-NaN-NaN">
 <meta name="citation_journal_title" content="undefined">
 <meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_publication_date=1984-05;,citation_issue=2;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;">
 <meta name="citation_reference" content="citation_title=Computing skills for biologists;,citation_author=Stefano Allesina;,citation_author=Madlen Wilmes;,citation_fulltext_html_url=http://dx.doi.org/10.2307/j.ctvc77jrc;,citation_publication_date=2019-01-15;,citation_journal_title=undefined;">
+<meta name="citation_reference" content="citation_title=Genetics: Genes, genomes, and evolution;,citation_author=Philip Mark Meneely;,citation_author=Rachel Dawes Hoang;,citation_author=Iruka N Okeke;,citation_author=Katherine Heston;,citation_publication_date=2017;,citation_journal_title=undefined;">
 </head>
 
 <body class="nav-sidebar floating">
@@ -229,7 +249,7 @@ ul.task-list{list-style: none;}
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-challenges-demos/demo-motif-search.html" class="sidebar-item-text sidebar-link">Motif search</a>
+  <a href="../chs-challenges-demos/demo-motif-search.html" class="sidebar-item-text sidebar-link">Unix challenges</a>
   </div>
 </li>
       </ul>
@@ -248,11 +268,13 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-duality-of-dna" id="toc-the-duality-of-dna" class="nav-link active" data-scroll-target="#the-duality-of-dna"> <span class="header-section-number">5.1</span> The duality of DNA</a></li>
-  <li><a href="#the-central-dogma-theory-of-molecular-biology-extended" id="toc-the-central-dogma-theory-of-molecular-biology-extended" class="nav-link" data-scroll-target="#the-central-dogma-theory-of-molecular-biology-extended"> <span class="header-section-number">5.2</span> The central <del>dogma</del> theory of molecular biology extended</a></li>
-  <li><a href="#sequencing-strategies" id="toc-sequencing-strategies" class="nav-link" data-scroll-target="#sequencing-strategies"> <span class="header-section-number">5.3</span> Sequencing strategies</a></li>
-  <li><a href="#sequencing-over-time" id="toc-sequencing-over-time" class="nav-link" data-scroll-target="#sequencing-over-time"> <span class="header-section-number">5.4</span> Sequencing over time</a></li>
-  <li><a href="#some-insights-from-sequencing-genomes" id="toc-some-insights-from-sequencing-genomes" class="nav-link" data-scroll-target="#some-insights-from-sequencing-genomes"> <span class="header-section-number">5.5</span> Some insights from sequencing genomes</a></li>
+  <li><a href="#biological-information" id="toc-biological-information" class="nav-link active" data-scroll-target="#biological-information"> <span class="header-section-number">5.1</span> Biological information</a></li>
+  <li><a href="#the-duality-of-dna" id="toc-the-duality-of-dna" class="nav-link" data-scroll-target="#the-duality-of-dna"> <span class="header-section-number">5.2</span> The duality of DNA</a></li>
+  <li><a href="#the-central-dogma-theory-of-molecular-biology-extended" id="toc-the-central-dogma-theory-of-molecular-biology-extended" class="nav-link" data-scroll-target="#the-central-dogma-theory-of-molecular-biology-extended"> <span class="header-section-number">5.3</span> The central <del>dogma</del> theory of molecular biology extended</a></li>
+  <li><a href="#sequencing-strategies" id="toc-sequencing-strategies" class="nav-link" data-scroll-target="#sequencing-strategies"> <span class="header-section-number">5.4</span> Sequencing strategies</a></li>
+  <li><a href="#sequencing-over-time" id="toc-sequencing-over-time" class="nav-link" data-scroll-target="#sequencing-over-time"> <span class="header-section-number">5.5</span> Sequencing over time</a></li>
+  <li><a href="#some-insights-from-sequencing-genomes" id="toc-some-insights-from-sequencing-genomes" class="nav-link" data-scroll-target="#some-insights-from-sequencing-genomes"> <span class="header-section-number">5.6</span> Some insights from sequencing genomes</a></li>
+  <li><a href="#biological-information-databases" id="toc-biological-information-databases" class="nav-link" data-scroll-target="#biological-information-databases"> <span class="header-section-number">5.7</span> Biological information databases</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-sequence-analysis/introduction-to-sequence-analysis.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -261,7 +283,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-intro-sequencing" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequence analysis</span></span></h1>
+<h1 class="title"><span id="sec-seq-analysis" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequence analysis</span></span></h1>
 </div>
 
 
@@ -272,7 +294,7 @@ ul.task-list{list-style: none;}
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-08-18</p>
+      <p class="date">2022-08-19</p>
     </div>
   </div>
     
@@ -281,23 +303,60 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>In this chapter we will discuss several about several points of view about bioinformatics and computational biology, we will further consider several biological concepts that appear central to understand the manipulation of biological data.</p>
-<section id="the-duality-of-dna" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="the-duality-of-dna"><span class="header-section-number">5.1</span> The duality of DNA</h2>
+<blockquote class="blockquote">
+<p>In this chapter we we will consider several biological concepts that appear central to understand the manipulation of biological data.</p>
+<p>We are also covering the transition of a biological (organic) information to digital bits.</p>
+<p>We will explore some databases in which biological information is stored.</p>
+</blockquote>
+<section id="biological-information" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="biological-information"><span class="header-section-number">5.1</span> Biological information</h2>
+<div id="fig-chromosome" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="imgs-seqan/chromosome-genes.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 5.1: The different scales of information packed in a biological fashion. Figure adapted from <span class="citation" data-cites="meneely2017">Meneely et al. (<a href="../references.html#ref-meneely2017" role="doc-biblioref">2017</a>)</span> book showing how <em>DNA in a eukaryote is packaged with chromosomal proteins to form the much more compact chromatin. Chromatin is then folded into higher-order structures and eventually into the chromosome</em></figcaption><p></p>
+</figure>
+</div>
 </section>
-<section id="the-central-dogma-theory-of-molecular-biology-extended" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="the-central-dogma-theory-of-molecular-biology-extended"><span class="header-section-number">5.2</span> The central <del>dogma</del> theory of molecular biology extended</h2>
+<section id="the-duality-of-dna" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="the-duality-of-dna"><span class="header-section-number">5.2</span> The duality of DNA</h2>
+<p>DNA is an organic molecule build upon several more organic bricks named nucleotides arranged in a very receptive helix structure and too much can be understood from its molecular nature. It is of course governed by the physicochemical properties of the atoms, therefore it is a physicochemical entity. But those common bricks have also a very beautiful emergent property that comes out from the order (mainly), that is keep the instructions that build the organism from whom it belongs. These instructions are nothing else than information, which also follow some informational rules. Then DNA is also an informatics entity.</p>
 </section>
-<section id="sequencing-strategies" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="sequencing-strategies"><span class="header-section-number">5.3</span> Sequencing strategies</h2>
+<section id="the-central-dogma-theory-of-molecular-biology-extended" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="the-central-dogma-theory-of-molecular-biology-extended"><span class="header-section-number">5.3</span> The central <del>dogma</del> theory of molecular biology extended</h2>
 </section>
-<section id="sequencing-over-time" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="sequencing-over-time"><span class="header-section-number">5.4</span> Sequencing over time</h2>
+<section id="sequencing-strategies" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="sequencing-strategies"><span class="header-section-number">5.4</span> Sequencing strategies</h2>
 </section>
-<section id="some-insights-from-sequencing-genomes" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="some-insights-from-sequencing-genomes"><span class="header-section-number">5.5</span> Some insights from sequencing genomes</h2>
+<section id="sequencing-over-time" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="sequencing-over-time"><span class="header-section-number">5.5</span> Sequencing over time</h2>
+</section>
+<section id="some-insights-from-sequencing-genomes" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="some-insights-from-sequencing-genomes"><span class="header-section-number">5.6</span> Some insights from sequencing genomes</h2>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Challenge
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>How many complete genomes of Bacillus subtilis are there in the NCBI databases?</p>
+<p>Count the number of features (genes, CDS, ncRNA, rRNA, etc.) in the genome of Bacillus subtilis NCIB 3610 (GCF_002055965.1)</p>
+<p>Document each of the steps and how did you end up with the answer. Saving the file with your initials (e.g., CG-activity01.{md,txt,docx})z</p>
+</div>
+</div>
+</section>
+<section id="biological-information-databases" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="biological-information-databases"><span class="header-section-number">5.7</span> Biological information databases</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-meneely2017" class="csl-entry" role="doc-biblioentry">
+Meneely, Philip Mark, Rachel Dawes Hoang, Iruka N Okeke, and Katherine Heston. 2017. <em>Genetics: Genes, Genomes, and Evolution</em>. Oxford University Press.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
