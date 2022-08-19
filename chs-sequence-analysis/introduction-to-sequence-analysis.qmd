@@ -1,3 +1,9 @@
+---
+filters:
+    - nutshell
+    - lightbox
+lightbox: auto
+---
 #  Sequence analysis {#sec-seq-analysis}
 
 >In this chapter we we will consider several biological concepts that appear central to understand the manipulation of biological data.
@@ -9,16 +15,32 @@
 
 ## Biological information
 
+Since the origin, organisms (or molecules) are the result of different selective processes. An emergent property of successive iterations of survival/decease was the ability of molecules to keep a record of its past in a very stable manner, so that it will pass generation to generation. Although this might not be the first property or molecule to ever exist (see the [:origin of life](https://en.wikipedia.org/wiki/Abiogenesis)), the innovation of organisms to pack information of previous events became so advantageous that almost any form of living organism has this property: that is DNA [Fig. @fig-chromosome].
+
+DNA composed mainly of four different small molecules called [:nucleic acids](https://en.wikipedia.org/wiki/Nucleic_acid) briefly called nucleotides. 
+
+*Use molstar extension in a marging
+
+
 ![The different scales of information packed in a biological fashion. Figure adapted from @meneely2017 book showing how *DNA in a eukaryote is packaged with chromosomal proteins to form the much more compact chromatin. Chromatin is then folded into higher-order structures and eventually into the chromosome*](imgs-seqan/chromosome-genes.png){#fig-chromosome}
 
 ## The duality of DNA
 
-DNA is an organic molecule build upon several more organic bricks named nucleotides arranged in a very receptive helix structure and too much can be understood from its molecular nature. It is of course governed by the physicochemical properties of the atoms, therefore it is a physicochemical entity. But those common bricks have also a very beautiful emergent property that comes out from the order (mainly), that is keep the instructions that build the organism from whom it belongs. These instructions are nothing else than information, which also follow some informational rules. Then DNA is also an informatics entity.
+DNA is an organic molecule build upon several more organic bricks named nucleotides arranged in a very compacted helix structure and too much can be understood from its molecular nature. It is of course governed by the physicochemical properties of the atoms, therefore DNA is a physicochemical entity. But those common bricks have also a very beautiful emergent property that comes out from their order (mainly), and that is to keep the instructions that build the organism from which it belongs. These instructions are nothing else than information, which also follow some informational rules. Then DNA is also an informational entity.
+
+This idea of the duality of the DNA (and of course of other biological molecules) is the source of the study of many bioinformatic fields.
+
+
+![DNA double helix structure and main characteristics. Image adapted from @brown2018 showing the structure with the *sugar–phosphate backbone
+of each polynucleotide drawn as a gray ribbon with the base pairs in green* ](imgs-seqan/dna-structure.png){#fig-doublehelix width="50%"}
+
 
 ## The central ~~dogma~~ theory of molecular biology extended
 
+Gene
 
 ## Sequencing strategies
+
 
 ## Sequencing over time
 
@@ -28,12 +50,20 @@ DNA is an organic molecule build upon several more organic bricks named nucleoti
 # Challenge
 
 
-How many  complete genomes of Bacillus subtilis are there in the NCBI databases?
+How many  complete genomes of *Bacillus subtilis* are there in the NCBI databases?
 
-Count the number of features (genes, CDS, ncRNA, rRNA, etc.) in the genome of Bacillus subtilis NCIB 3610 (GCF_002055965.1)
+Count the number of features (genes, CDS, ncRNA, rRNA, etc.) in the genome of *Bacillus subtilis* NCIB 3610 (GCF_002055965.1)
 
 Document each of the steps and how did you end up with the answer. Saving the file with your initials (e.g., CG-activity01.{md,txt,docx})z 
 
 :::
 
 ## Biological information databases
+
+## Retrieving data from NCBI
+
+### The manual way
+
+### Entrez
+
+### A simple program

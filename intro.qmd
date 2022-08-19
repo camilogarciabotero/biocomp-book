@@ -11,3 +11,5 @@ Include s section about the windows subsystem for linux (WSL) and the ease of us
 ## Endless debate: bioinformatics vs. computational biology
 
 ## The extent of computational biology
+
+[Fig. @fig-biofields]. 

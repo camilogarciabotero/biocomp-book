@@ -3,6 +3,7 @@ execute:
   engine: knitr
 filters: 
   - lightbox
+  - nutshell
 lightbox: auto
 ---
 

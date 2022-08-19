@@ -58,6 +58,10 @@ div.csl-indent {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/nutshell-1.0.0/nutshell.min.js"></script>
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -97,6 +101,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_publication_date=1984-05;,citation_issue=2;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;">
 <meta name="citation_reference" content="citation_title=Computing skills for biologists;,citation_author=Stefano Allesina;,citation_author=Madlen Wilmes;,citation_fulltext_html_url=http://dx.doi.org/10.2307/j.ctvc77jrc;,citation_publication_date=2019-01-15;,citation_journal_title=undefined;">
 <meta name="citation_reference" content="citation_title=Genetics: Genes, genomes, and evolution;,citation_author=Philip Mark Meneely;,citation_author=Rachel Dawes Hoang;,citation_author=Iruka N Okeke;,citation_author=Katherine Heston;,citation_publication_date=2017;,citation_journal_title=undefined;">
+<meta name="citation_reference" content="citation_title=Genomes 4;,citation_author=Terence A Brown;,citation_publication_date=2018;,citation_journal_title=undefined;">
 </head>
 
 <body class="nav-sidebar floating">
@@ -283,6 +288,12 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   <li><a href="#sequencing-over-time" id="toc-sequencing-over-time" class="nav-link" data-scroll-target="#sequencing-over-time"> <span class="header-section-number">5.5</span> Sequencing over time</a></li>
   <li><a href="#some-insights-from-sequencing-genomes" id="toc-some-insights-from-sequencing-genomes" class="nav-link" data-scroll-target="#some-insights-from-sequencing-genomes"> <span class="header-section-number">5.6</span> Some insights from sequencing genomes</a></li>
   <li><a href="#biological-information-databases" id="toc-biological-information-databases" class="nav-link" data-scroll-target="#biological-information-databases"> <span class="header-section-number">5.7</span> Biological information databases</a></li>
+  <li><a href="#retrieving-data-from-ncbi" id="toc-retrieving-data-from-ncbi" class="nav-link" data-scroll-target="#retrieving-data-from-ncbi"> <span class="header-section-number">5.8</span> Retrieving data from NCBI</a>
+  <ul class="collapse">
+  <li><a href="#the-manual-way" id="toc-the-manual-way" class="nav-link" data-scroll-target="#the-manual-way"> <span class="header-section-number">5.8.1</span> The manual way</a></li>
+  <li><a href="#entrez" id="toc-entrez" class="nav-link" data-scroll-target="#entrez"> <span class="header-section-number">5.8.2</span> Entrez</a></li>
+  <li><a href="#a-simple-program" id="toc-a-simple-program" class="nav-link" data-scroll-target="#a-simple-program"> <span class="header-section-number">5.8.3</span> A simple program</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-sequence-analysis/introduction-to-sequence-analysis.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -318,19 +329,30 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 </blockquote>
 <section id="biological-information" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="biological-information"><span class="header-section-number">5.1</span> Biological information</h2>
+<p>Since the origin, organisms (or molecules) are the result of different selective processes. An emergent property of successive iterations of survival/decease was the ability of molecules to keep a record of its past in a very stable manner, so that it will pass generation to generation. Although this might not be the first property or molecule to ever exist (see the <a href="https://en.wikipedia.org/wiki/Abiogenesis">:origin of life</a>), the innovation of organisms to pack information of previous events became so advantageous that almost any form of living organism has this property: that is DNA <a href="#fig-chromosome">Fig.&nbsp;<span>5.1</span></a>.</p>
+<p>DNA composed mainly of four different small molecules called <a href="https://en.wikipedia.org/wiki/Nucleic_acid">:nucleic acids</a> briefly called nucleotides.</p>
+<p>*Use molstar extension in a marging</p>
 <div id="fig-chromosome" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="imgs-seqan/chromosome-genes.png" class="img-fluid figure-img"></p>
+<p><a href="imgs-seqan/chromosome-genes.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The different scales of information packed in a biological fashion. Figure adapted from @meneely2017 book showing how DNA in a eukaryote is packaged with chromosomal proteins to form the much more compact chromatin. Chromatin is then folded into higher-order structures and eventually into the chromosome"><img src="imgs-seqan/chromosome-genes.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure 5.1: The different scales of information packed in a biological fashion. Figure adapted from <span class="citation" data-cites="meneely2017">Meneely et al. (<a href="../references.html#ref-meneely2017" role="doc-biblioref">2017</a>)</span> book showing how <em>DNA in a eukaryote is packaged with chromosomal proteins to form the much more compact chromatin. Chromatin is then folded into higher-order structures and eventually into the chromosome</em></figcaption><p></p>
 </figure>
 </div>
 </section>
 <section id="the-duality-of-dna" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="the-duality-of-dna"><span class="header-section-number">5.2</span> The duality of DNA</h2>
-<p>DNA is an organic molecule build upon several more organic bricks named nucleotides arranged in a very receptive helix structure and too much can be understood from its molecular nature. It is of course governed by the physicochemical properties of the atoms, therefore it is a physicochemical entity. But those common bricks have also a very beautiful emergent property that comes out from the order (mainly), that is keep the instructions that build the organism from whom it belongs. These instructions are nothing else than information, which also follow some informational rules. Then DNA is also an informatics entity.</p>
+<p>DNA is an organic molecule build upon several more organic bricks named nucleotides arranged in a very compacted helix structure and too much can be understood from its molecular nature. It is of course governed by the physicochemical properties of the atoms, therefore DNA is a physicochemical entity. But those common bricks have also a very beautiful emergent property that comes out from their order (mainly), and that is to keep the instructions that build the organism from which it belongs. These instructions are nothing else than information, which also follow some informational rules. Then DNA is also an informational entity.</p>
+<p>This idea of the duality of the DNA (and of course of other biological molecules) is the source of the study of many bioinformatic fields.</p>
+<div id="fig-doublehelix" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="imgs-seqan/dna-structure.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="DNA double helix structure and main characteristics. Image adapted from @brown2018 showing the structure with the sugar–phosphate backbone of each polynucleotide drawn as a gray ribbon with the base pairs in green"><img src="imgs-seqan/dna-structure.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure 5.2: DNA double helix structure and main characteristics. Image adapted from <span class="citation" data-cites="brown2018">Brown (<a href="../references.html#ref-brown2018" role="doc-biblioref">2018</a>)</span> showing the structure with the <em>sugar–phosphate backbone of each polynucleotide drawn as a gray ribbon with the base pairs in green</em></figcaption><p></p>
+</figure>
+</div>
 </section>
 <section id="the-central-dogma-theory-of-molecular-biology-extended" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="the-central-dogma-theory-of-molecular-biology-extended"><span class="header-section-number">5.3</span> The central <del>dogma</del> theory of molecular biology extended</h2>
+<p>Gene</p>
 </section>
 <section id="sequencing-strategies" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="sequencing-strategies"><span class="header-section-number">5.4</span> Sequencing strategies</h2>
@@ -350,21 +372,36 @@ Challenge
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>How many complete genomes of Bacillus subtilis are there in the NCBI databases?</p>
-<p>Count the number of features (genes, CDS, ncRNA, rRNA, etc.) in the genome of Bacillus subtilis NCIB 3610 (GCF_002055965.1)</p>
+<p>How many complete genomes of <em>Bacillus subtilis</em> are there in the NCBI databases?</p>
+<p>Count the number of features (genes, CDS, ncRNA, rRNA, etc.) in the genome of <em>Bacillus subtilis</em> NCIB 3610 (GCF_002055965.1)</p>
 <p>Document each of the steps and how did you end up with the answer. Saving the file with your initials (e.g., CG-activity01.{md,txt,docx})z</p>
 </div>
 </div>
 </section>
 <section id="biological-information-databases" class="level2" data-number="5.7">
 <h2 data-number="5.7" class="anchored" data-anchor-id="biological-information-databases"><span class="header-section-number">5.7</span> Biological information databases</h2>
+</section>
+<section id="retrieving-data-from-ncbi" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="retrieving-data-from-ncbi"><span class="header-section-number">5.8</span> Retrieving data from NCBI</h2>
+<section id="the-manual-way" class="level3" data-number="5.8.1">
+<h3 data-number="5.8.1" class="anchored" data-anchor-id="the-manual-way"><span class="header-section-number">5.8.1</span> The manual way</h3>
+</section>
+<section id="entrez" class="level3" data-number="5.8.2">
+<h3 data-number="5.8.2" class="anchored" data-anchor-id="entrez"><span class="header-section-number">5.8.2</span> Entrez</h3>
+</section>
+<section id="a-simple-program" class="level3" data-number="5.8.3">
+<h3 data-number="5.8.3" class="anchored" data-anchor-id="a-simple-program"><span class="header-section-number">5.8.3</span> A simple program</h3>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-brown2018" class="csl-entry" role="doc-biblioentry">
+Brown, Terence A. 2018. <em>Genomes 4</em>. Garland science.
+</div>
 <div id="ref-meneely2017" class="csl-entry" role="doc-biblioentry">
 Meneely, Philip Mark, Rachel Dawes Hoang, Iruka N Okeke, and Katherine Heston. 2017. <em>Genetics: Genes, Genomes, and Evolution</em>. Oxford University Press.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -583,6 +620,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"loop":true,"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom"});</script>
 
 
 
