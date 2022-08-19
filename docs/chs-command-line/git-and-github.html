@@ -119,7 +119,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script><script async="" src="https://hypothes.is/embed.js"></script>
+}</script><script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-154731538-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script><script async="" src="https://hypothes.is/embed.js"></script>
 <meta name="citation_title" content="[[2]{.chapter-number}&nbsp; [Version control]{.chapter-title}]{#sec-vcs .quarto-section-identifier}">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
@@ -143,9 +155,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Fundamentals of computational biology</a> 
-        <div class="sidebar-tools-main tools-wide">
+        <div class="sidebar-tools-main">
     <a href="https://github.com/camilogarciabotero/biocomp-book" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-    <a href="../Fundamentals-of-computational-biology.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -357,7 +368,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section><section id="the-local-workflow" class="level3" data-number="2.2.2"><h3 data-number="2.2.2" class="anchored" data-anchor-id="the-local-workflow">
 <span class="header-section-number">2.2.2</span> The local workflow</h3>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="imgs-cli/gitlocal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Local workflow of a git project adding and committing changes"><img src="imgs-cli/gitlocal.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
+<figure class="figure"><p><a href="imgs-cli/gitlocal.png" class="lightbox" title="Local workflow of a git project adding and committing changes" data-gallery="quarto-lightbox-gallery-1"><img src="imgs-cli/gitlocal.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
 <p></p><figcaption class="figure-caption">Local workflow of a git project adding and committing changes</figcaption><p></p>
 </figure>
 </div>
@@ -367,7 +378,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>As mention before, one of the great advantages that git can later achieve is to collaborate. However, to get into that a sharable server must allow users to have a common ground, and this is what <a href="https://github.com/home">GitHub</a> allow. GitHub is a web platform where the local repositories become public and any user can access to the controlled versions of an image of your repo. The famous pet is the octocat <a href="#fig-octocat">Fig.&nbsp;<span>2.1</span></a></p>
 
 <div class="no-row-height column-margin column-container"><div id="fig-octocat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/octocat.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="The octocat from GitHub"><img src="imgs-cli/octocat.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-cli/octocat.png" class="lightbox" title="The octocat from GitHub" data-gallery="quarto-lightbox-gallery-2"><img src="imgs-cli/octocat.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure 2.1: The octocat from GitHub</figcaption><p></p>
 </figure>
 </div></div><p>To enable the communication with a remote repo, git has encoded many specific commands, once the repos are <strong>cloned</strong> a simple workflow from the own local and remote repos is made possible thanks to two simple commands <code>git push</code> and <code>git pull</code>.</p>
@@ -390,7 +401,7 @@ Caution
 </div>
 </div>
 <div id="fig-cloning" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/gitcloning.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="The cloning workflow in brief"><img src="imgs-cli/gitcloning.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-cli/gitcloning.png" class="lightbox" title="The cloning workflow in brief" data-gallery="quarto-lightbox-gallery-3"><img src="imgs-cli/gitcloning.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure 2.2: The cloning workflow in brief</figcaption><p></p>
 </figure>
 </div>
@@ -412,7 +423,7 @@ Tip
 <span class="header-section-number">2.3.1</span> Forking and collaborate</h3>
 <p>Basic collaboration on an open repository is a three-step process. First you need to <code>fork</code> the repo, this will create a mirror copy of the repo in your GitHub profile. In a second step, a simple <code>clone</code> of the repo will generate a copy of the forked repo on your local machine, so you can freely work and make your mistakes and push them to your forked repo that belongs to your account. In a third step, once they are on the remote repo you will have to create a <code>pull request</code> (PR), as its name suggest: you are <strong>asking</strong> the owners of the original to consider your changes <a href="#fig-forking">Fig.&nbsp;<span>2.3</span></a>.</p>
 <div id="fig-forking" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/gitforking.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="A common collaborative workflow from GitHub, using fork, clone and pull requests"><img src="imgs-cli/gitforking.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-cli/gitforking.png" class="lightbox" title="A common collaborative workflow from GitHub, using fork, clone and pull requests" data-gallery="quarto-lightbox-gallery-4"><img src="imgs-cli/gitforking.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure 2.3: A common collaborative workflow from GitHub, using fork, clone and pull requests</figcaption><p></p>
 </figure>
 </div>
@@ -619,6 +630,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
+</script><script src="https://giscus.app/client.js" data-repo="camilogarciabotero/biocomp-book" data-repo-id="" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../chs-command-line/welcome-to-command-line.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The command line</span></span>
@@ -631,7 +643,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":true,"closeEffect":"zoom","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom"});</script>
 
 
 </body></html>
