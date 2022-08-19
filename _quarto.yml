@@ -72,7 +72,7 @@ date-format: "YYYY-MM-DD"
 
 comments:
   hypothesis: true
-  utterances: 
+  giscus: 
       repo: camilogarciabotero/biocomp-book
 
 execute:
