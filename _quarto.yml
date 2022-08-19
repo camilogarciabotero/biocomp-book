@@ -19,7 +19,7 @@ book:
   repo-actions: [edit, issue]
   repo-branch: main
   # downloads: [pdf]
-  google-analytics: "UA-154731538-1"
+  google-analytics: "G-6V8GZB3LCW"
   # sharing: [twitter]
   sidebar:
     style: floating
@@ -74,7 +74,7 @@ comments:
   hypothesis: true
   giscus: 
       repo: camilogarciabotero/biocomp-book
-      
+
 
 execute:
   cache: true
