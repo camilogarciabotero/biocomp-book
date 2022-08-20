@@ -65,6 +65,6 @@ Document each of the steps and how did you end up with the answer. Saving the fi
 
 ### The manual way
 
-### Entrez
+### Entrez direct
 
 ### A simple program
