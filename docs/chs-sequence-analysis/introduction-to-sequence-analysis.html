@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-08-19">
+<meta name="dcterms.date" content="2022-08-20">
 
 <title>Fundamentals of computational biology - 5&nbsp; Sequence analysis</title>
 <style>
@@ -92,6 +92,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta name="citation_title" content="[[5]{.chapter-number}&nbsp; [ Sequence analysis]{.chapter-title}]{#sec-seq-analysis .quarto-section-identifier}">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
@@ -313,7 +314,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-08-19</p>
+      <p class="date">2022-08-20</p>
     </div>
   </div>
     
@@ -329,30 +330,31 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 </blockquote>
 <section id="biological-information" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="biological-information"><span class="header-section-number">5.1</span> Biological information</h2>
-<p>Since the origin, organisms (or molecules) are the result of different selective processes. An emergent property of successive iterations of survival/decease was the ability of molecules to keep a record of its past in a very stable manner, so that it will pass generation to generation. Although this might not be the first property or molecule to ever exist (see the <a href="https://en.wikipedia.org/wiki/Abiogenesis">:origin of life</a>), the innovation of organisms to pack information of previous events became so advantageous that almost any form of living organism has this property: that is DNA <a href="#fig-chromosome">Fig.&nbsp;<span>5.1</span></a>.</p>
-<p>DNA composed mainly of four different small molecules called <a href="https://en.wikipedia.org/wiki/Nucleic_acid">:nucleic acids</a> briefly called nucleotides.</p>
-<p>*Use molstar extension in a marging</p>
+<p>Since the origin, organisms (or molecules) have been the result of different selective processes. An emergent property of successive iterations of survival/decease was the ability of molecules to keep a record of its past in a very stable manner, so that it will pass generation to generation. Although this might not be the first property or molecule to ever exist (see the <a href="https://en.wikipedia.org/wiki/Abiogenesis">:origin of life</a>), the innovation of organisms to pack information of previous events became so advantageous that almost any form of living organism has this property: that is DNA.</p>
 <div id="fig-chromosome" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="imgs-seqan/chromosome-genes.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The different scales of information packed in a biological fashion. Figure adapted from @meneely2017 book showing how DNA in a eukaryote is packaged with chromosomal proteins to form the much more compact chromatin. Chromatin is then folded into higher-order structures and eventually into the chromosome"><img src="imgs-seqan/chromosome-genes.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure 5.1: The different scales of information packed in a biological fashion. Figure adapted from <span class="citation" data-cites="meneely2017">Meneely et al. (<a href="../references.html#ref-meneely2017" role="doc-biblioref">2017</a>)</span> book showing how <em>DNA in a eukaryote is packaged with chromosomal proteins to form the much more compact chromatin. Chromatin is then folded into higher-order structures and eventually into the chromosome</em></figcaption><p></p>
 </figure>
 </div>
+<p>Almost any living organism harbor DNA in a nucleus or chromosome, which is a very compacted structure that could be actually seen to naked eye in some species. It so arranged or condensed <a href="#fig-chromosome">Fig.&nbsp;<span>5.1</span></a> that it is the result of multiple compacting strategies.</p>
 </section>
 <section id="the-duality-of-dna" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="the-duality-of-dna"><span class="header-section-number">5.2</span> The duality of DNA</h2>
-<p>DNA is an organic molecule build upon several more organic bricks named nucleotides arranged in a very compacted helix structure and too much can be understood from its molecular nature. It is of course governed by the physicochemical properties of the atoms, therefore DNA is a physicochemical entity. But those common bricks have also a very beautiful emergent property that comes out from their order (mainly), and that is to keep the instructions that build the organism from which it belongs. These instructions are nothing else than information, which also follow some informational rules. Then DNA is also an informational entity.</p>
-<p>This idea of the duality of the DNA (and of course of other biological molecules) is the source of the study of many bioinformatic fields.</p>
+<p>DNA is an organic molecule of <a href="https://en.wikipedia.org/wiki/Nucleic_acid">:nucleic acids</a> that is mainly build out of nitrogen-containing compounds (<a href="https://en.wikipedia.org/wiki/Nucleobase">:nucleobases</a>) or just bases.The four bases are adenine (A), cytosine (C), guanine (G) and (T) and they bind strictly as <span class="math inline">\(A=T\)</span> and <span class="math inline">\(C\equiv{G}\)</span> where each of the lines represents an hydrogen bond.</p>
+<p>DNA nitrogenous bases of are arranged in a very compacted helix structure and too much can be understood from its molecular nature. It is of course governed by the physicochemical properties of the atoms, therefore DNA is a physicochemical entity. But those common bricks have also a very beautiful emergent property that comes out from their order (mainly), and that is to keep the instructions that build the organism from which it belongs. These instructions are nothing else than information, which also follow some informational rules. Then DNA is also an informational entity.</p>
 <div id="fig-doublehelix" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="imgs-seqan/dna-structure.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="DNA double helix structure and main characteristics. Image adapted from @brown2018 showing the structure with the sugar–phosphate backbone of each polynucleotide drawn as a gray ribbon with the base pairs in green"><img src="imgs-seqan/dna-structure.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure 5.2: DNA double helix structure and main characteristics. Image adapted from <span class="citation" data-cites="brown2018">Brown (<a href="../references.html#ref-brown2018" role="doc-biblioref">2018</a>)</span> showing the structure with the <em>sugar–phosphate backbone of each polynucleotide drawn as a gray ribbon with the base pairs in green</em></figcaption><p></p>
 </figure>
 </div>
+<p>The description of DNA bases helped the elucidation of the helicoidal structure. The first outstanding feature of the DNA structure was indeed highlighted by Watson and Crick in its famous paper about a subtle mechanism of replication.</p>
+<p>This idea of the duality of the DNA (and of course of other biological molecules) is the source of the study of many bioinformatic fields. But a question remains open: how do capture the informational nature of a DNA sequence so that we end up with a sequential file of characters <code>ATCGCTATC...</code>. This is not a trivial questions in fact.</p>
 </section>
 <section id="the-central-dogma-theory-of-molecular-biology-extended" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="the-central-dogma-theory-of-molecular-biology-extended"><span class="header-section-number">5.3</span> The central <del>dogma</del> theory of molecular biology extended</h2>
-<p>Gene</p>
+<p>So far we have addressed that DNA is a very stable molecule that stores biological (i.e., evolutionary) information, that it could represent a sequential object of characters as in a digital object as well. But how is it that this order has an underlying biological sense? This was a very though question that required the accumulation of many experimental discoveries and the meeting of genetics and molecular biology.</p>
 </section>
 <section id="sequencing-strategies" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="sequencing-strategies"><span class="header-section-number">5.4</span> Sequencing strategies</h2>
@@ -620,7 +622,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":true,"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":true});</script>
 
 
 
