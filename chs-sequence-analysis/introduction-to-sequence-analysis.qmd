@@ -1,4 +1,6 @@
 ---
+execute: 
+  engine: knitr
 filters:
     - nutshell
     - lightbox
@@ -33,12 +35,12 @@ of each polynucleotide drawn as a gray ribbon with the base pairs in green* ](im
 
 The description of DNA bases helped the elucidation of the helicoidal structure. The first outstanding feature of the DNA structure was indeed highlighted by Watson and Crick in its famous paper about a subtle mechanism of replication. 
 
-This idea of the duality of the DNA (and of course of other biological molecules) is the source of the study of many bioinformatic fields. But a question remains open: how do capture the informational nature of a DNA sequence so that we end up with a sequential file of characters `ATCGCTATC...`. This is not a trivial questions in fact.
+This idea of the duality of the DNA (and of course of other biological molecules as well) is the source of the study of many bioinformatic fields. But a question remains open: how do we capture the informational nature of a DNA sequence so that we end up with a sequential file of characters `ATCGCTATC...`. This is not a trivial question in fact.
 
 
 ## The central ~~dogma~~ theory of molecular biology extended
 
-So far we have addressed that DNA is a very stable molecule that stores biological (i.e., evolutionary) information, that it could represent a sequential object of characters as in a digital object as well. But how is it that this order has an underlying biological sense? This was a very though question that required the accumulation of many experimental discoveries and the meeting of genetics and molecular biology.
+So far we have addressed that DNA is a very stable molecule that stores biological (i.e., evolutionary) information. Also, that DNA  could represent a sequential object of characters as in a computer digital object or file as well. But how is it that this order has an underlying biological sense? This was a very though question that required the accumulation of many experimental discoveries and the meeting of genetics and molecular biology.
 
 ## Sequencing strategies
 
