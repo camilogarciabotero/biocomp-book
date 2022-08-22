@@ -11,7 +11,14 @@
     "href": "intro.html",
     "title": "Introduction",
     "section": "",
-    "text": "The present book gathers the lecture notes of the undergrad course in Fundamentals of Computational Biology that takes place in EAFIT University. The first part will focus on how to use the the command line interface (aka CLI). It includes a long-format chapter about the Unix tools and concepts that is taught during the first four class lessons. The second chapter of covers the basics of git and the principal workflows to work daily on a collaborative manner this is actually the second lesson of the course. the importance of package manager systems (such as homebrew and conda or scoop). Later, in a third lesson, we introduce important concepts about how computers handle the tasks or jobs, and the parallelization of them. We talk about the computer architectures, the cluster architectures and the job scheduling software called Slurm, which is used on our local HPC cluster.\nThe second part We will cover several topics sequencing technologies, sequence alignments, molecular phylogenetics. All this topics are covered from the biological perspective, mathematical notions and the practical computing approach. Some of the main bioinformatics file extensions are covered and the\nThird part is focused genomics. It will cover main algorithms for genome assembly and some relevant programs. Also the biological nuances of gene calling and gene annotation, and finally will variant calling analysis, which introduces the gene mapping concept and some of the most important bioinformatics file extensions.\nNext parts are currently optionals for the course per-se and some iterations may only include one of those or some combinations. They are mainly dedicated to introduce metagenomics, differential gene expression analysis and structural bioinformatics."
+    "text": "The present book gathers the lecture notes of the undergrad course in Fundamentals of Computational Biology that takes place in EAFIT University. The first part will focus on how to use the the command line interface (aka CLI). It includes a long-format chapter about the Unix tools and concepts that is taught during the first four class lessons. The second chapter of covers the basics of git and the principal workflows to work daily on a collaborative manner this is actually the second lesson of the course. The third lessons, highlights the importance of package manager systems (such as homebrew and conda or scoop) and briefly introduce the main concepts and relevant commands. Later, in a fourth lesson, we introduce important concepts about how computers handle the tasks or jobs, and the parallelization of them. We talk about the computer architectures, the cluster architectures and the job scheduling software called Slurm, which is used on our local HPC cluster.\nThe second part is dedicated to sequence analysis and will cover several topics related to sequencing technologies, sequence alignments. All this topics are covered from the biological perspective, mathematical notions and the practical computing approach. Some of the main bioinformatics file extensions are covered and the\nThird part is focused genomics. It will cover main algorithms for genome assembly and some relevant programs. Also the biological nuances of gene calling and gene annotation, and finally will variant calling analysis, which introduces the gene mapping concept and some of the most important bioinformatics file extensions.\nNext parts are currently optionals for the course per-se and some iterations may only include one of those or some combinations. They are mainly dedicated to introduce metagenomics, differential gene expression analysis and structural bioinformatics."
+  },
+  {
+    "objectID": "intro.html#course-schedule",
+    "href": "intro.html#course-schedule",
+    "title": "Introduction",
+    "section": "Course schedule",
+    "text": "Course schedule"
   },
   {
     "objectID": "intro.html#endless-debate-bioinformatics-vs.-computational-biology",
@@ -164,57 +171,57 @@
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#biological-information",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#biological-information",
     "title": "5  Sequence analysis",
-    "section": "5.1 Biological information",
-    "text": "5.1 Biological information\nSince the origin, organisms (or molecules) have been the result of different selective processes. An emergent property of successive iterations of survival/decease was the ability of molecules to keep a record of its past in a very stable manner, so that it will pass generation to generation. Although this might not be the first property or molecule to ever exist (see the :origin of life), the innovation of organisms to pack information of previous events became so advantageous that almost any form of living organism has this property: that is DNA.\n\n\n\nFigure 5.1: The different scales of information packed in a biological fashion. Figure adapted from Meneely et al. (2017) book showing how DNA in a eukaryote is packaged with chromosomal proteins to form the much more compact chromatin. Chromatin is then folded into higher-order structures and eventually into the chromosome\n\n\nAlmost any living organism harbor DNA in a nucleus or chromosome, which is a very compacted structure that could be actually seen to naked eye in some species. It so arranged or condensed Fig. 5.1 that it is the result of multiple compacting strategies."
+    "section": "\n5.1 Biological information",
+    "text": "5.1 Biological information\nSince the origin, organisms (or molecules) have been the result of different selective processes. An emergent property of successive iterations of survival/decease was the ability of molecules to keep a record of its past in a very stable manner, so that it will pass generation to generation. Although this might not be the first property or molecule to ever exist (see the :origin of life), the innovation of organisms to pack information of previous events became so advantageous that almost any form of living organism has this property: that is DNA.\n\n\nFigure 5.1: The different scales of information packed in a biological fashion. Figure adapted from Meneely et al. (2017) book showing how DNA in a eukaryote is packaged with chromosomal proteins to form the much more compact chromatin. Chromatin is then folded into higher-order structures and eventually into the chromosome\n\n\nAlmost any living organism harbor DNA in a nucleus or chromosome, which is a very compacted structure that could be actually seen to naked eye in some species. It so arranged or condensed Fig. 5.1 that it is the result of multiple compacting strategies."
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-duality-of-dna",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-duality-of-dna",
     "title": "5  Sequence analysis",
-    "section": "5.2 The duality of DNA",
-    "text": "5.2 The duality of DNA\nDNA is an organic molecule of :nucleic acids that is mainly build out of nitrogen-containing compounds (:nucleobases) or just bases.The four bases are adenine (A), cytosine (C), guanine (G) and (T) and they bind strictly as \\(A=T\\) and \\(C\\equiv{G}\\) where each of the lines represents an hydrogen bond.\nDNA nitrogenous bases of are arranged in a very compacted helix structure and too much can be understood from its molecular nature. It is of course governed by the physicochemical properties of the atoms, therefore DNA is a physicochemical entity. But those common bricks have also a very beautiful emergent property that comes out from their order (mainly), and that is to keep the instructions that build the organism from which it belongs. These instructions are nothing else than information, which also follow some informational rules. Then DNA is also an informational entity.\n\n\n\nFigure 5.2: DNA double helix structure and main characteristics. Image adapted from Brown (2018) showing the structure with the sugar–phosphate backbone of each polynucleotide drawn as a gray ribbon with the base pairs in green\n\n\nThe description of DNA bases helped the elucidation of the helicoidal structure. The first outstanding feature of the DNA structure was indeed highlighted by Watson and Crick in its famous paper about a subtle mechanism of replication.\nThis idea of the duality of the DNA (and of course of other biological molecules) is the source of the study of many bioinformatic fields. But a question remains open: how do capture the informational nature of a DNA sequence so that we end up with a sequential file of characters ATCGCTATC.... This is not a trivial questions in fact."
+    "section": "\n5.2 The duality of DNA",
+    "text": "5.2 The duality of DNA\nDNA is an organic molecule of :nucleic acids that is mainly build out of nitrogen-containing compounds (:nucleobases) or just bases.The four bases are adenine (A), cytosine (C), guanine (G) and (T) and they bind strictly as \\(A=T\\) and \\(C\\equiv{G}\\) where each of the lines represents an hydrogen bond.\nDNA nitrogenous bases of are arranged in a very compacted helix structure and too much can be understood from its molecular nature. It is of course governed by the physicochemical properties of the atoms, therefore DNA is a physicochemical entity. But those common bricks have also a very beautiful emergent property that comes out from their order (mainly), and that is to keep the instructions that build the organism from which it belongs. These instructions are nothing else than information, which also follow some informational rules. Then DNA is also an informational entity.\n\n\nFigure 5.2: DNA double helix structure and main characteristics. Image adapted from Brown (2018) showing the structure with the sugar–phosphate backbone of each polynucleotide drawn as a gray ribbon with the base pairs in green\n\n\nThe description of DNA bases helped the elucidation of the helicoidal structure. The first outstanding feature of the DNA structure was indeed highlighted by Watson and Crick in its famous paper about a subtle mechanism of replication.\nThis idea of the duality of the DNA (and of course of other biological molecules as well) is the source of the study of many bioinformatic fields. But a question remains open: how do we capture the informational nature of a DNA sequence so that we end up with a sequential file of characters ATCGCTATC.... This is not a trivial question in fact."
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-central-dogma-theory-of-molecular-biology-extended",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#the-central-dogma-theory-of-molecular-biology-extended",
     "title": "5  Sequence analysis",
-    "section": "5.3 The central dogma theory of molecular biology extended",
-    "text": "5.3 The central dogma theory of molecular biology extended\nSo far we have addressed that DNA is a very stable molecule that stores biological (i.e., evolutionary) information, that it could represent a sequential object of characters as in a digital object as well. But how is it that this order has an underlying biological sense? This was a very though question that required the accumulation of many experimental discoveries and the meeting of genetics and molecular biology."
+    "section": "\n5.3 The central dogma theory of molecular biology extended",
+    "text": "5.3 The central dogma theory of molecular biology extended\nSo far we have addressed that DNA is a very stable molecule that stores biological (i.e., evolutionary) information. Also, that DNA could represent a sequential object of characters as in a computer digital object or file as well. But how is it that this order has an underlying biological sense? This was a very though question that required the accumulation of many experimental discoveries and the meeting of genetics and molecular biology."
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-strategies",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-strategies",
     "title": "5  Sequence analysis",
-    "section": "5.4 Sequencing strategies",
+    "section": "\n5.4 Sequencing strategies",
     "text": "5.4 Sequencing strategies"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-over-time",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#sequencing-over-time",
     "title": "5  Sequence analysis",
-    "section": "5.5 Sequencing over time",
+    "section": "\n5.5 Sequencing over time",
     "text": "5.5 Sequencing over time"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#some-insights-from-sequencing-genomes",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#some-insights-from-sequencing-genomes",
     "title": "5  Sequence analysis",
-    "section": "5.6 Some insights from sequencing genomes",
+    "section": "\n5.6 Some insights from sequencing genomes",
     "text": "5.6 Some insights from sequencing genomes\n\n\n\n\n\n\nChallenge\n\n\n\nHow many complete genomes of Bacillus subtilis are there in the NCBI databases?\nCount the number of features (genes, CDS, ncRNA, rRNA, etc.) in the genome of Bacillus subtilis NCIB 3610 (GCF_002055965.1)\nDocument each of the steps and how did you end up with the answer. Saving the file with your initials (e.g., CG-activity01.{md,txt,docx})z"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#biological-information-databases",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#biological-information-databases",
     "title": "5  Sequence analysis",
-    "section": "5.7 Biological information databases",
+    "section": "\n5.7 Biological information databases",
     "text": "5.7 Biological information databases"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#retrieving-data-from-ncbi",
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#retrieving-data-from-ncbi",
     "title": "5  Sequence analysis",
-    "section": "5.8 Retrieving data from NCBI",
-    "text": "5.8 Retrieving data from NCBI\n\n5.8.1 The manual way\n\n\n5.8.2 Entrez\n\n\n5.8.3 A simple program\n\n\n\n\nBrown, Terence A. 2018. Genomes 4. Garland science.\n\n\nMeneely, Philip Mark, Rachel Dawes Hoang, Iruka N Okeke, and Katherine Heston. 2017. Genetics: Genes, Genomes, and Evolution. Oxford University Press."
+    "section": "\n5.8 Retrieving data from NCBI",
+    "text": "5.8 Retrieving data from NCBI\n\n5.8.1 The manual way\n\n5.8.2 Entrez direct\n\n5.8.3 A simple program\n\n\n\n\nBrown, Terence A. 2018. Genomes 4. Garland science.\n\n\nMeneely, Philip Mark, Rachel Dawes Hoang, Iruka N Okeke, and Katherine Heston. 2017. Genetics: Genes, Genomes, and Evolution. Oxford University Press."
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html",
@@ -294,158 +301,144 @@
     "text": "7.6 Multiple sequence alignments"
   },
   {
-    "objectID": "chs-sequence-analysis/phylogenetic-reconstructions.html#mehtods-for-phylogenetic-reconstruction",
-    "href": "chs-sequence-analysis/phylogenetic-reconstructions.html#mehtods-for-phylogenetic-reconstruction",
-    "title": "8  Phylogenetics",
-    "section": "8.2 Mehtods for phylogenetic reconstruction",
-    "text": "8.2 Mehtods for phylogenetic reconstruction"
-  },
-  {
-    "objectID": "chs-sequence-analysis/phylogenetic-reconstructions.html#building-a-phylogenetic-reconstruction",
-    "href": "chs-sequence-analysis/phylogenetic-reconstructions.html#building-a-phylogenetic-reconstruction",
-    "title": "8  Phylogenetics",
-    "section": "8.3 Building a phylogenetic reconstruction",
-    "text": "8.3 Building a phylogenetic reconstruction\n\n8.3.1 Evolutionary substitution model\n\n\n8.3.2 Maximum likelihood\n\n\n8.3.3 Bayesian inference"
-  },
-  {
     "objectID": "chs-sequence-analysis/NGS-TGS-principles.html#reads-main-differences",
     "href": "chs-sequence-analysis/NGS-TGS-principles.html#reads-main-differences",
-    "title": "9  NGS and TGS: principles",
-    "section": "9.2 Reads main differences",
-    "text": "9.2 Reads main differences"
+    "title": "8  NGS and TGS: principles",
+    "section": "8.2 Reads main differences",
+    "text": "8.2 Reads main differences"
   },
   {
     "objectID": "chs-sequence-analysis/NGS-TGS-principles.html#illumina-principle-sequencing-by-synthesis",
     "href": "chs-sequence-analysis/NGS-TGS-principles.html#illumina-principle-sequencing-by-synthesis",
-    "title": "9  NGS and TGS: principles",
-    "section": "9.3 Illumina principle (sequencing by synthesis)",
-    "text": "9.3 Illumina principle (sequencing by synthesis)\n\n9.3.1 The fastq format\n\n\n9.3.2 Quality assesment of Illumina"
+    "title": "8  NGS and TGS: principles",
+    "section": "8.3 Illumina principle (sequencing by synthesis)",
+    "text": "8.3 Illumina principle (sequencing by synthesis)\n\n8.3.1 The fastq format\n\n\n8.3.2 Quality assesment of Illumina"
   },
   {
     "objectID": "chs-sequence-analysis/NGS-TGS-principles.html#pacbio-principle-sequencing-by-incorporation",
     "href": "chs-sequence-analysis/NGS-TGS-principles.html#pacbio-principle-sequencing-by-incorporation",
-    "title": "9  NGS and TGS: principles",
-    "section": "9.4 PacBio principle (sequencing by incorporation)",
-    "text": "9.4 PacBio principle (sequencing by incorporation)\n\n9.4.1 Throughput evolution\n\n\n9.4.2 Quality assesment of PacBio"
+    "title": "8  NGS and TGS: principles",
+    "section": "8.4 PacBio principle (sequencing by incorporation)",
+    "text": "8.4 PacBio principle (sequencing by incorporation)\n\n8.4.1 Throughput evolution\n\n\n8.4.2 Quality assesment of PacBio"
   },
   {
     "objectID": "chs-sequence-analysis/NGS-TGS-principles.html#oxford-nanopore-technology-ont-principle",
     "href": "chs-sequence-analysis/NGS-TGS-principles.html#oxford-nanopore-technology-ont-principle",
-    "title": "9  NGS and TGS: principles",
-    "section": "9.5 Oxford Nanopore Technology (ONT) principle",
-    "text": "9.5 Oxford Nanopore Technology (ONT) principle\n\n9.5.1 Platforms\n\n\n9.5.2 The fast5 file format"
+    "title": "8  NGS and TGS: principles",
+    "section": "8.5 Oxford Nanopore Technology (ONT) principle",
+    "text": "8.5 Oxford Nanopore Technology (ONT) principle\n\n8.5.1 Platforms\n\n\n8.5.2 The fast5 file format"
   },
   {
     "objectID": "chs-genomics/genome-assembly.html#main-algorithms-for-genome-asssembly",
     "href": "chs-genomics/genome-assembly.html#main-algorithms-for-genome-asssembly",
-    "title": "10  Genome assembly",
-    "section": "10.2 Main algorithms for genome asssembly",
-    "text": "10.2 Main algorithms for genome asssembly\n\n10.2.1 Overlay, Layout, Consensus (OLS)\n\n\n10.2.2 De Bruijn graphs"
+    "title": "9  Genome assembly",
+    "section": "9.2 Main algorithms for genome asssembly",
+    "text": "9.2 Main algorithms for genome asssembly\n\n9.2.1 Overlay, Layout, Consensus (OLS)\n\n\n9.2.2 De Bruijn graphs"
   },
   {
     "objectID": "chs-genomics/genome-assembly.html#main-concepts-of-an-assembly",
     "href": "chs-genomics/genome-assembly.html#main-concepts-of-an-assembly",
-    "title": "10  Genome assembly",
-    "section": "10.3 Main concepts of an assembly",
-    "text": "10.3 Main concepts of an assembly\n\n10.3.1 Contigs, Unitigs, Scaffolds"
+    "title": "9  Genome assembly",
+    "section": "9.3 Main concepts of an assembly",
+    "text": "9.3 Main concepts of an assembly\n\n9.3.1 Contigs, Unitigs, Scaffolds"
   },
   {
     "objectID": "chs-genomics/genome-assembly.html#a-complete-workflow-for-assembling-genomes",
     "href": "chs-genomics/genome-assembly.html#a-complete-workflow-for-assembling-genomes",
-    "title": "10  Genome assembly",
-    "section": "10.4 A complete workflow for assembling genomes",
-    "text": "10.4 A complete workflow for assembling genomes"
+    "title": "9  Genome assembly",
+    "section": "9.4 A complete workflow for assembling genomes",
+    "text": "9.4 A complete workflow for assembling genomes"
   },
   {
     "objectID": "chs-genomics/genome-assembly.html#assessing-genomes",
     "href": "chs-genomics/genome-assembly.html#assessing-genomes",
-    "title": "10  Genome assembly",
-    "section": "10.5 Assessing genomes",
-    "text": "10.5 Assessing genomes\n\n10.5.1 Inspecting genome graphs\n\n\n10.5.2 Genome completeness"
+    "title": "9  Genome assembly",
+    "section": "9.5 Assessing genomes",
+    "text": "9.5 Assessing genomes\n\n9.5.1 Inspecting genome graphs\n\n\n9.5.2 Genome completeness"
   },
   {
     "objectID": "chs-genomics/genome-assembly.html#understanding-genome-difficulties",
     "href": "chs-genomics/genome-assembly.html#understanding-genome-difficulties",
-    "title": "10  Genome assembly",
-    "section": "10.6 Understanding genome difficulties",
-    "text": "10.6 Understanding genome difficulties\n\nEnd of chromosomes\nErros\nLack of coverage\nHeterozigozity\nrepeats"
+    "title": "9  Genome assembly",
+    "section": "9.6 Understanding genome difficulties",
+    "text": "9.6 Understanding genome difficulties\n\nEnd of chromosomes\nErros\nLack of coverage\nHeterozigozity\nrepeats"
   },
   {
     "objectID": "chs-genomics/genome-annotation.html#homology-annotation",
     "href": "chs-genomics/genome-annotation.html#homology-annotation",
-    "title": "11  Genome annotation",
-    "section": "11.2 Homology annotation",
-    "text": "11.2 Homology annotation"
+    "title": "10  Genome annotation",
+    "section": "10.2 Homology annotation",
+    "text": "10.2 Homology annotation"
   },
   {
     "objectID": "chs-genomics/genome-annotation.html#annotation-files",
     "href": "chs-genomics/genome-annotation.html#annotation-files",
-    "title": "11  Genome annotation",
-    "section": "11.3 Annotation files",
-    "text": "11.3 Annotation files\n\n11.3.1 the GBK and GBFF\n\n\n11.3.2 The GFF specifications"
+    "title": "10  Genome annotation",
+    "section": "10.3 Annotation files",
+    "text": "10.3 Annotation files\n\n10.3.1 the GBK and GBFF\n\n\n10.3.2 The GFF specifications"
   },
   {
     "objectID": "chs-genomics/genome-annotation.html#visualizing-genomes-and-annotations",
     "href": "chs-genomics/genome-annotation.html#visualizing-genomes-and-annotations",
-    "title": "11  Genome annotation",
-    "section": "11.4 Visualizing genomes and annotations",
-    "text": "11.4 Visualizing genomes and annotations"
+    "title": "10  Genome annotation",
+    "section": "10.4 Visualizing genomes and annotations",
+    "text": "10.4 Visualizing genomes and annotations"
   },
   {
     "objectID": "chs-genomics/variant-calling-analysis.html#structural-variants",
     "href": "chs-genomics/variant-calling-analysis.html#structural-variants",
-    "title": "12  Variant calling analysis",
-    "section": "12.2 Structural variants",
-    "text": "12.2 Structural variants"
+    "title": "11  Variant calling analysis",
+    "section": "11.2 Structural variants",
+    "text": "11.2 Structural variants"
   },
   {
     "objectID": "chs-genomics/variant-calling-analysis.html#genome-rearrangements",
     "href": "chs-genomics/variant-calling-analysis.html#genome-rearrangements",
-    "title": "12  Variant calling analysis",
-    "section": "12.3 Genome rearrangements",
-    "text": "12.3 Genome rearrangements"
+    "title": "11  Variant calling analysis",
+    "section": "11.3 Genome rearrangements",
+    "text": "11.3 Genome rearrangements"
   },
   {
     "objectID": "chs-genomics/variant-calling-analysis.html#read-mapping-algorithms-and-programs",
     "href": "chs-genomics/variant-calling-analysis.html#read-mapping-algorithms-and-programs",
-    "title": "12  Variant calling analysis",
-    "section": "12.4 Read mapping algorithms and programs",
-    "text": "12.4 Read mapping algorithms and programs\n\n12.4.1 Burrow-Wheeler-Alignment\n\n\n12.4.2 BWA-MEM2\n\n\n12.4.3 Minimap2\n\n\n12.4.4 SAM, BAM and CRAM formats"
+    "title": "11  Variant calling analysis",
+    "section": "11.4 Read mapping algorithms and programs",
+    "text": "11.4 Read mapping algorithms and programs\n\n11.4.1 Burrow-Wheeler-Alignment\n\n\n11.4.2 BWA-MEM2\n\n\n11.4.3 Minimap2\n\n\n11.4.4 SAM, BAM and CRAM formats"
   },
   {
     "objectID": "chs-genomics/variant-calling-analysis.html#identifying-mutations",
     "href": "chs-genomics/variant-calling-analysis.html#identifying-mutations",
-    "title": "12  Variant calling analysis",
-    "section": "12.5 Identifying mutations",
-    "text": "12.5 Identifying mutations\n\n12.5.1 Freebayes and Snippy\n\n\n12.5.2 The VCF file"
+    "title": "11  Variant calling analysis",
+    "section": "11.5 Identifying mutations",
+    "text": "11.5 Identifying mutations\n\n11.5.1 Freebayes and Snippy\n\n\n11.5.2 The VCF file"
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html",
     "href": "chs-bio-structural/intro-structural-bioinfo.html",
-    "title": "13  Structural bioinformatics",
+    "title": "12  Structural bioinformatics",
     "section": "",
     "text": "Structural bioinformatics is a multidisciplinary area enriched by chemistry, physics, computer science and many others. Although, it could be focused on different biological macro-molecules, here the emphasis will be focused on proteins.\nOne of the first protein structure elucidated was myoglobin and it triggered the study of the role of the structure of proteins and its biological functions\nIdentify a protein related to your study that could be further analyzed."
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html#protein-structures",
     "href": "chs-bio-structural/intro-structural-bioinfo.html#protein-structures",
-    "title": "13  Structural bioinformatics",
-    "section": "13.1 Protein structures",
-    "text": "13.1 Protein structures\nDifference between the levels of protein structure primary structure is the basic linear representation of aminoacids. Natural aminoacids and modified or rare aminoacids display physico-chemical rich information and could be represented by letters. Therefore in the genetic code we could find the one-letter code.\nSecondary structures result from the spatial arrangement of aminoacids that interact with each closer neighbors. There are some remarkable secondary structures such as \\(\\beta\\)-sheets, \\(\\alpha\\)-helix, coils (flexible) and others.\nTertiary structure informs about the structural disposition of the secondary structures that fold between each other due to hydrophobic interactions, disulfure bonds, and other chemical interactions forming a globular and dynamic structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the :Levinthal’s paradox).\nQuaternary structures result from interaction of multiple tertiary structures. The structure, therefore dictates the protein function. This basic concept have triggered more recently a boom on the analysis of the structure of proteins."
+    "title": "12  Structural bioinformatics",
+    "section": "12.1 Protein structures",
+    "text": "12.1 Protein structures\nDifference between the levels of protein structure primary structure is the basic linear representation of aminoacids. Natural aminoacids and modified or rare aminoacids display physico-chemical rich information and could be represented by letters. Therefore in the genetic code we could find the one-letter code.\nSecondary structures result from the spatial arrangement of aminoacids that interact with each closer neighbors. There are some remarkable secondary structures such as \\(\\beta\\)-sheets, \\(\\alpha\\)-helix, coils (flexible) and others.\nTertiary structure informs about the structural disposition of the secondary structures that fold between each other due to hydrophobic interactions, disulfure bonds, and other chemical interactions forming a globular and dynamic structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the :Levinthal’s paradox).\nQuaternary structures result from interaction of multiple tertiary structures. The structure, therefore dictates the protein function. This basic concept have triggered more recently a boom on the analysis of the structure of proteins."
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html#identifying-or-predicting-protein-structures",
     "href": "chs-bio-structural/intro-structural-bioinfo.html#identifying-or-predicting-protein-structures",
-    "title": "13  Structural bioinformatics",
-    "section": "13.2 Identifying or predicting protein structures",
-    "text": "13.2 Identifying or predicting protein structures\nXray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks.\nTo date, helium is scarce around the world, so labs all around are having trouble to get this element.\nModelling the structure whether ab initio or by homology also allow structure prediction. However these strategies\nRecently AlphaFold\nThe protein database (PDB)\nProtein topologies resulting from the folding: horshoe, beta-barrel and other could be identified\nStructural classification of proteins (SCOP) when analyzing a new protein classification by class, architecture, topology (fold-family), homologous superfamily and sequence family\nImportance of Gene Ontology\n\n13.2.1 Secondary structure prediction\nSecondary structures could also be represented in one letter (e.g.)\nFunctional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.\nThere is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.\n\n\n\n\n\n\nExercise 01\n\n\n\nSubmit 5lWM (JAK3) from the PDB on FASTA format on the JPRED and PSIPRED and compared with the experimentally predicted version of the protein. Analyze the predictions and tell are there differences between predictions? Which one is more accurate?"
+    "title": "12  Structural bioinformatics",
+    "section": "12.2 Identifying or predicting protein structures",
+    "text": "12.2 Identifying or predicting protein structures\nXray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks.\nTo date, helium is scarce around the world, so labs all around are having trouble to get this element.\nModelling the structure whether ab initio or by homology also allow structure prediction. However these strategies\nRecently AlphaFold\nThe protein database (PDB)\nProtein topologies resulting from the folding: horshoe, beta-barrel and other could be identified\nStructural classification of proteins (SCOP) when analyzing a new protein classification by class, architecture, topology (fold-family), homologous superfamily and sequence family\nImportance of Gene Ontology\n\n12.2.1 Secondary structure prediction\nSecondary structures could also be represented in one letter (e.g.)\nFunctional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.\nThere is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.\n\n\n\n\n\n\nExercise 01\n\n\n\nSubmit 5lWM (JAK3) from the PDB on FASTA format on the JPRED and PSIPRED and compared with the experimentally predicted version of the protein. Analyze the predictions and tell are there differences between predictions? Which one is more accurate?"
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html#pdb-database-introduction",
     "href": "chs-bio-structural/intro-structural-bioinfo.html#pdb-database-introduction",
-    "title": "13  Structural bioinformatics",
-    "section": "13.3 PDB database introduction",
-    "text": "13.3 PDB database introduction\nThe PDB database is one of the most important and ancient open biological database where all new protein structures are submitted. It is an international consortium where several regions work together to curate information.\nThe PDB in Europe (PDBe) is not only for proteins but form many other experimentally predicted macro-molecules (protein-protein interactions, peptides, RNA and so on).\nProtein structures are registered using a unique code of four characters.\nX-ray crystallography: is a chemical state of the macro-molecule where it is immobilized, therefore information correspond to one state of the structure, then crystal protein is submitted to an x-ray beam to generate a diffraction pattern.\nNMR spectroscopy: captures dynamic information of the protein, but generally resolves small proteins. The principle?\nElectron microscopy adapted to cryo-preservation allow proteins visualization."
+    "title": "12  Structural bioinformatics",
+    "section": "12.3 PDB database introduction",
+    "text": "12.3 PDB database introduction\nThe PDB database is one of the most important and ancient open biological database where all new protein structures are submitted. It is an international consortium where several regions work together to curate information.\nThe PDB in Europe (PDBe) is not only for proteins but form many other experimentally predicted macro-molecules (protein-protein interactions, peptides, RNA and so on).\nProtein structures are registered using a unique code of four characters.\nX-ray crystallography: is a chemical state of the macro-molecule where it is immobilized, therefore information correspond to one state of the structure, then crystal protein is submitted to an x-ray beam to generate a diffraction pattern.\nNMR spectroscopy: captures dynamic information of the protein, but generally resolves small proteins. The principle?\nElectron microscopy adapted to cryo-preservation allow proteins visualization."
   },
   {
     "objectID": "chs-challenges-demos/demo-motif-search.html",
@@ -474,12 +467,5 @@
     "title": "References",
     "section": "",
     "text": "Allesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for\nBiologists,” January. https://doi.org/10.2307/j.ctvc77jrc.\n\n\nBrown, Terence A. 2018. Genomes 4. Garland science.\n\n\nMeneely, Philip Mark, Rachel Dawes Hoang, Iruka N Okeke, and Katherine\nHeston. 2017. Genetics: Genes, Genomes, and Evolution. Oxford\nUniversity Press."
-  },
-  {
-    "objectID": "intro.html#course-schedule",
-    "href": "intro.html#course-schedule",
-    "title": "Introduction",
-    "section": "Course schedule",
-    "text": "Course schedule"
   }
 ]

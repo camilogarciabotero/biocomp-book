@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.0.38">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-<meta name="dcterms.date" content="2022-08-20">
-
+<meta name="dcterms.date" content="2022-08-22">
 <title>Fundamentals of computational biology - 5&nbsp; Sequence analysis</title>
 <style>
 code{white-space: pre-wrap;}
@@ -37,7 +34,6 @@ div.csl-indent {
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -61,8 +57,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-contrib/nutshell-1.0.0/nutshell.min.js"></script>
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -80,20 +75,13 @@ div.csl-indent {
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QFWWJGZHLD"></script>
-
-<script type="text/javascript">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QFWWJGZHLD"></script><script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
-</script>
-<script async="" src="https://hypothes.is/embed.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
+</script><script async="" src="https://hypothes.is/embed.js"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 <meta name="citation_title" content="[[5]{.chapter-number}&nbsp; [ Sequence analysis]{.chapter-title}]{#sec-seq-analysis .quarto-section-identifier}">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
@@ -104,25 +92,18 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <meta name="citation_reference" content="citation_title=Genetics: Genes, genomes, and evolution;,citation_author=Philip Mark Meneely;,citation_author=Rachel Dawes Hoang;,citation_author=Iruka N Okeke;,citation_author=Katherine Heston;,citation_publication_date=2017;,citation_journal_title=undefined;">
 <meta name="citation_reference" content="citation_title=Genomes 4;,citation_author=Terence A Brown;,citation_publication_date=2018;,citation_journal_title=undefined;">
 </head>
-
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequence analysis</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Fundamentals of computational biology</a> 
         <div class="sidebar-tools-main">
@@ -138,7 +119,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
@@ -155,8 +136,8 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chs-command-line/welcome-to-command-line.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The command line</span></a>
   </div>
@@ -177,7 +158,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Sequence analysis</a>
@@ -185,8 +166,8 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequence analysis</span></a>
   </div>
@@ -203,16 +184,11 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Phylogenetics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
+  <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Genomics</a>
@@ -220,24 +196,24 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/genome-assembly.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  <a href="../chs-genomics/genome-assembly.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/genome-annotation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Genome annotation</span></a>
+  <a href="../chs-genomics/genome-annotation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome annotation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
+  <a href="../chs-genomics/variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Structural bioinformatics</a>
@@ -245,14 +221,14 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Structural bioinformatics</span></a>
+  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Structural bioinformatics</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Challenges</a>
@@ -260,49 +236,44 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chs-challenges-demos/demo-motif-search.html" class="sidebar-item-text sidebar-link">Unix challenges</a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
+</div>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#biological-information" id="toc-biological-information" class="nav-link active" data-scroll-target="#biological-information"> <span class="header-section-number">5.1</span> Biological information</a></li>
+<li><a href="#biological-information" id="toc-biological-information" class="nav-link active" data-scroll-target="#biological-information"> <span class="header-section-number">5.1</span> Biological information</a></li>
   <li><a href="#the-duality-of-dna" id="toc-the-duality-of-dna" class="nav-link" data-scroll-target="#the-duality-of-dna"> <span class="header-section-number">5.2</span> The duality of DNA</a></li>
   <li><a href="#the-central-dogma-theory-of-molecular-biology-extended" id="toc-the-central-dogma-theory-of-molecular-biology-extended" class="nav-link" data-scroll-target="#the-central-dogma-theory-of-molecular-biology-extended"> <span class="header-section-number">5.3</span> The central <del>dogma</del> theory of molecular biology extended</a></li>
   <li><a href="#sequencing-strategies" id="toc-sequencing-strategies" class="nav-link" data-scroll-target="#sequencing-strategies"> <span class="header-section-number">5.4</span> Sequencing strategies</a></li>
   <li><a href="#sequencing-over-time" id="toc-sequencing-over-time" class="nav-link" data-scroll-target="#sequencing-over-time"> <span class="header-section-number">5.5</span> Sequencing over time</a></li>
   <li><a href="#some-insights-from-sequencing-genomes" id="toc-some-insights-from-sequencing-genomes" class="nav-link" data-scroll-target="#some-insights-from-sequencing-genomes"> <span class="header-section-number">5.6</span> Some insights from sequencing genomes</a></li>
   <li><a href="#biological-information-databases" id="toc-biological-information-databases" class="nav-link" data-scroll-target="#biological-information-databases"> <span class="header-section-number">5.7</span> Biological information databases</a></li>
-  <li><a href="#retrieving-data-from-ncbi" id="toc-retrieving-data-from-ncbi" class="nav-link" data-scroll-target="#retrieving-data-from-ncbi"> <span class="header-section-number">5.8</span> Retrieving data from NCBI</a>
+  <li>
+<a href="#retrieving-data-from-ncbi" id="toc-retrieving-data-from-ncbi" class="nav-link" data-scroll-target="#retrieving-data-from-ncbi"> <span class="header-section-number">5.8</span> Retrieving data from NCBI</a>
   <ul class="collapse">
-  <li><a href="#the-manual-way" id="toc-the-manual-way" class="nav-link" data-scroll-target="#the-manual-way"> <span class="header-section-number">5.8.1</span> The manual way</a></li>
-  <li><a href="#entrez" id="toc-entrez" class="nav-link" data-scroll-target="#entrez"> <span class="header-section-number">5.8.2</span> Entrez</a></li>
+<li><a href="#the-manual-way" id="toc-the-manual-way" class="nav-link" data-scroll-target="#the-manual-way"> <span class="header-section-number">5.8.1</span> The manual way</a></li>
+  <li><a href="#entrez-direct" id="toc-entrez-direct" class="nav-link" data-scroll-target="#entrez-direct"> <span class="header-section-number">5.8.2</span> Entrez direct</a></li>
   <li><a href="#a-simple-program" id="toc-a-simple-program" class="nav-link" data-scroll-target="#a-simple-program"> <span class="header-section-number">5.8.3</span> A simple program</a></li>
-  </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-sequence-analysis/introduction-to-sequence-analysis.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+</li>
+  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-sequence-analysis/introduction-to-sequence-analysis.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title"><span id="sec-seq-analysis" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequence analysis</span></span></h1>
 </div>
 
@@ -314,56 +285,47 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-08-20</p>
+      <p class="date">2022-08-22</p>
     </div>
   </div>
     
   </div>
   
 
-</header>
-
-<blockquote class="blockquote">
+</header><blockquote class="blockquote">
 <p>In this chapter we we will consider several biological concepts that appear central to understand the manipulation of biological data.</p>
 <p>We are also covering the transition of a biological (organic) information to digital bits.</p>
 <p>We will explore some databases in which biological information is stored.</p>
 </blockquote>
-<section id="biological-information" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="biological-information"><span class="header-section-number">5.1</span> Biological information</h2>
+<section id="biological-information" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="biological-information">
+<span class="header-section-number">5.1</span> Biological information</h2>
 <p>Since the origin, organisms (or molecules) have been the result of different selective processes. An emergent property of successive iterations of survival/decease was the ability of molecules to keep a record of its past in a very stable manner, so that it will pass generation to generation. Although this might not be the first property or molecule to ever exist (see the <a href="https://en.wikipedia.org/wiki/Abiogenesis">:origin of life</a>), the innovation of organisms to pack information of previous events became so advantageous that almost any form of living organism has this property: that is DNA.</p>
 <div id="fig-chromosome" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="imgs-seqan/chromosome-genes.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The different scales of information packed in a biological fashion. Figure adapted from @meneely2017 book showing how DNA in a eukaryote is packaged with chromosomal proteins to form the much more compact chromatin. Chromatin is then folded into higher-order structures and eventually into the chromosome"><img src="imgs-seqan/chromosome-genes.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-seqan/chromosome-genes.png" class="lightbox" title="The different scales of information packed in a biological fashion. Figure adapted from @meneely2017 book showing how DNA in a eukaryote is packaged with chromosomal proteins to form the much more compact chromatin. Chromatin is then folded into higher-order structures and eventually into the chromosome" data-gallery="quarto-lightbox-gallery-1"><img src="imgs-seqan/chromosome-genes.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure 5.1: The different scales of information packed in a biological fashion. Figure adapted from <span class="citation" data-cites="meneely2017">Meneely et al. (<a href="../references.html#ref-meneely2017" role="doc-biblioref">2017</a>)</span> book showing how <em>DNA in a eukaryote is packaged with chromosomal proteins to form the much more compact chromatin. Chromatin is then folded into higher-order structures and eventually into the chromosome</em></figcaption><p></p>
 </figure>
 </div>
 <p>Almost any living organism harbor DNA in a nucleus or chromosome, which is a very compacted structure that could be actually seen to naked eye in some species. It so arranged or condensed <a href="#fig-chromosome">Fig.&nbsp;<span>5.1</span></a> that it is the result of multiple compacting strategies.</p>
-</section>
-<section id="the-duality-of-dna" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="the-duality-of-dna"><span class="header-section-number">5.2</span> The duality of DNA</h2>
+</section><section id="the-duality-of-dna" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="the-duality-of-dna">
+<span class="header-section-number">5.2</span> The duality of DNA</h2>
 <p>DNA is an organic molecule of <a href="https://en.wikipedia.org/wiki/Nucleic_acid">:nucleic acids</a> that is mainly build out of nitrogen-containing compounds (<a href="https://en.wikipedia.org/wiki/Nucleobase">:nucleobases</a>) or just bases.The four bases are adenine (A), cytosine (C), guanine (G) and (T) and they bind strictly as <span class="math inline">\(A=T\)</span> and <span class="math inline">\(C\equiv{G}\)</span> where each of the lines represents an hydrogen bond.</p>
 <p>DNA nitrogenous bases of are arranged in a very compacted helix structure and too much can be understood from its molecular nature. It is of course governed by the physicochemical properties of the atoms, therefore DNA is a physicochemical entity. But those common bricks have also a very beautiful emergent property that comes out from their order (mainly), and that is to keep the instructions that build the organism from which it belongs. These instructions are nothing else than information, which also follow some informational rules. Then DNA is also an informational entity.</p>
 <div id="fig-doublehelix" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="imgs-seqan/dna-structure.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="DNA double helix structure and main characteristics. Image adapted from @brown2018 showing the structure with the sugar–phosphate backbone of each polynucleotide drawn as a gray ribbon with the base pairs in green"><img src="imgs-seqan/dna-structure.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<figure class="figure"><p><a href="imgs-seqan/dna-structure.png" class="lightbox" title="DNA double helix structure and main characteristics. Image adapted from @brown2018 showing the structure with the sugar–phosphate backbone of each polynucleotide drawn as a gray ribbon with the base pairs in green" data-gallery="quarto-lightbox-gallery-2"><img src="imgs-seqan/dna-structure.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure 5.2: DNA double helix structure and main characteristics. Image adapted from <span class="citation" data-cites="brown2018">Brown (<a href="../references.html#ref-brown2018" role="doc-biblioref">2018</a>)</span> showing the structure with the <em>sugar–phosphate backbone of each polynucleotide drawn as a gray ribbon with the base pairs in green</em></figcaption><p></p>
 </figure>
 </div>
 <p>The description of DNA bases helped the elucidation of the helicoidal structure. The first outstanding feature of the DNA structure was indeed highlighted by Watson and Crick in its famous paper about a subtle mechanism of replication.</p>
-<p>This idea of the duality of the DNA (and of course of other biological molecules) is the source of the study of many bioinformatic fields. But a question remains open: how do capture the informational nature of a DNA sequence so that we end up with a sequential file of characters <code>ATCGCTATC...</code>. This is not a trivial questions in fact.</p>
-</section>
-<section id="the-central-dogma-theory-of-molecular-biology-extended" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="the-central-dogma-theory-of-molecular-biology-extended"><span class="header-section-number">5.3</span> The central <del>dogma</del> theory of molecular biology extended</h2>
-<p>So far we have addressed that DNA is a very stable molecule that stores biological (i.e., evolutionary) information, that it could represent a sequential object of characters as in a digital object as well. But how is it that this order has an underlying biological sense? This was a very though question that required the accumulation of many experimental discoveries and the meeting of genetics and molecular biology.</p>
-</section>
-<section id="sequencing-strategies" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="sequencing-strategies"><span class="header-section-number">5.4</span> Sequencing strategies</h2>
-</section>
-<section id="sequencing-over-time" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="sequencing-over-time"><span class="header-section-number">5.5</span> Sequencing over time</h2>
-</section>
-<section id="some-insights-from-sequencing-genomes" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="some-insights-from-sequencing-genomes"><span class="header-section-number">5.6</span> Some insights from sequencing genomes</h2>
+<p>This idea of the duality of the DNA (and of course of other biological molecules as well) is the source of the study of many bioinformatic fields. But a question remains open: how do we capture the informational nature of a DNA sequence so that we end up with a sequential file of characters <code>ATCGCTATC...</code>. This is not a trivial question in fact.</p>
+</section><section id="the-central-dogma-theory-of-molecular-biology-extended" class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" data-anchor-id="the-central-dogma-theory-of-molecular-biology-extended">
+<span class="header-section-number">5.3</span> The central <del>dogma</del> theory of molecular biology extended</h2>
+<p>So far we have addressed that DNA is a very stable molecule that stores biological (i.e., evolutionary) information. Also, that DNA could represent a sequential object of characters as in a computer digital object or file as well. But how is it that this order has an underlying biological sense? This was a very though question that required the accumulation of many experimental discoveries and the meeting of genetics and molecular biology.</p>
+</section><section id="sequencing-strategies" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="sequencing-strategies">
+<span class="header-section-number">5.4</span> Sequencing strategies</h2>
+</section><section id="sequencing-over-time" class="level2" data-number="5.5"><h2 data-number="5.5" class="anchored" data-anchor-id="sequencing-over-time">
+<span class="header-section-number">5.5</span> Sequencing over time</h2>
+</section><section id="some-insights-from-sequencing-genomes" class="level2" data-number="5.6"><h2 data-number="5.6" class="anchored" data-anchor-id="some-insights-from-sequencing-genomes">
+<span class="header-section-number">5.6</span> Some insights from sequencing genomes</h2>
 <div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -379,20 +341,16 @@ Challenge
 <p>Document each of the steps and how did you end up with the answer. Saving the file with your initials (e.g., CG-activity01.{md,txt,docx})z</p>
 </div>
 </div>
-</section>
-<section id="biological-information-databases" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="biological-information-databases"><span class="header-section-number">5.7</span> Biological information databases</h2>
-</section>
-<section id="retrieving-data-from-ncbi" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="retrieving-data-from-ncbi"><span class="header-section-number">5.8</span> Retrieving data from NCBI</h2>
-<section id="the-manual-way" class="level3" data-number="5.8.1">
-<h3 data-number="5.8.1" class="anchored" data-anchor-id="the-manual-way"><span class="header-section-number">5.8.1</span> The manual way</h3>
-</section>
-<section id="entrez" class="level3" data-number="5.8.2">
-<h3 data-number="5.8.2" class="anchored" data-anchor-id="entrez"><span class="header-section-number">5.8.2</span> Entrez</h3>
-</section>
-<section id="a-simple-program" class="level3" data-number="5.8.3">
-<h3 data-number="5.8.3" class="anchored" data-anchor-id="a-simple-program"><span class="header-section-number">5.8.3</span> A simple program</h3>
+</section><section id="biological-information-databases" class="level2" data-number="5.7"><h2 data-number="5.7" class="anchored" data-anchor-id="biological-information-databases">
+<span class="header-section-number">5.7</span> Biological information databases</h2>
+</section><section id="retrieving-data-from-ncbi" class="level2" data-number="5.8"><h2 data-number="5.8" class="anchored" data-anchor-id="retrieving-data-from-ncbi">
+<span class="header-section-number">5.8</span> Retrieving data from NCBI</h2>
+<section id="the-manual-way" class="level3" data-number="5.8.1"><h3 data-number="5.8.1" class="anchored" data-anchor-id="the-manual-way">
+<span class="header-section-number">5.8.1</span> The manual way</h3>
+</section><section id="entrez-direct" class="level3" data-number="5.8.2"><h3 data-number="5.8.2" class="anchored" data-anchor-id="entrez-direct">
+<span class="header-section-number">5.8.2</span> Entrez direct</h3>
+</section><section id="a-simple-program" class="level3" data-number="5.8.3"><h3 data-number="5.8.3" class="anchored" data-anchor-id="a-simple-program">
+<span class="header-section-number">5.8.3</span> A simple program</h3>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -403,11 +361,7 @@ Brown, Terence A. 2018. <em>Genomes 4</em>. Garland science.
 Meneely, Philip Mark, Rachel Dawes Hoang, Iruka N Okeke, and Katherine Heston. 2017. <em>Genetics: Genes, Genomes, and Evolution</em>. Oxford University Press.
 </div>
 </div>
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -606,11 +560,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
-</script>
-<script src="https://giscus.app/client.js" data-repo="camilogarciabotero/biocomp-book" data-repo-id="R_kgDOHKOnSw" data-category="General" data-category-id="DIC_kwDOHKOnS84CQ7NN" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><script src="https://giscus.app/client.js" data-repo="camilogarciabotero/biocomp-book" data-repo-id="R_kgDOHKOnSw" data-category="General" data-category-id="DIC_kwDOHKOnS84CQ7NN" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../chs-command-line/hpc-notions.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notions of HPC</span></span>
       </a>          
@@ -622,8 +573,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":true});</script>
-
+<script>var lightboxQuarto = GLightbox({"loop":true,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom"});</script>
 
 
 </body></html>

@@ -37,7 +37,7 @@ book:
         - chs-sequence-analysis/introduction-to-sequence-analysis.qmd
         - chs-sequence-analysis/sanger-analysis.qmd
         - chs-sequence-analysis/sequence-alignments.qmd
-        - chs-sequence-analysis/phylogenetic-reconstructions.qmd
+        # - chs-sequence-analysis/phylogenetic-reconstructions.qmd
         - chs-sequence-analysis/NGS-TGS-principles.qmd
     - part: "Genomics"
       chapters:
