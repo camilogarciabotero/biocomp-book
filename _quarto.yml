@@ -60,6 +60,8 @@ book:
 
 bibliography: references.bib
 reference-location: margin
+crossref: 
+  lst-title: Code
 
 citation:
   type: book
