@@ -207,7 +207,7 @@
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#some-insights-from-sequencing-genomes",
     "title": "5  Sequence analysis",
     "section": "\n5.6 Some insights from sequencing genomes",
-    "text": "5.6 Some insights from sequencing genomes\n\n\n\n\n\n\nChallenge\n\n\n\nHow many complete genomes of Bacillus subtilis are there in the NCBI databases?\nCount the number of features (genes, CDS, ncRNA, rRNA, etc.) in the genome of Bacillus subtilis NCIB 3610 (GCF_002055965.1)\nDocument each of the steps and how did you end up with the answer. Saving the file with your initials (e.g., CG-activity01.{md,txt,docx})z"
+    "text": "5.6 Some insights from sequencing genomes"
   },
   {
     "objectID": "chs-sequence-analysis/introduction-to-sequence-analysis.html#biological-information-databases",
@@ -221,7 +221,7 @@
     "href": "chs-sequence-analysis/introduction-to-sequence-analysis.html#retrieving-data-from-ncbi",
     "title": "5  Sequence analysis",
     "section": "\n5.8 Retrieving data from NCBI",
-    "text": "5.8 Retrieving data from NCBI\n\n5.8.1 The manual way\n\n5.8.2 Entrez direct\n\n5.8.3 A simple program\n\n\n\n\nBrown, Terence A. 2018. Genomes 4. Garland science.\n\n\nMeneely, Philip Mark, Rachel Dawes Hoang, Iruka N Okeke, and Katherine Heston. 2017. Genetics: Genes, Genomes, and Evolution. Oxford University Press."
+    "text": "5.8 Retrieving data from NCBI\n\n5.8.1 The manual way\n\n5.8.2 Entrez direct\n\n5.8.3 A simple program\n\n\n\n\n\n\nChallenge\n\n\n\nProfessor Camilo is interested on knowing how many complete genomes of Bacillus subtilis are there in the NCBI databases. He asks you later to count the number of features (genes, CDS, ncRNA, rRNA, etc.) in the genome of Bacillus subtilis NCIB 3610 (GCF_002055965.1). And tell you to document each of the steps and how did you end up with the answer. Saving the file with your initials (e.g., CG-activity01.md)\n\n\nAs in ?sec-challenge-01\n\n\n\n\nBrown, Terence A. 2018. Genomes 4. Garland science.\n\n\nMeneely, Philip Mark, Rachel Dawes Hoang, Iruka N Okeke, and Katherine Heston. 2017. Genetics: Genes, Genomes, and Evolution. Oxford University Press."
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html",
