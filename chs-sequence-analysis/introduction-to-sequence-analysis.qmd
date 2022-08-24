@@ -42,6 +42,14 @@ This idea of the duality of the DNA (and of course of other biological molecules
 
 So far we have addressed that DNA is a very stable molecule that stores biological (i.e., evolutionary) information. Also, that DNA  could represent a sequential object of characters as in a computer digital object or file as well. But how is it that this order has an underlying biological sense? This was a very though question that required the accumulation of many experimental discoveries and the meeting of genetics and molecular biology.
 
+::: {layout-ncol=2}
+![A. Guanine and cytosine bond](imgs-seqan/guanine-cytosine.png)
+
+![B. Adenine and thymine bond](imgs-seqan/adenine-thymine.png)
+:::
+
+![A phosphodiester bond bind two nitrogenous bases as in the backbone of the DNA helix](imgs-seqan/phosphdiester.png){#fig-phosphodiester .column-margin}
+
 ## Sequencing strategies
 
 ## Sequencing over time
@@ -54,13 +62,37 @@ So far we have addressed that DNA is a very stable molecule that stores biologic
 
 ### The manual way
 
+
+
+
 ### Entrez direct
 
+
+We first need to install the [Entrez Direct](https://www.ncbi.nlm.nih.gov/books/NBK25501/) command line utilities. This could be done in several ways, one suggested by the manual and a very simple one using conda (mamba).
+
+```{bash}
+#| eval: false
+mamba create -y –n entrez entrez
+```
+
+This line will create a new conda environment called *entrez* and will automatically install all dependencies. We later activate the environment with `conda activate entrez` and then we got the entire Entrez CLI utilities.
+
+There are several commands and its function is to interact with the NCBI databases system. It is, however, a very huge set of utilities and commands to cope with at first, so the learning curve is somehow steppe. Here is a way to download the *Bacillus tequilensis* EA-CB0015 genome with a line of code that interleave three of the main commands of Entrez:
+
+```{bash}
+#| eval: false
+esearch -db assembly -query GCF_012225885.1 |
+elink   -target nucleotide -name assembly_nuccore_refseq | 
+efetch  -format fasta > GCF_012225885.1.fasta
+```
+
 ### A simple program
+
+
 
 
 ::: {.callout-warning}
 ## Challenge {#sec-challenge-01}
 
-Professor Camilo is interested on knowing how many  complete genomes of *Bacillus subtilis* are there in the NCBI databases. He asks you later to count the number of features (genes, CDS, ncRNA, rRNA, etc.) in the genome of *Bacillus subtilis* NCIB 3610 (GCF_002055965.1). And tell you to document each of the steps and how did you end up with the answer. Saving the file with your initials (e.g., CG-activity01.md)
+Professor Camilo is interested on knowing how many complete genomes of *Bacillus subtilis* are there in the NCBI databases. He asks you later to count the number of features (genes, CDS, ncRNA, rRNA, etc.) in the genome of *Bacillus subtilis* NCIB 3610 (GCF_002055965.1). And tell you to document each of the steps and how did you end up with the answer. Saving the file with your initials (e.g., CG-activity01.md)
 :::
