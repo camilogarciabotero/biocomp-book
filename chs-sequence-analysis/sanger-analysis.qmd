@@ -1,12 +1,20 @@
 # Sanger analysis {#sec-sanger}
 
-> This is a section about one of the first gen sequencing tech, that is Sanger sequencing and its principles and evolution, strengths and limitations
+> This is a section about perhaps one of the first generation sequencing technology, that is Sanger sequencing and its principles and evolution, strengths and limitations
 >
-> Also will be covering the bioinformatics side of the method: what kind of files we get out Sanger, how we process them and an important paradigm that came out from this sequence method.
+> This chapter will also cover the bioinformatics side of the method: what kind of files we get out Sanger, how we process them and an important paradigm that came out from this sequence method.
+>
+> Finally we will dive into a study case that its very common in microbiology: the use of the 16S rRNA gene for taxonomy identification
 
 ## Sanger sequencing methods
 
 ### The chain termination method
+
+:::{#fig-yt-sanger .column-margin}
+{{< video https://www.youtube.com/embed/Wgv9QhjLTC8 >}}
+
+A step-by-step of the Sanger sequencing method or the chain termination method.
+:::
 
 ### Sanger with capillary electrophoresis
 

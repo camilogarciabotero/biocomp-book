@@ -57,15 +57,17 @@ So far we have addressed that DNA is a very stable molecule that stores biologic
 
 ## Sequencing over time
 
-
 ## Some insights from sequencing genomes
+
+
 
 ## Biological information databases
 
+
 ## Retrieving data from NCBI
 
-### The manual way
 
+### The manual way
 
 ### Entrez direct
 

@@ -228,14 +228,14 @@
     "href": "chs-sequence-analysis/sanger-analysis.html",
     "title": "6  Sanger analysis",
     "section": "",
-    "text": "This is a section about one of the first gen sequencing tech, that is Sanger sequencing and its principles and evolution, strengths and limitations\nAlso will be covering the bioinformatics side of the method: what kind of files we get out Sanger, how we process them and an important paradigm that came out from this sequence method."
+    "text": "This is a section about perhaps one of the first generation sequencing technology, that is Sanger sequencing and its principles and evolution, strengths and limitations\nThis chapter will also cover the bioinformatics side of the method: what kind of files we get out Sanger, how we process them and an important paradigm that came out from this sequence method.\nFinally we will dive into a study case that its very common in microbiology: the use of the 16S rRNA gene for taxonomy identification"
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html#sanger-sequencing-methods",
     "href": "chs-sequence-analysis/sanger-analysis.html#sanger-sequencing-methods",
     "title": "6  Sanger analysis",
     "section": "6.1 Sanger sequencing methods",
-    "text": "6.1 Sanger sequencing methods\n\n6.1.1 The chain termination method\n\n\n6.1.2 Sanger with capillary electrophoresis\n\n\n6.1.3 Strengths and limitations of Sanger methods"
+    "text": "6.1 Sanger sequencing methods\n\n6.1.1 The chain termination method\n\n\n\n\nFigure 6.1: A step-by-step of the Sanger sequencing method or the chain termination method.\n\n\n\n6.1.2 Sanger with capillary electrophoresis\n\n\n6.1.3 Strengths and limitations of Sanger methods"
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html#files-from-sanger-sequencing",
