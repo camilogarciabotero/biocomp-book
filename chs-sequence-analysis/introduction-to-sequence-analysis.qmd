@@ -14,11 +14,9 @@ lightbox: auto
 >
 > We will explore some databases in which biological information is stored.
 
-
 ## Biological information
 
 Since the origin, organisms (or molecules) have been the result of different selective processes. An emergent property of successive iterations of survival/decease was the ability of molecules to keep a record of its past in a very stable manner, so that it will pass generation to generation. Although this might not be the first property or molecule to ever exist (see the [:origin of life](https://en.wikipedia.org/wiki/Abiogenesis)), the innovation of organisms to pack information of previous events became so advantageous that almost any form of living organism has this property: that is DNA.
-
 
 ![The different scales of information packed in a biological fashion. Figure adapted from @meneely2017 book showing how *DNA in a eukaryote is packaged with chromosomal proteins to form the much more compact chromatin. Chromatin is then folded into higher-order structures and eventually into the chromosome*](imgs-seqan/chromosome-genes.png){#fig-chromosome}
 
@@ -35,24 +33,30 @@ of each polynucleotide drawn as a gray ribbon with the base pairs in green* ](im
 
 The description of DNA bases helped the elucidation of the helicoidal structure. The first outstanding feature of the DNA structure was indeed highlighted by Watson and Crick in its famous paper about a subtle mechanism of replication. 
 
+![A phosphodiester bond bind two nitrogenous bases as in the backbone of the DNA helix](imgs-seqan/phosphdiester.png){#fig-phosphodiester .column-margin}
+
 This idea of the duality of the DNA (and of course of other biological molecules as well) is the source of the study of many bioinformatic fields. But a question remains open: how do we capture the informational nature of a DNA sequence so that we end up with a sequential file of characters `ATCGCTATC...`. This is not a trivial question in fact.
+
+:::{#fig-nucleotides layout="[[40,-5,47]]"}
+![Guanine and cytosine bond](imgs-seqan/guanine-cytosine.png){#fig-gc}
+
+![Adenine and thymine bond](imgs-seqan/adenine-thymine.png){#fig-at}
+
+Most common nucleotides present in DNA and the chemical interactions that bond each pair.
+:::
 
 
 ## The central ~~dogma~~ theory of molecular biology extended
 
 So far we have addressed that DNA is a very stable molecule that stores biological (i.e., evolutionary) information. Also, that DNA  could represent a sequential object of characters as in a computer digital object or file as well. But how is it that this order has an underlying biological sense? This was a very though question that required the accumulation of many experimental discoveries and the meeting of genetics and molecular biology.
 
-::: {layout-ncol=2}
-![A. Guanine and cytosine bond](imgs-seqan/guanine-cytosine.png)
-
-![B. Adenine and thymine bond](imgs-seqan/adenine-thymine.png)
-:::
-
-![A phosphodiester bond bind two nitrogenous bases as in the backbone of the DNA helix](imgs-seqan/phosphdiester.png){#fig-phosphodiester .column-margin}
+![An extended representation of the central theory of molecular biology. Image from @makinen2015](imgs-seqan/central-theory-mb.png){#fig-central-mb}
 
 ## Sequencing strategies
 
+
 ## Sequencing over time
+
 
 ## Some insights from sequencing genomes
 
@@ -61,8 +65,6 @@ So far we have addressed that DNA is a very stable molecule that stores biologic
 ## Retrieving data from NCBI
 
 ### The manual way
-
-
 
 
 ### Entrez direct
