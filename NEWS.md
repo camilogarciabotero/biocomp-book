@@ -1,15 +1,11 @@
-## Edition 0.0.7
+## Edition 0.0.8
 
-- Changes in git chapter
-  
-- More images in different chapters
+- New render w/ Quarto 1.1
 
-- Start using new filters : lightbox for images and nutshell for expandable explanations
+- Adding more on sequence analysis
 
-- Some images in HPC chapter
+- Including new extension for videos
 
-- Some outlines in Package manager chapter
+- Improve some images
 
-- Some paragraphs on the sequence analysis chapter
-
-- Additional challenges
+- Book has now Giscus to enable discussions
