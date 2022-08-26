@@ -2,20 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.1.132">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-08-25">
+<meta name="dcterms.date" content="2022-08-26">
 
 <title>Fundamentals of computational biology - 10&nbsp; Genome annotation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -71,16 +76,19 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 
 
 <meta name="citation_title" content="[[10]{.chapter-number}&nbsp; [Genome annotation]{.chapter-title}]{#sec-genome-annotation .quarto-section-identifier}">
+<meta name="citation_publication_date" content="NaN-NaN-NaN">
+<meta name="citation_cover_date" content="NaN-NaN-NaN">
+<meta name="citation_year" content="NaN">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
-<meta name="citation_publication_date" content="NaN-NaN-NaN">
-<meta name="citation_journal_title" content="undefined">
-<meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_publication_date=1984-05;,citation_issue=2;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;">
-<meta name="citation_reference" content="citation_title=Computing skills for biologists;,citation_author=Stefano Allesina;,citation_author=Madlen Wilmes;,citation_fulltext_html_url=http://dx.doi.org/10.2307/j.ctvc77jrc;,citation_publication_date=2019-01-15;,citation_journal_title=undefined;">
-<meta name="citation_reference" content="citation_title=Genetics: Genes, genomes, and evolution;,citation_author=Philip Mark Meneely;,citation_author=Rachel Dawes Hoang;,citation_author=Iruka N Okeke;,citation_author=Katherine Heston;,citation_publication_date=2017;,citation_journal_title=undefined;">
-<meta name="citation_reference" content="citation_title=Genomes 4;,citation_author=Terence A Brown;,citation_publication_date=2018;,citation_journal_title=undefined;">
-<meta name="citation_reference" content="citation_title=Long walk to genomics: History and current approaches to genome sequencing and assembly;,citation_author=Alice Maria Giani;,citation_author=Guido Roberto Gallo;,citation_author=Luca Gianfranceschi;,citation_author=Giulio Formenti;,citation_publication_date=2020;,citation_volume=18;,citation_journal_title=Computational and Structural Biotechnology Journal;">
-<meta name="citation_reference" content="citation_title=Genome-scale algorithm design;,citation_author=Veli Mäkinen;,citation_author=Djamal Belazzougui;,citation_author=Fabio Cunial;,citation_author=Alexandru I Tomescu;,citation_publication_date=2015;,citation_journal_title=undefined;">
+<meta name="citation_doi" content="10.5281/zenodo.6468280">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_publication_date=1984-05;,citation_cover_date=1984-05;,citation_year=1984;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_issue=2;,citation_doi=10.1093/comjnl/27.2.97;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;,citation_publisher=Oxford University Press, Inc.;">
+<meta name="citation_reference" content="citation_title=Computing skills for biologists;,citation_author=Stefano Allesina;,citation_author=Madlen Wilmes;,citation_publication_date=2019-01-15;,citation_cover_date=2019-01-15;,citation_year=2019;,citation_fulltext_html_url=http://dx.doi.org/10.2307/j.ctvc77jrc;,citation_doi=10.2307/j.ctvc77jrc;">
+<meta name="citation_reference" content="citation_title=Genetics: Genes, genomes, and evolution;,citation_author=Philip Mark Meneely;,citation_author=Rachel Dawes Hoang;,citation_author=Iruka N Okeke;,citation_author=Katherine Heston;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;">
+<meta name="citation_reference" content="citation_title=Genomes 4;,citation_author=Terence A Brown;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;">
+<meta name="citation_reference" content="citation_title=Long walk to genomics: History and current approaches to genome sequencing and assembly;,citation_author=Alice Maria Giani;,citation_author=Guido Roberto Gallo;,citation_author=Luca Gianfranceschi;,citation_author=Giulio Formenti;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_volume=18;,citation_journal_title=Computational and Structural Biotechnology Journal;,citation_publisher=Elsevier;">
+<meta name="citation_reference" content="citation_title=Genome-scale algorithm design;,citation_author=Veli Mäkinen;,citation_author=Djamal Belazzougui;,citation_author=Fabio Cunial;,citation_author=Alexandru I Tomescu;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;">
 </head>
 
 <body class="nav-sidebar floating">
@@ -251,18 +259,18 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ab-initio-annotation" id="toc-ab-initio-annotation" class="nav-link active" data-scroll-target="#ab-initio-annotation"> <span class="header-section-number">10.1</span> <em>ab initio</em> annotation</a></li>
-  <li><a href="#homology-annotation" id="toc-homology-annotation" class="nav-link" data-scroll-target="#homology-annotation"> <span class="header-section-number">10.2</span> Homology annotation</a></li>
-  <li><a href="#annotation-files" id="toc-annotation-files" class="nav-link" data-scroll-target="#annotation-files"> <span class="header-section-number">10.3</span> Annotation files</a>
+  <li><a href="#ab-initio-annotation" id="toc-ab-initio-annotation" class="nav-link active" data-scroll-target="#ab-initio-annotation"><span class="toc-section-number">10.1</span>  <em>ab initio</em> annotation</a></li>
+  <li><a href="#homology-annotation" id="toc-homology-annotation" class="nav-link" data-scroll-target="#homology-annotation"><span class="toc-section-number">10.2</span>  Homology annotation</a></li>
+  <li><a href="#annotation-files" id="toc-annotation-files" class="nav-link" data-scroll-target="#annotation-files"><span class="toc-section-number">10.3</span>  Annotation files</a>
   <ul class="collapse">
-  <li><a href="#the-gbk-and-gbff" id="toc-the-gbk-and-gbff" class="nav-link" data-scroll-target="#the-gbk-and-gbff"> <span class="header-section-number">10.3.1</span> the GBK and GBFF</a></li>
-  <li><a href="#the-gff-specifications" id="toc-the-gff-specifications" class="nav-link" data-scroll-target="#the-gff-specifications"> <span class="header-section-number">10.3.2</span> The GFF specifications</a></li>
+  <li><a href="#the-gbk-and-gbff" id="toc-the-gbk-and-gbff" class="nav-link" data-scroll-target="#the-gbk-and-gbff"><span class="toc-section-number">10.3.1</span>  the GBK and GBFF</a></li>
+  <li><a href="#the-gff-specifications" id="toc-the-gff-specifications" class="nav-link" data-scroll-target="#the-gff-specifications"><span class="toc-section-number">10.3.2</span>  The GFF specifications</a></li>
   </ul></li>
-  <li><a href="#visualizing-genomes-and-annotations" id="toc-visualizing-genomes-and-annotations" class="nav-link" data-scroll-target="#visualizing-genomes-and-annotations"> <span class="header-section-number">10.4</span> Visualizing genomes and annotations</a></li>
+  <li><a href="#visualizing-genomes-and-annotations" id="toc-visualizing-genomes-and-annotations" class="nav-link" data-scroll-target="#visualizing-genomes-and-annotations"><span class="toc-section-number">10.4</span>  Visualizing genomes and annotations</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-genomics/genome-annotation.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -282,7 +290,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-08-25</p>
+      <p class="date">2022-08-26</p>
     </div>
   </div>
     
@@ -383,6 +391,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           toggle.classList.remove("alternate");
         }
       }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
     }
   }
   const isFileUrl = () => { 
@@ -485,7 +503,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

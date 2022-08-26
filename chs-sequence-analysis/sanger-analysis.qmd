@@ -8,7 +8,7 @@
 
 ## Sanger sequencing methods
 
-### The chain termination method
+### The chain termination method 
 
 :::{#fig-yt-sanger .column-margin}
 {{< video https://www.youtube.com/embed/Wgv9QhjLTC8 >}}

@@ -10,7 +10,7 @@ book:
       orcid: 0000-0002-0426-7007
       url: https://camilo-garcia.quarto.pub/webcard/
       affiliation: Universidad EAFIT
-  citation: true
+  # citation: true
   cover-image: figs/cover.png
   #date: "2022-04-11"
   search: true

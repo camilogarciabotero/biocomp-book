@@ -2,17 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.1.132">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2022-08-25">
+<meta name="dcterms.date" content="2022-08-26">
 <title>Fundamentals of computational biology - 1&nbsp; The command line</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -51,7 +56,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -64,7 +69,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -147,16 +152,19 @@ gtag('js', new Date());
 gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 </script><script async="" src="https://hypothes.is/embed.js"></script>
 <meta name="citation_title" content="[[1]{.chapter-number}&nbsp; [The command line]{.chapter-title}]{#sec-cli .quarto-section-identifier}">
+<meta name="citation_publication_date" content="NaN-NaN-NaN">
+<meta name="citation_cover_date" content="NaN-NaN-NaN">
+<meta name="citation_year" content="NaN">
 <meta name="citation_online_date" content="NaN-NaN-NaN">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book/">
-<meta name="citation_publication_date" content="NaN-NaN-NaN">
-<meta name="citation_journal_title" content="undefined">
-<meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_publication_date=1984-05;,citation_issue=2;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;">
-<meta name="citation_reference" content="citation_title=Computing skills for biologists;,citation_author=Stefano Allesina;,citation_author=Madlen Wilmes;,citation_fulltext_html_url=http://dx.doi.org/10.2307/j.ctvc77jrc;,citation_publication_date=2019-01-15;,citation_journal_title=undefined;">
-<meta name="citation_reference" content="citation_title=Genetics: Genes, genomes, and evolution;,citation_author=Philip Mark Meneely;,citation_author=Rachel Dawes Hoang;,citation_author=Iruka N Okeke;,citation_author=Katherine Heston;,citation_publication_date=2017;,citation_journal_title=undefined;">
-<meta name="citation_reference" content="citation_title=Genomes 4;,citation_author=Terence A Brown;,citation_publication_date=2018;,citation_journal_title=undefined;">
-<meta name="citation_reference" content="citation_title=Long walk to genomics: History and current approaches to genome sequencing and assembly;,citation_author=Alice Maria Giani;,citation_author=Guido Roberto Gallo;,citation_author=Luca Gianfranceschi;,citation_author=Giulio Formenti;,citation_publication_date=2020;,citation_volume=18;,citation_journal_title=Computational and Structural Biotechnology Journal;">
-<meta name="citation_reference" content="citation_title=Genome-scale algorithm design;,citation_author=Veli Mäkinen;,citation_author=Djamal Belazzougui;,citation_author=Fabio Cunial;,citation_author=Alexandru I Tomescu;,citation_publication_date=2015;,citation_journal_title=undefined;">
+<meta name="citation_doi" content="10.5281/zenodo.6468280">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_publication_date=1984-05;,citation_cover_date=1984-05;,citation_year=1984;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_issue=2;,citation_doi=10.1093/comjnl/27.2.97;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;,citation_publisher=Oxford University Press, Inc.;">
+<meta name="citation_reference" content="citation_title=Computing skills for biologists;,citation_author=Stefano Allesina;,citation_author=Madlen Wilmes;,citation_publication_date=2019-01-15;,citation_cover_date=2019-01-15;,citation_year=2019;,citation_fulltext_html_url=http://dx.doi.org/10.2307/j.ctvc77jrc;,citation_doi=10.2307/j.ctvc77jrc;">
+<meta name="citation_reference" content="citation_title=Genetics: Genes, genomes, and evolution;,citation_author=Philip Mark Meneely;,citation_author=Rachel Dawes Hoang;,citation_author=Iruka N Okeke;,citation_author=Katherine Heston;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;">
+<meta name="citation_reference" content="citation_title=Genomes 4;,citation_author=Terence A Brown;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;">
+<meta name="citation_reference" content="citation_title=Long walk to genomics: History and current approaches to genome sequencing and assembly;,citation_author=Alice Maria Giani;,citation_author=Guido Roberto Gallo;,citation_author=Luca Gianfranceschi;,citation_author=Giulio Formenti;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_volume=18;,citation_journal_title=Computational and Structural Biotechnology Journal;,citation_publisher=Elsevier;">
+<meta name="citation_reference" content="citation_title=Genome-scale algorithm design;,citation_author=Veli Mäkinen;,citation_author=Djamal Belazzougui;,citation_author=Fabio Cunial;,citation_author=Alexandru I Tomescu;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;">
 </head>
 <body class="nav-sidebar floating slimcontent">
 
@@ -318,28 +326,28 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     </ul>
 </div>
 </nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
 <li>
-<a href="#getting-started-with-the-command-line" id="toc-getting-started-with-the-command-line" class="nav-link active" data-scroll-target="#getting-started-with-the-command-line"> <span class="header-section-number">1.1</span> Getting started with the command line</a>
+<a href="#getting-started-with-the-command-line" id="toc-getting-started-with-the-command-line" class="nav-link active" data-scroll-target="#getting-started-with-the-command-line"><span class="toc-section-number">1.1</span>  Getting started with the command line</a>
   <ul class="collapse">
-<li><a href="#file-paths" id="toc-file-paths" class="nav-link" data-scroll-target="#file-paths"> <span class="header-section-number">1.1.1</span> File paths</a></li>
-  <li><a href="#basic-unix-commands" id="toc-basic-unix-commands" class="nav-link" data-scroll-target="#basic-unix-commands"> <span class="header-section-number">1.1.2</span> Basic Unix commands</a></li>
-  <li><a href="#anatomy-of-a-command" id="toc-anatomy-of-a-command" class="nav-link" data-scroll-target="#anatomy-of-a-command"> <span class="header-section-number">1.1.3</span> Anatomy of a command</a></li>
+<li><a href="#file-paths" id="toc-file-paths" class="nav-link" data-scroll-target="#file-paths"><span class="toc-section-number">1.1.1</span>  File paths</a></li>
+  <li><a href="#basic-unix-commands" id="toc-basic-unix-commands" class="nav-link" data-scroll-target="#basic-unix-commands"><span class="toc-section-number">1.1.2</span>  Basic Unix commands</a></li>
+  <li><a href="#anatomy-of-a-command" id="toc-anatomy-of-a-command" class="nav-link" data-scroll-target="#anatomy-of-a-command"><span class="toc-section-number">1.1.3</span>  Anatomy of a command</a></li>
   </ul>
 </li>
-  <li><a href="#most-important-skills" id="toc-most-important-skills" class="nav-link" data-scroll-target="#most-important-skills"> <span class="header-section-number">1.2</span> Most important skills</a></li>
-  <li><a href="#intermediate-unix-commands" id="toc-intermediate-unix-commands" class="nav-link" data-scroll-target="#intermediate-unix-commands"> <span class="header-section-number">1.3</span> Intermediate Unix commands</a></li>
-  <li><a href="#special-operators-or-metacharacters" id="toc-special-operators-or-metacharacters" class="nav-link" data-scroll-target="#special-operators-or-metacharacters"> <span class="header-section-number">1.4</span> Special operators or metacharacters</a></li>
+  <li><a href="#most-important-skills" id="toc-most-important-skills" class="nav-link" data-scroll-target="#most-important-skills"><span class="toc-section-number">1.2</span>  Most important skills</a></li>
+  <li><a href="#intermediate-unix-commands" id="toc-intermediate-unix-commands" class="nav-link" data-scroll-target="#intermediate-unix-commands"><span class="toc-section-number">1.3</span>  Intermediate Unix commands</a></li>
+  <li><a href="#special-operators-or-metacharacters" id="toc-special-operators-or-metacharacters" class="nav-link" data-scroll-target="#special-operators-or-metacharacters"><span class="toc-section-number">1.4</span>  Special operators or metacharacters</a></li>
   <li>
-<a href="#unix-flows" id="toc-unix-flows" class="nav-link" data-scroll-target="#unix-flows"> <span class="header-section-number">1.5</span> Unix flows</a>
+<a href="#unix-flows" id="toc-unix-flows" class="nav-link" data-scroll-target="#unix-flows"><span class="toc-section-number">1.5</span>  Unix flows</a>
   <ul class="collapse">
-<li><a href="#redirection" id="toc-redirection" class="nav-link" data-scroll-target="#redirection"> <span class="header-section-number">1.5.1</span> Redirection</a></li>
-  <li><a href="#pipe" id="toc-pipe" class="nav-link" data-scroll-target="#pipe"> <span class="header-section-number">1.5.2</span> Pipe</a></li>
+<li><a href="#redirection" id="toc-redirection" class="nav-link" data-scroll-target="#redirection"><span class="toc-section-number">1.5.1</span>  Redirection</a></li>
+  <li><a href="#pipe" id="toc-pipe" class="nav-link" data-scroll-target="#pipe"><span class="toc-section-number">1.5.2</span>  Pipe</a></li>
   </ul>
 </li>
-  <li><a href="#loops-conditionals-and-script-variables" id="toc-loops-conditionals-and-script-variables" class="nav-link" data-scroll-target="#loops-conditionals-and-script-variables"> <span class="header-section-number">1.6</span> loops, conditionals and script variables</a></li>
+  <li><a href="#loops-conditionals-and-script-variables" id="toc-loops-conditionals-and-script-variables" class="nav-link" data-scroll-target="#loops-conditionals-and-script-variables"><span class="toc-section-number">1.6</span>  loops, conditionals and script variables</a></li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-command-line/welcome-to-command-line.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
@@ -355,7 +363,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-08-25</p>
+      <p class="date">2022-08-26</p>
     </div>
   </div>
     
@@ -370,8 +378,8 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <span class="header-section-number">1.1</span> Getting started with the command line</h2>
 <p>Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It simply is an <a href="https://en.wikipedia.org/wiki/Operating_system">:operating system (OS)</a>. In other words, it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant (or clone) of Unix is the very well known OS <a href="https://en.wikipedia.org/wiki/Linux">:Linux</a>, which was created by <a href="https://en.wikipedia.org/wiki/Linus_Torvalds">:Linus Torvalds</a> from scratch. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically. Other main feature from Unix-like OS systems is the fact that data is usually stored as text files and the interface by which users communicate with the machine is also text-based (TUI: text user interface as opposed to GUI, graphic user interface).</p>
 <div id="fig-terminal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/terminal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A terminal app displaying common features of the command line interface"><img src="imgs-cli/terminal.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure 1.1: A <strong>terminal</strong> app displaying common features of the command line interface</figcaption><p></p>
+<figure class="figure"><p><a href="imgs-cli/terminal.png" class="lightbox" title="A terminal app displaying common features of the command line interface" data-gallery="quarto-lightbox-gallery-1"><img src="imgs-cli/terminal.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.1: A <strong>terminal</strong> app displaying common features of the command line interface</figcaption><p></p>
 </figure>
 </div>
 <p>Almost every computer has a way to interact with or access to the inner elements of the computer. Such interface is called the the command-line-interface <a href="#fig-terminal">Fig.&nbsp;<span>1.1</span></a>.</p>
@@ -379,8 +387,8 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <span class="header-section-number">1.1.1</span> File paths</h3>
 <p>Programs, files and directories on every machine (with Unix-like OS) display hierarchical paths (routes), starting out from the <strong>root</strong> (represented by the back-slash character <code>/</code>). The <strong>root</strong> represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths <a href="#fig-tree">Fig.&nbsp;<span>1.2</span></a></p>
 <div id="fig-tree" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/dir-tree.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="A terminal displaying tree-like structure of the programs in a machine with macOS"><img src="imgs-cli/dir-tree.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure 1.2: A terminal displaying tree-like structure of the programs in a machine with macOS</figcaption><p></p>
+<figure class="figure"><p><a href="imgs-cli/dir-tree.png" class="lightbox" title="A terminal displaying tree-like structure of the programs in a machine with macOS" data-gallery="quarto-lightbox-gallery-2"><img src="imgs-cli/dir-tree.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.2: A terminal displaying tree-like structure of the programs in a machine with macOS</figcaption><p></p>
 </figure>
 </div>
 
@@ -453,8 +461,8 @@ Tip
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div id="fig-naming-files" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/naming-files.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst"><img src="imgs-cli/naming-files.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure 1.3: Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst</figcaption><p></p>
+<figure class="figure"><p><a href="imgs-cli/naming-files.png" class="lightbox" title="Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst" data-gallery="quarto-lightbox-gallery-3"><img src="imgs-cli/naming-files.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.3: Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst</figcaption><p></p>
 </figure>
 </div>
 </div></div></div>
@@ -487,8 +495,8 @@ Tip
 <span class="header-section-number">1.1.3</span> Anatomy of a command</h3>
 <p>There is still many conventions by which the parts of a command line might be called, yet a very standard convention is presented in <a href="#fig-command">Fig.&nbsp;<span>1.4</span></a></p>
 <div id="fig-command" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/command-anatomy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="A simple command and a convention to call its main components"><img src="imgs-cli/command-anatomy.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure 1.4: A simple command and a convention to call its main components</figcaption><p></p>
+<figure class="figure"><p><a href="imgs-cli/command-anatomy.png" class="lightbox" title="A simple command and a convention to call its main components" data-gallery="quarto-lightbox-gallery-4"><img src="imgs-cli/command-anatomy.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.4: A simple command and a convention to call its main components</figcaption><p></p>
 </figure>
 </div>
 <p>Some other for instance also tend to call the <code>option</code> as <code>flag</code>. This conventions are powerful because almost any command line interface display this structure (complex one add some other features and simple one tend to lack subcommands).</p>
@@ -504,8 +512,8 @@ Challenge
 <div class="callout-body-container callout-body">
 <p>Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the <a href="https://en.wikipedia.org/wiki/Restriction_modification_system">:restriction-modification system (RM-System)</a>, which works by targeting a specific sites called <em>motifs</em>, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a <a href="https://en.wikipedia.org/wiki/Sequence_logo">:sequence logo</a> which is a probabilistic representation of the nucleotides at each position. The challenge consists of finding the number of times the motif from <a href="#fig-motif">Fig.&nbsp;<span>1.5</span></a> appears on <em>B. tequilensis</em> EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.</p>
 <div id="fig-motif" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/motif.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="A RM-system motif logo"><img src="imgs-cli/motif.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure 1.5: A RM-system motif logo</figcaption><p></p>
+<figure class="figure"><p><a href="imgs-cli/motif.png" class="lightbox" title="A RM-system motif logo" data-gallery="quarto-lightbox-gallery-5"><img src="imgs-cli/motif.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.5: A RM-system motif logo</figcaption><p></p>
 </figure>
 </div>
 <p>Before diving into an <a href="../chs-challenges-demos/demo-motif-search.html#motif-search">:answer</a> take your time to think and solve it by your own.</p>
@@ -541,14 +549,14 @@ Tip
 </div></div><section id="redirection" class="level3" data-number="1.5.1"><h3 data-number="1.5.1" class="anchored" data-anchor-id="redirection">
 <span class="header-section-number">1.5.1</span> Redirection</h3>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="imgs-cli/redirection.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Redirecting flow"><img src="imgs-cli/redirection.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<figure class="figure"><p><a href="imgs-cli/redirection.png" class="lightbox" title="Redirecting flow" data-gallery="quarto-lightbox-gallery-6"><img src="imgs-cli/redirection.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
 <p></p><figcaption class="figure-caption">Redirecting flow</figcaption><p></p>
 </figure>
 </div>
 </section><section id="pipe" class="level3 page-columns page-full" data-number="1.5.2"><h3 data-number="1.5.2" class="anchored" data-anchor-id="pipe">
 <span class="header-section-number">1.5.2</span> Pipe</h3>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="imgs-cli/pipeflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Pipe flow"><img src="imgs-cli/pipeflow.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<figure class="figure"><p><a href="imgs-cli/pipeflow.png" class="lightbox" title="Pipe flow" data-gallery="quarto-lightbox-gallery-7"><img src="imgs-cli/pipeflow.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
 <p></p><figcaption class="figure-caption">Pipe flow</figcaption><p></p>
 </figure>
 </div>
@@ -597,6 +605,7 @@ Challenge
 </div>
 </div>
 <p>For more explanations on the basic commands in the command line we suggest to visit the first chapters of <em>Computing skills for biologist</em> from <span class="citation" data-cites="allesina2019">Allesina and Wilmes (<a href="../references.html#ref-allesina2019" role="doc-biblioref">2019</a>)</span></p>
+<p><a href="https://sandbox.bio/playground">:sandbox</a></p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -674,6 +683,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           toggle.classList.remove("alternate");
         }
       }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
     }
   }
   const isFileUrl = () => { 
@@ -776,7 +795,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
@@ -816,7 +836,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":true,"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":true,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox"});</script>
 
 
 </body></html>
