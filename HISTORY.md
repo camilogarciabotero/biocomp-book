@@ -29,7 +29,7 @@
 - Add cover image
 
 - Many typos corrected.
-****
+  
 ## Edition 0.0.5
 
 - Update CLI chapter.

@@ -1,4 +1,4 @@
-## Edition 0.0.8
+# Edition 0.0.8
 
 - New render w/ Quarto 1.1
 
