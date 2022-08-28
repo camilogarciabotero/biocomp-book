@@ -25,10 +25,10 @@ book:
     style: floating
   page-footer: 
     border: true
-    center:
+    right:
       - text: "{{< fa house >}}"
         href: https://camilo-garcia.quarto.pub
-    left: "Book made with [Quarto](https://quarto.org/), by Camilo García. License: [GNU GPL 3.0](https://github.com/camilogarciabotero/biocomp-book/blob/main/LICENSE)."
+    left: "Made with [Quarto](https://quarto.org/), by Camilo García. {{< fa copyright >}} [GNU GPL 3.0](https://github.com/camilogarciabotero/biocomp-book/blob/main/LICENSE)."
   chapters:
     - index.qmd
     - intro.qmd
