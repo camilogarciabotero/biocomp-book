@@ -340,7 +340,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   <ul class="collapse">
 <li><a href="#the-manual-way" id="toc-the-manual-way" class="nav-link" data-scroll-target="#the-manual-way"><span class="toc-section-number">5.8.1</span>  The manual way</a></li>
   <li><a href="#entrez-direct" id="toc-entrez-direct" class="nav-link" data-scroll-target="#entrez-direct"><span class="toc-section-number">5.8.2</span>  Entrez direct</a></li>
-  <li><a href="#a-simple-program" id="toc-a-simple-program" class="nav-link" data-scroll-target="#a-simple-program"><span class="toc-section-number">5.8.3</span>  A simple program</a></li>
+  <li><a href="#simpler-download-programs" id="toc-simpler-download-programs" class="nav-link" data-scroll-target="#simpler-download-programs"><span class="toc-section-number">5.8.3</span>  Simpler download programs</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-sequence-analysis/introduction-to-sequence-analysis.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -430,7 +430,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <span class="header-section-number">5.6</span> Some insights from sequencing genomes</h2>
 </section><section id="biological-information-databases" class="level2" data-number="5.7"><h2 data-number="5.7" class="anchored" data-anchor-id="biological-information-databases">
 <span class="header-section-number">5.7</span> Biological information databases</h2>
-</section><section id="retrieving-data-from-ncbi" class="level2" data-number="5.8"><h2 data-number="5.8" class="anchored" data-anchor-id="retrieving-data-from-ncbi">
+</section><section id="retrieving-data-from-ncbi" class="level2 page-columns page-full" data-number="5.8"><h2 data-number="5.8" class="anchored" data-anchor-id="retrieving-data-from-ncbi">
 <span class="header-section-number">5.8</span> Retrieving data from NCBI</h2>
 <section id="the-manual-way" class="level3" data-number="5.8.1"><h3 data-number="5.8.1" class="anchored" data-anchor-id="the-manual-way">
 <span class="header-section-number">5.8.1</span> The manual way</h3>
@@ -447,9 +447,27 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">elink</span>   <span class="at">-target</span> nucleotide <span class="at">-name</span> assembly_nuccore_refseq <span class="kw">|</span> </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">efetch</span>  <span class="at">-format</span> fasta <span class="op">&gt;</span> GCF_012225885.1.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="a-simple-program" class="level3" data-number="5.8.3"><h3 data-number="5.8.3" class="anchored" data-anchor-id="a-simple-program">
-<span class="header-section-number">5.8.3</span> A simple program</h3>
-<div class="callout-warning callout callout-style-default callout-captioned">
+</section><section id="simpler-download-programs" class="level3 page-columns page-full" data-number="5.8.3"><h3 data-number="5.8.3" class="anchored" data-anchor-id="simpler-download-programs">
+<span class="header-section-number">5.8.3</span> Simpler download programs</h3>
+<p>Since the manual way is clumsy when scaling and automating, and the <code>entrez-direct</code> utilities are somehow hard at first hand, some bioinformaticians have already thought ways to ease users the hard of knowing the NCBI internal database structure and to resume many of the utlities to just a ‘download’ command out from what in entrez is distributed in search, filter, and download commands.</p>
+<p>A very nice command to download genomes is the <a href="https://github.com/AstrobioMike/bit#bioinformatics-tools-bit"><code>bit-dl-ncbi-assemblies</code></a> from <a href="https://github.com/AstrobioMike">Mike Lee</a>, who has also made a remarkable work to bring many bioiformatic knowledge to newcomers. Similarly and quite more robust is the <a href="https://github.com/kblin/ncbi-genome-download"><code>ncbi-genome-download</code></a> CLI (or abbreviated as <code>ngd</code>) developed by <a href="https://github.com/kblin">Kai Blin</a></p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">When navigating the NCBI databases some data is being curated and continuously updated by the execution of annotation tools. The refseq database is precisely the one that is more curated. For the case of genomes the accession number of those that belong to the refseq category are start with <strong>GCF</strong> ids, whereas the annotated genomes from the genbank category display the <strong>GCA</strong> ids</span></div></div>
+<p>Using <code>ngd</code> to download a complete genome using the refeseq or genbank accession numbers, would be as easy as:</p>
+<div class="cell" data-hash="introduction-to-sequence-analysis_cache/html/unnamed-chunk-3_18cf4f4addb9ea8ea7a35c2dc363e366">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ngd</span> <span class="at">--format</span> fasta <span class="at">--flat-output</span> <span class="at">-A</span> GCF_002055965.1 bacteria</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The one-line will download the refeseq genome of the <em>Bacillus tequilenis</em> EA-CB0015 in a fasta nucleotide format. the <code>--flat-option</code> from the script will handle out extra metadata of the search and will download strictly the data.</p>
+<p>It is important to highlight that these simpler scripts are focused on genomic information, so that direct downloads of genes, proteins, transcripts, and many other kind of data must be done with <code>enrtez</code> or other programs. Some recent efforts have been made to create a more robust CLI to interact with different databases, but in a very easy and intuitive way, such as the <a href="https://github.com/pachterlab/gget"><code>gget</code></a> project. It is more focused on vertebrate databases, but also has a port to NCBI, UniProt and other databases <a href="#fig-gget">Fig.&nbsp;<span>5.6</span></a>. And is very simple. Here is an example to download all the isoforms in a multi-fasta format of the cancer-related gene BRCA2 in a human genome (GRCh38.p13):</p>
+<div class="cell" data-hash="introduction-to-sequence-analysis_cache/html/unnamed-chunk-4_e2277f9471dd4753fa602c9f273fbf0e">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gget</span> seq <span class="at">-iso</span> <span class="at">-o</span> BRCA2.fasta ENSG00000139618</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>It is establishing a connection with the <a href="https://www.ensembl.org/index.html">Ensemble</a> database, which is focused on vertebrate genome and transcriptome data.</p>
+
+<div class="no-row-height column-margin column-container"><div id="fig-gget" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="imgs-seqan/gget.png" class="lightbox" title="gget comand line program overview" data-gallery="quarto-lightbox-gallery-7"><img src="imgs-seqan/gget.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;5.6: <code>gget</code> comand line program overview</figcaption><p></p>
+</figure>
+</div></div><div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -698,7 +716,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":true,"openEffect":"zoom","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":true});</script>
 
 
 </body></html>
