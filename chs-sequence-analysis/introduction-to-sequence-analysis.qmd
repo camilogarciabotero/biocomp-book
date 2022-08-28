@@ -31,16 +31,16 @@ DNA nitrogenous bases of are arranged in a very compacted helix structure and to
 ![DNA double helix structure and main characteristics. Image adapted from @brown2018 showing the structure with the *sugar–phosphate backbone
 of each polynucleotide drawn as a gray ribbon with the base pairs in green* ](imgs-seqan/dna-structure.png){#fig-doublehelix width="50%"}
 
-The description of DNA bases helped the elucidation of the helicoidal structure. The first outstanding feature of the DNA structure was indeed highlighted by Watson and Crick in its famous paper about a subtle mechanism of replication. 
+The description of DNA bases helped the elucidation of the helicoidal structure as well as the elucidation of the base pairing rules of the nucleotides [Fig. @fig-nucleotides], also called the Chargaff’s rules of base pairing. The first outstanding feature of the DNA structure was indeed highlighted by Watson and Crick in its famous paper about a subtle mechanism of replication. The 
 
 ![A phosphodiester bond bind two nitrogenous bases as in the backbone of the DNA helix](imgs-seqan/phosphdiester.png){#fig-phosphodiester .column-margin}
 
-This idea of the duality of the DNA (and of course of other biological molecules as well) is the source of the study of many bioinformatic fields. But a question remains open: how do we capture the informational nature of a DNA sequence so that we end up with a sequential file of characters `ATCGCTATC...`. This is not a trivial question in fact.
+This idea of the duality of the DNA (and of course of other biological molecules as well) is the source of the study of many bioinformatic fields. But a question remains open: how do we capture the informational nature of a DNA sequence so that we end up with a sequential file of characters `ATCGCTATC...`. This is not a trivial question in fact. 
 
 :::{#fig-nucleotides layout="[[40,-5,47]]"}
-![Guanine and cytosine bond](imgs-seqan/guanine-cytosine.png){#fig-gc}
+![Guanine and cytosine base pair](imgs-seqan/guanine-cytosine.png){#fig-gc}
 
-![Adenine and thymine bond](imgs-seqan/adenine-thymine.png){#fig-at}
+![Adenine and thymine base pair](imgs-seqan/adenine-thymine.png){#fig-at}
 
 Most common nucleotides present in DNA and the chemical interactions that bond each pair.
 :::
