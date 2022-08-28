@@ -457,17 +457,13 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ngd</span> <span class="at">--format</span> fasta <span class="at">--flat-output</span> <span class="at">-A</span> GCF_002055965.1 bacteria</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The one-line will download the refeseq genome of the <em>Bacillus tequilenis</em> EA-CB0015 in a fasta nucleotide format. the <code>--flat-option</code> from the script will handle out extra metadata of the search and will download strictly the data.</p>
-<p>It is important to highlight that these simpler scripts are focused on genomic information, so that direct downloads of genes, proteins, transcripts, and many other kind of data must be done with <code>enrtez</code> or other programs. Some recent efforts have been made to create a more robust CLI to interact with different databases, but in a very easy and intuitive way, such as the <a href="https://github.com/pachterlab/gget"><code>gget</code></a> project. It is more focused on vertebrate databases, but also has a port to NCBI, UniProt and other databases <a href="#fig-gget">Fig.&nbsp;<span>5.6</span></a>. And is very simple. Here is an example to download all the isoforms in a multi-fasta format of the cancer-related gene BRCA2 in a human genome (GRCh38.p13):</p>
+<p>It is important to highlight that these simpler scripts are focused on genomic information, so that direct downloads of genes, proteins, transcripts, and many other kind of data must be done with <code>enrtez</code> or other programs. Some recent efforts have been made to create a more robust CLI to interact with different databases, but in a very easy and intuitive way, such as the <a href="https://github.com/pachterlab/gget"><code>gget</code></a> project. It is more focused on vertebrate databases, but also has a port to NCBI, UniProt and other databases. And is very simple. Here is an example to download all the isoforms in a multi-fasta format of the cancer-related gene BRCA2 in a human genome (GRCh38.p13):</p>
 <div class="cell" data-hash="introduction-to-sequence-analysis_cache/html/unnamed-chunk-4_e2277f9471dd4753fa602c9f273fbf0e">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gget</span> seq <span class="at">-iso</span> <span class="at">-o</span> BRCA2.fasta ENSG00000139618</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It is establishing a connection with the <a href="https://www.ensembl.org/index.html">Ensemble</a> database, which is focused on vertebrate genome and transcriptome data.</p>
-
-<div class="no-row-height column-margin column-container"><div id="fig-gget" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-seqan/gget.png" class="lightbox" title="gget comand line program overview" data-gallery="quarto-lightbox-gallery-7"><img src="imgs-seqan/gget.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;5.6: <code>gget</code> comand line program overview</figcaption><p></p>
-</figure>
-</div></div><div class="callout-warning callout callout-style-default callout-captioned">
+<!-- ![`gget` comand line program overview](imgs-seqan/gget.png){#fig-gget .column-margin} -->
+<div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -716,7 +712,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":true});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});</script>
 
 
 </body></html>
