@@ -23,6 +23,12 @@ book:
   # sharing: [twitter]
   sidebar:
     style: floating
+  page-footer: 
+    border: true
+    center:
+      - text: "{{< fa house >}}"
+        href: https://camilo-garcia.quarto.pub
+    left: "Book made with [Quarto](https://quarto.org/), by Camilo García. License: [GNU GPL 3.0](https://github.com/camilogarciabotero/biocomp-book/blob/main/LICENSE)."
   chapters:
     - index.qmd
     - intro.qmd
@@ -76,7 +82,6 @@ comments:
   hypothesis: true
   giscus: 
       repo: camilogarciabotero/biocomp-book
-
 
 execute:
   cache: true

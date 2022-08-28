@@ -4,7 +4,8 @@ We started this book with the aim of compiling the lectures of the course Fundam
 
 Lectures are focused on a theoretical-practical approach where basic concepts from biology, bioinformatics and computer science and interleave with the practice to solve challenges. Exercises or challenges are designed to improve students' abilities that are likely to be involved in real-life problems in computational biology.
 
-::: { .callout-caution}
+::: { .callout-important appearance="minimal"}
+#  {{< fa solid biohazard >}}
 This book is a work in progress. If you find issues, typos or relevant information to share with, anything is welcome.
 :::
 
@@ -22,20 +23,19 @@ As you move forward in the computational biology field you will find that there 
 To help you consolidate your understanding we end most chapters with important messages or concepts that help you evaluate yourself as you move forward on the lessons.
 :::
 
-:::{.callout-caution)
-# Caution
-
+:::{.callout-caution}
+## Caution
 When experimenting with the CLI and many other computational tools it is common to face several known errors and drawbacks. Then, we present some of them and how to sort them out.
 :::
 
 :::{.callout-warning}
-# Challenges
+## Challenges
 
 Since focused on a competences learning approach we have highlighted several real-life (but basic) *challenges* a researcher faces when approaching computational biology problem (from tool selection, usage and result analysis). Therefore the book section *challenges* presents a selection of these problems that will later be approached by a computational biology strategy (mainly from the CLI).
 :::
 
 :::{.callout}
-# File format
+## {{< fa file >}} File format
 
 As many analysis specialize on data analysis, many formats arise that optimize the processing steps or the data storing steps. Some of these formats are keystones of bioinformatic analyses. We present examples of some formats an describe its main elements.
 :::
