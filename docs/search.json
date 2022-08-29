@@ -242,7 +242,7 @@
     "href": "chs-sequence-analysis/sanger-analysis.html#sanger-processing-workflow",
     "title": "6  Sanger analysis",
     "section": "6.3 Sanger processing workflow",
-    "text": "6.3 Sanger processing workflow\n\n\n\n\n\n\n\nTip\n\n\n\nA simple one-line to generate a reverse-complement of a linearized FASTA could be done with three commands:\ntail -n 1 seq.fasta | \n    rev | \n    tr \"ATCG\" \"TAGC\" \nsee here"
+    "text": "6.3 Sanger processing workflow"
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html#the-16s-rrna-and-its-relevance-for-sequencing",

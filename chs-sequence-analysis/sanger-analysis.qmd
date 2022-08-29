@@ -63,7 +63,7 @@ However the most used file is the binary version `AB1` which could be red out fr
 
 ## Sanger processing workflow
 
-:::{.callout-tip .column-margin}
+<!-- :::{.callout-tip .column-margin}
 A simple one-line to generate a reverse-complement of a linearized FASTA could be done with three commands:
 
 ```{.bash}
@@ -73,7 +73,7 @@ tail -n 1 seq.fasta |
 ```
 
 [see here](https://github.com/crazyhottommy/bioinformatics-one-liners#reverse-complement-a-sequence-i-use-that-a-lot-when-i-need-to-design-primers)
-:::
+::: -->
 
 ## The 16S rRNA and its relevance for sequencing
 
