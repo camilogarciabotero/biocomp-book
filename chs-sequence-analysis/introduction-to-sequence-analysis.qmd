@@ -106,7 +106,7 @@ ngd --format fasta --flat-output -A GCF_002055965.1 bacteria
 ```
 The one-line will download the refeseq genome of the *Bacillus tequilenis* EA-CB0015 in a fasta nucleotide format. the `--flat-option` from the script will handle out extra metadata of the search and will download strictly the data.
 
-It is important to highlight that these simpler scripts are focused on genomic information, so that direct downloads of genes, proteins, transcripts, and many other kind of data must be done with `enrtez` or other programs. Some recent efforts have been made to create a more robust CLI to interact with different databases, but in a very easy and intuitive way, such as the [`gget`](https://github.com/pachterlab/gget) project. It is more focused on vertebrate databases, but also has a port to NCBI, UniProt and other databases. And is very simple. Here is an example to download all the isoforms in a multi-fasta format of the cancer-related gene BRCA2 in a human genome (GRCh38.p13):
+It is important to highlight that these simpler scripts are focused on genomic information, so that direct downloads of genes, proteins, transcripts, and many other kind of data must be done with `entrez` or other programs. Some recent efforts have been made to create a more robust CLI to interact with different databases, but in a very easy and intuitive way, such as the [`gget`](https://github.com/pachterlab/gget) project. It is more focused on vertebrate databases, but also has a port to NCBI, UniProt and other databases. And is very simple. Here is an example to download all the isoforms in a multi-fasta format of the cancer-related gene BRCA2 in a human genome (GRCh38.p13):
 
 ```{bash}
 #| eval: false
