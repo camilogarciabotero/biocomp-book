@@ -14,7 +14,7 @@ lightbox: auto
 >
 > As you will see the CLI is composed of several programs enabling the interaction with the machine, we will discuss some of the basics to navigate your machine, and some advance one that enable complex operations and automating tasks.
 
-## Getting started with the command line
+## Command line basics
 
 Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It simply is an [:operating system (OS)](https://en.wikipedia.org/wiki/Operating_system). In other words, it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant (or clone) of Unix is the very well known OS [:Linux](https://en.wikipedia.org/wiki/Linux), which was created by [:Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) from scratch. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically. Other main feature from Unix-like OS systems is the fact that data is usually stored as text files and the interface by which users communicate with the machine is also text-based (TUI: text user interface as opposed to GUI, graphic user interface).
 
@@ -100,7 +100,7 @@ The `new-file.txt` is empty and created on your current location unless you assi
 :::
 
 
-#### Printing files to the screen
+#### Printing files or inputs
 
 ``` bash
 cat new-file.txt
@@ -112,6 +112,10 @@ lines
 that
 were
 written
+```
+
+```{bash}
+echo "This will be printed"
 ```
 
 #### Removing files or directories
@@ -136,15 +140,14 @@ There is still many conventions by which the parts of a command line might be ca
 
 Some other for instance also tend to call the `option` as `flag`. This conventions are powerful because almost any command line interface display this structure (complex one add some other features and simple one tend to lack subcommands).
 
-::: callout-warning
-# Challenge
+:::{.callout-warning collapse="true"}
+## Challenge
 
 Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the [:restriction-modification system (RM-System)](https://en.wikipedia.org/wiki/Restriction_modification_system), which works by targeting a specific sites called *motifs*, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a [:sequence logo](https://en.wikipedia.org/wiki/Sequence_logo) which is a probabilistic representation of the nucleotides at each position. The challenge consists of finding the number of times the motif from [Fig. @fig-motif] appears on *B. tequilensis* EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.
 
 ![A RM-system motif logo](imgs-cli/motif.png){#fig-motif}
 
 Before diving into an [:answer](../chs-challenges-demos/demo-motif-search.qmd#motif-search) take your time to think and solve it by your own.
-
 :::
 
 ## Most important skills
@@ -152,7 +155,14 @@ Before diving into an [:answer](../chs-challenges-demos/demo-motif-search.qmd#mo
 When facing the CLI several issues or problems will arise. As for any other unintuitive challenge, a complete text interface Handling errors. Getting help Patience
 
 
-## Intermediate Unix commands
+## Intermediate Unix 
+
+### Special operators or metacharacters
+
+Some operator or metacharacters have special functions in bash. For instance the `*` or *wildcard* is a regular expression character (sometimes called as a placeholder) that will turn in *any character, many times*, similarly the `?` represents *any character, once*. Whereas the `$` (dollar sign or operator) is intended for an special task: call *environmental variables* which means that once a variable is defined (e.g., `var=1`) this variable can be called via the `$` operator anytime `echo $var` will get us `1` as the standard output
+
+### Intermediate commands
+
 
 ``` bash
 wc
@@ -170,21 +180,18 @@ grep
 sed 
 ```
 
-## Special operators or metacharacters
 
-Some operator or metacharacters have special functions in bash. For instance the `*` or *wildcard* is a regular expression character (sometimes called as a placeholder) that will turn in *any character, many times*, similarly the `?` represents *any character, once*. Whereas the `$` (dollar sign or operator) is intended for an special task: call *environmental variables* which means that once a variable is defined (e.g., `var=1`) this variable can be called via the `$` operator anytime `echo $var` will get us `1` as the standard output
-
-## Unix flows
+### Unix flows
 
 ::: {.callout-tip .column-margin}
 When using the CLI at first its common to feal quite slow. Then, a very useful tip to boost the productivity from the command line is the autocompletion of commands by hitting `<tab>` after the initial command.
 :::
 
-### Redirection
+#### Redirection
 
 ![Redirecting flow](imgs-cli/redirection.png){width="70%"}
 
-### Pipe
+#### Pipe
 
 ![Pipe flow](imgs-cli/pipeflow.png){width="70%"}
 
@@ -193,18 +200,29 @@ When having a long command, it is also useful to jump by lines instead of charac
 :::
 
 
-## loops, conditionals and script variables
+### loops, conditionals and script variables
 
-::: {.callout-warning}
-# Challenge
+::: {.callout-warning collapse="true"}
+## Challenge
 
 A second part of this challenges consists of create a script out from r the motif-search one-line command that recursively search the motifs in all genomes from a zip file that contains 10 bacterial genomes. The script should include the shebang, loops, conditionals and environmental variables.
 
 See a possible script that solve the challenge [:here](../chs-challenges-demos/demo-motif-search.qmd#motif-search-in-multiple-files)
 :::
 
-::: {.callout-warning}
-# Challenge
+
+## Advance Unix stuff
+
+### System permissions
+
+### Aliasing
+
+### The `.bashrc`
+
+### `awk` snippet
+
+::: {.callout-warning collapse="true"}
+## Challenge
 
 [:Restriction endonucleases](https://en.wikipedia.org/wiki/Restriction_enzyme) (RE) cleave the DNA by digesting the [:phosphodiester bond](https://en.wikipedia.org/wiki/Phosphodiester_bond) between two nucleotides. Many RE are directed to specific DNA motifs normally palindromic. There are mainly three types according to it digestive mechanism. RE have been widely used in molecular biotechnology because its specificity and versatility to carry out different experiments.
 

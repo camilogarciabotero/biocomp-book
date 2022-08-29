@@ -433,20 +433,35 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <span class="header-section-number">5.7</span> Biological information databases</h2>
 </section><section id="retrieving-data-from-ncbi" class="level2 page-columns page-full" data-number="5.8"><h2 data-number="5.8" class="anchored" data-anchor-id="retrieving-data-from-ncbi">
 <span class="header-section-number">5.8</span> Retrieving data from NCBI</h2>
+<p>Inforation or databases inside the NCBI comes in many different ways. Perhaps the most used file format in bioinformatics is the <code>FASTA</code> format. It is a very simple format that consist of two lines, the header which is basically noted by starting with the <code>&gt;</code> symbol and is always preceding the sequence, that is present in the second line.</p>
+<div class="callout callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<i class="fa-solid fa-file"></i> FASTA
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<pre><code>&gt;sequence
+ATCCCTAGCTAGCTCGCTATCGATCATCCCTAGCTAGCTCGCTATCGATCATCCCTAGCTAGCTCG...</code></pre>
+</div>
+</div>
 <section id="the-manual-way" class="level3" data-number="5.8.1"><h3 data-number="5.8.1" class="anchored" data-anchor-id="the-manual-way">
 <span class="header-section-number">5.8.1</span> The manual way</h3>
 </section><section id="entrez-direct" class="level3" data-number="5.8.2"><h3 data-number="5.8.2" class="anchored" data-anchor-id="entrez-direct">
 <span class="header-section-number">5.8.2</span> Entrez direct</h3>
 <p>We first need to install the <a href="https://www.ncbi.nlm.nih.gov/books/NBK25501/">Entrez Direct</a> command line utilities. This could be done in several ways, one suggested by the manual and a very simple one using conda (mamba).</p>
 <div class="cell" data-hash="introduction-to-sequence-analysis_cache/html/unnamed-chunk-1_0cecc6660fdb000fcd7fe7471e3b768f">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> create <span class="at">-y</span> –n entrez entrez</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> create <span class="at">-y</span> –n entrez entrez</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This line will create a new conda environment called <em>entrez</em> and will automatically install all dependencies. We later activate the environment with <code>conda activate entrez</code> and then we got the entire Entrez CLI utilities.</p>
 <p>There are several commands and its function is to interact with the NCBI databases system. It is, however, a very huge set of utilities and commands to cope with at first, so the learning curve is somehow steppe. Here is a way to download the <em>Bacillus tequilensis</em> EA-CB0015 genome with a line of code that interleave three of the main commands of Entrez:</p>
 <div class="cell" data-hash="introduction-to-sequence-analysis_cache/html/unnamed-chunk-2_37abd71b3ea0b60cffd3250e7c1eda18">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">esearch</span> <span class="at">-db</span> assembly <span class="at">-query</span> GCF_012225885.1 <span class="kw">|</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">elink</span>   <span class="at">-target</span> nucleotide <span class="at">-name</span> assembly_nuccore_refseq <span class="kw">|</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">efetch</span>  <span class="at">-format</span> fasta <span class="op">&gt;</span> GCF_012225885.1.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">esearch</span> <span class="at">-db</span> assembly <span class="at">-query</span> GCF_012225885.1 <span class="kw">|</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">elink</span>   <span class="at">-target</span> nucleotide <span class="at">-name</span> assembly_nuccore_refseq <span class="kw">|</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">efetch</span>  <span class="at">-format</span> fasta <span class="op">&gt;</span> GCF_012225885.1.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="simpler-download-programs" class="level3 page-columns page-full" data-number="5.8.3"><h3 data-number="5.8.3" class="anchored" data-anchor-id="simpler-download-programs">
 <span class="header-section-number">5.8.3</span> Simpler download programs</h3>
@@ -455,12 +470,12 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">When navigating the NCBI databases some data is being curated and continuously updated by the execution of annotation tools. The refseq database is precisely the one that is more curated. For the case of genomes the accession number of those that belong to the refseq category are start with <strong>GCF</strong> ids, whereas the annotated genomes from the genbank category display the <strong>GCA</strong> ids</span></div></div>
 <p>Using <code>ngd</code> to download a complete genome using the refeseq or genbank accession numbers, would be as easy as:</p>
 <div class="cell" data-hash="introduction-to-sequence-analysis_cache/html/unnamed-chunk-3_18cf4f4addb9ea8ea7a35c2dc363e366">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ngd</span> <span class="at">--format</span> fasta <span class="at">--flat-output</span> <span class="at">-A</span> GCF_002055965.1 bacteria</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ngd</span> <span class="at">--format</span> fasta <span class="at">--flat-output</span> <span class="at">-A</span> GCF_002055965.1 bacteria</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The one-line will download the refeseq genome of the <em>Bacillus tequilenis</em> EA-CB0015 in a fasta nucleotide format. the <code>--flat-option</code> from the script will handle out extra metadata of the search and will download strictly the data.</p>
 <p>It is important to highlight that these simpler scripts are focused on genomic information, so that direct downloads of genes, proteins, transcripts, and many other kind of data must be done with <code>entrez</code> or other programs. Some recent efforts have been made to create a more robust CLI to interact with different databases, but in a very easy and intuitive way, such as the <a href="https://github.com/pachterlab/gget"><code>gget</code></a> project. It is more focused on vertebrate databases, but also has a port to NCBI, UniProt and other databases. And is very simple. Here is an example to download all the isoforms in a multi-fasta format of the cancer-related gene BRCA2 in a human genome (GRCh38.p13):</p>
 <div class="cell" data-hash="introduction-to-sequence-analysis_cache/html/unnamed-chunk-4_e2277f9471dd4753fa602c9f273fbf0e">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gget</span> seq <span class="at">-iso</span> <span class="at">-o</span> BRCA2.fasta ENSG00000139618</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gget</span> seq <span class="at">-iso</span> <span class="at">-o</span> BRCA2.fasta ENSG00000139618</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It is establishing a connection with the <a href="https://www.ensembl.org/index.html">Ensemble</a> database, which is focused on vertebrate genome and transcriptome data.</p>
 <!-- ![`gget` comand line program overview](imgs-seqan/gget.png){#fig-gget .column-margin} -->
@@ -723,7 +738,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom"});</script>
 
 
 </body></html>

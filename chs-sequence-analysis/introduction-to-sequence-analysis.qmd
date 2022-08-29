@@ -65,6 +65,16 @@ So far we have addressed that DNA is a very stable molecule that stores biologic
 
 ## Retrieving data from NCBI
 
+Inforation or databases inside the NCBI comes in many different ways.
+Perhaps the most used file format in bioinformatics is the `FASTA` format. It is a very simple format that consist of two lines, the header which is basically noted by starting with the `>` symbol and is always preceding the sequence, that is present in the second line.
+
+::: {.callout}
+## {{< fa file >}} FASTA
+```
+>sequence
+ATCCCTAGCTAGCTCGCTATCGATCATCCCTAGCTAGCTCGCTATCGATCATCCCTAGCTAGCTCG...
+```
+:::
 
 ### The manual way
 

@@ -22,7 +22,58 @@ A step-by-step of the Sanger sequencing method or the chain termination method.
 
 ## Files from Sanger sequencing
 
+Several files are generated from a modern Sanger sequencing project. 
+
+::: {.callout}
+## {{< fa file >}} PHD.1
+
+```
+BEGIN_SEQUENCE H200824-010_A11_455-WT_spo0B_spo0B-R
+
+BEGIN_COMMENT
+
+CHROMAT_FILE: H200824-010_A11_455-WT_spo0B_spo0B-R
+BASECALLER_VERSION: KB 1.4.0
+TRACE_PROCESSOR_VERSION: KB 1.4.0
+QUALITY_LEVELS: 99
+TIME: Mon Aug 24 22:05:23 2020
+TRACE_ARRAY_MIN_INDEX: 0
+TRACE_ARRAY_MAX_INDEX: 18141
+TRIM: -1 -1 -1.000000e+000
+TRACE_PEAK_AREA_RATIO: -1.000000e+000
+CHEM: term
+DYE: big
+
+END_COMMENT
+
+BEGIN_DNA
+C 7 3
+C 2 17
+T 3 44
+…
+END_DNA
+
+END_SEQUENCE
+```
+:::
+
+However the most used file is the binary version `AB1` which could be red out from different programs including [cutepeaks](). It displays the DNA sequence along with its quality peak in each position [Fig. @fig-ab1-trace] 
+
+![A graphic of the `AB1` file format from a Sanger sequencing project displayed in cutepeaks software](imgs-seqan/ab1-trace.png){#fig-ab1-trace}
+
 ## Sanger processing workflow
+
+:::{.callout-tip .column-margin}
+A simple one-line to generate a reverse-complement of a linearized FASTA could be done with three commands:
+
+```{.bash}
+tail -n 1 seq.fasta | 
+    rev | 
+    tr "ATCG" "TAGC" 
+```
+
+[see here](https://github.com/crazyhottommy/bioinformatics-one-liners#reverse-complement-a-sequence-i-use-that-a-lot-when-i-need-to-design-primers)
+:::
 
 ## The 16S rRNA and its relevance for sequencing
 

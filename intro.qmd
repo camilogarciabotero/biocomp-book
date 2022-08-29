@@ -18,10 +18,8 @@ Include s section about the windows subsystem for linux (WSL) and the ease of us
 
 ## Course schedule
 
-## Endless debate: bioinformatics vs. computational biology
+## Bioinformatics vs. Computational biology
 
 ## The extent of computational biology
 
 [Fig. @fig-biofields]. 
-
-[Code. @lst-recursive-motif]

@@ -1,5 +1,11 @@
 # Notions of HPC {#sec-hpc}
 
+## Monitoring my computer
+
+What is computer doing?
+
+`htop`
+
 ## Serial computing
 
 ![serial computing](imgs-cli/serial-computing.png)
