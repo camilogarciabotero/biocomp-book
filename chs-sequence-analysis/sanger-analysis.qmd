@@ -1,3 +1,13 @@
+---
+execute: 
+  engine: knitr
+filters: 
+  - lightbox
+  - nutshell
+  - code-filename
+lightbox: auto
+---
+
 # Sanger analysis {#sec-sanger}
 
 > This is a section about perhaps one of the first generation sequencing technology, that is Sanger sequencing and its principles and evolution, strengths and limitations
@@ -6,9 +16,11 @@
 >
 > Finally we will dive into a study case that its very common in microbiology: the use of the 16S rRNA gene for taxonomy identification
 
-## Sanger sequencing methods
+## The first sequencing methods
 
-### The chain termination method 
+Back in 70s there two different methods aiming to determine the base sequences of DNA and they basically operated at the level of  base per base reconstruction of the information. The most used during those days was so called [:Maxam-Gilbert](https://en.wikipedia.org/wiki/Maxam–Gilbert_sequencing) method and the second one was precisely the chain termination method or dideoxy sequencing or more commonly nowadays [:Sanger sequencing](https://en.wikipedia.org/wiki/Sanger_sequencing). Both methods named after their creators.
+
+### The chain termination method
 
 :::{#fig-yt-sanger .column-margin}
 {{< video https://www.youtube.com/embed/Wgv9QhjLTC8 >}}
@@ -77,3 +89,6 @@ tail -n 1 seq.fasta |
 
 ## The 16S rRNA and its relevance for sequencing
 
+
+
+![*Bacillus subtilis* subsp. *subtilis* str. 168 bacterial SSU 16S rRNA](imgs-seqan/16-rRNA.png){#fig-16-rna width=80% .column-margin}

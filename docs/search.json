@@ -224,32 +224,32 @@
     "text": "This is a section about perhaps one of the first generation sequencing technology, that is Sanger sequencing and its principles and evolution, strengths and limitations\nThis chapter will also cover the bioinformatics side of the method: what kind of files we get out Sanger, how we process them and an important paradigm that came out from this sequence method.\nFinally we will dive into a study case that its very common in microbiology: the use of the 16S rRNA gene for taxonomy identification"
   },
   {
-    "objectID": "chs-sequence-analysis/sanger-analysis.html#sanger-sequencing-methods",
-    "href": "chs-sequence-analysis/sanger-analysis.html#sanger-sequencing-methods",
+    "objectID": "chs-sequence-analysis/sanger-analysis.html#the-first-sequencing-methods",
+    "href": "chs-sequence-analysis/sanger-analysis.html#the-first-sequencing-methods",
     "title": "6  Sanger analysis",
-    "section": "6.1 Sanger sequencing methods",
-    "text": "6.1 Sanger sequencing methods\n\n6.1.1 The chain termination method\n\n\n\n\nFigure 6.1: A step-by-step of the Sanger sequencing method or the chain termination method.\n\n\n\n6.1.2 Sanger with capillary electrophoresis\n\n\n6.1.3 Strengths and limitations of Sanger methods"
+    "section": "\n6.1 The first sequencing methods",
+    "text": "6.1 The first sequencing methods\nBack in 70s there two different methods aiming to determine the base sequences of DNA and they basically operated at the level of base per base reconstruction of the information. The most used during those days was so called :Maxam-Gilbert method and the second one was precisely the chain termination method or dideoxy sequencing or more commonly nowadays :Sanger sequencing. Both methods named after their creators.\n\n6.1.1 The chain termination method\n\n\n\nFigure 6.1: A step-by-step of the Sanger sequencing method or the chain termination method.\n\n\n6.1.2 Sanger with capillary electrophoresis\n\n6.1.3 Strengths and limitations of Sanger methods"
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html#files-from-sanger-sequencing",
     "href": "chs-sequence-analysis/sanger-analysis.html#files-from-sanger-sequencing",
     "title": "6  Sanger analysis",
-    "section": "6.2 Files from Sanger sequencing",
-    "text": "6.2 Files from Sanger sequencing\nSeveral files are generated from a modern Sanger sequencing project.\n\n\n\n\n\n\n PHD.1\n\n\n\nBEGIN_SEQUENCE H200824-010_A11_455-WT_spo0B_spo0B-R\n\nBEGIN_COMMENT\n\nCHROMAT_FILE: H200824-010_A11_455-WT_spo0B_spo0B-R\nBASECALLER_VERSION: KB 1.4.0\nTRACE_PROCESSOR_VERSION: KB 1.4.0\nQUALITY_LEVELS: 99\nTIME: Mon Aug 24 22:05:23 2020\nTRACE_ARRAY_MIN_INDEX: 0\nTRACE_ARRAY_MAX_INDEX: 18141\nTRIM: -1 -1 -1.000000e+000\nTRACE_PEAK_AREA_RATIO: -1.000000e+000\nCHEM: term\nDYE: big\n\nEND_COMMENT\n\nBEGIN_DNA\nC 7 3\nC 2 17\nT 3 44\n…\nEND_DNA\n\nEND_SEQUENCE\n\n\nHowever the most used file is the binary version AB1 which could be red out from different programs including cutepeaks. It displays the DNA sequence along with its quality peak in each position Fig. 6.2\n\n\n\nFigure 6.2: A graphic of the AB1 file format from a Sanger sequencing project displayed in cutepeaks software"
+    "section": "\n6.2 Files from Sanger sequencing",
+    "text": "6.2 Files from Sanger sequencing\nSeveral files are generated from a modern Sanger sequencing project.\n\n\n\n\n\n\n PHD.1\n\n\n\nBEGIN_SEQUENCE H200824-010_A11_455-WT_spo0B_spo0B-R\n\nBEGIN_COMMENT\n\nCHROMAT_FILE: H200824-010_A11_455-WT_spo0B_spo0B-R\nBASECALLER_VERSION: KB 1.4.0\nTRACE_PROCESSOR_VERSION: KB 1.4.0\nQUALITY_LEVELS: 99\nTIME: Mon Aug 24 22:05:23 2020\nTRACE_ARRAY_MIN_INDEX: 0\nTRACE_ARRAY_MAX_INDEX: 18141\nTRIM: -1 -1 -1.000000e+000\nTRACE_PEAK_AREA_RATIO: -1.000000e+000\nCHEM: term\nDYE: big\n\nEND_COMMENT\n\nBEGIN_DNA\nC 7 3\nC 2 17\nT 3 44\n…\nEND_DNA\n\nEND_SEQUENCE\n\n\nHowever the most used file is the binary version AB1 which could be red out from different programs including cutepeaks. It displays the DNA sequence along with its quality peak in each position Fig. 6.2\n\n\nFigure 6.2: A graphic of the AB1 file format from a Sanger sequencing project displayed in cutepeaks software"
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html#sanger-processing-workflow",
     "href": "chs-sequence-analysis/sanger-analysis.html#sanger-processing-workflow",
     "title": "6  Sanger analysis",
-    "section": "6.3 Sanger processing workflow",
+    "section": "\n6.3 Sanger processing workflow",
     "text": "6.3 Sanger processing workflow"
   },
   {
     "objectID": "chs-sequence-analysis/sanger-analysis.html#the-16s-rrna-and-its-relevance-for-sequencing",
     "href": "chs-sequence-analysis/sanger-analysis.html#the-16s-rrna-and-its-relevance-for-sequencing",
     "title": "6  Sanger analysis",
-    "section": "6.4 The 16S rRNA and its relevance for sequencing",
-    "text": "6.4 The 16S rRNA and its relevance for sequencing"
+    "section": "\n6.4 The 16S rRNA and its relevance for sequencing",
+    "text": "6.4 The 16S rRNA and its relevance for sequencing\n\n\n\n\n\nFigure 6.3: Bacillus subtilis subsp. subtilis str. 168 bacterial SSU 16S rRNA"
   },
   {
     "objectID": "chs-sequence-analysis/sequence-alignments.html",
