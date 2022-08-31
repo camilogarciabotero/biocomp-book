@@ -18,9 +18,15 @@ lightbox: auto
 
 ## The first sequencing methods
 
-Back in 70s there two different methods aiming to determine the base sequences of DNA and they basically operated at the level of  base per base reconstruction of the information. The most used during those days was so called [:Maxam-Gilbert](https://en.wikipedia.org/wiki/Maxam–Gilbert_sequencing) method and the second one was precisely the chain termination method or dideoxy sequencing or more commonly nowadays [:Sanger sequencing](https://en.wikipedia.org/wiki/Sanger_sequencing). Both methods named after their creators.
+Back in 70s there two different methods aiming to determine the base sequences of DNA and they basically operated at the level of  base per base reconstruction of the information. The most used during those days was so called [:Maxam-Gilbert](https://en.wikipedia.org/wiki/Maxam–Gilbert_sequencing) method and the second one was precisely the chain termination method or dideoxy sequencing or more commonly nowadays [:Sanger sequencing](https://en.wikipedia.org/wiki/Sanger_sequencing). Both methods named after their creators. It was, however the Sanger method the one that gradually became the facto method and continue to be the standard for the next thirty years. In fact, assembled genomes before the 2000s were sequenced with Sanger method, which included the first draft of the Human genome and many other organism @brown2018.
+
+![A globular structure of a bacterial DNA polymerase](imgs-seqan/dna-pol.png){#fig-dna-pol .column-margin}
 
 ### The chain termination method
+
+To under stand the chain termination method is important have a clear view of the DNA structure and chemical reaction that enable its polymerization. Whe the 
+
+![The deoxy-ribose and dideoxy-ribose and consequences on the polymerization of a DNA strand](imgs-seqan/dideoxy-reaction.png){#fig-dideoxy-reaction}
 
 :::{#fig-yt-sanger .column-margin}
 {{< video https://www.youtube.com/embed/Wgv9QhjLTC8 >}}
@@ -86,6 +92,9 @@ tail -n 1 seq.fasta |
 
 [see here](https://github.com/crazyhottommy/bioinformatics-one-liners#reverse-complement-a-sequence-i-use-that-a-lot-when-i-need-to-design-primers)
 ::: -->
+
+Despite being one of the oldest sequencing methods, Sanger sequencing has some remarkable strengths that are enable thanks to the automation era. For instance modern sequencers working in parallel can read almost 384 different sequences (of 750bp) in 1h (7Mb in 24h per machine), clearly automation introduces a second advantage and that is the low-price of sequencing small fragments @brown2018. It is important to highlight some limitations as well like the necessity of round-the-clock technical support (this also leverages a little bit from robotic operators though). The error-free Sanger sequencing requires at least 5X of sample coverage, which could be seen as disadvantage too @brown2018.
+
 
 ## The 16S rRNA and its relevance for sequencing
 

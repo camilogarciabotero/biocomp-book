@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.163">
+<meta name="generator" content="quarto-1.1.165">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2022-08-30">
+<meta name="dcterms.date" content="2022-08-31">
 <title>Fundamentals of computational biology - 6&nbsp; Sanger analysis</title>
 <style>
 code{white-space: pre-wrap;}
@@ -17,6 +17,25 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -83,6 +102,9 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <meta name="citation_reference" content="citation_title=Genomes 4;,citation_author=Terence A Brown;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;">
 <meta name="citation_reference" content="citation_title=Long walk to genomics: History and current approaches to genome sequencing and assembly;,citation_author=Alice Maria Giani;,citation_author=Guido Roberto Gallo;,citation_author=Luca Gianfranceschi;,citation_author=Giulio Formenti;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_volume=18;,citation_journal_title=Computational and Structural Biotechnology Journal;,citation_publisher=Elsevier;">
 <meta name="citation_reference" content="citation_title=Genome-scale algorithm design;,citation_author=Veli Mäkinen;,citation_author=Djamal Belazzougui;,citation_author=Fabio Cunial;,citation_author=Alexandru I Tomescu;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;">
+<meta name="citation_reference" content="citation_title=A quick guide for developing effective bioinformatics programming skills;,citation_author=Joel T Dudley;,citation_author=Atul J Butte;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;,citation_volume=5;,citation_journal_title=PLOS computational biology;,citation_publisher=Public Library of Science San Francisco, USA;">
+<meta name="citation_reference" content="citation_title=Five reasons why researchers should learn to love the command line;,citation_author=Jeffrey M Perkel;,citation_author=others;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=7844;,citation_volume=590;,citation_journal_title=Nature;,citation_publisher=Nature;">
+<meta name="citation_reference" content="citation_title=Ten simple rules for getting started with command-line bioinformatics;,citation_author=Parice A Brandies;,citation_author=Carolyn J Hogg;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_volume=17;,citation_journal_title=PLoS Computational Biology;,citation_publisher=Public Library of Science San Francisco, CA USA;">
 </head>
 <body class="nav-sidebar floating slimcontent">
 
@@ -234,6 +256,11 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   <a href="../chs-challenges-demos/demo-motif-search.html" class="sidebar-item-text sidebar-link">Unix challenges</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-challenges-demos/demo-genome-searching.html" class="sidebar-item-text sidebar-link">Seq. Analysis challenges</a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item">
@@ -273,7 +300,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-08-30</p>
+      <p class="date">2022-08-31</p>
     </div>
   </div>
     
@@ -287,13 +314,24 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 </blockquote>
 <section id="the-first-sequencing-methods" class="level2 page-columns page-full" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="the-first-sequencing-methods">
 <span class="header-section-number">6.1</span> The first sequencing methods</h2>
-<p>Back in 70s there two different methods aiming to determine the base sequences of DNA and they basically operated at the level of base per base reconstruction of the information. The most used during those days was so called <a href="https://en.wikipedia.org/wiki/Maxam%E2%80%93Gilbert_sequencing">:Maxam-Gilbert</a> method and the second one was precisely the chain termination method or dideoxy sequencing or more commonly nowadays <a href="https://en.wikipedia.org/wiki/Sanger_sequencing">:Sanger sequencing</a>. Both methods named after their creators.</p>
-<section id="the-chain-termination-method" class="level3 page-columns page-full" data-number="6.1.1"><h3 data-number="6.1.1" class="anchored" data-anchor-id="the-chain-termination-method">
+<p>Back in 70s there two different methods aiming to determine the base sequences of DNA and they basically operated at the level of base per base reconstruction of the information. The most used during those days was so called <a href="https://en.wikipedia.org/wiki/Maxam%E2%80%93Gilbert_sequencing">:Maxam-Gilbert</a> method and the second one was precisely the chain termination method or dideoxy sequencing or more commonly nowadays <a href="https://en.wikipedia.org/wiki/Sanger_sequencing">:Sanger sequencing</a>. Both methods named after their creators. It was, however the Sanger method the one that gradually became the facto method and continue to be the standard for the next thirty years. In fact, assembled genomes before the 2000s were sequenced with Sanger method, which included the first draft of the Human genome and many other organism <span class="citation" data-cites="brown2018">Brown (<a href="../references.html#ref-brown2018" role="doc-biblioref">2018</a>)</span>.</p>
+
+<div class="no-row-height column-margin column-container"><div id="fig-dna-pol" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="imgs-seqan/dna-pol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A globular structure of a bacterial DNA polymerase"><img src="imgs-seqan/dna-pol.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.1: A globular structure of a bacterial DNA polymerase</figcaption><p></p>
+</figure>
+</div></div><section id="the-chain-termination-method" class="level3 page-columns page-full" data-number="6.1.1"><h3 data-number="6.1.1" class="anchored" data-anchor-id="the-chain-termination-method">
 <span class="header-section-number">6.1.1</span> The chain termination method</h3>
+<p>To under stand the chain termination method is important have a clear view of the DNA structure and chemical reaction that enable its polymerization. Whe the</p>
+<div id="fig-dideoxy-reaction" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="imgs-seqan/dideoxy-reaction.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="The deoxy-ribose and dideoxy-ribose and consequences on the polymerization of a DNA strand"><img src="imgs-seqan/dideoxy-reaction.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.2: The deoxy-ribose and dideoxy-ribose and consequences on the polymerization of a DNA strand</figcaption><p></p>
+</figure>
+</div>
 
 <div class="no-row-height column-margin column-container"><div id="fig-yt-sanger" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/Wgv9QhjLTC8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6.1: A step-by-step of the Sanger sequencing method or the chain termination method.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.3: A step-by-step of the Sanger sequencing method or the chain termination method.</figcaption><p></p>
 </figure>
 </div></div></section><section id="sanger-with-capillary-electrophoresis" class="level3" data-number="6.1.2"><h3 data-number="6.1.2" class="anchored" data-anchor-id="sanger-with-capillary-electrophoresis">
 <span class="header-section-number">6.1.2</span> Sanger with capillary electrophoresis</h3>
@@ -340,10 +378,10 @@ END_DNA
 END_SEQUENCE</code></pre>
 </div>
 </div>
-<p>However the most used file is the binary version <code>AB1</code> which could be red out from different programs including <a href="">cutepeaks</a>. It displays the DNA sequence along with its quality peak in each position <a href="#fig-ab1-trace">Fig.&nbsp;<span>6.2</span></a></p>
+<p>However the most used file is the binary version <code>AB1</code> which could be red out from different programs including <a href="">cutepeaks</a>. It displays the DNA sequence along with its quality peak in each position <a href="#fig-ab1-trace">Fig.&nbsp;<span>6.4</span></a></p>
 <div id="fig-ab1-trace" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-seqan/ab1-trace.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A graphic of the AB1 file format from a Sanger sequencing project displayed in cutepeaks software"><img src="imgs-seqan/ab1-trace.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6.2: A graphic of the <code>AB1</code> file format from a Sanger sequencing project displayed in cutepeaks software</figcaption><p></p>
+<figure class="figure"><p><a href="imgs-seqan/ab1-trace.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="A graphic of the AB1 file format from a Sanger sequencing project displayed in cutepeaks software"><img src="imgs-seqan/ab1-trace.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.4: A graphic of the <code>AB1</code> file format from a Sanger sequencing project displayed in cutepeaks software</figcaption><p></p>
 </figure>
 </div>
 </section><section id="sanger-processing-workflow" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="sanger-processing-workflow">
@@ -359,16 +397,22 @@ tail -n 1 seq.fasta |
 
 [see here](https://github.com/crazyhottommy/bioinformatics-one-liners#reverse-complement-a-sequence-i-use-that-a-lot-when-i-need-to-design-primers)
 ::: -->
+<p>Despite being one of the oldest sequencing methods, Sanger sequencing has some remarkable strengths that are enable thanks to the automation era. For instance modern sequencers working in parallel can read almost 384 different sequences (of 750bp) in 1h (7Mb in 24h per machine), clearly automation introduces a second advantage and that is the low-price of sequencing small fragments <span class="citation" data-cites="brown2018">Brown (<a href="../references.html#ref-brown2018" role="doc-biblioref">2018</a>)</span>. It is important to highlight some limitations as well like the necessity of round-the-clock technical support (this also leverages a little bit from robotic operators though). The error-free Sanger sequencing requires at least 5X of sample coverage, which could be seen as disadvantage too <span class="citation" data-cites="brown2018">Brown (<a href="../references.html#ref-brown2018" role="doc-biblioref">2018</a>)</span>.</p>
 </section><section id="the-16s-rrna-and-its-relevance-for-sequencing" class="level2 page-columns page-full" data-number="6.4"><h2 data-number="6.4" class="anchored" data-anchor-id="the-16s-rrna-and-its-relevance-for-sequencing">
 <span class="header-section-number">6.4</span> The 16S rRNA and its relevance for sequencing</h2>
 
 
 
 <div class="no-row-height column-margin column-container"><div id="fig-16-rna" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-seqan/16-rRNA.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Bacillus subtilis subsp. subtilis str. 168 bacterial SSU 16S rRNA"><img src="imgs-seqan/16-rRNA.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6.3: <em>Bacillus subtilis</em> subsp. <em>subtilis</em> str. 168 bacterial SSU 16S rRNA</figcaption><p></p>
+<figure class="figure"><p><a href="imgs-seqan/16-rRNA.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Bacillus subtilis subsp. subtilis str. 168 bacterial SSU 16S rRNA"><img src="imgs-seqan/16-rRNA.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.5: <em>Bacillus subtilis</em> subsp. <em>subtilis</em> str. 168 bacterial SSU 16S rRNA</figcaption><p></p>
 </figure>
-</div></div></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</div></div><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-brown2018" class="csl-entry" role="doc-biblioentry">
+Brown, Terence A. 2018. <em>Genomes 4</em>. Garland science.
+</div>
+</div>
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -601,7 +645,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":true,"openEffect":"zoom","selector":".lightbox"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"loop":true,"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom"});</script>
 
 
 </body></html>

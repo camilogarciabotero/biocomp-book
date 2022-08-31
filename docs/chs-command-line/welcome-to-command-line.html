@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.163">
+<meta name="generator" content="quarto-1.1.165">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2022-08-30">
+<meta name="dcterms.date" content="2022-08-31">
 <title>Fundamentals of computational biology - 1&nbsp; The command line</title>
 <style>
 code{white-space: pre-wrap;}
@@ -165,6 +165,9 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <meta name="citation_reference" content="citation_title=Genomes 4;,citation_author=Terence A Brown;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;">
 <meta name="citation_reference" content="citation_title=Long walk to genomics: History and current approaches to genome sequencing and assembly;,citation_author=Alice Maria Giani;,citation_author=Guido Roberto Gallo;,citation_author=Luca Gianfranceschi;,citation_author=Giulio Formenti;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_volume=18;,citation_journal_title=Computational and Structural Biotechnology Journal;,citation_publisher=Elsevier;">
 <meta name="citation_reference" content="citation_title=Genome-scale algorithm design;,citation_author=Veli Mäkinen;,citation_author=Djamal Belazzougui;,citation_author=Fabio Cunial;,citation_author=Alexandru I Tomescu;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;">
+<meta name="citation_reference" content="citation_title=A quick guide for developing effective bioinformatics programming skills;,citation_author=Joel T Dudley;,citation_author=Atul J Butte;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;,citation_volume=5;,citation_journal_title=PLOS computational biology;,citation_publisher=Public Library of Science San Francisco, USA;">
+<meta name="citation_reference" content="citation_title=Five reasons why researchers should learn to love the command line;,citation_author=Jeffrey M Perkel;,citation_author=others;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=7844;,citation_volume=590;,citation_journal_title=Nature;,citation_publisher=Nature;">
+<meta name="citation_reference" content="citation_title=Ten simple rules for getting started with command-line bioinformatics;,citation_author=Parice A Brandies;,citation_author=Carolyn J Hogg;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_volume=17;,citation_journal_title=PLoS Computational Biology;,citation_publisher=Public Library of Science San Francisco, CA USA;">
 </head>
 <body class="nav-sidebar floating slimcontent">
 
@@ -316,6 +319,11 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   <a href="../chs-challenges-demos/demo-motif-search.html" class="sidebar-item-text sidebar-link">Unix challenges</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-challenges-demos/demo-genome-searching.html" class="sidebar-item-text sidebar-link">Seq. Analysis challenges</a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item">
@@ -371,7 +379,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-08-30</p>
+      <p class="date">2022-08-31</p>
     </div>
   </div>
     
@@ -386,7 +394,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <span class="header-section-number">1.1</span> Command line basics</h2>
 <p>Before landing into the CLI let us consider the Unix concept. The first question that comes in this section is: what is Unix? It simply is an <a href="https://en.wikipedia.org/wiki/Operating_system">:operating system (OS)</a>. In other words, it is a set of programs that inter-operate with each other to let you communicate with the machine. A very important variant (or clone) of Unix is the very well known OS <a href="https://en.wikipedia.org/wiki/Linux">:Linux</a>, which was created by <a href="https://en.wikipedia.org/wiki/Linus_Torvalds">:Linus Torvalds</a> from scratch. The most important idea behind Unix based systems is the idea that we can use it to access information and hardware programmatically. Other main feature from Unix-like OS systems is the fact that data is usually stored as text files and the interface by which users communicate with the machine is also text-based (TUI: text user interface as opposed to GUI, graphic user interface).</p>
 <div id="fig-terminal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/terminal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A terminal app displaying common features of the command line interface"><img src="imgs-cli/terminal.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-cli/terminal.png" class="lightbox" title="A terminal app displaying common features of the command line interface" data-gallery="quarto-lightbox-gallery-1"><img src="imgs-cli/terminal.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1.1: A <strong>terminal</strong> app displaying common features of the command line interface</figcaption><p></p>
 </figure>
 </div>
@@ -395,7 +403,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <span class="header-section-number">1.1.1</span> File paths</h3>
 <p>Programs, files and directories on every machine (with Unix-like OS) display hierarchical paths (routes), starting out from the <strong>root</strong> (represented by the back-slash character <code>/</code>). The <strong>root</strong> represents the beginning of all the software installed in the machine. And many other files are nested from there forming a tree-like structure for the paths <a href="#fig-tree">Fig.&nbsp;<span>1.2</span></a></p>
 <div id="fig-tree" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/dir-tree.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="A terminal displaying tree-like structure of the programs in a machine with macOS"><img src="imgs-cli/dir-tree.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-cli/dir-tree.png" class="lightbox" title="A terminal displaying tree-like structure of the programs in a machine with macOS" data-gallery="quarto-lightbox-gallery-2"><img src="imgs-cli/dir-tree.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1.2: A terminal displaying tree-like structure of the programs in a machine with macOS</figcaption><p></p>
 </figure>
 </div>
@@ -469,7 +477,7 @@ Tip
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div id="fig-naming-files" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/naming-files.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst"><img src="imgs-cli/naming-files.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-cli/naming-files.png" class="lightbox" title="Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst" data-gallery="quarto-lightbox-gallery-3"><img src="imgs-cli/naming-files.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1.3: Different conventions for naming files or directories as a good computational practice. Such as de the kebab-case or the UpperCammelCase. Illustration by Allison Horst</figcaption><p></p>
 </figure>
 </div>
@@ -509,7 +517,7 @@ Tip
 <span class="header-section-number">1.1.3</span> Anatomy of a command</h3>
 <p>There is still many conventions by which the parts of a command line might be called, yet a very standard convention is presented in <a href="#fig-command">Fig.&nbsp;<span>1.4</span></a></p>
 <div id="fig-command" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/command-anatomy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="A simple command and a convention to call its main components"><img src="imgs-cli/command-anatomy.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-cli/command-anatomy.png" class="lightbox" title="A simple command and a convention to call its main components" data-gallery="quarto-lightbox-gallery-4"><img src="imgs-cli/command-anatomy.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1.4: A simple command and a convention to call its main components</figcaption><p></p>
 </figure>
 </div>
@@ -528,7 +536,7 @@ Challenge
 <div class="callout-body-container callout-body">
 <p>Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One of these is the <a href="https://en.wikipedia.org/wiki/Restriction_modification_system">:restriction-modification system (RM-System)</a>, which works by targeting a specific sites called <em>motifs</em>, shared by the phage and bacteria, with methylations. Motifs are commonly represented as a <a href="https://en.wikipedia.org/wiki/Sequence_logo">:sequence logo</a> which is a probabilistic representation of the nucleotides at each position. The challenge consists of finding the number of times the motif from <a href="#fig-motif">Fig.&nbsp;<span>1.5</span></a> appears on <em>B. tequilensis</em> EA-CB0015 genome using a command. Assume that probabilities are equal when multiple bases appeared at one site.</p>
 <div id="fig-motif" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/motif.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="A RM-system motif logo"><img src="imgs-cli/motif.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-cli/motif.png" class="lightbox" title="A RM-system motif logo" data-gallery="quarto-lightbox-gallery-5"><img src="imgs-cli/motif.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1.5: A RM-system motif logo</figcaption><p></p>
 </figure>
 </div>
@@ -568,14 +576,14 @@ Tip
 </div></div><section id="redirection" class="level4" data-number="1.3.3.1"><h4 data-number="1.3.3.1" class="anchored" data-anchor-id="redirection">
 <span class="header-section-number">1.3.3.1</span> Redirection</h4>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="imgs-cli/redirection.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Redirecting flow"><img src="imgs-cli/redirection.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<figure class="figure"><p><a href="imgs-cli/redirection.png" class="lightbox" title="Redirecting flow" data-gallery="quarto-lightbox-gallery-6"><img src="imgs-cli/redirection.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
 <p></p><figcaption class="figure-caption">Redirecting flow</figcaption><p></p>
 </figure>
 </div>
 </section><section id="pipe" class="level4 page-columns page-full" data-number="1.3.3.2"><h4 data-number="1.3.3.2" class="anchored" data-anchor-id="pipe">
 <span class="header-section-number">1.3.3.2</span> Pipe</h4>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="imgs-cli/pipeflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Pipe flow"><img src="imgs-cli/pipeflow.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<figure class="figure"><p><a href="imgs-cli/pipeflow.png" class="lightbox" title="Pipe flow" data-gallery="quarto-lightbox-gallery-7"><img src="imgs-cli/pipeflow.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
 <p></p><figcaption class="figure-caption">Pipe flow</figcaption><p></p>
 </figure>
 </div>
@@ -641,11 +649,24 @@ Challenge
 </div>
 </div>
 <p>For more explanations on the basic commands in the command line we suggest to visit the first chapters of <em>Computing skills for biologist</em> from <span class="citation" data-cites="allesina2019">Allesina and Wilmes (<a href="../references.html#ref-allesina2019" role="doc-biblioref">2019</a>)</span></p>
+<p>A list of reading for this section:</p>
+<p><span class="citation" data-cites="dudley2009">Dudley and Butte (<a href="../references.html#ref-dudley2009" role="doc-biblioref">2009</a>)</span></p>
+<p><span class="citation" data-cites="perkel2021">Perkel et al. (<a href="../references.html#ref-perkel2021" role="doc-biblioref">2021</a>)</span></p>
+<p><span class="citation" data-cites="brandies2021">Brandies and Hogg (<a href="../references.html#ref-brandies2021" role="doc-biblioref">2021</a>)</span></p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-allesina2019" class="csl-entry" role="doc-biblioentry">
 Allesina, Stefano, and Madlen Wilmes. 2019. <span>“Computing Skills for Biologists,”</span> January. <a href="https://doi.org/10.2307/j.ctvc77jrc">https://doi.org/10.2307/j.ctvc77jrc</a>.
+</div>
+<div id="ref-brandies2021" class="csl-entry" role="doc-biblioentry">
+Brandies, Parice A, and Carolyn J Hogg. 2021. <span>“Ten Simple Rules for Getting Started with Command-Line Bioinformatics.”</span> <em>PLoS Computational Biology</em>. Public Library of Science San Francisco, CA USA.
+</div>
+<div id="ref-dudley2009" class="csl-entry" role="doc-biblioentry">
+Dudley, Joel T, and Atul J Butte. 2009. <span>“A Quick Guide for Developing Effective Bioinformatics Programming Skills.”</span> <em>PLOS Computational Biology</em>. Public Library of Science San Francisco, USA.
+</div>
+<div id="ref-perkel2021" class="csl-entry" role="doc-biblioentry">
+Perkel, Jeffrey M et al. 2021. <span>“Five Reasons Why Researchers Should Learn to Love the Command Line.”</span> <em>Nature</em> 590 (7844): 173–74.
 </div>
 </div>
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -881,7 +902,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":true,"openEffect":"zoom","selector":".lightbox","descPosition":"bottom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});</script>
 
 
 </body></html>

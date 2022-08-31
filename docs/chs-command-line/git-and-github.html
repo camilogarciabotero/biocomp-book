@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.163">
+<meta name="generator" content="quarto-1.1.165">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2022-08-30">
+<meta name="dcterms.date" content="2022-08-31">
 <title>Fundamentals of computational biology - 2&nbsp; Version control</title>
 <style>
 code{white-space: pre-wrap;}
@@ -146,6 +146,9 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <meta name="citation_reference" content="citation_title=Genomes 4;,citation_author=Terence A Brown;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;">
 <meta name="citation_reference" content="citation_title=Long walk to genomics: History and current approaches to genome sequencing and assembly;,citation_author=Alice Maria Giani;,citation_author=Guido Roberto Gallo;,citation_author=Luca Gianfranceschi;,citation_author=Giulio Formenti;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_volume=18;,citation_journal_title=Computational and Structural Biotechnology Journal;,citation_publisher=Elsevier;">
 <meta name="citation_reference" content="citation_title=Genome-scale algorithm design;,citation_author=Veli Mäkinen;,citation_author=Djamal Belazzougui;,citation_author=Fabio Cunial;,citation_author=Alexandru I Tomescu;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;">
+<meta name="citation_reference" content="citation_title=A quick guide for developing effective bioinformatics programming skills;,citation_author=Joel T Dudley;,citation_author=Atul J Butte;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;,citation_volume=5;,citation_journal_title=PLOS computational biology;,citation_publisher=Public Library of Science San Francisco, USA;">
+<meta name="citation_reference" content="citation_title=Five reasons why researchers should learn to love the command line;,citation_author=Jeffrey M Perkel;,citation_author=others;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=7844;,citation_volume=590;,citation_journal_title=Nature;,citation_publisher=Nature;">
+<meta name="citation_reference" content="citation_title=Ten simple rules for getting started with command-line bioinformatics;,citation_author=Parice A Brandies;,citation_author=Carolyn J Hogg;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_volume=17;,citation_journal_title=PLoS Computational Biology;,citation_publisher=Public Library of Science San Francisco, CA USA;">
 </head>
 <body class="nav-sidebar floating slimcontent">
 
@@ -297,6 +300,11 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   <a href="../chs-challenges-demos/demo-motif-search.html" class="sidebar-item-text sidebar-link">Unix challenges</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-challenges-demos/demo-genome-searching.html" class="sidebar-item-text sidebar-link">Seq. Analysis challenges</a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item">
@@ -340,7 +348,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-08-30</p>
+      <p class="date">2022-08-31</p>
     </div>
   </div>
     
@@ -369,7 +377,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 </section><section id="the-local-workflow" class="level3" data-number="2.2.2"><h3 data-number="2.2.2" class="anchored" data-anchor-id="the-local-workflow">
 <span class="header-section-number">2.2.2</span> The local workflow</h3>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="imgs-cli/gitlocal.png" class="lightbox" title="Local workflow of a git project adding and committing changes" data-gallery="quarto-lightbox-gallery-1"><img src="imgs-cli/gitlocal.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
+<figure class="figure"><p><a href="imgs-cli/gitlocal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Local workflow of a git project adding and committing changes"><img src="imgs-cli/gitlocal.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
 <p></p><figcaption class="figure-caption">Local workflow of a git project adding and committing changes</figcaption><p></p>
 </figure>
 </div>
@@ -379,7 +387,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <p>As mention before, one of the great advantages that git can later achieve is to collaborate. However, to get into that a sharable server must allow users to have a common ground, and this is what <a href="https://github.com/home">GitHub</a> allow. GitHub is a web platform where the local repositories become public and any user can access to the controlled versions of an image of your repo. The famous pet is the octocat <a href="#fig-octocat">Fig.&nbsp;<span>2.1</span></a></p>
 
 <div class="no-row-height column-margin column-container"><div id="fig-octocat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/octocat.png" class="lightbox" title="The octocat from GitHub" data-gallery="quarto-lightbox-gallery-2"><img src="imgs-cli/octocat.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-cli/octocat.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="The octocat from GitHub"><img src="imgs-cli/octocat.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;2.1: The octocat from GitHub</figcaption><p></p>
 </figure>
 </div></div><p>To enable the communication with a remote repo, git has encoded many specific commands, once the repos are <strong>cloned</strong> a simple workflow from the own local and remote repos is made possible thanks to two simple commands <code>git push</code> and <code>git pull</code>.</p>
@@ -402,7 +410,7 @@ Caution
 </div>
 </div>
 <div id="fig-cloning" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/gitcloning.png" class="lightbox" title="The cloning workflow in brief" data-gallery="quarto-lightbox-gallery-3"><img src="imgs-cli/gitcloning.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-cli/gitcloning.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="The cloning workflow in brief"><img src="imgs-cli/gitcloning.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;2.2: The cloning workflow in brief</figcaption><p></p>
 </figure>
 </div>
@@ -424,7 +432,7 @@ Tip
 <span class="header-section-number">2.3.1</span> Forking and collaborate</h3>
 <p>Basic collaboration on an open repository is a three-step process. First you need to <code>fork</code> the repo, this will create a mirror copy of the repo in your GitHub profile. In a second step, a simple <code>clone</code> of the repo will generate a copy of the forked repo on your local machine, so you can freely work and make your mistakes and push them to your forked repo that belongs to your account. In a third step, once they are on the remote repo you will have to create a <code>pull request</code> (PR), as its name suggest: you are <strong>asking</strong> the owners of the original to consider your changes <a href="#fig-forking">Fig.&nbsp;<span>2.3</span></a>.</p>
 <div id="fig-forking" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-cli/gitforking.png" class="lightbox" title="A common collaborative workflow from GitHub, using fork, clone and pull requests" data-gallery="quarto-lightbox-gallery-4"><img src="imgs-cli/gitforking.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-cli/gitforking.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="A common collaborative workflow from GitHub, using fork, clone and pull requests"><img src="imgs-cli/gitforking.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;2.3: A common collaborative workflow from GitHub, using fork, clone and pull requests</figcaption><p></p>
 </figure>
 </div>
@@ -665,7 +673,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":true,"openEffect":"zoom","selector":".lightbox"});</script>
 
 
 </body></html>

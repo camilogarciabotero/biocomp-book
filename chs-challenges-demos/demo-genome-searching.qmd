@@ -3,25 +3,20 @@ execute:
   freeze: true
 ---
 
-# Genome searching {.unnumbered}
+# Seq. Analysis challenges {.unnumbered}
 
-The first 
+## Counting features
 
-Downloading a genome
 
-```bash
-ncbi-genome-download
-```
+The first  downloading from NCBI
 
-### Downloading from NCBI {.unnumbered}
-
-The first step in this journey is to download a bunch of sequences programatically. To do so, we will use the program [ncbi-genome-download](https://github.com/kblin/ncbi-genome-download).
+The first step in this journey is to download a bunch of sequences programmatically. To do so, we will use the program [ncbi-genome-download](https://github.com/kblin/ncbi-genome-download).
 
 You could inspect all the options it provides, now we will set our command as the following:
 
-```{zsh}
+```{.zsh}
 #| echo: true
-#| eval: true
+#| eval: false
 ngd --genera "Bacillus subtilis"\
     -s refseq\
     -l complete\
@@ -32,27 +27,36 @@ ngd --genera "Bacillus subtilis"\
     | head -n 10
 ```
 
-### Listing files {.unnumbered}
 
-```{zsh}
-ls Data | head -n 10
-```
-
-### Decompressing using `gzip` {.unnumbered}
-
-```{zsh}
+```{.zsh}
 gzip -d *
 ```
 
 . . .
 
-#### Some files in our data dir
+A file from the download is a long table that...
 
-``` zsh
-ls Data | head
+
+:::{.panel-tabset}
+
+## Bash
+
+```{.bash}
+#! usr/bin/bash
+
+export features="id CDS gene ncRNA rRNA tmRNA tRNA"
+
+echo $features
+
+
+for i in $(ls $1); do
+    values=$(awk '/CDS/{++cnt1} /gene/{++cnt2} /ncRNA/{++cnt3} /rRNA/{++cnt4} /tmRNA/{++cnt5} /tRNA/{++cnt} END {print cnt1, cnt2, cnt3, cnt4, cnt5, cnt6}' ${1}/${i});
+    id=$(egrep -o -m 1 "GCF.{12}" ${1}/${i})
+    echo "$id $values"
+done
 ```
 
-### Importing the files into R
+## R
 
 ```{r}
 #| label: file-reading
@@ -71,40 +75,40 @@ all_features |>
   head()
 ```
 
-. . .
-
-```{r}
-#| label: file-reading-exe
-#| ref.label: file-reading
-#| eval: false
-#| cache: true
-#| warattr-warning: false
-#| out.width : 50%
-```
-
-### Data processing
-
+Now that we read all the files into the programming environment we can operate over them with different libraries.
 ```{r}
 #| label: data-processing
 #| echo: true
 #| eval: false
 #| message: false
+#| code-line-numbers: true
 all_features_grouped <- all_features |> 
   rename(feature = `# feature`) |> 
   select(assembly, feature) |> 
   group_by(assembly, feature) |>  operations
   count() |> 
-  pivot_wider(names_from = feature, values_from = n) |> 
-  arrange(desc(CDS))
-    
-all_features_grouped |> 
-  head()
+  pivot_wider(names_from = feature, values_from = n)
 ```
 
-create a new dataset that will group by features per accession.
-get read of the weird name of the column.
-Select these two columns.
-Group by these two columns to perform.
-count the numbers of rows based on the applied group.
-generate a wide dataset sending row names as columns.
-Arrange descending by the number of CDSs.
+1. Create a new dataset that will group by features per accession.
+2. Change the `# feature` name for simple `feature`.
+3. Select `feature` and `assembly`  columns.
+4. Group by these two columns, enabling grouping operations.
+5. Count the numbers of rows based on the applied grouping.
+6. Generate a wide dataset sending row names as columns.
+
+## Python
+
+```{python}
+#| eval: false
+import glob
+import pandas as pd
+
+files = glob.glob("*.txt")
+
+df = pd.concat((pd.read_csv(f, sep='\t') for f in files))
+
+df.rename(columns={"# feature" : "feature"}).filter(items=["feature", "assembly"]).groupby(["assembly","feature"])["feature"].count()
+```
+:::
+

@@ -56,7 +56,7 @@ book:
     - part: "Challenges"
       chapters:
         - chs-challenges-demos/demo-motif-search.qmd
-    #     - chs-challenges-demos/demo-genome-searching.qmd
+        - chs-challenges-demos/demo-genome-searching.qmd
     #     - chs-challenges-demos/demo-sanger-processing.qmd
     #     - chs-challenges-demos/demo-sequence-alignment.qmd
     #     - chs-challenges-demos/demo-phylogenetics.qmd
