@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.1.165">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="dcterms.date" content="2022-08-31">
-<title>Fundamentals of computational biology - Counting features</title>
+<title>Fundamentals of computational biology - Seq. Analysis challenges</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,7 +128,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 </script><script async="" src="https://hypothes.is/embed.js"></script>
-<meta name="citation_title" content="Counting features">
+<meta name="citation_title" content="Seq. Analysis challenges">
 <meta name="citation_publication_date" content="NaN-NaN-NaN">
 <meta name="citation_cover_date" content="NaN-NaN-NaN">
 <meta name="citation_year" content="NaN">
@@ -150,7 +150,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Counting features</h1>
+      <h1 class="quarto-secondary-nav-title">Seq. Analysis challenges</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -311,11 +311,15 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     </ul>
 </div>
 </nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#counting-features" id="toc-counting-features" class="nav-link active" data-scroll-target="#counting-features">Counting features</a></li>
+  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-challenges-demos/demo-genome-searching.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">Counting features</h1>
+<h1 class="title d-none d-lg-block">Seq. Analysis challenges</h1>
 </div>
 
 
@@ -333,7 +337,8 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   </div>
   
 
-</header><p>The first downloading from NCBI</p>
+</header><section id="counting-features" class="level2"><h2 class="anchored" data-anchor-id="counting-features">Counting features</h2>
+<p>The first downloading from NCBI</p>
 <p>The first step in this journey is to download a bunch of sequences programmatically. To do so, we will use the program <a href="https://github.com/kblin/ncbi-genome-download">ncbi-genome-download</a>.</p>
 <p>You could inspect all the options it provides, now we will set our command as the following:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
@@ -345,10 +350,23 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">--flat-output</span><span class="dt">\</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">--format</span> features<span class="dt">\</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">-n</span> bacteria<span class="dt">\</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> <span class="at">-d</span> <span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>. . .</p>
-<p>A file from the download is a long table that…</p>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To this date this command will search for 216 complete genome information of <em>Bacillus subtilis</em> strains and download the <strong>feature-table</strong> file compressed. So the next step is to decompress all of them:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="pp">*</span>.txt<span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gzip</span> <span class="at">-d</span> i</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now the the feature-table file is a is a long table containing each of the features annotated in the genome see the top of a file:</p>
+<div class="cell" data-hash="demo-genome-searching_cache/html/unnamed-chunk-1_bb5c08467a0d04073d65c04aab25027b">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-n</span> 5 data/features/GCF_000009045.1_ASM904v1_feature_table.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># feature   class   assembly    assembly_unit   seq_type    chromosome  genomic_accession   start   end strand  product_accession   non-redundant_refseq    related_accession   name    symbol  GeneID  locus_tag   feature_interval_length product_length  attributes
+gene    protein_coding  GCF_000009045.1 Primary Assembly    chromosome      NC_000964.3 410 1750    +                   dnaA    939978  BSU_00010   1341        old_locus_tag=BSU00010
+CDS with_protein    GCF_000009045.1 Primary Assembly    chromosome      NC_000964.3 410 1750    +   NP_387882.1 WP_003242674.1      chromosomal replication initiator informational ATPase  dnaA    939978  BSU_00010   1341    446 
+gene    protein_coding  GCF_000009045.1 Primary Assembly    chromosome      NC_000964.3 1939    3075    +                   dnaN    939970  BSU_00020   1137        old_locus_tag=BSU00020
+CDS with_protein    GCF_000009045.1 Primary Assembly    chromosome      NC_000964.3 1939    3075    +   NP_387883.1 WP_003242509.1      DNA polymerase III (beta subunit)   dnaN    939970  BSU_00020   1137    378 </code></pre>
+</div>
+</div>
+<p>The question now is how to count the lines corresponding to <code>features</code> which is the first line. It contains six types of features (CDS, gene, rRNA, tRNA, tmRNA, ncRNA and misc_RNA). This task could be achieved by many ways, but a general approach to count lines is the way through it. Here there three approaches to follow:</p>
 <div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist">
 <li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Bash</a></li>
@@ -357,38 +375,78 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 </ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#! usr/bin/bash</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">features</span><span class="op">=</span><span class="st">"id CDS gene ncRNA rRNA tmRNA tRNA"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$features</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="va">$(</span><span class="fu">ls</span> <span class="va">$1)</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">values</span><span class="op">=</span><span class="va">$(</span><span class="fu">awk</span> <span class="st">'/CDS/{++cnt1} /gene/{++cnt2} /ncRNA/{++cnt3} /rRNA/{++cnt4} /tmRNA/{++cnt5} /tRNA/{++cnt} END {print cnt1, cnt2, cnt3, cnt4, cnt5, cnt6}'</span> <span class="va">${1}</span>/<span class="va">${i})</span><span class="kw">;</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">id</span><span class="op">=</span><span class="va">$(</span><span class="fu">egrep</span> <span class="at">-o</span> <span class="at">-m</span> 1 <span class="st">"GCF.{12}"</span> <span class="va">${1}</span>/<span class="va">${i})</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"</span><span class="va">$id</span><span class="st"> </span><span class="va">$values</span><span class="st">"</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#! usr/bin/bash</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">features</span><span class="op">=</span><span class="st">"id CDS gene ncRNA rRNA tmRNA tRNA"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$features</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="va">$(</span><span class="fu">ls</span> <span class="va">$1)</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">values</span><span class="op">=</span><span class="va">$(</span><span class="fu">awk</span> <span class="st">'/CDS/{++cnt1} /gene/{++cnt2} /ncRNA/{++cnt3} /rRNA/{++cnt4} /tmRNA/{++cnt5} /tRNA/{++cnt} END {print cnt1, cnt2, cnt3, cnt4, cnt5, cnt6}'</span> <span class="va">${1}</span>/<span class="va">${i})</span><span class="kw">;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">id</span><span class="op">=</span><span class="va">$(</span><span class="fu">egrep</span> <span class="at">-o</span> <span class="at">-m</span> 1 <span class="st">"GCF.{12}"</span> <span class="va">${1}</span>/<span class="va">${i})</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"</span><span class="va">$id</span><span class="st"> </span><span class="va">$values</span><span class="st">"</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>id CDS gene ncRNA rRNA tmRNA tRNA
+GCF_000009045.1 4238 4578 4 76 2 
+GCF_000146565.1 3998 4120 6 64 2 
+GCF_000186745.1 4111 4247 6 78 2 
+GCF_000209795.2 4262 4400 6 76 2 
+GCF_000227465.1 4167 4314 6 76 2 
+GCF_000227485.1 3991 4128 6 76 2 
+GCF_000293765.1 4205 4343 6 76 2 
+GCF_000321395.1 4043 4179 6 76 2 </code></pre>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="cell" data-warclass-warning="false" data-warattr-warning="false" data-hash="demo-genome-searching_cache/html/file-reading_381adbdecf8961531c5ef0858911dcf8">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<div class="cell" data-hash="demo-genome-searching_cache/html/file-reading_14fe1ca66935ce22314cde1343e729cf">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://fs.r-lib.org">fs</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">all_features</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://fs.r-lib.org/reference/dir_ls.html">dir_ls</a></span><span class="op">(</span><span class="st">"Data/"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_df</a></span><span class="op">(</span><span class="va">read_tsv</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">all_features</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">all_features</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://fs.r-lib.org/reference/dir_ls.html">dir_ls</a></span><span class="op">(</span><span class="st">"data/features"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_df</a></span><span class="op">(</span><span class="va">read_tsv</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: One or more parsing issues, see `problems()` for details</code></pre>
+</div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">all_features</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 20
+  `# feature` class  assembly assembly_unit seq_type chromosome genomic_accessi…
+  &lt;chr&gt;       &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;           
+1 gene        prote… GCF_000… Primary Asse… chromos… &lt;NA&gt;       NC_000964.3     
+2 CDS         with_… GCF_000… Primary Asse… chromos… &lt;NA&gt;       NC_000964.3     
+3 gene        prote… GCF_000… Primary Asse… chromos… &lt;NA&gt;       NC_000964.3     
+4 CDS         with_… GCF_000… Primary Asse… chromos… &lt;NA&gt;       NC_000964.3     
+5 gene        prote… GCF_000… Primary Asse… chromos… &lt;NA&gt;       NC_000964.3     
+6 CDS         with_… GCF_000… Primary Asse… chromos… &lt;NA&gt;       NC_000964.3     
+# … with 13 more variables: start &lt;dbl&gt;, end &lt;dbl&gt;, strand &lt;chr&gt;,
+#   product_accession &lt;chr&gt;, `non-redundant_refseq` &lt;chr&gt;,
+#   related_accession &lt;lgl&gt;, name &lt;chr&gt;, symbol &lt;chr&gt;, GeneID &lt;dbl&gt;,
+#   locus_tag &lt;chr&gt;, feature_interval_length &lt;dbl&gt;, product_length &lt;dbl&gt;,
+#   attributes &lt;chr&gt;</code></pre>
+</div>
 </div>
 <p>Now that we read all the files into the programming environment we can operate over them with different libraries.</p>
-<div class="cell" data-hash="demo-genome-searching_cache/html/data-processing_39276b8b305ef0c61a9189449dbce4fb">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>all_features_grouped <span class="ot">&lt;-</span> all_features <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">rename</span>(<span class="at">feature =</span> <span class="st">`</span><span class="at"># feature</span><span class="st">`</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">select</span>(assembly, feature) <span class="sc">|&gt;</span> </span>
-<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">group_by</span>(assembly, feature) <span class="sc">|&gt;</span>  operations</span>
-<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">count</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> feature, <span class="at">values_from =</span> n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="demo-genome-searching_cache/html/data-processing_7229fdb46c65419e091bd38398a932c8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>all_features_grouped <span class="ot">&lt;-</span> all_features <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">rename</span>(<span class="at">feature =</span> <span class="st">`</span><span class="at"># feature</span><span class="st">`</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">select</span>(assembly, feature) <span class="sc">|&gt;</span> </span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">group_by</span>(assembly, feature) <span class="sc">|&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">count</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> feature, <span class="at">values_from =</span> n)</span>
+<span id="cb11-7"><a href="#cb11-7"></a></span>
+<span id="cb11-8"><a href="#cb11-8"></a>all_features_grouped</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 8
+# Groups:   assembly [5]
+  assembly          CDS  gene misc_RNA ncRNA  rRNA  tRNA tmRNA
+  &lt;chr&gt;           &lt;int&gt; &lt;int&gt;    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+1 GCF_000009045.1  4237  4536       93     2    30    86    NA
+2 GCF_000146565.1  3998  4104       NA     4    24    77     1
+3 GCF_000186745.1  4111  4230       NA     4    31    83     1
+4 GCF_000209795.2  4262  4384       NA     4    30    87     1
+5 GCF_000227465.1  4167  4294       NA     4    30    92     1</code></pre>
+</div>
 </div>
 <ol type="1">
 <li>Create a new dataset that will group by features per accession.</li>
@@ -400,23 +458,22 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 </ol>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<div class="cell" data-hash="demo-genome-searching_cache/html/unnamed-chunk-3_468cce3889cc3f15181f21cf267b4e9f">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>files <span class="op">=</span> glob.glob(<span class="st">"*.txt"</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat((pd.read_csv(f, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>) <span class="cf">for</span> f <span class="kw">in</span> files))</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>df.rename(columns<span class="op">=</span>{<span class="st">"# feature"</span> : <span class="st">"feature"</span>}).<span class="bu">filter</span>(items<span class="op">=</span>[<span class="st">"feature"</span>, <span class="st">"assembly"</span>]).groupby([<span class="st">"assembly"</span>,<span class="st">"feature"</span>])[<span class="st">"feature"</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="demo-genome-searching_cache/html/unnamed-chunk-4_978fbea4969c76cfc4c003be739f0dc1">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>files <span class="op">=</span> glob.glob(<span class="st">"*.txt"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat((pd.read_csv(f, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>) <span class="cf">for</span> f <span class="kw">in</span> files))</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>df.rename(columns<span class="op">=</span>{<span class="st">"# feature"</span> : <span class="st">"feature"</span>}).<span class="bu">filter</span>(items<span class="op">=</span>[<span class="st">"feature"</span>, <span class="st">"assembly"</span>]).groupby([<span class="st">"assembly"</span>,<span class="st">"feature"</span>])[<span class="st">"feature"</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 
 
-
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");

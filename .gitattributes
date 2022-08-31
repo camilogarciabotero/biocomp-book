@@ -1,0 +1,5 @@
+chs-challenges-demos/data/features/GCF_000209795.2_ASM20979v2_feature_table.txt filter=lfs diff=lfs merge=lfs -text
+chs-challenges-demos/data/features/GCF_000227465.1_ASM22746v1_feature_table.txt filter=lfs diff=lfs merge=lfs -text
+chs-challenges-demos/data/features/GCF_000009045.1_ASM904v1_feature_table.txt filter=lfs diff=lfs merge=lfs -text
+chs-challenges-demos/data/features/GCF_000146565.1_ASM14656v1_feature_table.txt filter=lfs diff=lfs merge=lfs -text
+chs-challenges-demos/data/features/GCF_000186745.1_ASM18674v1_feature_table.txt filter=lfs diff=lfs merge=lfs -text
