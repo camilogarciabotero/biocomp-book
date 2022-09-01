@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.165">
+<meta name="generator" content="quarto-1.1.168">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2022-08-31">
+<meta name="dcterms.date" content="2022-09-01">
 <title>Fundamentals of computational biology - Seq. Analysis challenges</title>
 <style>
 code{white-space: pre-wrap;}
@@ -331,7 +331,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022-08-31</p>
+      <p class="date">2022-09-01</p>
     </div>
   </div>
     
@@ -339,7 +339,6 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   
 
 </header><section id="counting-features" class="level2"><h2 class="anchored" data-anchor-id="counting-features">Counting features</h2>
-<p>The first downloading from NCBI</p>
 <p>The first step in this journey is to download a bunch of sequences programmatically. To do so, we will use the program <a href="https://github.com/kblin/ncbi-genome-download">ncbi-genome-download</a>.</p>
 <p>You could inspect all the options it provides, now we will set our command as the following:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
@@ -468,8 +467,8 @@ GCF_000321395.1 4043 4179 6 76 2 </code></pre>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat((pd.read_csv(f, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>) <span class="cf">for</span> f <span class="kw">in</span> files))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-hash="demo-genome-searching_cache/html/unnamed-chunk-5_78821656a704428702fd038bcbc82913">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df_renamed  <span class="op">&lt;-</span> df.rename(columns<span class="op">=</span>{<span class="st">"# feature"</span> : <span class="st">"feature"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="demo-genome-searching_cache/html/unnamed-chunk-5_e4df523f3d1f28290c78c274927399a7">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df_renamed  <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">"# feature"</span> : <span class="st">"feature"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-hash="demo-genome-searching_cache/html/unnamed-chunk-6_5b0c55327c8a5053dd70f0d4ed3ef9a5">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df_renamed.<span class="bu">filter</span>(items<span class="op">=</span>[<span class="st">"feature"</span>, <span class="st">"assembly"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
