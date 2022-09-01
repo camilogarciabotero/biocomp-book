@@ -195,7 +195,7 @@
 \@ifpackageloaded{float}{}{\usepackage{float}}
 \floatstyle{ruled}
 \@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
-\floatname{codelisting}{Listing}
+\floatname{codelisting}{Code}
 \newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
 \makeatother
 \makeatletter
@@ -242,11 +242,11 @@
 \makeatother
 \subtitle{Lecture notes}
 \author{Camilo García-Botero}
-\date{2022-08-19}
+\date{2022-08-31}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, enhanced, borderline west={3pt}{0pt}{shadecolor}, sharp corners, breakable, interior hidden, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, frame hidden, enhanced, interior hidden, sharp corners, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -261,34 +261,45 @@
 \addcontentsline{toc}{chapter}{Preface}
 
 We started this book with the aim of compiling the lectures of the
-course Fundamentals of Computational Biology offered at Universidad
-EAFIT for undergrad students in Biology. The course has been taught from
-different perspectives from its creation, yet the last iteration was
-divided into five introductory modules to i) Unix, ii) sequence
-analysis, iii) genomics, iii) metagenomics iv) structural biology.
+course Fundamentals of Computational Biology offered at EAFIT University
+for undergrad students in Biology. The course has been taught from
+different perspectives from its creation. All main units are depicted in
+this book, although the course is mainly composed from at least four of
+them. We suggest to cover the first three units/parts and vary the last.
+Units in this book are partitioned as follows: i) Unix, ii) sequence
+analysis, iii) genomics, iii) metagenomics iv) RNA seq v) structural
+biology.
 
 Lectures are focused on a theoretical-practical approach where basic
 concepts from biology, bioinformatics and computer science and
-interleave with the practice to solve challenges. Exercised or
+interleave with the practice to solve challenges. Exercises or
 challenges are designed to improve students' abilities that are likely
 to be involved in real-life problems in computational biology.
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Danger}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-caution-color-frame, colbacktitle=quarto-callout-caution-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, rightrule=.15mm, colback=white, bottomrule=.15mm, opacityback=0, colframe=quarto-callout-important-color-frame, leftrule=.75mm, left=2mm, toprule=.15mm]
+
+\bookmarksetup{startatroot}
+
+\hypertarget{fa-solid-biohazard}{%
+\chapter*{\texorpdfstring{\faIcon{biohazard}}{}}\label{fa-solid-biohazard}}
+\addcontentsline{toc}{chapter}{\faIcon{biohazard}}
+
 This book is a work in progress. If you find issues, typos or relevant
 information to share with, anything is welcome.
+
 \end{tcolorbox}
 
 \hypertarget{learning-features}{%
 \section*{Learning features}\label{learning-features}}
 \addcontentsline{toc}{section}{Learning features}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}]
 Sometimes other fields might add interested value to the understanding
 of the computational biology area. This feature remarks some of them and
 aim to explain these intersections.
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}]
 As you move forward in the computational biology field you will find
 that there are several tips and tricks (mainly from the command line) as
 well as some random CLI programs that can leverage your daily workflow
@@ -296,56 +307,32 @@ as a researcher. Using this feature we highlight some of those that
 appeared to linger on the field.
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-important-color-frame, colbacktitle=quarto-callout-important-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-important-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-important-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}]
 To help you consolidate your understanding we end most chapters with
 important messages or concepts that help you evaluate yourself as you
 move forward on the lessons.
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Danger}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-caution-color-frame, colbacktitle=quarto-callout-caution-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
-
-\bookmarksetup{startatroot}
-
-\hypertarget{caution}{%
-\chapter*{Caution}\label{caution}}
-\addcontentsline{toc}{chapter}{Caution}
-
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-caution-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}]
 When experimenting with the CLI and many other computational tools it is
 common to face several known errors and drawbacks. Then, we present some
 of them and how to sort them out.
-
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
-
-\bookmarksetup{startatroot}
-
-\hypertarget{challenges}{%
-\chapter*{Challenges}\label{challenges}}
-\addcontentsline{toc}{chapter}{Challenges}
-
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenges}]
 Since focused on a competences learning approach we have highlighted
 several real-life (but basic) \emph{challenges} a researcher faces when
 approaching computational biology problem (from tool selection, usage
 and result analysis). Therefore the book section \emph{challenges}
 presents a selection of these problems that will later be approached by
 a computational biology strategy (mainly from the CLI).
-
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, opacityback=0, leftrule=.75mm, breakable, colframe=quarto-callout-color-frame, rightrule=.15mm, arc=.35mm, bottomrule=.15mm, toprule=.15mm, left=2mm]
-
-\bookmarksetup{startatroot}
-
-\hypertarget{file-format}{%
-\chapter*{File format}\label{file-format}}
-\addcontentsline{toc}{chapter}{File format}
-
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, rightrule=.15mm, colback=white, bottomrule=.15mm, opacityback=0, colframe=quarto-callout-color-frame, leftrule=.75mm, left=2mm, toprule=.15mm]
 As many analysis specialize on data analysis, many formats arise that
 optimize the processing steps or the data storing steps. Some of these
 formats are keystones of bioinformatic analyses. We present examples of
 some formats an describe its main elements.
-
 \end{tcolorbox}
 
 \bookmarksetup{startatroot}
@@ -361,27 +348,47 @@ interface (aka CLI). It includes a long-format chapter about the Unix
 tools and concepts that is taught during the first four class lessons.
 The second chapter of covers the basics of git and the principal
 workflows to work daily on a collaborative manner this is actually the
-second lesson of the course. the importance of package manager systems
-(such as homebrew and conda
+second lesson of the course. The third lessons, highlights the
+importance of package manager systems (such as homebrew and conda or
+scoop) and briefly introduce the main concepts and relevant commands.
+Later, in a fourth lesson, we introduce important concepts about how
+computers handle the tasks or jobs, and the parallelization of them. We
+talk about the computer architectures, the cluster architectures and the
+job scheduling software called Slurm, which is used on our local HPC
+cluster.
 
-The second part We will cover several topics sequencing technologies,
-sequence alignments, molecular phylogenetics, genome assembly and
-annotation, and variant calling analysis.
+The second part is dedicated to sequence analysis and will cover several
+topics related to sequencing technologies, sequence alignments. All this
+topics are covered from the biological perspective, mathematical notions
+and the practical computing approach. Some of the main bioinformatics
+file extensions are covered and the git
 
-Include a section, maybe an appendix about how to handle errors Include
-s section about the windows subsystem for linux (WSL) and the ease of
-use for windows users
+Third part is focused genomics. It will cover main algorithms for genome
+assembly and some relevant programs. Also the biological nuances of gene
+calling and gene annotation, and finally will variant calling analysis,
+which introduces the gene mapping concept and some of the most important
+bioinformatics file extensions.
 
-\hypertarget{endless-debate-bioinformatics-vs.-computational-biology}{%
-\section*{Endless debate: bioinformatics vs.~computational
-biology}\label{endless-debate-bioinformatics-vs.-computational-biology}}
-\addcontentsline{toc}{section}{Endless debate: bioinformatics
-vs.~computational biology}
+Next parts are currently optionals for the course per-se and some
+iterations may only include one of those or some combinations. They are
+mainly dedicated to introduce metagenomics, differential gene expression
+analysis and structural bioinformatics.
+
+\hypertarget{course-schedule}{%
+\section*{Course schedule}\label{course-schedule}}
+\addcontentsline{toc}{section}{Course schedule}
+
+\hypertarget{bioinformatics-vs.-computational-biology}{%
+\section*{Bioinformatics vs.~Computational
+biology}\label{bioinformatics-vs.-computational-biology}}
+\addcontentsline{toc}{section}{Bioinformatics vs.~Computational biology}
 
 \hypertarget{the-extent-of-computational-biology}{%
 \section*{The extent of computational
 biology}\label{the-extent-of-computational-biology}}
 \addcontentsline{toc}{section}{The extent of computational biology}
+
+\textbf{?@fig-biofields}.
 
 \part{The command line}
 
@@ -399,9 +406,8 @@ navigate your machine, and some advance one that enable complex
 operations and automating tasks.
 \end{quote}
 
-\hypertarget{getting-started-with-the-command-line}{%
-\section{Getting started with the command
-line}\label{getting-started-with-the-command-line}}
+\hypertarget{command-line-basics}{%
+\section{Command line basics}\label{command-line-basics}}
 
 Before landing into the CLI let us consider the Unix concept. The first
 question that comes in this section is: what is Unix? It simply is an
@@ -454,7 +460,7 @@ the programs in a machine with macOS}
 
 \end{figure}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}]
 
 You can inspect the paths of a nested directory tree using \texttt{tree}
 command in you cli:
@@ -505,7 +511,7 @@ directory}\label{change-to-other-directory}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}]
 
 Some basic arguments to navigate across your terminal:
 
@@ -529,7 +535,7 @@ Some basic arguments to navigate across your terminal:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}]
 You can navigate your executed commands by typing \faIcon{arrow-up} or
 \faIcon{arrow-down}.
 \end{tcolorbox}
@@ -561,9 +567,9 @@ look at \href{https://github.com/allisonhorst/}{Allison Horst}
 illustrations, especially on how to name files depending on the
 \emph{case} see \textbf{?@fig-naming-files}
 
-\hypertarget{printing-files-to-the-screen}{%
-\subsubsection{Printing files to the
-screen}\label{printing-files-to-the-screen}}
+\hypertarget{printing-files-or-inputs}{%
+\subsubsection{Printing files or
+inputs}\label{printing-files-or-inputs}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -581,6 +587,16 @@ screen}\label{printing-files-to-the-screen}}
 \end{Highlighting}
 \end{Shaded}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{echo} \StringTok{"This will be printed"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+This will be printed
+\end{verbatim}
+
 \hypertarget{removing-files-or-directories}{%
 \subsubsection{Removing files or
 directories}\label{removing-files-or-directories}}
@@ -591,7 +607,7 @@ directories}\label{removing-files-or-directories}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}]
 When having a long command, it becomes practically to go to the
 beginning or to the end of it. To do so you can use the key combination
 \texttt{Ctrl\ +\ A} and \texttt{Ctrl\ +\ E} respectively.
@@ -626,7 +642,7 @@ Some other for instance also tend to call the \texttt{option} as
 line interface display this structure (complex one add some other
 features and simple one tend to lack subcommands).
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenge}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenge}]
 Bacterial defense mechanisms to avoid bacteriophage infections are
 abundant. One of these is the
 \href{https://en.wikipedia.org/wiki/Restriction_modification_system}{:restriction-modification
@@ -661,8 +677,26 @@ When facing the CLI several issues or problems will arise. As for any
 other unintuitive challenge, a complete text interface Handling errors.
 Getting help Patience
 
-\hypertarget{intermediate-unix-commands}{%
-\section{Intermediate Unix commands}\label{intermediate-unix-commands}}
+\hypertarget{intermediate-unix}{%
+\section{Intermediate Unix}\label{intermediate-unix}}
+
+\hypertarget{special-operators-or-metacharacters}{%
+\subsection{Special operators or
+metacharacters}\label{special-operators-or-metacharacters}}
+
+Some operator or metacharacters have special functions in bash. For
+instance the \texttt{*} or \emph{wildcard} is a regular expression
+character (sometimes called as a placeholder) that will turn in
+\emph{any character, many times}, similarly the \texttt{?} represents
+\emph{any character, once}. Whereas the \texttt{\$} (dollar sign or
+operator) is intended for an special task: call \emph{environmental
+variables} which means that once a variable is defined (e.g.,
+\texttt{var=1}) this variable can be called via the \texttt{\$} operator
+anytime \texttt{echo\ \$var} will get us \texttt{1} as the standard
+output
+
+\hypertarget{intermediate-commands}{%
+\subsection{Intermediate commands}\label{intermediate-commands}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -688,25 +722,10 @@ Getting help Patience
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{special-operators-or-metacharacters}{%
-\section{Special operators or
-metacharacters}\label{special-operators-or-metacharacters}}
-
-Some operator or metacharacters have special functions in bash. For
-instance the \texttt{*} or \emph{wildcard} is a regular expression
-character (sometimes called as a placeholder) that will turn in
-\emph{any character, many times}, similarly the \texttt{?} represents
-\emph{any character, once}. Whereas the \texttt{\$} (dollar sign or
-operator) is intended for an special task: call \emph{environmental
-variables} which means that once a variable is defined (e.g.,
-\texttt{var=1}) this variable can be called via the \texttt{\$} operator
-anytime \texttt{echo\ \$var} will get us \texttt{1} as the standard
-output
-
 \hypertarget{unix-flows}{%
-\section{Unix flows}\label{unix-flows}}
+\subsection{Unix flows}\label{unix-flows}}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}]
 When using the CLI at first its common to feal quite slow. Then, a very
 useful tip to boost the productivity from the command line is the
 autocompletion of commands by hitting
@@ -714,7 +733,7 @@ autocompletion of commands by hitting
 \end{tcolorbox}
 
 \hypertarget{redirection}{%
-\subsection{Redirection}\label{redirection}}
+\subsubsection{Redirection}\label{redirection}}
 
 \begin{figure}
 
@@ -727,7 +746,7 @@ autocompletion of commands by hitting
 \end{figure}
 
 \hypertarget{pipe}{%
-\subsection{Pipe}\label{pipe}}
+\subsubsection{Pipe}\label{pipe}}
 
 \begin{figure}
 
@@ -739,7 +758,7 @@ autocompletion of commands by hitting
 
 \end{figure}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}]
 When having a long command, it is also useful to jump by lines instead
 of character by character. To do so you can use the key combination
 \texttt{Alt\ +\ \textless{}-} and \texttt{Alt\ +\ -\textgreater{}}
@@ -747,10 +766,10 @@ respectively.
 \end{tcolorbox}
 
 \hypertarget{loops-conditionals-and-script-variables}{%
-\section{loops, conditionals and script
+\subsection{loops, conditionals and script
 variables}\label{loops-conditionals-and-script-variables}}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenge}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenge}]
 A second part of this challenges consists of create a script out from r
 the motif-search one-line command that recursively search the motifs in
 all genomes from a zip file that contains 10 bacterial genomes. The
@@ -761,7 +780,24 @@ See a possible script that solve the challenge
 \protect\hyperlink{motif-search-in-multiple-files}{:here}
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenge}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\hypertarget{advance-unix-stuff}{%
+\section{Advance Unix stuff}\label{advance-unix-stuff}}
+
+\hypertarget{system-permissions}{%
+\subsection{System permissions}\label{system-permissions}}
+
+\hypertarget{aliasing}{%
+\subsection{Aliasing}\label{aliasing}}
+
+\hypertarget{the-.bashrc}{%
+\subsection{\texorpdfstring{The
+\texttt{.bashrc}}{The .bashrc}}\label{the-.bashrc}}
+
+\hypertarget{awk-snippet}{%
+\subsection{\texorpdfstring{\texttt{awk}
+snippet}{awk snippet}}\label{awk-snippet}}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenge}]
 \href{https://en.wikipedia.org/wiki/Restriction_enzyme}{:Restriction
 endonucleases} (RE) cleave the DNA by digesting the
 \href{https://en.wikipedia.org/wiki/Phosphodiester_bond}{:phosphodiester
@@ -789,6 +825,14 @@ fragments, where the size is the number of nucleotides of each fragment.
 For more explanations on the basic commands in the command line we
 suggest to visit the first chapters of \emph{Computing skills for
 biologist} from Allesina and Wilmes (2019)
+
+A list of reading for this section:
+
+Dudley and Butte (2009)
+
+Perkel et al. (2021)
+
+Brandies and Hogg (2021)
 
 \hypertarget{sec-vcs}{%
 \chapter{Version control}\label{sec-vcs}}
@@ -909,7 +953,7 @@ has its own code-icon \faIcon{code} to later copy the repo link and
 later hit \texttt{git\ clone\ \textless{}https...\textgreater{}} on the
 desired folder. Now you got a linked copy of the remote on your machine.
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-caution-color-frame, colbacktitle=quarto-callout-caution-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-caution-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}]
 But before working on a remote and pushing your first commits, it is
 common to find an error regarding the remote branch (also called
 \emph{origin}). There are several ways to avoid this caveat, but a very
@@ -940,7 +984,7 @@ Cloning is therefore the process of creating a local copy of remote
 repository, that is a machine version of the remote repo, later all the
 common local workflow is carried out normally Fig.~\ref{fig-cloning}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}]
 If you want to keep a file out of synchronization git provides a simple
 way to do so by creating a \texttt{.gitignore} file having the the paths
 to the files to keep in your local machine
@@ -999,6 +1043,13 @@ several could be used such as \href{}{Chocolatey} and
 
 \hypertarget{sec-hpc}{%
 \chapter{Notions of HPC}\label{sec-hpc}}
+
+\hypertarget{monitoring-my-computer}{%
+\section{Monitoring my computer}\label{monitoring-my-computer}}
+
+What is computer doing?
+
+\texttt{htop}
 
 \hypertarget{serial-computing}{%
 \section{Serial computing}\label{serial-computing}}
@@ -1071,18 +1122,16 @@ stored.
 \hypertarget{biological-information}{%
 \section{Biological information}\label{biological-information}}
 
-Since the origin, organisms (or molecules) are the result of different
-selective processes. An emergent property of successive iterations of
-survival/decease was the ability of molecules to keep a record of its
-past in a very stable manner, so that it will pass generation to
-generation. Although this might not be the first property or molecule to
-ever exist (see the
+Since the origin, organisms (or molecules) have been the result of
+different selective processes. An emergent property of successive
+iterations of survival/decease was the ability of molecules to keep a
+record of its past in a very stable manner, so that it will pass
+generation to generation. Although this might not be the first property
+or molecule to ever exist (see the
 \href{https://en.wikipedia.org/wiki/Abiogenesis}{:origin of life}), the
 innovation of organisms to pack information of previous events became so
 advantageous that almost any form of living organism has this property:
-that is DNA Fig.~\ref{fig-chromosome}.
-
-DNA
+that is DNA.
 
 \begin{figure}
 
@@ -1099,30 +1148,140 @@ chromosome}}
 
 \end{figure}
 
+Almost any living organism harbor DNA in a nucleus or chromosome, which
+is a very compacted structure that could be actually seen to naked eye
+in some species. It so arranged or condensed Fig.~\ref{fig-chromosome}
+that it is the result of multiple compacting strategies.
+
 \hypertarget{the-duality-of-dna}{%
 \section{The duality of DNA}\label{the-duality-of-dna}}
 
-DNA is an organic molecule build upon several more organic bricks named
-nucleotides arranged in a very compacted helix structure and too much
-can be understood from its molecular nature. It is of course governed by
-the physicochemical properties of the atoms, therefore DNA is a
-physicochemical entity. But those common bricks have also a very
-beautiful emergent property that comes out from their order (mainly),
-and that is to keep the instructions that build the organism from which
-it belongs. These instructions are nothing else than information, which
-also follow some informational rules. Then DNA is also an informational
-entity.
+DNA is an organic molecule of
+\href{https://en.wikipedia.org/wiki/Nucleic_acid}{:nucleic acids} that
+is mainly build out of nitrogen-containing compounds
+(\href{https://en.wikipedia.org/wiki/Nucleobase}{:nucleobases}) or just
+bases.The four bases are adenine (A), cytosine (C), guanine (G) and (T)
+and they bind strictly as \(A=T\) and \(C\equiv{G}\) where each of the
+lines represents an hydrogen bond.
+
+DNA nitrogenous bases of are arranged in a very compacted helix
+structure and too much can be understood from its molecular nature. It
+is of course governed by the physicochemical properties of the atoms,
+therefore DNA is a physicochemical entity. But those common bricks have
+also a very beautiful emergent property that comes out from their order
+(mainly), and that is to keep the instructions that build the organism
+from which it belongs. These instructions are nothing else than
+information, which also follow some informational rules. Then DNA is
+also an informational entity.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\textwidth,height=\textheight]{chs-sequence-analysis/imgs-seqan/dna-structure.png}
+
+}
+
+\caption{\label{fig-doublehelix}DNA double helix structure and main
+characteristics. Image adapted from Brown (2018) showing the structure
+with the \emph{sugar--phosphate backbone of each polynucleotide drawn as
+a gray ribbon with the base pairs in green}}
+
+\end{figure}
+
+The description of DNA bases helped the elucidation of the helicoidal
+structure as well as the elucidation of the base pairing rules of the
+nucleotides Fig.~\ref{fig-nucleotides}, also called the Chargaff's rules
+of base pairing. The first outstanding feature of the DNA structure was
+indeed highlighted by Watson and Crick in its famous paper about a
+subtle mechanism of replication. The
+
+\begin{marginfigure}
+
+{\centering \includegraphics{chs-sequence-analysis/imgs-seqan/phosphdiester.png}
+
+}
+
+\caption{\label{fig-phosphodiester}A phosphodiester bond bind two
+nitrogenous bases as in the backbone of the DNA helix}
+
+\end{marginfigure}
 
 This idea of the duality of the DNA (and of course of other biological
-molecules) is the source of the study of many bioinformatic fields
-\textbf{?@fig-biofields}.
+molecules as well) is the source of the study of many bioinformatic
+fields. But a question remains open: how do we capture the informational
+nature of a DNA sequence so that we end up with a sequential file of
+characters \texttt{ATCGCTATC...}. This is not a trivial question in
+fact.
 
-\includegraphics{chs-sequence-analysis/.pdf}
+\begin{figure}
+
+\begin{minipage}[t]{0.43\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{chs-sequence-analysis/imgs-seqan/guanine-cytosine.png}
+
+}
+
+}
+
+\subcaption{\label{fig-gc}Guanine and cytosine base pair}
+\end{minipage}%
+%
+\begin{minipage}[t]{0.05\linewidth}
+
+{\centering 
+
+~
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.51\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{chs-sequence-analysis/imgs-seqan/adenine-thymine.png}
+
+}
+
+}
+
+\subcaption{\label{fig-at}Adenine and thymine base pair}
+\end{minipage}%
+
+\caption{\label{fig-nucleotides}Most common nucleotides present in DNA
+and the chemical interactions that bond each pair.}
+
+\end{figure}
 
 \hypertarget{the-central-dogma-theory-of-molecular-biology-extended}{%
 \section{\texorpdfstring{The central \sout{dogma} theory of molecular
 biology
 extended}{The central dogma theory of molecular biology extended}}\label{the-central-dogma-theory-of-molecular-biology-extended}}
+
+So far we have addressed that DNA is a very stable molecule that stores
+biological (i.e., evolutionary) information. Also, that DNA could
+represent a sequential object of characters as in a computer digital
+object or file as well. But how is it that this order has an underlying
+biological sense? This was a very though question that required the
+accumulation of many experimental discoveries and the meeting of
+genetics and molecular biology.
+
+\begin{figure}
+
+{\centering \includegraphics{chs-sequence-analysis/imgs-seqan/central-theory-mb.png}
+
+}
+
+\caption{\label{fig-central-mb}An extended representation of the central
+theory of molecular biology. Image from Mäkinen et al. (2015)}
+
+\end{figure}
 
 \hypertarget{sequencing-strategies}{%
 \section{Sequencing strategies}\label{sequencing-strategies}}
@@ -1134,41 +1293,212 @@ extended}{The central dogma theory of molecular biology extended}}\label{the-cen
 \section{Some insights from sequencing
 genomes}\label{some-insights-from-sequencing-genomes}}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenge}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
-How many complete genomes of Bacillus subtilis are there in the NCBI
-databases?
-
-Count the number of features (genes, CDS, ncRNA, rRNA, etc.) in the
-genome of Bacillus subtilis NCIB 3610 (GCF\_002055965.1)
-
-Document each of the steps and how did you end up with the answer.
-Saving the file with your initials (e.g.,
-CG-activity01.\{md,txt,docx\})z
-\end{tcolorbox}
-
 \hypertarget{biological-information-databases}{%
 \section{Biological information
 databases}\label{biological-information-databases}}
+
+\hypertarget{retrieving-data-from-ncbi}{%
+\section{Retrieving data from NCBI}\label{retrieving-data-from-ncbi}}
+
+Inforation or databases inside the NCBI comes in many different ways.
+Perhaps the most used file format in bioinformatics is the
+\texttt{FASTA} format. It is a very simple format that consist of two
+lines, the header which is basically noted by starting with the
+\texttt{\textgreater{}} symbol and is always preceding the sequence,
+that is present in the second line.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, rightrule=.15mm, colback=white, bottomrule=.15mm, opacityback=0, colframe=quarto-callout-color-frame, leftrule=.75mm, left=2mm, toprule=.15mm]
+
+\begin{verbatim}
+>sequence
+ATCCCTAGCTAGCTCGCTATCGATCATCCCTAGCTAGCTCGCTATCGATCATCCCTAGCTAGCTCG...
+\end{verbatim}
+
+\end{tcolorbox}
+
+\hypertarget{the-manual-way}{%
+\subsection{The manual way}\label{the-manual-way}}
+
+\hypertarget{entrez-direct}{%
+\subsection{Entrez direct}\label{entrez-direct}}
+
+We first need to install the
+\href{https://www.ncbi.nlm.nih.gov/books/NBK25501/}{Entrez Direct}
+command line utilities. This could be done in several ways, one
+suggested by the manual and a very simple one using conda (mamba).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{mamba}\NormalTok{ create }\AttributeTok{{-}y}\NormalTok{ –n entrez entrez}
+\end{Highlighting}
+\end{Shaded}
+
+This line will create a new conda environment called \emph{entrez} and
+will automatically install all dependencies. We later activate the
+environment with \texttt{conda\ activate\ entrez} and then we got the
+entire Entrez CLI utilities.
+
+There are several commands and its function is to interact with the NCBI
+databases system. It is, however, a very huge set of utilities and
+commands to cope with at first, so the learning curve is somehow steppe.
+Here is a way to download the \emph{Bacillus tequilensis} EA-CB0015
+genome with a line of code that interleave three of the main commands of
+Entrez:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{esearch} \AttributeTok{{-}db}\NormalTok{ assembly }\AttributeTok{{-}query}\NormalTok{ GCF\_012225885.1 }\KeywordTok{|}
+\ExtensionTok{elink}   \AttributeTok{{-}target}\NormalTok{ nucleotide }\AttributeTok{{-}name}\NormalTok{ assembly\_nuccore\_refseq }\KeywordTok{|} 
+\ExtensionTok{efetch}  \AttributeTok{{-}format}\NormalTok{ fasta }\OperatorTok{\textgreater{}}\NormalTok{ GCF\_012225885.1.fasta}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{simpler-download-programs}{%
+\subsection{Simpler download programs}\label{simpler-download-programs}}
+
+Since the manual way is clumsy when scaling and automating, and the
+\texttt{entrez-direct} utilities are somehow hard at first hand, some
+bioinformaticians have already thought ways to ease users the hard of
+knowing the NCBI internal database structure and to resume many of the
+utlities to just a `download' command out from what in entrez is
+distributed in search, filter, and download commands.
+
+A very nice command to download genomes is the
+\href{https://github.com/AstrobioMike/bit\#bioinformatics-tools-bit}{\texttt{bit-dl-ncbi-assemblies}}
+from \href{https://github.com/AstrobioMike}{Mike Lee}, who has also made
+a remarkable work to bring many bioiformatic knowledge to newcomers.
+Similarly and quite more robust is the
+\href{https://github.com/kblin/ncbi-genome-download}{\texttt{ncbi-genome-download}}
+CLI (or abbreviated as \texttt{ngd}) developed by
+\href{https://github.com/kblin}{Kai Blin}
+
+{\marginnote{\begin{footnotesize}When navigating the NCBI databases some
+data is being curated and continuously updated by the execution of
+annotation tools. The refseq database is precisely the one that is more
+curated. For the case of genomes the accession number of those that
+belong to the refseq category are start with \textbf{GCF} ids, whereas
+the annotated genomes from the genbank category display the \textbf{GCA}
+ids\end{footnotesize}}}
+
+Using \texttt{ngd} to download a complete genome using the refeseq or
+genbank accession numbers, would be as easy as:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{ngd} \AttributeTok{{-}{-}format}\NormalTok{ fasta }\AttributeTok{{-}{-}flat{-}output} \AttributeTok{{-}A}\NormalTok{ GCF\_002055965.1 bacteria}
+\end{Highlighting}
+\end{Shaded}
+
+The one-line will download the refeseq genome of the \emph{Bacillus
+tequilenis} EA-CB0015 in a fasta nucleotide format. the
+\texttt{-\/-flat-option} from the script will handle out extra metadata
+of the search and will download strictly the data.
+
+It is important to highlight that these simpler scripts are focused on
+genomic information, so that direct downloads of genes, proteins,
+transcripts, and many other kind of data must be done with
+\texttt{entrez} or other programs. Some recent efforts have been made to
+create a more robust CLI to interact with different databases, but in a
+very easy and intuitive way, such as the
+\href{https://github.com/pachterlab/gget}{\texttt{gget}} project. It is
+more focused on vertebrate databases, but also has a port to NCBI,
+UniProt and other databases. And is very simple. Here is an example to
+download all the isoforms in a multi-fasta format of the cancer-related
+gene BRCA2 in a human genome (GRCh38.p13):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{gget}\NormalTok{ seq }\AttributeTok{{-}iso} \AttributeTok{{-}o}\NormalTok{ BRCA2.fasta ENSG00000139618}
+\end{Highlighting}
+\end{Shaded}
+
+It is establishing a connection with the
+\href{https://www.ensembl.org/index.html}{Ensemble} database, which is
+focused on vertebrate genome and transcriptome data.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Challenge}]
+Professor Camilo is interested on knowing how many complete genomes of
+\emph{Bacillus subtilis} are there in the NCBI databases. He asks you
+later to count the number of features (genes, CDS, ncRNA, rRNA, etc.) in
+the genome of \emph{Bacillus subtilis} NCIB 3610 (GCF\_002055965.1). And
+tell you to document each of the steps and how did you end up with the
+answer. Saving the file with your initials (e.g., CG-activity01.md)
+\end{tcolorbox}
 
 \hypertarget{sec-sanger}{%
 \chapter{Sanger analysis}\label{sec-sanger}}
 
 \begin{quote}
-This is a section about one of the first gen sequencing tech, that is
-Sanger sequencing and its principles and evolution, strengths and
-limitations
+This is a section about perhaps one of the first generation sequencing
+technology, that is Sanger sequencing and its principles and evolution,
+strengths and limitations
 
-Also will be covering the bioinformatics side of the method: what kind
-of files we get out Sanger, how we process them and an important
+This chapter will also cover the bioinformatics side of the method: what
+kind of files we get out Sanger, how we process them and an important
 paradigm that came out from this sequence method.
+
+Finally we will dive into a study case that its very common in
+microbiology: the use of the 16S rRNA gene for taxonomy identification
 \end{quote}
 
-\hypertarget{sanger-sequencing-methods}{%
-\section{Sanger sequencing methods}\label{sanger-sequencing-methods}}
+\hypertarget{the-first-sequencing-methods}{%
+\section{The first sequencing
+methods}\label{the-first-sequencing-methods}}
+
+Back in 70s there two different methods aiming to determine the base
+sequences of DNA and they basically operated at the level of base per
+base reconstruction of the information. The most used during those days
+was so called
+\href{https://en.wikipedia.org/wiki/Maxam–Gilbert_sequencing}{:Maxam-Gilbert}
+method and the second one was precisely the chain termination method or
+dideoxy sequencing or more commonly nowadays
+\href{https://en.wikipedia.org/wiki/Sanger_sequencing}{:Sanger
+sequencing}. Both methods named after their creators. It was, however
+the Sanger method the one that gradually became the facto method and
+continue to be the standard for the next thirty years. In fact,
+assembled genomes before the 2000s were sequenced with Sanger method,
+which included the first draft of the Human genome and many other
+organism Brown (2018).
+
+\begin{marginfigure}
+
+{\centering \includegraphics{chs-sequence-analysis/imgs-seqan/dna-pol.png}
+
+}
+
+\caption{\label{fig-dna-pol}A globular structure of a bacterial DNA
+polymerase}
+
+\end{marginfigure}
 
 \hypertarget{the-chain-termination-method}{%
 \subsection{The chain termination
 method}\label{the-chain-termination-method}}
+
+To under stand the chain termination method is important have a clear
+view of the DNA structure and chemical reaction that enable its
+polymerization. Whe the
+
+\begin{figure}
+
+{\centering \includegraphics{chs-sequence-analysis/imgs-seqan/dideoxy-reaction.png}
+
+}
+
+\caption{\label{fig-dideoxy-reaction}The deoxy-ribose and dideoxy-ribose
+and consequences on the polymerization of a DNA strand}
+
+\end{figure}
+
+\hypertarget{fig-yt-sanger}{}
+\begin{marginfigure}
+
+\url{https://www.youtube.com/embed/Wgv9QhjLTC8}
+
+\label{fig-yt-sanger}A step-by-step of the Sanger sequencing method or
+the chain termination method.
+
+\end{marginfigure}
 
 \hypertarget{sanger-with-capillary-electrophoresis}{%
 \subsection{Sanger with capillary
@@ -1182,12 +1512,86 @@ methods}\label{strengths-and-limitations-of-sanger-methods}}
 \section{Files from Sanger
 sequencing}\label{files-from-sanger-sequencing}}
 
+Several files are generated from a modern Sanger sequencing project.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, rightrule=.15mm, colback=white, bottomrule=.15mm, opacityback=0, colframe=quarto-callout-color-frame, leftrule=.75mm, left=2mm, toprule=.15mm]
+
+\begin{verbatim}
+BEGIN_SEQUENCE H200824-010_A11_455-WT_spo0B_spo0B-R
+
+BEGIN_COMMENT
+
+CHROMAT_FILE: H200824-010_A11_455-WT_spo0B_spo0B-R
+BASECALLER_VERSION: KB 1.4.0
+TRACE_PROCESSOR_VERSION: KB 1.4.0
+QUALITY_LEVELS: 99
+TIME: Mon Aug 24 22:05:23 2020
+TRACE_ARRAY_MIN_INDEX: 0
+TRACE_ARRAY_MAX_INDEX: 18141
+TRIM: -1 -1 -1.000000e+000
+TRACE_PEAK_AREA_RATIO: -1.000000e+000
+CHEM: term
+DYE: big
+
+END_COMMENT
+
+BEGIN_DNA
+C 7 3
+C 2 17
+T 3 44
+…
+END_DNA
+
+END_SEQUENCE
+\end{verbatim}
+
+\end{tcolorbox}
+
+However the most used file is the binary version \texttt{AB1} which
+could be red out from different programs including \href{}{cutepeaks}.
+It displays the DNA sequence along with its quality peak in each
+position Fig.~\ref{fig-ab1-trace}
+
+\begin{figure}
+
+{\centering \includegraphics{chs-sequence-analysis/imgs-seqan/ab1-trace.png}
+
+}
+
+\caption{\label{fig-ab1-trace}A graphic of the \texttt{AB1} file format
+from a Sanger sequencing project displayed in cutepeaks software}
+
+\end{figure}
+
 \hypertarget{sanger-processing-workflow}{%
 \section{Sanger processing workflow}\label{sanger-processing-workflow}}
+
+Despite being one of the oldest sequencing methods, Sanger sequencing
+has some remarkable strengths that are enable thanks to the automation
+era. For instance modern sequencers working in parallel can read almost
+384 different sequences (of 750bp) in 1h (7Mb in 24h per machine),
+clearly automation introduces a second advantage and that is the
+low-price of sequencing small fragments Brown (2018). It is important to
+highlight some limitations as well like the necessity of round-the-clock
+technical support (this also leverages a little bit from robotic
+operators though). The error-free Sanger sequencing requires at least 5X
+of sample coverage, which could be seen as disadvantage too Brown
+(2018).
 
 \hypertarget{the-16s-rrna-and-its-relevance-for-sequencing}{%
 \section{The 16S rRNA and its relevance for
 sequencing}\label{the-16s-rrna-and-its-relevance-for-sequencing}}
+
+\begin{marginfigure}
+
+{\centering \includegraphics[width=0.8\textwidth,height=\textheight]{chs-sequence-analysis/imgs-seqan/16-rRNA.png}
+
+}
+
+\caption{\label{fig-16-rna}\emph{Bacillus subtilis} subsp.
+\emph{subtilis} str. 168 bacterial SSU 16S rRNA}
+
+\end{marginfigure}
 
 \hypertarget{sec-aliignments}{%
 \chapter{Sequence alignments}\label{sec-aliignments}}
@@ -1234,31 +1638,6 @@ during several generations to generate true homologs
 \hypertarget{multiple-sequence-alignments}{%
 \section{Multiple sequence
 alignments}\label{multiple-sequence-alignments}}
-
-\hypertarget{sec-phylogenetics}{%
-\chapter{Phylogenetics}\label{sec-phylogenetics}}
-
-\hypertarget{what-is-a-phylogenetic-tree}{%
-\section{What is a phylogenetic
-tree}\label{what-is-a-phylogenetic-tree}}
-
-\hypertarget{mehtods-for-phylogenetic-reconstruction}{%
-\section{Mehtods for phylogenetic
-reconstruction}\label{mehtods-for-phylogenetic-reconstruction}}
-
-\hypertarget{building-a-phylogenetic-reconstruction}{%
-\section{Building a phylogenetic
-reconstruction}\label{building-a-phylogenetic-reconstruction}}
-
-\hypertarget{evolutionary-substitution-model}{%
-\subsection{Evolutionary substitution
-model}\label{evolutionary-substitution-model}}
-
-\hypertarget{maximum-likelihood}{%
-\subsection{Maximum likelihood}\label{maximum-likelihood}}
-
-\hypertarget{bayesian-inference}{%
-\subsection{Bayesian inference}\label{bayesian-inference}}
 
 \hypertarget{sec-ngs-tgs}{%
 \chapter{NGS and TGS: principles}\label{sec-ngs-tgs}}
@@ -1508,7 +1887,7 @@ intrinsically-disordered proteins that change in its tertiary structures
 quite frequently, therefore it prediction could be
 troublesome.\end{footnotesize}}}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, leftrule=.75mm, breakable, titlerule=0mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Exercise 01}, colback=white, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, coltitle=black, bottomrule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, breakable, arc=.35mm, bottomtitle=1mm, colback=white, opacitybacktitle=0.6, opacityback=0, toprule=.15mm, left=2mm, titlerule=0mm, toptitle=1mm, rightrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Exercise 01}]
 Submit 5lWM (JAK3) from the PDB on FASTA format on the
 \href{http://www.compbio.dundee.ac.uk/jpred/}{JPRED} and
 \href{http://bioinf.cs.ucl.ac.uk/psipred/}{PSIPRED} and compared with
@@ -1549,8 +1928,8 @@ visualization.
 \chapter*{Unix challenges}\label{unix-challenges}}
 \addcontentsline{toc}{chapter}{Unix challenges}
 
-\hypertarget{motif-search}{%
-\section*{Motif search}\label{motif-search}}
+\hypertarget{sec-motifsearch}{%
+\section*{Motif search}\label{sec-motifsearch}}
 \addcontentsline{toc}{section}{Motif search}
 
 The first thing we must do to solve the
@@ -1680,6 +2059,13 @@ RC regex will be
 \texttt{ACC(T\textbar{}G)(.)(T\textbar{}C)(T\textbar{}A)(.)(T\textbar{}A)TTTA"}
 and adding this regex to the search willl be:
 
+\begin{codelisting}
+
+\caption{A bash one-line that search a motif in a single genome file and
+printed the number of times it occurs}
+
+\hypertarget{lst-motif-search}{%
+\label{lst-motif-search}}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{tr} \AttributeTok{{-}d} \StringTok{\textquotesingle{}\textbackslash{}n\textquotesingle{}} \OperatorTok{\textless{}}\NormalTok{ data/Bteq{-}genome.fasta }\KeywordTok{|}
@@ -1688,15 +2074,20 @@ and adding this regex to the search willl be:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-      94
-\end{verbatim}
+\end{codelisting}
 
 \hypertarget{motif-search-in-multiple-files}{%
 \section*{Motif search in multiple
 files}\label{motif-search-in-multiple-files}}
 \addcontentsline{toc}{section}{Motif search in multiple files}
 
+\begin{codelisting}
+
+\caption{A bash script that recursively search a motif in genome files
+and printed for each file the number of times it occurs}
+
+\hypertarget{lst-recursive-motif-search}{%
+\label{lst-recursive-motif-search}}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\#! /usr/bin/env bash}
@@ -1715,12 +2106,366 @@ files}\label{motif-search-in-multiple-files}}
 \end{Highlighting}
 \end{Shaded}
 
+\end{codelisting}
+
 To execute the command make sure to pass a folder with the decompressed
 genomes as the first argument.
 
 \hypertarget{fragments-digestion}{%
 \section*{Fragments digestion}\label{fragments-digestion}}
 \addcontentsline{toc}{section}{Fragments digestion}
+
+The first thing we need to do to solve this challenge is to identify the
+motif of \href{https://en.wikipedia.org/wiki/EcoRV}{:\emph{EcoRV}}. As
+it is a very known enzyme its recognition motif is very clear, so it is
+then \texttt{5\textquotesingle{}-GAT\textbar{}ATC-3\textquotesingle{}}
+Restriction of these motifs generate blunt ends which are less efficient
+than sticky ends. So, lets search how many of these motifs appeared the
+SARS-CoV2 genome sequence. To do that we will use simply \texttt{grep}
+on a linearized form of the genome generated by \texttt{tr} (see
+\textbf{?@sec-motifsearch})
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tr} \AttributeTok{{-}d} \StringTok{"\textbackslash{}n"} \OperatorTok{\textless{}}\NormalTok{ data/Sarscov2{-}genome.fasta }\KeywordTok{|} \FunctionTok{grep} \AttributeTok{{-}o} \StringTok{"GATATC"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+GATATC
+GATATC
+GATATC
+GATATC
+GATATC
+\end{verbatim}
+
+Now we want to generate fragments as if the enzyme digest those motifs.
+A \emph{in silico} way to do this is simply generate new lines where the
+motif is recognized, using a search/replace strategy. One way to so is
+with \texttt{sed}. It is a tool for stream editing, in other words it
+will navigate a file searching for patterns and editing for a different
+one that is required. We need to find the motif and insert a new line so
+that it generate a file with the restricted fragments that will be in
+other terms:
+\texttt{sed\ \textquotesingle{}s/GATATC/GAT\textbackslash{}nATC/g}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tr} \AttributeTok{{-}d} \StringTok{"\textbackslash{}n"} \OperatorTok{\textless{}}\NormalTok{ data/Sarscov2{-}genome.fasta }\KeywordTok{|} \FunctionTok{sed} \StringTok{\textquotesingle{}s/GATATC/GAT\textbackslash{}nATC/g\textquotesingle{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+>NC_045512.2 Severe acute respiratory syndrome coronavirus 2 isolate Wuhan-Hu-1, complete genomeATTAAAGGTTTATACCTTCCCAGGTAACAAACCAACCAACTTTCGATCTCTTGTAGATCTGTTCTCTAAACGAACTTTAAAATCTGTGTGGCTGTCACTCGGCTGCATGCTTAGTGCACTCACGCAGTATAATTAATAACTAATTACTGTCGTTGACAGGACACGAGTAACTCGTCTATCTTCTGCAGGCTGCTTACGGTTTCGTCCGTGTTGCAGCCGATCATCAGCACATCTAGGTTTCGTCCGGGTGTGACCGAAAGGTAAGATGGAGAGCCTTGTCCCTGGTTTCAACGAGAAAACACACGTCCAACTCAGTTTGCCTGTTTTACAGGTTCGCGACGTGCTCGTACGTGGCTTTGGAGACTCCGTGGAGGAGGTCTTATCAGAGGCACGTCAACATCTTAAAGATGGCACTTGTGGCTTAGTAGAAGTTGAAAAAGGCGTTTTGCCTCAACTTGAACAGCCCTATGTGTTCATCAAACGTTCGGATGCTCGAACTGCACCTCATGGTCATGTTATGGTTGAGCTGGTAGCAGAACTCGAAGGCATTCAGTACGGTCGTAGTGGTGAGACACTTGGTGTCCTTGTCCCTCATGTGGGCGAAATACCAGTGGCTTACCGCAAGGTTCTTCTTCGTAAGAACGGTAATAAAGGAGCTGGTGGCCATAGTTACGGCGCCGATCTAAAGTCATTTGACTTAGGCGACGAGCTTGGCACTGATCCTTATGAAGATTTTCAAGAAAACTGGAACACTAAACATAGCAGTGGTGTTACCCGTGAACTCATGCGTGAGCTTAACGGAGGGGCATACACTCGCTATGTCGATAACAACTTCTGTGGCCCTGATGGCTACCCTCTTGAGTGCATTAAAGACCTTCTAGCACGTGCTGGTAAAGCTTCATGCACTTTGTCCGAACAACTGGACTTTATTGACACTAAGAGGGGTGTATACTGCTGCCGTGAACATGAGCATGAAATTGCTTGGTACACGGAACGTTCTGAAAAGAGCTATGAATTGCAGACACCTTTTGAAATTAAATTGGCAAAGAAATTTGACACCTTCAATGGGGAATGTCCAAATTTTGTATTTCCCTTAAATTCCATAATCAAGACTATTCAACCAAGGGTTGAAAAGAAAAAGCTTGATGGCTTTATGGGTAGAATTCGATCTGTCTATCCAGTTGCGTCACCAAATGAATGCAACCAAATGTGCCTTTCAACTCTCATGAAGTGTGATCATTGTGGTGAAACTTCATGGCAGACGGGCGATTTTGTTAAAGCCACTTGCGAATTTTGTGGCACTGAGAATTTGACTAAAGAAGGTGCCACTACTTGTGGTTACTTACCCCAAAATGCTGTTGTTAAAATTTATTGTCCAGCATGTCACAATTCAGAAGTAGGACCTGAGCATAGTCTTGCCGAATACCATAATGAATCTGGCTTGAAAACCATTCTTCGTAAGGGTGGTCGCACTATTGCCTTTGGAGGCTGTGTGTTCTCTTATGTTGGTTGCCATAACAAGTGTGCCTATTGGGTTCCACGTGCTAGCGCTAACATAGGTTGTAACCATACAGGTGTTGTTGGAGAAGGTTCCGAAGGTCTTAATGACAACCTTCTTGAAATACTCCAAAAAGAGAAAGTCAACATCAATATTGTTGGTGACTTTAAACTTAATGAAGAGATCGCCATTATTTTGGCATCTTTTTCTGCTTCCACAAGTGCTTTTGTGGAAACTGTGAAAGGTTTGGATTATAAAGCATTCAAACAAATTGTTGAATCCTGTGGTAATTTTAAAGTTACAAAAGGAAAAGCTAAAAAAGGTGCCTGGAATATTGGTGAACAGAAATCAATACTGAGTCCTCTTTATGCATTTGCATCAGAGGCTGCTCGTGTTGTACGATCAATTTTCTCCCGCACTCTTGAAACTGCTCAAAATTCTGTGCGTGTTTTACAGAAGGCCGCTATAACAATACTAGATGGAATTTCACAGTATTCACTGAGACTCATTGATGCTATGATGTTCACATCTGATTTGGCTACTAACAATCTAGTTGTAATGGCCTACATTACAGGTGGTGTTGTTCAGTTGACTTCGCAGTGGCTAACTAACATCTTTGGCACTGTTTATGAAAAACTCAAACCCGTCCTTGATTGGCTTGAAGAGAAGTTTAAGGAAGGTGTAGAGTTTCTTAGAGACGGTTGGGAAATTGTTAAATTTATCTCAACCTGTGCTTGTGAAATTGTCGGTGGACAAATTGTCACCTGTGCAAAGGAAATTAAGGAGAGTGTTCAGACATTCTTTAAGCTTGTAAATAAATTTTTGGCTTTGTGTGCTGACTCTATCATTATTGGTGGAGCTAAACTTAAAGCCTTGAATTTAGGTGAAACATTTGTCACGCACTCAAAGGGATTGTACAGAAAGTGTGTTAAATCCAGAGAAGAAACTGGCCTACTCATGCCTCTAAAAGCCCCAAAAGAAATTATCTTCTTAGAGGGAGAAACACTTCCCACAGAAGTGTTAACAGAGGAAGTTGTCTTGAAAACTGGTGATTTACAACCATTAGAACAACCTACTAGTGAAGCTGTTGAAGCTCCATTGGTTGGTACACCAGTTTGTATTAACGGGCTTATGTTGCTCGAAATCAAAGACACAGAAAAGTACTGTGCCCTTGCACCTAATATGATGGTAACAAACAATACCTTCACACTCAAAGGCGGTGCACCAACAAAGGTTACTTTTGGTGATGACACTGTGATAGAAGTGCAAGGTTACAAGAGTGTGAATATCACTTTTGAACTTGATGAAAGGATTGATAAAGTACTTAATGAGAAGTGCTCTGCCTATACAGTTGAACTCGGTACAGAAGTAAATGAGTTCGCCTGTGTTGTGGCAGATGCTGTCATAAAAACTTTGCAACCAGTATCTGAATTACTTACACCACTGGGCATTGATTTAGATGAGTGGAGTATGGCTACATACTACTTATTTGATGAGTCTGGTGAGTTTAAATTGGCTTCACATATGTATTGTTCTTTCTACCCTCCAGATGAGGATGAAGAAGAAGGTGATTGTGAAGAAGAAGAGTTTGAGCCATCAACTCAATATGAGTATGGTACTGAAGATGATTACCAAGGTAAACCTTTGGAATTTGGTGCCACTTCTGCTGCTCTTCAACCTGAAGAAGAGCAAGAAGAAGATTGGTTAGATGATGATAGTCAACAAACTGTTGGTCAACAAGACGGCAGTGAGGACAATCAGACAACTACTATTCAAACAATTGTTGAGGTTCAACCTCAATTAGAGATGGAACTTACACCAGTTGTTCAGACTATTGAAGTGAATAGTTTTAGTGGTTATTTAAAACTTACTGACAATGTATACATTAAAAATGCAGACATTGTGGAAGAAGCTAAAAAGGTAAAACCAACAGTGGTTGTTAATGCAGCCAATGTTTACCTTAAACATGGAGGAGGTGTTGCAGGAGCCTTAAATAAGGCTACTAACAATGCCATGCAAGTTGAATCTGATGATTACATAGCTACTAATGGACCACTTAAAGTGGGTGGTAGTTGTGTTTTAAGCGGACACAATCTTGCTAAACACTGTCTTCATGTTGTCGGCCCAAATGTTAACAAAGGTGAAGACATTCAACTTCTTAAGAGTGCTTATGAAAATTTTAATCAGCACGAAGTTCTACTTGCACCATTATTATCAGCTGGTATTTTTGGTGCTGACCCTATACATTCTTTAAGAGTTTGTGTAGATACTGTTCGCACAAATGTCTACTTAGCTGTCTTTGATAAAAATCTCTATGACAAACTTGTTTCAAGCTTTTTGGAAATGAAGAGTGAAAAGCAAGTTGAACAAAAGATCGCTGAGATTCCTAAAGAGGAAGTTAAGCCATTTATAACTGAAAGTAAACCTTCAGTTGAACAGAGAAAACAAGATGATAAGAAAATCAAAGCTTGTGTTGAAGAAGTTACAACAACTCTGGAAGAAACTAAGTTCCTCACAGAAAACTTGTTACTTTATATTGACATTAATGGCAATCTTCATCCAGATTCTGCCACTCTTGTTAGTGACATTGACATCACTTTCTTAAAGAAAGATGCTCCATATATAGTGGGTGATGTTGTTCAAGAGGGTGTTTTAACTGCTGTGGTTATACCTACTAAAAAGGCTGGTGGCACTACTGAAATGCTAGCGAAAGCTTTGAGAAAAGTGCCAACAGACAATTATATAACCACTTACCCGGGTCAGGGTTTAAATGGTTACACTGTAGAGGAGGCAAAGACAGTGCTTAAAAAGTGTAAAAGTGCCTTTTACATTCTACCATCTATTATCTCTAATGAGAAGCAAGAAATTCTTGGAACTGTTTCTTGGAATTTGCGAGAAATGCTTGCACATGCAGAAGAAACACGCAAATTAATGCCTGTCTGTGTGGAAACTAAAGCCATAGTTTCAACTATACAGCGTAAATATAAGGGTATTAAAATACAAGAGGGTGTGGTTGATTATGGTGCTAGATTTTACTTTTACACCAGTAAAACAACTGTAGCGTCACTTATCAACACACTTAACGATCTAAATGAAACTCTTGTTACAATGCCACTTGGCTATGTAACACATGGCTTAAATTTGGAAGAAGCTGCTCGGTATATGAGATCTCTCAAAGTGCCAGCTACAGTTTCTGTTTCTTCACCTGATGCTGTTACAGCGTATAATGGTTATCTTACTTCTTCTTCTAAAACACCTGAAGAACATTTTATTGAAACCATCTCACTTGCTGGTTCCTATAAAGATTGGTCCTATTCTGGACAATCTACACAACTAGGTATAGAATTTCTTAAGAGAGGTGATAAAAGTGTATATTACACTAGTAATCCTACCACATTCCACCTAGATGGTGAAGTTATCACCTTTGACAATCTTAAGACACTTCTTTCTTTGAGAGAAGTGAGGACTATTAAGGTGTTTACAACAGTAGACAACATTAACCTCCACACGCAAGTTGTGGACATGTCAATGACATATGGACAACAGTTTGGTCCAACTTATTTGGATGGAGCTGATGTTACTAAAATAAAACCTCATAATTCACATGAAGGTAAAACATTTTATGTTTTACCTAATGATGACACTCTACGTGTTGAGGCTTTTGAGTACTACCACACAACTGATCCTAGTTTTCTGGGTAGGTACATGTCAGCATTAAATCACACTAAAAAGTGGAAATACCCACAAGTTAATGGTTTAACTTCTATTAAATGGGCAGATAACAACTGTTATCTTGCCACTGCATTGTTAACACTCCAACAAATAGAGTTGAAGTTTAATCCACCTGCTCTACAAGATGCTTATTACAGAGCAAGGGCTGGTGAAGCTGCTAACTTTTGTGCACTTATCTTAGCCTACTGTAATAAGACAGTAGGTGAGTTAGGTGATGTTAGAGAAACAATGAGTTACTTGTTTCAACATGCCAATTTAGATTCTTGCAAAAGAGTCTTGAACGTGGTGTGTAAAACTTGTGGACAACAGCAGACAACCCTTAAGGGTGTAGAAGCTGTTATGTACATGGGCACACTTTCTTATGAACAATTTAAGAAAGGTGTTCAGATACCTTGTACGTGTGGTAAACAAGCTACAAAATATCTAGTACAACAGGAGTCACCTTTTGTTATGATGTCAGCACCACCTGCTCAGTATGAACTTAAGCATGGTACATTTACTTGTGCTAGTGAGTACACTGGTAATTACCAGTGTGGTCACTATAAACATATAACTTCTAAAGAAACTTTGTATTGCATAGACGGTGCTTTACTTACAAAGTCCTCAGAATACAAAGGTCCTATTACGGATGTTTTCTACAAAGAAAACAGTTACACAACAACCATAAAACCAGTTACTTATAAATTGGATGGTGTTGTTTGTACAGAAATTGACCCTAAGTTGGACAATTATTATAAGAAAGACAATTCTTATTTCACAGAGCAACCAATTGATCTTGTACCAAACCAACCATATCCAAACGCAAGCTTCGATAATTTTAAGTTTGTATGTGATAATATCAAATTTGCTGATGATTTAAACCAGTTAACTGGTTATAAGAAACCTGCTTCAAGAGAGCTTAAAGTTACATTTTTCCCTGACTTAAATGGTGATGTGGTGGCTATTGATTATAAACACTACACACCCTCTTTTAAGAAAGGAGCTAAATTGTTACATAAACCTATTGTTTGGCATGTTAACAATGCAACTAATAAAGCCACGTATAAACCAAATACCTGGTGTATACGTTGTCTTTGGAGCACAAAACCAGTTGAAACATCAAATTCGTTTGATGTACTGAAGTCAGAGGACGCGCAGGGAATGGATAATCTTGCCTGCGAAGATCTAAAACCAGTCTCTGAAGAAGTAGTGGAAAATCCTACCATACAGAAAGACGTTCTTGAGTGTAATGTGAAAACTACCGAAGTTGTAGGAGACATTATACTTAAACCAGCAAATAATAGTTTAAAAATTACAGAAGAGGTTGGCCACACAGATCTAATGGCTGCTTATGTAGACAATTCTAGTCTTACTATTAAGAAACCTAATGAATTATCTAGAGTATTAGGTTTGAAAACCCTTGCTACTCATGGTTTAGCTGCTGTTAATAGTGTCCCTTGGGATACTATAGCTAATTATGCTAAGCCTTTTCTTAACAAAGTTGTTAGTACAACTACTAACATAGTTACACGGTGTTTAAACCGTGTTTGTACTAATTATATGCCTTATTTCTTTACTTTATTGCTACAATTGTGTACTTTTACTAGAAGTACAAATTCTAGAATTAAAGCATCTATGCCGACTACTATAGCAAAGAATACTGTTAAGAGTGTCGGTAAATTTTGTCTAGAGGCTTCATTTAATTATTTGAAGTCACCTAATTTTTCTAAACTGATAAATATTATAATTTGGTTTTTACTATTAAGTGTTTGCCTAGGTTCTTTAATCTACTCAACCGCTGCTTTAGGTGTTTTAATGTCTAATTTAGGCATGCCTTCTTACTGTACTGGTTACAGAGAAGGCTATTTGAACTCTACTAATGTCACTATTGCAACCTACTGTACTGGTTCTATACCTTGTAGTGTTTGTCTTAGTGGTTTAGATTCTTTAGACACCTATCCTTCTTTAGAAACTATACAAATTACCATTTCATCTTTTAAATGGGATTTAACTGCTTTTGGCTTAGTTGCAGAGTGGTTTTTGGCATATATTCTTTTCACTAGGTTTTTCTATGTACTTGGATTGGCTGCAATCATGCAATTGTTTTTCAGCTATTTTGCAGTACATTTTATTAGTAATTCTTGGCTTATGTGGTTAATAATTAATCTTGTACAAATGGCCCCGATTTCAGCTATGGTTAGAATGTACATCTTCTTTGCATCATTTTATTATGTATGGAAAAGTTATGTGCATGTTGTAGACGGTTGTAATTCATCAACTTGTATGATGTGTTACAAACGTAATAGAGCAACAAGAGTCGAATGTACAACTATTGTTAATGGTGTTAGAAGGTCCTTTTATGTCTATGCTAATGGAGGTAAAGGCTTTTGCAAACTACACAATTGGAATTGTGTTAATTGTGATACATTCTGTGCTGGTAGTACATTTATTAGTGATGAAGTTGCGAGAGACTTGTCACTACAGTTTAAAAGACCAATAAATCCTACTGACCAGTCTTCTTACATCGTTGATAGTGTTACAGTGAAGAATGGTTCCATCCATCTTTACTTTGATAAAGCTGGTCAAAAGACTTATGAAAGACATTCTCTCTCTCATTTTGTTAACTTAGACAACCTGAGAGCTAATAACACTAAAGGTTCATTGCCTATTAATGTTATAGTTTTTGATGGTAAATCAAAATGTGAAGAATCATCTGCAAAATCAGCGTCTGTTTACTACAGTCAGCTTATGTGTCAACCTATACTGTTACTAGATCAGGCATTAGTGTCTGATGTTGGTGATAGTGCGGAAGTTGCAGTTAAAATGTTTGATGCTTACGTTAATACGTTTTCATCAACTTTTAACGTACCAATGGAAAAACTCAAAACACTAGTTGCAACTGCAGAAGCTGAACTTGCAAAGAATGTGTCCTTAGACAATGTCTTATCTACTTTTATTTCAGCAGCTCGGCAAGGGTTTGTTGATTCAGATGTAGAAACTAAAGATGTTGTTGAATGTCTTAAATTGTCACATCAATCTGACATAGAAGTTACTGGCGATAGTTGTAATAACTATATGCTCACCTATAACAAAGTTGAAAACATGACACCCCGTGACCTTGGTGCTTGTATTGACTGTAGTGCGCGTCATATTAATGCGCAGGTAGCAAAAAGTCACAACATTGCTTTGATATGGAACGTTAAAGATTTCATGTCATTGTCTGAACAACTACGAAAACAAATACGTAGTGCTGCTAAAAAGAATAACTTACCTTTTAAGTTGACATGTGCAACTACTAGACAAGTTGTTAATGTTGTAACAACAAAGATAGCACTTAAGGGTGGTAAAATTGTTAATAATTGGTTGAAGCAGTTAATTAAAGTTACACTTGTGTTCCTTTTTGTTGCTGCTATTTTCTATTTAATAACACCTGTTCATGTCATGTCTAAACATACTGACTTTTCAAGTGAAATCATAGGATACAAGGCTATTGATGGTGGTGTCACTCGTGACATAGCATCTACAGATACTTGTTTTGCTAACAAACATGCTGATTTTGACACATGGTTTAGCCAGCGTGGTGGTAGTTATACTAATGACAAAGCTTGCCCATTGATTGCTGCAGTCATAACAAGAGAAGTGGGTTTTGTCGTGCCTGGTTTGCCTGGCACGATATTACGCACAACTAATGGTGACTTTTTGCATTTCTTACCTAGAGTTTTTAGTGCAGTTGGTAACATCTGTTACACACCATCAAAACTTATAGAGTACACTGACTTTGCAACATCAGCTTGTGTTTTGGCTGCTGAATGTACAATTTTTAAAGATGCTTCTGGTAAGCCAGTACCATATTGTTATGATACCAATGTACTAGAAGGTTCTGTTGCTTATGAAAGTTTACGCCCTGACACACGTTATGTGCTCATGGATGGCTCTATTATTCAATTTCCTAACACCTACCTTGAAGGTTCTGTTAGAGTGGTAACAACTTTTGATTCTGAGTACTGTAGGCACGGCACTTGTGAAAGATCAGAAGCTGGTGTTTGTGTATCTACTAGTGGTAGATGGGTACTTAACAATGATTATTACAGATCTTTACCAGGAGTTTTCTGTGGTGTAGATGCTGTAAATTTACTTACTAATATGTTTACACCACTAATTCAACCTATTGGTGCTTTGGACATATCAGCATCTATAGTAGCTGGTGGTATTGTAGCTATCGTAGTAACATGCCTTGCCTACTATTTTATGAGGTTTAGAAGAGCTTTTGGTGAATACAGTCATGTAGTTGCCTTTAATACTTTACTATTCCTTATGTCATTCACTGTACTCTGTTTAACACCAGTTTACTCATTCTTACCTGGTGTTTATTCTGTTATTTACTTGTACTTGACATTTTATCTTACTAATGATGTTTCTTTTTTAGCACATATTCAGTGGATGGTTATGTTCACACCTTTAGTACCTTTCTGGATAACAATTGCTTATATCATTTGTATTTCCACAAAGCATTTCTATTGGTTCTTTAGTAATTACCTAAAGAGACGTGTAGTCTTTAATGGTGTTTCCTTTAGTACTTTTGAAGAAGCTGCGCTGTGCACCTTTTTGTTAAATAAAGAAATGTATCTAAAGTTGCGTAGTGATGTGCTATTACCTCTTACGCAATATAATAGATACTTAGCTCTTTATAATAAGTACAAGTATTTTAGTGGAGCAATGGATACAACTAGCTACAGAGAAGCTGCTTGTTGTCATCTCGCAAAGGCTCTCAATGACTTCAGTAACTCAGGTTCTGATGTTCTTTACCAACCACCACAAACCTCTATCACCTCAGCTGTTTTGCAGAGTGGTTTTAGAAAAATGGCATTCCCATCTGGTAAAGTTGAGGGTTGTATGGTACAAGTAACTTGTGGTACAACTACACTTAACGGTCTTTGGCTTGATGACGTAGTTTACTGTCCAAGACATGTGATCTGCACCTCTGAAGACATGCTTAACCCTAATTATGAAGATTTACTCATTCGTAAGTCTAATCATAATTTCTTGGTACAGGCTGGTAATGTTCAACTCAGGGTTATTGGACATTCTATGCAAAATTGTGTACTTAAGCTTAAGGTTGATACAGCCAATCCTAAGACACCTAAGTATAAGTTTGTTCGCATTCAACCAGGACAGACTTTTTCAGTGTTAGCTTGTTACAATGGTTCACCATCTGGTGTTTACCAATGTGCTATGAGGCCCAATTTCACTATTAAGGGTTCATTCCTTAATGGTTCATGTGGTAGTGTTGGTTTTAACATAGATTATGACTGTGTCTCTTTTTGTTACATGCACCATATGGAATTACCAACTGGAGTTCATGCTGGCACAGACTTAGAAGGTAACTTTTATGGACCTTTTGTTGACAGGCAAACAGCACAAGCAGCTGGTACGGACACAACTATTACAGTTAATGTTTTAGCTTGGTTGTACGCTGCTGTTATAAATGGAGACAGGTGGTTTCTCAATCGATTTACCACAACTCTTAATGACTTTAACCTTGTGGCTATGAAGTACAATTATGAACCTCTAACACAAGACCATGTTGACATACTAGGACCTCTTTCTGCTCAAACTGGAATTGCCGTTTTAGATATGTGTGCTTCATTAAAAGAATTACTGCAAAATGGTATGAATGGACGTACCATATTGGGTAGTGCTTTATTAGAAGATGAATTTACACCTTTTGATGTTGTTAGACAATGCTCAGGTGTTACTTTCCAAAGTGCAGTGAAAAGAACAATCAAGGGTACACACCACTGGTTGTTACTCACAATTTTGACTTCACTTTTAGTTTTAGTCCAGAGTACTCAATGGTCTTTGTTCTTTTTTTTGTATGAAAATGCCTTTTTACCTTTTGCTATGGGTATTATTGCTATGTCTGCTTTTGCAATGATGTTTGTCAAACATAAGCATGCATTTCTCTGTTTGTTTTTGTTACCTTCTCTTGCCACTGTAGCTTATTTTAATATGGTCTATATGCCTGCTAGTTGGGTGATGCGTATTATGACATGGTTGGATATGGTTGATACTAGTTTGTCTGGTTTTAAGCTAAAAGACTGTGTTATGTATGCATCAGCTGTAGTGTTACTAATCCTTATGACAGCAAGAACTGTGTATGATGATGGTGCTAGGAGAGTGTGGACACTTATGAATGTCTTGACACTCGTTTATAAAGTTTATTATGGTAATGCTTTAGATCAAGCCATTTCCATGTGGGCTCTTATAATCTCTGTTACTTCTAACTACTCAGGTGTAGTTACAACTGTCATGTTTTTGGCCAGAGGTATTGTTTTTATGTGTGTTGAGTATTGCCCTATTTTCTTCATAACTGGTAATACACTTCAGTGTATAATGCTAGTTTATTGTTTCTTAGGCTATTTTTGTACTTGTTACTTTGGCCTCTTTTGTTTACTCAACCGCTACTTTAGACTGACTCTTGGTGTTTATGATTACTTAGTTTCTACACAGGAGTTTAGATATATGAATTCACAGGGACTACTCCCACCCAAGAATAGCATAGATGCCTTCAAACTCAACATTAAATTGTTGGGTGTTGGTGGCAAACCTTGTATCAAAGTAGCCACTGTACAGTCTAAAATGTCAGATGTAAAGTGCACATCAGTAGTCTTACTCTCAGTTTTGCAACAACTCAGAGTAGAATCATCATCTAAATTGTGGGCTCAATGTGTCCAGTTACACAATGACATTCTCTTAGCTAAAGATACTACTGAAGCCTTTGAAAAAATGGTTTCACTACTTTCTGTTTTGCTTTCCATGCAGGGTGCTGTAGACATAAACAAGCTTTGTGAAGAAATGCTGGACAACAGGGCAACCTTACAAGCTATAGCCTCAGAGTTTAGTTCCCTTCCATCATATGCAGCTTTTGCTACTGCTCAAGAAGCTTATGAGCAGGCTGTTGCTAATGGTGATTCTGAAGTTGTTCTTAAAAAGTTGAAGAAGTCTTTGAATGTGGCTAAATCTGAATTTGACCGTGATGCAGCCATGCAACGTAAGTTGGAAAAGATGGCTGATCAAGCTATGACCCAAATGTATAAACAGGCTAGATCTGAGGACAAGAGGGCAAAAGTTACTAGTGCTATGCAGACAATGCTTTTCACTATGCTTAGAAAGTTGGATAATGATGCACTCAACAACATTATCAACAATGCAAGAGATGGTTGTGTTCCCTTGAACATAATACCTCTTACAACAGCAGCCAAACTAATGGTTGTCATACCAGACTATAACACATATAAAAATACGTGTGATGGTACAACATTTACTTATGCATCAGCATTGTGGGAAATCCAACAGGTTGTAGATGCAGATAGTAAAATTGTTCAACTTAGTGAAATTAGTATGGACAATTCACCTAATTTAGCATGGCCTCTTATTGTAACAGCTTTAAGGGCCAATTCTGCTGTCAAATTACAGAATAATGAGCTTAGTCCTGTTGCACTACGACAGATGTCTTGTGCTGCCGGTACTACACAAACTGCTTGCACTGATGACAATGCGTTAGCTTACTACAACACAACAAAGGGAGGTAGGTTTGTACTTGCACTGTTATCCGATTTACAGGATTTGAAATGGGCTAGATTCCCTAAGAGTGATGGAACTGGTACTATCTATACAGAACTGGAACCACCTTGTAGGTTTGTTACAGACACACCTAAAGGTCCTAAAGTGAAGTATTTATACTTTATTAAAGGATTAAACAACCTAAATAGAGGTATGGTACTTGGTAGTTTAGCTGCCACAGTACGTCTACAAGCTGGTAATGCAACAGAAGTGCCTGCCAATTCAACTGTATTATCTTTCTGTGCTTTTGCTGTAGATGCTGCTAAAGCTTACAAAGATTATCTAGCTAGTGGGGGACAACCAATCACTAATTGTGTTAAGATGTTGTGTACACACACTGGTACTGGTCAGGCAATAACAGTTACACCGGAAGCCAATATGGATCAAGAATCCTTTGGTGGTGCATCGTGTTGTCTGTACTGCCGTTGCCACATAGATCATCCAAATCCTAAAGGATTTTGTGACTTAAAAGGTAAGTATGTACAAATACCTACAACTTGTGCTAATGACCCTGTGGGTTTTACACTTAAAAACACAGTCTGTACCGTCTGCGGTATGTGGAAAGGTTATGGCTGTAGTTGTGATCAACTCCGCGAACCCATGCTTCAGTCAGCTGATGCACAATCGTTTTTAAACGGGTTTGCGGTGTAAGTGCAGCCCGTCTTACACCGTGCGGCACAGGCACTAGTACTGATGTCGTATACAGGGCTTTTGACATCTACAATGATAAAGTAGCTGGTTTTGCTAAATTCCTAAAAACTAATTGTTGTCGCTTCCAAGAAAAGGACGAAGATGACAATTTAATTGATTCTTACTTTGTAGTTAAGAGACACACTTTCTCTAACTACCAACATGAAGAAACAATTTATAATTTACTTAAGGATTGTCCAGCTGTTGCTAAACATGACTTCTTTAAGTTTAGAATAGACGGTGACATGGTACCACATATATCACGTCAACGTCTTACTAAATACACAATGGCAGACCTCGTCTATGCTTTAAGGCATTTTGATGAAGGTAATTGTGACACATTAAAAGAAATACTTGTCACATACAATTGTTGTGATGATGATTATTTCAATAAAAAGGACTGGTATGATTTTGTAGAAAACCCAGATATATTACGCGTATACGCCAACTTAGGTGAACGTGTACGCCAAGCTTTGTTAAAAACAGTACAATTCTGTGATGCCATGCGAAATGCTGGTATTGTTGGTGTACTGACATTAGATAATCAAGATCTCAATGGTAACTGGTATGATTTCGGTGATTTCATACAAACCACGCCAGGTAGTGGAGTTCCTGTTGTAGATTCTTATTATTCATTGTTAATGCCTATATTAACCTTGACCAGGGCTTTAACTGCAGAGTCACATGTTGACACTGACTTAACAAAGCCTTACATTAAGTGGGATTTGTTAAAATATGACTTCACGGAAGAGAGGTTAAAACTCTTTGACCGTTATTTTAAATATTGGGATCAGACATACCACCCAAATTGTGTTAACTGTTTGGATGACAGATGCATTCTGCATTGTGCAAACTTTAATGTTTTATTCTCTACAGTGTTCCCACCTACAAGTTTTGGACCACTAGTGAGAAAAATATTTGTTGATGGTGTTCCATTTGTAGTTTCAACTGGATACCACTTCAGAGAGCTAGGTGTTGTACATAATCAGGATGTAAACTTACATAGCTCTAGACTTAGTTTTAAGGAATTACTTGTGTATGCTGCTGACCCTGCTATGCACGCTGCTTCTGGTAATCTATTACTAGATAAACGCACTACGTGCTTTTCAGTAGCTGCACTTACTAACAATGTTGCTTTTCAAACTGTCAAACCCGGTAATTTTAACAAAGACTTCTATGACTTTGCTGTGTCTAAGGGTTTCTTTAAGGAAGGAAGTTCTGTTGAATTAAAACACTTCTTCTTTGCTCAGGATGGTAATGCTGCTATCAGCGATTATGACTACTATCGTTATAATCTACCAACAATGTGTGAT
+ATCAGACAACTACTATTTGTAGTTGAAGTTGTTGATAAGTACTTTGATTGTTACGATGGTGGCTGTATTAATGCTAACCAAGTCATCGTCAACAACCTAGACAAATCAGCTGGTTTTCCATTTAATAAATGGGGTAAGGCTAGACTTTATTATGATTCAATGAGTTATGAGGATCAAGATGCACTTTTCGCATATACAAAACGTAATGTCATCCCTACTATAACTCAAATGAATCTTAAGTATGCCATTAGTGCAAAGAATAGAGCTCGCACCGTAGCTGGTGTCTCTATCTGTAGTACTATGACCAATAGACAGTTTCATCAAAAATTATTGAAATCAATAGCCGCCACTAGAGGAGCTACTGTAGTAATTGGAACAAGCAAATTCTATGGTGGTTGGCACAACATGTTAAAAACTGTTTATAGTGATGTAGAAAACCCTCACCTTATGGGTTGGGATTATCCTAAATGTGATAGAGCCATGCCTAACATGCTTAGAATTATGGCCTCACTTGTTCTTGCTCGCAAACATACAACGTGTTGTAGCTTGTCACACCGTTTCTATAGATTAGCTAATGAGTGTGCTCAAGTATTGAGTGAAATGGTCATGTGTGGCGGTTCACTATATGTTAAACCAGGTGGAACCTCATCAGGAGATGCCACAACTGCTTATGCTAATAGTGTTTTTAACATTTGTCAAGCTGTCACGGCCAATGTTAATGCACTTTTATCTACTGATGGTAACAAAATTGCCGATAAGTATGTCCGCAATTTACAACACAGACTTTATGAGTGTCTCTATAGAAATAGAGATGTTGACACAGACTTTGTGAATGAGTTTTACGCATATTTGCGTAAACATTTCTCAATGATGATACTCTCTGACGATGCTGTTGTGTGTTTCAATAGCACTTATGCATCTCAAGGTCTAGTGGCTAGCATAAAGAACTTTAAGTCAGTTCTTTATTATCAAAACAATGTTTTTATGTCTGAAGCAAAATGTTGGACTGAGACTGACCTTACTAAAGGACCTCATGAATTTTGCTCTCAACATACAATGCTAGTTAAACAGGGTGATGATTATGTGTACCTTCCTTACCCAGATCCATCAAGAATCCTAGGGGCCGGCTGTTTTGTAGATGAT
+ATCGTAAAAACAGATGGTACACTTATGATTGAACGGTTCGTGTCTTTAGCTATAGATGCTTACCCACTTACTAAACATCCTAATCAGGAGTATGCTGATGTCTTTCATTTGTACTTACAATACATAAGAAAGCTACATGATGAGTTAACAGGACACATGTTAGACATGTATTCTGTTATGCTTACTAATGATAACACTTCAAGGTATTGGGAACCTGAGTTTTATGAGGCTATGTACACACCGCATACAGTCTTACAGGCTGTTGGGGCTTGTGTTCTTTGCAATTCACAGACTTCATTAAGATGTGGTGCTTGCATACGTAGACCATTCTTATGTTGTAAATGCTGTTACGACCATGTCATATCAACATCACATAAATTAGTCTTGTCTGTTAATCCGTATGTTTGCAATGCTCCAGGTTGTGATGTCACAGATGTGACTCAACTTTACTTAGGAGGTATGAGCTATTATTGTAAATCACATAAACCACCCATTAGTTTTCCATTGTGTGCTAATGGACAAGTTTTTGGTTTATATAAAAATACATGTGTTGGTAGCGATAATGTTACTGACTTTAATGCAATTGCAACATGTGACTGGACAAATGCTGGTGATTACATTTTAGCTAACACCTGTACTGAAAGACTCAAGCTTTTTGCAGCAGAAACGCTCAAAGCTACTGAGGAGACATTTAAACTGTCTTATGGTATTGCTACTGTACGTGAAGTGCTGTCTGACAGAGAATTACATCTTTCATGGGAAGTTGGTAAACCTAGACCACCACTTAACCGAAATTATGTCTTTACTGGTTATCGTGTAACTAAAAACAGTAAAGTACAAATAGGAGAGTACACCTTTGAAAAAGGTGACTATGGTGATGCTGTTGTTTACCGAGGTACAACAACTTACAAATTAAATGTTGGTGATTATTTTGTGCTGACATCACATACAGTAATGCCATTAAGTGCACCTACACTAGTGCCACAAGAGCACTATGTTAGAATTACTGGCTTATACCCAACACTCAATATCTCAGATGAGTTTTCTAGCAATGTTGCAAATTATCAAAAGGTTGGTATGCAAAAGTATTCTACACTCCAGGGACCACCTGGTACTGGTAAGAGTCATTTTGCTATTGGCCTAGCTCTCTACTACCCTTCTGCTCGCATAGTGTATACAGCTTGCTCTCATGCCGCTGTTGATGCACTATGTGAGAAGGCATTAAAATATTTGCCTATAGATAAATGTAGTAGAATTATACCTGCACGTGCTCGTGTAGAGTGTTTTGATAAATTCAAAGTGAATTCAACATTAGAACAGTATGTCTTTTGTACTGTAAATGCATTGCCTGAGACGACAGCAGATATAGTTGTCTTTGATGAAATTTCAATGGCCACAAATTATGATTTGAGTGTTGTCAATGCCAGATTACGTGCTAAGCACTATGTGTACATTGGCGACCCTGCTCAATTACCTGCACCACGCACATTGCTAACTAAGGGCACACTAGAACCAGAATATTTCAATTCAGTGTGTAGACTTATGAAAACTATAGGTCCAGACATGTTCCTCGGAACTTGTCGGCGTTGTCCTGCTGAAATTGTTGACACTGTGAGTGCTTTGGTTTATGATAATAAGCTTAAAGCACATAAAGACAAATCAGCTCAATGCTTTAAAATGTTTTATAAGGGTGTTATCACGCATGATGTTTCATCTGCAATTAACAGGCCACAAATAGGCGTGGTAAGAGAATTCCTTACACGTAACCCTGCTTGGAGAAAAGCTGTCTTTATTTCACCTTATAATTCACAGAATGCTGTAGCCTCAAAGATTTTGGGACTACCAACTCAAACTGTTGATTCATCACAGGGCTCAGAATATGACTATGTCATATTCACTCAAACCACTGAAACAGCTCACTCTTGTAATGTAAACAGATTTAATGTTGCTATTACCAGAGCAAAAGTAGGCATACTTTGCATAATGTCTGATAGAGACCTTTATGACAAGTTGCAATTTACAAGTCTTGAAATTCCACGTAGGAATGTGGCAACTTTACAAGCTGAAAATGTAACAGGACTCTTTAAAGATTGTAGTAAGGTAATCACTGGGTTACATCCTACACAGGCACCTACACACCTCAGTGTTGACACTAAATTCAAAACTGAAGGTTTATGTGTTGACATACCTGGCATACCTAAGGACATGACCTATAGAAGACTCATCTCTATGATGGGTTTTAAAATGAATTATCAAGTTAATGGTTACCCTAACATGTTTATCACCCGCGAAGAAGCTATAAGACATGTACGTGCATGGATTGGCTTCGATGTCGAGGGGTGTCATGCTACTAGAGAAGCTGTTGGTACCAATTTACCTTTACAGCTAGGTTTTTCTACAGGTGTTAACCTAGTTGCTGTACCTACAGGTTATGTTGATACACCTAATAATACAGATTTTTCCAGAGTTAGTGCTAAACCACCGCCTGGAGATCAATTTAAACACCTCATACCACTTATGTACAAAGGACTTCCTTGGAATGTAGTGCGTATAAAGATTGTACAAATGTTAAGTGACACACTTAAAAATCTCTCTGACAGAGTCGTATTTGTCTTATGGGCACATGGCTTTGAGTTGACATCTATGAAGTATTTTGTGAAAATAGGACCTGAGCGCACCTGTTGTCTATGTGATAGACGTGCCACATGCTTTTCCACTGCTTCAGACACTTATGCCTGTTGGCATCATTCTATTGGATTTGATTACGTCTATAATCCGTTTATGATTGATGTTCAACAATGGGGTTTTACAGGTAACCTACAAAGCAACCATGATCTGTATTGTCAAGTCCATGGTAATGCACATGTAGCTAGTTGTGATGCAATCATGACTAGGTGTCTAGCTGTCCACGAGTGCTTTGTTAAGCGTGTTGACTGGACTATTGAATATCCTATAATTGGTGATGAACTGAAGATTAATGCGGCTTGTAGAAAGGTTCAACACATGGTTGTTAAAGCTGCATTATTAGCAGACAAATTCCCAGTTCTTCACGACATTGGTAACCCTAAAGCTATTAAGTGTGTACCTCAAGCTGATGTAGAATGGAAGTTCTATGATGCACAGCCTTGTAGTGACAAAGCTTATAAAATAGAAGAATTATTCTATTCTTATGCCACACATTCTGACAAATTCACAGATGGTGTATGCCTATTTTGGAATTGCAATGTCGATAGAT
+ATCCTGCTAATTCCATTGTTTGTAGATTTGACACTAGAGTGCTATCTAACCTTAACTTGCCTGGTTGTGATGGTGGCAGTTTGTATGTAAATAAACATGCATTCCACACACCAGCTTTTGATAAAAGTGCTTTTGTTAATTTAAAACAATTACCATTTTTCTATTACTCTGACAGTCCATGTGAGTCTCATGGAAAACAAGTAGTGTCAGATATAGATTATGTACCACTAAAGTCTGCTACGTGTATAACACGTTGCAATTTAGGTGGTGCTGTCTGTAGACATCATGCTAATGAGTACAGATTGTATCTCGATGCTTATAACATGATGATCTCAGCTGGCTTTAGCTTGTGGGTTTACAAACAATTTGATACTTATAACCTCTGGAACACTTTTACAAGACTTCAGAGTTTAGAAAATGTGGCTTTTAATGTTGTAAATAAGGGACACTTTGATGGACAACAGGGTGAAGTACCAGTTTCTATCATTAATAACACTGTTTACACAAAAGTTGATGGTGTTGATGTAGAATTGTTTGAAAATAAAACAACATTACCTGTTAATGTAGCATTTGAGCTTTGGGCTAAGCGCAACATTAAACCAGTACCAGAGGTGAAAATACTCAATAATTTGGGTGTGGACATTGCTGCTAATACTGTGATCTGGGACTACAAAAGAGATGCTCCAGCACATATATCTACTATTGGTGTTTGTTCTATGACTGACATAGCCAAGAAACCAACTGAAACGATTTGTGCACCACTCACTGTCTTTTTTGATGGTAGAGTTGATGGTCAAGTAGACTTATTTAGAAATGCCCGTAATGGTGTTCTTATTACAGAAGGTAGTGTTAAAGGTTTACAACCATCTGTAGGTCCCAAACAAGCTAGTCTTAATGGAGTCACATTAATTGGAGAAGCCGTAAAAACACAGTTCAATTATTATAAGAAAGTTGATGGTGTTGTCCAACAATTACCTGAAACTTACTTTACTCAGAGTAGAAATTTACAAGAATTTAAACCCAGGAGTCAAATGGAAATTGATTTCTTAGAATTAGCTATGGATGAATTCATTGAACGGTATAAATTAGAAGGCTATGCCTTCGAACATATCGTTTATGGAGATTTTAGTCATAGTCAGTTAGGTGGTTTACATCTACTGATTGGACTAGCTAAACGTTTTAAGGAATCACCTTTTGAATTAGAAGATTTTATTCCTATGGACAGTACAGTTAAAAACTATTTCATAACAGATGCGCAAACAGGTTCATCTAAGTGTGTGTGTTCTGTTATTGATTTATTACTTGATGATTTTGTTGAAATAATAAAATCCCAAGATTTATCTGTAGTTTCTAAGGTTGTCAAAGTGACTATTGACTATACAGAAATTTCATTTATGCTTTGGTGTAAAGATGGCCATGTAGAAACATTTTACCCAAAATTACAATCTAGTCAAGCGTGGCAACCGGGTGTTGCTATGCCTAATCTTTACAAAATGCAAAGAATGCTATTAGAAAAGTGTGACCTTCAAAATTATGGTGATAGTGCAACATTACCTAAAGGCATAATGATGAATGTCGCAAAATATACTCAACTGTGTCAATATTTAAACACATTAACATTAGCTGTACCCTATAATATGAGAGTTATACATTTTGGTGCTGGTTCTGATAAAGGAGTTGCACCAGGTACAGCTGTTTTAAGACAGTGGTTGCCTACGGGTACGCTGCTTGTCGATTCAGATCTTAATGACTTTGTCTCTGATGCAGATTCAACTTTGATTGGTGATTGTGCAACTGTACATACAGCTAATAAATGGGATCTCATTATTAGTGATATGTACGACCCTAAGACTAAAAATGTTACAAAAGAAAATGACTCTAAAGAGGGTTTTTTCACTTACATTTGTGGGTTTATACAACAAAAGCTAGCTCTTGGAGGTTCCGTGGCTATAAAGATAACAGAACATTCTTGGAATGCTGATCTTTATAAGCTCATGGGACACTTCGCATGGTGGACAGCCTTTGTTACTAATGTGAATGCGTCATCATCTGAAGCATTTTTAATTGGATGTAATTATCTTGGCAAACCACGCGAACAAATAGATGGTTATGTCATGCATGCAAATTACATATTTTGGAGGAATACAAATCCAATTCAGTTGTCTTCCTATTCTTTATTTGACATGAGTAAATTTCCCCTTAAATTAAGGGGTACTGCTGTTATGTCTTTAAAAGAAGGTCAAATCAATGATATGATTTTATCTCTTCTTAGTAAAGGTAGACTTATAATTAGAGAAAACAACAGAGTTGTTATTTCTAGTGATGTTCTTGTTAACAACTAAACGAACAATGTTTGTTTTTCTTGTTTTATTGCCACTAGTCTCTAGTCAGTGTGTTAATCTTACAACCAGAACTCAATTACCCCCTGCATACACTAATTCTTTCACACGTGGTGTTTATTACCCTGACAAAGTTTTCAGATCCTCAGTTTTACATTCAACTCAGGACTTGTTCTTACCTTTCTTTTCCAATGTTACTTGGTTCCATGCTATACATGTCTCTGGGACCAATGGTACTAAGAGGTTTGATAACCCTGTCCTACCATTTAATGATGGTGTTTATTTTGCTTCCACTGAGAAGTCTAACATAATAAGAGGCTGGATTTTTGGTACTACTTTAGATTCGAAGACCCAGTCCCTACTTATTGTTAATAACGCTACTAATGTTGTTATTAAAGTCTGTGAATTTCAATTTTGTAATGATCCATTTTTGGGTGTTTATTACCACAAAAACAACAAAAGTTGGATGGAAAGTGAGTTCAGAGTTTATTCTAGTGCGAATAATTGCACTTTTGAATATGTCTCTCAGCCTTTTCTTATGGACCTTGAAGGAAAACAGGGTAATTTCAAAAATCTTAGGGAATTTGTGTTTAAGAATATTGATGGTTATTTTAAAATATATTCTAAGCACACGCCTATTAATTTAGTGCGTGATCTCCCTCAGGGTTTTTCGGCTTTAGAACCATTGGTAGATTTGCCAATAGGTATTAACATCACTAGGTTTCAAACTTTACTTGCTTTACATAGAAGTTATTTGACTCCTGGTGATTCTTCTTCAGGTTGGACAGCTGGTGCTGCAGCTTATTATGTGGGTTATCTTCAACCTAGGACTTTTCTATTAAAATATAATGAAAATGGAACCATTACAGATGCTGTAGACTGTGCACTTGACCCTCTCTCAGAAACAAAGTGTACGTTGAAATCCTTCACTGTAGAAAAAGGAATCTATCAAACTTCTAACTTTAGAGTCCAACCAACAGAATCTATTGTTAGATTTCCTAATATTACAAACTTGTGCCCTTTTGGTGAAGTTTTTAACGCCACCAGATTTGCATCTGTTTATGCTTGGAACAGGAAGAGAATCAGCAACTGTGTTGCTGATTATTCTGTCCTATATAATTCCGCATCATTTTCCACTTTTAAGTGTTATGGAGTGTCTCCTACTAAATTAAATGATCTCTGCTTTACTAATGTCTATGCAGATTCATTTGTAATTAGAGGTGATGAAGTCAGACAAATCGCTCCAGGGCAAACTGGAAAGATTGCTGATTATAATTATAAATTACCAGATGATTTTACAGGCTGCGTTATAGCTTGGAATTCTAACAATCTTGATTCTAAGGTTGGTGGTAATTATAATTACCTGTATAGATTGTTTAGGAAGTCTAATCTCAAACCTTTTGAGAGAGATATTTCAACTGAAATCTATCAGGCCGGTAGCACACCTTGTAATGGTGTTGAAGGTTTTAATTGTTACTTTCCTTTACAATCATATGGTTTCCAACCCACTAATGGTGTTGGTTACCAACCATACAGAGTAGTAGTACTTTCTTTTGAACTTCTACATGCACCAGCAACTGTTTGTGGACCTAAAAAGTCTACTAATTTGGTTAAAAACAAATGTGTCAATTTCAACTTCAATGGTTTAACAGGCACAGGTGTTCTTACTGAGTCTAACAAAAAGTTTCTGCCTTTCCAACAATTTGGCAGAGACATTGCTGACACTACTGATGCTGTCCGTGATCCACAGACACTTGAGATTCTTGACATTACACCATGTTCTTTTGGTGGTGTCAGTGTTATAACACCAGGAACAAATACTTCTAACCAGGTTGCTGTTCTTTATCAGGATGTTAACTGCACAGAAGTCCCTGTTGCTATTCATGCAGATCAACTTACTCCTACTTGGCGTGTTTATTCTACAGGTTCTAATGTTTTTCAAACACGTGCAGGCTGTTTAATAGGGGCTGAACATGTCAACAACTCATATGAGTGTGACATACCCATTGGTGCAGGTATATGCGCTAGTTATCAGACTCAGACTAATTCTCCTCGGCGGGCACGTAGTGTAGCTAGTCAATCCATCATTGCCTACACTATGTCACTTGGTGCAGAAAATTCAGTTGCTTACTCTAATAACTCTATTGCCATACCCACAAATTTTACTATTAGTGTTACCACAGAAATTCTACCAGTGTCTATGACCAAGACATCAGTAGATTGTACAATGTACATTTGTGGTGATTCAACTGAATGCAGCAATCTTTTGTTGCAATATGGCAGTTTTTGTACACAATTAAACCGTGCTTTAACTGGAATAGCTGTTGAACAAGACAAAAACACCCAAGAAGTTTTTGCACAAGTCAAACAAATTTACAAAACACCACCAATTAAAGATTTTGGTGGTTTTAATTTTTCACAAATATTACCAGATCCATCAAAACCAAGCAAGAGGTCATTTATTGAAGATCTACTTTTCAACAAAGTGACACTTGCAGATGCTGGCTTCATCAAACAATATGGTGATTGCCTTGGTGATATTGCTGCTAGAGACCTCATTTGTGCACAAAAGTTTAACGGCCTTACTGTTTTGCCACCTTTGCTCACAGATGAAATGATTGCTCAATACACTTCTGCACTGTTAGCGGGTACAATCACTTCTGGTTGGACCTTTGGTGCAGGTGCTGCATTACAAATACCATTTGCTATGCAAATGGCTTATAGGTTTAATGGTATTGGAGTTACACAGAATGTTCTCTATGAGAACCAAAAATTGATTGCCAACCAATTTAATAGTGCTATTGGCAAAATTCAAGACTCACTTTCTTCCACAGCAAGTGCACTTGGAAAACTTCAAGATGTGGTCAACCAAAATGCACAAGCTTTAAACACGCTTGTTAAACAACTTAGCTCCAATTTTGGTGCAATTTCAAGTGTTTTAAATGAT
+ATCCTTTCACGTCTTGACAAAGTTGAGGCTGAAGTGCAAATTGATAGGTTGATCACAGGCAGACTTCAAAGTTTGCAGACATATGTGACTCAACAATTAATTAGAGCTGCAGAAATCAGAGCTTCTGCTAATCTTGCTGCTACTAAAATGTCAGAGTGTGTACTTGGACAATCAAAAAGAGTTGATTTTTGTGGAAAGGGCTATCATCTTATGTCCTTCCCTCAGTCAGCACCTCATGGTGTAGTCTTCTTGCATGTGACTTATGTCCCTGCACAAGAAAAGAACTTCACAACTGCTCCTGCCATTTGTCATGATGGAAAAGCACACTTTCCTCGTGAAGGTGTCTTTGTTTCAAATGGCACACACTGGTTTGTAACACAAAGGAATTTTTATGAACCACAAATCATTACTACAGACAACACATTTGTGTCTGGTAACTGTGATGTTGTAATAGGAATTGTCAACAACACAGTTTATGATCCTTTGCAACCTGAATTAGACTCATTCAAGGAGGAGTTAGATAAATATTTTAAGAATCATACATCACCAGATGTTGATTTAGGTGACATCTCTGGCATTAATGCTTCAGTTGTAAACATTCAAAAAGAAATTGACCGCCTCAATGAGGTTGCCAAGAATTTAAATGAATCTCTCATCGATCTCCAAGAACTTGGAAAGTATGAGCAGTATATAAAATGGCCATGGTACATTTGGCTAGGTTTTATAGCTGGCTTGATTGCCATAGTAATGGTGACAATTATGCTTTGCTGTATGACCAGTTGCTGTAGTTGTCTCAAGGGCTGTTGTTCTTGTGGATCCTGCTGCAAATTTGATGAAGACGACTCTGAGCCAGTGCTCAAAGGAGTCAAATTACATTACACATAAACGAACTTATGGATTTGTTTATGAGAATCTTCACAATTGGAACTGTAACTTTGAAGCAAGGTGAAATCAAGGATGCTACTCCTTCAGATTTTGTTCGCGCTACTGCAACGATACCGATACAAGCCTCACTCCCTTTCGGATGGCTTATTGTTGGCGTTGCACTTCTTGCTGTTTTTCAGAGCGCTTCCAAAATCATAACCCTCAAAAAGAGATGGCAACTAGCACTCTCCAAGGGTGTTCACTTTGTTTGCAACTTGCTGTTGTTGTTTGTAACAGTTTACTCACACCTTTTGCTCGTTGCTGCTGGCCTTGAAGCCCCTTTTCTCTATCTTTATGCTTTAGTCTACTTCTTGCAGAGTATAAACTTTGTAAGAATAATAATGAGGCTTTGGCTTTGCTGGAAATGCCGTTCCAAAAACCCATTACTTTATGATGCCAACTATTTTCTTTGCTGGCATACTAATTGTTACGACTATTGTATACCTTACAATAGTGTAACTTCTTCAATTGTCATTACTTCAGGTGATGGCACAACAAGTCCTATTTCTGAACATGACTACCAGATTGGTGGTTATACTGAAAAATGGGAATCTGGAGTAAAAGACTGTGTTGTATTACACAGTTACTTCACTTCAGACTATTACCAGCTGTACTCAACTCAATTGAGTACAGACACTGGTGTTGAACATGTTACCTTCTTCATCTACAATAAAATTGTTGATGAGCCTGAAGAACATGTCCAAATTCACACAATCGACGGTTCATCCGGAGTTGTTAATCCAGTAATGGAACCAATTTATGATGAACCGACGACGACTACTAGCGTGCCTTTGTAAGCACAAGCTGATGAGTACGAACTTATGTACTCATTCGTTTCGGAAGAGACAGGTACGTTAATAGTTAATAGCGTACTTCTTTTTCTTGCTTTCGTGGTATTCTTGCTAGTTACACTAGCCATCCTTACTGCGCTTCGATTGTGTGCGTACTGCTGCAATATTGTTAACGTGAGTCTTGTAAAACCTTCTTTTTACGTTTACTCTCGTGTTAAAAATCTGAATTCTTCTAGAGTTCCTGATCTTCTGGTCTAAACGAACTAAATATTATATTAGTTTTTCTGTTTGGAACTTTAATTTTAGCCATGGCAGATTCCAACGGTACTATTACCGTTGAAGAGCTTAAAAAGCTCCTTGAACAATGGAACCTAGTAATAGGTTTCCTATTCCTTACATGGATTTGTCTTCTACAATTTGCCTATGCCAACAGGAATAGGTTTTTGTATATAATTAAGTTAATTTTCCTCTGGCTGTTATGGCCAGTAACTTTAGCTTGTTTTGTGCTTGCTGCTGTTTACAGAATAAATTGGATCACCGGTGGAATTGCTATCGCAATGGCTTGTCTTGTAGGCTTGATGTGGCTCAGCTACTTCATTGCTTCTTTCAGACTGTTTGCGCGTACGCGTTCCATGTGGTCATTCAATCCAGAAACTAACATTCTTCTCAACGTGCCACTCCATGGCACTATTCTGACCAGACCGCTTCTAGAAAGTGAACTCGTAATCGGAGCTGTGATCCTTCGTGGACATCTTCGTATTGCTGGACACCATCTAGGACGCTGTGACATCAAGGACCTGCCTAAAGAAATCACTGTTGCTACATCACGAACGCTTTCTTATTACAAATTGGGAGCTTCGCAGCGTGTAGCAGGTGACTCAGGTTTTGCTGCATACAGTCGCTACAGGATTGGCAACTATAAATTAAACACAGACCATTCCAGTAGCAGTGACAATATTGCTTTGCTTGTACAGTAAGTGACAACAGATGTTTCATCTCGTTGACTTTCAGGTTACTATAGCAGAGATATTACTAATTATTATGAGGACTTTTAAAGTTTCCATTTGGAATCTTGATTACATCATAAACCTCATAATTAAAAATTTATCTAAGTCACTAACTGAGAATAAATATTCTCAATTAGATGAAGAGCAACCAATGGAGATTGATTAAACGAACATGAAAATTATTCTTTTCTTGGCACTGATAACACTCGCTACTTGTGAGCTTTATCACTACCAAGAGTGTGTTAGAGGTACAACAGTACTTTTAAAAGAACCTTGCTCTTCTGGAACATACGAGGGCAATTCACCATTTCATCCTCTAGCTGATAACAAATTTGCACTGACTTGCTTTAGCACTCAATTTGCTTTTGCTTGTCCTGACGGCGTAAAACACGTCTATCAGTTACGTGCCAGATCAGTTTCACCTAAACTGTTCATCAGACAAGAGGAAGTTCAAGAACTTTACTCTCCAATTTTTCTTATTGTTGCGGCAATAGTGTTTATAACACTTTGCTTCACACTCAAAAGAAAGACAGAATGATTGAACTTTCATTAATTGACTTCTATTTGTGCTTTTTAGCCTTTCTGCTATTCCTTGTTTTAATTATGCTTATTATCTTTTGGTTCTCACTTGAACTGCAAGATCATAATGAAACTTGTCACGCCTAAACGAACATGAAATTTCTTGTTTTCTTAGGAATCATCACAACTGTAGCTGCATTTCACCAAGAATGTAGTTTACAGTCATGTACTCAACATCAACCATATGTAGTTGATGACCCGTGTCCTATTCACTTCTATTCTAAATGGTATATTAGAGTAGGAGCTAGAAAATCAGCACCTTTAATTGAATTGTGCGTGGATGAGGCTGGTTCTAAATCACCCATTCAGTACATCGAT
+ATCGGTAATTATACAGTTTCCTGTTTACCTTTTACAATTAATTGCCAGGAACCTAAATTGGGTAGTCTTGTAGTGCGTTGTTCGTTCTATGAAGACTTTTTAGAGTATCATGACGTTCGTGTTGTTTTAGATTTCATCTAAACGAACAAACTAAAATGTCTGATAATGGACCCCAAAATCAGCGAAATGCACCCCGCATTACGTTTGGTGGACCCTCAGATTCAACTGGCAGTAACCAGAATGGAGAACGCAGTGGGGCGCGATCAAAACAACGTCGGCCCCAAGGTTTACCCAATAATACTGCGTCTTGGTTCACCGCTCTCACTCAACATGGCAAGGAAGACCTTAAATTCCCTCGAGGACAAGGCGTTCCAATTAACACCAATAGCAGTCCAGATGACCAAATTGGCTACTACCGAAGAGCTACCAGACGAATTCGTGGTGGTGACGGTAAAATGAAAGATCTCAGTCCAAGATGGTATTTCTACTACCTAGGAACTGGGCCAGAAGCTGGACTTCCCTATGGTGCTAACAAAGACGGCATCATATGGGTTGCAACTGAGGGAGCCTTGAATACACCAAAAGATCACATTGGCACCCGCAATCCTGCTAACAATGCTGCAATCGTGCTACAACTTCCTCAAGGAACAACATTGCCAAAAGGCTTCTACGCAGAAGGGAGCAGAGGCGGCAGTCAAGCCTCTTCTCGTTCCTCATCACGTAGTCGCAACAGTTCAAGAAATTCAACTCCAGGCAGCAGTAGGGGAACTTCTCCTGCTAGAATGGCTGGCAATGGCGGTGATGCTGCTCTTGCTTTGCTGCTGCTTGACAGATTGAACCAGCTTGAGAGCAAAATGTCTGGTAAAGGCCAACAACAACAAGGCCAAACTGTCACTAAGAAATCTGCTGCTGAGGCTTCTAAGAAGCCTCGGCAAAAACGTACTGCCACTAAAGCATACAATGTAACACAAGCTTTCGGCAGACGTGGTCCAGAACAAACCCAAGGAAATTTTGGGGACCAGGAACTAATCAGACAAGGAACTGATTACAAACATTGGCCGCAAATTGCACAATTTGCCCCCAGCGCTTCAGCGTTCTTCGGAATGTCGCGCATTGGCATGGAAGTCACACCTTCGGGAACGTGGTTGACCTACACAGGTGCCATCAAATTGGATGACAAAGATCCAAATTTCAAAGATCAAGTCATTTTGCTGAATAAGCATATTGACGCATACAAAACATTCCCACCAACAGAGCCTAAAAAGGACAAAAAGAAGAAGGCTGATGAAACTCAAGCCTTACCGCAGAGACAGAAGAAACAGCAAACTGTGACTCTTCTTCCTGCTGCAGATTTGGATGATTTCTCCAAACAATTGCAACAATCCATGAGCAGTGCTGACTCAACTCAGGCCTAAACTCATGCAGACCACACAAGGCAGATGGGCTATATAAACGTTTTCGCTTTTCCGTTTACGATATATAGTCTACTCTTGTGCAGAATGAATTCTCGTAACTACATAGCACAAGTAGATGTAGTTAACTTTAATCTCACATAGCAATCTTTAATCAGTGTGTAACATTAGGGAGGACTTGAAAGAGCCACCACATTTTCACCGAGGCCACGCGGAGTACGATCGAGTGTACAGTGAACAATGCTAGGGAGAGCTGCCTATATGGAAGAGCCCTAATGTGTAAAATTAATTTTAGTAGTGCTATCCCCATGTGATTTTAATAGCTTCTTAGGAGAATGACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+\end{verbatim}
+
+This is a way too long output, however one thing that is clear is that
+the file header is being combined with the sequence \emph{per se} so we
+can avoid it from the tail of the file:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tail} \AttributeTok{{-}n}\NormalTok{ +2 data/Sarscov2{-}genome.fasta }\OperatorTok{\textgreater{}}\NormalTok{ tr }\AttributeTok{{-}d} \StringTok{"\textbackslash{}n"} \KeywordTok{|} \FunctionTok{sed} \StringTok{\textquotesingle{}s/GATATC/GAT\textbackslash{}nATC/g\textquotesingle{}}
+\end{Highlighting}
+\end{Shaded}
+
+This will avoid the deletion of the newline for the header.
+
+Now we want to see how many fragments there are (separated by the
+new-line character \texttt{\textbackslash{}n}). A simple way to do it is
+to create a environmental variable for the previous process and then we
+can see \texttt{fragments} by simply printing with \texttt{echo}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\VariableTok{fragments}\OperatorTok{=}\VariableTok{$(}\FunctionTok{tail} \AttributeTok{{-}n}\NormalTok{ +2 data/Sarscov2{-}genome.fasta }\KeywordTok{|} \FunctionTok{tr} \AttributeTok{{-}d} \StringTok{"\textbackslash{}n"} \KeywordTok{|} \FunctionTok{sed} \StringTok{\textquotesingle{}s/GATATC/GAT\textbackslash{}nATC/g\textquotesingle{}}\VariableTok{)}
+
+\BuiltInTok{echo} \VariableTok{$fragments}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ATTAAAGGTTTATACCTTCCCAGGTAACAAACCAACCAACTTTCGATCTCTTGTAGATCTGTTCTCTAAACGAACTTTAAAATCTGTGTGGCTGTCACTCGGCTGCATGCTTAGTGCACTCACGCAGTATAATTAATAACTAATTACTGTCGTTGACAGGACACGAGTAACTCGTCTATCTTCTGCAGGCTGCTTACGGTTTCGTCCGTGTTGCAGCCGATCATCAGCACATCTAGGTTTCGTCCGGGTGTGACCGAAAGGTAAGATGGAGAGCCTTGTCCCTGGTTTCAACGAGAAAACACACGTCCAACTCAGTTTGCCTGTTTTACAGGTTCGCGACGTGCTCGTACGTGGCTTTGGAGACTCCGTGGAGGAGGTCTTATCAGAGGCACGTCAACATCTTAAAGATGGCACTTGTGGCTTAGTAGAAGTTGAAAAAGGCGTTTTGCCTCAACTTGAACAGCCCTATGTGTTCATCAAACGTTCGGATGCTCGAACTGCACCTCATGGTCATGTTATGGTTGAGCTGGTAGCAGAACTCGAAGGCATTCAGTACGGTCGTAGTGGTGAGACACTTGGTGTCCTTGTCCCTCATGTGGGCGAAATACCAGTGGCTTACCGCAAGGTTCTTCTTCGTAAGAACGGTAATAAAGGAGCTGGTGGCCATAGTTACGGCGCCGATCTAAAGTCATTTGACTTAGGCGACGAGCTTGGCACTGATCCTTATGAAGATTTTCAAGAAAACTGGAACACTAAACATAGCAGTGGTGTTACCCGTGAACTCATGCGTGAGCTTAACGGAGGGGCATACACTCGCTATGTCGATAACAACTTCTGTGGCCCTGATGGCTACCCTCTTGAGTGCATTAAAGACCTTCTAGCACGTGCTGGTAAAGCTTCATGCACTTTGTCCGAACAACTGGACTTTATTGACACTAAGAGGGGTGTATACTGCTGCCGTGAACATGAGCATGAAATTGCTTGGTACACGGAACGTTCTGAAAAGAGCTATGAATTGCAGACACCTTTTGAAATTAAATTGGCAAAGAAATTTGACACCTTCAATGGGGAATGTCCAAATTTTGTATTTCCCTTAAATTCCATAATCAAGACTATTCAACCAAGGGTTGAAAAGAAAAAGCTTGATGGCTTTATGGGTAGAATTCGATCTGTCTATCCAGTTGCGTCACCAAATGAATGCAACCAAATGTGCCTTTCAACTCTCATGAAGTGTGATCATTGTGGTGAAACTTCATGGCAGACGGGCGATTTTGTTAAAGCCACTTGCGAATTTTGTGGCACTGAGAATTTGACTAAAGAAGGTGCCACTACTTGTGGTTACTTACCCCAAAATGCTGTTGTTAAAATTTATTGTCCAGCATGTCACAATTCAGAAGTAGGACCTGAGCATAGTCTTGCCGAATACCATAATGAATCTGGCTTGAAAACCATTCTTCGTAAGGGTGGTCGCACTATTGCCTTTGGAGGCTGTGTGTTCTCTTATGTTGGTTGCCATAACAAGTGTGCCTATTGGGTTCCACGTGCTAGCGCTAACATAGGTTGTAACCATACAGGTGTTGTTGGAGAAGGTTCCGAAGGTCTTAATGACAACCTTCTTGAAATACTCCAAAAAGAGAAAGTCAACATCAATATTGTTGGTGACTTTAAACTTAATGAAGAGATCGCCATTATTTTGGCATCTTTTTCTGCTTCCACAAGTGCTTTTGTGGAAACTGTGAAAGGTTTGGATTATAAAGCATTCAAACAAATTGTTGAATCCTGTGGTAATTTTAAAGTTACAAAAGGAAAAGCTAAAAAAGGTGCCTGGAATATTGGTGAACAGAAATCAATACTGAGTCCTCTTTATGCATTTGCATCAGAGGCTGCTCGTGTTGTACGATCAATTTTCTCCCGCACTCTTGAAACTGCTCAAAATTCTGTGCGTGTTTTACAGAAGGCCGCTATAACAATACTAGATGGAATTTCACAGTATTCACTGAGACTCATTGATGCTATGATGTTCACATCTGATTTGGCTACTAACAATCTAGTTGTAATGGCCTACATTACAGGTGGTGTTGTTCAGTTGACTTCGCAGTGGCTAACTAACATCTTTGGCACTGTTTATGAAAAACTCAAACCCGTCCTTGATTGGCTTGAAGAGAAGTTTAAGGAAGGTGTAGAGTTTCTTAGAGACGGTTGGGAAATTGTTAAATTTATCTCAACCTGTGCTTGTGAAATTGTCGGTGGACAAATTGTCACCTGTGCAAAGGAAATTAAGGAGAGTGTTCAGACATTCTTTAAGCTTGTAAATAAATTTTTGGCTTTGTGTGCTGACTCTATCATTATTGGTGGAGCTAAACTTAAAGCCTTGAATTTAGGTGAAACATTTGTCACGCACTCAAAGGGATTGTACAGAAAGTGTGTTAAATCCAGAGAAGAAACTGGCCTACTCATGCCTCTAAAAGCCCCAAAAGAAATTATCTTCTTAGAGGGAGAAACACTTCCCACAGAAGTGTTAACAGAGGAAGTTGTCTTGAAAACTGGTGATTTACAACCATTAGAACAACCTACTAGTGAAGCTGTTGAAGCTCCATTGGTTGGTACACCAGTTTGTATTAACGGGCTTATGTTGCTCGAAATCAAAGACACAGAAAAGTACTGTGCCCTTGCACCTAATATGATGGTAACAAACAATACCTTCACACTCAAAGGCGGTGCACCAACAAAGGTTACTTTTGGTGATGACACTGTGATAGAAGTGCAAGGTTACAAGAGTGTGAATATCACTTTTGAACTTGATGAAAGGATTGATAAAGTACTTAATGAGAAGTGCTCTGCCTATACAGTTGAACTCGGTACAGAAGTAAATGAGTTCGCCTGTGTTGTGGCAGATGCTGTCATAAAAACTTTGCAACCAGTATCTGAATTACTTACACCACTGGGCATTGATTTAGATGAGTGGAGTATGGCTACATACTACTTATTTGATGAGTCTGGTGAGTTTAAATTGGCTTCACATATGTATTGTTCTTTCTACCCTCCAGATGAGGATGAAGAAGAAGGTGATTGTGAAGAAGAAGAGTTTGAGCCATCAACTCAATATGAGTATGGTACTGAAGATGATTACCAAGGTAAACCTTTGGAATTTGGTGCCACTTCTGCTGCTCTTCAACCTGAAGAAGAGCAAGAAGAAGATTGGTTAGATGATGATAGTCAACAAACTGTTGGTCAACAAGACGGCAGTGAGGACAATCAGACAACTACTATTCAAACAATTGTTGAGGTTCAACCTCAATTAGAGATGGAACTTACACCAGTTGTTCAGACTATTGAAGTGAATAGTTTTAGTGGTTATTTAAAACTTACTGACAATGTATACATTAAAAATGCAGACATTGTGGAAGAAGCTAAAAAGGTAAAACCAACAGTGGTTGTTAATGCAGCCAATGTTTACCTTAAACATGGAGGAGGTGTTGCAGGAGCCTTAAATAAGGCTACTAACAATGCCATGCAAGTTGAATCTGATGATTACATAGCTACTAATGGACCACTTAAAGTGGGTGGTAGTTGTGTTTTAAGCGGACACAATCTTGCTAAACACTGTCTTCATGTTGTCGGCCCAAATGTTAACAAAGGTGAAGACATTCAACTTCTTAAGAGTGCTTATGAAAATTTTAATCAGCACGAAGTTCTACTTGCACCATTATTATCAGCTGGTATTTTTGGTGCTGACCCTATACATTCTTTAAGAGTTTGTGTAGATACTGTTCGCACAAATGTCTACTTAGCTGTCTTTGATAAAAATCTCTATGACAAACTTGTTTCAAGCTTTTTGGAAATGAAGAGTGAAAAGCAAGTTGAACAAAAGATCGCTGAGATTCCTAAAGAGGAAGTTAAGCCATTTATAACTGAAAGTAAACCTTCAGTTGAACAGAGAAAACAAGATGATAAGAAAATCAAAGCTTGTGTTGAAGAAGTTACAACAACTCTGGAAGAAACTAAGTTCCTCACAGAAAACTTGTTACTTTATATTGACATTAATGGCAATCTTCATCCAGATTCTGCCACTCTTGTTAGTGACATTGACATCACTTTCTTAAAGAAAGATGCTCCATATATAGTGGGTGATGTTGTTCAAGAGGGTGTTTTAACTGCTGTGGTTATACCTACTAAAAAGGCTGGTGGCACTACTGAAATGCTAGCGAAAGCTTTGAGAAAAGTGCCAACAGACAATTATATAACCACTTACCCGGGTCAGGGTTTAAATGGTTACACTGTAGAGGAGGCAAAGACAGTGCTTAAAAAGTGTAAAAGTGCCTTTTACATTCTACCATCTATTATCTCTAATGAGAAGCAAGAAATTCTTGGAACTGTTTCTTGGAATTTGCGAGAAATGCTTGCACATGCAGAAGAAACACGCAAATTAATGCCTGTCTGTGTGGAAACTAAAGCCATAGTTTCAACTATACAGCGTAAATATAAGGGTATTAAAATACAAGAGGGTGTGGTTGATTATGGTGCTAGATTTTACTTTTACACCAGTAAAACAACTGTAGCGTCACTTATCAACACACTTAACGATCTAAATGAAACTCTTGTTACAATGCCACTTGGCTATGTAACACATGGCTTAAATTTGGAAGAAGCTGCTCGGTATATGAGATCTCTCAAAGTGCCAGCTACAGTTTCTGTTTCTTCACCTGATGCTGTTACAGCGTATAATGGTTATCTTACTTCTTCTTCTAAAACACCTGAAGAACATTTTATTGAAACCATCTCACTTGCTGGTTCCTATAAAGATTGGTCCTATTCTGGACAATCTACACAACTAGGTATAGAATTTCTTAAGAGAGGTGATAAAAGTGTATATTACACTAGTAATCCTACCACATTCCACCTAGATGGTGAAGTTATCACCTTTGACAATCTTAAGACACTTCTTTCTTTGAGAGAAGTGAGGACTATTAAGGTGTTTACAACAGTAGACAACATTAACCTCCACACGCAAGTTGTGGACATGTCAATGACATATGGACAACAGTTTGGTCCAACTTATTTGGATGGAGCTGATGTTACTAAAATAAAACCTCATAATTCACATGAAGGTAAAACATTTTATGTTTTACCTAATGATGACACTCTACGTGTTGAGGCTTTTGAGTACTACCACACAACTGATCCTAGTTTTCTGGGTAGGTACATGTCAGCATTAAATCACACTAAAAAGTGGAAATACCCACAAGTTAATGGTTTAACTTCTATTAAATGGGCAGATAACAACTGTTATCTTGCCACTGCATTGTTAACACTCCAACAAATAGAGTTGAAGTTTAATCCACCTGCTCTACAAGATGCTTATTACAGAGCAAGGGCTGGTGAAGCTGCTAACTTTTGTGCACTTATCTTAGCCTACTGTAATAAGACAGTAGGTGAGTTAGGTGATGTTAGAGAAACAATGAGTTACTTGTTTCAACATGCCAATTTAGATTCTTGCAAAAGAGTCTTGAACGTGGTGTGTAAAACTTGTGGACAACAGCAGACAACCCTTAAGGGTGTAGAAGCTGTTATGTACATGGGCACACTTTCTTATGAACAATTTAAGAAAGGTGTTCAGATACCTTGTACGTGTGGTAAACAAGCTACAAAATATCTAGTACAACAGGAGTCACCTTTTGTTATGATGTCAGCACCACCTGCTCAGTATGAACTTAAGCATGGTACATTTACTTGTGCTAGTGAGTACACTGGTAATTACCAGTGTGGTCACTATAAACATATAACTTCTAAAGAAACTTTGTATTGCATAGACGGTGCTTTACTTACAAAGTCCTCAGAATACAAAGGTCCTATTACGGATGTTTTCTACAAAGAAAACAGTTACACAACAACCATAAAACCAGTTACTTATAAATTGGATGGTGTTGTTTGTACAGAAATTGACCCTAAGTTGGACAATTATTATAAGAAAGACAATTCTTATTTCACAGAGCAACCAATTGATCTTGTACCAAACCAACCATATCCAAACGCAAGCTTCGATAATTTTAAGTTTGTATGTGATAATATCAAATTTGCTGATGATTTAAACCAGTTAACTGGTTATAAGAAACCTGCTTCAAGAGAGCTTAAAGTTACATTTTTCCCTGACTTAAATGGTGATGTGGTGGCTATTGATTATAAACACTACACACCCTCTTTTAAGAAAGGAGCTAAATTGTTACATAAACCTATTGTTTGGCATGTTAACAATGCAACTAATAAAGCCACGTATAAACCAAATACCTGGTGTATACGTTGTCTTTGGAGCACAAAACCAGTTGAAACATCAAATTCGTTTGATGTACTGAAGTCAGAGGACGCGCAGGGAATGGATAATCTTGCCTGCGAAGATCTAAAACCAGTCTCTGAAGAAGTAGTGGAAAATCCTACCATACAGAAAGACGTTCTTGAGTGTAATGTGAAAACTACCGAAGTTGTAGGAGACATTATACTTAAACCAGCAAATAATAGTTTAAAAATTACAGAAGAGGTTGGCCACACAGATCTAATGGCTGCTTATGTAGACAATTCTAGTCTTACTATTAAGAAACCTAATGAATTATCTAGAGTATTAGGTTTGAAAACCCTTGCTACTCATGGTTTAGCTGCTGTTAATAGTGTCCCTTGGGATACTATAGCTAATTATGCTAAGCCTTTTCTTAACAAAGTTGTTAGTACAACTACTAACATAGTTACACGGTGTTTAAACCGTGTTTGTACTAATTATATGCCTTATTTCTTTACTTTATTGCTACAATTGTGTACTTTTACTAGAAGTACAAATTCTAGAATTAAAGCATCTATGCCGACTACTATAGCAAAGAATACTGTTAAGAGTGTCGGTAAATTTTGTCTAGAGGCTTCATTTAATTATTTGAAGTCACCTAATTTTTCTAAACTGATAAATATTATAATTTGGTTTTTACTATTAAGTGTTTGCCTAGGTTCTTTAATCTACTCAACCGCTGCTTTAGGTGTTTTAATGTCTAATTTAGGCATGCCTTCTTACTGTACTGGTTACAGAGAAGGCTATTTGAACTCTACTAATGTCACTATTGCAACCTACTGTACTGGTTCTATACCTTGTAGTGTTTGTCTTAGTGGTTTAGATTCTTTAGACACCTATCCTTCTTTAGAAACTATACAAATTACCATTTCATCTTTTAAATGGGATTTAACTGCTTTTGGCTTAGTTGCAGAGTGGTTTTTGGCATATATTCTTTTCACTAGGTTTTTCTATGTACTTGGATTGGCTGCAATCATGCAATTGTTTTTCAGCTATTTTGCAGTACATTTTATTAGTAATTCTTGGCTTATGTGGTTAATAATTAATCTTGTACAAATGGCCCCGATTTCAGCTATGGTTAGAATGTACATCTTCTTTGCATCATTTTATTATGTATGGAAAAGTTATGTGCATGTTGTAGACGGTTGTAATTCATCAACTTGTATGATGTGTTACAAACGTAATAGAGCAACAAGAGTCGAATGTACAACTATTGTTAATGGTGTTAGAAGGTCCTTTTATGTCTATGCTAATGGAGGTAAAGGCTTTTGCAAACTACACAATTGGAATTGTGTTAATTGTGATACATTCTGTGCTGGTAGTACATTTATTAGTGATGAAGTTGCGAGAGACTTGTCACTACAGTTTAAAAGACCAATAAATCCTACTGACCAGTCTTCTTACATCGTTGATAGTGTTACAGTGAAGAATGGTTCCATCCATCTTTACTTTGATAAAGCTGGTCAAAAGACTTATGAAAGACATTCTCTCTCTCATTTTGTTAACTTAGACAACCTGAGAGCTAATAACACTAAAGGTTCATTGCCTATTAATGTTATAGTTTTTGATGGTAAATCAAAATGTGAAGAATCATCTGCAAAATCAGCGTCTGTTTACTACAGTCAGCTTATGTGTCAACCTATACTGTTACTAGATCAGGCATTAGTGTCTGATGTTGGTGATAGTGCGGAAGTTGCAGTTAAAATGTTTGATGCTTACGTTAATACGTTTTCATCAACTTTTAACGTACCAATGGAAAAACTCAAAACACTAGTTGCAACTGCAGAAGCTGAACTTGCAAAGAATGTGTCCTTAGACAATGTCTTATCTACTTTTATTTCAGCAGCTCGGCAAGGGTTTGTTGATTCAGATGTAGAAACTAAAGATGTTGTTGAATGTCTTAAATTGTCACATCAATCTGACATAGAAGTTACTGGCGATAGTTGTAATAACTATATGCTCACCTATAACAAAGTTGAAAACATGACACCCCGTGACCTTGGTGCTTGTATTGACTGTAGTGCGCGTCATATTAATGCGCAGGTAGCAAAAAGTCACAACATTGCTTTGATATGGAACGTTAAAGATTTCATGTCATTGTCTGAACAACTACGAAAACAAATACGTAGTGCTGCTAAAAAGAATAACTTACCTTTTAAGTTGACATGTGCAACTACTAGACAAGTTGTTAATGTTGTAACAACAAAGATAGCACTTAAGGGTGGTAAAATTGTTAATAATTGGTTGAAGCAGTTAATTAAAGTTACACTTGTGTTCCTTTTTGTTGCTGCTATTTTCTATTTAATAACACCTGTTCATGTCATGTCTAAACATACTGACTTTTCAAGTGAAATCATAGGATACAAGGCTATTGATGGTGGTGTCACTCGTGACATAGCATCTACAGATACTTGTTTTGCTAACAAACATGCTGATTTTGACACATGGTTTAGCCAGCGTGGTGGTAGTTATACTAATGACAAAGCTTGCCCATTGATTGCTGCAGTCATAACAAGAGAAGTGGGTTTTGTCGTGCCTGGTTTGCCTGGCACGATATTACGCACAACTAATGGTGACTTTTTGCATTTCTTACCTAGAGTTTTTAGTGCAGTTGGTAACATCTGTTACACACCATCAAAACTTATAGAGTACACTGACTTTGCAACATCAGCTTGTGTTTTGGCTGCTGAATGTACAATTTTTAAAGATGCTTCTGGTAAGCCAGTACCATATTGTTATGATACCAATGTACTAGAAGGTTCTGTTGCTTATGAAAGTTTACGCCCTGACACACGTTATGTGCTCATGGATGGCTCTATTATTCAATTTCCTAACACCTACCTTGAAGGTTCTGTTAGAGTGGTAACAACTTTTGATTCTGAGTACTGTAGGCACGGCACTTGTGAAAGATCAGAAGCTGGTGTTTGTGTATCTACTAGTGGTAGATGGGTACTTAACAATGATTATTACAGATCTTTACCAGGAGTTTTCTGTGGTGTAGATGCTGTAAATTTACTTACTAATATGTTTACACCACTAATTCAACCTATTGGTGCTTTGGACATATCAGCATCTATAGTAGCTGGTGGTATTGTAGCTATCGTAGTAACATGCCTTGCCTACTATTTTATGAGGTTTAGAAGAGCTTTTGGTGAATACAGTCATGTAGTTGCCTTTAATACTTTACTATTCCTTATGTCATTCACTGTACTCTGTTTAACACCAGTTTACTCATTCTTACCTGGTGTTTATTCTGTTATTTACTTGTACTTGACATTTTATCTTACTAATGATGTTTCTTTTTTAGCACATATTCAGTGGATGGTTATGTTCACACCTTTAGTACCTTTCTGGATAACAATTGCTTATATCATTTGTATTTCCACAAAGCATTTCTATTGGTTCTTTAGTAATTACCTAAAGAGACGTGTAGTCTTTAATGGTGTTTCCTTTAGTACTTTTGAAGAAGCTGCGCTGTGCACCTTTTTGTTAAATAAAGAAATGTATCTAAAGTTGCGTAGTGATGTGCTATTACCTCTTACGCAATATAATAGATACTTAGCTCTTTATAATAAGTACAAGTATTTTAGTGGAGCAATGGATACAACTAGCTACAGAGAAGCTGCTTGTTGTCATCTCGCAAAGGCTCTCAATGACTTCAGTAACTCAGGTTCTGATGTTCTTTACCAACCACCACAAACCTCTATCACCTCAGCTGTTTTGCAGAGTGGTTTTAGAAAAATGGCATTCCCATCTGGTAAAGTTGAGGGTTGTATGGTACAAGTAACTTGTGGTACAACTACACTTAACGGTCTTTGGCTTGATGACGTAGTTTACTGTCCAAGACATGTGATCTGCACCTCTGAAGACATGCTTAACCCTAATTATGAAGATTTACTCATTCGTAAGTCTAATCATAATTTCTTGGTACAGGCTGGTAATGTTCAACTCAGGGTTATTGGACATTCTATGCAAAATTGTGTACTTAAGCTTAAGGTTGATACAGCCAATCCTAAGACACCTAAGTATAAGTTTGTTCGCATTCAACCAGGACAGACTTTTTCAGTGTTAGCTTGTTACAATGGTTCACCATCTGGTGTTTACCAATGTGCTATGAGGCCCAATTTCACTATTAAGGGTTCATTCCTTAATGGTTCATGTGGTAGTGTTGGTTTTAACATAGATTATGACTGTGTCTCTTTTTGTTACATGCACCATATGGAATTACCAACTGGAGTTCATGCTGGCACAGACTTAGAAGGTAACTTTTATGGACCTTTTGTTGACAGGCAAACAGCACAAGCAGCTGGTACGGACACAACTATTACAGTTAATGTTTTAGCTTGGTTGTACGCTGCTGTTATAAATGGAGACAGGTGGTTTCTCAATCGATTTACCACAACTCTTAATGACTTTAACCTTGTGGCTATGAAGTACAATTATGAACCTCTAACACAAGACCATGTTGACATACTAGGACCTCTTTCTGCTCAAACTGGAATTGCCGTTTTAGATATGTGTGCTTCATTAAAAGAATTACTGCAAAATGGTATGAATGGACGTACCATATTGGGTAGTGCTTTATTAGAAGATGAATTTACACCTTTTGATGTTGTTAGACAATGCTCAGGTGTTACTTTCCAAAGTGCAGTGAAAAGAACAATCAAGGGTACACACCACTGGTTGTTACTCACAATTTTGACTTCACTTTTAGTTTTAGTCCAGAGTACTCAATGGTCTTTGTTCTTTTTTTTGTATGAAAATGCCTTTTTACCTTTTGCTATGGGTATTATTGCTATGTCTGCTTTTGCAATGATGTTTGTCAAACATAAGCATGCATTTCTCTGTTTGTTTTTGTTACCTTCTCTTGCCACTGTAGCTTATTTTAATATGGTCTATATGCCTGCTAGTTGGGTGATGCGTATTATGACATGGTTGGATATGGTTGATACTAGTTTGTCTGGTTTTAAGCTAAAAGACTGTGTTATGTATGCATCAGCTGTAGTGTTACTAATCCTTATGACAGCAAGAACTGTGTATGATGATGGTGCTAGGAGAGTGTGGACACTTATGAATGTCTTGACACTCGTTTATAAAGTTTATTATGGTAATGCTTTAGATCAAGCCATTTCCATGTGGGCTCTTATAATCTCTGTTACTTCTAACTACTCAGGTGTAGTTACAACTGTCATGTTTTTGGCCAGAGGTATTGTTTTTATGTGTGTTGAGTATTGCCCTATTTTCTTCATAACTGGTAATACACTTCAGTGTATAATGCTAGTTTATTGTTTCTTAGGCTATTTTTGTACTTGTTACTTTGGCCTCTTTTGTTTACTCAACCGCTACTTTAGACTGACTCTTGGTGTTTATGATTACTTAGTTTCTACACAGGAGTTTAGATATATGAATTCACAGGGACTACTCCCACCCAAGAATAGCATAGATGCCTTCAAACTCAACATTAAATTGTTGGGTGTTGGTGGCAAACCTTGTATCAAAGTAGCCACTGTACAGTCTAAAATGTCAGATGTAAAGTGCACATCAGTAGTCTTACTCTCAGTTTTGCAACAACTCAGAGTAGAATCATCATCTAAATTGTGGGCTCAATGTGTCCAGTTACACAATGACATTCTCTTAGCTAAAGATACTACTGAAGCCTTTGAAAAAATGGTTTCACTACTTTCTGTTTTGCTTTCCATGCAGGGTGCTGTAGACATAAACAAGCTTTGTGAAGAAATGCTGGACAACAGGGCAACCTTACAAGCTATAGCCTCAGAGTTTAGTTCCCTTCCATCATATGCAGCTTTTGCTACTGCTCAAGAAGCTTATGAGCAGGCTGTTGCTAATGGTGATTCTGAAGTTGTTCTTAAAAAGTTGAAGAAGTCTTTGAATGTGGCTAAATCTGAATTTGACCGTGATGCAGCCATGCAACGTAAGTTGGAAAAGATGGCTGATCAAGCTATGACCCAAATGTATAAACAGGCTAGATCTGAGGACAAGAGGGCAAAAGTTACTAGTGCTATGCAGACAATGCTTTTCACTATGCTTAGAAAGTTGGATAATGATGCACTCAACAACATTATCAACAATGCAAGAGATGGTTGTGTTCCCTTGAACATAATACCTCTTACAACAGCAGCCAAACTAATGGTTGTCATACCAGACTATAACACATATAAAAATACGTGTGATGGTACAACATTTACTTATGCATCAGCATTGTGGGAAATCCAACAGGTTGTAGATGCAGATAGTAAAATTGTTCAACTTAGTGAAATTAGTATGGACAATTCACCTAATTTAGCATGGCCTCTTATTGTAACAGCTTTAAGGGCCAATTCTGCTGTCAAATTACAGAATAATGAGCTTAGTCCTGTTGCACTACGACAGATGTCTTGTGCTGCCGGTACTACACAAACTGCTTGCACTGATGACAATGCGTTAGCTTACTACAACACAACAAAGGGAGGTAGGTTTGTACTTGCACTGTTATCCGATTTACAGGATTTGAAATGGGCTAGATTCCCTAAGAGTGATGGAACTGGTACTATCTATACAGAACTGGAACCACCTTGTAGGTTTGTTACAGACACACCTAAAGGTCCTAAAGTGAAGTATTTATACTTTATTAAAGGATTAAACAACCTAAATAGAGGTATGGTACTTGGTAGTTTAGCTGCCACAGTACGTCTACAAGCTGGTAATGCAACAGAAGTGCCTGCCAATTCAACTGTATTATCTTTCTGTGCTTTTGCTGTAGATGCTGCTAAAGCTTACAAAGATTATCTAGCTAGTGGGGGACAACCAATCACTAATTGTGTTAAGATGTTGTGTACACACACTGGTACTGGTCAGGCAATAACAGTTACACCGGAAGCCAATATGGATCAAGAATCCTTTGGTGGTGCATCGTGTTGTCTGTACTGCCGTTGCCACATAGATCATCCAAATCCTAAAGGATTTTGTGACTTAAAAGGTAAGTATGTACAAATACCTACAACTTGTGCTAATGACCCTGTGGGTTTTACACTTAAAAACACAGTCTGTACCGTCTGCGGTATGTGGAAAGGTTATGGCTGTAGTTGTGATCAACTCCGCGAACCCATGCTTCAGTCAGCTGATGCACAATCGTTTTTAAACGGGTTTGCGGTGTAAGTGCAGCCCGTCTTACACCGTGCGGCACAGGCACTAGTACTGATGTCGTATACAGGGCTTTTGACATCTACAATGATAAAGTAGCTGGTTTTGCTAAATTCCTAAAAACTAATTGTTGTCGCTTCCAAGAAAAGGACGAAGATGACAATTTAATTGATTCTTACTTTGTAGTTAAGAGACACACTTTCTCTAACTACCAACATGAAGAAACAATTTATAATTTACTTAAGGATTGTCCAGCTGTTGCTAAACATGACTTCTTTAAGTTTAGAATAGACGGTGACATGGTACCACATATATCACGTCAACGTCTTACTAAATACACAATGGCAGACCTCGTCTATGCTTTAAGGCATTTTGATGAAGGTAATTGTGACACATTAAAAGAAATACTTGTCACATACAATTGTTGTGATGATGATTATTTCAATAAAAAGGACTGGTATGATTTTGTAGAAAACCCAGATATATTACGCGTATACGCCAACTTAGGTGAACGTGTACGCCAAGCTTTGTTAAAAACAGTACAATTCTGTGATGCCATGCGAAATGCTGGTATTGTTGGTGTACTGACATTAGATAATCAAGATCTCAATGGTAACTGGTATGATTTCGGTGATTTCATACAAACCACGCCAGGTAGTGGAGTTCCTGTTGTAGATTCTTATTATTCATTGTTAATGCCTATATTAACCTTGACCAGGGCTTTAACTGCAGAGTCACATGTTGACACTGACTTAACAAAGCCTTACATTAAGTGGGATTTGTTAAAATATGACTTCACGGAAGAGAGGTTAAAACTCTTTGACCGTTATTTTAAATATTGGGATCAGACATACCACCCAAATTGTGTTAACTGTTTGGATGACAGATGCATTCTGCATTGTGCAAACTTTAATGTTTTATTCTCTACAGTGTTCCCACCTACAAGTTTTGGACCACTAGTGAGAAAAATATTTGTTGATGGTGTTCCATTTGTAGTTTCAACTGGATACCACTTCAGAGAGCTAGGTGTTGTACATAATCAGGATGTAAACTTACATAGCTCTAGACTTAGTTTTAAGGAATTACTTGTGTATGCTGCTGACCCTGCTATGCACGCTGCTTCTGGTAATCTATTACTAGATAAACGCACTACGTGCTTTTCAGTAGCTGCACTTACTAACAATGTTGCTTTTCAAACTGTCAAACCCGGTAATTTTAACAAAGACTTCTATGACTTTGCTGTGTCTAAGGGTTTCTTTAAGGAAGGAAGTTCTGTTGAATTAAAACACTTCTTCTTTGCTCAGGATGGTAATGCTGCTATCAGCGATTATGACTACTATCGTTATAATCTACCAACAATGTGTGAT ATCAGACAACTACTATTTGTAGTTGAAGTTGTTGATAAGTACTTTGATTGTTACGATGGTGGCTGTATTAATGCTAACCAAGTCATCGTCAACAACCTAGACAAATCAGCTGGTTTTCCATTTAATAAATGGGGTAAGGCTAGACTTTATTATGATTCAATGAGTTATGAGGATCAAGATGCACTTTTCGCATATACAAAACGTAATGTCATCCCTACTATAACTCAAATGAATCTTAAGTATGCCATTAGTGCAAAGAATAGAGCTCGCACCGTAGCTGGTGTCTCTATCTGTAGTACTATGACCAATAGACAGTTTCATCAAAAATTATTGAAATCAATAGCCGCCACTAGAGGAGCTACTGTAGTAATTGGAACAAGCAAATTCTATGGTGGTTGGCACAACATGTTAAAAACTGTTTATAGTGATGTAGAAAACCCTCACCTTATGGGTTGGGATTATCCTAAATGTGATAGAGCCATGCCTAACATGCTTAGAATTATGGCCTCACTTGTTCTTGCTCGCAAACATACAACGTGTTGTAGCTTGTCACACCGTTTCTATAGATTAGCTAATGAGTGTGCTCAAGTATTGAGTGAAATGGTCATGTGTGGCGGTTCACTATATGTTAAACCAGGTGGAACCTCATCAGGAGATGCCACAACTGCTTATGCTAATAGTGTTTTTAACATTTGTCAAGCTGTCACGGCCAATGTTAATGCACTTTTATCTACTGATGGTAACAAAATTGCCGATAAGTATGTCCGCAATTTACAACACAGACTTTATGAGTGTCTCTATAGAAATAGAGATGTTGACACAGACTTTGTGAATGAGTTTTACGCATATTTGCGTAAACATTTCTCAATGATGATACTCTCTGACGATGCTGTTGTGTGTTTCAATAGCACTTATGCATCTCAAGGTCTAGTGGCTAGCATAAAGAACTTTAAGTCAGTTCTTTATTATCAAAACAATGTTTTTATGTCTGAAGCAAAATGTTGGACTGAGACTGACCTTACTAAAGGACCTCATGAATTTTGCTCTCAACATACAATGCTAGTTAAACAGGGTGATGATTATGTGTACCTTCCTTACCCAGATCCATCAAGAATCCTAGGGGCCGGCTGTTTTGTAGATGAT ATCGTAAAAACAGATGGTACACTTATGATTGAACGGTTCGTGTCTTTAGCTATAGATGCTTACCCACTTACTAAACATCCTAATCAGGAGTATGCTGATGTCTTTCATTTGTACTTACAATACATAAGAAAGCTACATGATGAGTTAACAGGACACATGTTAGACATGTATTCTGTTATGCTTACTAATGATAACACTTCAAGGTATTGGGAACCTGAGTTTTATGAGGCTATGTACACACCGCATACAGTCTTACAGGCTGTTGGGGCTTGTGTTCTTTGCAATTCACAGACTTCATTAAGATGTGGTGCTTGCATACGTAGACCATTCTTATGTTGTAAATGCTGTTACGACCATGTCATATCAACATCACATAAATTAGTCTTGTCTGTTAATCCGTATGTTTGCAATGCTCCAGGTTGTGATGTCACAGATGTGACTCAACTTTACTTAGGAGGTATGAGCTATTATTGTAAATCACATAAACCACCCATTAGTTTTCCATTGTGTGCTAATGGACAAGTTTTTGGTTTATATAAAAATACATGTGTTGGTAGCGATAATGTTACTGACTTTAATGCAATTGCAACATGTGACTGGACAAATGCTGGTGATTACATTTTAGCTAACACCTGTACTGAAAGACTCAAGCTTTTTGCAGCAGAAACGCTCAAAGCTACTGAGGAGACATTTAAACTGTCTTATGGTATTGCTACTGTACGTGAAGTGCTGTCTGACAGAGAATTACATCTTTCATGGGAAGTTGGTAAACCTAGACCACCACTTAACCGAAATTATGTCTTTACTGGTTATCGTGTAACTAAAAACAGTAAAGTACAAATAGGAGAGTACACCTTTGAAAAAGGTGACTATGGTGATGCTGTTGTTTACCGAGGTACAACAACTTACAAATTAAATGTTGGTGATTATTTTGTGCTGACATCACATACAGTAATGCCATTAAGTGCACCTACACTAGTGCCACAAGAGCACTATGTTAGAATTACTGGCTTATACCCAACACTCAATATCTCAGATGAGTTTTCTAGCAATGTTGCAAATTATCAAAAGGTTGGTATGCAAAAGTATTCTACACTCCAGGGACCACCTGGTACTGGTAAGAGTCATTTTGCTATTGGCCTAGCTCTCTACTACCCTTCTGCTCGCATAGTGTATACAGCTTGCTCTCATGCCGCTGTTGATGCACTATGTGAGAAGGCATTAAAATATTTGCCTATAGATAAATGTAGTAGAATTATACCTGCACGTGCTCGTGTAGAGTGTTTTGATAAATTCAAAGTGAATTCAACATTAGAACAGTATGTCTTTTGTACTGTAAATGCATTGCCTGAGACGACAGCAGATATAGTTGTCTTTGATGAAATTTCAATGGCCACAAATTATGATTTGAGTGTTGTCAATGCCAGATTACGTGCTAAGCACTATGTGTACATTGGCGACCCTGCTCAATTACCTGCACCACGCACATTGCTAACTAAGGGCACACTAGAACCAGAATATTTCAATTCAGTGTGTAGACTTATGAAAACTATAGGTCCAGACATGTTCCTCGGAACTTGTCGGCGTTGTCCTGCTGAAATTGTTGACACTGTGAGTGCTTTGGTTTATGATAATAAGCTTAAAGCACATAAAGACAAATCAGCTCAATGCTTTAAAATGTTTTATAAGGGTGTTATCACGCATGATGTTTCATCTGCAATTAACAGGCCACAAATAGGCGTGGTAAGAGAATTCCTTACACGTAACCCTGCTTGGAGAAAAGCTGTCTTTATTTCACCTTATAATTCACAGAATGCTGTAGCCTCAAAGATTTTGGGACTACCAACTCAAACTGTTGATTCATCACAGGGCTCAGAATATGACTATGTCATATTCACTCAAACCACTGAAACAGCTCACTCTTGTAATGTAAACAGATTTAATGTTGCTATTACCAGAGCAAAAGTAGGCATACTTTGCATAATGTCTGATAGAGACCTTTATGACAAGTTGCAATTTACAAGTCTTGAAATTCCACGTAGGAATGTGGCAACTTTACAAGCTGAAAATGTAACAGGACTCTTTAAAGATTGTAGTAAGGTAATCACTGGGTTACATCCTACACAGGCACCTACACACCTCAGTGTTGACACTAAATTCAAAACTGAAGGTTTATGTGTTGACATACCTGGCATACCTAAGGACATGACCTATAGAAGACTCATCTCTATGATGGGTTTTAAAATGAATTATCAAGTTAATGGTTACCCTAACATGTTTATCACCCGCGAAGAAGCTATAAGACATGTACGTGCATGGATTGGCTTCGATGTCGAGGGGTGTCATGCTACTAGAGAAGCTGTTGGTACCAATTTACCTTTACAGCTAGGTTTTTCTACAGGTGTTAACCTAGTTGCTGTACCTACAGGTTATGTTGATACACCTAATAATACAGATTTTTCCAGAGTTAGTGCTAAACCACCGCCTGGAGATCAATTTAAACACCTCATACCACTTATGTACAAAGGACTTCCTTGGAATGTAGTGCGTATAAAGATTGTACAAATGTTAAGTGACACACTTAAAAATCTCTCTGACAGAGTCGTATTTGTCTTATGGGCACATGGCTTTGAGTTGACATCTATGAAGTATTTTGTGAAAATAGGACCTGAGCGCACCTGTTGTCTATGTGATAGACGTGCCACATGCTTTTCCACTGCTTCAGACACTTATGCCTGTTGGCATCATTCTATTGGATTTGATTACGTCTATAATCCGTTTATGATTGATGTTCAACAATGGGGTTTTACAGGTAACCTACAAAGCAACCATGATCTGTATTGTCAAGTCCATGGTAATGCACATGTAGCTAGTTGTGATGCAATCATGACTAGGTGTCTAGCTGTCCACGAGTGCTTTGTTAAGCGTGTTGACTGGACTATTGAATATCCTATAATTGGTGATGAACTGAAGATTAATGCGGCTTGTAGAAAGGTTCAACACATGGTTGTTAAAGCTGCATTATTAGCAGACAAATTCCCAGTTCTTCACGACATTGGTAACCCTAAAGCTATTAAGTGTGTACCTCAAGCTGATGTAGAATGGAAGTTCTATGATGCACAGCCTTGTAGTGACAAAGCTTATAAAATAGAAGAATTATTCTATTCTTATGCCACACATTCTGACAAATTCACAGATGGTGTATGCCTATTTTGGAATTGCAATGTCGATAGAT ATCCTGCTAATTCCATTGTTTGTAGATTTGACACTAGAGTGCTATCTAACCTTAACTTGCCTGGTTGTGATGGTGGCAGTTTGTATGTAAATAAACATGCATTCCACACACCAGCTTTTGATAAAAGTGCTTTTGTTAATTTAAAACAATTACCATTTTTCTATTACTCTGACAGTCCATGTGAGTCTCATGGAAAACAAGTAGTGTCAGATATAGATTATGTACCACTAAAGTCTGCTACGTGTATAACACGTTGCAATTTAGGTGGTGCTGTCTGTAGACATCATGCTAATGAGTACAGATTGTATCTCGATGCTTATAACATGATGATCTCAGCTGGCTTTAGCTTGTGGGTTTACAAACAATTTGATACTTATAACCTCTGGAACACTTTTACAAGACTTCAGAGTTTAGAAAATGTGGCTTTTAATGTTGTAAATAAGGGACACTTTGATGGACAACAGGGTGAAGTACCAGTTTCTATCATTAATAACACTGTTTACACAAAAGTTGATGGTGTTGATGTAGAATTGTTTGAAAATAAAACAACATTACCTGTTAATGTAGCATTTGAGCTTTGGGCTAAGCGCAACATTAAACCAGTACCAGAGGTGAAAATACTCAATAATTTGGGTGTGGACATTGCTGCTAATACTGTGATCTGGGACTACAAAAGAGATGCTCCAGCACATATATCTACTATTGGTGTTTGTTCTATGACTGACATAGCCAAGAAACCAACTGAAACGATTTGTGCACCACTCACTGTCTTTTTTGATGGTAGAGTTGATGGTCAAGTAGACTTATTTAGAAATGCCCGTAATGGTGTTCTTATTACAGAAGGTAGTGTTAAAGGTTTACAACCATCTGTAGGTCCCAAACAAGCTAGTCTTAATGGAGTCACATTAATTGGAGAAGCCGTAAAAACACAGTTCAATTATTATAAGAAAGTTGATGGTGTTGTCCAACAATTACCTGAAACTTACTTTACTCAGAGTAGAAATTTACAAGAATTTAAACCCAGGAGTCAAATGGAAATTGATTTCTTAGAATTAGCTATGGATGAATTCATTGAACGGTATAAATTAGAAGGCTATGCCTTCGAACATATCGTTTATGGAGATTTTAGTCATAGTCAGTTAGGTGGTTTACATCTACTGATTGGACTAGCTAAACGTTTTAAGGAATCACCTTTTGAATTAGAAGATTTTATTCCTATGGACAGTACAGTTAAAAACTATTTCATAACAGATGCGCAAACAGGTTCATCTAAGTGTGTGTGTTCTGTTATTGATTTATTACTTGATGATTTTGTTGAAATAATAAAATCCCAAGATTTATCTGTAGTTTCTAAGGTTGTCAAAGTGACTATTGACTATACAGAAATTTCATTTATGCTTTGGTGTAAAGATGGCCATGTAGAAACATTTTACCCAAAATTACAATCTAGTCAAGCGTGGCAACCGGGTGTTGCTATGCCTAATCTTTACAAAATGCAAAGAATGCTATTAGAAAAGTGTGACCTTCAAAATTATGGTGATAGTGCAACATTACCTAAAGGCATAATGATGAATGTCGCAAAATATACTCAACTGTGTCAATATTTAAACACATTAACATTAGCTGTACCCTATAATATGAGAGTTATACATTTTGGTGCTGGTTCTGATAAAGGAGTTGCACCAGGTACAGCTGTTTTAAGACAGTGGTTGCCTACGGGTACGCTGCTTGTCGATTCAGATCTTAATGACTTTGTCTCTGATGCAGATTCAACTTTGATTGGTGATTGTGCAACTGTACATACAGCTAATAAATGGGATCTCATTATTAGTGATATGTACGACCCTAAGACTAAAAATGTTACAAAAGAAAATGACTCTAAAGAGGGTTTTTTCACTTACATTTGTGGGTTTATACAACAAAAGCTAGCTCTTGGAGGTTCCGTGGCTATAAAGATAACAGAACATTCTTGGAATGCTGATCTTTATAAGCTCATGGGACACTTCGCATGGTGGACAGCCTTTGTTACTAATGTGAATGCGTCATCATCTGAAGCATTTTTAATTGGATGTAATTATCTTGGCAAACCACGCGAACAAATAGATGGTTATGTCATGCATGCAAATTACATATTTTGGAGGAATACAAATCCAATTCAGTTGTCTTCCTATTCTTTATTTGACATGAGTAAATTTCCCCTTAAATTAAGGGGTACTGCTGTTATGTCTTTAAAAGAAGGTCAAATCAATGATATGATTTTATCTCTTCTTAGTAAAGGTAGACTTATAATTAGAGAAAACAACAGAGTTGTTATTTCTAGTGATGTTCTTGTTAACAACTAAACGAACAATGTTTGTTTTTCTTGTTTTATTGCCACTAGTCTCTAGTCAGTGTGTTAATCTTACAACCAGAACTCAATTACCCCCTGCATACACTAATTCTTTCACACGTGGTGTTTATTACCCTGACAAAGTTTTCAGATCCTCAGTTTTACATTCAACTCAGGACTTGTTCTTACCTTTCTTTTCCAATGTTACTTGGTTCCATGCTATACATGTCTCTGGGACCAATGGTACTAAGAGGTTTGATAACCCTGTCCTACCATTTAATGATGGTGTTTATTTTGCTTCCACTGAGAAGTCTAACATAATAAGAGGCTGGATTTTTGGTACTACTTTAGATTCGAAGACCCAGTCCCTACTTATTGTTAATAACGCTACTAATGTTGTTATTAAAGTCTGTGAATTTCAATTTTGTAATGATCCATTTTTGGGTGTTTATTACCACAAAAACAACAAAAGTTGGATGGAAAGTGAGTTCAGAGTTTATTCTAGTGCGAATAATTGCACTTTTGAATATGTCTCTCAGCCTTTTCTTATGGACCTTGAAGGAAAACAGGGTAATTTCAAAAATCTTAGGGAATTTGTGTTTAAGAATATTGATGGTTATTTTAAAATATATTCTAAGCACACGCCTATTAATTTAGTGCGTGATCTCCCTCAGGGTTTTTCGGCTTTAGAACCATTGGTAGATTTGCCAATAGGTATTAACATCACTAGGTTTCAAACTTTACTTGCTTTACATAGAAGTTATTTGACTCCTGGTGATTCTTCTTCAGGTTGGACAGCTGGTGCTGCAGCTTATTATGTGGGTTATCTTCAACCTAGGACTTTTCTATTAAAATATAATGAAAATGGAACCATTACAGATGCTGTAGACTGTGCACTTGACCCTCTCTCAGAAACAAAGTGTACGTTGAAATCCTTCACTGTAGAAAAAGGAATCTATCAAACTTCTAACTTTAGAGTCCAACCAACAGAATCTATTGTTAGATTTCCTAATATTACAAACTTGTGCCCTTTTGGTGAAGTTTTTAACGCCACCAGATTTGCATCTGTTTATGCTTGGAACAGGAAGAGAATCAGCAACTGTGTTGCTGATTATTCTGTCCTATATAATTCCGCATCATTTTCCACTTTTAAGTGTTATGGAGTGTCTCCTACTAAATTAAATGATCTCTGCTTTACTAATGTCTATGCAGATTCATTTGTAATTAGAGGTGATGAAGTCAGACAAATCGCTCCAGGGCAAACTGGAAAGATTGCTGATTATAATTATAAATTACCAGATGATTTTACAGGCTGCGTTATAGCTTGGAATTCTAACAATCTTGATTCTAAGGTTGGTGGTAATTATAATTACCTGTATAGATTGTTTAGGAAGTCTAATCTCAAACCTTTTGAGAGAGATATTTCAACTGAAATCTATCAGGCCGGTAGCACACCTTGTAATGGTGTTGAAGGTTTTAATTGTTACTTTCCTTTACAATCATATGGTTTCCAACCCACTAATGGTGTTGGTTACCAACCATACAGAGTAGTAGTACTTTCTTTTGAACTTCTACATGCACCAGCAACTGTTTGTGGACCTAAAAAGTCTACTAATTTGGTTAAAAACAAATGTGTCAATTTCAACTTCAATGGTTTAACAGGCACAGGTGTTCTTACTGAGTCTAACAAAAAGTTTCTGCCTTTCCAACAATTTGGCAGAGACATTGCTGACACTACTGATGCTGTCCGTGATCCACAGACACTTGAGATTCTTGACATTACACCATGTTCTTTTGGTGGTGTCAGTGTTATAACACCAGGAACAAATACTTCTAACCAGGTTGCTGTTCTTTATCAGGATGTTAACTGCACAGAAGTCCCTGTTGCTATTCATGCAGATCAACTTACTCCTACTTGGCGTGTTTATTCTACAGGTTCTAATGTTTTTCAAACACGTGCAGGCTGTTTAATAGGGGCTGAACATGTCAACAACTCATATGAGTGTGACATACCCATTGGTGCAGGTATATGCGCTAGTTATCAGACTCAGACTAATTCTCCTCGGCGGGCACGTAGTGTAGCTAGTCAATCCATCATTGCCTACACTATGTCACTTGGTGCAGAAAATTCAGTTGCTTACTCTAATAACTCTATTGCCATACCCACAAATTTTACTATTAGTGTTACCACAGAAATTCTACCAGTGTCTATGACCAAGACATCAGTAGATTGTACAATGTACATTTGTGGTGATTCAACTGAATGCAGCAATCTTTTGTTGCAATATGGCAGTTTTTGTACACAATTAAACCGTGCTTTAACTGGAATAGCTGTTGAACAAGACAAAAACACCCAAGAAGTTTTTGCACAAGTCAAACAAATTTACAAAACACCACCAATTAAAGATTTTGGTGGTTTTAATTTTTCACAAATATTACCAGATCCATCAAAACCAAGCAAGAGGTCATTTATTGAAGATCTACTTTTCAACAAAGTGACACTTGCAGATGCTGGCTTCATCAAACAATATGGTGATTGCCTTGGTGATATTGCTGCTAGAGACCTCATTTGTGCACAAAAGTTTAACGGCCTTACTGTTTTGCCACCTTTGCTCACAGATGAAATGATTGCTCAATACACTTCTGCACTGTTAGCGGGTACAATCACTTCTGGTTGGACCTTTGGTGCAGGTGCTGCATTACAAATACCATTTGCTATGCAAATGGCTTATAGGTTTAATGGTATTGGAGTTACACAGAATGTTCTCTATGAGAACCAAAAATTGATTGCCAACCAATTTAATAGTGCTATTGGCAAAATTCAAGACTCACTTTCTTCCACAGCAAGTGCACTTGGAAAACTTCAAGATGTGGTCAACCAAAATGCACAAGCTTTAAACACGCTTGTTAAACAACTTAGCTCCAATTTTGGTGCAATTTCAAGTGTTTTAAATGAT ATCCTTTCACGTCTTGACAAAGTTGAGGCTGAAGTGCAAATTGATAGGTTGATCACAGGCAGACTTCAAAGTTTGCAGACATATGTGACTCAACAATTAATTAGAGCTGCAGAAATCAGAGCTTCTGCTAATCTTGCTGCTACTAAAATGTCAGAGTGTGTACTTGGACAATCAAAAAGAGTTGATTTTTGTGGAAAGGGCTATCATCTTATGTCCTTCCCTCAGTCAGCACCTCATGGTGTAGTCTTCTTGCATGTGACTTATGTCCCTGCACAAGAAAAGAACTTCACAACTGCTCCTGCCATTTGTCATGATGGAAAAGCACACTTTCCTCGTGAAGGTGTCTTTGTTTCAAATGGCACACACTGGTTTGTAACACAAAGGAATTTTTATGAACCACAAATCATTACTACAGACAACACATTTGTGTCTGGTAACTGTGATGTTGTAATAGGAATTGTCAACAACACAGTTTATGATCCTTTGCAACCTGAATTAGACTCATTCAAGGAGGAGTTAGATAAATATTTTAAGAATCATACATCACCAGATGTTGATTTAGGTGACATCTCTGGCATTAATGCTTCAGTTGTAAACATTCAAAAAGAAATTGACCGCCTCAATGAGGTTGCCAAGAATTTAAATGAATCTCTCATCGATCTCCAAGAACTTGGAAAGTATGAGCAGTATATAAAATGGCCATGGTACATTTGGCTAGGTTTTATAGCTGGCTTGATTGCCATAGTAATGGTGACAATTATGCTTTGCTGTATGACCAGTTGCTGTAGTTGTCTCAAGGGCTGTTGTTCTTGTGGATCCTGCTGCAAATTTGATGAAGACGACTCTGAGCCAGTGCTCAAAGGAGTCAAATTACATTACACATAAACGAACTTATGGATTTGTTTATGAGAATCTTCACAATTGGAACTGTAACTTTGAAGCAAGGTGAAATCAAGGATGCTACTCCTTCAGATTTTGTTCGCGCTACTGCAACGATACCGATACAAGCCTCACTCCCTTTCGGATGGCTTATTGTTGGCGTTGCACTTCTTGCTGTTTTTCAGAGCGCTTCCAAAATCATAACCCTCAAAAAGAGATGGCAACTAGCACTCTCCAAGGGTGTTCACTTTGTTTGCAACTTGCTGTTGTTGTTTGTAACAGTTTACTCACACCTTTTGCTCGTTGCTGCTGGCCTTGAAGCCCCTTTTCTCTATCTTTATGCTTTAGTCTACTTCTTGCAGAGTATAAACTTTGTAAGAATAATAATGAGGCTTTGGCTTTGCTGGAAATGCCGTTCCAAAAACCCATTACTTTATGATGCCAACTATTTTCTTTGCTGGCATACTAATTGTTACGACTATTGTATACCTTACAATAGTGTAACTTCTTCAATTGTCATTACTTCAGGTGATGGCACAACAAGTCCTATTTCTGAACATGACTACCAGATTGGTGGTTATACTGAAAAATGGGAATCTGGAGTAAAAGACTGTGTTGTATTACACAGTTACTTCACTTCAGACTATTACCAGCTGTACTCAACTCAATTGAGTACAGACACTGGTGTTGAACATGTTACCTTCTTCATCTACAATAAAATTGTTGATGAGCCTGAAGAACATGTCCAAATTCACACAATCGACGGTTCATCCGGAGTTGTTAATCCAGTAATGGAACCAATTTATGATGAACCGACGACGACTACTAGCGTGCCTTTGTAAGCACAAGCTGATGAGTACGAACTTATGTACTCATTCGTTTCGGAAGAGACAGGTACGTTAATAGTTAATAGCGTACTTCTTTTTCTTGCTTTCGTGGTATTCTTGCTAGTTACACTAGCCATCCTTACTGCGCTTCGATTGTGTGCGTACTGCTGCAATATTGTTAACGTGAGTCTTGTAAAACCTTCTTTTTACGTTTACTCTCGTGTTAAAAATCTGAATTCTTCTAGAGTTCCTGATCTTCTGGTCTAAACGAACTAAATATTATATTAGTTTTTCTGTTTGGAACTTTAATTTTAGCCATGGCAGATTCCAACGGTACTATTACCGTTGAAGAGCTTAAAAAGCTCCTTGAACAATGGAACCTAGTAATAGGTTTCCTATTCCTTACATGGATTTGTCTTCTACAATTTGCCTATGCCAACAGGAATAGGTTTTTGTATATAATTAAGTTAATTTTCCTCTGGCTGTTATGGCCAGTAACTTTAGCTTGTTTTGTGCTTGCTGCTGTTTACAGAATAAATTGGATCACCGGTGGAATTGCTATCGCAATGGCTTGTCTTGTAGGCTTGATGTGGCTCAGCTACTTCATTGCTTCTTTCAGACTGTTTGCGCGTACGCGTTCCATGTGGTCATTCAATCCAGAAACTAACATTCTTCTCAACGTGCCACTCCATGGCACTATTCTGACCAGACCGCTTCTAGAAAGTGAACTCGTAATCGGAGCTGTGATCCTTCGTGGACATCTTCGTATTGCTGGACACCATCTAGGACGCTGTGACATCAAGGACCTGCCTAAAGAAATCACTGTTGCTACATCACGAACGCTTTCTTATTACAAATTGGGAGCTTCGCAGCGTGTAGCAGGTGACTCAGGTTTTGCTGCATACAGTCGCTACAGGATTGGCAACTATAAATTAAACACAGACCATTCCAGTAGCAGTGACAATATTGCTTTGCTTGTACAGTAAGTGACAACAGATGTTTCATCTCGTTGACTTTCAGGTTACTATAGCAGAGATATTACTAATTATTATGAGGACTTTTAAAGTTTCCATTTGGAATCTTGATTACATCATAAACCTCATAATTAAAAATTTATCTAAGTCACTAACTGAGAATAAATATTCTCAATTAGATGAAGAGCAACCAATGGAGATTGATTAAACGAACATGAAAATTATTCTTTTCTTGGCACTGATAACACTCGCTACTTGTGAGCTTTATCACTACCAAGAGTGTGTTAGAGGTACAACAGTACTTTTAAAAGAACCTTGCTCTTCTGGAACATACGAGGGCAATTCACCATTTCATCCTCTAGCTGATAACAAATTTGCACTGACTTGCTTTAGCACTCAATTTGCTTTTGCTTGTCCTGACGGCGTAAAACACGTCTATCAGTTACGTGCCAGATCAGTTTCACCTAAACTGTTCATCAGACAAGAGGAAGTTCAAGAACTTTACTCTCCAATTTTTCTTATTGTTGCGGCAATAGTGTTTATAACACTTTGCTTCACACTCAAAAGAAAGACAGAATGATTGAACTTTCATTAATTGACTTCTATTTGTGCTTTTTAGCCTTTCTGCTATTCCTTGTTTTAATTATGCTTATTATCTTTTGGTTCTCACTTGAACTGCAAGATCATAATGAAACTTGTCACGCCTAAACGAACATGAAATTTCTTGTTTTCTTAGGAATCATCACAACTGTAGCTGCATTTCACCAAGAATGTAGTTTACAGTCATGTACTCAACATCAACCATATGTAGTTGATGACCCGTGTCCTATTCACTTCTATTCTAAATGGTATATTAGAGTAGGAGCTAGAAAATCAGCACCTTTAATTGAATTGTGCGTGGATGAGGCTGGTTCTAAATCACCCATTCAGTACATCGAT ATCGGTAATTATACAGTTTCCTGTTTACCTTTTACAATTAATTGCCAGGAACCTAAATTGGGTAGTCTTGTAGTGCGTTGTTCGTTCTATGAAGACTTTTTAGAGTATCATGACGTTCGTGTTGTTTTAGATTTCATCTAAACGAACAAACTAAAATGTCTGATAATGGACCCCAAAATCAGCGAAATGCACCCCGCATTACGTTTGGTGGACCCTCAGATTCAACTGGCAGTAACCAGAATGGAGAACGCAGTGGGGCGCGATCAAAACAACGTCGGCCCCAAGGTTTACCCAATAATACTGCGTCTTGGTTCACCGCTCTCACTCAACATGGCAAGGAAGACCTTAAATTCCCTCGAGGACAAGGCGTTCCAATTAACACCAATAGCAGTCCAGATGACCAAATTGGCTACTACCGAAGAGCTACCAGACGAATTCGTGGTGGTGACGGTAAAATGAAAGATCTCAGTCCAAGATGGTATTTCTACTACCTAGGAACTGGGCCAGAAGCTGGACTTCCCTATGGTGCTAACAAAGACGGCATCATATGGGTTGCAACTGAGGGAGCCTTGAATACACCAAAAGATCACATTGGCACCCGCAATCCTGCTAACAATGCTGCAATCGTGCTACAACTTCCTCAAGGAACAACATTGCCAAAAGGCTTCTACGCAGAAGGGAGCAGAGGCGGCAGTCAAGCCTCTTCTCGTTCCTCATCACGTAGTCGCAACAGTTCAAGAAATTCAACTCCAGGCAGCAGTAGGGGAACTTCTCCTGCTAGAATGGCTGGCAATGGCGGTGATGCTGCTCTTGCTTTGCTGCTGCTTGACAGATTGAACCAGCTTGAGAGCAAAATGTCTGGTAAAGGCCAACAACAACAAGGCCAAACTGTCACTAAGAAATCTGCTGCTGAGGCTTCTAAGAAGCCTCGGCAAAAACGTACTGCCACTAAAGCATACAATGTAACACAAGCTTTCGGCAGACGTGGTCCAGAACAAACCCAAGGAAATTTTGGGGACCAGGAACTAATCAGACAAGGAACTGATTACAAACATTGGCCGCAAATTGCACAATTTGCCCCCAGCGCTTCAGCGTTCTTCGGAATGTCGCGCATTGGCATGGAAGTCACACCTTCGGGAACGTGGTTGACCTACACAGGTGCCATCAAATTGGATGACAAAGATCCAAATTTCAAAGATCAAGTCATTTTGCTGAATAAGCATATTGACGCATACAAAACATTCCCACCAACAGAGCCTAAAAAGGACAAAAAGAAGAAGGCTGATGAAACTCAAGCCTTACCGCAGAGACAGAAGAAACAGCAAACTGTGACTCTTCTTCCTGCTGCAGATTTGGATGATTTCTCCAAACAATTGCAACAATCCATGAGCAGTGCTGACTCAACTCAGGCCTAAACTCATGCAGACCACACAAGGCAGATGGGCTATATAAACGTTTTCGCTTTTCCGTTTACGATATATAGTCTACTCTTGTGCAGAATGAATTCTCGTAACTACATAGCACAAGTAGATGTAGTTAACTTTAATCTCACATAGCAATCTTTAATCAGTGTGTAACATTAGGGAGGACTTGAAAGAGCCACCACATTTTCACCGAGGCCACGCGGAGTACGATCGAGTGTACAGTGAACAATGCTAGGGAGAGCTGCCTATATGGAAGAGCCCTAATGTGTAAAATTAATTTTAGTAGTGCTATCCCCATGTGATTTTAATAGCTTCTTAGGAGAATGACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+\end{verbatim}
+
+Now we got a simple genome line with some new-line characters appearing
+where the motif was digested. To count the size of the each fragment we
+just need to loop over the lines and then count their characters, we can
+do that with \texttt{wc\ -c}. We can finally end ith the following two
+lines of code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\VariableTok{fragments}\OperatorTok{=}\VariableTok{$(}\FunctionTok{tail} \AttributeTok{{-}n}\NormalTok{ +2 data/Sarscov2{-}genome.fasta }\KeywordTok{|} \FunctionTok{tr} \AttributeTok{{-}d} \StringTok{"\textbackslash{}n"} \KeywordTok{|} \FunctionTok{sed} \StringTok{\textquotesingle{}s/GATATC/GAT\textbackslash{}nATC/g\textquotesingle{}}\VariableTok{)}
+
+\ControlFlowTok{for}\NormalTok{ line }\KeywordTok{in} \VariableTok{$fragments}\KeywordTok{;} \ControlFlowTok{do}
+    \BuiltInTok{echo} \VariableTok{$line} \KeywordTok{|} \FunctionTok{wc} \AttributeTok{{-}c}
+\ControlFlowTok{done}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   14836
+    1144
+    3236
+    5287
+    3620
+    1786
+\end{verbatim}
+
+A generalization of the previous lines could easily be wrapped around as
+a bash script by adding the shebang header and changing the hardcoded
+input into a argument environmental variable.
+
+\begin{codelisting}
+
+\caption{A bash script that search a motif in a genome file and digest
+the sequence on the specified restriction motif, then generate the
+fragments and count their sizes}
+
+\hypertarget{lst-ecorv-digestion}{%
+\label{lst-ecorv-digestion}}%
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#! /usr/bin/env bash}
+
+\VariableTok{fragments}\OperatorTok{=}\VariableTok{$(}\FunctionTok{tail} \AttributeTok{{-}n}\NormalTok{ +2 }\VariableTok{$1} \KeywordTok{|} \FunctionTok{tr} \AttributeTok{{-}d} \StringTok{"\textbackslash{}n"} \KeywordTok{|} \FunctionTok{sed} \StringTok{\textquotesingle{}s/GATATC/GAT\textbackslash{}nATC/g\textquotesingle{}}\VariableTok{)}
+
+\ControlFlowTok{for}\NormalTok{ line }\KeywordTok{in} \VariableTok{$fragments}\KeywordTok{;} \ControlFlowTok{do}
+    \BuiltInTok{echo} \VariableTok{$line} \KeywordTok{|} \FunctionTok{wc} \AttributeTok{{-}c}
+\ControlFlowTok{done}
+\end{Highlighting}
+\end{Shaded}
+
+\end{codelisting}
+
+\hypertarget{seq.-analysis-challenges}{%
+\chapter*{Seq. Analysis challenges}\label{seq.-analysis-challenges}}
+\addcontentsline{toc}{chapter}{Seq. Analysis challenges}
+
+\hypertarget{counting-features}{%
+\section*{Counting features}\label{counting-features}}
+\addcontentsline{toc}{section}{Counting features}
+
+The first downloading from NCBI
+
+The first step in this journey is to download a bunch of sequences
+programmatically. To do so, we will use the program
+\href{https://github.com/kblin/ncbi-genome-download}{ncbi-genome-download}.
+
+You could inspect all the options it provides, now we will set our
+command as the following:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#| echo: true}
+\CommentTok{\#| eval: false}
+\ExtensionTok{ngd} \AttributeTok{{-}{-}genera} \StringTok{"Bacillus subtilis"}\DataTypeTok{\textbackslash{}}
+    \AttributeTok{{-}s}\NormalTok{ refseq}\DataTypeTok{\textbackslash{}}
+    \AttributeTok{{-}l}\NormalTok{ complete}\DataTypeTok{\textbackslash{}}
+    \AttributeTok{{-}o}\NormalTok{ Data}\DataTypeTok{\textbackslash{}}
+    \AttributeTok{{-}{-}flat{-}output}\DataTypeTok{\textbackslash{}}
+    \AttributeTok{{-}{-}format}\NormalTok{ features}\DataTypeTok{\textbackslash{}}
+    \AttributeTok{{-}n}\NormalTok{ bacteria}\DataTypeTok{\textbackslash{}}
+    \KeywordTok{|} \FunctionTok{head} \AttributeTok{{-}n}\NormalTok{ 5}
+\end{Highlighting}
+\end{Shaded}
+
+To this date this command will search for 216 complete genome
+information of \emph{Bacillus subtilis} strains and download the
+\textbf{feature-table} file compressed. So the next step is to
+decompress all of them:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \PreprocessorTok{*}\NormalTok{.txt}\KeywordTok{;} \ControlFlowTok{do}
+  \FunctionTok{gzip} \AttributeTok{{-}d} \VariableTok{$i}
+\ControlFlowTok{done}
+\end{Highlighting}
+\end{Shaded}
+
+Now the the feature-table file is a is a long table containing each of
+the features annotated in the genome see the top of a file:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head} \AttributeTok{{-}n}\NormalTok{ 5 data/features/GCF\_000009045.1\_ASM904v1\_feature\_table.txt}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+# feature   class   assembly    assembly_unit   seq_type    chromosome  genomic_accession   start   end strand  product_accession   non-redundant_refseq    related_accession   name    symbol  GeneID  locus_tag   feature_interval_length product_length  attributes
+gene    protein_coding  GCF_000009045.1 Primary Assembly    chromosome      NC_000964.3 410 1750    +                   dnaA    939978  BSU_00010   1341        old_locus_tag=BSU00010
+CDS with_protein    GCF_000009045.1 Primary Assembly    chromosome      NC_000964.3 410 1750    +   NP_387882.1 WP_003242674.1      chromosomal replication initiator informational ATPase  dnaA    939978  BSU_00010   1341    446 
+gene    protein_coding  GCF_000009045.1 Primary Assembly    chromosome      NC_000964.3 1939    3075    +                   dnaN    939970  BSU_00020   1137        old_locus_tag=BSU00020
+CDS with_protein    GCF_000009045.1 Primary Assembly    chromosome      NC_000964.3 1939    3075    +   NP_387883.1 WP_003242509.1      DNA polymerase III (beta subunit)   dnaN    939970  BSU_00020   1137    378 
+\end{verbatim}
+
+The question now is how to count the lines corresponding to
+\texttt{features} which is the first line. It contains six types of
+features (CDS, gene, rRNA, tRNA, tmRNA, ncRNA and misc\_RNA). This task
+could be achieved by many ways, but a general approach to count lines is
+the way through it. Here there three approaches to follow:
+
+\hypertarget{bash}{%
+\subsubsection*{Bash}\label{bash}}
+\addcontentsline{toc}{subsubsection}{Bash}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#! usr/bin/bash}
+
+\BuiltInTok{export} \VariableTok{features}\OperatorTok{=}\StringTok{"id CDS gene ncRNA rRNA tmRNA tRNA"}
+
+\BuiltInTok{echo} \VariableTok{$features}
+
+
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \VariableTok{$(}\FunctionTok{ls} \VariableTok{$1)}\KeywordTok{;} \ControlFlowTok{do}
+    \VariableTok{values}\OperatorTok{=}\VariableTok{$(}\FunctionTok{awk} \StringTok{\textquotesingle{}/CDS/\{++cnt1\} /gene/\{++cnt2\} /ncRNA/\{++cnt3\} /rRNA/\{++cnt4\} /tmRNA/\{++cnt5\} /tRNA/\{++cnt\} END \{print cnt1, cnt2, cnt3, cnt4, cnt5, cnt6\}\textquotesingle{}} \VariableTok{$\{1\}}\NormalTok{/}\VariableTok{$\{i\})}\KeywordTok{;}
+    \VariableTok{id}\OperatorTok{=}\VariableTok{$(}\FunctionTok{egrep} \AttributeTok{{-}o} \AttributeTok{{-}m}\NormalTok{ 1 }\StringTok{"GCF.\{12\}"} \VariableTok{$\{1\}}\NormalTok{/}\VariableTok{$\{i\})}
+    \BuiltInTok{echo} \StringTok{"}\VariableTok{$id}\StringTok{ }\VariableTok{$values}\StringTok{"}
+\ControlFlowTok{done}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+id CDS gene ncRNA rRNA tmRNA tRNA
+GCF_000009045.1 4238 4578 4 76 2 
+GCF_000146565.1 3998 4120 6 64 2 
+GCF_000186745.1 4111 4247 6 78 2 
+GCF_000209795.2 4262 4400 6 76 2 
+GCF_000227465.1 4167 4314 6 76 2 
+GCF_000227485.1 3991 4128 6 76 2 
+GCF_000293765.1 4205 4343 6 76 2 
+GCF_000321395.1 4043 4179 6 76 2 
+\end{verbatim}
+
+\hypertarget{r}{%
+\subsubsection*{R}\label{r}}
+\addcontentsline{toc}{subsubsection}{R}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(fs)}
+
+\NormalTok{all\_features }\OtherTok{\textless{}{-}} \FunctionTok{dir\_ls}\NormalTok{(}\StringTok{"data/features"}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{map\_df}\NormalTok{(read\_tsv)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning: One or more parsing issues, see `problems()` for details
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{all\_features }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{head}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+# A tibble: 6 x 20
+  `# feature` class  assembly assembly_unit seq_type chromosome genomic_accessi~
+  <chr>       <chr>  <chr>    <chr>         <chr>    <chr>      <chr>           
+1 gene        prote~ GCF_000~ Primary Asse~ chromos~ <NA>       NC_000964.3     
+2 CDS         with_~ GCF_000~ Primary Asse~ chromos~ <NA>       NC_000964.3     
+3 gene        prote~ GCF_000~ Primary Asse~ chromos~ <NA>       NC_000964.3     
+4 CDS         with_~ GCF_000~ Primary Asse~ chromos~ <NA>       NC_000964.3     
+5 gene        prote~ GCF_000~ Primary Asse~ chromos~ <NA>       NC_000964.3     
+6 CDS         with_~ GCF_000~ Primary Asse~ chromos~ <NA>       NC_000964.3     
+# ... with 13 more variables: start <dbl>, end <dbl>, strand <chr>,
+#   product_accession <chr>, `non-redundant_refseq` <chr>,
+#   related_accession <lgl>, name <chr>, symbol <chr>, GeneID <dbl>,
+#   locus_tag <chr>, feature_interval_length <dbl>, product_length <dbl>,
+#   attributes <chr>
+\end{verbatim}
+
+Now that we read all the files into the programming environment we can
+operate over them with different libraries.
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\NormalTok{all\_features\_grouped }\OtherTok{\textless{}{-}}\NormalTok{ all\_features }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{rename}\NormalTok{(}\AttributeTok{feature =} \StringTok{\textasciigrave{}}\AttributeTok{\# feature}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{select}\NormalTok{(assembly, feature) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{group\_by}\NormalTok{(assembly, feature) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{count}\NormalTok{() }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{pivot\_wider}\NormalTok{(}\AttributeTok{names\_from =}\NormalTok{ feature, }\AttributeTok{values\_from =}\NormalTok{ n)}
+
+\NormalTok{all\_features\_grouped}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+# A tibble: 5 x 8
+# Groups:   assembly [5]
+  assembly          CDS  gene misc_RNA ncRNA  rRNA  tRNA tmRNA
+  <chr>           <int> <int>    <int> <int> <int> <int> <int>
+1 GCF_000009045.1  4237  4536       93     2    30    86    NA
+2 GCF_000146565.1  3998  4104       NA     4    24    77     1
+3 GCF_000186745.1  4111  4230       NA     4    31    83     1
+4 GCF_000209795.2  4262  4384       NA     4    30    87     1
+5 GCF_000227465.1  4167  4294       NA     4    30    92     1
+\end{verbatim}
+
+The code lines operation are doing the following steps:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Create a new dataset that will group by features per accession.
+\item
+  Change the \texttt{\#\ feature} name for simple \texttt{feature}.
+\item
+  Select \texttt{feature} and \texttt{assembly} columns.
+\item
+  Group by these two columns, enabling grouping operations.
+\item
+  Count the numbers of rows based on the applied grouping.
+\item
+  Generate a wide dataset sending row names as columns.
+\end{enumerate}
+
+\hypertarget{python}{%
+\subsubsection*{Python}\label{python}}
+\addcontentsline{toc}{subsubsection}{Python}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ glob}
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+
+\NormalTok{files }\OperatorTok{=}\NormalTok{ glob.glob(}\StringTok{"data/features/*.txt"}\NormalTok{)}
+
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.concat((pd.read\_csv(f, sep}\OperatorTok{=}\StringTok{\textquotesingle{}}\CharTok{\textbackslash{}t}\StringTok{\textquotesingle{}}\NormalTok{) }\ControlFlowTok{for}\NormalTok{ f }\KeywordTok{in}\NormalTok{ files))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_renamed  }\OperatorTok{\textless{}{-}}\NormalTok{ df.rename(columns}\OperatorTok{=}\NormalTok{\{}\StringTok{"\# feature"}\NormalTok{ : }\StringTok{"feature"}\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_filtered }\OperatorTok{=}\NormalTok{ df\_renamed.}\BuiltInTok{filter}\NormalTok{(items}\OperatorTok{=}\NormalTok{[}\StringTok{"feature"}\NormalTok{, }\StringTok{"assembly"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_filtered.groupby([}\StringTok{"assembly"}\NormalTok{,}\StringTok{"feature"}\NormalTok{])[}\StringTok{"feature"}\NormalTok{].count()}
+\end{Highlighting}
+\end{Shaded}
 
 \bookmarksetup{startatroot}
 
@@ -1734,10 +2479,32 @@ genomes as the first argument.
 Allesina, Stefano, and Madlen Wilmes. 2019. {``Computing Skills for
 Biologists,''} January. \url{https://doi.org/10.2307/j.ctvc77jrc}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-brandies2021}{}}%
+Brandies, Parice A, and Carolyn J Hogg. 2021. {``Ten Simple Rules for
+Getting Started with Command-Line Bioinformatics.''} \emph{PLoS
+Computational Biology}. Public Library of Science San Francisco, CA USA.
+
+\leavevmode\vadjust pre{\hypertarget{ref-brown2018}{}}%
+Brown, Terence A. 2018. \emph{Genomes 4}. Garland science.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dudley2009}{}}%
+Dudley, Joel T, and Atul J Butte. 2009. {``A Quick Guide for Developing
+Effective Bioinformatics Programming Skills.''} \emph{PLOS Computational
+Biology}. Public Library of Science San Francisco, USA.
+
+\leavevmode\vadjust pre{\hypertarget{ref-makinen2015}{}}%
+Mäkinen, Veli, Djamal Belazzougui, Fabio Cunial, and Alexandru I
+Tomescu. 2015. \emph{Genome-Scale Algorithm Design}. Cambridge
+University Press.
+
 \leavevmode\vadjust pre{\hypertarget{ref-meneely2017}{}}%
 Meneely, Philip Mark, Rachel Dawes Hoang, Iruka N Okeke, and Katherine
 Heston. 2017. \emph{Genetics: Genes, Genomes, and Evolution}. Oxford
 University Press.
+
+\leavevmode\vadjust pre{\hypertarget{ref-perkel2021}{}}%
+Perkel, Jeffrey M et al. 2021. {``Five Reasons Why Researchers Should
+Learn to Love the Command Line.''} \emph{Nature} 590 (7844): 173--74.
 
 \end{CSLReferences}
 

@@ -1,6 +1,10 @@
 ---
-execute:
-  freeze: true
+execute: 
+  freeze: auto
+filters:
+  - code-filename
+  - nutshell
+  - lightbox
 ---
 
 # Seq. Analysis challenges {.unnumbered}
@@ -30,7 +34,7 @@ To this date this command will search for 216 complete genome information of *Ba
 
 ```{.zsh}
 for i in *.txt; do
-  gzip -d i
+  gzip -d $i
 done
 ```
 Now the the feature-table file is a is a long table containing each of the features annotated in the genome see the top of a file:
@@ -121,11 +125,27 @@ The code lines operation are doing the following steps:
 import glob
 import pandas as pd
 
-files = glob.glob("*.txt")
+files = glob.glob("data/features/*.txt")
 
 df = pd.concat((pd.read_csv(f, sep='\t') for f in files))
-
-df.rename(columns={"# feature" : "feature"}).filter(items=["feature", "assembly"]).groupby(["assembly","feature"])["feature"].count()
 ```
+
+```{python}
+#| eval: false
+df_renamed  <- df.rename(columns={"# feature" : "feature"})
+```
+
+
+```{python}
+#| eval: false
+df_filtered = df_renamed.filter(items=["feature", "assembly"])
+```
+
+
+```{python}
+#| eval: false
+df_filtered.groupby(["assembly","feature"])["feature"].count()
+```
+
 :::
 
