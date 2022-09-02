@@ -8,7 +8,7 @@ book:
   author: 
     - name: "Camilo García-Botero"
       orcid: 0000-0002-0426-7007
-      url: https://camilo-garcia.quarto.pub/webcard/
+      url: https://camilogarciabotero.github.io/
       affiliation: Universidad EAFIT
   # citation: true
   cover-image: figs/cover.png
@@ -27,7 +27,7 @@ book:
     border: true
     right:
       - text: "{{< fa house >}}"
-        href: https://camilo-garcia.quarto.pub
+        href: https://camilogarciabotero.github.io/
     left: "Made with [Quarto](https://quarto.org/). Under [GNU GPL 3.0](https://github.com/camilogarciabotero/biocomp-book/blob/main/LICENSE). Buy me coffee [{{< fa mug-saucer >}}](https://www.paypal.com/paypalme/camilogarciabotero)"
   chapters:
     - index.qmd
