@@ -10,10 +10,18 @@ book:
       orcid: 0000-0002-0426-7007
       url: https://camilogarciabotero.github.io/
       affiliation: Universidad EAFIT
-  # citation: true
   cover-image: figs/cover.png
-  #date: "2022-04-11"
-  search: true
+  # search: true  
+
+  citation:
+    type: book
+    # container-title: "Journal of Data Science Software"
+    doi: 10.5281/zenodo.6468280
+    url: https://camilogarciabotero.github.io/biocomp-book/
+
+  date: today
+  date-format: "YYYY-MM-DD"
+
   repo-url: https://github.com/camilogarciabotero/biocomp-book
   site-url: https://camilogarciabotero.github.io/biocomp-book/
   repo-actions: [edit, issue]
@@ -23,12 +31,14 @@ book:
   # sharing: [twitter]
   sidebar:
     style: floating
+
   page-footer: 
     border: true
     right:
       - text: "{{< fa house >}}"
         href: https://camilogarciabotero.github.io/
     left: "Made with [Quarto](https://quarto.org/). Under [GNU GPL 3.0](https://github.com/camilogarciabotero/biocomp-book/blob/main/LICENSE). Buy me coffee [{{< fa mug-saucer >}}](https://www.paypal.com/paypalme/camilogarciabotero)"
+
   chapters:
     - index.qmd
     - intro.qmd
@@ -71,15 +81,6 @@ bibliography: references.bib
 reference-location: margin
 crossref: 
   lst-title: Code
-
-citation:
-  type: book
-    # container-title: "Journal of Data Science Software"
-  doi: 10.5281/zenodo.6468280
-  url: https://camilogarciabotero.github.io/biocomp-book/
-
-date: today
-date-format: "YYYY-MM-DD"
 
 comments:
   hypothesis: true

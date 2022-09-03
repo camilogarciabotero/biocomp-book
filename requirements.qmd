@@ -18,3 +18,5 @@ github account
 Rstudio?
 Python?
 Julia?
+
+# Course schedule

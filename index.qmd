@@ -1,3 +1,12 @@
+---
+description: | 
+  An introductory book built upon several lectures about computational biology.
+citation:
+    type: book
+    # container-title: "Journal of Data Science Software"
+    doi: 10.5281/zenodo.6468280
+    url: https://camilogarciabotero.github.io/biocomp-book/
+---
 # Preface {.unnumbered}
 
 We started this book with the aim of compiling the lectures of the course Fundamentals of Computational Biology offered at EAFIT University for undergrad students in Biology. The course has been taught from different perspectives from its creation. All main units are depicted in this book, although the course is mainly composed from at least four of them. We suggest to cover the first three units/parts and vary the last. Units in this book are partitioned as follows: i) Unix, ii) sequence analysis, iii) genomics, iii) metagenomics iv) RNA seq v) structural biology.

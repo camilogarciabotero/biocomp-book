@@ -16,10 +16,10 @@ Next parts are currently optionals for the course per-se and some iterations may
 <!-- Include a section, maybe an appendix about how to handle errors
 Include s section about the windows subsystem for linux (WSL) and the ease of use for windows users -->
 
-## Course schedule
-
 ## Bioinformatics vs. Computational biology
 
 ## The extent of computational biology
 
-[Fig. @fig-biofields]. 
+There so many fields on bioinformarics [Fig. @fig-biofields], that sometimes its hard to focus on the fundamentals. But this is also an opportunity to discuss the main aspects and differences across the fields.
+
+![Different areas on bioinfomatics](chs-command-line/imgs-cli/biofields.png){#fig-biofields}
