@@ -467,5 +467,208 @@
     "title": "References",
     "section": "",
     "text": "Allesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for\nBiologists,” January. https://doi.org/10.2307/j.ctvc77jrc.\n\n\nBrandies, Parice A, and Carolyn J Hogg. 2021. “Ten Simple Rules\nfor Getting Started with Command-Line Bioinformatics.” PLoS\nComputational Biology. Public Library of Science San Francisco, CA\nUSA.\n\n\nBrown, Terence A. 2018. Genomes 4. Garland science.\n\n\nDudley, Joel T, and Atul J Butte. 2009. “A Quick Guide for\nDeveloping Effective Bioinformatics Programming Skills.” PLOS\nComputational Biology. Public Library of Science San Francisco,\nUSA.\n\n\nMäkinen, Veli, Djamal Belazzougui, Fabio Cunial, and Alexandru I\nTomescu. 2015. Genome-Scale Algorithm Design. Cambridge\nUniversity Press.\n\n\nMeneely, Philip Mark, Rachel Dawes Hoang, Iruka N Okeke, and Katherine\nHeston. 2017. Genetics: Genes, Genomes, and Evolution. Oxford\nUniversity Press.\n\n\nPerkel, Jeffrey M et al. 2021. “Five Reasons Why Researchers\nShould Learn to Love the Command Line.” Nature 590\n(7844): 173–74."
+  },
+  {
+    "objectID": "HISTORY.html",
+    "href": "HISTORY.html",
+    "title": "History",
+    "section": "",
+    "text": "New render w/ Quarto 1.1\nAdding more on sequence analysis\nIncluding new extension for videos\nImprove some images\nBook has now Giscus to enable discussions\nNew info on download genomics data\nNew foot page with license and more info"
+  },
+  {
+    "objectID": "HISTORY.html#edition-0.0.6",
+    "href": "HISTORY.html#edition-0.0.6",
+    "title": "History",
+    "section": "Edition 0.0.6",
+    "text": "Edition 0.0.6\n\nMore updates to CLI chapter.\nUpdate the Version Control chapter.\nDecoupled genome annotation section into separate chapter.\nAdd a motif search challenge\nAdd cover image\nMany typos corrected."
+  },
+  {
+    "objectID": "HISTORY.html#edition-0.0.5",
+    "href": "HISTORY.html#edition-0.0.5",
+    "title": "History",
+    "section": "Edition 0.0.5",
+    "text": "Edition 0.0.5\n\nUpdate CLI chapter.\nDecoupled Seq analysis and Genomics into separate chapters.\nChapters were reorganized in its own dirs to make easier navigation. They also were renamed for later easier addition of other chapters.\nNew learning features using Quarto callouts. This will hopefully improve learning and enjoy the book.\nChapters sections will have numbering."
+  },
+  {
+    "objectID": "HISTORY.html#edition-0.0.4",
+    "href": "HISTORY.html#edition-0.0.4",
+    "title": "History",
+    "section": "Edition 0.0.4",
+    "text": "Edition 0.0.4\n\nMinor typos and outline for the structural biology section\nStart improving crossreferences"
+  },
+  {
+    "objectID": "HISTORY.html#edition-0.0.3",
+    "href": "HISTORY.html#edition-0.0.3",
+    "title": "History",
+    "section": "Edition 0.0.3",
+    "text": "Edition 0.0.3\n\nCitation and reference of the book is now almost complete"
+  },
+  {
+    "objectID": "HISTORY.html#edition-0.0.2",
+    "href": "HISTORY.html#edition-0.0.2",
+    "title": "History",
+    "section": "Edition 0.0.2",
+    "text": "Edition 0.0.2\n\nThis edition includes more information of the book and author\nAdds DOI and Zenodo\nIncludes Social commenting"
+  },
+  {
+    "objectID": "HISTORY.html#edition-0.0.1",
+    "href": "HISTORY.html#edition-0.0.1",
+    "title": "History",
+    "section": "Edition 0.0.1",
+    "text": "Edition 0.0.1\n\nThis preliminary edition contains the basic outline of the book\nContains the first draft solutions to challenges demos"
+  },
+  {
+    "objectID": "HISTORY.html#edition-0.0.7",
+    "href": "HISTORY.html#edition-0.0.7",
+    "title": "History",
+    "section": "Edition 0.0.7",
+    "text": "Edition 0.0.7\n\nChanges in git chapter\nMore images in different chapters\nStart using new filters : lightbox for images and nutshell for expandable explanations\nSome images in HPC chapter\nSome outlines in Package manager chapter\nSome paragraphs on the sequence analysis chapter\nAdditional challenges"
+  },
+  {
+    "objectID": "HISTORY.html#edition-0.0.3-2022-04-18",
+    "href": "HISTORY.html#edition-0.0.3-2022-04-18",
+    "title": "History",
+    "section": "Edition 0.0.3 (2022-04-18)",
+    "text": "Edition 0.0.3 (2022-04-18)\n\nCitation and reference of the book is now almost complete"
+  },
+  {
+    "objectID": "HISTORY.html#edition-0.0.2-2022-04-17",
+    "href": "HISTORY.html#edition-0.0.2-2022-04-17",
+    "title": "History",
+    "section": "Edition 0.0.2 (2022-04-17)",
+    "text": "Edition 0.0.2 (2022-04-17)\n\nThis edition includes more information of the book and author\nAdds DOI and Zenodo\nIncludes Social commenting"
+  },
+  {
+    "objectID": "HISTORY.html#edition-0.0.1-2022-04-12",
+    "href": "HISTORY.html#edition-0.0.1-2022-04-12",
+    "title": "History",
+    "section": "Edition 0.0.1 (2022-04-12)",
+    "text": "Edition 0.0.1 (2022-04-12)\n\nThis preliminary edition contains the basic outline of the book\nContains the first draft solutions to challenges demos"
+  },
+  {
+    "objectID": "HISTORY.html#edition-0.0.4-2022-04-24",
+    "href": "HISTORY.html#edition-0.0.4-2022-04-24",
+    "title": "History",
+    "section": "Edition 0.0.4 (2022-04-24)",
+    "text": "Edition 0.0.4 (2022-04-24)\n\nMinor typos and outline for the structural biology section\nStart improving crossreferences"
+  },
+  {
+    "objectID": "HISTORY.html#edition-0.0.5-2022-07-28",
+    "href": "HISTORY.html#edition-0.0.5-2022-07-28",
+    "title": "History",
+    "section": "Edition 0.0.5 (2022-07-28)",
+    "text": "Edition 0.0.5 (2022-07-28)\n\nUpdate CLI chapter.\nDecoupled Seq analysis and Genomics into separate chapters.\nChapters were reorganized in its own dirs to make easier navigation. They also were renamed for later easier addition of other chapters.\nNew learning features using Quarto callouts. This will hopefully improve learning and enjoy the book.\nChapters sections will have numbering."
+  },
+  {
+    "objectID": "HISTORY.html#edition-0.0.7-2022-08-19",
+    "href": "HISTORY.html#edition-0.0.7-2022-08-19",
+    "title": "History",
+    "section": "Edition 0.0.7 (2022-08-19)",
+    "text": "Edition 0.0.7 (2022-08-19)\n\nChanges in git chapter\nMore images in different chapters\nStart using new filters : lightbox for images and nutshell for expandable explanations\nSome images in HPC chapter\nSome outlines in Package manager chapter\nSome paragraphs on the sequence analysis chapter\nAdditional challenges"
+  },
+  {
+    "objectID": "HISTORY.html#edition-0.0.6-2022-08-09",
+    "href": "HISTORY.html#edition-0.0.6-2022-08-09",
+    "title": "History",
+    "section": "Edition 0.0.6 (2022-08-09)",
+    "text": "Edition 0.0.6 (2022-08-09)\n\nMore updates to CLI chapter.\nUpdate the Version Control chapter.\nDecoupled genome annotation section into separate chapter.\nAdd a motif search challenge\nAdd cover image\nMany typos corrected."
+  },
+  {
+    "objectID": "HISTORY.html#ed-0.0.7-2022-08-19",
+    "href": "HISTORY.html#ed-0.0.7-2022-08-19",
+    "title": "History",
+    "section": "Ed 0.0.7 (2022-08-19)",
+    "text": "Ed 0.0.7 (2022-08-19)\n\nChanges in git chapter\nMore images in different chapters\nStart using new filters : lightbox for images and nutshell for expandable explanations\nSome images in HPC chapter\nSome outlines in Package manager chapter\nSome paragraphs on the sequence analysis chapter\nAdditional challenges"
+  },
+  {
+    "objectID": "HISTORY.html#ed-0.0.6-2022-08-09",
+    "href": "HISTORY.html#ed-0.0.6-2022-08-09",
+    "title": "History",
+    "section": "Ed 0.0.6 (2022-08-09)",
+    "text": "Ed 0.0.6 (2022-08-09)\n\nMore updates to CLI chapter.\nUpdate the Version Control chapter.\nDecoupled genome annotation section into separate chapter.\nAdd a motif search challenge\nAdd cover image\nMany typos corrected."
+  },
+  {
+    "objectID": "HISTORY.html#ed-0.0.5-2022-07-28",
+    "href": "HISTORY.html#ed-0.0.5-2022-07-28",
+    "title": "History",
+    "section": "Ed 0.0.5 (2022-07-28)",
+    "text": "Ed 0.0.5 (2022-07-28)\n\nUpdate CLI chapter.\nDecoupled Seq analysis and Genomics into separate chapters.\nChapters were reorganized in its own dirs to make easier navigation. They also were renamed for later easier addition of other chapters.\nNew learning features using Quarto callouts. This will hopefully improve learning and enjoy the book.\nChapters sections will have numbering."
+  },
+  {
+    "objectID": "HISTORY.html#ed-0.0.4-2022-04-24",
+    "href": "HISTORY.html#ed-0.0.4-2022-04-24",
+    "title": "History",
+    "section": "Ed 0.0.4 (2022-04-24)",
+    "text": "Ed 0.0.4 (2022-04-24)\n\nMinor typos and outline for the structural biology section\nStart improving crossreferences"
+  },
+  {
+    "objectID": "HISTORY.html#ed-0.0.3-2022-04-18",
+    "href": "HISTORY.html#ed-0.0.3-2022-04-18",
+    "title": "History",
+    "section": "Ed 0.0.3 (2022-04-18)",
+    "text": "Ed 0.0.3 (2022-04-18)\n\nCitation and reference of the book is now almost complete"
+  },
+  {
+    "objectID": "HISTORY.html#ed-0.0.2-2022-04-17",
+    "href": "HISTORY.html#ed-0.0.2-2022-04-17",
+    "title": "History",
+    "section": "Ed 0.0.2 (2022-04-17)",
+    "text": "Ed 0.0.2 (2022-04-17)\n\nThis Ed includes more information of the book and author\nAdds DOI and Zenodo\nIncludes Social commenting"
+  },
+  {
+    "objectID": "HISTORY.html#ed-0.0.1-2022-04-12",
+    "href": "HISTORY.html#ed-0.0.1-2022-04-12",
+    "title": "History",
+    "section": "Ed 0.0.1 (2022-04-12)",
+    "text": "Ed 0.0.1 (2022-04-12)\n\nThis preliminary Ed contains the basic outline of the book\nContains the first draft solutions to challenges demos"
+  },
+  {
+    "objectID": "HISTORY.html#ed.-0.0.7-2022-08-19",
+    "href": "HISTORY.html#ed.-0.0.7-2022-08-19",
+    "title": "History",
+    "section": "Ed. 0.0.7 (2022-08-19)",
+    "text": "Ed. 0.0.7 (2022-08-19)\n\nChanges in git chapter\nMore images in different chapters\nStart using new filters : lightbox for images and nutshell for expandable explanations\nSome images in HPC chapter\nSome outlines in Package manager chapter\nSome paragraphs on the sequence analysis chapter\nAdditional challenges"
+  },
+  {
+    "objectID": "HISTORY.html#ed.-0.0.6-2022-08-09",
+    "href": "HISTORY.html#ed.-0.0.6-2022-08-09",
+    "title": "History",
+    "section": "Ed. 0.0.6 (2022-08-09)",
+    "text": "Ed. 0.0.6 (2022-08-09)\n\nMore updates to CLI chapter.\nUpdate the Version Control chapter.\nDecoupled genome annotation section into separate chapter.\nAdd a motif search challenge\nAdd cover image\nMany typos corrected."
+  },
+  {
+    "objectID": "HISTORY.html#ed.-0.0.5-2022-07-28",
+    "href": "HISTORY.html#ed.-0.0.5-2022-07-28",
+    "title": "History",
+    "section": "Ed. 0.0.5 (2022-07-28)",
+    "text": "Ed. 0.0.5 (2022-07-28)\n\nUpdate CLI chapter.\nDecoupled Seq analysis and Genomics into separate chapters.\nChapters were reorganized in its own dirs to make easier navigation. They also were renamed for later easier addition of other chapters.\nNew learning features using Quarto callouts. This will hopefully improve learning and enjoy the book.\nChapters sections will have numbering."
+  },
+  {
+    "objectID": "HISTORY.html#ed.-0.0.4-2022-04-24",
+    "href": "HISTORY.html#ed.-0.0.4-2022-04-24",
+    "title": "History",
+    "section": "Ed. 0.0.4 (2022-04-24)",
+    "text": "Ed. 0.0.4 (2022-04-24)\n\nMinor typos and outline for the structural biology section\nStart improving crossreferences"
+  },
+  {
+    "objectID": "HISTORY.html#ed.-0.0.3-2022-04-18",
+    "href": "HISTORY.html#ed.-0.0.3-2022-04-18",
+    "title": "History",
+    "section": "Ed. 0.0.3 (2022-04-18)",
+    "text": "Ed. 0.0.3 (2022-04-18)\n\nCitation and reference of the book is now almost complete"
+  },
+  {
+    "objectID": "HISTORY.html#ed.-0.0.2-2022-04-17",
+    "href": "HISTORY.html#ed.-0.0.2-2022-04-17",
+    "title": "History",
+    "section": "Ed. 0.0.2 (2022-04-17)",
+    "text": "Ed. 0.0.2 (2022-04-17)\n\nThis Ed. includes more information of the book and author\nAdds DOI and Zenodo\nIncludes Social commenting"
+  },
+  {
+    "objectID": "HISTORY.html#ed.-0.0.1-2022-04-12",
+    "href": "HISTORY.html#ed.-0.0.1-2022-04-12",
+    "title": "History",
+    "section": "Ed. 0.0.1 (2022-04-12)",
+    "text": "Ed. 0.0.1 (2022-04-12)\n\nThis preliminary Ed. contains the basic outline of the book\nContains the first draft solutions to challenges demos"
   }
 ]

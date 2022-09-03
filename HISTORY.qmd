@@ -1,6 +1,22 @@
-# History
+# History {.unnumbered}
 
-## Edition 0.0.7
+## Ed. 0.0.8 (2022-08-29)
+
+- New render w/ Quarto 1.1
+
+- Adding more on sequence analysis
+
+- Including new extension for videos
+
+- Improve some images
+
+- Book has now Giscus to enable discussions
+
+- New info on download genomics data
+
+- New foot page with license and more info
+  
+## Ed. 0.0.7 (2022-08-19)
 
 - Changes in git chapter
   
@@ -16,7 +32,7 @@
 
 - Additional challenges
 
-## Edition 0.0.6
+## Ed. 0.0.6 (2022-08-09)
 
 - More updates to CLI chapter.
 
@@ -30,7 +46,7 @@
 
 - Many typos corrected.
   
-## Edition 0.0.5
+## Ed. 0.0.5 (2022-07-28)
 
 - Update CLI chapter.
 
@@ -42,26 +58,26 @@
 
 - Chapters sections will have numbering.
   
-## Edition 0.0.4
+## Ed. 0.0.4 (2022-04-24)
 
 - Minor typos and outline for the structural biology section
 
 - Start improving crossreferences
 
-## Edition 0.0.3
+## Ed. 0.0.3 (2022-04-18)
 
 - Citation and reference of the book is now almost complete
 
-## Edition 0.0.2
+## Ed. 0.0.2 (2022-04-17)
 
-- This edition includes more information of the book and author
+- This Ed. includes more information of the book and author
 
 - Adds DOI and Zenodo
 
 - Includes Social commenting
 
-## Edition 0.0.1
+## Ed. 0.0.1 (2022-04-12)
 
-- This preliminary edition contains the basic outline of the book
+- This preliminary Ed. contains the basic outline of the book
 
 - Contains the first draft solutions to challenges demos

@@ -1,15 +1,9 @@
-# Edition 0.0.8
+# Edition 0.0.9
 
-- New render w/ Quarto 1.1
+- Starting the Sanger chapter
 
-- Adding more on sequence analysis
+- More on Seq. analysis
 
-- Including new extension for videos
+- Keep history on book and add dates
 
-- Improve some images
-
-- Book has now Giscus to enable discussions
-
-- New info on download genomics data
-
-- New foot page with license and more info
+- Move citations per chapter (TODO)
