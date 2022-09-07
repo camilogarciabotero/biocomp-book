@@ -13,11 +13,11 @@ book:
   cover-image: figs/cover.png
   # search: true  
 
-  citation:
-    type: book
-    # container-title: "Journal of Data Science Software"
-    doi: 10.5281/zenodo.6468280
-    url: https://camilogarciabotero.github.io/biocomp-book/
+  # citation:
+  #   type: book
+  #   # container-title: "Journal of Data Science Software"
+  #   doi: 10.5281/zenodo.6468280
+  #   url: https://camilogarciabotero.github.io/biocomp-book/
 
   date: today
   date-format: "YYYY-MM-DD"
@@ -60,13 +60,14 @@ book:
         - chs-genomics/genome-assembly.qmd
         - chs-genomics/genome-annotation.qmd
         - chs-genomics/variant-calling-analysis.qmd
+        - chs-genomics/functional-genomics.qmd
     - part: "Structural bioinformatics"
       chapters:
         - chs-bio-structural/intro-structural-bioinfo.qmd
     - part: "Challenges"
       chapters:
         - chs-challenges-demos/unix-challenges.qmd
-        - chs-challenges-demos/demo-genome-searching.qmd
+        - chs-challenges-demos/seq-analysis-challenges.qmd
     #     - chs-challenges-demos/demo-sanger-processing.qmd
     #     - chs-challenges-demos/demo-sequence-alignment.qmd
     #     - chs-challenges-demos/demo-phylogenetics.qmd

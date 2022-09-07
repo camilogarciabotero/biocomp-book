@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.179">
+<meta name="generator" content="quarto-1.1.189">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Fundamentals of computational biology - 6&nbsp; Sanger analysis</title>
 <style>
@@ -220,6 +220,11 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   <a href="../chs-genomics/variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-genomics/functional-genomics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">functional-genomics.html</span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -232,7 +237,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Structural bioinformatics</span></a>
+  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Structural bioinformatics</span></a>
   </div>
 </li>
       </ul>
@@ -252,7 +257,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-challenges-demos/demo-genome-searching.html" class="sidebar-item-text sidebar-link">Seq. Analysis challenges</a>
+  <a href="../chs-challenges-demos/seq-analysis-challenges.html" class="sidebar-item-text sidebar-link">Seq. Analysis challenges</a>
   </div>
 </li>
       </ul>
@@ -320,14 +325,14 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <p>Back in 70s there two different methods aiming to determine the base sequences of DNA and they basically operated at the level of base per base reconstruction of the information. The most used during those days was so called <a href="https://en.wikipedia.org/wiki/Maxam%E2%80%93Gilbert_sequencing">:Maxam-Gilbert</a> method and the second one was precisely the chain termination method or dideoxy sequencing or more commonly nowadays <a href="https://en.wikipedia.org/wiki/Sanger_sequencing">:Sanger sequencing</a>. Both methods named after their creators. It was, however the Sanger method the one that gradually became the facto method and continue to be the standard for the next thirty years. In fact, assembled genomes before the 2000s were sequenced with Sanger method, which included the first draft of the Human genome and many other organism <span class="citation" data-cites="brown2018">Brown (<a href="../references.html#ref-brown2018" role="doc-biblioref">2018</a>)</span>.</p>
 
 <div class="no-row-height column-margin column-container"><div id="fig-dna-pol" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-seqan/dna-pol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A globular structure of a bacterial DNA polymerase"><img src="imgs-seqan/dna-pol.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-seqan/dna-pol.png" class="lightbox" title="A globular structure of a bacterial DNA polymerase" data-gallery="quarto-lightbox-gallery-1"><img src="imgs-seqan/dna-pol.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.1: A globular structure of a bacterial DNA polymerase</figcaption><p></p>
 </figure>
 </div></div><section id="the-chain-termination-method" class="level3 page-columns page-full" data-number="6.1.1"><h3 data-number="6.1.1" class="anchored" data-anchor-id="the-chain-termination-method">
 <span class="header-section-number">6.1.1</span> The chain termination method</h3>
 <p>To under stand the chain termination method is important have a clear view of the DNA structure and chemical reaction that enable its polymerization. Whe the</p>
 <div id="fig-dideoxy-reaction" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-seqan/dideoxy-reaction.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="The deoxy-ribose and dideoxy-ribose and consequences on the polymerization of a DNA strand"><img src="imgs-seqan/dideoxy-reaction.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-seqan/dideoxy-reaction.png" class="lightbox" title="The deoxy-ribose and dideoxy-ribose and consequences on the polymerization of a DNA strand" data-gallery="quarto-lightbox-gallery-2"><img src="imgs-seqan/dideoxy-reaction.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.2: The deoxy-ribose and dideoxy-ribose and consequences on the polymerization of a DNA strand</figcaption><p></p>
 </figure>
 </div>
@@ -383,7 +388,7 @@ END_SEQUENCE</code></pre>
 </div>
 <p>However the most used file is the binary version <code>AB1</code> which could be red out from different programs including <a href="">cutepeaks</a>. It displays the DNA sequence along with its quality peak in each position <a href="#fig-ab1-trace">Fig.&nbsp;<span>6.4</span></a></p>
 <div id="fig-ab1-trace" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-seqan/ab1-trace.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="A graphic of the AB1 file format from a Sanger sequencing project displayed in cutepeaks software"><img src="imgs-seqan/ab1-trace.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="imgs-seqan/ab1-trace.png" class="lightbox" title="A graphic of the AB1 file format from a Sanger sequencing project displayed in cutepeaks software" data-gallery="quarto-lightbox-gallery-3"><img src="imgs-seqan/ab1-trace.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.4: A graphic of the <code>AB1</code> file format from a Sanger sequencing project displayed in cutepeaks software</figcaption><p></p>
 </figure>
 </div>
@@ -407,7 +412,7 @@ tail -n 1 seq.fasta |
 
 
 <div class="no-row-height column-margin column-container"><div id="fig-16-rna" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="imgs-seqan/16-rRNA.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Bacillus subtilis subsp. subtilis str. 168 bacterial SSU 16S rRNA"><img src="imgs-seqan/16-rRNA.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
+<figure class="figure"><p><a href="imgs-seqan/16-rRNA.png" class="lightbox" title="Bacillus subtilis subsp. subtilis str. 168 bacterial SSU 16S rRNA" data-gallery="quarto-lightbox-gallery-4"><img src="imgs-seqan/16-rRNA.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.5: <em>Bacillus subtilis</em> subsp. <em>subtilis</em> str. 168 bacterial SSU 16S rRNA</figcaption><p></p>
 </figure>
 </div></div><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -648,7 +653,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":true,"selector":".lightbox","openEffect":"zoom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":true,"openEffect":"zoom"});</script>
 
 
 </body></html>

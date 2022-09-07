@@ -1,0 +1,235 @@
+---
+execute: 
+  freeze: auto
+filters:
+  - code-filename
+  - nutshell
+  - lightbox
+---
+
+# Seq. Analysis challenges {.unnumbered}
+
+## Counting features
+
+The first step in this journey is to download a bunch of sequences programmatically. To do so, we will use the program [ncbi-genome-download](https://github.com/kblin/ncbi-genome-download).
+
+You could inspect all the options it provides, now we will set our command as the following:
+
+```{.zsh}
+#| echo: true
+#| eval: false
+ngd --genera "Bacillus subtilis"\
+    -s refseq\
+    -l complete\
+    -o Data\
+    --flat-output\
+    --format features\
+    -n bacteria\
+    | head -n 5
+```
+To this date this command will search for 216 complete genome information of *Bacillus subtilis* strains and download the **feature-table** file compressed. So the next step is to decompress all of them:
+
+```{.zsh}
+for i in *.txt; do
+  gzip -d $i
+done
+```
+Now the the feature-table file is a is a long table containing each of the features annotated in the genome see the top of a file:
+
+```{bash}
+head -n 5 data/features/GCF_000009045.1_ASM904v1_feature_table.txt
+```
+
+The question now is how to count the lines corresponding to `features` which is the first line. It contains six types of features (CDS, gene, rRNA, tRNA, tmRNA, ncRNA and misc_RNA). This task could be achieved by many ways, but a general approach to count lines is the way through it. Here there three approaches to follow:
+
+:::{.panel-tabset}
+
+### Bash
+
+```{.bash}
+#! usr/bin/bash
+
+export features="id CDS gene ncRNA rRNA tmRNA tRNA"
+
+echo $features
+
+
+for i in $(ls $1); do
+    values=$(awk '/CDS/{++cnt1} /gene/{++cnt2} /ncRNA/{++cnt3} /rRNA/{++cnt4} /tmRNA/{++cnt5} /tRNA/{++cnt} END {print cnt1, cnt2, cnt3, cnt4, cnt5, cnt6}' ${1}/${i});
+    id=$(egrep -o -m 1 "GCF.{12}" ${1}/${i})
+    echo "$id $values"
+done
+```
+
+```
+id CDS gene ncRNA rRNA tmRNA tRNA
+GCF_000009045.1 4238 4578 4 76 2 
+GCF_000146565.1 3998 4120 6 64 2 
+GCF_000186745.1 4111 4247 6 78 2 
+GCF_000209795.2 4262 4400 6 76 2 
+GCF_000227465.1 4167 4314 6 76 2 
+GCF_000227485.1 3991 4128 6 76 2 
+GCF_000293765.1 4205 4343 6 76 2 
+GCF_000321395.1 4043 4179 6 76 2 
+```
+
+### R
+
+```{r}
+#| label: file-reading
+#| echo: true
+#| eval: true
+#| message: false
+library(tidyverse)
+library(fs)
+
+all_features <- dir_ls("data/features") |> 
+  map_df(read_tsv)
+
+all_features |> 
+  head()
+```
+
+Now that we read all the files into the programming environment we can operate over them with different libraries.
+```{r}
+#| label: data-processing
+#| echo: true
+#| eval: true
+#| message: false
+#| code-line-numbers: true
+all_features_grouped <- all_features |> 
+  rename(feature = `# feature`) |> 
+  select(assembly, feature) |> 
+  group_by(assembly, feature) |>
+  count() |> 
+  pivot_wider(names_from = feature, values_from = n)
+
+all_features_grouped
+```
+The code lines operation are doing the following steps:
+
+1. Create a new dataset that will group by features per accession.
+2. Change the `# feature` name for simple `feature`.
+3. Select `feature` and `assembly`  columns.
+4. Group by these two columns, enabling grouping operations.
+5. Count the numbers of rows based on the applied grouping.
+6. Generate a wide dataset sending row names as columns.
+
+### Python
+
+```{python}
+#| eval: false
+import glob
+import pandas as pd
+
+files = glob.glob("data/features/*.txt")
+
+df = pd.concat((pd.read_csv(f, sep='\t') for f in files))
+```
+
+```{python}
+#| eval: false
+df_renamed  = df.rename(columns={"# feature" : "feature"})
+```
+
+
+```{python}
+#| eval: false
+df_filtered = df_renamed.filter(items=["feature", "assembly"])
+```
+
+
+```{python}
+#| eval: false
+df_filtered.groupby(["assembly","feature"])["feature"].count()
+```
+
+:::
+
+## Sanger processing
+
+Processing a Sanger `AB1` file is a very common task in bioinformatics, yet it is sometimes taked for grandted. Many graphical programs allow to process the sequences, yet the task are currently manual involving the trimming and reverse complement generation of the reverse reads (when pair-end sequencing). But, given the vast generation of data on the present, Sanger sequencing is used massively in parallel to generate huge amount of sequences. Therefore, processing "by-hand" becomes an unachivable task.
+
+Several programs have been developed to automate the processing of sequences, an open source library in `R` is `sangeranalyseR`.
+
+```{r}
+#| label: libs-
+#| warning: false
+#| message: false
+library(sangeranalyseR)
+```
+
+### Processing a single gene `AB1` pair
+
+```{r}
+#| label: single-sanger-processing
+#| warning: false
+#| message: false
+#| cache: true
+rpoB <- SangerAlignment(
+  ABIF_Directory = "data/sanger-seqs/rpoB/",
+  REGEX_SuffixForward = "rpoB_1_F.ab1",
+  REGEX_SuffixReverse = "rpoB_2_R.ab1",
+  TrimmingMethod = "M2",
+  M2CutoffQualityScore = 33,
+  M2SlidingWindowSize = 5
+)
+
+rpoB
+```
+
+
+```{r}
+#| eval: false
+writeFasta(rpoB,
+  outputDir = "data/sanger-processed/rpoB",
+  selection = "contigs_unalignment",
+)
+
+generateReport(rpoB, outputDir = "data/sanger-processed/")
+```
+
+
+### Processing a bulk of `AB1` pair
+
+```{r}
+#| label: bulk-sanger-processing
+#| eval: true
+#| cache: true
+library(fs)
+library(purrr)
+
+dirs <- fs::dir_ls("data/sanger-seqs/")
+
+
+sanger_bulk <- function(dir) {
+  SangerAlignment(
+    ABIF_Directory = dir,
+    REGEX_SuffixForward = "_1_F.ab1",
+    REGEX_SuffixReverse = "_2_R.ab1",
+    M2CutoffQualityScore = 33,
+    M2SlidingWindowSize = 2
+  )
+}
+
+genes <- dirs |> 
+  map(sanger_bulk)
+
+genes$
+
+genes$`data/sanger-seqs/rpoB`
+genes$`data/sanger-seqs/spo0B`
+```
+
+```{r}
+#| eval: false
+generateReport(genes$`data/sanger-seqs/spo0B`, outputDir ="data/sanger-processed/spo0B")
+
+
+writeFasta(
+ genes$`data/sanger-seqs/rpoB`,
+ outputDir = "data/sanger-processed/rpoB",
+ selection = "contigs_unalignment"
+)
+```
+
