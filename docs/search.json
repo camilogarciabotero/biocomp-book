@@ -242,7 +242,7 @@
     "href": "chs-sequence-analysis/sanger-analysis.html#the-16s-rrna-and-its-relevance-for-sequencing",
     "title": "6  Sanger analysis",
     "section": "\n6.4 The 16S rRNA and its relevance for sequencing",
-    "text": "6.4 The 16S rRNA and its relevance for sequencing\n\n\n\n\n\nFigure 6.5: Bacillus subtilis subsp. subtilis str. 168 bacterial SSU 16S rRNA\n\n\n\nBrown, Terence A. 2018. Genomes 4. Garland science."
+    "text": "6.4 The 16S rRNA and its relevance for sequencing\n\n\n\nFigure 6.5: Bacillus subtilis subsp. subtilis str. 168 bacterial SSU 16S rRNA\n\n\n\n\n\n\n\nChallenge\n\n\n\nProfessor Valeska gives you a compressed file containing two genes (spo0B and rpoB) from three different strains (302, 321, 455). These genes were sequenced using pair end Sanger method, then the compressed file has the two raw sequences per gene. She tells you to process and analyse them using the Sanger sequencing pipeline analyis. Since she doesn’t know from which species they belong, she ask you to identify the organism to whom it belongs by using the resulting consensus sequence. She finally reminds you to document each step of the process including the identification step\nSee the solution :here\n\n\n\n\n\n\nBrown, Terence A. 2018. Genomes 4. Garland science."
   },
   {
     "objectID": "chs-sequence-analysis/sequence-alignments.html",

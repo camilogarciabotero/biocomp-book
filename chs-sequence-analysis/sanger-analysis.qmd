@@ -101,3 +101,12 @@ Despite being one of the oldest sequencing methods, Sanger sequencing has some r
 
 
 ![*Bacillus subtilis* subsp. *subtilis* str. 168 bacterial SSU 16S rRNA](imgs-seqan/16-rRNA.png){#fig-16-rna width=80% .column-margin}
+
+
+::: {.callout-warning}
+## Challenge
+
+Professor Valeska gives you a compressed file containing two genes (spo0B and rpoB) from three different strains (302, 321, 455). These genes were sequenced using pair end Sanger method, then the compressed file has the two raw sequences per gene. She tells you to process and analyse them using the Sanger sequencing pipeline analyis. Since she doesn’t know from which species they belong, she ask you to identify the organism to whom it belongs by using the resulting consensus sequence. She finally reminds you to document each step of the process including the identification step
+
+See the solution [:here](../chs-challenges-demos/seq-analysis-challenges.qmd#sanger-processing)
+:::
