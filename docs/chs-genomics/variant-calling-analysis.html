@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Fundamentals of computational biology - 11&nbsp; Variant calling analysis</title>
+<title>Fundamentals of computational biology - 13&nbsp; Variant calling analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,7 +75,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <script async="" src="https://hypothes.is/embed.js"></script>
 
 
-<meta name="citation_title" content="[[11]{.chapter-number}&nbsp; [Variant calling analysis]{.chapter-title}]{#sec-variant-calling .quarto-section-identifier}">
+<meta name="citation_title" content="[[13]{.chapter-number}&nbsp; [Variant calling analysis]{.chapter-title}]{#sec-variant-calling .quarto-section-identifier}">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book//chs-genomics/variant-calling-analysis.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_publication_date=1984-05;,citation_cover_date=1984-05;,citation_year=1984;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_issue=2;,citation_doi=10.1093/comjnl/27.2.97;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;,citation_publisher=Oxford University Press, Inc.;">
@@ -95,7 +95,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -194,7 +194,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Genomics</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Phylogenetics</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -202,29 +202,19 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/genome-assembly.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  <a href="../chs-phylogenetics/phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Phylogenetics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/genome-annotation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome annotation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/variant-calling-analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/functional-genomics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functional genomics</span></a>
+  <a href="../chs-phylogenetics/phylogenomics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">phylogenomics.html</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Structural bioinformatics</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Genomics</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -232,19 +222,54 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Structural bioinformatics</span></a>
+  <a href="../chs-genomics/genome-assembly.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-genomics/genome-annotation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Genome annotation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-genomics/variant-calling-analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-genomics/functional-genomics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Functional genomics</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Challenges</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Structural bioinformatics</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Structural bioinformatics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-bio-structural/molecular-docking.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Molecular docking</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">Challenges</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chs-challenges-demos/unix-challenges.html" class="sidebar-item-text sidebar-link">Unix challenges</a>
@@ -259,12 +284,12 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">Appendix</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">Appendix</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../HISTORY.html" class="sidebar-item-text sidebar-link">History</a>
@@ -286,20 +311,20 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#common-mutations" id="toc-common-mutations" class="nav-link active" data-scroll-target="#common-mutations"><span class="toc-section-number">11.1</span>  Common mutations</a></li>
-  <li><a href="#structural-variants" id="toc-structural-variants" class="nav-link" data-scroll-target="#structural-variants"><span class="toc-section-number">11.2</span>  Structural variants</a></li>
-  <li><a href="#genome-rearrangements" id="toc-genome-rearrangements" class="nav-link" data-scroll-target="#genome-rearrangements"><span class="toc-section-number">11.3</span>  Genome rearrangements</a></li>
-  <li><a href="#read-mapping-algorithms-and-programs" id="toc-read-mapping-algorithms-and-programs" class="nav-link" data-scroll-target="#read-mapping-algorithms-and-programs"><span class="toc-section-number">11.4</span>  Read mapping algorithms and programs</a>
+  <li><a href="#common-mutations" id="toc-common-mutations" class="nav-link active" data-scroll-target="#common-mutations"><span class="toc-section-number">13.1</span>  Common mutations</a></li>
+  <li><a href="#structural-variants" id="toc-structural-variants" class="nav-link" data-scroll-target="#structural-variants"><span class="toc-section-number">13.2</span>  Structural variants</a></li>
+  <li><a href="#genome-rearrangements" id="toc-genome-rearrangements" class="nav-link" data-scroll-target="#genome-rearrangements"><span class="toc-section-number">13.3</span>  Genome rearrangements</a></li>
+  <li><a href="#read-mapping-algorithms-and-programs" id="toc-read-mapping-algorithms-and-programs" class="nav-link" data-scroll-target="#read-mapping-algorithms-and-programs"><span class="toc-section-number">13.4</span>  Read mapping algorithms and programs</a>
   <ul class="collapse">
-  <li><a href="#burrow-wheeler-alignment" id="toc-burrow-wheeler-alignment" class="nav-link" data-scroll-target="#burrow-wheeler-alignment"><span class="toc-section-number">11.4.1</span>  Burrow-Wheeler-Alignment</a></li>
-  <li><a href="#bwa-mem2" id="toc-bwa-mem2" class="nav-link" data-scroll-target="#bwa-mem2"><span class="toc-section-number">11.4.2</span>  BWA-MEM2</a></li>
-  <li><a href="#minimap2" id="toc-minimap2" class="nav-link" data-scroll-target="#minimap2"><span class="toc-section-number">11.4.3</span>  Minimap2</a></li>
-  <li><a href="#sam-bam-and-cram-formats" id="toc-sam-bam-and-cram-formats" class="nav-link" data-scroll-target="#sam-bam-and-cram-formats"><span class="toc-section-number">11.4.4</span>  SAM, BAM and CRAM formats</a></li>
+  <li><a href="#burrow-wheeler-alignment" id="toc-burrow-wheeler-alignment" class="nav-link" data-scroll-target="#burrow-wheeler-alignment"><span class="toc-section-number">13.4.1</span>  Burrow-Wheeler-Alignment</a></li>
+  <li><a href="#bwa-mem2" id="toc-bwa-mem2" class="nav-link" data-scroll-target="#bwa-mem2"><span class="toc-section-number">13.4.2</span>  BWA-MEM2</a></li>
+  <li><a href="#minimap2" id="toc-minimap2" class="nav-link" data-scroll-target="#minimap2"><span class="toc-section-number">13.4.3</span>  Minimap2</a></li>
+  <li><a href="#sam-bam-and-cram-formats" id="toc-sam-bam-and-cram-formats" class="nav-link" data-scroll-target="#sam-bam-and-cram-formats"><span class="toc-section-number">13.4.4</span>  SAM, BAM and CRAM formats</a></li>
   </ul></li>
-  <li><a href="#identifying-mutations" id="toc-identifying-mutations" class="nav-link" data-scroll-target="#identifying-mutations"><span class="toc-section-number">11.5</span>  Identifying mutations</a>
+  <li><a href="#identifying-mutations" id="toc-identifying-mutations" class="nav-link" data-scroll-target="#identifying-mutations"><span class="toc-section-number">13.5</span>  Identifying mutations</a>
   <ul class="collapse">
-  <li><a href="#freebayes-and-snippy" id="toc-freebayes-and-snippy" class="nav-link" data-scroll-target="#freebayes-and-snippy"><span class="toc-section-number">11.5.1</span>  Freebayes and Snippy</a></li>
-  <li><a href="#the-vcf-file" id="toc-the-vcf-file" class="nav-link" data-scroll-target="#the-vcf-file"><span class="toc-section-number">11.5.2</span>  The VCF file</a></li>
+  <li><a href="#freebayes-and-snippy" id="toc-freebayes-and-snippy" class="nav-link" data-scroll-target="#freebayes-and-snippy"><span class="toc-section-number">13.5.1</span>  Freebayes and Snippy</a></li>
+  <li><a href="#the-vcf-file" id="toc-the-vcf-file" class="nav-link" data-scroll-target="#the-vcf-file"><span class="toc-section-number">13.5.2</span>  The VCF file</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-genomics/variant-calling-analysis.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -309,7 +334,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-variant-calling" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></span></h1>
+<h1 class="title"><span id="sec-variant-calling" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></span></h1>
 </div>
 
 
@@ -323,37 +348,37 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 
 </header>
 
-<section id="common-mutations" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="common-mutations"><span class="header-section-number">11.1</span> Common mutations</h2>
+<section id="common-mutations" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="common-mutations"><span class="header-section-number">13.1</span> Common mutations</h2>
 </section>
-<section id="structural-variants" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="structural-variants"><span class="header-section-number">11.2</span> Structural variants</h2>
+<section id="structural-variants" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="structural-variants"><span class="header-section-number">13.2</span> Structural variants</h2>
 </section>
-<section id="genome-rearrangements" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="genome-rearrangements"><span class="header-section-number">11.3</span> Genome rearrangements</h2>
+<section id="genome-rearrangements" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="genome-rearrangements"><span class="header-section-number">13.3</span> Genome rearrangements</h2>
 </section>
-<section id="read-mapping-algorithms-and-programs" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="read-mapping-algorithms-and-programs"><span class="header-section-number">11.4</span> Read mapping algorithms and programs</h2>
-<section id="burrow-wheeler-alignment" class="level3" data-number="11.4.1">
-<h3 data-number="11.4.1" class="anchored" data-anchor-id="burrow-wheeler-alignment"><span class="header-section-number">11.4.1</span> Burrow-Wheeler-Alignment</h3>
+<section id="read-mapping-algorithms-and-programs" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="read-mapping-algorithms-and-programs"><span class="header-section-number">13.4</span> Read mapping algorithms and programs</h2>
+<section id="burrow-wheeler-alignment" class="level3" data-number="13.4.1">
+<h3 data-number="13.4.1" class="anchored" data-anchor-id="burrow-wheeler-alignment"><span class="header-section-number">13.4.1</span> Burrow-Wheeler-Alignment</h3>
 </section>
-<section id="bwa-mem2" class="level3" data-number="11.4.2">
-<h3 data-number="11.4.2" class="anchored" data-anchor-id="bwa-mem2"><span class="header-section-number">11.4.2</span> BWA-MEM2</h3>
+<section id="bwa-mem2" class="level3" data-number="13.4.2">
+<h3 data-number="13.4.2" class="anchored" data-anchor-id="bwa-mem2"><span class="header-section-number">13.4.2</span> BWA-MEM2</h3>
 </section>
-<section id="minimap2" class="level3" data-number="11.4.3">
-<h3 data-number="11.4.3" class="anchored" data-anchor-id="minimap2"><span class="header-section-number">11.4.3</span> Minimap2</h3>
+<section id="minimap2" class="level3" data-number="13.4.3">
+<h3 data-number="13.4.3" class="anchored" data-anchor-id="minimap2"><span class="header-section-number">13.4.3</span> Minimap2</h3>
 </section>
-<section id="sam-bam-and-cram-formats" class="level3" data-number="11.4.4">
-<h3 data-number="11.4.4" class="anchored" data-anchor-id="sam-bam-and-cram-formats"><span class="header-section-number">11.4.4</span> SAM, BAM and CRAM formats</h3>
+<section id="sam-bam-and-cram-formats" class="level3" data-number="13.4.4">
+<h3 data-number="13.4.4" class="anchored" data-anchor-id="sam-bam-and-cram-formats"><span class="header-section-number">13.4.4</span> SAM, BAM and CRAM formats</h3>
 </section>
 </section>
-<section id="identifying-mutations" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="identifying-mutations"><span class="header-section-number">11.5</span> Identifying mutations</h2>
-<section id="freebayes-and-snippy" class="level3" data-number="11.5.1">
-<h3 data-number="11.5.1" class="anchored" data-anchor-id="freebayes-and-snippy"><span class="header-section-number">11.5.1</span> Freebayes and Snippy</h3>
+<section id="identifying-mutations" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="identifying-mutations"><span class="header-section-number">13.5</span> Identifying mutations</h2>
+<section id="freebayes-and-snippy" class="level3" data-number="13.5.1">
+<h3 data-number="13.5.1" class="anchored" data-anchor-id="freebayes-and-snippy"><span class="header-section-number">13.5.1</span> Freebayes and Snippy</h3>
 </section>
-<section id="the-vcf-file" class="level3" data-number="11.5.2">
-<h3 data-number="11.5.2" class="anchored" data-anchor-id="the-vcf-file"><span class="header-section-number">11.5.2</span> The VCF file</h3>
+<section id="the-vcf-file" class="level3" data-number="13.5.2">
+<h3 data-number="13.5.2" class="anchored" data-anchor-id="the-vcf-file"><span class="header-section-number">13.5.2</span> The VCF file</h3>
 
 
 </section>
@@ -576,12 +601,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chs-genomics/genome-annotation.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome annotation</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Genome annotation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chs-genomics/functional-genomics.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functional genomics</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Functional genomics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -315,116 +315,144 @@
     "text": "8.5 Oxford Nanopore Technology (ONT) principle\n\n8.5.1 Platforms\n\n\n8.5.2 The fast5 file format"
   },
   {
+    "objectID": "chs-phylogenetics/phylogenetic-reconstructions.html#mehtods-for-phylogenetic-reconstruction",
+    "href": "chs-phylogenetics/phylogenetic-reconstructions.html#mehtods-for-phylogenetic-reconstruction",
+    "title": "9  Phylogenetics",
+    "section": "9.2 Mehtods for phylogenetic reconstruction",
+    "text": "9.2 Mehtods for phylogenetic reconstruction"
+  },
+  {
+    "objectID": "chs-phylogenetics/phylogenetic-reconstructions.html#building-a-phylogenetic-reconstruction",
+    "href": "chs-phylogenetics/phylogenetic-reconstructions.html#building-a-phylogenetic-reconstruction",
+    "title": "9  Phylogenetics",
+    "section": "9.3 Building a phylogenetic reconstruction",
+    "text": "9.3 Building a phylogenetic reconstruction\n\n9.3.1 Evolutionary substitution model\n\n\n9.3.2 Maximum likelihood\n\n\n9.3.3 Bayesian inference"
+  },
+  {
     "objectID": "chs-genomics/genome-assembly.html#main-algorithms-for-genome-asssembly",
     "href": "chs-genomics/genome-assembly.html#main-algorithms-for-genome-asssembly",
-    "title": "9  Genome assembly",
-    "section": "9.2 Main algorithms for genome asssembly",
-    "text": "9.2 Main algorithms for genome asssembly\n\n9.2.1 Overlay, Layout, Consensus (OLS)\n\n\n9.2.2 De Bruijn graphs"
+    "title": "11  Genome assembly",
+    "section": "11.2 Main algorithms for genome asssembly",
+    "text": "11.2 Main algorithms for genome asssembly\n\n11.2.1 Overlay, Layout, Consensus (OLS)\n\n\n11.2.2 De Bruijn graphs"
   },
   {
     "objectID": "chs-genomics/genome-assembly.html#main-concepts-of-an-assembly",
     "href": "chs-genomics/genome-assembly.html#main-concepts-of-an-assembly",
-    "title": "9  Genome assembly",
-    "section": "9.3 Main concepts of an assembly",
-    "text": "9.3 Main concepts of an assembly\n\n9.3.1 Contigs, Unitigs, Scaffolds"
+    "title": "11  Genome assembly",
+    "section": "11.3 Main concepts of an assembly",
+    "text": "11.3 Main concepts of an assembly\n\n11.3.1 Contigs, Unitigs, Scaffolds"
   },
   {
     "objectID": "chs-genomics/genome-assembly.html#a-complete-workflow-for-assembling-genomes",
     "href": "chs-genomics/genome-assembly.html#a-complete-workflow-for-assembling-genomes",
-    "title": "9  Genome assembly",
-    "section": "9.4 A complete workflow for assembling genomes",
-    "text": "9.4 A complete workflow for assembling genomes"
+    "title": "11  Genome assembly",
+    "section": "11.4 A complete workflow for assembling genomes",
+    "text": "11.4 A complete workflow for assembling genomes"
   },
   {
     "objectID": "chs-genomics/genome-assembly.html#assessing-genomes",
     "href": "chs-genomics/genome-assembly.html#assessing-genomes",
-    "title": "9  Genome assembly",
-    "section": "9.5 Assessing genomes",
-    "text": "9.5 Assessing genomes\n\n9.5.1 Inspecting genome graphs\n\n\n9.5.2 Genome completeness"
+    "title": "11  Genome assembly",
+    "section": "11.5 Assessing genomes",
+    "text": "11.5 Assessing genomes\n\n11.5.1 Inspecting genome graphs\n\n\n11.5.2 Genome completeness"
   },
   {
     "objectID": "chs-genomics/genome-assembly.html#understanding-genome-difficulties",
     "href": "chs-genomics/genome-assembly.html#understanding-genome-difficulties",
-    "title": "9  Genome assembly",
-    "section": "9.6 Understanding genome difficulties",
-    "text": "9.6 Understanding genome difficulties\n\nEnd of chromosomes\nErros\nLack of coverage\nHeterozigozity\nrepeats"
+    "title": "11  Genome assembly",
+    "section": "11.6 Understanding genome difficulties",
+    "text": "11.6 Understanding genome difficulties\n\nEnd of chromosomes\nErros\nLack of coverage\nHeterozigozity\nrepeats"
   },
   {
     "objectID": "chs-genomics/genome-annotation.html#homology-annotation",
     "href": "chs-genomics/genome-annotation.html#homology-annotation",
-    "title": "10  Genome annotation",
-    "section": "10.2 Homology annotation",
-    "text": "10.2 Homology annotation"
+    "title": "12  Genome annotation",
+    "section": "12.2 Homology annotation",
+    "text": "12.2 Homology annotation"
   },
   {
     "objectID": "chs-genomics/genome-annotation.html#annotation-files",
     "href": "chs-genomics/genome-annotation.html#annotation-files",
-    "title": "10  Genome annotation",
-    "section": "10.3 Annotation files",
-    "text": "10.3 Annotation files\n\n10.3.1 the GBK and GBFF\n\n\n10.3.2 The GFF specifications"
+    "title": "12  Genome annotation",
+    "section": "12.3 Annotation files",
+    "text": "12.3 Annotation files\n\n12.3.1 the GBK and GBFF\n\n\n12.3.2 The GFF specifications"
   },
   {
     "objectID": "chs-genomics/genome-annotation.html#visualizing-genomes-and-annotations",
     "href": "chs-genomics/genome-annotation.html#visualizing-genomes-and-annotations",
-    "title": "10  Genome annotation",
-    "section": "10.4 Visualizing genomes and annotations",
-    "text": "10.4 Visualizing genomes and annotations"
+    "title": "12  Genome annotation",
+    "section": "12.4 Visualizing genomes and annotations",
+    "text": "12.4 Visualizing genomes and annotations"
   },
   {
     "objectID": "chs-genomics/variant-calling-analysis.html#structural-variants",
     "href": "chs-genomics/variant-calling-analysis.html#structural-variants",
-    "title": "11  Variant calling analysis",
-    "section": "11.2 Structural variants",
-    "text": "11.2 Structural variants"
+    "title": "13  Variant calling analysis",
+    "section": "13.2 Structural variants",
+    "text": "13.2 Structural variants"
   },
   {
     "objectID": "chs-genomics/variant-calling-analysis.html#genome-rearrangements",
     "href": "chs-genomics/variant-calling-analysis.html#genome-rearrangements",
-    "title": "11  Variant calling analysis",
-    "section": "11.3 Genome rearrangements",
-    "text": "11.3 Genome rearrangements"
+    "title": "13  Variant calling analysis",
+    "section": "13.3 Genome rearrangements",
+    "text": "13.3 Genome rearrangements"
   },
   {
     "objectID": "chs-genomics/variant-calling-analysis.html#read-mapping-algorithms-and-programs",
     "href": "chs-genomics/variant-calling-analysis.html#read-mapping-algorithms-and-programs",
-    "title": "11  Variant calling analysis",
-    "section": "11.4 Read mapping algorithms and programs",
-    "text": "11.4 Read mapping algorithms and programs\n\n11.4.1 Burrow-Wheeler-Alignment\n\n\n11.4.2 BWA-MEM2\n\n\n11.4.3 Minimap2\n\n\n11.4.4 SAM, BAM and CRAM formats"
+    "title": "13  Variant calling analysis",
+    "section": "13.4 Read mapping algorithms and programs",
+    "text": "13.4 Read mapping algorithms and programs\n\n13.4.1 Burrow-Wheeler-Alignment\n\n\n13.4.2 BWA-MEM2\n\n\n13.4.3 Minimap2\n\n\n13.4.4 SAM, BAM and CRAM formats"
   },
   {
     "objectID": "chs-genomics/variant-calling-analysis.html#identifying-mutations",
     "href": "chs-genomics/variant-calling-analysis.html#identifying-mutations",
-    "title": "11  Variant calling analysis",
-    "section": "11.5 Identifying mutations",
-    "text": "11.5 Identifying mutations\n\n11.5.1 Freebayes and Snippy\n\n\n11.5.2 The VCF file"
+    "title": "13  Variant calling analysis",
+    "section": "13.5 Identifying mutations",
+    "text": "13.5 Identifying mutations\n\n13.5.1 Freebayes and Snippy\n\n\n13.5.2 The VCF file"
+  },
+  {
+    "objectID": "chs-genomics/functional-genomics.html#cluster-of-orthologous-genes",
+    "href": "chs-genomics/functional-genomics.html#cluster-of-orthologous-genes",
+    "title": "14  Functional genomics",
+    "section": "14.2 Cluster of orthologous genes",
+    "text": "14.2 Cluster of orthologous genes"
+  },
+  {
+    "objectID": "chs-genomics/functional-genomics.html#kegg-paths",
+    "href": "chs-genomics/functional-genomics.html#kegg-paths",
+    "title": "14  Functional genomics",
+    "section": "14.3 KEGG paths",
+    "text": "14.3 KEGG paths"
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html",
     "href": "chs-bio-structural/intro-structural-bioinfo.html",
-    "title": "13  Structural bioinformatics",
+    "title": "15  Structural bioinformatics",
     "section": "",
     "text": "Structural bioinformatics is a multidisciplinary area enriched by chemistry, physics, computer science and many others. Although, it could be focused on different biological macro-molecules, here the emphasis will be focused on proteins.\nOne of the first protein structure elucidated was myoglobin and it triggered the study of the role of the structure of proteins and its biological functions\nIdentify a protein related to your study that could be further analyzed."
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html#protein-structures",
     "href": "chs-bio-structural/intro-structural-bioinfo.html#protein-structures",
-    "title": "13  Structural bioinformatics",
-    "section": "13.1 Protein structures",
-    "text": "13.1 Protein structures\nDifference between the levels of protein structure primary structure is the basic linear representation of aminoacids. Natural aminoacids and modified or rare aminoacids display physico-chemical rich information and could be represented by letters. Therefore in the genetic code we could find the one-letter code.\nSecondary structures result from the spatial arrangement of aminoacids that interact with each closer neighbors. There are some remarkable secondary structures such as \\(\\beta\\)-sheets, \\(\\alpha\\)-helix, coils (flexible) and others.\nTertiary structure informs about the structural disposition of the secondary structures that fold between each other due to hydrophobic interactions, disulfure bonds, and other chemical interactions forming a globular and dynamic structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the :Levinthal’s paradox).\nQuaternary structures result from interaction of multiple tertiary structures. The structure, therefore dictates the protein function. This basic concept have triggered more recently a boom on the analysis of the structure of proteins."
+    "title": "15  Structural bioinformatics",
+    "section": "15.1 Protein structures",
+    "text": "15.1 Protein structures\nDifference between the levels of protein structure primary structure is the basic linear representation of aminoacids. Natural aminoacids and modified or rare aminoacids display physico-chemical rich information and could be represented by letters. Therefore in the genetic code we could find the one-letter code.\nSecondary structures result from the spatial arrangement of aminoacids that interact with each closer neighbors. There are some remarkable secondary structures such as \\(\\beta\\)-sheets, \\(\\alpha\\)-helix, coils (flexible) and others.\nTertiary structure informs about the structural disposition of the secondary structures that fold between each other due to hydrophobic interactions, disulfure bonds, and other chemical interactions forming a globular and dynamic structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the :Levinthal’s paradox).\nQuaternary structures result from interaction of multiple tertiary structures. The structure, therefore dictates the protein function. This basic concept have triggered more recently a boom on the analysis of the structure of proteins."
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html#identifying-or-predicting-protein-structures",
     "href": "chs-bio-structural/intro-structural-bioinfo.html#identifying-or-predicting-protein-structures",
-    "title": "13  Structural bioinformatics",
-    "section": "13.2 Identifying or predicting protein structures",
-    "text": "13.2 Identifying or predicting protein structures\nXray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks.\nTo date, helium is scarce around the world, so labs all around are having trouble to get this element.\nModelling the structure whether ab initio or by homology also allow structure prediction. However these strategies\nRecently AlphaFold\nThe protein database (PDB)\nProtein topologies resulting from the folding: horshoe, beta-barrel and other could be identified\nStructural classification of proteins (SCOP) when analyzing a new protein classification by class, architecture, topology (fold-family), homologous superfamily and sequence family\nImportance of Gene Ontology\n\n13.2.1 Secondary structure prediction\nSecondary structures could also be represented in one letter (e.g.)\nFunctional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.\nThere is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.\n\n\n\n\n\n\nExercise 01\n\n\n\nSubmit 5lWM (JAK3) from the PDB on FASTA format on the JPRED and PSIPRED and compared with the experimentally predicted version of the protein. Analyze the predictions and tell are there differences between predictions? Which one is more accurate?"
+    "title": "15  Structural bioinformatics",
+    "section": "15.2 Identifying or predicting protein structures",
+    "text": "15.2 Identifying or predicting protein structures\nXray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks.\nTo date, helium is scarce around the world, so labs all around are having trouble to get this element.\nModelling the structure whether ab initio or by homology also allow structure prediction. However these strategies\nRecently AlphaFold\nThe protein database (PDB)\nProtein topologies resulting from the folding: horshoe, beta-barrel and other could be identified\nStructural classification of proteins (SCOP) when analyzing a new protein classification by class, architecture, topology (fold-family), homologous superfamily and sequence family\nImportance of Gene Ontology\n\n15.2.1 Secondary structure prediction\nSecondary structures could also be represented in one letter (e.g.)\nFunctional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.\nThere is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.\n\n\n\n\n\n\nExercise 01\n\n\n\nSubmit 5lWM (JAK3) from the PDB on FASTA format on the JPRED and PSIPRED and compared with the experimentally predicted version of the protein. Analyze the predictions and tell are there differences between predictions? Which one is more accurate?"
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html#pdb-database-introduction",
     "href": "chs-bio-structural/intro-structural-bioinfo.html#pdb-database-introduction",
-    "title": "13  Structural bioinformatics",
-    "section": "13.3 PDB database introduction",
-    "text": "13.3 PDB database introduction\nThe PDB database is one of the most important and ancient open biological database where all new protein structures are submitted. It is an international consortium where several regions work together to curate information.\nThe PDB in Europe (PDBe) is not only for proteins but form many other experimentally predicted macro-molecules (protein-protein interactions, peptides, RNA and so on).\nProtein structures are registered using a unique code of four characters.\nX-ray crystallography: is a chemical state of the macro-molecule where it is immobilized, therefore information correspond to one state of the structure, then crystal protein is submitted to an x-ray beam to generate a diffraction pattern.\nNMR spectroscopy: captures dynamic information of the protein, but generally resolves small proteins. The principle?\nElectron microscopy adapted to cryo-preservation allow proteins visualization."
+    "title": "15  Structural bioinformatics",
+    "section": "15.3 PDB database introduction",
+    "text": "15.3 PDB database introduction\nThe PDB database is one of the most important and ancient open biological database where all new protein structures are submitted. It is an international consortium where several regions work together to curate information.\nThe PDB in Europe (PDBe) is not only for proteins but form many other experimentally predicted macro-molecules (protein-protein interactions, peptides, RNA and so on).\nProtein structures are registered using a unique code of four characters.\nX-ray crystallography: is a chemical state of the macro-molecule where it is immobilized, therefore information correspond to one state of the structure, then crystal protein is submitted to an x-ray beam to generate a diffraction pattern.\nNMR spectroscopy: captures dynamic information of the protein, but generally resolves small proteins. The principle?\nElectron microscopy adapted to cryo-preservation allow proteins visualization."
   },
   {
     "objectID": "chs-challenges-demos/unix-challenges.html",
@@ -459,7 +487,7 @@
     "href": "chs-challenges-demos/seq-analysis-challenges.html#sanger-processing",
     "title": "Seq. Analysis challenges",
     "section": "Sanger processing",
-    "text": "Sanger processing\nProcessing a Sanger AB1 file is a very common task in bioinformatics, yet it is sometimes taked for grandted. Many graphical programs allow to process the sequences, yet the task are currently manual involving the trimming and reverse complement generation of the reverse reads (when pair-end sequencing). But, given the vast generation of data on the present, Sanger sequencing is used massively in parallel to generate huge amount of sequences. Therefore, processing “by-hand” becomes an unachivable task.\nSeveral programs have been developed to automate the processing of sequences, an open source library in R is sangeranalyseR.\n\nlibrary(sangeranalyseR)\n\nProcessing a single gene AB1 pair\n\nrpoB <- SangerAlignment(\n  ABIF_Directory = \"data/sanger-seqs/rpoB/\",\n  REGEX_SuffixForward = \"rpoB_1_F.ab1\",\n  REGEX_SuffixReverse = \"rpoB_2_R.ab1\",\n  TrimmingMethod = \"M2\",\n  M2CutoffQualityScore = 33,\n  M2SlidingWindowSize = 5\n)\n\nrpoB\n\nSangerAlignment S4 instance\n           Input Source :  ABIF \n         Process Method :  REGEX \n         ABIF Directory :  data/sanger-seqs/rpoB/ \n   REGEX Suffix Forward :  rpoB_1_F.ab1 \n   REGEX Suffix Reverse :  rpoB_2_R.ab1 \n      Contigs Consensus :  TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTKGGGGGGGAGWACTTGAGGAGCCATCATCATGAGTGAACGTCTTGTGAAGGATGATGTTTATACATCTATCCATATTGAAGAATATGAATCAGAAGCACGTGATACGAAACTTGGACCTGAAGAAATCACTCGCGATATTCCAAACGTCGGTGAAGATGCGCTTCGCAATCTTGATGACCGCGGAATCATCCGTATTGGGGCAGAAGTAAAAGACGGAGATCTTCTTGTTGGTAAAGTAACGCCTAAAGGTGTAACCGAACTGACTGCTGAAGAACGCCTTCTTCACGCCATCTTTGGTGAAAAAGCCCGCGAGGTTCGTGATACTTCTCTTCGTGTGCCTCACGGCGGCGGCGGAATTATCCACGACGTTAAAGTCTTCAACCGTGAAGACGGAGACGAACTTCCTCCAGGTGTAAACCAGTTGGTACGCGTATATATCGTTCAGAAACGTAAGATTTCTGAAGGGGATAAAATGGCCGGTCGTCACGGTAACAAAGGTGTTATCTCTAAGATTCTTCCTGAAGAGGATATGCCTTACCTTCCTGACGGCACACCAATTGACATCATGCTTAACCCGCTGGGCGTACCATCACGTATGAACATCGGGCAGGTATTGGAGCTTCATATGGGTATGGCCGCTCGTTACCTCGGCATTCACATTGCGTCTCCTGTATTTGATGGAGCGCGAGAAGAGGATGTTTGGGAAACACTTGAAGAAGCCGGCATGTCTCGTGACGCCAAAACGGTGCTTTACGACGGACGTACTGGAGAGCCGTTTGATAACCGCGTGTCTGTCGGTATCATGTACATGATCAAACTGGCACACATGGTTGACGATAAACTTCATGCACGCTCTACAGGTCCTTACTCACTTGTTACGCAGCAGCCTCTTGGCGGTAAAGCGCAATTTGGCGGACAGCGTTTTGGTGAGATGGAGGTTTGGGCACTTGAAGCTTATGGTGCAGCTTACACTCTTCAAGAAATTCTGACTGTTAAGTCCGATAACGTGGTTGGACGTGTGAAACTACACCTCDSTGGCACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA \n\n\n\nwriteFasta(rpoB,\n  outputDir = \"data/sanger-processed/rpoB\",\n  selection = \"contigs_unalignment\",\n)\n\ngenerateReport(rpoB, outputDir = \"data/sanger-processed/\")\n\nProcessing a bulk of AB1 pair\n\nlibrary(fs)\nlibrary(purrr)\n\ndirs <- fs::dir_ls(\"data/sanger-seqs/\")\n\n\nsanger_bulk <- function(dir) {\n  SangerAlignment(\n    ABIF_Directory = dir,\n    REGEX_SuffixForward = \"_1_F.ab1\",\n    REGEX_SuffixReverse = \"_2_R.ab1\",\n    M2CutoffQualityScore = 33,\n    M2SlidingWindowSize = 2\n  )\n}\n\ngenes <- dirs |> \n  map(sanger_bulk)\n\ngenes$\n\ngenes$`data/sanger-seqs/rpoB`\n\nNULL\n\ngenes$`data/sanger-seqs/spo0B`\n\nSangerAlignment S4 instance\n           Input Source :  ABIF \n         Process Method :  REGEX \n         ABIF Directory :  data/sanger-seqs/spo0B \n   REGEX Suffix Forward :  _1_F.ab1 \n   REGEX Suffix Reverse :  _2_R.ab1 \n      Contigs Consensus :  ATCAACCATGCCAGAAAAAAGGAACATGATATTTCTGGGAAAAACMATTGTTTTTCTAACAAAGCCTTACTCTGTTATAATTCATAATACACACTTATACAGACTCCTAAATAAGAAATTAAATGATTGGGAGTGCGAAAATGAAGGATGTTTCAAAAAATCAAGAAGAAAATATAAGCGACACGGCATTAACAAACGAACTGGTTCATCTGCTGGGCCATTCCCGGCATGATTGGATGAATAAGCTGCAGCTGATTAAAGGAAACTTAAGCTTGCAGAAGTATGACCGCGTCTTTGAAATGATTGAAGAAATGGTTATAGACGCGAAGCACGAATCAAAGCTCTCAAACCTAAAAACACCGCATTTGGCGTTTGATTTTCTTACATTTAATTGGAAAACCCATTATATGACGCTTGAATATGAAGTTCTTGGAGAAATTAAGGATTTGTCGGCTTATGATCAAAAGCTGGCAAAACTGATGAGAAAGCTGTTTCATCTGTTTGATCAAGCAGTCAGCAGAGAGAGTGAAAATCATTTAACGGTTTCGCTTCAAACAGATCATCCTGACAGACAGCTGATTCTGTACCTTGATTTTCACGGCGCCTTTGCCGATCCTTCTGCTTTTGATGATATTCGGCAGAATGGATACGAGGATGTGGATATCATGCGTTTTGAGATCACAAGCCACGAATGTCTGATTGTAAATAGGGTTGGTACTAGCGGTAGTTTTTAACGGTTTAGAACGGAGGACATTATGTTTGTAGATCAGGTCAAAGTATATGTAAAAGGCGGCG \n\n\n\ngenerateReport(genes$`data/sanger-seqs/spo0B`, outputDir =\"data/sanger-processed/spo0B\")\n\n\nwriteFasta(\n genes$`data/sanger-seqs/rpoB`,\n outputDir = \"data/sanger-processed/rpoB\",\n selection = \"contigs_unalignment\"\n)"
+    "text": "Sanger processing\nProcessing a Sanger AB1 file is a very common task in bioinformatics, yet it is sometimes taked for grandted. Many graphical programs allow to process the sequences, yet the task are currently manual involving the trimming and reverse complement generation of the reverse reads (when pair-end sequencing). But, given the vast generation of data on the present, Sanger sequencing is used massively in parallel to generate huge amount of sequences. Therefore, processing “by-hand” becomes an unachivable task.\nSeveral programs have been developed to automate the processing of sequences, an open source library in R is sangeranalyseR.\n\nlibrary(sangeranalyseR)\n\nProcessing a single gene AB1 pair\n\nrpoB <- SangerAlignment(\n  ABIF_Directory = \"data/sanger-seqs/rpoB/\",\n  REGEX_SuffixForward = \"rpoB_1_F.ab1\",\n  REGEX_SuffixReverse = \"rpoB_2_R.ab1\",\n  TrimmingMethod = \"M2\",\n  M2CutoffQualityScore = 33,\n  M2SlidingWindowSize = 5\n)\n\nrpoB\n\nSangerAlignment S4 instance\n           Input Source :  ABIF \n         Process Method :  REGEX \n         ABIF Directory :  data/sanger-seqs/rpoB/ \n   REGEX Suffix Forward :  rpoB_1_F.ab1 \n   REGEX Suffix Reverse :  rpoB_2_R.ab1 \n      Contigs Consensus :  TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTKGGGGGGGAGWACTTGAGGAGCCATCATCATGAGTGAACGTCTTGTGAAGGATGATGTTTATACATCTATCCATATTGAAGAATATGAATCAGAAGCACGTGATACGAAACTTGGACCTGAAGAAATCACTCGCGATATTCCAAACGTCGGTGAAGATGCGCTTCGCAATCTTGATGACCGCGGAATCATCCGTATTGGGGCAGAAGTAAAAGACGGAGATCTTCTTGTTGGTAAAGTAACGCCTAAAGGTGTAACCGAACTGACTGCTGAAGAACGCCTTCTTCACGCCATCTTTGGTGAAAAAGCCCGCGAGGTTCGTGATACTTCTCTTCGTGTGCCTCACGGCGGCGGCGGAATTATCCACGACGTTAAAGTCTTCAACCGTGAAGACGGAGACGAACTTCCTCCAGGTGTAAACCAGTTGGTACGCGTATATATCGTTCAGAAACGTAAGATTTCTGAAGGGGATAAAATGGCCGGTCGTCACGGTAACAAAGGTGTTATCTCTAAGATTCTTCCTGAAGAGGATATGCCTTACCTTCCTGACGGCACACCAATTGACATCATGCTTAACCCGCTGGGCGTACCATCACGTATGAACATCGGGCAGGTATTGGAGCTTCATATGGGTATGGCCGCTCGTTACCTCGGCATTCACATTGCGTCTCCTGTATTTGATGGAGCGCGAGAAGAGGATGTTTGGGAAACACTTGAAGAAGCCGGCATGTCTCGTGACGCCAAAACGGTGCTTTACGACGGACGTACTGGAGAGCCGTTTGATAACCGCGTGTCTGTCGGTATCATGTACATGATCAAACTGGCACACATGGTTGACGATAAACTTCATGCACGCTCTACAGGTCCTTACTCACTTGTTACGCAGCAGCCTCTTGGCGGTAAAGCGCAATTTGGCGGACAGCGTTTTGGTGAGATGGAGGTTTGGGCACTTGAAGCTTATGGTGCAGCTTACACTCTTCAAGAAATTCTGACTGTTAAGTCCGATAACGTGGTTGGACGTGTGAAACTACACCTCDSTGGCACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA \n\n\nThis produces an specialized R object holding different information from the Sanger processing steps. The entire object can be untangled in a thorough report displaying all the processing information and results using the\n\ngenerateReport(rpoB, outputDir = \"data/sanger-processed/\")\n\nAmong the data from the report ypu can see that the unaligned contigs ithere is something called a Contig Consensus which is the result of comparing the three consensus out of the rpoB genes of the three strains (302, 321, 455). Now, this is not really the sequence we need right away, however we need the separate consensus of each strain gene. To get theme sangeranalyseR provide a couple of tools.\n\nwriteFasta(rpoB,\n  outputDir = \"data/sanger-processed/rpoB\",\n  selection = \"contigs_unalignment\",\n)\n\nNow, in the case of the challenge we actually got several genes per strain which is common in molecular biology projects. How do we process all the batch of sequence all at a time? To do so we can split the sequences as folder per gene, then we can use some capabilites of are to iterate an map the sanger processing function to each folder and create a list of processing instances, let’s try this out:\nProcessing a bulk of AB1 pair\n\nlibrary(fs)\nlibrary(purrr)\n\ndirs <- fs::dir_ls(\"data/sanger-seqs/\")\n\n\nsanger_bulk <- function(dir) {\n  SangerAlignment(\n    ABIF_Directory = dir,\n    REGEX_SuffixForward = \"_1_F.ab1\",\n    REGEX_SuffixReverse = \"_2_R.ab1\",\n    M2CutoffQualityScore = 33,\n    M2SlidingWindowSize = 2\n  )\n}\n\ngenes <- dirs |> \n  map(sanger_bulk)\n\ngenes$\n\ngenes$`data/sanger-seqs/rpoB`\n\nNULL\n\ngenes$`data/sanger-seqs/spo0B`\n\nSangerAlignment S4 instance\n           Input Source :  ABIF \n         Process Method :  REGEX \n         ABIF Directory :  data/sanger-seqs/spo0B \n   REGEX Suffix Forward :  _1_F.ab1 \n   REGEX Suffix Reverse :  _2_R.ab1 \n      Contigs Consensus :  ATCAACCATGCCAGAAAAAAGGAACATGATATTTCTGGGAAAAACMATTGTTTTTCTAACAAAGCCTTACTCTGTTATAATTCATAATACACACTTATACAGACTCCTAAATAAGAAATTAAATGATTGGGAGTGCGAAAATGAAGGATGTTTCAAAAAATCAAGAAGAAAATATAAGCGACACGGCATTAACAAACGAACTGGTTCATCTGCTGGGCCATTCCCGGCATGATTGGATGAATAAGCTGCAGCTGATTAAAGGAAACTTAAGCTTGCAGAAGTATGACCGCGTCTTTGAAATGATTGAAGAAATGGTTATAGACGCGAAGCACGAATCAAAGCTCTCAAACCTAAAAACACCGCATTTGGCGTTTGATTTTCTTACATTTAATTGGAAAACCCATTATATGACGCTTGAATATGAAGTTCTTGGAGAAATTAAGGATTTGTCGGCTTATGATCAAAAGCTGGCAAAACTGATGAGAAAGCTGTTTCATCTGTTTGATCAAGCAGTCAGCAGAGAGAGTGAAAATCATTTAACGGTTTCGCTTCAAACAGATCATCCTGACAGACAGCTGATTCTGTACCTTGATTTTCACGGCGCCTTTGCCGATCCTTCTGCTTTTGATGATATTCGGCAGAATGGATACGAGGATGTGGATATCATGCGTTTTGAGATCACAAGCCACGAATGTCTGATTGTAAATAGGGTTGGTACTAGCGGTAGTTTTTAACGGTTTAGAACGGAGGACATTATGTTTGTAGATCAGGTCAAAGTATATGTAAAAGGCGGCG \n\n\nFinally to generate reports we need to call the appropriate instance with the $ to select the gene we are interested to inspect:\n\ngenerateReport(genes$`data/sanger-seqs/spo0B`, outputDir =\"data/sanger-processed/spo0B\")\n\n\nwriteFasta(\n genes$`data/sanger-seqs/rpoB`,\n outputDir = \"data/sanger-processed/rpoB\",\n selection = \"contigs_unalignment\"\n)\n\nNow that we got the actual multifasta of the genes from all strain, the identification process using blastn from the command line will follow as:\n\nblastn -db nr -query rpoB-unaligned-contigs.mfa -out rpoB-blastn-report.txt -remote"
   },
   {
     "objectID": "HISTORY.html",

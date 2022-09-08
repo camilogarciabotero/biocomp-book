@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Fundamentals of computational biology - 10&nbsp; Genome annotation</title>
+<title>Fundamentals of computational biology - 12&nbsp; Genome annotation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,7 +75,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <script async="" src="https://hypothes.is/embed.js"></script>
 
 
-<meta name="citation_title" content="[[10]{.chapter-number}&nbsp; [Genome annotation]{.chapter-title}]{#sec-genome-annotation .quarto-section-identifier}">
+<meta name="citation_title" content="[[12]{.chapter-number}&nbsp; [Genome annotation]{.chapter-title}]{#sec-genome-annotation .quarto-section-identifier}">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book//chs-genomics/genome-annotation.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_publication_date=1984-05;,citation_cover_date=1984-05;,citation_year=1984;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_issue=2;,citation_doi=10.1093/comjnl/27.2.97;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;,citation_publisher=Oxford University Press, Inc.;">
@@ -95,7 +95,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome annotation</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Genome annotation</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -194,7 +194,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Genomics</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Phylogenetics</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -202,29 +202,19 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/genome-assembly.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  <a href="../chs-phylogenetics/phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Phylogenetics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/genome-annotation.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome annotation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/functional-genomics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functional genomics</span></a>
+  <a href="../chs-phylogenetics/phylogenomics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">phylogenomics.html</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Structural bioinformatics</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Genomics</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -232,19 +222,54 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Structural bioinformatics</span></a>
+  <a href="../chs-genomics/genome-assembly.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-genomics/genome-annotation.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Genome annotation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-genomics/variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-genomics/functional-genomics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Functional genomics</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Challenges</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Structural bioinformatics</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Structural bioinformatics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-bio-structural/molecular-docking.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Molecular docking</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">Challenges</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chs-challenges-demos/unix-challenges.html" class="sidebar-item-text sidebar-link">Unix challenges</a>
@@ -259,12 +284,12 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">Appendix</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">Appendix</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../HISTORY.html" class="sidebar-item-text sidebar-link">History</a>
@@ -286,14 +311,14 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ab-initio-annotation" id="toc-ab-initio-annotation" class="nav-link active" data-scroll-target="#ab-initio-annotation"><span class="toc-section-number">10.1</span>  <em>ab initio</em> annotation</a></li>
-  <li><a href="#homology-annotation" id="toc-homology-annotation" class="nav-link" data-scroll-target="#homology-annotation"><span class="toc-section-number">10.2</span>  Homology annotation</a></li>
-  <li><a href="#annotation-files" id="toc-annotation-files" class="nav-link" data-scroll-target="#annotation-files"><span class="toc-section-number">10.3</span>  Annotation files</a>
+  <li><a href="#ab-initio-annotation" id="toc-ab-initio-annotation" class="nav-link active" data-scroll-target="#ab-initio-annotation"><span class="toc-section-number">12.1</span>  <em>ab initio</em> annotation</a></li>
+  <li><a href="#homology-annotation" id="toc-homology-annotation" class="nav-link" data-scroll-target="#homology-annotation"><span class="toc-section-number">12.2</span>  Homology annotation</a></li>
+  <li><a href="#annotation-files" id="toc-annotation-files" class="nav-link" data-scroll-target="#annotation-files"><span class="toc-section-number">12.3</span>  Annotation files</a>
   <ul class="collapse">
-  <li><a href="#the-gbk-and-gbff" id="toc-the-gbk-and-gbff" class="nav-link" data-scroll-target="#the-gbk-and-gbff"><span class="toc-section-number">10.3.1</span>  the GBK and GBFF</a></li>
-  <li><a href="#the-gff-specifications" id="toc-the-gff-specifications" class="nav-link" data-scroll-target="#the-gff-specifications"><span class="toc-section-number">10.3.2</span>  The GFF specifications</a></li>
+  <li><a href="#the-gbk-and-gbff" id="toc-the-gbk-and-gbff" class="nav-link" data-scroll-target="#the-gbk-and-gbff"><span class="toc-section-number">12.3.1</span>  the GBK and GBFF</a></li>
+  <li><a href="#the-gff-specifications" id="toc-the-gff-specifications" class="nav-link" data-scroll-target="#the-gff-specifications"><span class="toc-section-number">12.3.2</span>  The GFF specifications</a></li>
   </ul></li>
-  <li><a href="#visualizing-genomes-and-annotations" id="toc-visualizing-genomes-and-annotations" class="nav-link" data-scroll-target="#visualizing-genomes-and-annotations"><span class="toc-section-number">10.4</span>  Visualizing genomes and annotations</a></li>
+  <li><a href="#visualizing-genomes-and-annotations" id="toc-visualizing-genomes-and-annotations" class="nav-link" data-scroll-target="#visualizing-genomes-and-annotations"><span class="toc-section-number">12.4</span>  Visualizing genomes and annotations</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-genomics/genome-annotation.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -302,7 +327,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-genome-annotation" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Genome annotation</span></span></h1>
+<h1 class="title"><span id="sec-genome-annotation" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Genome annotation</span></span></h1>
 </div>
 
 
@@ -316,23 +341,23 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 
 </header>
 
-<section id="ab-initio-annotation" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="ab-initio-annotation"><span class="header-section-number">10.1</span> <em>ab initio</em> annotation</h2>
+<section id="ab-initio-annotation" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="ab-initio-annotation"><span class="header-section-number">12.1</span> <em>ab initio</em> annotation</h2>
 </section>
-<section id="homology-annotation" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="homology-annotation"><span class="header-section-number">10.2</span> Homology annotation</h2>
+<section id="homology-annotation" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="homology-annotation"><span class="header-section-number">12.2</span> Homology annotation</h2>
 </section>
-<section id="annotation-files" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="annotation-files"><span class="header-section-number">10.3</span> Annotation files</h2>
-<section id="the-gbk-and-gbff" class="level3" data-number="10.3.1">
-<h3 data-number="10.3.1" class="anchored" data-anchor-id="the-gbk-and-gbff"><span class="header-section-number">10.3.1</span> the GBK and GBFF</h3>
+<section id="annotation-files" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="annotation-files"><span class="header-section-number">12.3</span> Annotation files</h2>
+<section id="the-gbk-and-gbff" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="the-gbk-and-gbff"><span class="header-section-number">12.3.1</span> the GBK and GBFF</h3>
 </section>
-<section id="the-gff-specifications" class="level3" data-number="10.3.2">
-<h3 data-number="10.3.2" class="anchored" data-anchor-id="the-gff-specifications"><span class="header-section-number">10.3.2</span> The GFF specifications</h3>
+<section id="the-gff-specifications" class="level3" data-number="12.3.2">
+<h3 data-number="12.3.2" class="anchored" data-anchor-id="the-gff-specifications"><span class="header-section-number">12.3.2</span> The GFF specifications</h3>
 </section>
 </section>
-<section id="visualizing-genomes-and-annotations" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="visualizing-genomes-and-annotations"><span class="header-section-number">10.4</span> Visualizing genomes and annotations</h2>
+<section id="visualizing-genomes-and-annotations" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="visualizing-genomes-and-annotations"><span class="header-section-number">12.4</span> Visualizing genomes and annotations</h2>
 
 
 </section>
@@ -554,12 +579,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chs-genomics/genome-assembly.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Genome assembly</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Genome assembly</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chs-genomics/variant-calling-analysis.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
