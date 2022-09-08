@@ -178,6 +178,15 @@ rpoB <- SangerAlignment(
 rpoB
 ```
 
+ This produces an specialized `R` object holding different information from the Sanger processing steps. The entire object can be untangled in a thorough report displaying all the processing information and results using the 
+
+```{r}
+#| eval: false
+generateReport(rpoB, outputDir = "data/sanger-processed/")
+
+```
+
+Among the data from the report ypu can see that the unaligned contigs ithere is something called a *Contig Consensus* which is the result of comparing the three consensus out of the **rpoB** genes of the three strains (302, 321, 455). Now, this is not really the sequence we need right away, however we need the separate consensus of each strain gene. To get theme `sangeranalyseR` provide a couple of tools.
 
 ```{r}
 #| eval: false
@@ -185,10 +194,9 @@ writeFasta(rpoB,
   outputDir = "data/sanger-processed/rpoB",
   selection = "contigs_unalignment",
 )
-
-generateReport(rpoB, outputDir = "data/sanger-processed/")
 ```
 
+Now, in the case of the challenge we actually got several genes per strain which is common in molecular biology projects. How do we process all the batch of sequence all at a time? To do so we can split the sequences as folder per gene, then we can use some capabilites of are to iterate an map the sanger processing function to each folder and create a list of processing instances, let's try this out:
 
 ### Processing a bulk of `AB1` pair
 
@@ -221,6 +229,8 @@ genes$`data/sanger-seqs/rpoB`
 genes$`data/sanger-seqs/spo0B`
 ```
 
+Finally to generate reports we need to call the appropriate instance with the `$` to select the gene we are interested to inspect:
+
 ```{r}
 #| eval: false
 generateReport(genes$`data/sanger-seqs/spo0B`, outputDir ="data/sanger-processed/spo0B")
@@ -231,5 +241,13 @@ writeFasta(
  outputDir = "data/sanger-processed/rpoB",
  selection = "contigs_unalignment"
 )
+```
+
+Now that we got the actual multifasta of the genes from all strain, the identification process using `blastn` from the command line will follow as:
+
+```{bash}
+#| eval: false
+
+blastn -db nr -query rpoB-unaligned-contigs.mfa -out rpoB-blastn-report.txt -remote
 ```
 
