@@ -501,7 +501,14 @@
     "href": "HISTORY.html",
     "title": "History",
     "section": "",
-    "text": "New render w/ Quarto 1.1\nAdding more on sequence analysis\nIncluding new extension for videos\nImprove some images\nBook has now Giscus to enable discussions\nNew info on download genomics data\nNew foot page with license and more info"
+    "text": "Starting the Sanger chapter\nMore on Seq. analysis\nKeep history on book and add dates\nChange the cover\nAdd new parts and chapters outlines (phylogenetics and metagenomics)\nNew challenges on seq analysis solved"
+  },
+  {
+    "objectID": "HISTORY.html#ed.-0.0.8-2022-08-29",
+    "href": "HISTORY.html#ed.-0.0.8-2022-08-29",
+    "title": "History",
+    "section": "Ed. 0.0.8 (2022-08-29)",
+    "text": "Ed. 0.0.8 (2022-08-29)\n\nNew render w/ Quarto 1.1\nAdding more on sequence analysis\nIncluding new extension for videos\nImprove some images\nBook has now Giscus to enable discussions\nNew info on download genomics data\nNew foot page with license and more info"
   },
   {
     "objectID": "HISTORY.html#ed.-0.0.7-2022-08-19",

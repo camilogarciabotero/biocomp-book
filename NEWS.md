@@ -1,4 +1,4 @@
-# Edition 0.0.9
+# Edition 0.0.9 (2022-09-08)
 
 - Starting the Sanger chapter
 
