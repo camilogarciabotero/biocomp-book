@@ -53,7 +53,6 @@ book:
         - chs-sequence-analysis/introduction-to-sequence-analysis.qmd
         - chs-sequence-analysis/sanger-analysis.qmd
         - chs-sequence-analysis/sequence-alignments.qmd
-        # - chs-sequence-analysis/phylogenetic-reconstructions.qmd
         - chs-sequence-analysis/NGS-TGS-principles.qmd
     - part: "Phylogenetics"
       chapters:
@@ -65,6 +64,10 @@ book:
         - chs-genomics/genome-annotation.qmd
         - chs-genomics/variant-calling-analysis.qmd
         - chs-genomics/functional-genomics.qmd
+        - chs-genomics/comparative-genomics.qmd
+    - part: "Metagenomics"
+      chapters:  
+        - chs-metagenomics/metagenomic-sequencing.qmd
     - part: "Structural bioinformatics"
       chapters:
         - chs-bio-structural/intro-structural-bioinfo.qmd
