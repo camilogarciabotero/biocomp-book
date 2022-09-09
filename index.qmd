@@ -48,3 +48,8 @@ Since focused on a competences learning approach we have highlighted several rea
 
 As many analysis specialize on data analysis, many formats arise that optimize the processing steps or the data storing steps. Some of these formats are keystones of bioinformatic analyses. We present examples of some formats an describe its main elements.
 :::
+
+## Notation
+
+### Mathematical notaions
+

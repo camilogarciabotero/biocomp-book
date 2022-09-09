@@ -565,5 +565,19 @@
     "title": "References",
     "section": "",
     "text": "Allesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for\nBiologists,” January. https://doi.org/10.2307/j.ctvc77jrc.\n\n\nBrandies, Parice A, and Carolyn J Hogg. 2021. “Ten Simple Rules\nfor Getting Started with Command-Line Bioinformatics.” PLoS\nComputational Biology. Public Library of Science San Francisco, CA\nUSA.\n\n\nBrown, Terence A. 2018. Genomes 4. Garland science.\n\n\nDudley, Joel T, and Atul J Butte. 2009. “A Quick Guide for\nDeveloping Effective Bioinformatics Programming Skills.” PLOS\nComputational Biology. Public Library of Science San Francisco,\nUSA.\n\n\nMäkinen, Veli, Djamal Belazzougui, Fabio Cunial, and Alexandru I\nTomescu. 2015. Genome-Scale Algorithm Design. Cambridge\nUniversity Press.\n\n\nMeneely, Philip Mark, Rachel Dawes Hoang, Iruka N Okeke, and Katherine\nHeston. 2017. Genetics: Genes, Genomes, and Evolution. Oxford\nUniversity Press.\n\n\nPerkel, Jeffrey M et al. 2021. “Five Reasons Why Researchers\nShould Learn to Love the Command Line.” Nature 590\n(7844): 173–74."
+  },
+  {
+    "objectID": "chs-command-line/hpc-notions.html#the-slurm-instructions",
+    "href": "chs-command-line/hpc-notions.html#the-slurm-instructions",
+    "title": "4  Notions of HPC",
+    "section": "4.6 The Slurm instructions",
+    "text": "4.6 The Slurm instructions\nTo send then a job into the computer cluster several instructions should be specified so that the appropriate scheduling take part Fig. 4.1\n\n\n\nFigure 4.1: Slurm specifications to send a job into the cluster service"
+  },
+  {
+    "objectID": "chs-command-line/hpc-notions.html#resources",
+    "href": "chs-command-line/hpc-notions.html#resources",
+    "title": "4  Notions of HPC",
+    "section": "4.7 resources",
+    "text": "4.7 resources\nhttps://bioinformaticsworkbook.org/Appendix/Unix/01_slurm-basics.html#gsc.tab=0"
   }
 ]
