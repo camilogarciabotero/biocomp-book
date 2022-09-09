@@ -6,4 +6,9 @@
 
 - Keep history on book and add dates
 
-- Move citations per chapter (TODO)
+
+- Change the cover
+
+- Add new parts and chapters outlines (phylogenetics and metagenomics)
+
+- New challenges on seq analysis solved
