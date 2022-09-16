@@ -91,18 +91,11 @@
     "text": "2.3 Exploring GitHub\nAs mention before, one of the great advantages that git can later achieve is to collaborate. However, to get into that a sharable server must allow users to have a common ground, and this is what GitHub allow. GitHub is a web platform where the local repositories become public and any user can access to the controlled versions of an image of your repo. The famous pet is the octocat Fig. 2.1\n\n\n\nFigure 2.1: The octocat from GitHub\n\nTo enable the communication with a remote repo, git has encoded many specific commands, once the repos are cloned a simple workflow from the own local and remote repos is made possible thanks to two simple commands git push and git pull.\nThere a several ways to starting out a remote project, whether it starts from a local folder or whether it starts from a remote repo. The second strategy is sometimes easier as you just need to later git clone the remote into a local folder. To do so every repo has its own code-icon  to later copy the repo link and later hit git clone <https...> on the desired folder. Now you got a linked copy of the remote on your machine.\n\n\n\n\n\n\nCaution\n\n\n\nBut before working on a remote and pushing your first commits, it is common to find an error regarding the remote branch (also called origin). There are several ways to avoid this caveat, but a very anticipated way is to configure git\n\ngit config --global push.autoSetupRemote true\n\nThis will save you from every time typing git push --set-upstream origin <main> when working on a new remote repo.\n\n\n\n\nFigure 2.2: The cloning workflow in brief\n\n\nCloning is therefore the process of creating a local copy of remote repository, that is a machine version of the remote repo, later all the common local workflow is carried out normally Fig. 2.2\n\n\n\n\n\n\n\nTip\n\n\n\nIf you want to keep a file out of synchronization git provides a simple way to do so by creating a .gitignore file having the the paths to the files to keep in your local machine\n\n\n2.3.1 Forking and collaborate\nBasic collaboration on an open repository is a three-step process. First you need to fork the repo, this will create a mirror copy of the repo in your GitHub profile. In a second step, a simple clone of the repo will generate a copy of the forked repo on your local machine, so you can freely work and make your mistakes and push them to your forked repo that belongs to your account. In a third step, once they are on the remote repo you will have to create a pull request (PR), as its name suggest: you are asking the owners of the original to consider your changes Fig. 2.3.\n\n\nFigure 2.3: A common collaborative workflow from GitHub, using fork, clone and pull requests\n\n\n\n2.3.2 Branching and merging"
   },
   {
-    "objectID": "chs-command-line/package-managers.html#conda-environments-and-other-package-managers",
-    "href": "chs-command-line/package-managers.html#conda-environments-and-other-package-managers",
+    "objectID": "chs-command-line/package-managers.html#conda-environments",
+    "href": "chs-command-line/package-managers.html#conda-environments",
     "title": "3  Package managers",
-    "section": "3.2 Conda environments and other package managers",
-    "text": "3.2 Conda environments and other package managers"
-  },
-  {
-    "objectID": "chs-command-line/package-managers.html#creating-environments-with-conda",
-    "href": "chs-command-line/package-managers.html#creating-environments-with-conda",
-    "title": "3  Package managers",
-    "section": "3.3 Creating environments with Conda",
-    "text": "3.3 Creating environments with Conda"
+    "section": "3.2 Conda environments",
+    "text": "3.2 Conda environments\nWhat is conda:\nTo install conda (the comand), miniconda (the lighter distribution).\nFor Linux x86_64 machine\n#| eval: false\ncurl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh\nFor Mac (Intel, will also works on M1):\n#| eval: false\ncurl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh\nOnce downloaded, the next step is to run the installation script.\n#| eval: false\nbash Miniconda3-latest-Linux-x86_64.sh\nAfter installation is completed, it is recommended to add the following channels to your conda configuration. Conda channels are…\n#| eval: false\nconda config --add channels defaults\nconda config --add channels bioconda\nconda config --add channels conda-forge\nAfter this, conda should be installed, you may need to restart your terminal.\n\n\n\n\n\n\nTip\n\n\n\nA faster implementation of the conda command is mamba. To install it simply run conda install mamba and then every time you will install a program just substitute conda for mamba"
   },
   {
     "objectID": "chs-command-line/package-managers.html#package-managers-for-os",
@@ -378,18 +371,25 @@
     "text": "12.2 Homology annotation"
   },
   {
+    "objectID": "chs-genomics/genome-annotation.html#functional-annotations",
+    "href": "chs-genomics/genome-annotation.html#functional-annotations",
+    "title": "12  Genome annotation",
+    "section": "12.3 Functional annotations",
+    "text": "12.3 Functional annotations\n\n12.3.1 Gene Ontology\n\n\n12.3.2 Cluster of orthologous genes\n\n\n12.3.3 Enzyme commission\nKEGG enrichment"
+  },
+  {
     "objectID": "chs-genomics/genome-annotation.html#annotation-files",
     "href": "chs-genomics/genome-annotation.html#annotation-files",
     "title": "12  Genome annotation",
-    "section": "12.3 Annotation files",
-    "text": "12.3 Annotation files\n\n12.3.1 the GBK and GBFF\n\n\n12.3.2 The GFF specifications"
+    "section": "12.4 Annotation files",
+    "text": "12.4 Annotation files\n\n12.4.1 the GBK and GBFF\n\n\n12.4.2 The GFF specifications"
   },
   {
     "objectID": "chs-genomics/genome-annotation.html#visualizing-genomes-and-annotations",
     "href": "chs-genomics/genome-annotation.html#visualizing-genomes-and-annotations",
     "title": "12  Genome annotation",
-    "section": "12.4 Visualizing genomes and annotations",
-    "text": "12.4 Visualizing genomes and annotations"
+    "section": "12.5 Visualizing genomes and annotations",
+    "text": "12.5 Visualizing genomes and annotations"
   },
   {
     "objectID": "chs-genomics/variant-calling-analysis.html#structural-variants",
@@ -420,53 +420,39 @@
     "text": "13.5 Identifying mutations\n\n13.5.1 Freebayes and Snippy\n\n\n13.5.2 The VCF file"
   },
   {
-    "objectID": "chs-genomics/functional-genomics.html#cluster-of-orthologous-genes",
-    "href": "chs-genomics/functional-genomics.html#cluster-of-orthologous-genes",
-    "title": "14  Functional genomics",
-    "section": "14.2 Cluster of orthologous genes",
-    "text": "14.2 Cluster of orthologous genes"
-  },
-  {
-    "objectID": "chs-genomics/functional-genomics.html#kegg-paths",
-    "href": "chs-genomics/functional-genomics.html#kegg-paths",
-    "title": "14  Functional genomics",
-    "section": "14.3 KEGG paths",
-    "text": "14.3 KEGG paths"
-  },
-  {
     "objectID": "chs-genomics/comparative-genomics.html#whole-genome-comparisons",
     "href": "chs-genomics/comparative-genomics.html#whole-genome-comparisons",
-    "title": "15  Comparative genomics",
-    "section": "15.2 Whole genome comparisons",
-    "text": "15.2 Whole genome comparisons\nmummer mauve mmseq"
+    "title": "14  Comparative genomics",
+    "section": "14.2 Whole genome comparisons",
+    "text": "14.2 Whole genome comparisons\nmummer mauve mmseq\narrow diagrams"
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html",
     "href": "chs-bio-structural/intro-structural-bioinfo.html",
-    "title": "17  Structural bioinformatics",
+    "title": "16  Structural bioinformatics",
     "section": "",
     "text": "Structural bioinformatics is a multidisciplinary area enriched by chemistry, physics, computer science and many others. Although, it could be focused on different biological macro-molecules, here the emphasis will be focused on proteins.\nOne of the first protein structure elucidated was myoglobin and it triggered the study of the role of the structure of proteins and its biological functions\nIdentify a protein related to your study that could be further analyzed."
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html#protein-structures",
     "href": "chs-bio-structural/intro-structural-bioinfo.html#protein-structures",
-    "title": "17  Structural bioinformatics",
-    "section": "17.1 Protein structures",
-    "text": "17.1 Protein structures\nDifference between the levels of protein structure primary structure is the basic linear representation of aminoacids. Natural aminoacids and modified or rare aminoacids display physico-chemical rich information and could be represented by letters. Therefore in the genetic code we could find the one-letter code.\nSecondary structures result from the spatial arrangement of aminoacids that interact with each closer neighbors. There are some remarkable secondary structures such as \\(\\beta\\)-sheets, \\(\\alpha\\)-helix, coils (flexible) and others.\nTertiary structure informs about the structural disposition of the secondary structures that fold between each other due to hydrophobic interactions, disulfure bonds, and other chemical interactions forming a globular and dynamic structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the :Levinthal’s paradox).\nQuaternary structures result from interaction of multiple tertiary structures. The structure, therefore dictates the protein function. This basic concept have triggered more recently a boom on the analysis of the structure of proteins."
+    "title": "16  Structural bioinformatics",
+    "section": "16.1 Protein structures",
+    "text": "16.1 Protein structures\nDifference between the levels of protein structure primary structure is the basic linear representation of aminoacids. Natural aminoacids and modified or rare aminoacids display physico-chemical rich information and could be represented by letters. Therefore in the genetic code we could find the one-letter code.\nSecondary structures result from the spatial arrangement of aminoacids that interact with each closer neighbors. There are some remarkable secondary structures such as \\(\\beta\\)-sheets, \\(\\alpha\\)-helix, coils (flexible) and others.\nTertiary structure informs about the structural disposition of the secondary structures that fold between each other due to hydrophobic interactions, disulfure bonds, and other chemical interactions forming a globular and dynamic structure. Thus, proteins could display multiple structural states depending on the physical and energy stability (see the :Levinthal’s paradox).\nQuaternary structures result from interaction of multiple tertiary structures. The structure, therefore dictates the protein function. This basic concept have triggered more recently a boom on the analysis of the structure of proteins."
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html#identifying-or-predicting-protein-structures",
     "href": "chs-bio-structural/intro-structural-bioinfo.html#identifying-or-predicting-protein-structures",
-    "title": "17  Structural bioinformatics",
-    "section": "17.2 Identifying or predicting protein structures",
-    "text": "17.2 Identifying or predicting protein structures\nXray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks.\nTo date, helium is scarce around the world, so labs all around are having trouble to get this element.\nModelling the structure whether ab initio or by homology also allow structure prediction. However these strategies\nRecently AlphaFold\nThe protein database (PDB)\nProtein topologies resulting from the folding: horshoe, beta-barrel and other could be identified\nStructural classification of proteins (SCOP) when analyzing a new protein classification by class, architecture, topology (fold-family), homologous superfamily and sequence family\nImportance of Gene Ontology\n\n17.2.1 Secondary structure prediction\nSecondary structures could also be represented in one letter (e.g.)\nFunctional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.\nThere is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.\n\n\n\n\n\n\nExercise 01\n\n\n\nSubmit 5lWM (JAK3) from the PDB on FASTA format on the JPRED and PSIPRED and compared with the experimentally predicted version of the protein. Analyze the predictions and tell are there differences between predictions? Which one is more accurate?"
+    "title": "16  Structural bioinformatics",
+    "section": "16.2 Identifying or predicting protein structures",
+    "text": "16.2 Identifying or predicting protein structures\nXray crystallography, nuclear magnetic resonance (NMR) allows to encapsulated dynamic information of the protein in time Electron micrography (EM) and Cryo-EM. These experiment rely on highly specialized set ups and there are other drawbacks.\nTo date, helium is scarce around the world, so labs all around are having trouble to get this element.\nModelling the structure whether ab initio or by homology also allow structure prediction. However these strategies\nRecently AlphaFold\nThe protein database (PDB)\nProtein topologies resulting from the folding: horshoe, beta-barrel and other could be identified\nStructural classification of proteins (SCOP) when analyzing a new protein classification by class, architecture, topology (fold-family), homologous superfamily and sequence family\nImportance of Gene Ontology\n\n16.2.1 Secondary structure prediction\nSecondary structures could also be represented in one letter (e.g.)\nFunctional domains could be predicted by sequence alignment and allow structural inference. Main predictions are based heavily on machine learning and are frequently accepted under a consensus of multiple tools.\nThere is a group of protein called intrinsically-disordered proteins that change in its tertiary structures quite frequently, therefore it prediction could be troublesome.\n\n\n\n\n\n\nExercise 01\n\n\n\nSubmit 5lWM (JAK3) from the PDB on FASTA format on the JPRED and PSIPRED and compared with the experimentally predicted version of the protein. Analyze the predictions and tell are there differences between predictions? Which one is more accurate?"
   },
   {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html#pdb-database-introduction",
     "href": "chs-bio-structural/intro-structural-bioinfo.html#pdb-database-introduction",
-    "title": "17  Structural bioinformatics",
-    "section": "17.3 PDB database introduction",
-    "text": "17.3 PDB database introduction\nThe PDB database is one of the most important and ancient open biological database where all new protein structures are submitted. It is an international consortium where several regions work together to curate information.\nThe PDB in Europe (PDBe) is not only for proteins but form many other experimentally predicted macro-molecules (protein-protein interactions, peptides, RNA and so on).\nProtein structures are registered using a unique code of four characters.\nX-ray crystallography: is a chemical state of the macro-molecule where it is immobilized, therefore information correspond to one state of the structure, then crystal protein is submitted to an x-ray beam to generate a diffraction pattern.\nNMR spectroscopy: captures dynamic information of the protein, but generally resolves small proteins. The principle?\nElectron microscopy adapted to cryo-preservation allow proteins visualization."
+    "title": "16  Structural bioinformatics",
+    "section": "16.3 PDB database introduction",
+    "text": "16.3 PDB database introduction\nThe PDB database is one of the most important and ancient open biological database where all new protein structures are submitted. It is an international consortium where several regions work together to curate information.\nThe PDB in Europe (PDBe) is not only for proteins but form many other experimentally predicted macro-molecules (protein-protein interactions, peptides, RNA and so on).\nProtein structures are registered using a unique code of four characters.\nX-ray crystallography: is a chemical state of the macro-molecule where it is immobilized, therefore information correspond to one state of the structure, then crystal protein is submitted to an x-ray beam to generate a diffraction pattern.\nNMR spectroscopy: captures dynamic information of the protein, but generally resolves small proteins. The principle?\nElectron microscopy adapted to cryo-preservation allow proteins visualization."
   },
   {
     "objectID": "chs-challenges-demos/unix-challenges.html",
@@ -579,12 +565,5 @@
     "title": "References",
     "section": "",
     "text": "Allesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for\nBiologists,” January. https://doi.org/10.2307/j.ctvc77jrc.\n\n\nBrandies, Parice A, and Carolyn J Hogg. 2021. “Ten Simple Rules\nfor Getting Started with Command-Line Bioinformatics.” PLoS\nComputational Biology. Public Library of Science San Francisco, CA\nUSA.\n\n\nBrown, Terence A. 2018. Genomes 4. Garland science.\n\n\nDudley, Joel T, and Atul J Butte. 2009. “A Quick Guide for\nDeveloping Effective Bioinformatics Programming Skills.” PLOS\nComputational Biology. Public Library of Science San Francisco,\nUSA.\n\n\nMäkinen, Veli, Djamal Belazzougui, Fabio Cunial, and Alexandru I\nTomescu. 2015. Genome-Scale Algorithm Design. Cambridge\nUniversity Press.\n\n\nMeneely, Philip Mark, Rachel Dawes Hoang, Iruka N Okeke, and Katherine\nHeston. 2017. Genetics: Genes, Genomes, and Evolution. Oxford\nUniversity Press.\n\n\nPerkel, Jeffrey M et al. 2021. “Five Reasons Why Researchers\nShould Learn to Love the Command Line.” Nature 590\n(7844): 173–74."
-  },
-  {
-    "objectID": "chs-command-line/package-managers.html#conda-environments",
-    "href": "chs-command-line/package-managers.html#conda-environments",
-    "title": "3  Package managers",
-    "section": "3.2 Conda environments",
-    "text": "3.2 Conda environments\nWhat is conda:\nTo install conda (the comand), miniconda (the lighter distribution).\nFor Linux x86_64 machine\n#| eval: false\ncurl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh\nFor Mac (Intel, will also works on M1):\n#| eval: false\ncurl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh\nOnce downloaded, the next step is to run the installation script.\n#| eval: false\nbash Miniconda3-latest-Linux-x86_64.sh\nAfter installation is completed, it is recommended to add the following channels to your conda configuration. Conda channels are…\n#| eval: false\nconda config --add channels defaults\nconda config --add channels bioconda\nconda config --add channels conda-forge\nAfter this, conda should be installed, you may need to restart your terminal.\n\n\n\n\n\n\nTip\n\n\n\nA faster implementation of the conda command is mamba. To install it simply run conda install mamba and then every time you will install a program just substitute conda for mamba"
   }
 ]
