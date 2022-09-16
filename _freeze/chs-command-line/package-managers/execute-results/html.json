@@ -1,0 +1,14 @@
+{
+  "hash": "512c62a62933a512a4c21124e4c9fe31",
+  "result": {
+    "markdown": "---\nexecute: \n  engine: knitr\n  freeze: auto\nfilters:\n  - code-filename\n  - nutshell\n  - lightbox\n---\n\n\n# Package managers {#sec-managers}\n\n## What is the importance of package managers\n\n## Conda environments\n\nWhat is conda: \n\nTo install conda (the command), miniconda (the lighter distribution).\n\nFor Linux x86_64 machine \n\n\n::: {.cell hash='package-managers_cache/html/unnamed-chunk-1_10330b4d394026610d951182a4082cce'}\n\n```{.bash .cell-code}\ncurl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh\n```\n:::\n\n\nFor Mac (Intel, will also works on M1):\n\n\n::: {.cell hash='package-managers_cache/html/unnamed-chunk-2_af733518e436027d47ba5176637f77d7'}\n\n```{.bash .cell-code}\ncurl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh\n```\n:::\n\n\nOnce downloaded, the next step is to run the installation script.\n\n\n::: {.cell hash='package-managers_cache/html/unnamed-chunk-3_1f8c88a85af913e3b60cdd3dd5e3298f'}\n\n```{.bash .cell-code}\nbash Miniconda3-latest-Linux-x86_64.sh\n```\n:::\n\n\nAfter installation is completed, it is recommended to add the following channels to your conda configuration. Conda channels are... \n\n\n::: {.cell hash='package-managers_cache/html/unnamed-chunk-4_de3ff023d8a94b2d6ef972f7923cef9f'}\n\n```{.bash .cell-code}\nconda config --add channels defaults\nconda config --add channels bioconda\nconda config --add channels conda-forge\n```\n:::\n\n\nAfter this, conda should be installed, you may need to restart your terminal.\n\n::: {.callout-tip}\nA faster implementation of the `conda` command is `mamba`. To install it simply run `conda install mamba` and then every time you will install a program just substitute `conda` for `mamba`\n:::\n\n## Package managers for OS\n\nThere are several package managers handling general purpose packages and apps. For MacOS the famous one is [Homebrew]() and for Windows several could be used such as [Chocolatey]() and [Scoop](https://scoop.sh/).\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

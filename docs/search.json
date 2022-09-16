@@ -94,14 +94,14 @@
     "objectID": "chs-command-line/package-managers.html#conda-environments",
     "href": "chs-command-line/package-managers.html#conda-environments",
     "title": "3  Package managers",
-    "section": "3.2 Conda environments",
-    "text": "3.2 Conda environments\nWhat is conda:\nTo install conda (the comand), miniconda (the lighter distribution).\nFor Linux x86_64 machine\n#| eval: false\ncurl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh\nFor Mac (Intel, will also works on M1):\n#| eval: false\ncurl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh\nOnce downloaded, the next step is to run the installation script.\n#| eval: false\nbash Miniconda3-latest-Linux-x86_64.sh\nAfter installation is completed, it is recommended to add the following channels to your conda configuration. Conda channels are…\n#| eval: false\nconda config --add channels defaults\nconda config --add channels bioconda\nconda config --add channels conda-forge\nAfter this, conda should be installed, you may need to restart your terminal.\n\n\n\n\n\n\nTip\n\n\n\nA faster implementation of the conda command is mamba. To install it simply run conda install mamba and then every time you will install a program just substitute conda for mamba"
+    "section": "\n3.2 Conda environments",
+    "text": "3.2 Conda environments\nWhat is conda:\nTo install conda (the command), miniconda (the lighter distribution).\nFor Linux x86_64 machine\n\ncurl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh\n\nFor Mac (Intel, will also works on M1):\n\ncurl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh\n\nOnce downloaded, the next step is to run the installation script.\n\nbash Miniconda3-latest-Linux-x86_64.sh\n\nAfter installation is completed, it is recommended to add the following channels to your conda configuration. Conda channels are…\n\nconda config --add channels defaults\nconda config --add channels bioconda\nconda config --add channels conda-forge\n\nAfter this, conda should be installed, you may need to restart your terminal.\n\n\n\n\n\n\nTip\n\n\n\nA faster implementation of the conda command is mamba. To install it simply run conda install mamba and then every time you will install a program just substitute conda for mamba"
   },
   {
     "objectID": "chs-command-line/package-managers.html#package-managers-for-os",
     "href": "chs-command-line/package-managers.html#package-managers-for-os",
     "title": "3  Package managers",
-    "section": "3.3 Package managers for OS",
+    "section": "\n3.3 Package managers for OS",
     "text": "3.3 Package managers for OS\nThere are several package managers handling general purpose packages and apps. For MacOS the famous one is Homebrew and for Windows several could be used such as Chocolatey and Scoop."
   },
   {

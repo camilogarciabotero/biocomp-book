@@ -1,3 +1,13 @@
+---
+execute: 
+  engine: knitr
+  freeze: auto
+filters:
+  - code-filename
+  - nutshell
+  - lightbox
+---
+
 # Package managers {#sec-managers}
 
 ## What is the importance of package managers
@@ -6,7 +16,7 @@
 
 What is conda: 
 
-To install conda (the comand), miniconda (the lighter distribution).
+To install conda (the command), miniconda (the lighter distribution).
 
 For Linux x86_64 machine 
 
@@ -19,6 +29,7 @@ For Mac (Intel, will also works on M1):
 
 ```{bash}
 #| eval: false
+
 curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 ```
 
@@ -26,6 +37,7 @@ Once downloaded, the next step is to run the installation script.
 
 ```{bash}
 #| eval: false
+
 bash Miniconda3-latest-Linux-x86_64.sh
 ```
 
@@ -33,6 +45,7 @@ After installation is completed, it is recommended to add the following channels
 
 ```{bash}
 #| eval: false
+
 conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
