@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.189">
+<meta name="generator" content="quarto-1.1.251">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Fundamentals of computational biology - Seq. Analysis challenges</title>
 <style>
@@ -141,7 +141,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <meta name="citation_reference" content="citation_title=Five reasons why researchers should learn to love the command line;,citation_author=Jeffrey M Perkel;,citation_author=others;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=7844;,citation_volume=590;,citation_journal_title=Nature;,citation_publisher=Nature;">
 <meta name="citation_reference" content="citation_title=Ten simple rules for getting started with command-line bioinformatics;,citation_author=Parice A Brandies;,citation_author=Carolyn J Hogg;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_volume=17;,citation_journal_title=PLoS Computational Biology;,citation_publisher=Public Library of Science San Francisco, CA USA;">
 </head>
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
@@ -382,10 +382,20 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   <li><a href="#processing-a-bulk-of-ab1-pair" id="toc-processing-a-bulk-of-ab1-pair" class="nav-link" data-scroll-target="#processing-a-bulk-of-ab1-pair">Processing a bulk of <code>AB1</code> pair</a></li>
   </ul>
 </li>
+  <li>
+<a href="#multiple-sequence-alignment" id="toc-multiple-sequence-alignment" class="nav-link" data-scroll-target="#multiple-sequence-alignment">Multiple sequence alignment</a>
+  <ul class="collapse">
+<li><a href="#download-sequences" id="toc-download-sequences" class="nav-link" data-scroll-target="#download-sequences">Download sequences</a></li>
+  <li><a href="#unwrapping-fasta-records" id="toc-unwrapping-fasta-records" class="nav-link" data-scroll-target="#unwrapping-fasta-records">Unwrapping FASTA records</a></li>
+  <li><a href="#gene-searching" id="toc-gene-searching" class="nav-link" data-scroll-target="#gene-searching">Gene searching</a></li>
+  <li><a href="#sequence-alignment" id="toc-sequence-alignment" class="nav-link" data-scroll-target="#sequence-alignment">Sequence alignment</a></li>
+  <li><a href="#assessment-of-the-alignment" id="toc-assessment-of-the-alignment" class="nav-link" data-scroll-target="#assessment-of-the-alignment">Assessment of the alignment</a></li>
+  </ul>
+</li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-challenges-demos/seq-analysis-challenges.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title d-none d-lg-block">Seq. Analysis challenges</h1>
 </div>
 
@@ -632,9 +642,94 @@ GCF_000321395.1 4043 4179 6 76 2 </code></pre>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-14_985792831eb01501d55d4c04bf1fb21e">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastn</span> <span class="at">-db</span> nr <span class="at">-query</span> rpoB-unaligned-contigs.mfa <span class="at">-out</span> rpoB-blastn-report.txt <span class="at">-remote</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section></section><section id="multiple-sequence-alignment" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="multiple-sequence-alignment">Multiple sequence alignment</h2>
+<section id="download-sequences" class="level3"><h3 class="anchored" data-anchor-id="download-sequences">Download sequences</h3>
+<p>Make sure to use the <code>--flat-output</code> avoiding download of multiple metadata</p>
+<div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-15_d1c0bd15fde9e10af5576160abd06bc8">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ngd</span> <span class="at">--flat-output</span> <span class="at">-p</span> 4 <span class="at">-s</span> refseq <span class="at">-A</span> genome-accessions.txt <span class="at">-F</span> cds-fasta bacteria</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In this case <code>cds-fasta</code> parameter will download the nucleotide sequences of the gene. Other alternatives could be useful such as blast search on a genome database or searching through the GENBANK annotation files (both files also could be downloaded using <code>ngd</code>).</p>
+</section><section id="unwrapping-fasta-records" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="unwrapping-fasta-records">Unwrapping FASTA records</h3>
+<p>NCBI registries came with an undesirable wrapping around the lines of sequencing which basically is inserting a return character after some established number of characters. Then a way to get rid of them is to use a command line utility from <a href="https://github.com/AstrobioMike">AstrobioMike (Mike Lee)</a> which will give a line per sequence after the FASTA header. We can later assume the the first line after the header will be the entire sequence</p>
+<div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-16_1a3e8d6b033468c49699760d1aac0b5e">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> GCF_<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">N</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">$i</span> .fna<span class="va">)</span><span class="kw">;</span> </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bash</span> bit-remove-wraps.sh <span class="va">${i}</span> <span class="op">&gt;</span> <span class="va">${N}</span>_unwrapped.fasta<span class="kw">;</span> </span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="gene-searching" class="level3"><h3 class="anchored" data-anchor-id="gene-searching">Gene searching</h3>
+<p>A possible way to search throughout the file registries is by using the <code>grep</code> command, that recursively will search each file. Fine tuned it allow to search for the first match, but also for the “after-context” in terms of lines desired to be printed:</p>
+<div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-17_7c870959f615518a493d03ea15b21616">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="pp">*</span>unwrapped<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span> <span class="fu">grep</span> <span class="at">-A</span> 1 <span class="st">"gyrA"</span> <span class="va">$i</span><span class="kw">;</span> <span class="cf">done</span> <span class="op">&gt;</span> all-gyrA.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>After finding the genes, we are now with an almost clean multi-sequence file, because header names are still and will be problematic. How do we programmatically change the FASTA headers? We will see in the next step.</p>
+<p>Now the the files has files names that are simply to work with. Which will enable to asses better out sequence alignment matrix.</p>
+</section><section id="sequence-alignment" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="sequence-alignment">Sequence alignment</h3>
+<p>There are many programs that are suited for performed multiple sequence alignments. Perhaps the two most used are <a href="https://mafft.cbrc.jp/alignment/software/"><code>MAFFT</code></a> and <a href="https://drive5.com/muscle5/"><code>MUSCLE</code></a> both specialized in multiple sequence alignment (that is: when having two or more than two sequences). The second tends to be more accurate when having large data-sets, but the first on is more versatile, fast and accurate on different kind of data-sets.</p>
+<p>Both programs take as input a single file containing all the sequences concatenated horizontally (that is a multi-fasta file) careless of the extension but (MFA, FA, FASTA, FNA, etc). And generate a simple output (whether with the <code>-o</code> in <code>MUSCLE</code> or to the std output in <code>MAFFT</code>) &nbsp;&nbsp;&nbsp;&nbsp;</p>
+<div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-18_4893a497855c938ba5ec38a83629a03b">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">linsi</span> <span class="at">--preservecase</span> <span class="at">--reorder</span> all-gyrA-renamed.fasta <span class="op">&gt;</span> all-gyrA-renamed-linsi.fasta <span class="co"># locally </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Other alignment alternatives are:</p>
+<div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-19_79b265d7c9d11bb8800b15ace9b42093">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">muscle</span> <span class="at">-i</span> all-gyrA-renamed.fasta <span class="at">-o</span> all-gyrA-renamed-muscle.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-20_fb1ec73d53f68fb9ca0f3c4c25beb963">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">famsa</span> <span class="at">-t</span> 8 all-gyrA-renamed.fasta <span class="op">&gt;</span> all-gyrA-renamed-famsa.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-21_dec9e66f38665b9b642c6d472dc9bb95">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kalign</span> <span class="at">-i</span> all-gyrA-renamed.fasta <span class="at">-o</span> all-gyrA-renamed-kalign.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div></div></section><section id="assessment-of-the-alignment" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="assessment-of-the-alignment">Assessment of the alignment</h3>
+<p>Inspection of the alignment is there very first step for assessing its quality. A CDS tends to generate a codon-like alignment starting with the methionine codon (ATG,GTG) and finishing with a stop (TAA, TAG, etc.). Therefore finding this structure when aligning a complete genes is expected. If a middle fraction of the gene is being aligned ORF might not display any stop codon. Verifying a codon-like alignment shows a biological order on the sequences other that mere artifact of the alignment, that is an evolutionary behavior of the sequence. We can do it using <a href="https://telatin.github.io/seqfu2/">seqfu</a> from the CLI <a href="#fig-fu-msa-view">Fig.&nbsp;<span>1</span></a>, or interactively with <a href="https://github.com/AliView/AliView">AliView</a></p>
+<div id="fig-fu-msa-view" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="figs/fu-msa-view.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: A viusalization of the <em>gyrA</em> gene alignment using seqfu multiple sequence alignment viewer</figcaption><p></p>
+</figure>
+</div>
+<p>A second step is to find the variability of the alignment. A simple way to find that is to calculate simpl stats from the alignment (sites, variable sites, As, Ts, etc.). A powerful cli program to do so is <a href="https://github.com/evolbioinfo/goalign">goalign</a></p>
+<div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-22_21d2fe2c5ca60f95c612822531039a3a">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">goalign</span> stats <span class="at">-i</span> all-gyrA-renamed-linsi.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>length  2508
+nseqs   8
+avgalleles  1.7400
+variable sites  1202
+char    nb  freq
+-   273 0.013606
+A   6418    0.319876
+C   3633    0.181071
+G   4755    0.236992
+T   4985    0.248455
+alphabet    nucleotide</code></pre>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+
+<div class="no-row-height column-margin column-container"><div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A more in depth analysis of the alignment could be done with <a href="https://github.com/KatyBrown/CIAlign">CIAlign</a>.</p>
+</div>
+</div></div></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");

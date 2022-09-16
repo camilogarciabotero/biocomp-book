@@ -251,3 +251,105 @@ Now that we got the actual multifasta of the genes from all strain, the identifi
 blastn -db nr -query rpoB-unaligned-contigs.mfa -out rpoB-blastn-report.txt -remote
 ```
 
+
+## Multiple sequence alignment
+
+### Download sequences
+
+Make sure to use the `--flat-output`  avoiding download of multiple metadata
+
+```{bash}
+#| eval: false
+ngd --flat-output -p 4 -s refseq -A genome-accessions.txt -F cds-fasta bacteria
+```
+
+In this case `cds-fasta` parameter will download the nucleotide sequences of the gene. Other alternatives could be useful such as blast search on a genome database or searching through the GENBANK annotation files (both files also could be downloaded using `ngd`).
+
+### Unwrapping FASTA records {.unnumbered}
+
+NCBI registries came with an undesirable wrapping around the lines of sequencing which basically is inserting a return character after some established number of characters. Then a way to get rid of them is to use a command line utility from [AstrobioMike (Mike Lee)](https://github.com/AstrobioMike) which will give a line per sequence after the FASTA header. We can later assume the the first line after the header will be the entire sequence
+
+```{bash}
+#| eval: false
+for i in GCF_*; do 
+    N=$(basename $i .fna); 
+    bash bit-remove-wraps.sh ${i} > ${N}_unwrapped.fasta; 
+done
+```
+
+### Gene searching
+
+A possible way to search throughout the file registries is by using the `grep` command, that recursively will search each file. Fine tuned it allow to search for the first  match, but also for the "after-context" in terms of lines desired to be printed:
+
+```{bash}
+#| eval: false
+for i in *unwrapped*; do grep -A 1 "gyrA" $i; done > all-gyrA.fasta
+```
+
+After finding the genes, we are now with an almost clean multi-sequence file, because header names are still and will be problematic. How do we programmatically change the FASTA headers? We will see in the next step.
+
+Now the the files has files names that are simply to work with. Which will enable to asses better out sequence alignment matrix.
+
+### Sequence alignment 
+
+There are many programs that are suited for performed multiple sequence alignments. Perhaps the two most used are [`MAFFT`](https://mafft.cbrc.jp/alignment/software/) and [`MUSCLE`](https://drive5.com/muscle5/) both specialized in multiple sequence alignment (that is: when having two or more than two sequences). The second tends to be more accurate when having large data-sets, but the first on is more versatile, fast and accurate on different kind of data-sets. 
+
+Both programs take as input a single file containing all the sequences concatenated horizontally (that is a multi-fasta file) careless of the extension but (MFA, FA, FASTA, FNA, etc). And generate a simple output (whether with the `-o` in `MUSCLE` or to the std output in `MAFFT`)
+    
+```{bash}
+#| eval: false
+linsi --preservecase --reorder all-gyrA-renamed.fasta > all-gyrA-renamed-linsi.fasta # locally 
+```
+
+::: {.callout-tip .column-margin}
+
+Other alignment alternatives are:
+
+```{bash}
+#| eval: false
+muscle -i all-gyrA-renamed.fasta -o all-gyrA-renamed-muscle.fasta
+```
+
+```{bash}
+#| eval: false
+famsa -t 8 all-gyrA-renamed.fasta > all-gyrA-renamed-famsa.fasta
+```
+
+```{bash}
+#| eval: false
+kalign -i all-gyrA-renamed.fasta -o all-gyrA-renamed-kalign.fasta
+```
+
+:::
+
+### Assessment of the alignment
+
+Inspection of the alignment is there very first step for assessing its quality. A CDS tends to generate a codon-like alignment starting with the methionine codon (ATG,GTG) and finishing with a stop (TAA, TAG, etc.). Therefore finding this structure when aligning a complete genes is expected. If a middle fraction of the gene is being aligned ORF might not display any stop codon. Verifying a codon-like alignment shows a biological order on the sequences other that mere artifact of the alignment, that is an evolutionary behavior of the sequence. We can do it using [seqfu](https://telatin.github.io/seqfu2/) from the CLI [Fig. @fig-fu-msa-view], or interactively with [AliView](https://github.com/AliView/AliView)
+
+
+![A viusalization of the *gyrA* gene alignment using seqfu multiple sequence alignment viewer](figs/fu-msa-view.png){#fig-fu-msa-view}
+
+
+A second step is to find the variability of the alignment. A simple way to find that is to calculate simpl stats from the alignment (sites, variable sites, As, Ts, etc.). A powerful cli program to do so is [goalign](https://github.com/evolbioinfo/goalign) 
+
+```{bash}
+#| eval: false
+goalign stats -i all-gyrA-renamed-linsi.fasta
+```
+
+```
+length	2508
+nseqs	8
+avgalleles	1.7400
+variable sites	1202
+char	nb	freq
+-	273	0.013606
+A	6418	0.319876
+C	3633	0.181071
+G	4755	0.236992
+T	4985	0.248455
+alphabet	nucleotide
+```
+::: {.callout-tip .column-margin}
+A more in depth analysis of the alignment could be done with [CIAlign](https://github.com/KatyBrown/CIAlign).
+:::
