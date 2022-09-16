@@ -5,6 +5,16 @@
 
 ## Homology annotation
 
+## Functional annotations
+
+### Gene Ontology
+
+### Cluster of orthologous genes
+
+### Enzyme commission
+
+KEGG enrichment
+
 ## Annotation files
 
 ### the GBK and GBFF
@@ -12,3 +22,4 @@
 ### The GFF specifications
 
 ## Visualizing genomes and annotations
+

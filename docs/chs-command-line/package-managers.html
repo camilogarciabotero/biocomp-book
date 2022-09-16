@@ -332,9 +332,8 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#what-is-the-importance-of-package-managers" id="toc-what-is-the-importance-of-package-managers" class="nav-link active" data-scroll-target="#what-is-the-importance-of-package-managers"><span class="toc-section-number">3.1</span>  What is the importance of package managers</a></li>
-  <li><a href="#conda-environments-and-other-package-managers" id="toc-conda-environments-and-other-package-managers" class="nav-link" data-scroll-target="#conda-environments-and-other-package-managers"><span class="toc-section-number">3.2</span>  Conda environments and other package managers</a></li>
-  <li><a href="#creating-environments-with-conda" id="toc-creating-environments-with-conda" class="nav-link" data-scroll-target="#creating-environments-with-conda"><span class="toc-section-number">3.3</span>  Creating environments with Conda</a></li>
-  <li><a href="#package-managers-for-os" id="toc-package-managers-for-os" class="nav-link" data-scroll-target="#package-managers-for-os"><span class="toc-section-number">3.4</span>  Package managers for OS</a></li>
+  <li><a href="#conda-environments" id="toc-conda-environments" class="nav-link" data-scroll-target="#conda-environments"><span class="toc-section-number">3.2</span>  Conda environments</a></li>
+  <li><a href="#package-managers-for-os" id="toc-package-managers-for-os" class="nav-link" data-scroll-target="#package-managers-for-os"><span class="toc-section-number">3.3</span>  Package managers for OS</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-command-line/package-managers.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -360,14 +359,41 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <section id="what-is-the-importance-of-package-managers" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="what-is-the-importance-of-package-managers"><span class="header-section-number">3.1</span> What is the importance of package managers</h2>
 </section>
-<section id="conda-environments-and-other-package-managers" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="conda-environments-and-other-package-managers"><span class="header-section-number">3.2</span> Conda environments and other package managers</h2>
+<section id="conda-environments" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="conda-environments"><span class="header-section-number">3.2</span> Conda environments</h2>
+<p>What is conda:</p>
+<p>To install conda (the comand), miniconda (the lighter distribution).</p>
+<p>For Linux x86_64 machine</p>
+<pre class="{bash}"><code>#| eval: false
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</code></pre>
+<p>For Mac (Intel, will also works on M1):</p>
+<pre class="{bash}"><code>#| eval: false
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh</code></pre>
+<p>Once downloaded, the next step is to run the installation script.</p>
+<pre class="{bash}"><code>#| eval: false
+bash Miniconda3-latest-Linux-x86_64.sh</code></pre>
+<p>After installation is completed, it is recommended to add the following channels to your conda configuration. Conda channels are…</p>
+<pre class="{bash}"><code>#| eval: false
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge</code></pre>
+<p>After this, conda should be installed, you may need to restart your terminal.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A faster implementation of the <code>conda</code> command is <code>mamba</code>. To install it simply run <code>conda install mamba</code> and then every time you will install a program just substitute <code>conda</code> for <code>mamba</code></p>
+</div>
+</div>
 </section>
-<section id="creating-environments-with-conda" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="creating-environments-with-conda"><span class="header-section-number">3.3</span> Creating environments with Conda</h2>
-</section>
-<section id="package-managers-for-os" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="package-managers-for-os"><span class="header-section-number">3.4</span> Package managers for OS</h2>
+<section id="package-managers-for-os" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="package-managers-for-os"><span class="header-section-number">3.3</span> Package managers for OS</h2>
 <p>There are several package managers handling general purpose packages and apps. For MacOS the famous one is <a href="">Homebrew</a> and for Windows several could be used such as <a href="">Chocolatey</a> and <a href="https://scoop.sh/">Scoop</a>.</p>
 
 

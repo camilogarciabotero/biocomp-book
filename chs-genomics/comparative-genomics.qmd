@@ -8,3 +8,4 @@ mummer
 mauve
 mmseq
 
+arrow diagrams 

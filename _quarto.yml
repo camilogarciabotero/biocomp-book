@@ -63,7 +63,6 @@ book:
         - chs-genomics/genome-assembly.qmd
         - chs-genomics/genome-annotation.qmd
         - chs-genomics/variant-calling-analysis.qmd
-        - chs-genomics/functional-genomics.qmd
         - chs-genomics/comparative-genomics.qmd
     - part: "Metagenomics"
       chapters:  
