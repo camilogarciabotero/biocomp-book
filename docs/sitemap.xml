@@ -2,94 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/index.html</loc>
-    <lastmod>2022-09-16T20:52:01.201Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.377Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/intro.html</loc>
-    <lastmod>2022-09-16T20:52:01.202Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.379Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-command-line/welcome-to-command-line.html</loc>
-    <lastmod>2022-09-16T20:52:01.207Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.382Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-command-line/git-and-github.html</loc>
-    <lastmod>2022-09-16T20:52:01.209Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.383Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-command-line/package-managers.html</loc>
-    <lastmod>2022-09-16T20:52:01.211Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.386Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-command-line/hpc-notions.html</loc>
-    <lastmod>2022-09-16T20:52:01.213Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.388Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-sequence-analysis/introduction-to-sequence-analysis.html</loc>
-    <lastmod>2022-09-16T20:52:01.215Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.392Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-sequence-analysis/sanger-analysis.html</loc>
-    <lastmod>2022-09-16T20:52:01.217Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.395Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-sequence-analysis/sequence-alignments.html</loc>
-    <lastmod>2022-09-16T20:52:01.219Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.397Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-sequence-analysis/NGS-TGS-principles.html</loc>
-    <lastmod>2022-09-16T20:52:01.220Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.398Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-phylogenetics/phylogenetic-reconstructions.html</loc>
-    <lastmod>2022-09-16T20:52:01.221Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.399Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-phylogenetics/phylogenomics.html</loc>
-    <lastmod>2022-09-16T20:52:01.222Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.400Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-genomics/genome-assembly.html</loc>
-    <lastmod>2022-09-16T20:52:01.223Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.401Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-genomics/genome-annotation.html</loc>
-    <lastmod>2022-09-16T20:52:01.225Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.402Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-genomics/variant-calling-analysis.html</loc>
-    <lastmod>2022-09-16T20:52:01.226Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.404Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-genomics/comparative-genomics.html</loc>
-    <lastmod>2022-09-16T20:52:01.227Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.405Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-metagenomics/metagenomic-sequencing.html</loc>
-    <lastmod>2022-09-16T20:52:01.228Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.406Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-bio-structural/intro-structural-bioinfo.html</loc>
-    <lastmod>2022-09-16T20:52:01.230Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.407Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-bio-structural/molecular-docking.html</loc>
-    <lastmod>2022-09-16T20:52:01.231Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.410Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-challenges-demos/unix-challenges.html</loc>
-    <lastmod>2022-09-16T20:52:01.234Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.414Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/chs-challenges-demos/seq-analysis-challenges.html</loc>
-    <lastmod>2022-09-16T20:52:01.240Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.418Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/HISTORY.html</loc>
-    <lastmod>2022-09-16T20:52:01.242Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.419Z</lastmod>
   </url>
   <url>
     <loc>https://camilogarciabotero.github.io/biocomp-book/references.html</loc>
-    <lastmod>2022-09-16T20:52:01.243Z</lastmod>
+    <lastmod>2022-09-20T18:43:26.420Z</lastmod>
   </url>
 </urlset>
