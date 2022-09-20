@@ -34,10 +34,7 @@ book:
 
   page-footer: 
     border: true
-    right:
-      - text: "{{< fa house >}}"
-        href: https://camilogarciabotero.github.io/
-    left: "Made with [Quarto](https://quarto.org/). Under [GNU GPL 3.0](https://github.com/camilogarciabotero/biocomp-book/blob/main/LICENSE). Buy me coffee [{{< fa mug-saucer >}}](https://www.paypal.com/paypalme/camilogarciabotero)"
+    center: "Made with [Quarto](https://quarto.org/). Under [GNU GPL 3.0](https://github.com/camilogarciabotero/biocomp-book/blob/main/LICENSE). Buy me coffee [{{< fa mug-saucer >}}](https://www.paypal.com/paypalme/camilogarciabotero) and visit me at [{{< fa house >}}](https://camilogarciabotero.github.io/)"
 
   chapters:
     - index.qmd
