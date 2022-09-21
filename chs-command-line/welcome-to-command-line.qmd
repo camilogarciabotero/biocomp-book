@@ -147,7 +147,7 @@ Bacterial defense mechanisms to avoid bacteriophage infections are abundant. One
 
 ![A RM-system motif logo](imgs-cli/motif.png){#fig-motif}
 
-Before diving into an [:answer](../chs-challenges-demos/demo-motif-search.qmd#motif-search) take your time to think and solve it by your own.
+Before diving into an [:answer](../chs-challenges-demos/unix-challenges.qmd#motif-search-sec-motifsearch) take your time to think and solve it by your own.
 :::
 
 ## Most important skills
@@ -207,7 +207,7 @@ When having a long command, it is also useful to jump by lines instead of charac
 
 A second part of this challenges consists of create a script out from r the motif-search one-line command that recursively search the motifs in all genomes from a zip file that contains 10 bacterial genomes. The script should include the shebang, loops, conditionals and environmental variables.
 
-See a possible script that solve the challenge [:here](../chs-challenges-demos/demo-motif-search.qmd#motif-search-in-multiple-files)
+See a possible script that solve the challenge [:here](../chs-challenges-demos/unix-challenges.qmd#motif-search-in-multiple-files)
 :::
 
 
