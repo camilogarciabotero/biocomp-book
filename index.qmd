@@ -15,7 +15,7 @@ Lectures are focused on a theoretical-practical approach where basic concepts fr
 
 ::: { .callout-important appearance="minimal"}
 #  {{< fa solid biohazard >}}
-This book is a work in progress. If you find issues, typos or relevant information to share with, anything is welcome.
+This book is a work in progress. If you find issues, typos or relevant information to share with, anything is welcome and appreciated.
 :::
 
 ## Learning features {.unnumbered}
