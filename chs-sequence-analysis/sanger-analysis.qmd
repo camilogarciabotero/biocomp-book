@@ -4,7 +4,7 @@ execute:
 filters: 
   - lightbox
   - nutshell
-  - code-filename
+  # - code-filename
 lightbox: auto
 ---
 

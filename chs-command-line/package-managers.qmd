@@ -3,7 +3,7 @@ execute:
   engine: knitr
   freeze: auto
 filters:
-  - code-filename
+  # - code-filename
   - nutshell
   - lightbox
 ---
