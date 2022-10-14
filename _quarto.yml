@@ -91,6 +91,7 @@ comments:
   hypothesis: true
   giscus: 
       repo: camilogarciabotero/biocomp-book
+      theme: transparent_dark
 
 execute:
   cache: true
@@ -108,6 +109,8 @@ format:
       - style/fonts.scss
     code-link: true
     code-copy: hover
+    df-print: paged
+    fig-align: center
     mainfont: Atkinson Hyperlegible
     monofont: JetBrains
     highlight-style: ayu
