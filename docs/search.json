@@ -235,7 +235,7 @@
     "href": "chs-sequence-analysis/sequence-alignments.html#why-do-we-align-sequences",
     "title": "7  Sequence alignments",
     "section": "7.1 Why do we align sequences?",
-    "text": "7.1 Why do we align sequences?\nIn search of homology and identy"
+    "text": "7.1 Why do we align sequences?\nIn search of homology and identity"
   },
   {
     "objectID": "chs-sequence-analysis/sequence-alignments.html#what-is-homology",
@@ -245,11 +245,11 @@
     "text": "7.2 What is homology"
   },
   {
-    "objectID": "chs-sequence-analysis/sequence-alignments.html#pairwise-alignments-algorihtms",
-    "href": "chs-sequence-analysis/sequence-alignments.html#pairwise-alignments-algorihtms",
+    "objectID": "chs-sequence-analysis/sequence-alignments.html#pairwise-alignments-algorithms",
+    "href": "chs-sequence-analysis/sequence-alignments.html#pairwise-alignments-algorithms",
     "title": "7  Sequence alignments",
-    "section": "7.3 Pairwise alignments algorihtms",
-    "text": "7.3 Pairwise alignments algorihtms\n\n7.3.1 Hamming distance\n\n\n7.3.2 Edit distance\n\n7.3.2.1 Dynamic programming\n\n\n\n7.3.3 Needleman-Wunsch (global alignment)\n\n\n7.3.4 Smith-Waterman (local alignment)"
+    "section": "7.3 Pairwise alignments algorithms",
+    "text": "7.3 Pairwise alignments algorithms\n\n7.3.1 Hamming distance\n\n\n7.3.2 Edit distance\n\n7.3.2.1 Dynamic programming\n\n\n\n7.3.3 Needleman-Wunsch (global alignment)\n\n\n7.3.4 Smith-Waterman (local alignment)"
   },
   {
     "objectID": "chs-sequence-analysis/sequence-alignments.html#the-genetic-code-and-scoring-matrices",
@@ -263,14 +263,14 @@
     "href": "chs-sequence-analysis/sequence-alignments.html#blast-and-its-families",
     "title": "7  Sequence alignments",
     "section": "7.5 BLAST and its families",
-    "text": "7.5 BLAST and its families\npsi-blast? true homologs, recurrent blast to polish scoring matrix during several generations to generate true homologs"
+    "text": "7.5 BLAST and its families\npsi-blast? true homologous, recurrent blast to polish scoring matrix during several generations to generate true homologous"
   },
   {
     "objectID": "chs-sequence-analysis/sequence-alignments.html#multiple-sequence-alignments",
     "href": "chs-sequence-analysis/sequence-alignments.html#multiple-sequence-alignments",
     "title": "7  Sequence alignments",
     "section": "7.6 Multiple sequence alignments",
-    "text": "7.6 Multiple sequence alignments\n\n\n\n\n\n\nChallenge\n\n\n\nYour professor is working with species from genus Bacillus and want to align an orthologous gene from 10 genomes of different isolates. He gives you the GenBank accession number of these isolates and ask you to select one orthologus gene (Nucleotide seq) that you consider might be useful to differentiate the bacterial isolates and ask you to align those genes as you better consider. He finally ask you to document each step and send him the sequence alignment file in FASTA format along with the sequence alignment general stats in a TXT file (length, number of each nucleotides and other stats you consider important).\nAccessions: GCA_012225885.1, GCA_000196735.1, GCA_000742895.1, GCA_001584335.1, GCA_000007825.1, GCA_000832905.1, GCA_000008425.1, GCA_000507105.1, GCA_000832605.1, GCA_900186955.1"
+    "text": "7.6 Multiple sequence alignments\n\n\n\n\n\n\nChallenge\n\n\n\nYour professor is working with species from genus Bacillus and want to align an orthologous gene from 10 genomes of different isolates. He gives you the GenBank accession number of these isolates and ask you to select one orthologous gene (Nucleotide seq) that you consider might be useful to differentiate the bacterial isolates and ask you to align those genes as you better consider. He finally ask you to document each step and send him the sequence alignment file in FASTA format along with the sequence alignment general stats in a TXT file (length, number of each nucleotides and other stats you consider important).\nAccessions: GCA_012225885.1, GCA_000196735.1, GCA_000742895.1, GCA_001584335.1, GCA_000007825.1, GCA_000832905.1, GCA_000008425.1, GCA_000507105.1, GCA_000832605.1, GCA_900186955.1"
   },
   {
     "objectID": "chs-sequence-analysis/NGS-TGS-principles.html#platforms-yields",
