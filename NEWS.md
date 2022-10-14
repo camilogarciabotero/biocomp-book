@@ -1,5 +1,9 @@
-# Edition 0.0.9 (2022-09-08)
+# Edition 0.0.10
 
 - Challenge on sequence alignment
 
 - Experimenting new covers
+
+- Some typos cleaning
+
+- Change giscus theme
