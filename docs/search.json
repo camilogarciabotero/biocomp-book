@@ -586,5 +586,12 @@
     "title": "References",
     "section": "",
     "text": "Allesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for\nBiologists,” January. https://doi.org/10.2307/j.ctvc77jrc.\n\n\nBrandies, Parice A, and Carolyn J Hogg. 2021. “Ten Simple Rules\nfor Getting Started with Command-Line Bioinformatics.” PLoS\nComputational Biology. Public Library of Science San Francisco, CA\nUSA.\n\n\nBrown, Terence A. 2018. Genomes 4. Garland science.\n\n\nDudley, Joel T, and Atul J Butte. 2009. “A Quick Guide for\nDeveloping Effective Bioinformatics Programming Skills.” PLOS\nComputational Biology. Public Library of Science San Francisco,\nUSA.\n\n\nMäkinen, Veli, Djamal Belazzougui, Fabio Cunial, and Alexandru I\nTomescu. 2015. Genome-Scale Algorithm Design. Cambridge\nUniversity Press.\n\n\nMeneely, Philip Mark, Rachel Dawes Hoang, Iruka N Okeke, and Katherine\nHeston. 2017. Genetics: Genes, Genomes, and Evolution. Oxford\nUniversity Press.\n\n\nPerkel, Jeffrey M et al. 2021. “Five Reasons Why Researchers\nShould Learn to Love the Command Line.” Nature 590\n(7844): 173–74."
+  },
+  {
+    "objectID": "chs-metagenomics/metagenomic-sequencing.html",
+    "href": "chs-metagenomics/metagenomic-sequencing.html",
+    "title": "15  Metagenomic sequencing",
+    "section": "",
+    "text": "First step is to design an experimental design\nMetagenomes is the study of whole DNA of a biological communities.\nMetagenomic of a single gene (16S, ITS, etc.) is also called metataxonomic (amplicon sequencing). In contrast all the genes/ genomes in the sample is actually metagenomics.\nSome differences:\nMetagenomic | Metataxonomic expensive | cheap more samples|"
   }
 ]

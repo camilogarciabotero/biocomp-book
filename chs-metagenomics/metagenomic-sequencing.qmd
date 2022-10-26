@@ -1,1 +1,55 @@
 # Metagenomic sequencing {#sec-metagenomic-sequencing}
+
+[First step is to design an experimental design]{.aside}
+
+Metagenomes is the study of whole DNA of a biological communities. 
+
+Metagenomic of a single gene (16S, ITS, etc.) is also called metataxonomic (amplicon sequencing). In contrast all the genes/ genomes in the sample is actually metagenomics.
+
+Some differences:
+
+Metagenomic | Metataxonomic
+expensive   | cheap
+more samples| less 
+specific regions | random regions
+
+[See the paper from Torsten Seeman, Gilbert, Meyer - A guide from sampling data analysis]{.aside}
+
+## Designing the experiment
+
+Stablish the basic experimental unit and the appropriate replicates, control, randomization!
+
+It is important to have metadata of the experiment in a plant microbial community is common to have pH, geo-reference, temperature, etc.
+
+In metataxonomic we analyses hypervariable regions (V3-V4) and compare relative abundance to identify which is the most informative (abundance, richness)
+
+## DNA extraction and Sequencing (Illumina) 
+
+[]{}
+
+Followed common sequencing is also important to make quality check of the data
+
+
+## Denoising
+
+There are several way to define OTUs (97-99 % of similarity) for instance: 
+
+- It is defined operational unit of species or species groups (be careful to assign a sequence as an species)
+
+- Taxonomic level of sampling selected in the study... individual, population, species,...
+
+
+Pipelines for OTUs or ASVs are Quimme and Silva and deNBI
+
+## Chimera
+
+Reads that result from combinations in the sequencing 
+
+## Taxonomic annotation
+
+Using Silva or deNBI
+
+
+
+
+
