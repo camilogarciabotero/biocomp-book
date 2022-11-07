@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.242">
+<meta name="generator" content="quarto-1.2.267">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -323,7 +323,17 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#designing-the-experiment" id="toc-designing-the-experiment" class="nav-link active" data-scroll-target="#designing-the-experiment"><span class="toc-section-number">15.1</span>  Designing the experiment</a></li>
+  <li><a href="#dna-extraction-and-sequencing-illumina" id="toc-dna-extraction-and-sequencing-illumina" class="nav-link" data-scroll-target="#dna-extraction-and-sequencing-illumina"><span class="toc-section-number">15.2</span>  DNA extraction and Sequencing (Illumina)</a></li>
+  <li><a href="#denoising" id="toc-denoising" class="nav-link" data-scroll-target="#denoising"><span class="toc-section-number">15.3</span>  Denoising</a></li>
+  <li><a href="#chimera" id="toc-chimera" class="nav-link" data-scroll-target="#chimera"><span class="toc-section-number">15.4</span>  Chimera</a></li>
+  <li><a href="#taxonomic-annotation" id="toc-taxonomic-annotation" class="nav-link" data-scroll-target="#taxonomic-annotation"><span class="toc-section-number">15.5</span>  Taxonomic annotation</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-metagenomics/metagenomic-sequencing.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -349,9 +359,38 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <p>Metagenomes is the study of whole DNA of a biological communities.</p>
 <p>Metagenomic of a single gene (16S, ITS, etc.) is also called metataxonomic (amplicon sequencing). In contrast all the genes/ genomes in the sample is actually metagenomics.</p>
 <p>Some differences:</p>
-<p>Metagenomic | Metataxonomic expensive | cheap more samples|</p>
+<p>Metagenomic | Metataxonomic expensive | cheap more samples| less specific regions | random regions</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">See the paper from Torsten Seeman, Gilbert, Meyer - A guide from sampling data analysis</span></div></div>
+<section id="designing-the-experiment" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="designing-the-experiment"><span class="header-section-number">15.1</span> Designing the experiment</h2>
+<p>Stablish the basic experimental unit and the appropriate replicates, control, randomization!</p>
+<p>It is important to have metadata of the experiment in a plant microbial community is common to have pH, geo-reference, temperature, etc.</p>
+<p>In metataxonomic we analyses hypervariable regions (V3-V4) and compare relative abundance to identify which is the most informative (abundance, richness)</p>
+</section>
+<section id="dna-extraction-and-sequencing-illumina" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="dna-extraction-and-sequencing-illumina"><span class="header-section-number">15.2</span> DNA extraction and Sequencing (Illumina)</h2>
+<p><span></span></p>
+<p>Followed common sequencing is also important to make quality check of the data</p>
+</section>
+<section id="denoising" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="denoising"><span class="header-section-number">15.3</span> Denoising</h2>
+<p>There are several way to define OTUs (97-99 % of similarity) for instance:</p>
+<ul>
+<li><p>It is defined operational unit of species or species groups (be careful to assign a sequence as an species)</p></li>
+<li><p>Taxonomic level of sampling selected in the study… individual, population, species,…</p></li>
+</ul>
+<p>Pipelines for OTUs or ASVs are Quimme and Silva and deNBI</p>
+</section>
+<section id="chimera" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="chimera"><span class="header-section-number">15.4</span> Chimera</h2>
+<p>Reads that result from combinations in the sequencing</p>
+</section>
+<section id="taxonomic-annotation" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="taxonomic-annotation"><span class="header-section-number">15.5</span> Taxonomic annotation</h2>
+<p>Using Silva or deNBI</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

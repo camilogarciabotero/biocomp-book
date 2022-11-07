@@ -455,6 +455,41 @@
     "text": "14.2 Whole genome comparisons\nmummer mauve mmseq\narrow diagrams"
   },
   {
+    "objectID": "chs-metagenomics/metagenomic-sequencing.html#designing-the-experiment",
+    "href": "chs-metagenomics/metagenomic-sequencing.html#designing-the-experiment",
+    "title": "15  Metagenomic sequencing",
+    "section": "15.1 Designing the experiment",
+    "text": "15.1 Designing the experiment\nStablish the basic experimental unit and the appropriate replicates, control, randomization!\nIt is important to have metadata of the experiment in a plant microbial community is common to have pH, geo-reference, temperature, etc.\nIn metataxonomic we analyses hypervariable regions (V3-V4) and compare relative abundance to identify which is the most informative (abundance, richness)"
+  },
+  {
+    "objectID": "chs-metagenomics/metagenomic-sequencing.html#dna-extraction-and-sequencing-illumina",
+    "href": "chs-metagenomics/metagenomic-sequencing.html#dna-extraction-and-sequencing-illumina",
+    "title": "15  Metagenomic sequencing",
+    "section": "15.2 DNA extraction and Sequencing (Illumina)",
+    "text": "15.2 DNA extraction and Sequencing (Illumina)\n\nFollowed common sequencing is also important to make quality check of the data"
+  },
+  {
+    "objectID": "chs-metagenomics/metagenomic-sequencing.html#denoising",
+    "href": "chs-metagenomics/metagenomic-sequencing.html#denoising",
+    "title": "15  Metagenomic sequencing",
+    "section": "15.3 Denoising",
+    "text": "15.3 Denoising\nThere are several way to define OTUs (97-99 % of similarity) for instance:\n\nIt is defined operational unit of species or species groups (be careful to assign a sequence as an species)\nTaxonomic level of sampling selected in the study… individual, population, species,…\n\nPipelines for OTUs or ASVs are Quimme and Silva and deNBI"
+  },
+  {
+    "objectID": "chs-metagenomics/metagenomic-sequencing.html#chimera",
+    "href": "chs-metagenomics/metagenomic-sequencing.html#chimera",
+    "title": "15  Metagenomic sequencing",
+    "section": "15.4 Chimera",
+    "text": "15.4 Chimera\nReads that result from combinations in the sequencing"
+  },
+  {
+    "objectID": "chs-metagenomics/metagenomic-sequencing.html#taxonomic-annotation",
+    "href": "chs-metagenomics/metagenomic-sequencing.html#taxonomic-annotation",
+    "title": "15  Metagenomic sequencing",
+    "section": "15.5 Taxonomic annotation",
+    "text": "15.5 Taxonomic annotation\nUsing Silva or deNBI"
+  },
+  {
     "objectID": "chs-bio-structural/intro-structural-bioinfo.html#protein-structures",
     "href": "chs-bio-structural/intro-structural-bioinfo.html#protein-structures",
     "title": "16  Structural bioinformatics",
@@ -586,12 +621,5 @@
     "title": "References",
     "section": "",
     "text": "Allesina, Stefano, and Madlen Wilmes. 2019. “Computing Skills for\nBiologists,” January. https://doi.org/10.2307/j.ctvc77jrc.\n\n\nBrandies, Parice A, and Carolyn J Hogg. 2021. “Ten Simple Rules\nfor Getting Started with Command-Line Bioinformatics.” PLoS\nComputational Biology. Public Library of Science San Francisco, CA\nUSA.\n\n\nBrown, Terence A. 2018. Genomes 4. Garland science.\n\n\nDudley, Joel T, and Atul J Butte. 2009. “A Quick Guide for\nDeveloping Effective Bioinformatics Programming Skills.” PLOS\nComputational Biology. Public Library of Science San Francisco,\nUSA.\n\n\nMäkinen, Veli, Djamal Belazzougui, Fabio Cunial, and Alexandru I\nTomescu. 2015. Genome-Scale Algorithm Design. Cambridge\nUniversity Press.\n\n\nMeneely, Philip Mark, Rachel Dawes Hoang, Iruka N Okeke, and Katherine\nHeston. 2017. Genetics: Genes, Genomes, and Evolution. Oxford\nUniversity Press.\n\n\nPerkel, Jeffrey M et al. 2021. “Five Reasons Why Researchers\nShould Learn to Love the Command Line.” Nature 590\n(7844): 173–74."
-  },
-  {
-    "objectID": "chs-metagenomics/metagenomic-sequencing.html",
-    "href": "chs-metagenomics/metagenomic-sequencing.html",
-    "title": "15  Metagenomic sequencing",
-    "section": "",
-    "text": "First step is to design an experimental design\nMetagenomes is the study of whole DNA of a biological communities.\nMetagenomic of a single gene (16S, ITS, etc.) is also called metataxonomic (amplicon sequencing). In contrast all the genes/ genomes in the sample is actually metagenomics.\nSome differences:\nMetagenomic | Metataxonomic expensive | cheap more samples|"
   }
 ]
