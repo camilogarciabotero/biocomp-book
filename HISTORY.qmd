@@ -1,5 +1,17 @@
 # History {.unnumbered}
 
+## Edition 0.0.10 (2022-12-17)
+
+- Update book with new quarto and extension versions
+
+- Challenge on sequence alignment
+
+- Experimenting new covers
+
+- Some typos cleaning
+
+- Change giscus theme
+
 ## Edition 0.0.9 (2022-09-08)
 
 - Starting the Sanger chapter
