@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.56">
+<meta name="generator" content="quarto-1.3.83">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Fundamentals of computational biology - Seq. Analysis challenges</title>
 <style>
@@ -128,7 +128,8 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
-</script><script async="" src="https://hypothes.is/embed.js"></script>
+</script><script async="" src="https://hypothes.is/embed.js"></script><link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <meta name="citation_title" content="Seq. Analysis challenges">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book//seq-analysis-challenges.html">
 <meta name="citation_language" content="en">
@@ -443,17 +444,13 @@ CDS with_protein    GCF_000009045.1 Primary Assembly    chromosome      NC_00096
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#! usr/bin/bash</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">features</span><span class="op">=</span><span class="st">"id CDS gene ncRNA rRNA tmRNA tRNA"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$features</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="va">$(</span><span class="fu">ls</span> <span class="va">$1)</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">values</span><span class="op">=</span><span class="va">$(</span><span class="fu">awk</span> <span class="st">'/CDS/{++cnt1} /gene/{++cnt2} /ncRNA/{++cnt3} /rRNA/{++cnt4} /tmRNA/{++cnt5} /tRNA/{++cnt} END {print cnt1, cnt2, cnt3, cnt4, cnt5, cnt6}'</span> <span class="va">${1}</span>/<span class="va">${i})</span><span class="kw">;</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">id</span><span class="op">=</span><span class="va">$(</span><span class="fu">egrep</span> <span class="at">-o</span> <span class="at">-m</span> 1 <span class="st">"GCF.{12}"</span> <span class="va">${1}</span>/<span class="va">${i})</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"</span><span class="va">$id</span><span class="st"> </span><span class="va">$values</span><span class="st">"</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">features</span><span class="op">=</span><span class="st">"id CDS gene ncRNA rRNA tmRNA tRNA"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$features</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="va">$(</span><span class="fu">ls</span> <span class="va">$1)</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">values</span><span class="op">=</span><span class="va">$(</span><span class="fu">awk</span> <span class="st">'/CDS/{++cnt1} /gene/{++cnt2} /ncRNA/{++cnt3} /rRNA/{++cnt4} /tmRNA/{++cnt5} /tRNA/{++cnt} END {print cnt1, cnt2, cnt3, cnt4, cnt5, cnt6}'</span> <span class="va">${1}</span>/<span class="va">${i})</span><span class="kw">;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">id</span><span class="op">=</span><span class="va">$(</span><span class="fu">egrep</span> <span class="at">-o</span> <span class="at">-m</span> 1 <span class="st">"GCF.{12}"</span> <span class="va">${1}</span>/<span class="va">${i})</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"</span><span class="va">$id</span><span class="st"> </span><span class="va">$values</span><span class="st">"</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>id CDS gene ncRNA rRNA tmRNA tRNA
 GCF_000009045.1 4238 4578 4 76 2 
 GCF_000146565.1 3998 4120 6 64 2 
@@ -465,86 +462,84 @@ GCF_000293765.1 4205 4343 6 76 2
 GCF_000321395.1 4043 4179 6 76 2 </code></pre>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="cell" data-hash="seq-analysis-challenges_cache/html/file-reading_be304f303eec0377bba1594300a3be0d">
+<div class="cell" data-hash="seq-analysis-challenges_cache/html/file-reading_4cbe3683c12be06ca5fd8c2788b18e60">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://fs.r-lib.org">fs</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">all_features</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://fs.r-lib.org/reference/dir_ls.html">dir_ls</a></span><span class="op">(</span><span class="st">"data/features"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_df</a></span><span class="op">(</span><span class="va">read_tsv</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
-e.g.:
-  dat &lt;- vroom(...)
-  problems(dat)</code></pre>
-</div>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">all_features</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">all_features</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://fs.r-lib.org/reference/dir_ls.html">dir_ls</a></span><span class="op">(</span><span class="st">"data/features/"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="co"># GCF_000186745.1_ASM18674v1_feature_table.txt is corrupted</span></span>
+<span>  <span class="fu"><a href="https://purrr.tidyverse.org/reference/map_dfr.html">map_df</a></span><span class="op">(</span><span class="va">read_tsv</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">all_features</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 20
-  `# feature` class   assem…¹ assem…² seq_t…³ chrom…⁴ genom…⁵ start   end strand
-  &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; 
-1 gene        protei… GCF_00… Primar… chromo… &lt;NA&gt;    NC_000…   410  1750 +     
-2 CDS         with_p… GCF_00… Primar… chromo… &lt;NA&gt;    NC_000…   410  1750 +     
-3 gene        protei… GCF_00… Primar… chromo… &lt;NA&gt;    NC_000…  1939  3075 +     
-4 CDS         with_p… GCF_00… Primar… chromo… &lt;NA&gt;    NC_000…  1939  3075 +     
-5 gene        protei… GCF_00… Primar… chromo… &lt;NA&gt;    NC_000…  3206  3421 +     
-6 CDS         with_p… GCF_00… Primar… chromo… &lt;NA&gt;    NC_000…  3206  3421 +     
-# … with 10 more variables: product_accession &lt;chr&gt;,
-#   `non-redundant_refseq` &lt;chr&gt;, related_accession &lt;lgl&gt;, name &lt;chr&gt;,
-#   symbol &lt;chr&gt;, GeneID &lt;dbl&gt;, locus_tag &lt;chr&gt;, feature_interval_length &lt;dbl&gt;,
-#   product_length &lt;dbl&gt;, attributes &lt;chr&gt;, and abbreviated variable names
-#   ¹​assembly, ²​assembly_unit, ³​seq_type, ⁴​chromosome, ⁵​genomic_accession</code></pre>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["# feature"],"name":[1],"type":["chr"],"align":["left"]},{"label":["class"],"name":[2],"type":["chr"],"align":["left"]},{"label":["assembly"],"name":[3],"type":["chr"],"align":["left"]},{"label":["assembly_unit"],"name":[4],"type":["chr"],"align":["left"]},{"label":["seq_type"],"name":[5],"type":["chr"],"align":["left"]},{"label":["chromosome"],"name":[6],"type":["chr"],"align":["left"]},{"label":["genomic_accession"],"name":[7],"type":["chr"],"align":["left"]},{"label":["start"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["end"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["strand"],"name":[10],"type":["chr"],"align":["left"]},{"label":["product_accession"],"name":[11],"type":["chr"],"align":["left"]},{"label":["non-redundant_refseq"],"name":[12],"type":["chr"],"align":["left"]},{"label":["related_accession"],"name":[13],"type":["lgl"],"align":["right"]},{"label":["name"],"name":[14],"type":["chr"],"align":["left"]},{"label":["symbol"],"name":[15],"type":["chr"],"align":["left"]},{"label":["GeneID"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["locus_tag"],"name":[17],"type":["chr"],"align":["left"]},{"label":["feature_interval_length"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["product_length"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["attributes"],"name":[20],"type":["chr"],"align":["left"]}],"data":[{"1":"gene","2":"protein_coding","3":"GCF_000009045.1","4":"Primary Assembly","5":"chromosome","6":"NA","7":"NC_000964.3","8":"410","9":"1750","10":"+","11":"NA","12":"NA","13":"NA","14":"NA","15":"dnaA","16":"939978","17":"BSU_00010","18":"1341","19":"NA","20":"old_locus_tag=BSU00010"},{"1":"CDS","2":"with_protein","3":"GCF_000009045.1","4":"Primary Assembly","5":"chromosome","6":"NA","7":"NC_000964.3","8":"410","9":"1750","10":"+","11":"NP_387882.1","12":"WP_003242674.1","13":"NA","14":"chromosomal replication initiator informational ATPase","15":"dnaA","16":"939978","17":"BSU_00010","18":"1341","19":"446","20":"NA"},{"1":"gene","2":"protein_coding","3":"GCF_000009045.1","4":"Primary Assembly","5":"chromosome","6":"NA","7":"NC_000964.3","8":"1939","9":"3075","10":"+","11":"NA","12":"NA","13":"NA","14":"NA","15":"dnaN","16":"939970","17":"BSU_00020","18":"1137","19":"NA","20":"old_locus_tag=BSU00020"},{"1":"CDS","2":"with_protein","3":"GCF_000009045.1","4":"Primary Assembly","5":"chromosome","6":"NA","7":"NC_000964.3","8":"1939","9":"3075","10":"+","11":"NP_387883.1","12":"WP_003242509.1","13":"NA","14":"DNA polymerase III (beta subunit)","15":"dnaN","16":"939970","17":"BSU_00020","18":"1137","19":"378","20":"NA"},{"1":"gene","2":"protein_coding","3":"GCF_000009045.1","4":"Primary Assembly","5":"chromosome","6":"NA","7":"NC_000964.3","8":"3206","9":"3421","10":"+","11":"NA","12":"NA","13":"NA","14":"NA","15":"rlbA","16":"939444","17":"BSU_00030","18":"216","19":"NA","20":"old_locus_tag=BSU00030"},{"1":"CDS","2":"with_protein","3":"GCF_000009045.1","4":"Primary Assembly","5":"chromosome","6":"NA","7":"NC_000964.3","8":"3206","9":"3421","10":"+","11":"NP_387884.1","12":"WP_003226810.1","13":"NA","14":"RNA binding protein involved in ribosome maturation","15":"rlbA","16":"939444","17":"BSU_00030","18":"216","19":"71","20":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 </div>
 <p>Now that we read all the files into the programming environment we can operate over them with different libraries.</p>
-<div class="cell" data-hash="seq-analysis-challenges_cache/html/data-processing_af369aad45c9056ba5920f982acb8686">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>all_features_grouped <span class="ot">&lt;-</span> all_features <span class="sc">|&gt;</span> </span>
-<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">rename</span>(<span class="at">feature =</span> <span class="st">`</span><span class="at"># feature</span><span class="st">`</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">select</span>(assembly, feature) <span class="sc">|&gt;</span> </span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">group_by</span>(assembly, feature) <span class="sc">|&gt;</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">count</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb11-6"><a href="#cb11-6"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> feature, <span class="at">values_from =</span> n)</span>
-<span id="cb11-7"><a href="#cb11-7"></a></span>
-<span id="cb11-8"><a href="#cb11-8"></a>all_features_grouped</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 8
-# Groups:   assembly [5]
-  assembly          CDS  gene misc_RNA ncRNA  rRNA  tRNA tmRNA
-  &lt;chr&gt;           &lt;int&gt; &lt;int&gt;    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
-1 GCF_000009045.1  4237  4536       93     2    30    86    NA
-2 GCF_000146565.1  3998  4104       NA     4    24    77     1
-3 GCF_000186745.1  4111  4230       NA     4    31    83     1
-4 GCF_000209795.2  4262  4384       NA     4    30    87     1
-5 GCF_000227465.1  4167  4294       NA     4    30    92     1</code></pre>
+<div class="cell" data-hash="seq-analysis-challenges_cache/html/data-processing_a2b30cdaa81281b42c23180382da05c0">
+<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy"><code class="sourceCode r"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1"></a>all_features_grouped <span class="ot">&lt;-</span> all_features <span class="sc">|&gt;</span> </span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2"></a>  <span class="fu">rename</span>(<span class="at">feature =</span> <span class="st">`</span><span class="at"># feature</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3"></a>  <span class="fu">select</span>(assembly, feature) <span class="sc">|&gt;</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3">3</button><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4"></a>  <span class="fu">group_by</span>(assembly, feature) <span class="sc">|&gt;</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4">4</button><span id="annotated-cell-2-5" class="code-annotation-target"><a href="#annotated-cell-2-5"></a>  <span class="fu">count</span>() <span class="sc">|&gt;</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="5">5</button><span id="annotated-cell-2-6" class="code-annotation-target"><a href="#annotated-cell-2-6"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> feature, <span class="at">values_from =</span> n)</span>
+<span id="annotated-cell-2-7"><a href="#annotated-cell-2-7"></a>all_features_grouped</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden">
+<dt>Line 2</dt>
+<dd>
+<span data-code-lines="2" data-code-cell="annotated-cell-2" data-code-annotation="1">Change the <code># feature</code> name for simple <code>feature</code>.</span>
+</dd>
+<dt>Line 3</dt>
+<dd>
+<span data-code-lines="3" data-code-cell="annotated-cell-2" data-code-annotation="2">Select <code>feature</code> and <code>assembly</code> columns.</span>
+</dd>
+<dt>Line 4</dt>
+<dd>
+<span data-code-lines="4" data-code-cell="annotated-cell-2" data-code-annotation="3">Group by these two columns, enabling grouping operations.</span>
+</dd>
+<dt>Line 5</dt>
+<dd>
+<span data-code-lines="5" data-code-cell="annotated-cell-2" data-code-annotation="4">Count the numbers of rows based on the applied grouping.</span>
+</dd>
+<dt>Line 6</dt>
+<dd>
+<span data-code-lines="6" data-code-cell="annotated-cell-2" data-code-annotation="5">Generate a wide dataset sending row names as columns.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["assembly"],"name":[1],"type":["chr"],"align":["left"]},{"label":["CDS"],"name":[2],"type":["int"],"align":["right"]},{"label":["gene"],"name":[3],"type":["int"],"align":["right"]},{"label":["misc_RNA"],"name":[4],"type":["int"],"align":["right"]},{"label":["ncRNA"],"name":[5],"type":["int"],"align":["right"]},{"label":["rRNA"],"name":[6],"type":["int"],"align":["right"]},{"label":["tRNA"],"name":[7],"type":["int"],"align":["right"]},{"label":["tmRNA"],"name":[8],"type":["int"],"align":["right"]}],"data":[{"1":"GCF_000009045.1","2":"4237","3":"4536","4":"93","5":"2","6":"30","7":"86","8":"NA"},{"1":"GCF_000146565.1","2":"3998","3":"4104","4":"NA","5":"4","6":"24","7":"77","8":"1"},{"1":"GCF_000186745.1","2":"4111","3":"4230","4":"NA","5":"4","6":"31","7":"83","8":"1"},{"1":"GCF_000209795.2","2":"4262","3":"4384","4":"NA","5":"4","6":"30","7":"87","8":"1"},{"1":"GCF_000227465.1","2":"4167","3":"4294","4":"NA","5":"4","6":"30","7":"92","8":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
 </div>
 </div>
-<p>The code lines operation are doing the following steps:</p>
-<ol type="1">
-<li>Create a new dataset that will group by features per accession.</li>
-<li>Change the <code># feature</code> name for simple <code>feature</code>.</li>
-<li>Select <code>feature</code> and <code>assembly</code> columns.</li>
-<li>Group by these two columns, enabling grouping operations.</li>
-<li>Count the numbers of rows based on the applied grouping.</li>
-<li>Generate a wide dataset sending row names as columns.</li>
-</ol>
+</div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-4_163e6a8d341e685b1dc3cb738f11bbe0">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>files <span class="op">=</span> glob.glob(<span class="st">"data/features/*.txt"</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat((pd.read_csv(f, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>) <span class="cf">for</span> f <span class="kw">in</span> files))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>files <span class="op">=</span> glob.glob(<span class="st">"data/features/*.txt"</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat((pd.read_csv(f, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>) <span class="cf">for</span> f <span class="kw">in</span> files))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-5_ccdfead72b0aebbb3284505beaeef7c9">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df_renamed  <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">"# feature"</span> : <span class="st">"feature"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_renamed  <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">"# feature"</span> : <span class="st">"feature"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-6_1750129558b737dda4e69e3d9ebc9123">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df_renamed.<span class="bu">filter</span>(items<span class="op">=</span>[<span class="st">"feature"</span>, <span class="st">"assembly"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df_renamed.<span class="bu">filter</span>(items<span class="op">=</span>[<span class="st">"feature"</span>, <span class="st">"assembly"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-7_9cb2137cda3af10f17cee19d36889148">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df_filtered.groupby([<span class="st">"assembly"</span>,<span class="st">"feature"</span>])[<span class="st">"feature"</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df_filtered.groupby([<span class="st">"assembly"</span>,<span class="st">"feature"</span>])[<span class="st">"feature"</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -553,11 +548,11 @@ e.g.:
 <p>Processing a Sanger <code>AB1</code> file is a very common task in bioinformatics, yet it is sometimes taked for grandted. Many graphical programs allow to process the sequences, yet the task are currently manual involving the trimming and reverse complement generation of the reverse reads (when pair-end sequencing). But, given the vast generation of data on the present, Sanger sequencing is used massively in parallel to generate huge amount of sequences. Therefore, processing “by-hand” becomes an unachivable task.</p>
 <p>Several programs have been developed to automate the processing of sequences, an open source library in <code>R</code> is <code>sangeranalyseR</code>.</p>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/libs-_c41d24571ea1284ff8a0780d2b58a6f8">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">sangeranalyseR</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">sangeranalyseR</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="processing-a-single-gene-ab1-pair" class="level3"><h3 class="anchored" data-anchor-id="processing-a-single-gene-ab1-pair">Processing a single gene <code>AB1</code> pair</h3>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/single-sanger-processing_d88f416bbeb41366c3d49aa94753b74d">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rpoB</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/SangerAlignment.html">SangerAlignment</a></span><span class="op">(</span></span>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rpoB</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/SangerAlignment.html">SangerAlignment</a></span><span class="op">(</span></span>
 <span>  ABIF_Directory <span class="op">=</span> <span class="st">"data/sanger-seqs/rpoB/"</span>,</span>
 <span>  REGEX_SuffixForward <span class="op">=</span> <span class="st">"rpoB_1_F.ab1"</span>,</span>
 <span>  REGEX_SuffixReverse <span class="op">=</span> <span class="st">"rpoB_2_R.ab1"</span>,</span>
@@ -579,11 +574,11 @@ e.g.:
 </div>
 <p>This produces an specialized <code>R</code> object holding different information from the Sanger processing steps. The entire object can be untangled in a thorough report displaying all the processing information and results using the</p>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-10_b1cdb2b3de3304f3d2b2a168f93c5d63">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/generateReport.html">generateReport</a></span><span class="op">(</span><span class="va">rpoB</span>, outputDir <span class="op">=</span> <span class="st">"data/sanger-processed/"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/generateReport.html">generateReport</a></span><span class="op">(</span><span class="va">rpoB</span>, outputDir <span class="op">=</span> <span class="st">"data/sanger-processed/"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Among the data from the report ypu can see that the unaligned contigs ithere is something called a <em>Contig Consensus</em> which is the result of comparing the three consensus out of the <strong>rpoB</strong> genes of the three strains (302, 321, 455). Now, this is not really the sequence we need right away, however we need the separate consensus of each strain gene. To get theme <code>sangeranalyseR</code> provide a couple of tools.</p>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-11_2e4b9217e4b106bfcb8750c9498b9488">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/writeFasta.html">writeFasta</a></span><span class="op">(</span><span class="va">rpoB</span>,</span>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/writeFasta.html">writeFasta</a></span><span class="op">(</span><span class="va">rpoB</span>,</span>
 <span>  outputDir <span class="op">=</span> <span class="st">"data/sanger-processed/rpoB"</span>,</span>
 <span>  selection <span class="op">=</span> <span class="st">"contigs_unalignment"</span>,</span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -591,8 +586,8 @@ e.g.:
 <p>Now, in the case of the challenge we actually got several genes per strain which is common in molecular biology projects. How do we process all the batch of sequence all at a time? To do so we can split the sequences as folder per gene, then we can use some capabilites of are to iterate an map the sanger processing function to each folder and create a list of processing instances, let’s try this out:</p>
 </section><section id="processing-a-bulk-of-ab1-pair" class="level3"><h3 class="anchored" data-anchor-id="processing-a-bulk-of-ab1-pair">Processing a bulk of <code>AB1</code> pair</h3>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/bulk-sanger-processing_66dd304d868bf38f8d7e9e6628536830">
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://fs.r-lib.org">fs</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://purrr.tidyverse.org">purrr</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://fs.r-lib.org">fs</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://purrr.tidyverse.org/">purrr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">dirs</span> <span class="op">&lt;-</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/dir_ls.html">dir_ls</a></span><span class="op">(</span><span class="st">"data/sanger-seqs/"</span><span class="op">)</span></span>
 <span></span>
@@ -616,7 +611,7 @@ e.g.:
 <div class="cell-output cell-output-stdout">
 <pre><code>NULL</code></pre>
 </div>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">genes</span><span class="op">$</span><span class="va">`data/sanger-seqs/spo0B`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">genes</span><span class="op">$</span><span class="va">`data/sanger-seqs/spo0B`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>SangerAlignment S4 instance
            Input Source :  ABIF 
@@ -629,7 +624,7 @@ e.g.:
 </div>
 <p>Finally to generate reports we need to call the appropriate instance with the <code>$</code> to select the gene we are interested to inspect:</p>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-13_f8ef22f82b6133a31a92a326d9ad34cd">
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/generateReport.html">generateReport</a></span><span class="op">(</span><span class="va">genes</span><span class="op">$</span><span class="va">`data/sanger-seqs/spo0B`</span>, outputDir <span class="op">=</span><span class="st">"data/sanger-processed/spo0B"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/generateReport.html">generateReport</a></span><span class="op">(</span><span class="va">genes</span><span class="op">$</span><span class="va">`data/sanger-seqs/spo0B`</span>, outputDir <span class="op">=</span><span class="st">"data/sanger-processed/spo0B"</span><span class="op">)</span></span>
 <span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/sangeranalyseR/man/writeFasta.html">writeFasta</a></span><span class="op">(</span></span>
@@ -640,27 +635,27 @@ e.g.:
 </div>
 <p>Now that we got the actual multifasta of the genes from all strain, the identification process using <code>blastn</code> from the command line will follow as:</p>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-14_985792831eb01501d55d4c04bf1fb21e">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastn</span> <span class="at">-db</span> nr <span class="at">-query</span> rpoB-unaligned-contigs.mfa <span class="at">-out</span> rpoB-blastn-report.txt <span class="at">-remote</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastn</span> <span class="at">-db</span> nr <span class="at">-query</span> rpoB-unaligned-contigs.mfa <span class="at">-out</span> rpoB-blastn-report.txt <span class="at">-remote</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section><section id="multiple-sequence-alignment" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="multiple-sequence-alignment">Multiple sequence alignment</h2>
 <section id="download-sequences" class="level3"><h3 class="anchored" data-anchor-id="download-sequences">Download sequences</h3>
 <p>Make sure to use the <code>--flat-output</code> avoiding download of multiple metadata</p>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-15_d1c0bd15fde9e10af5576160abd06bc8">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ngd</span> <span class="at">--flat-output</span> <span class="at">-p</span> 4 <span class="at">-s</span> refseq <span class="at">-A</span> genome-accessions.txt <span class="at">-F</span> cds-fasta bacteria</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ngd</span> <span class="at">--flat-output</span> <span class="at">-p</span> 4 <span class="at">-s</span> refseq <span class="at">-A</span> genome-accessions.txt <span class="at">-F</span> cds-fasta bacteria</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In this case <code>cds-fasta</code> parameter will download the nucleotide sequences of the gene. Other alternatives could be useful such as blast search on a genome database or searching through the GENBANK annotation files (both files also could be downloaded using <code>ngd</code>).</p>
 </section><section id="unwrapping-fasta-records" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="unwrapping-fasta-records">Unwrapping FASTA records</h3>
 <p>NCBI registries came with an undesirable wrapping around the lines of sequencing which basically is inserting a return character after some established number of characters. Then a way to get rid of them is to use a command line utility from <a href="https://github.com/AstrobioMike">AstrobioMike (Mike Lee)</a> which will give a line per sequence after the FASTA header. We can later assume the the first line after the header will be the entire sequence</p>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-16_1a3e8d6b033468c49699760d1aac0b5e">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> GCF_<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span> </span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">N</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">$i</span> .fna<span class="va">)</span><span class="kw">;</span> </span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bash</span> bit-remove-wraps.sh <span class="va">${i}</span> <span class="op">&gt;</span> <span class="va">${N}</span>_unwrapped.fasta<span class="kw">;</span> </span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> GCF_<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">N</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">$i</span> .fna<span class="va">)</span><span class="kw">;</span> </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bash</span> bit-remove-wraps.sh <span class="va">${i}</span> <span class="op">&gt;</span> <span class="va">${N}</span>_unwrapped.fasta<span class="kw">;</span> </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="gene-searching" class="level3"><h3 class="anchored" data-anchor-id="gene-searching">Gene searching</h3>
 <p>A possible way to search throughout the file registries is by using the <code>grep</code> command, that recursively will search each file. Fine tuned it allow to search for the first match, but also for the “after-context” in terms of lines desired to be printed:</p>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-17_7c870959f615518a493d03ea15b21616">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="pp">*</span>unwrapped<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span> <span class="fu">grep</span> <span class="at">-A</span> 1 <span class="st">"gyrA"</span> <span class="va">$i</span><span class="kw">;</span> <span class="cf">done</span> <span class="op">&gt;</span> all-gyrA.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="pp">*</span>unwrapped<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span> <span class="fu">grep</span> <span class="at">-A</span> 1 <span class="st">"gyrA"</span> <span class="va">$i</span><span class="kw">;</span> <span class="cf">done</span> <span class="op">&gt;</span> all-gyrA.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>After finding the genes, we are now with an almost clean multi-sequence file, because header names are still and will be problematic. How do we programmatically change the FASTA headers? We will see in the next step.</p>
 <p>Now the the files has files names that are simply to work with. Which will enable to asses better out sequence alignment matrix.</p>
@@ -668,29 +663,19 @@ e.g.:
 <p>There are many programs that are suited for performed multiple sequence alignments. Perhaps the two most used are <a href="https://mafft.cbrc.jp/alignment/software/"><code>MAFFT</code></a> and <a href="https://drive5.com/muscle5/"><code>MUSCLE</code></a> both specialized in multiple sequence alignment (that is: when having two or more than two sequences). The second tends to be more accurate when having large data-sets, but the first on is more versatile, fast and accurate on different kind of data-sets.</p>
 <p>Both programs take as input a single file containing all the sequences concatenated horizontally (that is a multi-fasta file) careless of the extension but (MFA, FA, FASTA, FNA, etc). And generate a simple output (whether with the <code>-o</code> in <code>MUSCLE</code> or to the std output in <code>MAFFT</code>) &nbsp;&nbsp;&nbsp;&nbsp;</p>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-18_4893a497855c938ba5ec38a83629a03b">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">linsi</span> <span class="at">--preservecase</span> <span class="at">--reorder</span> all-gyrA-renamed.fasta <span class="op">&gt;</span> all-gyrA-renamed-linsi.fasta <span class="co"># locally </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">linsi</span> <span class="at">--preservecase</span> <span class="at">--reorder</span> all-gyrA-renamed.fasta <span class="op">&gt;</span> all-gyrA-renamed-linsi.fasta <span class="co"># locally </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
-<div class="no-row-height column-margin column-container"><div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="no-row-height column-margin column-container"><div class="callout-tip">
 <p>Other alignment alternatives are:</p>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-19_79b265d7c9d11bb8800b15ace9b42093">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">muscle</span> <span class="at">-i</span> all-gyrA-renamed.fasta <span class="at">-o</span> all-gyrA-renamed-muscle.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">muscle</span> <span class="at">-i</span> all-gyrA-renamed.fasta <span class="at">-o</span> all-gyrA-renamed-muscle.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-20_fb1ec73d53f68fb9ca0f3c4c25beb963">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">famsa</span> <span class="at">-t</span> 8 all-gyrA-renamed.fasta <span class="op">&gt;</span> all-gyrA-renamed-famsa.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">famsa</span> <span class="at">-t</span> 8 all-gyrA-renamed.fasta <span class="op">&gt;</span> all-gyrA-renamed-famsa.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-21_dec9e66f38665b9b642c6d472dc9bb95">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kalign</span> <span class="at">-i</span> all-gyrA-renamed.fasta <span class="at">-o</span> all-gyrA-renamed-kalign.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kalign</span> <span class="at">-i</span> all-gyrA-renamed.fasta <span class="at">-o</span> all-gyrA-renamed-kalign.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div></section><section id="assessment-of-the-alignment" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="assessment-of-the-alignment">Assessment of the alignment</h3>
 <p>Inspection of the alignment is there very first step for assessing its quality. A CDS tends to generate a codon-like alignment starting with the methionine codon (ATG,GTG) and finishing with a stop (TAA, TAG, etc.). Therefore finding this structure when aligning a complete genes is expected. If a middle fraction of the gene is being aligned ORF might not display any stop codon. Verifying a codon-like alignment shows a biological order on the sequences other that mere artifact of the alignment, that is an evolutionary behavior of the sequence. We can do it using <a href="https://telatin.github.io/seqfu2/">seqfu</a> from the CLI <a href="#fig-fu-msa-view">Fig.&nbsp;<span>1</span></a>, or interactively with <a href="https://github.com/AliView/AliView">AliView</a></p>
@@ -701,7 +686,7 @@ Tip
 </div>
 <p>A second step is to find the variability of the alignment. A simple way to find that is to calculate simpl stats from the alignment (sites, variable sites, As, Ts, etc.). A powerful cli program to do so is <a href="https://github.com/evolbioinfo/goalign">goalign</a></p>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/unnamed-chunk-22_21d2fe2c5ca60f95c612822531039a3a">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">goalign</span> stats <span class="at">-i</span> all-gyrA-renamed-linsi.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">goalign</span> stats <span class="at">-i</span> all-gyrA-renamed-linsi.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre><code>length  2508
 nseqs   8
@@ -717,18 +702,8 @@ alphabet    nucleotide</code></pre>
 
 
 
-<div class="no-row-height column-margin column-container"><div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="no-row-height column-margin column-container"><div class="callout-tip">
 <p>A more in depth analysis of the alignment could be done with <a href="https://github.com/KatyBrown/CIAlign">CIAlign</a>.</p>
-</div>
 </div></div></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -937,6 +912,159 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
+  }
+  const selectorForAnnotation = (cell, annotation) => {
+    let cellAttr = 'data-code-cell="' + cell + '"';
+    let lineAttr = 'data-code-annotation="' +  annotation + '"';
+    const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+    return selector;
+  }
+  let selectedAnnoteEl;
+  const selectCodeLines = (annoteEl) => {
+    const doc = window.document;
+    const targetCell = annoteEl.getAttribute("data-target-cell");
+    const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+    const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+    const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+    const lineIds = lines.map((line) => {
+      return targetCell + "-" + line;
+    })
+    let top = null;
+    let height = null;
+    let parent = null;
+    if (lineIds.length > 0) {
+        //compute the position of the single el (top and bottom and make a div)
+        const el = doc.getElementById(lineIds[0]);
+        top = el.offsetTop;
+        height = el.offsetHeight;
+        parent = el.parentElement.parentElement;
+      if (lineIds.length > 1) {
+        const lastEl = doc.getElementById(lineIds[lineIds.length - 1]);
+        const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+        height = bottom - top;
+      }
+      if (top !== null && height !== null && parent !== null) {
+        // cook up a div (if necessary) and position it 
+        let div = doc.getElementById("code-annotation-line-highlight");
+        if (div === null) {
+          div = doc.createElement("div");
+          div.setAttribute("id", "code-annotation-line-highlight");
+          div.style.position = 'absolute';
+          parent.appendChild(div);
+        }
+        div.style.top = top - 1 + "px";
+        div.style.height = height + 4 + "px";
+        let gutterDiv = doc.getElementById("code-annotation-line-highlight-gutter");
+        if (gutterDiv === null) {
+          gutterDiv = doc.createElement("div");
+          gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+          gutterDiv.style.position = 'absolute';
+          const codeCell = doc.getElementById(targetCell);
+          const gutter = codeCell.querySelector('.code-annotation-gutter');
+          gutter.appendChild(gutterDiv);
+        }
+        gutterDiv.style.top = top - 1 + "px";
+        gutterDiv.style.height = height + 4 + "px";
+      }
+      selectedAnnoteEl = annoteEl;
+    }
+  };
+  const unselectCodeLines = () => {
+    const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+    elementsIds.forEach((elId) => {
+      const div = window.document.getElementById(elId);
+      if (div) {
+        div.remove();
+      }
+    });
+    selectedAnnoteEl = undefined;
+  };
+  // Handle positioning of the toggle
+  window.addEventListener(
+  "resize",
+  throttle(() => {
+    elRect = undefined;
+    if (selectedAnnoteEl) {
+      selectCodeLines(selectedAnnoteEl);
+    }
+  }, 10)
+  );
+  function throttle(fn, ms) {
+   let throttle = false;
+   let timer;
+    return (...args) => {
+      if(!throttle) { // first call gets through
+          fn.apply(this, args);
+          throttle = true;
+      } else { // all the others get throttled
+          if(timer) clearTimeout(timer); // cancel #2
+          timer = setTimeout(() => {
+            fn.apply(this, args);
+            timer = throttle = false;
+          }, ms);
+      }
+    };
+  }
+  const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+  for (let i=0; i<annoteTargets.length; i++) {
+    const annoteTarget = annoteTargets[i];
+    const targetCell = annoteTarget.getAttribute("data-target-cell");
+    const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+    const contentFn = () => {
+      const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+      if (content) {
+        const tipContent = content.cloneNode(true);
+        tipContent.classList.add("code-annotation-tip-content");
+        return tipContent.outerHTML;
+      }
+    }
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      onShow: (instance) => {
+        selectCodeLines(instance.reference);
+        instance.reference.classList.add('code-annotation-active');
+        window.tippy.hideAll();
+      },
+      onHide: (instance) => {
+        unselectCodeLines();
+        instance.reference.classList.remove('code-annotation-active');
+      },
+      maxWidth: 300,
+      delay: [50, 0],
+      duration: [200, 0],
+      offset: [5, 10],
+      arrow: true,
+      trigger: 'click',
+      appendTo: function(el) {
+        return el.parentElement.parentElement.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'right',
+      positionFixed: true,
+      popperOptions: {
+        modifiers: [
+        {
+          name: 'flip',
+          options: {
+            flipVariations: false, // true by default
+            allowedAutoPlacements: ['right'],
+            fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+          },
+        },
+        {
+          name: 'preventOverflow',
+          options: {
+            mainAxis: false,
+            altAxis: false
+          }
+        }
+        ]        
+      }      
+    };
+    window.tippy(annoteTarget, config); 
   }
   const findCites = (el) => {
     const parentEl = el.parentElement;

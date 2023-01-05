@@ -5,6 +5,7 @@ filters:
   # - code-filename
   - nutshell
   - lightbox
+code-annotations: select
 ---
 
 # Seq. Analysis challenges {.unnumbered}
@@ -80,10 +81,11 @@ GCF_000321395.1 4043 4179 6 76 2
 #| echo: true
 #| eval: true
 #| message: false
+#| warning: false
 library(tidyverse)
 library(fs)
 
-all_features <- dir_ls("data/features") |> 
+all_features <- dir_ls("data/features/") |> # GCF_000186745.1_ASM18674v1_feature_table.txt is corrupted
   map_df(read_tsv)
 
 all_features |> 
@@ -98,22 +100,20 @@ Now that we read all the files into the programming environment we can operate o
 #| message: false
 #| code-line-numbers: true
 all_features_grouped <- all_features |> 
-  rename(feature = `# feature`) |> 
-  select(assembly, feature) |> 
-  group_by(assembly, feature) |>
-  count() |> 
-  pivot_wider(names_from = feature, values_from = n)
+  rename(feature = `# feature`) |> # <1>
+  select(assembly, feature) |> # <2>
+  group_by(assembly, feature) |> # <3>
+  count() |> # <4>
+  pivot_wider(names_from = feature, values_from = n) # <5>
 
 all_features_grouped
 ```
-The code lines operation are doing the following steps:
 
-1. Create a new dataset that will group by features per accession.
-2. Change the `# feature` name for simple `feature`.
-3. Select `feature` and `assembly`  columns.
-4. Group by these two columns, enabling grouping operations.
-5. Count the numbers of rows based on the applied grouping.
-6. Generate a wide dataset sending row names as columns.
+1. Change the `# feature` name for simple `feature`.
+2. Select `feature` and `assembly`  columns.
+3. Group by these two columns, enabling grouping operations.
+4. Count the numbers of rows based on the applied grouping.
+5. Generate a wide dataset sending row names as columns.
 
 ### Python
 
