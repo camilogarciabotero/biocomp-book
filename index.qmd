@@ -51,5 +51,5 @@ As many analysis specialize on data analysis, many formats arise that optimize t
 
 ## Notation
 
-### Mathematical notaions
+### Mathematical notations
 
