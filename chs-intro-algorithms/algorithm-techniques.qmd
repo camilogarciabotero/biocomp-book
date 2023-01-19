@@ -1,0 +1,11 @@
+# Algorithm techniques
+
+## Complexity
+
+## Exhaustive search
+
+## Branch and bound
+
+## Dynamic programming
+
+## Greedy algorithm

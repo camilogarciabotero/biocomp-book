@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.112">
+<meta name="generator" content="quarto-1.3.119">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Fundamentals of computational biology - 7&nbsp; Sequence alignments</title>
+<title>Fundamentals of computational biology - 10&nbsp; Sequence alignments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,7 +76,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <script async="" src="https://hypothes.is/embed.js"></script>
 
 
-<meta name="citation_title" content="[[7]{.chapter-number}&nbsp; [Sequence alignments]{.chapter-title}]{#sec-alignments .quarto-section-identifier}">
+<meta name="citation_title" content="[[10]{.chapter-number}&nbsp; [Sequence alignments]{.chapter-title}]{#sec-alignments .quarto-section-identifier}">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book//chs-sequence-analysis/sequence-alignments.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_publication_date=1984-05;,citation_cover_date=1984-05;,citation_year=1984;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_issue=2;,citation_doi=10.1093/comjnl/27.2.97;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;,citation_publisher=Oxford University Press, Inc.;">
@@ -96,7 +96,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sequence alignments</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sequence alignments</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -165,7 +165,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Sequence analysis</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Intro. to algorithms</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -173,29 +173,24 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequence analysis</span></a>
+  <a href="../chs-intro-algorithms/algorithm-thinking.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Algorithm thinking</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/sanger-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sanger analysis</span></a>
+  <a href="../chs-intro-algorithms/algorithm-techniques.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Algorithm techniques</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/sequence-alignments.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sequence alignments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
+  <a href="../chs-intro-algorithms/data-structures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data structures</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Phylogenetics</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Sequence analysis</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -203,19 +198,29 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-phylogenetics/phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Phylogenetics</span></a>
+  <a href="../chs-sequence-analysis/introduction-to-sequence-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Sequence analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-phylogenetics/phylogenomics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Phylogenomics</span></a>
+  <a href="../chs-sequence-analysis/sanger-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sanger analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-sequence-analysis/sequence-alignments.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sequence alignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Genomics</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Phylogenetics</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -223,29 +228,19 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/genome-assembly.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  <a href="../chs-phylogenetics/phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Phylogenetics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/genome-annotation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Genome annotation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chs-genomics/comparative-genomics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Comparative genomics</span></a>
+  <a href="../chs-phylogenetics/phylogenomics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Phylogenomics</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Metagenomics</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Genomics</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -253,14 +248,29 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-metagenomics/metagenomic-sequencing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Metagenomic sequencing</span></a>
+  <a href="../chs-genomics/genome-assembly.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Genome assembly</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-genomics/genome-annotation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Genome annotation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-genomics/variant-calling-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Variant calling analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-genomics/comparative-genomics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Comparative genomics</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">Structural bioinformatics</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">Metagenomics</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -268,24 +278,39 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Structural bioinformatics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chs-bio-structural/molecular-docking.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Molecular docking</span></a>
+  <a href="../chs-metagenomics/metagenomic-sequencing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Metagenomic sequencing</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">Challenges</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">Structural bioinformatics</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-bio-structural/intro-structural-bioinfo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Structural bioinformatics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-bio-structural/molecular-docking.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Molecular docking</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">Challenges</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chs-challenges-demos/unix-challenges.html" class="sidebar-item-text sidebar-link">Unix challenges</a>
@@ -296,16 +321,21 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   <a href="../chs-challenges-demos/seq-analysis-challenges.html" class="sidebar-item-text sidebar-link">Seq. Analysis challenges</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chs-challenges-demos/genome-analysis-challenges.html" class="sidebar-item-text sidebar-link">Genome assembly</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">Appendix</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">Appendix</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../HISTORY.html" class="sidebar-item-text sidebar-link">History</a>
@@ -327,18 +357,18 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-do-we-align-sequences" id="toc-why-do-we-align-sequences" class="nav-link active" data-scroll-target="#why-do-we-align-sequences"><span class="toc-section-number">7.1</span>  Why do we align sequences?</a></li>
-  <li><a href="#what-is-homology" id="toc-what-is-homology" class="nav-link" data-scroll-target="#what-is-homology"><span class="toc-section-number">7.2</span>  What is homology</a></li>
-  <li><a href="#pairwise-alignments-algorithms" id="toc-pairwise-alignments-algorithms" class="nav-link" data-scroll-target="#pairwise-alignments-algorithms"><span class="toc-section-number">7.3</span>  Pairwise alignments algorithms</a>
+  <li><a href="#why-do-we-align-sequences" id="toc-why-do-we-align-sequences" class="nav-link active" data-scroll-target="#why-do-we-align-sequences"><span class="toc-section-number">10.1</span>  Why do we align sequences?</a></li>
+  <li><a href="#what-is-homology" id="toc-what-is-homology" class="nav-link" data-scroll-target="#what-is-homology"><span class="toc-section-number">10.2</span>  What is homology</a></li>
+  <li><a href="#pairwise-alignments-algorithms" id="toc-pairwise-alignments-algorithms" class="nav-link" data-scroll-target="#pairwise-alignments-algorithms"><span class="toc-section-number">10.3</span>  Pairwise alignments algorithms</a>
   <ul class="collapse">
-  <li><a href="#hamming-distance" id="toc-hamming-distance" class="nav-link" data-scroll-target="#hamming-distance"><span class="toc-section-number">7.3.1</span>  Hamming distance</a></li>
-  <li><a href="#edit-distance" id="toc-edit-distance" class="nav-link" data-scroll-target="#edit-distance"><span class="toc-section-number">7.3.2</span>  Edit distance</a></li>
-  <li><a href="#needleman-wunsch-global-alignment" id="toc-needleman-wunsch-global-alignment" class="nav-link" data-scroll-target="#needleman-wunsch-global-alignment"><span class="toc-section-number">7.3.3</span>  Needleman-Wunsch (global alignment)</a></li>
-  <li><a href="#smith-waterman-local-alignment" id="toc-smith-waterman-local-alignment" class="nav-link" data-scroll-target="#smith-waterman-local-alignment"><span class="toc-section-number">7.3.4</span>  Smith-Waterman (local alignment)</a></li>
+  <li><a href="#hamming-distance" id="toc-hamming-distance" class="nav-link" data-scroll-target="#hamming-distance"><span class="toc-section-number">10.3.1</span>  Hamming distance</a></li>
+  <li><a href="#edit-distance" id="toc-edit-distance" class="nav-link" data-scroll-target="#edit-distance"><span class="toc-section-number">10.3.2</span>  Edit distance</a></li>
+  <li><a href="#needleman-wunsch-global-alignment" id="toc-needleman-wunsch-global-alignment" class="nav-link" data-scroll-target="#needleman-wunsch-global-alignment"><span class="toc-section-number">10.3.3</span>  Needleman-Wunsch (global alignment)</a></li>
+  <li><a href="#smith-waterman-local-alignment" id="toc-smith-waterman-local-alignment" class="nav-link" data-scroll-target="#smith-waterman-local-alignment"><span class="toc-section-number">10.3.4</span>  Smith-Waterman (local alignment)</a></li>
   </ul></li>
-  <li><a href="#the-genetic-code-and-scoring-matrices" id="toc-the-genetic-code-and-scoring-matrices" class="nav-link" data-scroll-target="#the-genetic-code-and-scoring-matrices"><span class="toc-section-number">7.4</span>  The genetic code and Scoring matrices</a></li>
-  <li><a href="#blast-and-its-families" id="toc-blast-and-its-families" class="nav-link" data-scroll-target="#blast-and-its-families"><span class="toc-section-number">7.5</span>  BLAST and its families</a></li>
-  <li><a href="#multiple-sequence-alignments" id="toc-multiple-sequence-alignments" class="nav-link" data-scroll-target="#multiple-sequence-alignments"><span class="toc-section-number">7.6</span>  Multiple sequence alignments</a></li>
+  <li><a href="#the-genetic-code-and-scoring-matrices" id="toc-the-genetic-code-and-scoring-matrices" class="nav-link" data-scroll-target="#the-genetic-code-and-scoring-matrices"><span class="toc-section-number">10.4</span>  The genetic code and Scoring matrices</a></li>
+  <li><a href="#blast-and-its-families" id="toc-blast-and-its-families" class="nav-link" data-scroll-target="#blast-and-its-families"><span class="toc-section-number">10.5</span>  BLAST and its families</a></li>
+  <li><a href="#multiple-sequence-alignments" id="toc-multiple-sequence-alignments" class="nav-link" data-scroll-target="#multiple-sequence-alignments"><span class="toc-section-number">10.6</span>  Multiple sequence alignments</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-sequence-analysis/sequence-alignments.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -347,7 +377,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-alignments" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sequence alignments</span></span></h1>
+<h1 class="title"><span id="sec-alignments" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sequence alignments</span></span></h1>
 </div>
 
 
@@ -362,40 +392,40 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 
 </header>
 
-<section id="why-do-we-align-sequences" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="why-do-we-align-sequences"><span class="header-section-number">7.1</span> Why do we align sequences?</h2>
+<section id="why-do-we-align-sequences" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="why-do-we-align-sequences"><span class="header-section-number">10.1</span> Why do we align sequences?</h2>
 <p>In search of homology and identity</p>
 </section>
-<section id="what-is-homology" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="what-is-homology"><span class="header-section-number">7.2</span> What is homology</h2>
+<section id="what-is-homology" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="what-is-homology"><span class="header-section-number">10.2</span> What is homology</h2>
 </section>
-<section id="pairwise-alignments-algorithms" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="pairwise-alignments-algorithms"><span class="header-section-number">7.3</span> Pairwise alignments algorithms</h2>
-<section id="hamming-distance" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="hamming-distance"><span class="header-section-number">7.3.1</span> Hamming distance</h3>
+<section id="pairwise-alignments-algorithms" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="pairwise-alignments-algorithms"><span class="header-section-number">10.3</span> Pairwise alignments algorithms</h2>
+<section id="hamming-distance" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="hamming-distance"><span class="header-section-number">10.3.1</span> Hamming distance</h3>
 </section>
-<section id="edit-distance" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="edit-distance"><span class="header-section-number">7.3.2</span> Edit distance</h3>
-<section id="dynamic-programming" class="level4" data-number="7.3.2.1">
-<h4 data-number="7.3.2.1" class="anchored" data-anchor-id="dynamic-programming"><span class="header-section-number">7.3.2.1</span> Dynamic programming</h4>
-</section>
-</section>
-<section id="needleman-wunsch-global-alignment" class="level3" data-number="7.3.3">
-<h3 data-number="7.3.3" class="anchored" data-anchor-id="needleman-wunsch-global-alignment"><span class="header-section-number">7.3.3</span> Needleman-Wunsch (global alignment)</h3>
-</section>
-<section id="smith-waterman-local-alignment" class="level3" data-number="7.3.4">
-<h3 data-number="7.3.4" class="anchored" data-anchor-id="smith-waterman-local-alignment"><span class="header-section-number">7.3.4</span> Smith-Waterman (local alignment)</h3>
+<section id="edit-distance" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="edit-distance"><span class="header-section-number">10.3.2</span> Edit distance</h3>
+<section id="dynamic-programming" class="level4" data-number="10.3.2.1">
+<h4 data-number="10.3.2.1" class="anchored" data-anchor-id="dynamic-programming"><span class="header-section-number">10.3.2.1</span> Dynamic programming</h4>
 </section>
 </section>
-<section id="the-genetic-code-and-scoring-matrices" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="the-genetic-code-and-scoring-matrices"><span class="header-section-number">7.4</span> The genetic code and Scoring matrices</h2>
+<section id="needleman-wunsch-global-alignment" class="level3" data-number="10.3.3">
+<h3 data-number="10.3.3" class="anchored" data-anchor-id="needleman-wunsch-global-alignment"><span class="header-section-number">10.3.3</span> Needleman-Wunsch (global alignment)</h3>
 </section>
-<section id="blast-and-its-families" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="blast-and-its-families"><span class="header-section-number">7.5</span> BLAST and its families</h2>
+<section id="smith-waterman-local-alignment" class="level3" data-number="10.3.4">
+<h3 data-number="10.3.4" class="anchored" data-anchor-id="smith-waterman-local-alignment"><span class="header-section-number">10.3.4</span> Smith-Waterman (local alignment)</h3>
+</section>
+</section>
+<section id="the-genetic-code-and-scoring-matrices" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="the-genetic-code-and-scoring-matrices"><span class="header-section-number">10.4</span> The genetic code and Scoring matrices</h2>
+</section>
+<section id="blast-and-its-families" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="blast-and-its-families"><span class="header-section-number">10.5</span> BLAST and its families</h2>
 <p>psi-blast? true homologous, recurrent blast to polish scoring matrix during several generations to generate true homologous</p>
 </section>
-<section id="multiple-sequence-alignments" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="multiple-sequence-alignments"><span class="header-section-number">7.6</span> Multiple sequence alignments</h2>
+<section id="multiple-sequence-alignments" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="multiple-sequence-alignments"><span class="header-section-number">10.6</span> Multiple sequence alignments</h2>
 <div class="callout callout-style-default callout-warning callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -624,6 +654,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -668,12 +784,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chs-sequence-analysis/sanger-analysis.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sanger analysis</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sanger analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

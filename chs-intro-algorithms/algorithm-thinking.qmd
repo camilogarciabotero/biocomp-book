@@ -1,0 +1,12 @@
+# Algorithm thinking
+
+## What is an algorithm
+
+## Solving a problem step by step
+
+## Algorithms in computing
+
+## Relevance in biology
+
+## Pseudocode and notations
+

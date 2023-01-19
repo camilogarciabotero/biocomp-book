@@ -45,6 +45,11 @@ book:
         - chs-command-line/git-and-github.qmd
         - chs-command-line/package-managers.qmd
         - chs-command-line/hpc-notions.qmd
+    - part: "Intro. to algorithms"
+      chapters:
+        - chs-intro-algorithms/algorithm-thinking.qmd
+        - chs-intro-algorithms/algorithm-techniques.qmd
+        - chs-intro-algorithms/data-structures.qmd
     - part: "Sequence analysis"
       chapters:
         - chs-sequence-analysis/introduction-to-sequence-analysis.qmd
@@ -64,6 +69,7 @@ book:
     - part: "Metagenomics"
       chapters:  
         - chs-metagenomics/metagenomic-sequencing.qmd
+        # - chs-metagenomics/comparative-metagenomics.qmd
     - part: "Structural bioinformatics"
       chapters:
         - chs-bio-structural/intro-structural-bioinfo.qmd
@@ -72,6 +78,7 @@ book:
       chapters:
         - chs-challenges-demos/unix-challenges.qmd
         - chs-challenges-demos/seq-analysis-challenges.qmd
+        - chs-challenges-demos/genome-analysis-challenges.qmd
     #     - chs-challenges-demos/demo-sanger-processing.qmd
     #     - chs-challenges-demos/demo-sequence-alignment.qmd
     #     - chs-challenges-demos/demo-phylogenetics.qmd

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Fundamentals of computational biology - 12&nbsp; Phylogenetics</title>
+<title>Fundamentals of computational biology - 6&nbsp; Algorithm techniques</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chs-phylogenetics/phylogenomics.html" rel="next">
-<link href="../chs-sequence-analysis/NGS-TGS-principles.html" rel="prev">
+<link href="../chs-intro-algorithms/data-structures.html" rel="next">
+<link href="../chs-intro-algorithms/algorithm-thinking.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -76,8 +76,8 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 <script async="" src="https://hypothes.is/embed.js"></script>
 
 
-<meta name="citation_title" content="[[12]{.chapter-number}&nbsp; [Phylogenetics]{.chapter-title}]{#sec-phylogenetics .quarto-section-identifier}">
-<meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book//chs-phylogenetics/phylogenetic-reconstructions.html">
+<meta name="citation_title" content="[6]{.chapter-number}&nbsp; [Algorithm techniques]{.chapter-title}">
+<meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book//chs-intro-algorithms/algorithm-techniques.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Literate programming;,citation_author=Donald E. Knuth;,citation_publication_date=1984-05;,citation_cover_date=1984-05;,citation_year=1984;,citation_fulltext_html_url=https://doi.org/10.1093/comjnl/27.2.97;,citation_issue=2;,citation_doi=10.1093/comjnl/27.2.97;,citation_issn=0010-4620;,citation_volume=27;,citation_journal_title=Comput. J.;,citation_publisher=Oxford University Press, Inc.;">
 <meta name="citation_reference" content="citation_title=Computing skills for biologists;,citation_author=Stefano Allesina;,citation_author=Madlen Wilmes;,citation_publication_date=2019-01-15;,citation_cover_date=2019-01-15;,citation_year=2019;,citation_fulltext_html_url=http://dx.doi.org/10.2307/j.ctvc77jrc;,citation_doi=10.2307/j.ctvc77jrc;">
@@ -96,7 +96,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Phylogenetics</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Algorithm techniques</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -178,7 +178,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-intro-algorithms/algorithm-techniques.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Algorithm techniques</span></a>
+  <a href="../chs-intro-algorithms/algorithm-techniques.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Algorithm techniques</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -228,7 +228,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chs-phylogenetics/phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Phylogenetics</span></a>
+  <a href="../chs-phylogenetics/phylogenetic-reconstructions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Phylogenetics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -357,23 +357,20 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-a-phylogenetic-tree" id="toc-what-is-a-phylogenetic-tree" class="nav-link active" data-scroll-target="#what-is-a-phylogenetic-tree"><span class="toc-section-number">12.1</span>  What is a phylogenetic tree</a></li>
-  <li><a href="#mehtods-for-phylogenetic-reconstruction" id="toc-mehtods-for-phylogenetic-reconstruction" class="nav-link" data-scroll-target="#mehtods-for-phylogenetic-reconstruction"><span class="toc-section-number">12.2</span>  Mehtods for phylogenetic reconstruction</a></li>
-  <li><a href="#building-a-phylogenetic-reconstruction" id="toc-building-a-phylogenetic-reconstruction" class="nav-link" data-scroll-target="#building-a-phylogenetic-reconstruction"><span class="toc-section-number">12.3</span>  Building a phylogenetic reconstruction</a>
-  <ul class="collapse">
-  <li><a href="#evolutionary-substitution-model" id="toc-evolutionary-substitution-model" class="nav-link" data-scroll-target="#evolutionary-substitution-model"><span class="toc-section-number">12.3.1</span>  Evolutionary substitution model</a></li>
-  <li><a href="#maximum-likelihood" id="toc-maximum-likelihood" class="nav-link" data-scroll-target="#maximum-likelihood"><span class="toc-section-number">12.3.2</span>  Maximum likelihood</a></li>
-  <li><a href="#bayesian-inference" id="toc-bayesian-inference" class="nav-link" data-scroll-target="#bayesian-inference"><span class="toc-section-number">12.3.3</span>  Bayesian inference</a></li>
-  </ul></li>
+  <li><a href="#complexity" id="toc-complexity" class="nav-link active" data-scroll-target="#complexity"><span class="toc-section-number">6.1</span>  Complexity</a></li>
+  <li><a href="#exhaustive-search" id="toc-exhaustive-search" class="nav-link" data-scroll-target="#exhaustive-search"><span class="toc-section-number">6.2</span>  Exhaustive search</a></li>
+  <li><a href="#branch-and-bound" id="toc-branch-and-bound" class="nav-link" data-scroll-target="#branch-and-bound"><span class="toc-section-number">6.3</span>  Branch and bound</a></li>
+  <li><a href="#dynamic-programming" id="toc-dynamic-programming" class="nav-link" data-scroll-target="#dynamic-programming"><span class="toc-section-number">6.4</span>  Dynamic programming</a></li>
+  <li><a href="#greedy-algorithm" id="toc-greedy-algorithm" class="nav-link" data-scroll-target="#greedy-algorithm"><span class="toc-section-number">6.5</span>  Greedy algorithm</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-phylogenetics/phylogenetic-reconstructions.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/biocomp-book/edit/main/chs-intro-algorithms/algorithm-techniques.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/biocomp-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-phylogenetics" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Phylogenetics</span></span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Algorithm techniques</span></h1>
 </div>
 
 
@@ -388,25 +385,22 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
 
 </header>
 
-<section id="what-is-a-phylogenetic-tree" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="what-is-a-phylogenetic-tree"><span class="header-section-number">12.1</span> What is a phylogenetic tree</h2>
+<section id="complexity" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="complexity"><span class="header-section-number">6.1</span> Complexity</h2>
 </section>
-<section id="mehtods-for-phylogenetic-reconstruction" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="mehtods-for-phylogenetic-reconstruction"><span class="header-section-number">12.2</span> Mehtods for phylogenetic reconstruction</h2>
+<section id="exhaustive-search" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="exhaustive-search"><span class="header-section-number">6.2</span> Exhaustive search</h2>
 </section>
-<section id="building-a-phylogenetic-reconstruction" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="building-a-phylogenetic-reconstruction"><span class="header-section-number">12.3</span> Building a phylogenetic reconstruction</h2>
-<section id="evolutionary-substitution-model" class="level3" data-number="12.3.1">
-<h3 data-number="12.3.1" class="anchored" data-anchor-id="evolutionary-substitution-model"><span class="header-section-number">12.3.1</span> Evolutionary substitution model</h3>
+<section id="branch-and-bound" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="branch-and-bound"><span class="header-section-number">6.3</span> Branch and bound</h2>
 </section>
-<section id="maximum-likelihood" class="level3" data-number="12.3.2">
-<h3 data-number="12.3.2" class="anchored" data-anchor-id="maximum-likelihood"><span class="header-section-number">12.3.2</span> Maximum likelihood</h3>
+<section id="dynamic-programming" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="dynamic-programming"><span class="header-section-number">6.4</span> Dynamic programming</h2>
 </section>
-<section id="bayesian-inference" class="level3" data-number="12.3.3">
-<h3 data-number="12.3.3" class="anchored" data-anchor-id="bayesian-inference"><span class="header-section-number">12.3.3</span> Bayesian inference</h3>
+<section id="greedy-algorithm" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="greedy-algorithm"><span class="header-section-number">6.5</span> Greedy algorithm</h2>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -748,13 +742,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chs-sequence-analysis/NGS-TGS-principles.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">NGS and TGS: principles</span></span>
+      <a href="../chs-intro-algorithms/algorithm-thinking.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Algorithm thinking</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chs-phylogenetics/phylogenomics.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Phylogenomics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chs-intro-algorithms/data-structures.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data structures</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

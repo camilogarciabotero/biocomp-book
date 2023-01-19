@@ -1,0 +1,16 @@
+# Data structures
+
+## Accessing data
+
+## Basic data structures
+
+### Hash tables
+
+### Binary trees
+
+## Ubiquitous bioinformatic data structures
+
+### Graphs
+
+### Strings
+
