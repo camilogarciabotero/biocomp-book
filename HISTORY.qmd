@@ -1,5 +1,15 @@
 # History {.unnumbered}
 
+## Edition 0.0.11 (2023-01-19)
+
+- Adding some quarto code annotations!
+
+- New chapter on algorithms
+
+- Add a challenge on genome assembly
+
+- Rendering with Q v.1.3
+
 ## Edition 0.0.10 (2022-12-17)
 
 - Update book with new quarto and extension versions

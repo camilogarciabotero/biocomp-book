@@ -665,6 +665,13 @@
     "text": "Exploring assemblers\nOne of the most popular genome assemblers for NGS is spades whereas for TGS flye has been widely used\n\nShovill: spades under the hood\nshovill is a pipeline that enables pre and post processing of genomic data. It can be tunned to several tools for the processing steps and also to select different standalone assemblers\nshovill --outdir MxanthusIllumina\\\n        --R1 R1.fq.gz\\\n        --R2 R2.fq.gz\\\n        --trim\\\n        --cpus 32\n\n\nDragonflye: flye under the hood\nSimilar to shovill (and inspired by it) dragonflye is a pipeline that enables several processing steps of genomic data be\ndragonflye --outdir MxanthusNanopore\\\n           --gsize 9Mb\\\n           --trim\\\n           --reads ont-readsfastq.gz\\\n           --racon 5\nwget\nSince we are trying to assemble a bacterial genome, computer memory appears to be a limiting features of a local machine. Then, a computer cluster with high performance turns out to be an important need.\nFirst we need environment installations, therefore its important to have conda environments with the assemblers and other programs (conda create -c bioconda dragonflye dragonflye and conda create -c bioconda shovill shovill). That way both assemblers pipelines will lie in separate environment avoiding possible dependenies problems\nWe will use Apolo computer cluster which uses Slurm as the computer system workload manager (i.e a program that manages the time and resources of the computer)."
   },
   {
+    "objectID": "HISTORY.html#edition-0.0.11-2023-01-19",
+    "href": "HISTORY.html#edition-0.0.11-2023-01-19",
+    "title": "History",
+    "section": "Edition 0.0.11 (2023-01-19)",
+    "text": "Edition 0.0.11 (2023-01-19)\n\nAdding some quarto code annotations!\nNew chapter on algorithms\nAdd a challenge on genome assembly\nRendering with Q v.1.3"
+  },
+  {
     "objectID": "HISTORY.html#edition-0.0.10-2022-12-17",
     "href": "HISTORY.html#edition-0.0.10-2022-12-17",
     "title": "History",
