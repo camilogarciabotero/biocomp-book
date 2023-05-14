@@ -1,0 +1,47 @@
+# Genome assembly {#sec-genomics}
+
+## The problem of assembling genomes
+
+## Main algorithms for genome asssembly
+
+### Overlay, Layout, Consensus (OLS)
+
+### De Bruijn graphs
+
+## Main concepts of an assembly
+
+### Contigs, Unitigs, Scaffolds
+
+## A complete workflow for assembling genomes
+
+## Assessing genomes
+
+### Inspecting genome graphs
+
+### Genome completeness
+
+## Understanding genome difficulties
+
+- End of chromosomes
+
+- Erros
+
+- Lack of coverage
+
+- Heterozigozity
+
+- repeats
+
+# Genome annotation and visualizaiton
+
+## _ab initio_ annotation
+
+## Homolgy annotation
+
+## Annotation files
+
+### the GBK and GBFF
+
+### The GFF specificaitons
+
+## Visualizing genomes and annotations
