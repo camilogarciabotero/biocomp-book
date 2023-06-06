@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.4.126">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Fundamentals of computational biology - Seq. Analysis challenges</title>
 <style>
@@ -82,6 +82,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "panel-placement": "start",
   "type": "textbox",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -91,7 +96,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QFWWJGZHLD"></script><script type="text/javascript">
 
@@ -99,7 +105,11 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
-</script><script async="" src="https://hypothes.is/embed.js"></script><link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+</script><script async="" src="https://hypothes.is/embed.js"></script><script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script><link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <meta name="citation_title" content="Seq. Analysis challenges">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp-book//chs-challenges-demos/seq-analysis-challenges.html">
@@ -124,7 +134,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chs-challenges-demos/unix-challenges.html">Challenges</a></li><li class="breadcrumb-item"><a href="../chs-challenges-demos/seq-analysis-challenges.html">Seq. Analysis challenges</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -134,7 +144,7 @@ gtag('config', 'G-QFWWJGZHLD', { 'anonymize_ip': true});
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Fundamentals of computational biology</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/camilogarciabotero/biocomp-book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/camilogarciabotero/biocomp-book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -520,7 +530,6 @@ GCF_000321395.1 4043 4179 6 76 2 </code></pre>
 <span><span class="va">all_features</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["# feature"],"name":[1],"type":["chr"],"align":["left"]},{"label":["class"],"name":[2],"type":["chr"],"align":["left"]},{"label":["assembly"],"name":[3],"type":["chr"],"align":["left"]},{"label":["assembly_unit"],"name":[4],"type":["chr"],"align":["left"]},{"label":["seq_type"],"name":[5],"type":["chr"],"align":["left"]},{"label":["chromosome"],"name":[6],"type":["chr"],"align":["left"]},{"label":["genomic_accession"],"name":[7],"type":["chr"],"align":["left"]},{"label":["start"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["end"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["strand"],"name":[10],"type":["chr"],"align":["left"]},{"label":["product_accession"],"name":[11],"type":["chr"],"align":["left"]},{"label":["non-redundant_refseq"],"name":[12],"type":["chr"],"align":["left"]},{"label":["related_accession"],"name":[13],"type":["lgl"],"align":["right"]},{"label":["name"],"name":[14],"type":["chr"],"align":["left"]},{"label":["symbol"],"name":[15],"type":["chr"],"align":["left"]},{"label":["GeneID"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["locus_tag"],"name":[17],"type":["chr"],"align":["left"]},{"label":["feature_interval_length"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["product_length"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["attributes"],"name":[20],"type":["chr"],"align":["left"]}],"data":[{"1":"gene","2":"protein_coding","3":"GCF_000009045.1","4":"Primary Assembly","5":"chromosome","6":"NA","7":"NC_000964.3","8":"410","9":"1750","10":"+","11":"NA","12":"NA","13":"NA","14":"NA","15":"dnaA","16":"939978","17":"BSU_00010","18":"1341","19":"NA","20":"old_locus_tag=BSU00010"},{"1":"CDS","2":"with_protein","3":"GCF_000009045.1","4":"Primary Assembly","5":"chromosome","6":"NA","7":"NC_000964.3","8":"410","9":"1750","10":"+","11":"NP_387882.1","12":"WP_003242674.1","13":"NA","14":"chromosomal replication initiator informational ATPase","15":"dnaA","16":"939978","17":"BSU_00010","18":"1341","19":"446","20":"NA"},{"1":"gene","2":"protein_coding","3":"GCF_000009045.1","4":"Primary Assembly","5":"chromosome","6":"NA","7":"NC_000964.3","8":"1939","9":"3075","10":"+","11":"NA","12":"NA","13":"NA","14":"NA","15":"dnaN","16":"939970","17":"BSU_00020","18":"1137","19":"NA","20":"old_locus_tag=BSU00020"},{"1":"CDS","2":"with_protein","3":"GCF_000009045.1","4":"Primary Assembly","5":"chromosome","6":"NA","7":"NC_000964.3","8":"1939","9":"3075","10":"+","11":"NP_387883.1","12":"WP_003242509.1","13":"NA","14":"DNA polymerase III (beta subunit)","15":"dnaN","16":"939970","17":"BSU_00020","18":"1137","19":"378","20":"NA"},{"1":"gene","2":"protein_coding","3":"GCF_000009045.1","4":"Primary Assembly","5":"chromosome","6":"NA","7":"NC_000964.3","8":"3206","9":"3421","10":"+","11":"NA","12":"NA","13":"NA","14":"NA","15":"rlbA","16":"939444","17":"BSU_00030","18":"216","19":"NA","20":"old_locus_tag=BSU00030"},{"1":"CDS","2":"with_protein","3":"GCF_000009045.1","4":"Primary Assembly","5":"chromosome","6":"NA","7":"NC_000964.3","8":"3206","9":"3421","10":"+","11":"NP_387884.1","12":"WP_003226810.1","13":"NA","14":"RNA binding protein involved in ribosome maturation","15":"rlbA","16":"939444","17":"BSU_00030","18":"216","19":"71","20":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -530,40 +539,39 @@ GCF_000321395.1 4043 4179 6 76 2 </code></pre>
 </div>
 <p>Now that we read all the files into the programming environment we can operate over them with different libraries.</p>
 <div class="cell" data-hash="seq-analysis-challenges_cache/html/data-processing_a2b30cdaa81281b42c23180382da05c0">
-<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1"></a>all_features_grouped <span class="ot">&lt;-</span> all_features <span class="sc">|&gt;</span> </span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2"></a>  <span class="fu">rename</span>(<span class="at">feature =</span> <span class="st">`</span><span class="at"># feature</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3"></a>  <span class="fu">select</span>(assembly, feature) <span class="sc">|&gt;</span></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3">3</button><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4"></a>  <span class="fu">group_by</span>(assembly, feature) <span class="sc">|&gt;</span></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4">4</button><span id="annotated-cell-2-5" class="code-annotation-target"><a href="#annotated-cell-2-5"></a>  <span class="fu">count</span>() <span class="sc">|&gt;</span></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="5">5</button><span id="annotated-cell-2-6" class="code-annotation-target"><a href="#annotated-cell-2-6"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> feature, <span class="at">values_from =</span> n)</span>
-<span id="annotated-cell-2-7"><a href="#annotated-cell-2-7"></a></span>
-<span id="annotated-cell-2-8"><a href="#annotated-cell-2-8"></a>all_features_grouped</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-22"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-22-1"><a href="#annotated-cell-22-1"></a>all_features_grouped <span class="ot">&lt;-</span> all_features <span class="sc">|&gt;</span> </span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-22" data-target-annotation="1">1</button><span id="annotated-cell-22-2" class="code-annotation-target"><a href="#annotated-cell-22-2"></a>  <span class="fu">rename</span>(<span class="at">feature =</span> <span class="st">`</span><span class="at"># feature</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-22" data-target-annotation="2">2</button><span id="annotated-cell-22-3" class="code-annotation-target"><a href="#annotated-cell-22-3"></a>  <span class="fu">select</span>(assembly, feature) <span class="sc">|&gt;</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-22" data-target-annotation="3">3</button><span id="annotated-cell-22-4" class="code-annotation-target"><a href="#annotated-cell-22-4"></a>  <span class="fu">group_by</span>(assembly, feature) <span class="sc">|&gt;</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-22" data-target-annotation="4">4</button><span id="annotated-cell-22-5" class="code-annotation-target"><a href="#annotated-cell-22-5"></a>  <span class="fu">count</span>() <span class="sc">|&gt;</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-22" data-target-annotation="5">5</button><span id="annotated-cell-22-6" class="code-annotation-target"><a href="#annotated-cell-22-6"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> feature, <span class="at">values_from =</span> n)</span>
+<span id="annotated-cell-22-7"><a href="#annotated-cell-22-7"></a></span>
+<span id="annotated-cell-22-8"><a href="#annotated-cell-22-8"></a>all_features_grouped</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-22" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-annotation="1" data-code-cell="annotated-cell-2">Change the <code># feature</code> name for simple <code>feature</code>.</span>
+<span data-code-cell="annotated-cell-22" data-code-lines="2" data-code-annotation="1">Change the <code># feature</code> name for simple <code>feature</code>.</span>
 </dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-22" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="3" data-code-annotation="2" data-code-cell="annotated-cell-2">Select <code>feature</code> and <code>assembly</code> columns.</span>
+<span data-code-cell="annotated-cell-22" data-code-lines="3" data-code-annotation="2">Select <code>feature</code> and <code>assembly</code> columns.</span>
 </dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-22" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="4" data-code-annotation="3" data-code-cell="annotated-cell-2">Group by these two columns, enabling grouping operations.</span>
+<span data-code-cell="annotated-cell-22" data-code-lines="4" data-code-annotation="3">Group by these two columns, enabling grouping operations.</span>
 </dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
+<dt data-target-cell="annotated-cell-22" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="5" data-code-annotation="4" data-code-cell="annotated-cell-2">Count the numbers of rows based on the applied grouping.</span>
+<span data-code-cell="annotated-cell-22" data-code-lines="5" data-code-annotation="4">Count the numbers of rows based on the applied grouping.</span>
 </dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
+<dt data-target-cell="annotated-cell-22" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="6" data-code-annotation="5" data-code-cell="annotated-cell-2">Generate a wide dataset sending row names as columns.</span>
+<span data-code-cell="annotated-cell-22" data-code-lines="6" data-code-annotation="5">Generate a wide dataset sending row names as columns.</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
 {"columns":[{"label":["assembly"],"name":[1],"type":["chr"],"align":["left"]},{"label":["CDS"],"name":[2],"type":["int"],"align":["right"]},{"label":["gene"],"name":[3],"type":["int"],"align":["right"]},{"label":["misc_RNA"],"name":[4],"type":["int"],"align":["right"]},{"label":["ncRNA"],"name":[5],"type":["int"],"align":["right"]},{"label":["rRNA"],"name":[6],"type":["int"],"align":["right"]},{"label":["tRNA"],"name":[7],"type":["int"],"align":["right"]},{"label":["tmRNA"],"name":[8],"type":["int"],"align":["right"]}],"data":[{"1":"GCF_000009045.1","2":"4237","3":"4536","4":"93","5":"2","6":"30","7":"86","8":"NA"},{"1":"GCF_000146565.1","2":"3998","3":"4104","4":"NA","5":"4","6":"24","7":"77","8":"1"},{"1":"GCF_000186745.1","2":"4111","3":"4230","4":"NA","5":"4","6":"31","7":"83","8":"1"},{"1":"GCF_000209795.2","2":"4262","3":"4384","4":"NA","5":"4","6":"30","7":"87","8":"1"},{"1":"GCF_000227465.1","2":"4167","3":"4294","4":"NA","5":"4","6":"30","7":"92","8":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -737,7 +745,7 @@ Tip
 </div>
 </div>
 </div></div></section><section id="assessment-of-the-alignment" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="assessment-of-the-alignment">Assessment of the alignment</h3>
-<p>Inspection of the alignment is there very first step for assessing its quality. A CDS tends to generate a codon-like alignment starting with the methionine codon (ATG,GTG) and finishing with a stop (TAA, TAG, etc.). Therefore finding this structure when aligning a complete genes is expected. If a middle fraction of the gene is being aligned ORF might not display any stop codon. Verifying a codon-like alignment shows a biological order on the sequences other that mere artifact of the alignment, that is an evolutionary behavior of the sequence. We can do it using <a href="https://telatin.github.io/seqfu2/">seqfu</a> from the CLI <a href="#fig-fu-msa-view">Fig.&nbsp;<span>1</span></a>, or interactively with <a href="https://github.com/AliView/AliView">AliView</a></p>
+<p>Inspection of the alignment is there very first step for assessing its quality. A CDS tends to generate a codon-like alignment starting with the methionine codon (ATG,GTG) and finishing with a stop (TAA, TAG, etc.). Therefore finding this structure when aligning a complete genes is expected. If a middle fraction of the gene is being aligned ORF might not display any stop codon. Verifying a codon-like alignment shows a biological order on the sequences other that mere artifact of the alignment, that is an evolutionary behavior of the sequence. We can do it using <a href="https://telatin.github.io/seqfu2/">seqfu</a> from the CLI <a href="#fig-fu-msa-view" class="quarto-xref">Fig.&nbsp;<span>1</span></a>, or interactively with <a href="https://github.com/AliView/AliView">AliView</a></p>
 <div id="fig-fu-msa-view" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="figs/fu-msa-view.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;1: A viusalization of the <em>gyrA</em> gene alignment using seqfu multiple sequence alignment viewer</figcaption></figure>
@@ -815,6 +823,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -881,13 +916,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -966,10 +1003,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -979,8 +1015,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -993,6 +1038,61 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      try { hash = new URL(url).hash; } catch {}
+      const id = hash.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note !== null) {
+        try {
+          const html = processXRef(id, note);
+          instance.setContent(html);
+        } finally {
+          instance.enable();
+          instance.show();
+        }
+      } else {
+        // See if we can fetch this
+        fetch(url.split('#')[0])
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.getElementById(id);
+          console.log(htmlDoc.body.innerHTML);
+          if (note !== null) {
+            const html = processXRef(id, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1036,6 +1136,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1187,7 +1288,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><script src="https://giscus.app/client.js" data-repo="camilogarciabotero/biocomp-book" data-repo-id="R_kgDOHKOnSw" data-category="General" data-category-id="DIC_kwDOHKOnS84CQ7NN" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="transparent_dark" data-lang="en" crossorigin="anonymous" async="">
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script><input type="hidden" id="giscus-base-theme" value="transparent_dark"><input type="hidden" id="giscus-alt-theme" value="transparent_dark"><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../chs-challenges-demos/unix-challenges.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Unix challenges</span>
       </a>          
@@ -1203,7 +1304,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Made with <a href="https://quarto.org/">Quarto</a>. Under <a href="https://github.com/camilogarciabotero/biocomp-book/blob/main/LICENSE">GNU GPL 3.0</a>. Buy me coffee <a href="https://www.paypal.com/paypalme/camilogarciabotero"><i class="fa-solid fa-mug-saucer" aria-label="mug-saucer"></i></a> and visit me at <a href="https://camilogarciabotero.github.io/"><i class="fa-solid fa-house" aria-label="house"></i></a></div>
+    <div class="nav-footer-center">
+<p>Made with <a href="https://quarto.org/">Quarto</a>. Under <a href="https://github.com/camilogarciabotero/biocomp-book/blob/main/LICENSE">GNU GPL 3.0</a>. Buy me coffee <a href="https://www.paypal.com/paypalme/camilogarciabotero"><i class="fa-solid fa-mug-saucer" aria-label="mug-saucer"></i></a> and visit me at <a href="https://camilogarciabotero.github.io/"><i class="fa-solid fa-house" aria-label="house"></i></a></p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
